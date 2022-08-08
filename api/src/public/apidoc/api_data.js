@@ -8792,8 +8792,8 @@ define({ "api": [
     "url": "",
     "version": "0.0.0",
     "filename": "src/public/apidoc/main.js",
-    "group": "_var_www_html_nodeAngular_Spurtcommerce_3_0_2_community_LTS_Spurtcommerce_3_0_2_community_LTS_api_src_public_apidoc_main_js",
-    "groupTitle": "_var_www_html_nodeAngular_Spurtcommerce_3_0_2_community_LTS_Spurtcommerce_3_0_2_community_LTS_api_src_public_apidoc_main_js",
+    "group": "_var_www_html_marketplace_api_src_public_apidoc_main_js",
+    "groupTitle": "_var_www_html_marketplace_api_src_public_apidoc_main_js",
     "name": ""
   },
   {

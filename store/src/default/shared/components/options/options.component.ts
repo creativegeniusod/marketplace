@@ -39,6 +39,7 @@ export class OptionsComponent {
         this.settings.theme = 'green';
       }
     }
+    this.changeTheme('green');
   }
 
   /*** CHANGE THE COLORS PLATTE

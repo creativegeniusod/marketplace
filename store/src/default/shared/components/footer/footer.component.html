@@ -1,11 +1,80 @@
 <footer class="bg-primary footer">
     <div fxLayout="row wrap" fxLayoutAlign="space-between" class="py-3 border-bottom-mute theme-container">
+        
+        <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="25" class="useful-links">
+            <h3 class="col-title">USEFUL LINKS FOR CUSTOMER</h3>
+            <div class="">Contact us</div>
+            <div class="">FAQs</div>
+            <div class="">T&C</div>
+            <div class="">Shiping</div>
+            <div class="">Returns</div>
+            <div class="">Pricavy policy</div>
+
+            <h3 class="col-title mt-3">USEFUL LINKS FOR CUSTOMER</h3>
+            <div class="">Contact us</div>
+            <div class="">FAQs</div>
+            <div class="">T&C</div>
+            <div class="">Shiping</div>
+            <div class="">Returns</div>
+            <div class="">Pricavy policy</div>
+
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="25" ngClass.xs="mt-2">
+            <h3 class="col-title">USEFUL LINKS FOR VENDOR</h3>
+            <div class="">Contact us</div>
+            <div class="">FAQs</div>
+            <div class="">T&C</div>
+            <div class="">Shiping</div>
+            <div class="">Returns</div>
+            <div class="">Pricavy policy</div>
+
+            <h3 class="col-title mt-3">USEFUL LINKS FOR VENDOR</h3>
+            <div class="">Contact us</div>
+            <div class="">FAQs</div>
+            <div class="">T&C</div>
+            <div class="">Shiping</div>
+            <div class="">Returns</div>
+            <div class="">Pricavy policy</div>
+        </div>
+
+
+
+
+
+        <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="50" ngClass.sm="mt-2" ngClass.xs="mt-2"
+            *ngIf="(listSandbox.settingDetail$ | async) as contact">
+            <h3 class="col-title">ABOUT US</h3>
+            <p fxLayout="row">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was populari20d in the 1920s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was populari20d in the 1920s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+            </p>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" class="copyright theme-container">
+        <p ngClass.xs="mt-1" class="copyright">Copyright © 2022,Piccosoft Software labs India Private Limited</p>
+    </div>
+</footer>
+
+<!-- <footer class="bg-primary footer">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between" class="py-3 border-bottom-mute theme-container">
         <div fxFlex="100" fxFlex.gt-sm="60" fxFlex.sm="50" class="useful-links">
             <h3 class="col-title">USEFUL LINKS</h3>
             <p class="mt-2" *ngFor="let links of listSandbox.pageList$ | async">
                 <a [routerLink]="['/page-detail', links.pageId]" class="white-color">{{links.title}}</a></p>
         </div>
-        <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="20" ngClass.xs="mt-2" *ngIf="(listSandbox.settingDetail$ | async) as contact">
+        60iv fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="20" ngClass.xs="mt-2" *ngIf="(listSandbox.settingDetail$ | async) as contact">
             <h3 class="col-title">CONTACT INFORMATION</h3>
             <p fxLayout="row" fxLayoutAlign="start center" class="mt-2 ">
                 <mat-icon class="mr-1">location_on</mat-icon>
@@ -46,4 +115,4 @@
     <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" class="copyright theme-container">
         <p ngClass.xs="mt-1" class="copyright">Copyright © 2022,Piccosoft Software labs India Private Limited</p>
     </div>
-</footer>
+</footer> -->

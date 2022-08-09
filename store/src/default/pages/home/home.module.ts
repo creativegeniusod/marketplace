@@ -6,16 +6,18 @@
  * Author piccosoft ltd <support@piccosoft.com>
  * Licensed under the MIT license.
  */
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {RouterModule} from '@angular/router';
-import {SharedModule} from '../../shared/shared.module';
-import {HomeComponent} from './home.component';
-import {ComponentsModule} from '../../shared/components/index';
-import {FormsModule} from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { SharedModule } from '../../shared/shared.module';
+import { HomeComponent } from './home.component';
+import { ComponentsModule } from '../../shared/components/index';
+import { FormsModule } from '@angular/forms';
+import { TrendingProductComponent } from './trending-product/trending-product.component';
+import { TrendingProductZoomComponent } from './trending-product/trending-zoom/trending-product-zoom.component';
 
 export const routes = [
-    {path: '', component: HomeComponent, pathMatch: 'full'}
+    { path: '', component: HomeComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -27,7 +29,9 @@ export const routes = [
         ComponentsModule,
     ],
     declarations: [
-        HomeComponent
+        HomeComponent,
+        TrendingProductComponent,
+        TrendingProductZoomComponent
     ],
     providers: []
 })

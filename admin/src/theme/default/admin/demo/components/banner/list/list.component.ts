@@ -138,7 +138,7 @@ export class BannerListComponent implements OnInit {
   //  edit
   editBanner(bannerData) {
     this.service.setBannerListData(bannerData);
-    this.router.navigate(['/cms/banners/edit', bannerData.bannerId]);
+    this.router.navigate(['/demo/banners/edit', bannerData.bannerId]);
   }
 
   //  function deleteBanner to delete particular id in banner list

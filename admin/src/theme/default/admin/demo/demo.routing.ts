@@ -8,18 +8,17 @@
  */
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CMSLayoutComponent } from './components/layout/layout.component';
+import { DEMOLayoutComponent } from './components/layout/layout.component';
 
 const cmsRoutes: Routes = [
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
+  { path: '', redirectTo: 'banners', pathMatch: 'full' },
   {
     path: '',
-    component: CMSLayoutComponent,
+    component: DEMOLayoutComponent,
     children: [
-      
       {
-        path: 'pages',
-        loadChildren: './components/pages/pages.module#PagesModule'
+        path: 'banners',
+        loadChildren: './components/banner/banner.module#BannerModule'
       }
     ]
   }
@@ -29,4 +28,4 @@ const cmsRoutes: Routes = [
   imports: [RouterModule.forChild(cmsRoutes)],
   exports: [RouterModule]
 })
-export class CMSRoutingModule {}
+export class DEMORoutingModule {}

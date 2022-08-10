@@ -9,7 +9,7 @@
         <span fxShow="false" fxShow.gt-sm class="blackStyle">Profile</span>
     </a>
 
-    <a mat-button routerLink="/auth" *ngIf="!(commonSandbox.getProfile$ | async)?.email">
+    <a mat-button *ngIf="!(commonSandbox.getProfile$ | async)?.email">
         <mat-icon  class="mat-icon-sm notification-icon blackStyle">notification_important</mat-icon>
         <span fxShow="false" fxShow.gt-sm class="blackStyle">Notification</span>
     </a>

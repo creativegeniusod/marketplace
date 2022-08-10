@@ -1,0 +1,41 @@
+<mat-sidenav-container>
+  <mat-sidenav-content class="all-products" ngClass.gt-sm="p-left">
+    <!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center"
+      class="filter-row mat-elevation-z1 text-muted">
+      <button *ngIf="!sidenavOpen" mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <div>
+
+        <mat-menu #sortMenu="matMenu" xPosition="before" class="app-dropdown" overlapTrigger="true">
+          <span (mouseleave)="sortMenuTrigger.closeMenu()">
+            <button mat-menu-item *ngFor="let sort of sortings" (click)="changeSorting(sort)">
+              <span>{{sort.order}}</span>
+            </button>
+          </span>
+        </mat-menu>
+      </div>
+    </div> -->
+    <!-- *ngIf="listSandbox.productLoading$ | async" -->
+    <div class="wrapper">
+      <div class="overlay">
+        <div class="spinner-wrapper">
+          <app-spinner [isShow]="listSandbox.productLoading$ | async"></app-spinner>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="viewType == 'grid'" fxLayout="row wrap" class="products-wrapper">
+
+      <div *ngFor="let product of (listSandbox.productlist$ | async)" fxFlex="100" [fxFlex.gt-sm]="viewCol"
+        fxFlex.sm="50" class="col">
+        <mat-card class="product-item text-center card-hover">
+          <!-- <a [routerLink]="['/products/productdetails', product.productId]" class="image-link"> -->
+          <img *ngIf="product['Images'].defaultImage == 1" style="height:200px"
+            [src]="imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'"
+            onError="this.src='/assets/images/default_image.png';">
+        </mat-card>
+      </div>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

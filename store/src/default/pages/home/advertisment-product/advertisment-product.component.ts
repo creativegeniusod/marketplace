@@ -19,12 +19,12 @@ import { ConfigService } from 'src/core/service/config.service';
 import { ProductDialogComponent } from 'src/default/shared/components/products-carousel/product-dialog/product-dialog.component';
 
 @Component({
-  selector: 'app-trending-product',
-  templateUrl: './trending-product.component.html',
-  styleUrls: ['./trending-product.component.scss']
+  selector: 'app-advertisment-product',
+  templateUrl: './advertisment-product.component.html',
+  styleUrls: ['./advertisment-product.component.scss']
 })
 // implements OnInit, OnDestroy, AfterViewInit
-export class TrendingProductComponent implements OnInit, OnDestroy {
+export class AdvertismentProductComponent implements OnInit, OnDestroy {
   // decorator
   @ViewChild('sidenav') sidenav: any;
   // side nav

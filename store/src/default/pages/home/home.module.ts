@@ -14,7 +14,7 @@ import { HomeComponent } from './home.component';
 import { ComponentsModule } from '../../shared/components/index';
 import { FormsModule } from '@angular/forms';
 import { TrendingProductComponent } from './trending-product/trending-product.component';
-import { TrendingProductZoomComponent } from './trending-product/trending-zoom/trending-product-zoom.component';
+import { AdvertismentProductComponent } from './advertisment-product/advertisment-product.component';
 
 export const routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' }
@@ -31,7 +31,7 @@ export const routes = [
     declarations: [
         HomeComponent,
         TrendingProductComponent,
-        TrendingProductZoomComponent
+        AdvertismentProductComponent
     ],
     providers: []
 })

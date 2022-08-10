@@ -6,13 +6,13 @@
  * Author piccosoft ltd <support@piccosoft.com>
  * Licensed under the MIT license.
  */
-import {Component, OnInit, HostListener, ViewChild, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
-import {Router, NavigationEnd} from '@angular/router';
-import {Settings, AppSettings} from '../../app.settings';
-import {SidenavMenuService} from '../../shared/components/sidenav-menu/sidenav-menu.service';
-import {ListsSandbox} from '../../../core/lists/lists.sandbox';
-import {Subscription} from 'rxjs';
+import { Router, NavigationEnd } from '@angular/router';
+import { Settings, AppSettings } from '../../app.settings';
+import { SidenavMenuService } from '../../shared/components/sidenav-menu/sidenav-menu.service';
+import { ListsSandbox } from '../../../core/lists/lists.sandbox';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-layout',
@@ -30,13 +30,13 @@ export class LayoutContainerComponent implements OnInit, AfterViewInit {
     private subscriptions: Array<Subscription> = [];
 
     constructor(public appSettings: AppSettings, public sidenavMenuService: SidenavMenuService,
-                public router: Router, public listSandBox: ListsSandbox, @Inject(PLATFORM_ID) private platformId: Object) {
+        public router: Router, public listSandBox: ListsSandbox, @Inject(PLATFORM_ID) private platformId: Object) {
         this.settings = this.appSettings.settings;
     }
 
     ngOnInit() {
         this.getCategories();
-        this.getSettings();
+        this.getSettings();      
 
     }
 
@@ -104,13 +104,13 @@ export class LayoutContainerComponent implements OnInit, AfterViewInit {
         this.listSandBox.getSettings();
         this.subscriptions.push(this.listSandBox.settingDetail$.subscribe(data => {
             if (data) {
-            if (data.maintenanceMode === 1) {
-                if (isPlatformBrowser(this.platformId)) {
-                sessionStorage.setItem('maintenanceMode', 'true');
+                if (data.maintenanceMode === 1) {
+                    if (isPlatformBrowser(this.platformId)) {
+                        sessionStorage.setItem('maintenanceMode', 'true');
+                    }
+                    this.router.navigate(['/underdeveloping']);
                 }
-                this.router.navigate(['/underdeveloping']);
             }
-        }
         }));
     }
 }

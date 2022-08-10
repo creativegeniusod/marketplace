@@ -18,7 +18,7 @@ module.exports = "<app-main-carousel></app-main-carousel>\r\n<div class=\"produc
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".products-tabs {\n  margin-top: 30px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvbm9kZUFuZ3VsYXIvU3B1cnRjb21tZXJjZV8zLjAuMl9jb21tdW5pdHlfTFRTL1NwdXJ0Y29tbWVyY2VfMy4wLjJfY29tbXVuaXR5X0xUUy9zdG9yZS9zcmMvZGVmYXVsdC9wYWdlcy9ob21lL2hvbWUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxpQkFBZ0IsRUFDbkIiLCJmaWxlIjoic3JjL2RlZmF1bHQvcGFnZXMvaG9tZS9ob21lLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByb2R1Y3RzLXRhYnN7XHJcbiAgICBtYXJnaW4tdG9wOiAzMHB4OyAgIFxyXG59Il19 */"
+module.exports = ".products-tabs {\n  margin-top: 30px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvbWFya2V0cGxhY2Uvc3RvcmUvc3JjL2RlZmF1bHQvcGFnZXMvaG9tZS9ob21lLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWdCLEVBQ25CIiwiZmlsZSI6InNyYy9kZWZhdWx0L3BhZ2VzL2hvbWUvaG9tZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wcm9kdWN0cy10YWJze1xyXG4gICAgbWFyZ2luLXRvcDogMzBweDsgICBcclxufSJdfQ== */"
 
 /***/ }),
 

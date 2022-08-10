@@ -17,9 +17,14 @@ import { BannerListComponent } from './list/list.component';
 
 // Store Actions
 import { EffectsModule } from '@ngrx/effects';
-import { BannerSandbox } from '../../../../../../core/admin/cms/banners/banner.sandbox';
-import { BannerService } from '../../../../../../core/admin/cms/banners/banner.service';
-import { BannerEffect } from '../../../../../../core/admin/cms/banners/banner-effect/banner.effect';
+import { BannerSandbox } from '../../../../../../core/admin/demo/banners/banner.sandbox';
+import { BannerService } from '../../../../../../core/admin/demo/banners/banner.service';
+import { BannerEffect } from '../../../../../../core/admin/demo/banners/banner-effect/banner.effect';
+
+// Imported action to Inhance functionality
+import { CategoriesSandbox } from '../../../../../../core/admin/catalog/category/categories.sandbox';
+import { CategoriesService } from '../../../../../../core/admin/catalog/category/categories.service';
+// Imported action to Inhance functionality
 
 // Routing Module
 import { BannerRoutingModule } from './banner.routing';
@@ -45,7 +50,7 @@ import { BannerLayoutComponent } from '../shared/banner-layout/banner-layout.com
     EffectsModule.forRoot([BannerEffect]),
     CKEditorModule
   ],
-  providers: [BannerService, BannerSandbox],
+  providers: [BannerService, BannerSandbox, CategoriesService, CategoriesSandbox],
   bootstrap: [],
   entryComponents: []
 })

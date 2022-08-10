@@ -12,6 +12,7 @@ import * as actions from '../action/categories.action';
 import { CategoriesState, CategoriesStateRecord } from './categories.state';
 // model
 import { CategorylistResponseModel } from '../models/categorylist.response.model';
+import { SubCategorylistResponseModel } from '../models/subcategorylist.response.model';
 import { CategoryResponseModel } from '../models/category.response.model';
 
 export const initialState: CategoriesState = new CategoriesStateRecord() as CategoriesState;
@@ -32,6 +33,15 @@ export function reducer(
         categoriesListRequestLoading: true,
         categoriesListRequestLoaded: false,
         categoriesListRequestFailed: false
+      });
+    }
+
+    case actions.ActionTypes.DO_SUB_CATEGORIES_LIST: {
+      return Object.assign({}, state, {
+        subcategoriesListResponse: false,
+        subcategoriesListRequestLoading: true,
+        subcategoriesListRequestLoaded: false,
+        subcategoriesListRequestFailed: false
       });
     }
       
@@ -77,6 +87,34 @@ export function reducer(
         categoriesListRequestFailed: false
       });
     }
+
+    case actions.ActionTypes.DO_SUB_CATEGORIES_LIST_SUCCESS: {
+      const categoriesModel = payload.data.map(list => {
+        const tempcategoriesModel = new CategorylistResponseModel(list);
+        return tempcategoriesModel;
+      });
+      let categoriesFilterModel = [];
+      if (!state.categoryListFilter) {
+        categoriesFilterModel = payload.data.map(list => {
+          const tempcategoriesFilterModel = new CategorylistResponseModel(list);
+          return tempcategoriesFilterModel;
+        });
+      } else {
+        categoriesFilterModel = state.categoryListFilter;
+      }
+      console.log('category list 123',categoriesModel);
+      
+      return Object.assign({}, state, {
+        subcategoryList: categoriesModel,
+        subcategoryListFilter: categoriesFilterModel,
+        subcategoriesListResponse: true,
+        subcategoriesListRequestLoading: false,
+        subcategoriesListRequestLoaded: true,
+        subcategoriesListRequestFailed: false
+      });
+    }
+
+
     case actions.ActionTypes.DO_CATEGORIES_LIST_FAIL: {
       return Object.assign({}, state, {
         categoriesCountResponse: false,
@@ -252,13 +290,19 @@ export const getCategoryCountdata = (state: CategoriesState) =>
 // category list action
 export const getCategoryList = (state: CategoriesState) => state.categoryList;
 // categoryListFilter
+export const getSubCategoryList = (state: CategoriesState) => state.subcategoryList;
+// categoryListFilter
 export const getCategoryFilterList = (state: CategoriesState) =>
   state.categoryListFilter;
 
 export const getCategoriesListResponse = (state: CategoriesState) =>
   state.categoriesListResponse;
 export const getCategoriesListRequestLoading = (state: CategoriesState) =>
-  state.categoriesListRequestLoading;
+  state.subcategoriesListRequestLoading;
+
+export const getSubCategoriesListRequestLoading = (state: CategoriesState) =>
+  state.subcategoriesListRequestLoading;
+
 export const getCategoriesListRequestLoaded = (state: CategoriesState) =>
   state.categoriesListRequestLoaded;
 export const getCategoriesListRequestFailed = (state: CategoriesState) =>

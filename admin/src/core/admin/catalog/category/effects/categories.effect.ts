@@ -41,6 +41,18 @@ export class CategoriesEffect {
   );
 
   @Effect()
+  dosubcatlists$: Observable<Action> = this.action$.pipe(
+    ofType(actions.ActionTypes.DO_SUB_CATEGORIES_LIST),
+    map((action: actions.DoSubCategorieslistAction) => action.payload),
+    switchMap(state => {
+      return this.categoriesService.subcategoryList(state).pipe(
+        switchMap(list => [new actions.DoSubCategorieslistSuccessAction(list)]),
+        catchError(error => of(new actions.DoCategorieslistFailAction(error)))
+      );
+    })
+  );
+
+  @Effect()
   doDelete$: Observable<Action> = this.action$.pipe(
     ofType(actions.ActionTypes.DO_DELETE_CATEGORIES),
     map((action: actions.DoDeleteCategoriesAction) => action.payload),

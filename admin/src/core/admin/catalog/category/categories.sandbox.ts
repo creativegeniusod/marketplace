@@ -20,6 +20,7 @@ import { CategorydeleteForm } from './models/categorydelete.model';
 import {
   // category list selectors
   getCategoryList,
+  getSubCategoryList,
   getCategoriesListResponse,
   getCategoriesListRequestLoading,
   getCategoriesListRequestLoaded,
@@ -64,6 +65,7 @@ import * as _ from 'lodash';
 export class CategoriesSandbox {
   public levelsloop: any = [];
   public getCategoriesList$ = this.appState.select(getCategoryList);
+  public getSubCategoriesList$ = this.appState.select(getSubCategoryList);
   // CategoryFilterList
   public getCategoriesFilterList$ = this.appState.select(getCategoryFilterList);
 
@@ -157,6 +159,11 @@ export class CategoriesSandbox {
   public categorylist(value) {
     this.appState.dispatch(
       new categoriesActions.DoCategorieslistAction(new CategorylistForm(value))
+    );
+  }
+  public subcategorylist(value) {
+    this.appState.dispatch(
+      new categoriesActions.DoSubCategorieslistAction(new CategorylistForm(value))
     );
   }
 

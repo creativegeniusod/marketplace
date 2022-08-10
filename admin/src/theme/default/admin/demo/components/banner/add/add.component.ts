@@ -25,9 +25,11 @@ import {
 // Routing Module
 import { ActivatedRoute, Router } from '@angular/router';
 // Store Module
-import { BannerSandbox } from '../../../../../../../core/admin/cms/banners/banner.sandbox';
-import { BannerService } from '../../../../../../../core/admin/cms/banners/banner.service';
+
+import { BannerSandbox } from '../../../../../../../core/admin/demo/banners/banner.sandbox';
+import { BannerService } from '../../../../../../../core/admin/demo/banners/banner.service';
 import { ConfigService } from '../../../../../../../core/admin/service/config.service';
+import { CategoriesSandbox } from '../../../../../../../core/admin/catalog/category/categories.sandbox';
 
 @Component({
   selector: 'app-cms-banner-add',
@@ -91,12 +93,14 @@ export class BannerAddComponent implements OnInit {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private changeDetectRef: ChangeDetectorRef,
+    public categoriessandbox: CategoriesSandbox,
     private configService: ConfigService,
     public sandbox: BannerSandbox,
     private service: BannerService
   ) {}
 
   ngOnInit() {
+    this.getCategoryList()
     this.imageUrl = this.configService.getImageUrl();
     this.postImageUrl = './assets/upload-banner/upload.png';
     this.initForm();
@@ -104,6 +108,45 @@ export class BannerAddComponent implements OnInit {
     this.editBannerId = this.route.snapshot.paramMap.get('id');
   }
 
+  getCategoryList() {
+    const param: any = {};
+    param.limit = '';
+    param.offset = '';
+    param.keyword = undefined;
+    param.sortOrder = '';
+    param.parentInt = 0;
+    param.status = 1;
+    console.log(param,"make params");
+    this.categoriessandbox.categorylist(param);
+    /*this.categoriessandbox.getCategoriesList$.subscribe( data => {
+      if(data != undefined){
+        console.log(data,"data"); 
+      }
+    });   */ 
+  }
+  getSubCategoryList(deviceValue) {
+    // console.log(deviceValue,"*********&&&&&&&&********")
+    // getSubCategorylist
+    const param: any = {};
+    param.limit = '';
+    param.offset = '';
+    param.keyword = undefined;
+    param.sortOrder = '';
+    param.parentInt = deviceValue;
+    param.status = 1;
+    console.log(param,"make params");
+    this.categoriessandbox.subcategorylist(param);
+    this.categoriessandbox.getSubCategoriesList$.subscribe( data => {
+      if(data){
+        console.log(data,"data"); 
+      }
+    });    
+  }
+
+  onSelectcategory(deviceValue){
+    this.getSubCategoryList(deviceValue)  
+    // getSubCategoriesList  
+  }
   open2(content) {
     this.modalService
       .open(content, { windowClass: 'image-manager' })
@@ -175,7 +218,7 @@ export class BannerAddComponent implements OnInit {
       params.status = tempActive;
       if (this.bannerInfo[0] && this.bannerInfo[0].bannerId) {
         params.bannerId = this.bannerInfo[0].bannerId;
-        // console.log(params,"*****")
+        console.log(params,"*****")
         this.sandbox.UpdateBanner(params);
       } else {
         console.log('params', params);

@@ -284,6 +284,7 @@ export class CategoryController {
      * @apiHeader {String} Authorization
      * @apiParam (Request body) {Number} limit limit
      * @apiParam (Request body) {Number} offset offset
+     * @apiParam (Request body) {Number} parentInt parentInt
      * @apiParam (Request body) {String} keyword keyword
      * @apiParam (Request body) {Number} sortOrder sortOrder
      * @apiParam (Request body) {Number} status status
@@ -301,10 +302,13 @@ export class CategoryController {
      */
     @Get('/categorylist')
     @Authorized()
-    public async categorylist(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number, @QueryParam('keyword') keyword: string, @QueryParam('sortOrder') sortOrder: number, @QueryParam('status') status: number, @QueryParam('count') count: number | boolean, @Res() response: any): Promise<any> {
+    public async categorylist(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number,@QueryParam('parentInt') parentInt: number, @QueryParam('keyword') keyword: string, @QueryParam('sortOrder') sortOrder: number, @QueryParam('status') status: number, @QueryParam('count') count: number | boolean, @Res() response: any): Promise<any> {
         console.log(keyword);
         const select = ['categoryId', 'name',  'parentInt', 'sortOrder', 'metaTagTitle', 'metaTagDescription', 'metaTagKeyword', 'isActive'];
-
+        if(parentInt==undefined){
+            parentInt=0;
+        }
+        // console.log(parentInt,"&&&&&&**")
         const search = [
             {
                 name: 'name',
@@ -314,6 +318,10 @@ export class CategoryController {
                 name: 'isActive',
                 op: 'where',
                 value: status,
+            }, {
+                name: 'parentInt',
+                op: 'where',
+                value: parentInt,
             },
         ];
         const WhereConditions = [];

@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // components
 import { DEMOLayoutComponent } from './components/layout/layout.component';
 import { DEMOHeaderComponent } from './components/header/header.component';
+
 // Routing Module
 import { DEMORoutingModule } from './demo.routing';
 

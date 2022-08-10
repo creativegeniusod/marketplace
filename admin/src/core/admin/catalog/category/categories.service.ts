@@ -92,6 +92,12 @@ export class CategoriesService extends Api {
     reqOpts = params;
     return this.http.get(this.url + '/categoryList', { params: reqOpts });
   }
+  
+  public subcategoryList(params: CategorylistForm): Observable<any> {
+    let reqOpts: any = {};
+    reqOpts = params;
+    return this.http.get(this.url + '/categoryList', { params: reqOpts });
+  }
 
   /**
    * Handles 'addCategory' function. Calls post method with specific api address

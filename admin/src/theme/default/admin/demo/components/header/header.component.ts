@@ -19,6 +19,6 @@ export class DEMOHeaderComponent implements OnInit {
   constructor(public titleService: Title) {}
 
   ngOnInit() {
-    this.titleService.setTitle('CMS');
+    this.titleService.setTitle('DEMO');
   }
 }

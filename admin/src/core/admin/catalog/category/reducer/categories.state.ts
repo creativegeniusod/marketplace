@@ -12,6 +12,7 @@ import { Map, Record } from 'immutable';
 export interface CategoriesState extends Map<string, any> {
   categoryListnCount: any;
   categoryList: any;
+  subcategoryList: any;
   categoryListFilter: any;
   categoryDoDelete: any;
   addCatagoryStatus: any;
@@ -35,6 +36,11 @@ export interface CategoriesState extends Map<string, any> {
   categoriesListRequestLoaded: any;
   categoriesListRequestFailed: any;
 
+  subcategoriesListResponse: any;
+  subcategoriesListRequestLoading: any;
+  subcategoriesListRequestLoaded: any;
+  subcategoriesListRequestFailed: any;
+
   updateCategoriesResponse: any;
   updateCategoriesRequestLoading: any;
   updateCategoriesRequestLoaded: any;
@@ -49,6 +55,7 @@ export interface CategoriesState extends Map<string, any> {
 export const CategoriesStateRecord = Record({
   categoryListnCount: {},
   categoryList: [],
+  subcategoryList: [],
   categoryListFilter: {},
   categoryDoDelete: {},
   addCatagory: {},
@@ -72,6 +79,12 @@ export const CategoriesStateRecord = Record({
   categoriesListRequestLoading: {},
   categoriesListRequestLoaded: {},
   categoriesListRequestFailed: {},
+
+
+  subcategoriesListResponse: {},
+  subcategoriesListRequestLoading: {},
+  subcategoriesListRequestLoaded: {},
+  subcategoriesListRequestFailed: {},
 
   updateCategoriesResponse: {},
   updateCategoriesRequestLoading: {},

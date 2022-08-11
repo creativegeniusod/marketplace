@@ -1273,6 +1273,13 @@
           },
           {
             "group": "Request body",
+            "type": "Number",
+            "optional": false,
+            "field": "parentInt",
+            "description": "<p>parentInt</p>"
+          },
+          {
+            "group": "Request body",
             "type": "String",
             "optional": false,
             "field": "keyword",

@@ -10,8 +10,9 @@ import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { NgbPanelChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 // Store Module
-import { BannerService } from '../../../../../../../core/admin/cms/banners/banner.service';
-import { BannerSandbox } from '../../../../../../../core/admin/cms/banners/banner.sandbox';
+import { BannerService } from '../../../../../../../core/admin/demo/banners/banner.service';
+import { BannerSandbox } from '../../../../../../../core/admin/demo/banners/banner.sandbox';
+import { CategoriesSandbox } from '../../../../../../../core/admin/catalog/category/categories.sandbox';
 import { ConfigService } from '../../../../../../../core/admin/service/config.service';
 import { ToastrManager } from 'ng6-toastr-notifications';
 
@@ -71,6 +72,7 @@ export class BannerListComponent implements OnInit {
 
   constructor(
     public sandbox: BannerSandbox,
+    public categoriessandbox: CategoriesSandbox,
     private service: BannerService,
     private toastr: ToastrManager,
     private router: Router,
@@ -78,7 +80,8 @@ export class BannerListComponent implements OnInit {
   ) {}
 
   // initially calls regSubscriptionEvents,bannerList
-  ngOnInit() {
+  ngOnInit  () {
+    // this.getCategoryList();  commented for the time
     this.pageSize = localStorage.getItem('itemsPerPage')
       ? localStorage.getItem('itemsPerPage')
       : this.pageSize;
@@ -87,6 +90,17 @@ export class BannerListComponent implements OnInit {
     this.regSubscriptionEvents();
     this.index = 0;
     this.bannerList(this.offset, this.keyword);
+  }
+
+   // calling category list api with pagination
+  getCategoryList() {
+    const param: any = {};
+    param.limit = '';
+    param.offset = '';
+    param.keyword = undefined;
+    param.sortOrder = '';
+    param.status = 1;
+    this.categoriessandbox.categorylist(param);    
   }
 
   // this function navigate  to  create page banner
@@ -112,6 +126,7 @@ export class BannerListComponent implements OnInit {
       params.count = 'true';
       this.sandbox.getBannerPagination(params);
     }
+    console.log("Get banne action");
     this.bannerListCount(0, keyword);
   }
 

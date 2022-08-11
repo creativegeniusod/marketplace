@@ -18,7 +18,9 @@ import { CategorycountForm } from '../models/categorycount.model';
 
 export const ActionTypes = {
   DO_CATEGORIES_LIST: type('[List] Do Categorieslist'),
+  DO_SUB_CATEGORIES_LIST: type('[List] Do SubCategorieslist'),
   DO_CATEGORIES_LIST_SUCCESS: type('[List] Do Categorieslist Success'),
+  DO_SUB_CATEGORIES_LIST_SUCCESS: type('[List] Do SubCategorieslist Success'),
   DO_CATEGORIES_LIST_FAIL: type('[List] Do Categorieslist Fail'),
 
   DO_DELETE_CATEGORIES: type('[Delete] Do Delete Categories'),
@@ -59,11 +61,26 @@ export class DoCategorieslistAction implements Action {
   constructor(public payload: CategorylistForm) {}
 }
 
+export class DoSubCategorieslistAction implements Action {
+  type = ActionTypes.DO_SUB_CATEGORIES_LIST;
+
+  constructor(public payload: CategorylistForm) {}
+}
+
 export class DoCategorieslistSuccessAction implements Action {
   type = ActionTypes.DO_CATEGORIES_LIST_SUCCESS;
 
   constructor(public payload: any) {}
 }
+
+export class DoSubCategorieslistSuccessAction implements Action {
+  type = ActionTypes.DO_SUB_CATEGORIES_LIST_SUCCESS;
+
+  constructor(public payload: any) {
+    console.log(payload,"SubCategorieslist")
+  }
+}
+
 
 export class DoCategorieslistFailAction implements Action {
   type = ActionTypes.DO_CATEGORIES_LIST_FAIL;
@@ -165,6 +182,7 @@ export class DoProductaddAction implements Action {
 
 export type Actions =
   | DoCategorieslistAction
+  | DoSubCategorieslistAction
   | DoCategorieslistSuccessAction
   | DoCategorieslistFailAction
   | DoCategoriescountAction

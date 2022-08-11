@@ -7,7 +7,7 @@
  * Licensed under the MIT license.
  */
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { BannerSandbox } from '../../../../../../../core/admin/cms/banners/banner.sandbox';
+import { BannerSandbox } from '../../../../../../../core/admin/demo/banners/banner.sandbox';
 
 @Component({
   selector: 'app-banner-layout',

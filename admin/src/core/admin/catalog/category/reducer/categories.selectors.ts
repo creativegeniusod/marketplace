@@ -24,6 +24,11 @@ export const getCategoryList = createSelector(
   getCatState,
   fromCategories.getCategoryList
 );
+// category list action 
+export const getSubCategoryList = createSelector(
+  getCatState,
+  fromCategories.getSubCategoryList
+);
 // getCategoryFilterList
 export const getCategoryFilterList = createSelector(
   getCatState,

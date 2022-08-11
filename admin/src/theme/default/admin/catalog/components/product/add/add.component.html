@@ -209,7 +209,6 @@
                                                     value={{stocklist.stockStatusId}}>{{stocklist.name}}
                                             </option>
                                         </select>
-
                                         <div class="error" *ngIf="user.get('outOfStockStatus').hasError('required') && user.get('outOfStockStatus').touched&&submittedValues==true">
                                             Out of Stock Status is required
                                         </div>

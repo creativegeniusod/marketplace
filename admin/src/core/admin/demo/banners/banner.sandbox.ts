@@ -154,6 +154,7 @@ export class BannerSandbox implements OnDestroy {
   }
 
   public UpdateBanner(data) {
+    console.log("Trigger Action");
     this.appState.dispatch(new bannerActions.DoBannerUpdateAction(data));
   }
 

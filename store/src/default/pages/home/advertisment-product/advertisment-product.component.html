@@ -1,4 +1,4 @@
-<mat-sidenav-container>
+<mat-sidenav-container class="productsWrap">
   <mat-sidenav-content class="all-products" ngClass.gt-sm="p-left">
     <!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center"
       class="filter-row mat-elevation-z1 text-muted">
@@ -27,12 +27,13 @@
     <div *ngIf="viewType == 'grid'" fxLayout="row wrap" class="products-wrapper">
 
       <div *ngFor="let product of (listSandbox.productlist$ | async)" fxFlex="100" [fxFlex.gt-sm]="viewCol"
-        fxFlex.sm="50" class="col">
-        <mat-card class="product-item text-center card-hover">
-          <!-- <a [routerLink]="['/products/productdetails', product.productId]" class="image-link"> -->
-          <img *ngIf="product['Images'].defaultImage == 1" style="height:200px"
+        fxFlex.sm="50" class="col productDiv">
+        <mat-card class="product-item text-center card-hover productCol">
+          <a href="/" class="image-link">
+            <img *ngIf="product['Images'].defaultImage == 1" style="height:200px"
             [src]="imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'"
             onError="this.src='/assets/images/default_image.png';">
+          </a>
         </mat-card>
       </div>
     </div>

@@ -82,17 +82,17 @@
             background: transparent !important;
         }
         .mat-tab-body-wrapper {
-            background: #fff;
+            /*background: #fff;
             -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
             -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
-            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);*/
             .swiper-slide {
                 .mat-card {
                     box-shadow: none;
                     &:hover {
-                        -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+                        /*-webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
                         -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
-                        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+                        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);*/
                     }
                 }
             }
@@ -366,6 +366,7 @@
 
         a.logo{
             display: flex;
+            margin-right: 10px;
 
             img{
                 height: 100px;
@@ -402,6 +403,28 @@
     width: auto;
     max-width: 100%;
 }
+
+.productsWrap .productCol{transform: none !important;}
+.app.green .mat-card:not([class*="mat-elevation-z"]) {
+    box-shadow: none;
+}
+.productsWrap .products-wrapper {
+    border: 1px solid #ddd;
+}
+.col.productDiv {
+    padding: 0;
+    border-right: 1px solid #ddd;
+}
+.productDiv .image-link:hover img {
+    transform: scale(1.1);
+}
+.productDiv .image-link img{
+    transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;    
+    -moz-transition: all 0.5s ease;    
+    -webkit-transition: all 0.5s ease;    
+}
+.custom-divider{margin-left: -16px;margin-right: -16px;}
 
 @media (max-width: 1400px){
     .app.green .top-navbar.mat-toolbar a {padding: 5px;}

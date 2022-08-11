@@ -12,7 +12,7 @@ import * as actions from '../action/categories.action';
 import { CategoriesState, CategoriesStateRecord } from './categories.state';
 // model
 import { CategorylistResponseModel } from '../models/categorylist.response.model';
-import { SubCategorylistResponseModel } from '../models/subcategorylist.response.model';
+// import { SubCategorylistResponseModel } from '../models/subcategorylist.response.model';
 import { CategoryResponseModel } from '../models/category.response.model';
 
 export const initialState: CategoriesState = new CategoriesStateRecord() as CategoriesState;
@@ -297,8 +297,9 @@ export const getCategoryFilterList = (state: CategoriesState) =>
 
 export const getCategoriesListResponse = (state: CategoriesState) =>
   state.categoriesListResponse;
+
 export const getCategoriesListRequestLoading = (state: CategoriesState) =>
-  state.subcategoriesListRequestLoading;
+  state.categoriesListRequestLoading;
 
 export const getSubCategoriesListRequestLoading = (state: CategoriesState) =>
   state.subcategoriesListRequestLoading;

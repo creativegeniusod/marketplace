@@ -36,6 +36,11 @@ export interface CategoriesState extends Map<string, any> {
   categoriesListRequestLoaded: any;
   categoriesListRequestFailed: any;
 
+  subcategoriesListResponse: any;
+  subcategoriesListRequestLoading: any;
+  subcategoriesListRequestLoaded: any;
+  subcategoriesListRequestFailed: any;
+
   updateCategoriesResponse: any;
   updateCategoriesRequestLoading: any;
   updateCategoriesRequestLoaded: any;

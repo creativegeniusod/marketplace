@@ -1,13 +1,15 @@
 <mat-toolbar class="top-navbar mat-elevation-z2" fxLayoutAlign="" color="primary">
     <a class="logo" routerLink="/" (click)="closeSubMenus()"><img src="assets/images/logo1.png"></a>
     <!-- <a mat-button [routerLink]="['/']" routerLinkActive="horizontal-active-link" [routerLinkActiveOptions]="{exact:true}"> <img src="assets/images/home.png"> </a> -->
-    <a mat-button (click)="sendUniqueId('productFilter')" [routerLink]="['/products/', 'All']" class="colorMenu"
+    <!-- <a mat-button (click)="sendUniqueId('productFilter')" [routerLink]="['/products/', 'All']" class="colorMenu"
         routerLinkActive="colorMenu" [routerLinkActiveOptions]="{exact:true}">
         AllProducts
-    </a>
+    </a> -->
     <a mat-button class="colorMenu" routerLinkActive="horizontal-active-link"
         *ngFor="let category of categories;let i=index" [routerLinkActiveOptions]="{exact:true}"
-        [matMenuTriggerFor]="menu" (click)="indexData(i,category.categoryId)">{{category.name}}
+        [matMenuTriggerFor]="menu" (click)="indexData(i,category.categoryId)">
+        <a class="logo"><img src="assets/images/1-a.png"></a>
+        {{category.name}}
         <mat-icon class="caret">arrow_drop_down</mat-icon>
     </a>
     <mat-menu #menu="matMenu" [overlapTrigger]="false" class="mega-menu category-menu app-dropdown">
@@ -33,8 +35,8 @@
 
         </span>
     </mat-menu>
-    <a mat-button routerLink="/contact" routerLinkActive="horizontal-active-link"
-        [routerLinkActiveOptions]="{exact:true}">Contact</a>
+    <!-- <a mat-button routerLink="/contact" routerLinkActive="horizontal-active-link"
+        [routerLinkActiveOptions]="{exact:true}">Contact</a> -->
 
     <div class="search-algin" fxFlex fxFlexOffset.gt-sm="1" fxShow="false" fxShow.gt-sm>
         <form method="get" class="search-form" fxLayout="row">

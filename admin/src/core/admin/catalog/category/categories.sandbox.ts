@@ -157,6 +157,7 @@ export class CategoriesSandbox {
   }
 
   public categorylist(value) {
+    // alert("i AM DISPATCH")
     this.appState.dispatch(
       new categoriesActions.DoCategorieslistAction(new CategorylistForm(value))
     );

@@ -14,6 +14,8 @@ export class BannerupdateModel {
   public link: string;
   public position: string;
   public bannerId: number;
+  public categoryId: number;
+  public categoryChildId: number;
   public status: number;
 
   constructor(bannerupdate: any) {
@@ -21,9 +23,13 @@ export class BannerupdateModel {
     this.content = bannerupdate.content || '';
     this.image = bannerupdate.image || '';
     this.link = bannerupdate.link || '';
+    this.categoryId = bannerupdate.categoryId || '';
     this.position = bannerupdate.position || '';
     if (bannerupdate.bannerId) {
       this.bannerId = bannerupdate.bannerId || '';
+    }
+    if (bannerupdate.categoryChildId) {
+      this.categoryChildId = bannerupdate.categoryChildId || '';
     }
     this.status = bannerupdate.active || 0;
   }

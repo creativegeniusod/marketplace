@@ -138,6 +138,7 @@ export class BannerListComponent implements OnInit {
     params.keyword = this.keyword;
     params.count = 1;
     // params.status = 1;
+    // alert("demo component");
     this.sandbox.getBannerListCount(params);
   }
 

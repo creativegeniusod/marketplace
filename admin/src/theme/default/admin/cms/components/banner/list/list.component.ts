@@ -122,6 +122,7 @@ export class BannerListComponent implements OnInit {
     params.limit = this.pageSize;
     params.keyword = this.keyword;
     params.count = 1;
+    // alert("hi")
     // params.status = 1;
     this.sandbox.getBannerListCount(params);
   }

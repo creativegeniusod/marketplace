@@ -784,7 +784,7 @@
       "examples": [
         {
           "title": "Success",
-          "content": "HTTP/1.1 200 OK\n{\n     \"message\": \"Successfully got banner list\",\n     \"data\":\"{\n     \"bannerId\": \"\",\n     \"title\": \"\",\n     \"content\": \"\",\n     \"image\": \"\",\n     \"imagePath\": \"\",\n     \"link\": \"\",\n     \"position\": \"\",\n     }\"\n     \"status\": \"1\"\n}",
+          "content": "HTTP/1.1 200 OK\n{\n     \"message\": \"Successfully got banner list\",\n     \"data\":\"{\n     \"bannerId\": \"\",\n     \"title\": \"\",\n     \"content\": \"\",\n     \"categoryId\" : \"\",\n     \"categoryChildId\" : \"\",\n     \"image\": \"\",\n     \"imagePath\": \"\",\n     \"link\": \"\",\n     \"position\": \"\",\n     }\"\n     \"status\": \"1\"\n}",
           "type": "json"
         }
       ]
@@ -1005,6 +1005,20 @@
           },
           {
             "group": "Request body",
+            "type": "Number",
+            "optional": false,
+            "field": "categoryId",
+            "description": "<p>Banner categoryId</p>"
+          },
+          {
+            "group": "Request body",
+            "type": "Number",
+            "optional": false,
+            "field": "categoryChildId",
+            "description": "<p>Banner categoryChildId</p>"
+          },
+          {
+            "group": "Request body",
             "type": "String",
             "optional": false,
             "field": "title",
@@ -1050,7 +1064,7 @@
       "examples": [
         {
           "title": "Input",
-          "content": "{\n     \"bannerId\" : \"\",\n     \"title\" : \"\",\n     \"image\" : \"\",\n     \"content\" : \"\",\n     \"link\" : \"\",\n     \"position\" : \"\",\n     \"status\" : \"\",\n}",
+          "content": "{\n     \"bannerId\" : \"\",\n     \"title\" : \"\",\n     \"image\" : \"\",\n     \"content\" : \"\",\n     \"categoryId\" : \"\",\n     \"categoryChildId\" : \"\",\n     \"link\" : \"\",\n     \"position\" : \"\",\n     \"status\" : \"\",\n}",
           "type": "json"
         }
       ]

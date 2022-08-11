@@ -56,9 +56,12 @@ export class FilterCategoryAction implements Action {
 
 // category list action
 export class DoCategorieslistAction implements Action {
+
   type = ActionTypes.DO_CATEGORIES_LIST;
 
-  constructor(public payload: CategorylistForm) {}
+  constructor(public payload: CategorylistForm) {
+    // console.log("i am action",payload)
+  }
 }
 
 export class DoSubCategorieslistAction implements Action {

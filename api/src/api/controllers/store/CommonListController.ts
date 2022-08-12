@@ -64,7 +64,7 @@ export class CommonListController {
     // Product list Function
     @Get('/banner-list')
     public async bannerList(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number, @QueryParam('keyword') keyword: string, @QueryParam('count')count: number | boolean, @Res() response: any): Promise<any> {
-        const select = ['bannerId', 'title', 'image', 'imagePath', 'content', 'link', 'position', 'isActive'];
+        const select = ['bannerId', 'categoryId','categoryChildId', 'title', 'image', 'imagePath', 'content', 'link', 'position', 'isActive'];
         const search = [
             {
                 name: 'title',

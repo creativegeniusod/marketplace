@@ -23,6 +23,8 @@ export class UpdateBanner {
     public category: number;
 
     public subcategory: number;
+    
+    public homebanner: number;
 
     public link: string;
 

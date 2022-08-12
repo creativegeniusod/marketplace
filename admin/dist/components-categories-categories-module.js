@@ -1,5 +1,252 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["components-categories-categories-module"],{
 
+/***/ "./src/core/admin/catalog/layout/layout.sandbox.ts":
+/*!*********************************************************!*\
+  !*** ./src/core/admin/catalog/layout/layout.sandbox.ts ***!
+  \*********************************************************/
+/*! exports provided: LayoutsSandbox */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LayoutsSandbox", function() { return LayoutsSandbox; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _action_layout_action__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./action/layout.action */ "./src/core/admin/catalog/layout/action/layout.action.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var ng6_toastr_notifications__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ng6-toastr-notifications */ "./node_modules/ng6-toastr-notifications/fesm5/ng6-toastr-notifications.js");
+/* harmony import */ var _models__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./models */ "./src/core/admin/catalog/layout/models/index.ts");
+/* harmony import */ var _reducer_selectors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./reducer/selectors */ "./src/core/admin/catalog/layout/reducer/selectors.ts");
+/*
+ * SpurtCommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 PICCOSOFT
+ * Author piccosoft <support@spurtcommerce.com>
+ * Licensed under the MIT license.
+ */
+
+
+
+
+
+
+
+
+var LayoutsSandbox = /** @class */ (function () {
+    function LayoutsSandbox(appState, router, toastr) {
+        this.appState = appState;
+        this.router = router;
+        this.toastr = toastr;
+        this.totalProductCount$ = this.appState.select(_reducer_selectors__WEBPACK_IMPORTED_MODULE_7__["getTotalProductCount"]);
+        this.totalProductCountLoading$ = this.appState.select(_reducer_selectors__WEBPACK_IMPORTED_MODULE_7__["getTotalProductCountLoading"]);
+        this.totalProductCountLoaded$ = this.appState.select(_reducer_selectors__WEBPACK_IMPORTED_MODULE_7__["getTotalProductCountLoaded"]);
+        this.activeProductCount$ = this.appState.select(_reducer_selectors__WEBPACK_IMPORTED_MODULE_7__["getActiveProductCount"]);
+        this.activeProductCountLoading$ = this.appState.select(_reducer_selectors__WEBPACK_IMPORTED_MODULE_7__["getActiveProductCountLoading"]);
+        this.activeProductCountLoaded$ = this.appState.select(_reducer_selectors__WEBPACK_IMPORTED_MODULE_7__["getActiveProductCountLoaded"]);
+        this.inActiveProductCount$ = this.appState.select(_reducer_selectors__WEBPACK_IMPORTED_MODULE_7__["getInActiveProductCount"]);
+        this.inActiveProductCountLoading$ = this.appState.select(_reducer_selectors__WEBPACK_IMPORTED_MODULE_7__["getInActiveProductCountLoading"]);
+        this.inActiveProductCountLoaded$ = this.appState.select(_reducer_selectors__WEBPACK_IMPORTED_MODULE_7__["getInActiveProductCountLoaded"]);
+        this.totalCatagoryCount$ = this.appState.select(_reducer_selectors__WEBPACK_IMPORTED_MODULE_7__["getTotalCategoryCount"]);
+        this.totalCatagoryCountLoading$ = this.appState.select(_reducer_selectors__WEBPACK_IMPORTED_MODULE_7__["getTotalCategoryCountLoading"]);
+        this.totalCatagoryCountLoaded$ = this.appState.select(_reducer_selectors__WEBPACK_IMPORTED_MODULE_7__["getTotalCategoryCountLoaded"]);
+        this.subscriptions = [];
+        this.registerAuthEvents();
+    }
+    LayoutsSandbox.prototype.getProductListCount = function (params) {
+        if (params === void 0) { params = {}; }
+        this.appState.dispatch(new _action_layout_action__WEBPACK_IMPORTED_MODULE_3__["GetTotalProductCountAction"](new _models__WEBPACK_IMPORTED_MODULE_6__["ProductModel"](params)));
+    };
+    LayoutsSandbox.prototype.getActiveProductListCount = function (params) {
+        if (params === void 0) { params = {}; }
+        this.appState.dispatch(new _action_layout_action__WEBPACK_IMPORTED_MODULE_3__["GetActiveProductCountAction"](new _models__WEBPACK_IMPORTED_MODULE_6__["ProductModel"](params)));
+    };
+    LayoutsSandbox.prototype.getInActiveProductListCount = function (params) {
+        if (params === void 0) { params = {}; }
+        this.appState.dispatch(new _action_layout_action__WEBPACK_IMPORTED_MODULE_3__["GetInActiveProductCountAction"](new _models__WEBPACK_IMPORTED_MODULE_6__["ProductModel"](params)));
+    };
+    LayoutsSandbox.prototype.getCatagoryListCount = function (params) {
+        if (params === void 0) { params = {}; }
+        this.appState.dispatch(new _action_layout_action__WEBPACK_IMPORTED_MODULE_3__["GetTotalCatagoryCountAction"](new _models__WEBPACK_IMPORTED_MODULE_6__["CategoryModel"](params)));
+    };
+    /**
+     * Registers events
+     */
+    LayoutsSandbox.prototype.registerAuthEvents = function () { };
+    LayoutsSandbox = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
+            ng6_toastr_notifications__WEBPACK_IMPORTED_MODULE_5__["ToastrManager"]])
+    ], LayoutsSandbox);
+    return LayoutsSandbox;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/core/admin/catalog/layout/models/category.model.ts":
+/*!****************************************************************!*\
+  !*** ./src/core/admin/catalog/layout/models/category.model.ts ***!
+  \****************************************************************/
+/*! exports provided: CategoryModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoryModel", function() { return CategoryModel; });
+/*
+ * SpurtCommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 PICCOSOFT
+ * Author piccosoft <support@spurtcommerce.com>
+ * Licensed under the MIT license.
+ */
+var CategoryModel = /** @class */ (function () {
+    function CategoryModel(categorylistForm) {
+        this.limit = categorylistForm.limit || '';
+        this.offset = categorylistForm.offset || '';
+        this.keyword = categorylistForm.keyword || '';
+        this.sortOrder = categorylistForm.sortOrder || '';
+        this.count = categorylistForm.count || false;
+    }
+    return CategoryModel;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/core/admin/catalog/layout/models/index.ts":
+/*!*******************************************************!*\
+  !*** ./src/core/admin/catalog/layout/models/index.ts ***!
+  \*******************************************************/
+/*! exports provided: ProductModel, CategoryModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _product_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./product.model */ "./src/core/admin/catalog/layout/models/product.model.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProductModel", function() { return _product_model__WEBPACK_IMPORTED_MODULE_0__["ProductModel"]; });
+
+/* harmony import */ var _category_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./category.model */ "./src/core/admin/catalog/layout/models/category.model.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CategoryModel", function() { return _category_model__WEBPACK_IMPORTED_MODULE_1__["CategoryModel"]; });
+
+/*
+ * SpurtCommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 PICCOSOFT
+ * Author piccosoft <support@spurtcommerce.com>
+ * Licensed under the MIT license.
+ */
+
+
+
+
+/***/ }),
+
+/***/ "./src/core/admin/catalog/layout/models/product.model.ts":
+/*!***************************************************************!*\
+  !*** ./src/core/admin/catalog/layout/models/product.model.ts ***!
+  \***************************************************************/
+/*! exports provided: ProductModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductModel", function() { return ProductModel; });
+/*
+ * SpurtCommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 PICCOSOFT
+ * Author piccosoft <support@spurtcommerce.com>
+ * Licensed under the MIT license.
+ */
+var ProductModel = /** @class */ (function () {
+    function ProductModel(params) {
+        this.limit = params.limit || 0;
+        this.offset = params.offset || 0;
+        this.keyword = params.keyword || '';
+        this.sku = params.sku || '';
+        this.status = params.status || '';
+        this.price = params.price || '';
+        this.count = params.count || false;
+    }
+    return ProductModel;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/core/admin/catalog/layout/reducer/selectors.ts":
+/*!************************************************************!*\
+  !*** ./src/core/admin/catalog/layout/reducer/selectors.ts ***!
+  \************************************************************/
+/*! exports provided: getCatalogLayoutState, getTotalProductCount, getTotalProductCountLoaded, getTotalProductCountLoading, getTotalProductCountFailed, getActiveProductCount, getActiveProductCountLoaded, getActiveProductCountLoading, getActiveProductCountFailed, getInActiveProductCount, getInActiveProductCountLoaded, getInActiveProductCountLoading, getInActiveProductCountFailed, getTotalCategoryCount, getTotalCategoryCountLoaded, getTotalCategoryCountLoading, getTotalCategoryCountFailed */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCatalogLayoutState", function() { return getCatalogLayoutState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTotalProductCount", function() { return getTotalProductCount; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTotalProductCountLoaded", function() { return getTotalProductCountLoaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTotalProductCountLoading", function() { return getTotalProductCountLoading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTotalProductCountFailed", function() { return getTotalProductCountFailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getActiveProductCount", function() { return getActiveProductCount; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getActiveProductCountLoaded", function() { return getActiveProductCountLoaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getActiveProductCountLoading", function() { return getActiveProductCountLoading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getActiveProductCountFailed", function() { return getActiveProductCountFailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getInActiveProductCount", function() { return getInActiveProductCount; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getInActiveProductCountLoaded", function() { return getInActiveProductCountLoaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getInActiveProductCountLoading", function() { return getInActiveProductCountLoading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getInActiveProductCountFailed", function() { return getInActiveProductCountFailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTotalCategoryCount", function() { return getTotalCategoryCount; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTotalCategoryCountLoaded", function() { return getTotalCategoryCountLoaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTotalCategoryCountLoading", function() { return getTotalCategoryCountLoading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTotalCategoryCountFailed", function() { return getTotalCategoryCountFailed; });
+/* harmony import */ var reselect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reselect */ "./node_modules/reselect/es/index.js");
+/* harmony import */ var _layout_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./layout.reducer */ "./src/core/admin/catalog/layout/reducer/layout.reducer.ts");
+/*
+ * SpurtCommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 PICCOSOFT
+ * Author piccosoft <support@spurtcommerce.com>
+ * Licensed under the MIT license.
+ */
+
+
+// *************************** PUBLIC API's ****************************
+/**
+ * Auth store functions
+ */
+var getCatalogLayoutState = function (state) { return state.catalogLayout; };
+var getTotalProductCount = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getTotalProductCount"]);
+var getTotalProductCountLoaded = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getTotalProductCountLoaded"]);
+var getTotalProductCountLoading = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getTotalProductCountLoading"]);
+var getTotalProductCountFailed = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getTotalProductCountFailed"]);
+var getActiveProductCount = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getActiveProductCount"]);
+var getActiveProductCountLoaded = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getActiveProductCountLoaded"]);
+var getActiveProductCountLoading = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getActiveProductCountLoading"]);
+var getActiveProductCountFailed = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getActiveProductCountFailed"]);
+var getInActiveProductCount = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getInActiveProductCount"]);
+var getInActiveProductCountLoaded = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getInActiveProductCountLoaded"]);
+var getInActiveProductCountLoading = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getInActiveProductCountLoading"]);
+var getInActiveProductCountFailed = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getInActiveProductCountFailed"]);
+var getTotalCategoryCount = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getTotalCategoryCount"]);
+var getTotalCategoryCountLoaded = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getTotalCategoryCountLoaded"]);
+var getTotalCategoryCountLoading = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getTotalCategoryCountLoading"]);
+var getTotalCategoryCountFailed = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getTotalCategoryCountFailed"]);
+
+
+/***/ }),
+
 /***/ "./src/theme/default/admin/catalog/components/categories/add/add.component.html":
 /*!**************************************************************************************!*\
   !*** ./src/theme/default/admin/catalog/components/categories/add/add.component.html ***!
@@ -18,7 +265,7 @@ module.exports = "<!--REACTIVE FORM-->\n<form novalidate (ngSubmits)=\"onSubmits
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* LOGIN VALIDATION*/\n.validationcolor {\n  border-color: red;\n}\n.error {\n  color: red;\n}\n.dark-modal .modal-content {\n  background-color: #009efb;\n  color: white;\n}\n.dark-modal .close {\n  color: white;\n}\n.light-blue-backdrop {\n  background-color: #5cb3fd;\n}\n.image-manager .modal-dialog {\n  max-width: 70%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvbWFya2V0cGxhY2UvYWRtaW4vc3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vY2F0YWxvZy9jb21wb25lbnRzL2NhdGVnb3JpZXMvYWRkL2FkZC5jb21wb25lbnQuc2NzcyIsInNyYy90aGVtZS9kZWZhdWx0L2FkbWluL2NhdGFsb2cvY29tcG9uZW50cy9jYXRlZ29yaWVzL2FkZC9hZGQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsb0JBQUE7QUFFQTtFQUNJLGlCQUFBO0FDQUo7QURHQTtFQUNJLFVBQUE7QUNBSjtBREdBO0VBQ0kseUJBQUE7RUFDQSxZQUFBO0FDQUo7QURHQTtFQUNJLFlBQUE7QUNBSjtBREdBO0VBQ0kseUJBQUE7QUNBSjtBREdBO0VBQ0ksY0FBQTtBQ0FKIiwiZmlsZSI6InNyYy90aGVtZS9kZWZhdWx0L2FkbWluL2NhdGFsb2cvY29tcG9uZW50cy9jYXRlZ29yaWVzL2FkZC9hZGQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBMT0dJTiBWQUxJREFUSU9OKi9cblxuLnZhbGlkYXRpb25jb2xvciB7XG4gICAgYm9yZGVyLWNvbG9yOiByZWQ7XG59XG5cbi5lcnJvciB7XG4gICAgY29sb3I6IHJlZDtcbn1cblxuLmRhcmstbW9kYWwgLm1vZGFsLWNvbnRlbnQge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDllZmI7XG4gICAgY29sb3I6IHdoaXRlO1xufVxuXG4uZGFyay1tb2RhbCAuY2xvc2Uge1xuICAgIGNvbG9yOiB3aGl0ZTtcbn1cblxuLmxpZ2h0LWJsdWUtYmFja2Ryb3Age1xuICAgIGJhY2tncm91bmQtY29sb3I6ICM1Y2IzZmQ7XG59XG5cbi5pbWFnZS1tYW5hZ2VyIC5tb2RhbC1kaWFsb2cge1xuICAgIG1heC13aWR0aDogNzAlO1xufSIsIi8qIExPR0lOIFZBTElEQVRJT04qL1xuLnZhbGlkYXRpb25jb2xvciB7XG4gIGJvcmRlci1jb2xvcjogcmVkO1xufVxuXG4uZXJyb3Ige1xuICBjb2xvcjogcmVkO1xufVxuXG4uZGFyay1tb2RhbCAubW9kYWwtY29udGVudCB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMwMDllZmI7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cblxuLmRhcmstbW9kYWwgLmNsb3NlIHtcbiAgY29sb3I6IHdoaXRlO1xufVxuXG4ubGlnaHQtYmx1ZS1iYWNrZHJvcCB7XG4gIGJhY2tncm91bmQtY29sb3I6ICM1Y2IzZmQ7XG59XG5cbi5pbWFnZS1tYW5hZ2VyIC5tb2RhbC1kaWFsb2cge1xuICBtYXgtd2lkdGg6IDcwJTtcbn0iXX0= */"
+module.exports = "/* LOGIN VALIDATION*/\n.validationcolor {\n  border-color: red;\n}\n.error {\n  color: red;\n}\n.dark-modal .modal-content {\n  background-color: #009efb;\n  color: white;\n}\n.dark-modal .close {\n  color: white;\n}\n.light-blue-backdrop {\n  background-color: #5cb3fd;\n}\n.image-manager .modal-dialog {\n  max-width: 70%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9hZG1pbi9zcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9jYXRhbG9nL2NvbXBvbmVudHMvY2F0ZWdvcmllcy9hZGQvYWRkLmNvbXBvbmVudC5zY3NzIiwic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vY2F0YWxvZy9jb21wb25lbnRzL2NhdGVnb3JpZXMvYWRkL2FkZC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxvQkFBQTtBQUVBO0VBQ0ksaUJBQUE7QUNBSjtBREdBO0VBQ0ksVUFBQTtBQ0FKO0FER0E7RUFDSSx5QkFBQTtFQUNBLFlBQUE7QUNBSjtBREdBO0VBQ0ksWUFBQTtBQ0FKO0FER0E7RUFDSSx5QkFBQTtBQ0FKO0FER0E7RUFDSSxjQUFBO0FDQUoiLCJmaWxlIjoic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vY2F0YWxvZy9jb21wb25lbnRzL2NhdGVnb3JpZXMvYWRkL2FkZC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIExPR0lOIFZBTElEQVRJT04qL1xuXG4udmFsaWRhdGlvbmNvbG9yIHtcbiAgICBib3JkZXItY29sb3I6IHJlZDtcbn1cblxuLmVycm9yIHtcbiAgICBjb2xvcjogcmVkO1xufVxuXG4uZGFyay1tb2RhbCAubW9kYWwtY29udGVudCB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzAwOWVmYjtcbiAgICBjb2xvcjogd2hpdGU7XG59XG5cbi5kYXJrLW1vZGFsIC5jbG9zZSB7XG4gICAgY29sb3I6IHdoaXRlO1xufVxuXG4ubGlnaHQtYmx1ZS1iYWNrZHJvcCB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzVjYjNmZDtcbn1cblxuLmltYWdlLW1hbmFnZXIgLm1vZGFsLWRpYWxvZyB7XG4gICAgbWF4LXdpZHRoOiA3MCU7XG59IiwiLyogTE9HSU4gVkFMSURBVElPTiovXG4udmFsaWRhdGlvbmNvbG9yIHtcbiAgYm9yZGVyLWNvbG9yOiByZWQ7XG59XG5cbi5lcnJvciB7XG4gIGNvbG9yOiByZWQ7XG59XG5cbi5kYXJrLW1vZGFsIC5tb2RhbC1jb250ZW50IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzAwOWVmYjtcbiAgY29sb3I6IHdoaXRlO1xufVxuXG4uZGFyay1tb2RhbCAuY2xvc2Uge1xuICBjb2xvcjogd2hpdGU7XG59XG5cbi5saWdodC1ibHVlLWJhY2tkcm9wIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzVjYjNmZDtcbn1cblxuLmltYWdlLW1hbmFnZXIgLm1vZGFsLWRpYWxvZyB7XG4gIG1heC13aWR0aDogNzAlO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -378,7 +625,7 @@ module.exports = "<form [formGroup]=\"filterForm\">\n    <div class=\"form-group
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".btn {\n  background: #ed571f !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvbWFya2V0cGxhY2UvYWRtaW4vc3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vY2F0YWxvZy9jb21wb25lbnRzL2NhdGVnb3JpZXMvZmlsdGVyL2ZpbHRlci5jb21wb25lbnQuc2NzcyIsInNyYy90aGVtZS9kZWZhdWx0L2FkbWluL2NhdGFsb2cvY29tcG9uZW50cy9jYXRlZ29yaWVzL2ZpbHRlci9maWx0ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDRSw4QkFBQTtBQ0FGIiwiZmlsZSI6InNyYy90aGVtZS9kZWZhdWx0L2FkbWluL2NhdGFsb2cvY29tcG9uZW50cy9jYXRlZ29yaWVzL2ZpbHRlci9maWx0ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBGaWx0ZXIgYnRuIGJhY2tncm91bmQgY29sb3Jcbi5idG4ge1xuICBiYWNrZ3JvdW5kOiAjZWQ1NzFmICFpbXBvcnRhbnQ7XG59IiwiLmJ0biB7XG4gIGJhY2tncm91bmQ6ICNlZDU3MWYgIWltcG9ydGFudDtcbn0iXX0= */"
+module.exports = ".btn {\n  background: #ed571f !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9hZG1pbi9zcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9jYXRhbG9nL2NvbXBvbmVudHMvY2F0ZWdvcmllcy9maWx0ZXIvZmlsdGVyLmNvbXBvbmVudC5zY3NzIiwic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vY2F0YWxvZy9jb21wb25lbnRzL2NhdGVnb3JpZXMvZmlsdGVyL2ZpbHRlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLDhCQUFBO0FDQUYiLCJmaWxlIjoic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vY2F0YWxvZy9jb21wb25lbnRzL2NhdGVnb3JpZXMvZmlsdGVyL2ZpbHRlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIEZpbHRlciBidG4gYmFja2dyb3VuZCBjb2xvclxuLmJ0biB7XG4gIGJhY2tncm91bmQ6ICNlZDU3MWYgIWltcG9ydGFudDtcbn0iLCIuYnRuIHtcbiAgYmFja2dyb3VuZDogI2VkNTcxZiAhaW1wb3J0YW50O1xufSJdfQ== */"
 
 /***/ }),
 
@@ -507,7 +754,7 @@ module.exports = "<div class=\"row products-section products-sub-section\">\n   
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {\n  background-color: #ed571f !important;\n  border: #ed571f !important;\n}\n\nth,\ntd {\n  height: 45px;\n}\n\n.toggle .tgl:checked + .tgl-btn:after {\n  background-color: #ed571f !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvbWFya2V0cGxhY2UvYWRtaW4vc3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vY2F0YWxvZy9jb21wb25lbnRzL2NhdGVnb3JpZXMvbGlzdC9saXN0LmNvbXBvbmVudC5zY3NzIiwic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vY2F0YWxvZy9jb21wb25lbnRzL2NhdGVnb3JpZXMvbGlzdC9saXN0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksb0NBQUE7RUFDQSwwQkFBQTtBQ0NKOztBREVBOztFQUVJLFlBQUE7QUNDSjs7QURDQTtFQUNJLG9DQUFBO0FDRUoiLCJmaWxlIjoic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vY2F0YWxvZy9jb21wb25lbnRzL2NhdGVnb3JpZXMvbGlzdC9saXN0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmN1c3RvbS1jaGVja2JveCAuY3VzdG9tLWNvbnRyb2wtaW5wdXQ6Y2hlY2tlZH4uY3VzdG9tLWNvbnRyb2wtbGFiZWw6OmJlZm9yZSB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2VkNTcxZiAhaW1wb3J0YW50O1xuICAgIGJvcmRlcjogI2VkNTcxZiAhaW1wb3J0YW50O1xufVxuXG50aCxcbnRkIHtcbiAgICBoZWlnaHQ6IDQ1cHg7XG59XG4udG9nZ2xlIC50Z2w6Y2hlY2tlZCArIC50Z2wtYnRuOmFmdGVyIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWQ1NzFmICFpbXBvcnRhbnQ7XG4gIH0iLCIuY3VzdG9tLWNoZWNrYm94IC5jdXN0b20tY29udHJvbC1pbnB1dDpjaGVja2VkIH4gLmN1c3RvbS1jb250cm9sLWxhYmVsOjpiZWZvcmUge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWQ1NzFmICFpbXBvcnRhbnQ7XG4gIGJvcmRlcjogI2VkNTcxZiAhaW1wb3J0YW50O1xufVxuXG50aCxcbnRkIHtcbiAgaGVpZ2h0OiA0NXB4O1xufVxuXG4udG9nZ2xlIC50Z2w6Y2hlY2tlZCArIC50Z2wtYnRuOmFmdGVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2VkNTcxZiAhaW1wb3J0YW50O1xufSJdfQ== */"
+module.exports = ".custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {\n  background-color: #ed571f !important;\n  border: #ed571f !important;\n}\n\nth,\ntd {\n  height: 45px;\n}\n\n.toggle .tgl:checked + .tgl-btn:after {\n  background-color: #ed571f !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9hZG1pbi9zcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9jYXRhbG9nL2NvbXBvbmVudHMvY2F0ZWdvcmllcy9saXN0L2xpc3QuY29tcG9uZW50LnNjc3MiLCJzcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9jYXRhbG9nL2NvbXBvbmVudHMvY2F0ZWdvcmllcy9saXN0L2xpc3QuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxvQ0FBQTtFQUNBLDBCQUFBO0FDQ0o7O0FERUE7O0VBRUksWUFBQTtBQ0NKOztBRENBO0VBQ0ksb0NBQUE7QUNFSiIsImZpbGUiOiJzcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9jYXRhbG9nL2NvbXBvbmVudHMvY2F0ZWdvcmllcy9saXN0L2xpc3QuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY3VzdG9tLWNoZWNrYm94IC5jdXN0b20tY29udHJvbC1pbnB1dDpjaGVja2Vkfi5jdXN0b20tY29udHJvbC1sYWJlbDo6YmVmb3JlIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWQ1NzFmICFpbXBvcnRhbnQ7XG4gICAgYm9yZGVyOiAjZWQ1NzFmICFpbXBvcnRhbnQ7XG59XG5cbnRoLFxudGQge1xuICAgIGhlaWdodDogNDVweDtcbn1cbi50b2dnbGUgLnRnbDpjaGVja2VkICsgLnRnbC1idG46YWZ0ZXIge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNlZDU3MWYgIWltcG9ydGFudDtcbiAgfSIsIi5jdXN0b20tY2hlY2tib3ggLmN1c3RvbS1jb250cm9sLWlucHV0OmNoZWNrZWQgfiAuY3VzdG9tLWNvbnRyb2wtbGFiZWw6OmJlZm9yZSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNlZDU3MWYgIWltcG9ydGFudDtcbiAgYm9yZGVyOiAjZWQ1NzFmICFpbXBvcnRhbnQ7XG59XG5cbnRoLFxudGQge1xuICBoZWlnaHQ6IDQ1cHg7XG59XG5cbi50b2dnbGUgLnRnbDpjaGVja2VkICsgLnRnbC1idG46YWZ0ZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWQ1NzFmICFpbXBvcnRhbnQ7XG59Il19 */"
 
 /***/ }),
 

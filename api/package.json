@@ -92,6 +92,7 @@
     "passport-local": "^1.0.0",
     "paypal-rest-sdk": "^1.8.1",
     "pg": "^7.4.3",
+    "pm2": "^5.2.0",
     "reflect-metadata": "^0.1.10",
     "routing-controllers": "^0.7.7",
     "serve-favicon": "^2.4.5",

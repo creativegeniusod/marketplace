@@ -1,0 +1,79 @@
+2022-08-11T12:58:36: PM2 log: ===============================================================================
+2022-08-11T12:58:36: PM2 log: --- New PM2 Daemon started ----------------------------------------------------
+2022-08-11T12:58:36: PM2 log: Time                 : Thu Aug 11 2022 12:58:36 GMT+0530 (India Standard Time)
+2022-08-11T12:58:36: PM2 log: PM2 version          : 4.5.0
+2022-08-11T12:58:36: PM2 log: Node.js version      : 14.15.0
+2022-08-11T12:58:36: PM2 log: Current arch         : x64
+2022-08-11T12:58:36: PM2 log: PM2 home             : /webroot/public_html/websites/odz/marketplace/.pm2
+2022-08-11T12:58:36: PM2 log: PM2 PID file         : /webroot/public_html/websites/odz/marketplace/.pm2/pm2.pid
+2022-08-11T12:58:36: PM2 log: RPC socket file      : /webroot/public_html/websites/odz/marketplace/.pm2/rpc.sock
+2022-08-11T12:58:36: PM2 log: BUS socket file      : /webroot/public_html/websites/odz/marketplace/.pm2/pub.sock
+2022-08-11T12:58:36: PM2 log: Application log path : /webroot/public_html/websites/odz/marketplace/.pm2/logs
+2022-08-11T12:58:36: PM2 log: Worker Interval      : 30000
+2022-08-11T12:58:36: PM2 log: Process dump file    : /webroot/public_html/websites/odz/marketplace/.pm2/dump.pm2
+2022-08-11T12:58:36: PM2 log: Concurrent actions   : 2
+2022-08-11T12:58:36: PM2 log: SIGTERM timeout      : 1600
+2022-08-11T12:58:36: PM2 log: ===============================================================================
+2022-08-11T12:58:52: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:52: PM2 log: App [npm:0] online
+2022-08-11T12:58:53: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:53: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:53: PM2 log: App [npm:0] online
+2022-08-11T12:58:53: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:53: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:53: PM2 log: App [npm:0] online
+2022-08-11T12:58:54: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:54: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:54: PM2 log: App [npm:0] online
+2022-08-11T12:58:54: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:54: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:54: PM2 log: App [npm:0] online
+2022-08-11T12:58:54: PM2 log: Stopping app:npm id:0
+2022-08-11T12:58:54: PM2 log: App [npm:0] exited with code [0] via signal [SIGINT]
+2022-08-11T12:58:54: PM2 log: pid=13449 msg=process killed
+2022-08-11T12:58:54: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:54: PM2 log: App [npm:0] online
+2022-08-11T12:58:55: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:55: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:55: PM2 log: App [npm:0] online
+2022-08-11T12:58:55: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:55: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:55: PM2 log: App [npm:0] online
+2022-08-11T12:58:56: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:56: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:56: PM2 log: App [npm:0] online
+2022-08-11T12:58:56: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:56: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:56: PM2 log: App [npm:0] online
+2022-08-11T12:58:56: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:56: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:56: PM2 log: App [npm:0] online
+2022-08-11T12:58:57: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:57: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:57: PM2 log: App [npm:0] online
+2022-08-11T12:58:57: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:57: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:57: PM2 log: App [npm:0] online
+2022-08-11T12:58:57: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:57: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:58: PM2 log: App [npm:0] online
+2022-08-11T12:58:58: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:58: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:58: PM2 log: App [npm:0] online
+2022-08-11T12:58:58: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:58: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:58: PM2 log: App [npm:0] online
+2022-08-11T12:58:59: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:59: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:59: PM2 log: App [npm:0] online
+2022-08-11T12:58:59: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:59: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:59: PM2 log: App [npm:0] online
+2022-08-11T12:58:59: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:58:59: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:58:59: PM2 log: App [npm:0] online
+2022-08-11T12:59:00: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:59:00: PM2 log: App [npm:0] starting in -fork mode-
+2022-08-11T12:59:00: PM2 log: App [npm:0] online
+2022-08-11T12:59:00: PM2 log: App [npm:0] exited with code [1] via signal [SIGINT]
+2022-08-11T12:59:00: PM2 log: Script /webroot/public_html/websites/odz/marketplace/.nvm/versions/node/v14.15.0/bin/npm had too many unstable restarts (16). Stopped. "errored"

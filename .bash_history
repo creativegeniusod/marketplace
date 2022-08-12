@@ -1,0 +1,87 @@
+ls
+git pull origin master
+cd admin/
+npm install
+node -v
+rm -rf node_modules/
+cd ..
+ls
+cp .profile ../marketplace
+cp install_nvm.sh ../marketplace
+cd
+ls
+pwd
+bash install_nvm.sh 
+node -v
+nvm install 
+nvm install 14.15.0
+source .profile 
+nvm install 14.15.0
+source .profile 
+node -v
+cd admin/
+npm install
+npm install
+cd ..
+cd api/
+ls
+npm install
+npm install
+npm install
+ls
+nano src/app.ts 
+cd ..
+ng sever
+ng seve
+cd api/
+nano package.json 
+npm start
+nano dist/app.js
+source .profile 
+git pull origin master
+cd api/
+ng serve dev
+npm start
+ng serve 
+npm start serve
+npm install pm2
+pm2  start serve
+pm2  start npm start serve
+pm2  start npm start serve
+pm2  start  start serve
+pm2   start serve
+npm start serve
+npm start serve &
+cd ..
+ls
+cd store/
+ls
+cd ..
+ls
+cd spi
+cd api/
+ls
+npm start serve 
+cp .htaccess ../marketplace
+ls
+cp .htaccess admin/dist/
+cp .htaccess store/dist/browser/
+cd store/
+npm run build
+cd ..
+source .profile 
+cd store/
+npm run build
+npm install
+npm install
+npm run build
+ls
+ls
+cd admin/
+source ../.profile 
+npm install
+npm run build
+ls
+cd ..
+cp .htaccess admin/dist/
+cp .htaccess store/dist/browser/

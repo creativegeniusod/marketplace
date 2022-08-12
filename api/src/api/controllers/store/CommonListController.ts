@@ -72,16 +72,29 @@ export class CommonListController {
                 value: keyword,
             },
         ];
-        const WhereConditions = [
-            {
-                name: 'isActive',
-                value: 1,
-            },{
-                name: 'categoryChildId',
-                op: 'like',
-                value: child,
-            },
-        ];
+        let parsmsAry;
+        if( child ==undefined){
+           parsmsAry= [
+                {
+                    name: 'isActive',
+                    value: 1,
+                }
+            ]          
+        }else{
+            parsmsAry= [
+                {
+                    name: 'isActive',
+                    value: 1,
+                },{
+                    name: 'categoryChildId',
+                    op: 'like',
+                    value: child,
+                },
+            ]
+        }
+        // if(child){}
+        const WhereConditions = parsmsAry;
+        // console.log(WhereConditions);
         const bannerList: any = await this.bannerService.list(limit, offset, select, search, WhereConditions, count);
         const successResponse: any = {
             status: 1,

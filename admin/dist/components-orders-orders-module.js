@@ -78259,7 +78259,11 @@ module.exports = "<form (ngSubmit)=\"onSubmit()\" [formGroup]=\"salesOrder\" cla
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 module.exports = ".btn {\n  background-color: #dc4d5b !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9hZG1pbi9zcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9zYWxlcy9jb21wb25lbnRzL29yZGVycy9maWx0ZXIvZmlsdGVyLmNvbXBvbmVudC5zY3NzIiwic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vc2FsZXMvY29tcG9uZW50cy9vcmRlcnMvZmlsdGVyL2ZpbHRlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG9DQUFBO0FDQ0YiLCJmaWxlIjoic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vc2FsZXMvY29tcG9uZW50cy9vcmRlcnMvZmlsdGVyL2ZpbHRlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5idG57XG4gIGJhY2tncm91bmQtY29sb3I6ICNkYzRkNWIgIWltcG9ydGFudDtcbn1cbiIsIi5idG4ge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZGM0ZDViICFpbXBvcnRhbnQ7XG59Il19 */"
+=======
+module.exports = ".btn {\n  background-color: #dc4d5b !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvdGVzdDAxL21hcmtldHBsYWNlL2FkbWluL3NyYy90aGVtZS9kZWZhdWx0L2FkbWluL3NhbGVzL2NvbXBvbmVudHMvb3JkZXJzL2ZpbHRlci9maWx0ZXIuY29tcG9uZW50LnNjc3MiLCJzcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9zYWxlcy9jb21wb25lbnRzL29yZGVycy9maWx0ZXIvZmlsdGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usb0NBQUE7QUNDRiIsImZpbGUiOiJzcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9zYWxlcy9jb21wb25lbnRzL29yZGVycy9maWx0ZXIvZmlsdGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJ0bntcbiAgYmFja2dyb3VuZC1jb2xvcjogI2RjNGQ1YiAhaW1wb3J0YW50O1xufVxuIiwiLmJ0biB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNkYzRkNWIgIWltcG9ydGFudDtcbn0iXX0= */"
+>>>>>>> 85c5e2989e9bf20ec75f2c1837a5509a280d7faf
 
 /***/ }),
 

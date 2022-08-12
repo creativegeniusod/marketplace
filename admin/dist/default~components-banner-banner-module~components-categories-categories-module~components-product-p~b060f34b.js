@@ -17335,6 +17335,7 @@ var CategoriesSandbox = /** @class */ (function () {
         this.subscribe();
     }
     CategoriesSandbox.prototype.categorylist = function (value) {
+        // alert("i AM DISPATCH")
         this.appState.dispatch(new _action_categories_action__WEBPACK_IMPORTED_MODULE_3__["DoCategorieslistAction"](new _models_categorylist_model__WEBPACK_IMPORTED_MODULE_4__["CategorylistForm"](value)));
     };
     CategoriesSandbox.prototype.subcategorylist = function (value) {

@@ -617,7 +617,7 @@ var BannerService = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner-layout></app-banner-layout>\n<div class=\"row products-section\">\n    <div class=\"col-12\">\n        <div class=\"breadcrumbs-row noborder\">\n            <div class=\"bc-col\">\n                <ul>\n                    <li><a href=\"javascript:void(0)\"> DEMO </a></li>\n                    <li><a href=\"javascript:void(0)\" [routerLink]=\"['/demo/banners']\"> Banners </a></li>\n                    <li>Add Banners</li>\n                </ul>\n            </div>\n            <div class=\"bc-col-btn ap-col-btn\">\n                <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-save\"><img\n                        src=\"assets/img/tick-round-white.png\">Save\n                </button>\n                <button (click)=\"bannerCancel()\" class=\"btn btn-cancel\"><img\n                        src=\"assets/img/close-white-ico.png\">Cancel\n                </button>\n            </div>\n        </div>\n    </div>\n    <!--Breadcrumbs-->\n</div>\n\n<div class=\"flex addproduct-wrap addgroup-wrap\">\n\n    <div class=\"card ap-general\">\n        <form (ngSubmit)=\"onSubmit()\" [formGroup]=\"bannerForm\">\n            <div class=\"ap-header\">\n                General Information\n            </div>\n            <div class=\"flex ap-body cmsap-body\">\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Banner Title<sup>*</sup> </label>\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"bannerTitle\" formControlName=\"bannerTitle\" placeholder=\"Banner Title\" [ngClass]=\"{ 'is-invalid': submitted && f.bannerTitle.errors }\">\n                        <div *ngIf=\"submitted && f.bannerTitle.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.bannerTitle.errors.required\">Banner Title is required\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!--Col-->\n                <div class=\"ap-body-col width100\">\n                    <div class=\"form-group\">\n                        <label>Banner Content</label>\n                        <ckeditor formControlName=\"bannerContent\" [ngClass]=\"{'Validationcolor':bannerForm.get('bannerContent').hasError('required') && bannerForm.get('bannerContent').touched&&submitted==true}\">\n                        </ckeditor>\n\n                    </div>\n                </div>\n                <!--Col-->\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Link</label>\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"bannerLink\" formControlName=\"bannerLink\" placeholder=\"Enter Link\" [ngClass]=\"{ 'is-invalid': submitted && f.bannerLink.errors }\">\n                        <div *ngIf=\"submitted && f.bannerLink.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.bannerLink.errors.required\">Link is required\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!--Col-->\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Position</label>\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"position\" formControlName=\"position\" placeholder=\"Enter Position \" [ngClass]=\"{ 'is-invalid': submitted && f.position.errors }\">\n                        <div *ngIf=\"submitted && f.position.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.position.errors.required\">Position is required\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Active<sup>*</sup></label>\n                        <select class=\"custom-select col-12\" formControlName=\"active\" id=\"inlineFormCustomSelect\" [ngClass]=\"{ 'is-invalid': submitted && f.active.errors }\">\n                            <option value=\"\">- -Select Active- -</option>\n                            <option value=\"1\">Yes</option>\n                            <option value=\"0\">No</option>\n                        </select>\n                        <div *ngIf=\"submitted && f.active.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.active.errors.required\">Status is required</div>\n                        </div>\n\n                    </div>\n                </div>\n                <!--col-->\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <div class=\"image-col\">\n                            <div class=\"img-dflt\">\n                                <input type=\"file\" name=\"userImg\" (change)=\"uploadChange($event)\" accept=\"image/*\" #filePath style=\"display: none\">\n                                <input type=\"hidden\" name=\"fileHidden\" formControlName=\"imageInput\"/> <!-- Validation Field -->\n                                <img [src]=\"postImageUrl\" width=\"13%\" height=\"13%\">\n                                <p></p>\n                                <button (click)=\"uploadButtonClick()\" type=\"button\">Upload Picture\n                                </button>\n                            </div>\n                        </div>\n                        <div style=\"color:#f62d51\" *ngIf=\"submitted && f.imageInput.errors\">\n                            <div *ngIf=\"f.imageInput.errors.required\">Image is required</div>\n                        </div>\n                    </div>\n                 \n\n                </div>\n                <!--col-->\n            </div>\n        </form>\n    </div>\n    <!--General-->\n\n\n</div>"
+module.exports = "<app-banner-layout></app-banner-layout>\n<div class=\"row products-section\">\n    <div class=\"col-12\">\n        <div class=\"breadcrumbs-row noborder\">\n            <div class=\"bc-col\">\n                <ul>\n                    <li><a href=\"javascript:void(0)\"> DEMO </a></li>\n                    <li><a href=\"javascript:void(0)\" [routerLink]=\"['/demo/banners']\"> Banners </a></li>\n                    <li>Add Banners</li>\n                </ul>\n            </div>\n            <div class=\"bc-col-btn ap-col-btn\">\n                <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-save\"><img\n                        src=\"assets/img/tick-round-white.png\">Save\n                </button>\n                <button (click)=\"bannerCancel()\" class=\"btn btn-cancel\"><img\n                        src=\"assets/img/close-white-ico.png\">Cancel\n                </button>\n            </div>\n        </div>\n    </div>\n    <!--Breadcrumbs-->\n</div>\n\n<div class=\"flex addproduct-wrap addgroup-wrap\">\n\n    <div class=\"card ap-general\">\n        <form (ngSubmit)=\"onSubmit()\" [formGroup]=\"bannerForm\">\n            <div class=\"ap-header\">\n                General Information\n            </div>\n            <div class=\"flex ap-body cmsap-body\">\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">                       \n                        <label>Banner Title<sup>*</sup> </label>\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"bannerTitle\" formControlName=\"bannerTitle\" placeholder=\"Banner Title\" [ngClass]=\"{ 'is-invalid': submitted && f.bannerTitle.errors }\">\n                        <div *ngIf=\"submitted && f.bannerTitle.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.bannerTitle.errors.required\">Banner Title is required\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!--Col-->\n                <div class=\"ap-body-col width100\">\n                    <div class=\"form-group\">\n                        <label>Banner Content</label>\n                        <ckeditor formControlName=\"bannerContent\" [ngClass]=\"{'Validationcolor':bannerForm.get('bannerContent').hasError('required') && bannerForm.get('bannerContent').touched&&submitted==true}\">\n                        </ckeditor>\n\n                    </div>\n                </div>\n                <!--Col-->\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Link</label>\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"bannerLink\" formControlName=\"bannerLink\" placeholder=\"Enter Link\" [ngClass]=\"{ 'is-invalid': submitted && f.bannerLink.errors }\">\n                        <div *ngIf=\"submitted && f.bannerLink.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.bannerLink.errors.required\">Link is required\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!--Col-->\n                 <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Position</label>\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"position\" formControlName=\"position\" placeholder=\"Enter Position \" [ngClass]=\"{ 'is-invalid': submitted && f.position.errors }\">\n                        <div *ngIf=\"submitted && f.position.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.position.errors.required\">Position is required\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Categories</label>\n                        <select class=\"custom-select col-12\" id=\"categoryComponent\" formControlName=\"category\" (change)=\"onSelectcategory($event.target.value)\" [ngClass]=\"{ 'is-invalid': submitted && f.category.errors }\">\n                            <option value=''>- -Select- -</option>\n                            <option selected *ngFor=\"let arr of categoriessandbox.getCategoriesList$ | async\"\n                            value={{arr.categoryId}}>{{arr.name}}\n                            </option>\n                        </select>\n                        <!-- <div *ngIf=\"submitted && f.position.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.position.errors.required\">Position is required\n                            </div>\n                        </div> -->\n                    </div>\n                </div>\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Sub Categories</label>\n                        <select class=\"custom-select col-12\" id=\"subcategoryComponent\" formControlName=\"subcategory\" [ngClass]=\"{ 'is-invalid': submitted && f.subcategory.errors }\">\n                            <option value=''>- -Select- -</option>\n                            <option selected *ngFor=\"let arr of categoriessandbox.getSubCategoriesList$ | async\"\n                            value={{arr.categoryId}}>{{arr.name}}\n                            </option>\n                        </select>\n                        <!-- <div *ngIf=\"submitted && f.position.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.position.errors.required\">Position is required\n                            </div>\n                        </div> -->\n                    </div>\n                </div>\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Active<sup>*</sup></label>\n                        <select class=\"custom-select col-12\" formControlName=\"active\" id=\"inlineFormCustomSelect\" [ngClass]=\"{ 'is-invalid': submitted && f.active.errors }\">\n                            <option value=\"\">- -Select Active- -</option>\n                            <option value=\"1\">Yes</option>\n                            <option value=\"0\">No</option>\n                        </select>\n                        <div *ngIf=\"submitted && f.active.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.active.errors.required\">Status is required</div>\n                        </div>\n                    </div>\n                </div>\n                <!--col-->\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <div class=\"image-col\">\n                            <div class=\"img-dflt\">\n                                <input type=\"file\" name=\"userImg\" (change)=\"uploadChange($event)\" accept=\"image/*\" #filePath style=\"display: none\">\n                                <input type=\"hidden\" name=\"fileHidden\" formControlName=\"imageInput\"/> <!-- Validation Field -->\n                                <img [src]=\"postImageUrl\" width=\"13%\" height=\"13%\">\n                                <p></p>\n                                <button (click)=\"uploadButtonClick()\" type=\"button\">Upload Picture\n                                </button>\n                            </div>\n                        </div>\n                        <div style=\"color:#f62d51\" *ngIf=\"submitted && f.imageInput.errors\">\n                            <div *ngIf=\"f.imageInput.errors.required\">Image is required</div>\n                        </div>\n                    </div>\n                 \n\n                </div>\n                <!--col-->\n            </div>\n        </form>\n    </div>\n    <!--General-->\n\n\n</div>"
 
 /***/ }),
 
@@ -639,6 +639,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_admin_demo_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../../core/admin/demo/banners/banner.sandbox */ "./src/core/admin/demo/banners/banner.sandbox.ts");
 /* harmony import */ var _core_admin_demo_banners_banner_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../../core/admin/demo/banners/banner.service */ "./src/core/admin/demo/banners/banner.service.ts");
 /* harmony import */ var _core_admin_service_config_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../../core/admin/service/config.service */ "./src/core/admin/service/config.service.ts");
+/* harmony import */ var _core_admin_catalog_category_categories_sandbox__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../../core/admin/catalog/category/categories.sandbox */ "./src/core/admin/catalog/category/categories.sandbox.ts");
+/* harmony import */ var _core_admin_catalog_category_categories_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../../core/admin/catalog/category/categories.service */ "./src/core/admin/catalog/category/categories.service.ts");
 
 /*
  * SpurtCommerce
@@ -657,14 +659,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var BannerAddComponent = /** @class */ (function () {
-    function BannerAddComponent(modalService, modalService2, router, fb, route, changeDetectRef, configService, sandbox, service) {
+    function BannerAddComponent(modalService, modalService2, router, fb, route, changeDetectRef, categoriessandbox, categoryservice, configService, sandbox, service) {
         this.modalService = modalService;
         this.modalService2 = modalService2;
         this.router = router;
         this.fb = fb;
         this.route = route;
         this.changeDetectRef = changeDetectRef;
+        this.categoriessandbox = categoriessandbox;
+        this.categoryservice = categoryservice;
         this.configService = configService;
         this.sandbox = sandbox;
         this.service = service;
@@ -681,11 +687,53 @@ var BannerAddComponent = /** @class */ (function () {
         }
     };
     BannerAddComponent.prototype.ngOnInit = function () {
+        this.getCategoryList();
+        // alert("df")
         this.imageUrl = this.configService.getImageUrl();
         this.postImageUrl = './assets/upload-banner/upload.png';
         this.initForm();
         this.editBannerData();
+        // alert(this.route.snapshot.paramMap.get('id'));
         this.editBannerId = this.route.snapshot.paramMap.get('id');
+    };
+    BannerAddComponent.prototype.getCategoryList = function () {
+        // alert("hello");
+        var param = {};
+        param.limit = '';
+        param.offset = '';
+        param.keyword = undefined;
+        param.sortOrder = '';
+        param.parentInt = 0;
+        param.status = 1;
+        console.log(param, "make params");
+        this.categoriessandbox.categorylist(param);
+        /*this.categoriessandbox.getCategoriesList$.subscribe( data => {
+          if(data != undefined){
+            console.log(data,"data");
+          }
+        });   */
+    };
+    BannerAddComponent.prototype.getSubCategoryList = function (deviceValue) {
+        // console.log(deviceValue,"*********&&&&&&&&********")
+        // getSubCategorylist
+        var param = {};
+        param.limit = '';
+        param.offset = '';
+        param.keyword = undefined;
+        param.sortOrder = '';
+        param.parentInt = deviceValue;
+        param.status = 1;
+        console.log(param, "make params SubCategoryList");
+        this.categoriessandbox.subcategorylist(param);
+        /*this.categoriessandbox.getSubCategoriesList$.subscribe( data => {
+          if(data){
+            console.log(data,"data");
+          }
+        }); */
+    };
+    BannerAddComponent.prototype.onSelectcategory = function (deviceValue) {
+        this.getSubCategoryList(deviceValue);
+        // getSubCategoriesList  
     };
     BannerAddComponent.prototype.open2 = function (content) {
         var _this = this;
@@ -723,6 +771,8 @@ var BannerAddComponent = /** @class */ (function () {
         this.bannerForm = this.fb.group({
             bannerTitle: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]],
             bannerContent: [''],
+            category: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]],
+            subcategory: [''],
             active: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]],
             bannerLink: [null],
             position: [null],
@@ -743,8 +793,11 @@ var BannerAddComponent = /** @class */ (function () {
             return;
         }
         else {
+            var subCateval = (this.bannerForm.value.subcategory == 'null' ? 0 : this.bannerForm.value.subcategory);
             var params = {};
             params.title = this.bannerForm.value.bannerTitle;
+            params.category = parseInt(this.bannerForm.value.category);
+            params.subcategory = parseInt(subCateval);
             params.content = this.bannerForm.value.bannerContent;
             params.position = +this.bannerForm.value.position;
             params.link = this.bannerForm.value.bannerLink;
@@ -774,10 +827,16 @@ var BannerAddComponent = /** @class */ (function () {
             for (var i = 0; i < this.bannerInfo.length; i++) {
                 this.bannerTitle = this.bannerInfo[0].title;
                 this.bannerForm.controls['bannerContent'].setValue(this.serviceData.content);
+                console.log(this.serviceData, this.bannerInfo[0].categoryChildId, "*******");
                 this.bannerForm.controls['imageInput'].setValue(this.serviceData.image); // <-- Set Value for Validation
                 this.bannerLink = this.bannerInfo[0].link;
                 this.position = this.bannerInfo[0].position;
                 this.bannerForm.controls['active'].setValue(this.serviceData.active);
+                this.bannerForm.controls['category'].setValue(this.serviceData.categoryId);
+                if (this.serviceData.categoryId) {
+                    this.getSubCategoryList(this.serviceData.categoryId);
+                    this.bannerForm.controls['subcategory'].setValue(this.serviceData.categoryChildId);
+                }
                 this.postImageUrl =
                     this.imageUrl + '?path=' +
                         ("" + this.bannerInfo[0].imagePath) + '&name=' +
@@ -839,7 +898,7 @@ var BannerAddComponent = /** @class */ (function () {
     ], BannerAddComponent.prototype, "filePath", void 0);
     BannerAddComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-cms-banner-add',
+            selector: 'app-demo-banner-add',
             template: __webpack_require__(/*! ./add.component.html */ "./src/theme/default/admin/demo/components/banner/add/add.component.html"),
             encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
             styles: ["\n      .dark-modal .modal-content {\n        background-color: #009efb;\n        color: white;\n      }\n\n      .dark-modal .close {\n        color: white;\n      }\n\n      .light-blue-backdrop {\n        background-color: #5cb3fd;\n      }\n\n      .image-manager .modal-dialog {\n        max-width: 70%;\n      }\n    "]
@@ -850,6 +909,8 @@ var BannerAddComponent = /** @class */ (function () {
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"],
             _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"],
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"],
+            _core_admin_catalog_category_categories_sandbox__WEBPACK_IMPORTED_MODULE_8__["CategoriesSandbox"],
+            _core_admin_catalog_category_categories_service__WEBPACK_IMPORTED_MODULE_9__["CategoriesService"],
             _core_admin_service_config_service__WEBPACK_IMPORTED_MODULE_7__["ConfigService"],
             _core_admin_demo_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_5__["BannerSandbox"],
             _core_admin_demo_banners_banner_service__WEBPACK_IMPORTED_MODULE_6__["BannerService"]])
@@ -882,11 +943,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_admin_demo_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../core/admin/demo/banners/banner.sandbox */ "./src/core/admin/demo/banners/banner.sandbox.ts");
 /* harmony import */ var _core_admin_demo_banners_banner_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../core/admin/demo/banners/banner.service */ "./src/core/admin/demo/banners/banner.service.ts");
 /* harmony import */ var _core_admin_demo_banners_banner_effect_banner_effect__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../../core/admin/demo/banners/banner-effect/banner.effect */ "./src/core/admin/demo/banners/banner-effect/banner.effect.ts");
-/* harmony import */ var _banner_routing__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./banner.routing */ "./src/theme/default/admin/demo/components/banner/banner.routing.ts");
-/* harmony import */ var _default_material_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../default.material.module */ "./src/theme/default/default.material.module.ts");
-/* harmony import */ var ng2_ckeditor__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ng2-ckeditor */ "./node_modules/ng2-ckeditor/lib/ng2-ckeditor.js");
-/* harmony import */ var ng2_ckeditor__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(ng2_ckeditor__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _shared_banner_layout_banner_layout_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../shared/banner-layout/banner-layout.component */ "./src/theme/default/admin/demo/components/shared/banner-layout/banner-layout.component.ts");
+/* harmony import */ var _core_admin_catalog_category_categories_sandbox__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../../core/admin/catalog/category/categories.sandbox */ "./src/core/admin/catalog/category/categories.sandbox.ts");
+/* harmony import */ var _core_admin_catalog_category_categories_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../../../core/admin/catalog/category/categories.service */ "./src/core/admin/catalog/category/categories.service.ts");
+/* harmony import */ var _banner_routing__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./banner.routing */ "./src/theme/default/admin/demo/components/banner/banner.routing.ts");
+/* harmony import */ var _default_material_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../../default.material.module */ "./src/theme/default/default.material.module.ts");
+/* harmony import */ var ng2_ckeditor__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ng2-ckeditor */ "./node_modules/ng2-ckeditor/lib/ng2-ckeditor.js");
+/* harmony import */ var ng2_ckeditor__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(ng2_ckeditor__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _shared_banner_layout_banner_layout_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../shared/banner-layout/banner-layout.component */ "./src/theme/default/admin/demo/components/shared/banner-layout/banner-layout.component.ts");
 
 /*
  * SpurtCommerce
@@ -908,6 +971,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// Imported action to Inhance functionality
+
+
+// Imported action to Inhance functionality
 // Routing Module
 
 // Shared Module
@@ -922,19 +989,19 @@ var BannerModule = /** @class */ (function () {
             declarations: [
                 _add_add_component__WEBPACK_IMPORTED_MODULE_5__["BannerAddComponent"],
                 _list_list_component__WEBPACK_IMPORTED_MODULE_6__["BannerListComponent"],
-                _shared_banner_layout_banner_layout_component__WEBPACK_IMPORTED_MODULE_14__["BannerLayoutComponent"]
+                _shared_banner_layout_banner_layout_component__WEBPACK_IMPORTED_MODULE_16__["BannerLayoutComponent"]
             ],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _default_common_module__WEBPACK_IMPORTED_MODULE_3__["DefaultCommonModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
-                _default_material_module__WEBPACK_IMPORTED_MODULE_12__["MaterialModule"],
-                _banner_routing__WEBPACK_IMPORTED_MODULE_11__["BannerRoutingModule"],
+                _default_material_module__WEBPACK_IMPORTED_MODULE_14__["MaterialModule"],
+                _banner_routing__WEBPACK_IMPORTED_MODULE_13__["BannerRoutingModule"],
                 _ngrx_effects__WEBPACK_IMPORTED_MODULE_7__["EffectsModule"].forRoot([_core_admin_demo_banners_banner_effect_banner_effect__WEBPACK_IMPORTED_MODULE_10__["BannerEffect"]]),
-                ng2_ckeditor__WEBPACK_IMPORTED_MODULE_13__["CKEditorModule"]
+                ng2_ckeditor__WEBPACK_IMPORTED_MODULE_15__["CKEditorModule"]
             ],
-            providers: [_core_admin_demo_banners_banner_service__WEBPACK_IMPORTED_MODULE_9__["BannerService"], _core_admin_demo_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_8__["BannerSandbox"]],
+            providers: [_core_admin_demo_banners_banner_service__WEBPACK_IMPORTED_MODULE_9__["BannerService"], _core_admin_demo_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_8__["BannerSandbox"], _core_admin_catalog_category_categories_service__WEBPACK_IMPORTED_MODULE_12__["CategoriesService"], _core_admin_catalog_category_categories_sandbox__WEBPACK_IMPORTED_MODULE_11__["CategoriesSandbox"]],
             bootstrap: [],
             entryComponents: []
         })
@@ -1007,7 +1074,7 @@ var BannerRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner-layout></app-banner-layout>\n<div class=\"row products-section products-sub-section\">\n    <div class=\"col-12\">\n        <div class=\"breadcrumbs-row\">\n            <div class=\"bc-col\">\n                <ul>\n                    <li><a href=\"javascript:void(0)\"> DEMO </a></li>\n                    <li>Banners</li>\n                </ul>\n            </div>\n            <div class=\"bc-col-btn\">\n                <button class=\"btn cms-btn\" (click)=\"AddBanner()\"><img\n                        src=\"assets/img/add-white-ico.png\">Add Banner new\n                </button>\n            </div>\n        </div>\n    </div>\n    <!--Breadcrumbs-->\n    <div class=\"col-12\">\n        <div class=\"flex filter-row\">\n            <div class=\"filter-lft\">\n            </div>\n            <!--Lft-->\n            <div class=\"filter-nav-list\">\n                <ul class=\"flex\">\n                    <li *ngIf=\"checkedData.length==0\" style=\"margin-left: 15px;\">\n                        <a (click)=\"bulkDeleteEmpty()\"><img src=\"assets/img/delete-ico-pink.png\"> Delete\n                        </a>\n                    </li>\n                    <li *ngIf=\"checkedData.length>0\" style=\"margin-left: 15px;\" [ngbPopover]=\"deleteContent1\" placement=\"left\" #deletePop=\"ngbPopover\">\n                        <a><img src=\"assets/img/delete-ico-pink.png\"> Delete\n                        </a>\n                    </li>\n                </ul>\n            </div>\n            <!--Right-->\n        </div>\n    </div>\n</div>\n\n<div class=\"flex product-wrap\">\n    <!--Filter-->\n    <div class=\"product-table\" style=\"width: 100%\">\n        <div class=\"table-responsive\">\n            <table class=\"table\">\n                <thead>\n                    <tr>\n                        <th scope=\"col\" width=\"5%\">\n                            <div class=\"form-group\">\n                                <div class=\"custom-control custom-checkbox mr-sm-2\">\n                                </div>\n                            </div>\n                        </th>\n                        <th scope=\"col\">Title</th>\n                        <th scope=\"col\">Image</th>\n                        <th scope=\"col\">Link</th>\n                        <th scope=\"col\">Position</th>\n                        <th scope=\"col\" width=\"100\">Action</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor=\"let bannerInfo of sandbox.getbannerlist$ | async; let i=index\">\n                        <th scope=\"row\" class=\"text-center\">\n                            <div class=\"form-group\">\n                                <div class=\"custom-control custom-checkbox mr-sm-2\">\n                                    <input type=\"checkbox\" class=\"custom-control-input\" (click)=\"selectChkBox($event, bannerInfo.bannerId)\" id={{bannerInfo.bannerId}} [checked]=\"checkCondition[bannerInfo.bannerId]\" [ngModelOptions]=\"{standalone: true}\" [(ngModel)]=\"checkmodules[bannerInfo.bannerId]\">\n                                    <label class=\"custom-control-label\" for={{bannerInfo.bannerId}}></label>\n                                </div>\n                            </div>\n                        </th>\n                        <td> {{bannerInfo.title}}</td>\n                        <td>\n                            <img *ngIf=\"bannerInfo.image\" [src]=\"imageUrl + '?path=' + bannerInfo.imagePath + '&name=' + bannerInfo.image + '&width=60&height=60'\" onError=\"this.src='/assets/error-images/Load icon Products.png';\" (load)=\"BannerListImageLoading(bannerInfo.bannerId)\"\n                                [hidden]=\"!bannerListImage[bannerInfo.bannerId]\">\n                            <img src=\"./assets/error-images/Load icon Products.png\" [hidden]=\"bannerListImage[bannerInfo.bannerId]\">\n                        </td>\n                        <td>{{bannerInfo.link}}\n                        </td>\n                        <td>{{bannerInfo.position}}</td>\n                        <!--<td>{{bannerInfo.position}}</td>-->\n                        <td>\n                            <a (click)=\"editBanner(bannerInfo)\" href=\"javascript:void(0)\"> <img src=\"assets/img/edit-ico.png\"> </a>\n\n                            <i style=\"margin-left: 15px;\" [ngbPopover]=\"deleteContent\" placement=\"left\" #deletePop=\"ngbPopover\" class=\"fas fa-trash\"></i>\n                            <ng-template #deleteContent>\n                                <div class=\"style\">\n                                    <div class=\"modal-header\">\n                                        <h6 class=\"modal-title\" style=\"margin-left: 17%;\"> Do you want to delete ?</h6>\n\n                                    </div>\n\n                                    <div class=\"modal-footer\" style=\"margin-right: 23%;\">\n                                        <button type=\"button\" class=\"btn btn-danger\" (click)=\"deletePop.close()\" data-dismiss=\"modal\">No\n                                    </button>\n                                        <button type=\"button\" class=\"btn btn-success\" (click)=\"deleteBanner(bannerInfo.bannerId, deletePop)\" data-dismiss=\"modal\">\n                                        Yes\n                                    </button>\n                                    </div>\n                                </div>\n                            </ng-template>\n                        </td>\n                    </tr>\n                </tbody>\n            </table>\n            <div class=\"no_data\" *ngIf=\"(sandbox.getbannerlist$ |async)?.length==0\">\n                <p>Items not found</p>\n            </div>\n            <div class=\"flex table-footer\">\n                <div class=\"view-rec\">\n                </div>\n                <!--mat pagination-->\n                <mat-paginator [length]=\"sandbox.getbannerpagelength$ | async\" [pageSize]=\"pageSize\" [pageIndex]=\"index\" [pageSizeOptions]=\"[pageSize]\" (page)=\"onPageChange($event)\">\n                </mat-paginator>\n                <!-- pagination end here-->\n            </div>\n        </div>\n    </div>\n    <!--Table-->\n\n</div>\n<ng-template #deleteContent1>\n    <div class=\"style\">\n        <div class=\"modal-header\">\n            <h6 class=\"modal-title\" style=\"margin-left: 17%;\"> Do you want to delete ?</h6>\n\n        </div>\n\n        <div class=\"modal-footer\" style=\"margin-right: 23%;\">\n            <button type=\"button\" class=\"btn btn-danger\" (click)=\"deletePop.close()\" data-dismiss=\"modal\">No\n                </button>\n            <button type=\"button\" class=\"btn btn-success\" (click)=\"bulkDelete()\" data-dismiss=\"modal\">\n                    Yes\n                </button>\n        </div>\n    </div>\n</ng-template>"
+module.exports = "<app-banner-layout></app-banner-layout>\n<div class=\"row products-section products-sub-section\">\n    <div class=\"col-12\">\n        <div class=\"breadcrumbs-row\">\n            <div class=\"bc-col\">\n                <ul>\n                    <li><a href=\"javascript:void(0)\"> DEMO </a></li>\n                    <li>Banners</li>\n                </ul>\n            </div>\n            <div class=\"bc-col-btn\">\n                <button class=\"btn cms-btn\" (click)=\"AddBanner()\"><img\n                        src=\"assets/img/add-white-ico.png\">Add Banner\n                </button>\n            </div>\n        </div>\n    </div>\n    <!--Breadcrumbs-->\n    <div class=\"col-12\">\n        <div class=\"flex filter-row\">\n            <div class=\"filter-lft\">\n            </div>\n            <!--Lft-->\n            <div class=\"filter-nav-list\">\n                <ul class=\"flex\">\n                    <li *ngIf=\"checkedData.length==0\" style=\"margin-left: 15px;\">\n                        <a (click)=\"bulkDeleteEmpty()\"><img src=\"assets/img/delete-ico-pink.png\"> Delete\n                        </a>\n                    </li>\n                    <li *ngIf=\"checkedData.length>0\" style=\"margin-left: 15px;\" [ngbPopover]=\"deleteContent1\" placement=\"left\" #deletePop=\"ngbPopover\">\n                        <a><img src=\"assets/img/delete-ico-pink.png\"> Delete\n                        </a>\n                    </li>\n                </ul>\n            </div>\n            <!--Right-->\n        </div>\n    </div>\n</div>\n\n<div class=\"flex product-wrap\">\n    <!--Filter-->\n    <div class=\"product-table\" style=\"width: 100%\">\n        <div class=\"table-responsive\">\n            <table class=\"table\">\n                <thead>\n                    <tr>\n                        <th scope=\"col\" width=\"5%\">\n                            <div class=\"form-group\">\n                                <div class=\"custom-control custom-checkbox mr-sm-2\">\n                                </div>\n                            </div>\n                        </th>\n                        <th scope=\"col\">Title</th>\n                        <th scope=\"col\">Image</th>\n                        <th scope=\"col\">Link</th>\n                        <th scope=\"col\">Position</th>\n                        <th scope=\"col\">category</th>\n                        <th scope=\"col\" width=\"100\">Action</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor=\"let bannerInfo of sandbox.getbannerlist$ | async; let i=index\">\n                        <th scope=\"row\" class=\"text-center\">\n                            <div class=\"form-group\">\n                                <div class=\"custom-control custom-checkbox mr-sm-2\">\n                                    <input type=\"checkbox\" class=\"custom-control-input\" (click)=\"selectChkBox($event, bannerInfo.bannerId)\" id={{bannerInfo.bannerId}} [checked]=\"checkCondition[bannerInfo.bannerId]\" [ngModelOptions]=\"{standalone: true}\" [(ngModel)]=\"checkmodules[bannerInfo.bannerId]\">\n                                    <label class=\"custom-control-label\" for={{bannerInfo.bannerId}}></label>\n                                </div>\n                            </div>\n                        </th>\n                        <td> {{bannerInfo.title}}</td>\n                        <td>\n                            <img *ngIf=\"bannerInfo.image\" [src]=\"imageUrl + '?path=' + bannerInfo.imagePath + '&name=' + bannerInfo.image + '&width=60&height=60'\" onError=\"this.src='/assets/error-images/Load icon Products.png';\" (load)=\"BannerListImageLoading(bannerInfo.bannerId)\"\n                                [hidden]=\"!bannerListImage[bannerInfo.bannerId]\">\n                            <img src=\"./assets/error-images/Load icon Products.png\" [hidden]=\"bannerListImage[bannerInfo.bannerId]\">\n                        </td>\n                        <td>{{bannerInfo.link}}\n                        </td>\n                        <td>{{bannerInfo.position}}</td>\n                        <td>{{bannerInfo.categoryId}} , {{bannerInfo.categoryChildId}}</td>\n                        <!--<td>{{bannerInfo.position}}</td>-->\n                        <td>\n                            <!-- {{bannerInfo | json }} -->\n                            <a (click)=\"editBanner(bannerInfo)\" href=\"javascript:void(0)\"> <img src=\"assets/img/edit-ico.png\"> </a>\n\n                            <i style=\"margin-left: 15px;\" [ngbPopover]=\"deleteContent\" placement=\"left\" #deletePop=\"ngbPopover\" class=\"fas fa-trash\"></i>\n                            <ng-template #deleteContent>\n                                <div class=\"style\">\n                                    <div class=\"modal-header\">\n                                        <h6 class=\"modal-title\" style=\"margin-left: 17%;\"> Do you want to delete ?</h6>\n\n                                    </div>\n\n                                    <div class=\"modal-footer\" style=\"margin-right: 23%;\">\n                                        <button type=\"button\" class=\"btn btn-danger\" (click)=\"deletePop.close()\" data-dismiss=\"modal\">No\n                                    </button>\n                                        <button type=\"button\" class=\"btn btn-success\" (click)=\"deleteBanner(bannerInfo.bannerId, deletePop)\" data-dismiss=\"modal\">\n                                        Yes\n                                    </button>\n                                    </div>\n                                </div>\n                            </ng-template>\n                        </td>\n                    </tr>\n                </tbody>\n            </table>\n            <div class=\"no_data\" *ngIf=\"(sandbox.getbannerlist$ |async)?.length==0\">\n                <p>Items not found</p>\n            </div>\n            <div class=\"flex table-footer\">\n                <div class=\"view-rec\">\n                </div>\n                <!--mat pagination-->\n                <mat-paginator [length]=\"sandbox.getbannerpagelength$ | async\" [pageSize]=\"pageSize\" [pageIndex]=\"index\" [pageSizeOptions]=\"[pageSize]\" (page)=\"onPageChange($event)\">\n                </mat-paginator>\n                <!-- pagination end here-->\n            </div>\n        </div>\n    </div>\n    <!--Table-->\n\n</div>\n<ng-template #deleteContent1>\n    <div class=\"style\">\n        <div class=\"modal-header\">\n            <h6 class=\"modal-title\" style=\"margin-left: 17%;\"> Do you want to delete ?</h6>\n\n        </div>\n\n        <div class=\"modal-footer\" style=\"margin-right: 23%;\">\n            <button type=\"button\" class=\"btn btn-danger\" (click)=\"deletePop.close()\" data-dismiss=\"modal\">No\n                </button>\n            <button type=\"button\" class=\"btn btn-success\" (click)=\"bulkDelete()\" data-dismiss=\"modal\">\n                    Yes\n                </button>\n        </div>\n    </div>\n</ng-template>"
 
 /***/ }),
 
@@ -1018,7 +1085,7 @@ module.exports = "<app-banner-layout></app-banner-layout>\n<div class=\"row prod
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {\n  background-color: #f2086d !important;\n  border: #f2086d !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvbWFya2V0cGxhY2UvYWRtaW4vc3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vZGVtby9jb21wb25lbnRzL2Jhbm5lci9saXN0L2xpc3QuY29tcG9uZW50LnNjc3MiLCJzcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9kZW1vL2NvbXBvbmVudHMvYmFubmVyL2xpc3QvbGlzdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG9DQUFBO0VBQ0EsMEJBQUE7QUNDRiIsImZpbGUiOiJzcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9kZW1vL2NvbXBvbmVudHMvYmFubmVyL2xpc3QvbGlzdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jdXN0b20tY2hlY2tib3ggLmN1c3RvbS1jb250cm9sLWlucHV0OmNoZWNrZWQgfiAuY3VzdG9tLWNvbnRyb2wtbGFiZWw6OmJlZm9yZSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmMjA4NmQgIWltcG9ydGFudDtcbiAgYm9yZGVyOiAjZjIwODZkICFpbXBvcnRhbnQ7XG59IiwiLmN1c3RvbS1jaGVja2JveCAuY3VzdG9tLWNvbnRyb2wtaW5wdXQ6Y2hlY2tlZCB+IC5jdXN0b20tY29udHJvbC1sYWJlbDo6YmVmb3JlIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2YyMDg2ZCAhaW1wb3J0YW50O1xuICBib3JkZXI6ICNmMjA4NmQgIWltcG9ydGFudDtcbn0iXX0= */"
+module.exports = ".custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {\n  background-color: #f2086d !important;\n  border: #f2086d !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvdGVzdDAxL21hcmtldHBsYWNlL2FkbWluL3NyYy90aGVtZS9kZWZhdWx0L2FkbWluL2RlbW8vY29tcG9uZW50cy9iYW5uZXIvbGlzdC9saXN0LmNvbXBvbmVudC5zY3NzIiwic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vZGVtby9jb21wb25lbnRzL2Jhbm5lci9saXN0L2xpc3QuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxvQ0FBQTtFQUNBLDBCQUFBO0FDQ0YiLCJmaWxlIjoic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vZGVtby9jb21wb25lbnRzL2Jhbm5lci9saXN0L2xpc3QuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY3VzdG9tLWNoZWNrYm94IC5jdXN0b20tY29udHJvbC1pbnB1dDpjaGVja2VkIH4gLmN1c3RvbS1jb250cm9sLWxhYmVsOjpiZWZvcmUge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjIwODZkICFpbXBvcnRhbnQ7XG4gIGJvcmRlcjogI2YyMDg2ZCAhaW1wb3J0YW50O1xufSIsIi5jdXN0b20tY2hlY2tib3ggLmN1c3RvbS1jb250cm9sLWlucHV0OmNoZWNrZWQgfiAuY3VzdG9tLWNvbnRyb2wtbGFiZWw6OmJlZm9yZSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmMjA4NmQgIWltcG9ydGFudDtcbiAgYm9yZGVyOiAjZjIwODZkICFpbXBvcnRhbnQ7XG59Il19 */"
 
 /***/ }),
 
@@ -1037,8 +1104,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _core_admin_demo_banners_banner_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../core/admin/demo/banners/banner.service */ "./src/core/admin/demo/banners/banner.service.ts");
 /* harmony import */ var _core_admin_demo_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../../core/admin/demo/banners/banner.sandbox */ "./src/core/admin/demo/banners/banner.sandbox.ts");
-/* harmony import */ var _core_admin_service_config_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../../core/admin/service/config.service */ "./src/core/admin/service/config.service.ts");
-/* harmony import */ var ng6_toastr_notifications__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ng6-toastr-notifications */ "./node_modules/ng6-toastr-notifications/fesm5/ng6-toastr-notifications.js");
+/* harmony import */ var _core_admin_catalog_category_categories_sandbox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../../core/admin/catalog/category/categories.sandbox */ "./src/core/admin/catalog/category/categories.sandbox.ts");
+/* harmony import */ var _core_admin_service_config_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../../core/admin/service/config.service */ "./src/core/admin/service/config.service.ts");
+/* harmony import */ var ng6_toastr_notifications__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ng6-toastr-notifications */ "./node_modules/ng6-toastr-notifications/fesm5/ng6-toastr-notifications.js");
 
 /*
  * SpurtCommerce
@@ -1055,9 +1123,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var BannerListComponent = /** @class */ (function () {
-    function BannerListComponent(sandbox, service, toastr, router, configService) {
+    function BannerListComponent(sandbox, categoriessandbox, service, toastr, router, configService) {
         this.sandbox = sandbox;
+        this.categoriessandbox = categoriessandbox;
         this.service = service;
         this.toastr = toastr;
         this.router = router;
@@ -1080,6 +1150,7 @@ var BannerListComponent = /** @class */ (function () {
     };
     // initially calls regSubscriptionEvents,bannerList
     BannerListComponent.prototype.ngOnInit = function () {
+        // this.getCategoryList();  commented for the time
         this.pageSize = localStorage.getItem('itemsPerPage')
             ? localStorage.getItem('itemsPerPage')
             : this.pageSize;
@@ -1088,6 +1159,16 @@ var BannerListComponent = /** @class */ (function () {
         this.regSubscriptionEvents();
         this.index = 0;
         this.bannerList(this.offset, this.keyword);
+    };
+    // calling category list api with pagination
+    BannerListComponent.prototype.getCategoryList = function () {
+        var param = {};
+        param.limit = '';
+        param.offset = '';
+        param.keyword = undefined;
+        param.sortOrder = '';
+        param.status = 1;
+        this.categoriessandbox.categorylist(param);
     };
     // this function navigate  to  create page banner
     BannerListComponent.prototype.AddBanner = function () {
@@ -1111,6 +1192,7 @@ var BannerListComponent = /** @class */ (function () {
             params.count = 'true';
             this.sandbox.getBannerPagination(params);
         }
+        console.log("Get banne action");
         this.bannerListCount(0, keyword);
     };
     // to get total count
@@ -1122,6 +1204,7 @@ var BannerListComponent = /** @class */ (function () {
         params.keyword = this.keyword;
         params.count = 1;
         // params.status = 1;
+        // alert("demo component");
         this.sandbox.getBannerListCount(params);
     };
     // mat pagination function
@@ -1213,10 +1296,11 @@ var BannerListComponent = /** @class */ (function () {
             styles: ["\n      .dark-modal .modal-content {\n        background-color: #009efb;\n        color: white;\n      }\n\n      .dark-modal .close {\n        color: white;\n      }\n\n      .light-blue-backdrop {\n        background-color: #5cb3fd;\n      }\n\n      .image-manager .modal-dialog {\n        max-width: 70%;\n      }\n    ", __webpack_require__(/*! ./list.component.scss */ "./src/theme/default/admin/demo/components/banner/list/list.component.scss")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_core_admin_demo_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_4__["BannerSandbox"],
+            _core_admin_catalog_category_categories_sandbox__WEBPACK_IMPORTED_MODULE_5__["CategoriesSandbox"],
             _core_admin_demo_banners_banner_service__WEBPACK_IMPORTED_MODULE_3__["BannerService"],
-            ng6_toastr_notifications__WEBPACK_IMPORTED_MODULE_6__["ToastrManager"],
+            ng6_toastr_notifications__WEBPACK_IMPORTED_MODULE_7__["ToastrManager"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _core_admin_service_config_service__WEBPACK_IMPORTED_MODULE_5__["ConfigService"]])
+            _core_admin_service_config_service__WEBPACK_IMPORTED_MODULE_6__["ConfigService"]])
     ], BannerListComponent);
     return BannerListComponent;
 }());

@@ -1,0 +1,39 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   '/webroot/public_html/websites/odz/marketplace/.nvm/versions/node/v14.15.0/bin/node',
+1 verbose cli   '/webroot/public_html/websites/odz/marketplace/.nvm/versions/node/v14.15.0/bin/npm',
+1 verbose cli   'start',
+1 verbose cli   'serve'
+1 verbose cli ]
+2 info using npm@6.14.8
+3 info using node@v14.15.0
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle spurtcommerce@3.0.2~prestart: spurtcommerce@3.0.2
+6 info lifecycle spurtcommerce@3.0.2~start: spurtcommerce@3.0.2
+7 verbose lifecycle spurtcommerce@3.0.2~start: unsafe-perm in lifecycle true
+8 verbose lifecycle spurtcommerce@3.0.2~start: PATH: /webroot/public_html/websites/odz/marketplace/.nvm/versions/node/v14.15.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/webroot/public_html/websites/odz/marketplace/admin/node_modules/.bin:/webroot/public_html/websites/odz/marketplace/.nvm/versions/node/v14.15.0/bin:/usr/local/rvm/gems/ruby-2.6.5/bin:/usr/local/rvm/gems/ruby-2.6.5@global/bin:/usr/local/rvm/rubies/ruby-2.6.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/rvm/bin
+9 verbose lifecycle spurtcommerce@3.0.2~start: CWD: /webroot/public_html/websites/odz/marketplace/admin
+10 silly lifecycle spurtcommerce@3.0.2~start: Args: [ '-c', 'ng serve "serve"' ]
+11 silly lifecycle spurtcommerce@3.0.2~start: Returned: code: 1  signal: null
+12 info lifecycle spurtcommerce@3.0.2~start: Failed to exec start script
+13 verbose stack Error: spurtcommerce@3.0.2 start: `ng serve "serve"`
+13 verbose stack Exit status 1
+13 verbose stack     at EventEmitter.<anonymous> (/webroot/public_html/websites/odz/marketplace/.nvm/versions/node/v14.15.0/lib/node_modules/npm/node_modules/npm-lifecycle/index.js:332:16)
+13 verbose stack     at EventEmitter.emit (events.js:315:20)
+13 verbose stack     at ChildProcess.<anonymous> (/webroot/public_html/websites/odz/marketplace/.nvm/versions/node/v14.15.0/lib/node_modules/npm/node_modules/npm-lifecycle/lib/spawn.js:55:14)
+13 verbose stack     at ChildProcess.emit (events.js:315:20)
+13 verbose stack     at maybeClose (internal/child_process.js:1048:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5)
+14 verbose pkgid spurtcommerce@3.0.2
+15 verbose cwd /webroot/public_html/websites/odz/marketplace/admin
+16 verbose Linux 4.15.0-143-generic
+17 verbose argv "/webroot/public_html/websites/odz/marketplace/.nvm/versions/node/v14.15.0/bin/node" "/webroot/public_html/websites/odz/marketplace/.nvm/versions/node/v14.15.0/bin/npm" "start" "serve"
+18 verbose node v14.15.0
+19 verbose npm  v6.14.8
+20 error code ELIFECYCLE
+21 error errno 1
+22 error spurtcommerce@3.0.2 start: `ng serve "serve"`
+22 error Exit status 1
+23 error Failed at the spurtcommerce@3.0.2 start script.
+23 error This is probably not a problem with npm. There is likely additional logging output above.
+24 verbose exit [ 1, true ]

@@ -381,9 +381,29 @@
 .search-form .search-btn{
     background: #FF5354 !important;
 }
+.app.green .top-navbar.mat-toolbar a{padding: 5px 10px;min-width: 0;}
 .app.green .top-navbar.mat-toolbar a.mat-button:hover {
-    background: #FF5354;
+    background: transparent !important;
+}
+.mat-button:hover .mat-button-focus-overlay, .mat-stroked-button:hover .mat-button-focus-overlay {
+    opacity: 0 !important;
 }
 .app.green .top-navbar.mat-toolbar a.mat-button:hover span, .app.green .top-navbar.mat-toolbar a.mat-button:hover .mat-icon{
-    color: #ffffff;
+    color: #FF5354;
+}
+
+.app.green .top-navbar.mat-toolbar a.mat-button .mat-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu-img {
+    height: 70px;
+    width: auto;
+    max-width: 100%;
+}
+
+@media (max-width: 1400px){
+    .app.green .top-navbar.mat-toolbar a {padding: 5px;}
+    .menu-img {height: 55px;}
 }

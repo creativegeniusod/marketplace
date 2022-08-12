@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  // baseUrl: 'http://localhost:9000/api',
+  // imageUrl: 'http://localhost:9000/api/media/image-resize/',
   baseUrl: 'http://stagingwebsites.info:9000/api',
   imageUrl: 'http://stagingwebsites.info:9000/api/media/image-resize/',
   productUrl: '', // <Your store base url>

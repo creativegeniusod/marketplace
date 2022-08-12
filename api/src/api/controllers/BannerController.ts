@@ -123,6 +123,8 @@ export class BannerController {
      *      "bannerId": "",
      *      "title": "",
      *      "content": "",
+     *      "categoryId" : "",
+     *      "categoryChildId" : "",
      *      "image": "",
      *      "imagePath": "",
      *      "link": "",
@@ -137,7 +139,7 @@ export class BannerController {
     @Get('/bannerlist')
     @Authorized()
     public async bannerList(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number, @QueryParam('keyword') keyword: string, @QueryParam('status')status: number, @QueryParam('count')count: number | boolean, @Res() response: any): Promise<any> {
-        const select = ['bannerId', 'title', 'image', 'imagePath', 'content', 'link', 'position', 'isActive'];
+        const select = ['bannerId', 'categoryId','categoryChildId','title', 'image', 'imagePath', 'content', 'link', 'position', 'isActive'];
         const search = [
             {
                 name: 'title',
@@ -225,6 +227,8 @@ export class BannerController {
      * @apiGroup Banner
      * @apiHeader {String} Authorization
      * @apiParam (Request body) {Number} bannerId Banner bannerId
+     * @apiParam (Request body) {Number} categoryId Banner categoryId
+     * @apiParam (Request body) {Number} categoryChildId Banner categoryChildId
      * @apiParam (Request body) {String} title Banner title
      * @apiParam (Request body) {String} image Banner image
      * @apiParam (Request body) {String} content Banner content
@@ -237,6 +241,8 @@ export class BannerController {
      *      "title" : "",
      *      "image" : "",
      *      "content" : "",
+     *      "categoryId" : "",
+     *      "categoryChildId" : "",
      *      "link" : "",
      *      "position" : "",
      *      "status" : "",
@@ -281,11 +287,17 @@ export class BannerController {
             banner.image = name;
             banner.imagePath = path;
         }
+
+        // console.log("||&&&&&&&&&||" , bannerParam.category , "||&&&&&&&&&||");
+
         banner.title = bannerParam.title;
         banner.content = bannerParam.content;
+        banner.categoryId = bannerParam.category;
+        banner.categoryChildId = bannerParam.subcategory;
         banner.link = bannerParam.link;
         banner.position = bannerParam.position;
         banner.isActive = bannerParam.status;
+        console.log(banner,"&&&&&&&&&&&")
         const bannerSave = await this.bannerService.create(banner);
 
         if (bannerSave) {

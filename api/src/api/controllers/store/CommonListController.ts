@@ -63,7 +63,7 @@ export class CommonListController {
      */
     // Product list Function
     @Get('/banner-list')
-    public async bannerList(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number, @QueryParam('keyword') keyword: string, @QueryParam('count')count: number | boolean, @Res() response: any): Promise<any> {
+    public async bannerList(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number,@QueryParam('child') child: number, @QueryParam('keyword') keyword: string, @QueryParam('count')count: number | boolean, @Res() response: any): Promise<any> {
         const select = ['bannerId', 'categoryId','categoryChildId', 'title', 'image', 'imagePath', 'content', 'link', 'position', 'isActive'];
         const search = [
             {
@@ -76,6 +76,10 @@ export class CommonListController {
             {
                 name: 'isActive',
                 value: 1,
+            },{
+                name: 'categoryChildId',
+                op: 'like',
+                value: child,
             },
         ];
         const bannerList: any = await this.bannerService.list(limit, offset, select, search, WhereConditions, count);

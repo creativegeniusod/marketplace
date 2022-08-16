@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+ @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import '~swiper/dist/css/swiper.min.css';
@@ -69,9 +70,9 @@
             padding-left: 0;
             opacity: 1;
             .mat-tab-label-content {
-                font-size: 20px;
+                font-size: 22px;
                 color: black;
-                font-weight: 600;
+                font-weight: bold;
             }
         }
         .mat-tab-label-active {
@@ -338,12 +339,12 @@
     flex-wrap: wrap;
 }
 
- a {
+/* a {
     color: white !important;
     font-size: 12px;
     padding: 6px 20px 6px 0;
     min-width: 100px;
-}
+}*/
 // .account-pane {
 //     position: absolute;
 //     right: -60px !important;
@@ -425,6 +426,19 @@
     -webkit-transition: all 0.5s ease;    
 }
 .custom-divider{margin-left: -16px;margin-right: -16px;}
+
+.mat-card, .mat-tab-label, .mat-tab-link {font-family: 'Urbanist', sans-serif;}
+.app.green .mat-drawer-container{background: transparent;}
+
+.loginPage.mat-card {
+    background: #fff7ee !important;
+    margin: -16px;
+}
+.containerWrap {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
 
 @media (max-width: 1400px){
     .app.green .top-navbar.mat-toolbar a {padding: 5px;}

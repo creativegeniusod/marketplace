@@ -60,11 +60,11 @@
     </div>
     <div *ngIf="viewType == 'grid'" fxLayout="row wrap" class="products-wrapper">
 
-      <div *ngFor="let product of (listSandbox.productlist$ | async)" fxFlex="100" [fxFlex.gt-sm]="viewCol"
+      <div *ngFor="let product of (listSandbox.productlist$ | async)" fxFlex="100" [fxFlex.gt-md]="viewCol"
         fxFlex.sm="50" class="col productDiv">
         <mat-card class="product-item text-center card-hover productCol">
           <a [routerLink]="['/products/productdetails', product.productId]" class="image-link">
-            <img *ngIf="product['Images'].defaultImage == 1" style="height:200px"
+            <img *ngIf="product['Images'].defaultImage == 1"
               [src]="imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'"
               onError="this.src='/assets/images/default_image.png';">
           </a>

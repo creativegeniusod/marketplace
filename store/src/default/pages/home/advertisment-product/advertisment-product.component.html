@@ -30,7 +30,7 @@
         fxFlex.sm="50" class="col productDiv">
         <mat-card class="product-item text-center card-hover productCol">
           <a href="/" class="image-link">
-            <img *ngIf="product['Images'].defaultImage == 1" style="height:200px"
+            <img *ngIf="product['Images'].defaultImage == 1"
             [src]="imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'"
             onError="this.src='/assets/images/default_image.png';">
           </a>

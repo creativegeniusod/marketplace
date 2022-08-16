@@ -33,7 +33,7 @@
   </div>
 </div> -->
 
-<mat-sidenav-container class="productsWrap">
+<mat-sidenav-container class="productsWrap trending-products">
   <mat-sidenav-content class="all-products" ngClass.gt-sm="p-left">
     <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center"
       class="filter-row mat-elevation-z1 text-muted">
@@ -60,7 +60,7 @@
     </div>
     <div *ngIf="viewType == 'grid'" fxLayout="row wrap" class="products-wrapper">
 
-      <div *ngFor="let product of (listSandbox.productlist$ | async)" fxFlex="100" [fxFlex.gt-md]="viewCol"
+      <div *ngFor="let product of (listSandbox.productlist$ | async)" fxFlex="100" [fxFlex.gt-sm]="viewCol"
         fxFlex.sm="50" class="col productDiv">
         <mat-card class="product-item text-center card-hover productCol">
           <a [routerLink]="['/products/productdetails', product.productId]" class="image-link">
@@ -79,7 +79,6 @@
               </p>
             </div>
           </div>
-          <div class="divider mt-2 custom-divider"></div>
           <div class="icons">
             <app-controls [product]="product" [type]="'all'" (OpenProductDialog)="openProductDialog(product)">
             </app-controls>

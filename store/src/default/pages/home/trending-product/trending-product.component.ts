@@ -31,7 +31,7 @@ export class TrendingProductComponent implements OnInit, OnDestroy {
   public sidenavOpen = true;
   // card view
   public viewType = 'grid';
-  public viewCol = 25;
+  public viewCol = 14.28;
   public sortings: Array<any>;
   public sortData: any = 'Price Low To High';
   condition: any;
@@ -194,7 +194,7 @@ export class TrendingProductComponent implements OnInit, OnDestroy {
     window.innerWidth < 960
       ? (this.sidenavOpen = false)
       : (this.sidenavOpen = true);
-    window.innerWidth < 1280 ? (this.viewCol = 33.3) : (this.viewCol = 25);
+    window.innerWidth < 1280 ? (this.viewCol = 33.3) : (this.viewCol = 14.28);
   }
 
   // changing the view type

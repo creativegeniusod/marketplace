@@ -69,7 +69,11 @@ import {
   subCategoryLoading,
   subCategoryLoaded,
   subCategoryID,
-  symbolSetting
+  symbolSetting,
+  childBannerList,
+  childBannerLoadingStatus,
+  childBannerLoadedStatus,
+  childBannerFailedStatus
 
 } from './reducer/lists.selector';
 import { ContactUsRequestModel } from './models/contact-us-request.model';
@@ -102,8 +106,15 @@ export class ListsSandbox {
   public bannerCountLoading$ = this.appState$.select(countLoadingStatus);
   public bannerCountLoaded$ = this.appState$.select(countLoadedStatus);
   public bannerCountFailed$ = this.appState$.select(countFailedStatus);
-  /* page list status*/
 
+  /* Child banner list */
+  public childBannerList$ = this.appState$.select(childBannerList);
+  public childBannerListLoading$ = this.appState$.select(childBannerLoadingStatus);
+  public childBannerListLoaded$ = this.appState$.select(childBannerLoadedStatus);
+  public childBannerListFailed$ = this.appState$.select(childBannerFailedStatus);
+
+
+  /* page list status*/
   public pageList$ = this.appState$.select(getPageList);
   public pageListLoading$ = this.appState$.select(pageListLoadingStatus);
   public pageListLoaded$ = this.appState$.select(pageListLoadedStatus);
@@ -214,6 +225,10 @@ export class ListsSandbox {
 
   public getBannerList(params): void {
     this.appState$.dispatch(new authAction.GetBannerList(params));
+  }
+
+  public getChildBannerList(params): void {
+    this.appState$.dispatch(new authAction.GetChildBannerList(params));
   }
 
   public getManufacturerList(params): void {

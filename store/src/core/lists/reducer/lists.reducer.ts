@@ -289,6 +289,36 @@ export function reducer(
         bannerFailed: true
       });
     }
+
+    // child banner
+    case actions.ActionTypes.GET_CHILD_BANNER_LIST: {
+      return Object.assign({}, state, {
+        childBannerLoading: true,
+        childBannerLoaded: false,
+        childBannerFailed: false
+      });
+    }
+    case actions.ActionTypes.GET_CHILD_BANNER_LIST_SUCCESS: {
+      const bannerModel = payload.data.map(_list => {
+        const tempModel = new BannerListResponseModel(_list);
+        return tempModel;
+      });
+      return Object.assign({}, state, {
+        childBannerList: bannerModel,
+        childBannerLoading: false,
+        childBannerLoaded: true,
+        childBannerFailed: false
+      });
+    }
+    case actions.ActionTypes.GET_CHILD_BANNER_LIST_FAIL: {
+      return Object.assign({}, state, {
+        childBannerLoading: false,
+        childBannerLoaded: true,
+        childBannerFailed: true
+      });
+    }
+    // ************
+
     case actions.ActionTypes.GET_BANNER_LIST_COUNT: {
       return Object.assign({}, state, {
         countLoading: true,
@@ -495,34 +525,34 @@ export function reducer(
       });
     }
 
-       // subcategory
-       case actions.ActionTypes.GET_SubCATEGORY_LIST: {
-        return Object.assign({}, state, {
-          SelectedcategoryId: payload.CategoryId,
-          subcategoryLoading: true,
-          subcategoryLoaded: false,
-          subcategoryFailed: false
-        });
-      }
-      case actions.ActionTypes.GET_SubCATEGORY_LIST_SUCCESS: {
-        const tempList = payload.data.children.map(list => {
-          const tempObject = new SubcategoryResponseModel(list);
-          return tempObject;
-        });
-        return Object.assign({}, state, {
-          subcategory: tempList,
-          subcategoryLoading: false,
-          subcategoryLoaded: true,
-          subcategoryFailed: false
-        });
-      }
-      case actions.ActionTypes.GET_SubCATEGORY_LIST_FAIL: {
-        return Object.assign({}, state, {
-          subcategoryLoading: false,
-          subcategoryLoaded: true,
-          subcategoryFailed: false
-        });
-      }
+    // subcategory
+    case actions.ActionTypes.GET_SubCATEGORY_LIST: {
+      return Object.assign({}, state, {
+        SelectedcategoryId: payload.CategoryId,
+        subcategoryLoading: true,
+        subcategoryLoaded: false,
+        subcategoryFailed: false
+      });
+    }
+    case actions.ActionTypes.GET_SubCATEGORY_LIST_SUCCESS: {
+      const tempList = payload.data.children.map(list => {
+        const tempObject = new SubcategoryResponseModel(list);
+        return tempObject;
+      });
+      return Object.assign({}, state, {
+        subcategory: tempList,
+        subcategoryLoading: false,
+        subcategoryLoaded: true,
+        subcategoryFailed: false
+      });
+    }
+    case actions.ActionTypes.GET_SubCATEGORY_LIST_FAIL: {
+      return Object.assign({}, state, {
+        subcategoryLoading: false,
+        subcategoryLoaded: true,
+        subcategoryFailed: false
+      });
+    }
     default: {
       return state;
     }
@@ -550,11 +580,17 @@ export const getBannerList = (state: ListsState) => state.bannerList;
 export const getListLoading = (state: ListsState) => state.bannerLoading;
 export const getListLoaded = (state: ListsState) => state.bannerLoaded;
 export const getListFailed = (state: ListsState) => state.bannerFailed;
-
 export const getBannerCount = (state: ListsState) => state.bannerCount;
 export const getCountLoading = (state: ListsState) => state.countLoading;
 export const getCountLoaded = (state: ListsState) => state.countLoaded;
 export const getCountFailed = (state: ListsState) => state.countFailed;
+
+// Child banner
+export const getChildBannerList = (state: ListsState) => state.childBannerList;
+export const getChildListLoading = (state: ListsState) => state.childBannerLoading;
+export const getChildListLoaded = (state: ListsState) => state.childBannerLoaded;
+export const getChildListFailed = (state: ListsState) => state.childBannerFailed;
+// -------------
 
 export const getPageList = (state: ListsState) => state.pageList;
 export const getPageListLoading = (state: ListsState) => state.pageListLoading;
@@ -613,5 +649,5 @@ export const subCategoryLoaded = (state: ListsState) => state.subcategoryLoaded;
 
 export const selectedCategoryId = (state: ListsState) =>
   state.SelectedcategoryId;
-  export const getSymbolSetting = (state: ListsState) => state.symbolSetting;
+export const getSymbolSetting = (state: ListsState) => state.symbolSetting;
 

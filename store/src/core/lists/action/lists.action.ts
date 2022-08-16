@@ -67,12 +67,15 @@ export const ActionTypes = {
   GET_BANNER_LIST: type('[banner] get banner list'),
   GET_BANNER_LIST_SUCCESS: type('[banner] get banner list success'),
   GET_BANNER_LIST_FAIL: type('[banner] get banner list fail'),
-
   GET_BANNER_LIST_COUNT: type('[banner_count] get banner list count'),
   GET_BANNER_LIST_COUNT_SUCCESS: type(
     '[banner_count] get banner list count success'
   ),
   GET_BANNER_LIST_COUNT_FAIL: type('[banner_count] get banner list count fail'),
+
+  GET_CHILD_BANNER_LIST: type('[banner] get child banner list'),
+  GET_CHILD_BANNER_LIST_SUCCESS: type('[banner] get  child  banner list success'),
+  GET_CHILD_BANNER_LIST_FAIL: type('[banner] get  child  banner list fail'),
 
   GET_PAGE_LIST: type('[page_list] get page list '),
   GET_PAGE_LIST_SUCCESS: type('[page_list] get page list success'),
@@ -120,19 +123,19 @@ export const ActionTypes = {
 export class GetProductList implements Action {
   type = ActionTypes.GET_PRODUCT_LIST;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetProductListSuccess implements Action {
   type = ActionTypes.PRODUCT_LIST_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetProductListFail implements Action {
   type = ActionTypes.PRODUCT_LIST_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 /* get Sub category action*/
@@ -140,41 +143,41 @@ export class GetProductListFail implements Action {
 export class GetActiveCategory implements Action {
   type = ActionTypes.GET_ACTIVE_CATEGORY;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetActiveCategorySuccess implements Action {
   type = ActionTypes.GET_ACTIVE_CATEGORY_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetActiveCategoryFail implements Action {
   type = ActionTypes.GET_ACTIVE_CATEGORY_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 export class RemoveActiveCategoryId implements Action {
   type = ActionTypes.REMOVE_ACTIVE_CATEGORYID;
-  constructor(public payload = null) {}
+  constructor(public payload = null) { }
 }
 
 export class GetProductCount implements Action {
   type = ActionTypes.GET_PRODUCT_COUNT;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetProductCountSuccess implements Action {
   type = ActionTypes.PRODUCT_COUNT_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetProductCountFail implements Action {
   type = ActionTypes.PRODUCT_COUNT_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 /* get product detail action*/
@@ -182,19 +185,19 @@ export class GetProductCountFail implements Action {
 export class GetProductDetail implements Action {
   type = ActionTypes.GET_PRODUCT_DETAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetProductDetailSuccess implements Action {
   type = ActionTypes.PRODUCT_DETAIL_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetProductDetailFail implements Action {
   type = ActionTypes.PRODUCT_DETAIL_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 /* get product detail mandatory option action*/
@@ -202,19 +205,19 @@ export class GetProductDetailFail implements Action {
 export class GetProductDetailMandatory implements Action {
   type = ActionTypes.GET_PRODUCT_DETAIL_MANDATORY;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetProductDetailMandatorySuccess implements Action {
   type = ActionTypes.PRODUCT_DETAIL_MANDATORY_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetProductDetailMandatoryFail implements Action {
   type = ActionTypes.PRODUCT_DETAIL_MANDATORY_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 /* get category action*/
@@ -222,19 +225,19 @@ export class GetProductDetailMandatoryFail implements Action {
 export class GetCategoryList implements Action {
   type = ActionTypes.GET_CATEGORY_LIST;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetCategoryListSuccess implements Action {
   type = ActionTypes.CATEGORY_LIST_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetCategoryListFail implements Action {
   type = ActionTypes.CATEGORY_LIST_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 /* get brand action*/
@@ -242,19 +245,19 @@ export class GetCategoryListFail implements Action {
 export class GetManufacturerList implements Action {
   type = ActionTypes.GET_MANUFACTURER_LIST;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class ManufacturerListSuccess implements Action {
   type = ActionTypes.MANUFACTURER_LIST_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class ManufacturerListtFail implements Action {
   type = ActionTypes.MANUFACTURER_LIST_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 /* get banner action*/
@@ -262,57 +265,81 @@ export class ManufacturerListtFail implements Action {
 export class GetBannerList implements Action {
   type = ActionTypes.GET_BANNER_LIST;
 
-  constructor(public payload: BannerListModel) {}
+  constructor(public payload: BannerListModel) { }
 }
 
 export class GetBannerListSuccess implements Action {
   type = ActionTypes.GET_BANNER_LIST_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetBannaerListFail implements Action {
   type = ActionTypes.GET_BANNER_LIST_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetBannerListCount implements Action {
   type = ActionTypes.GET_BANNER_LIST_COUNT;
 
-  constructor(public payload: BannerListModel) {}
+  constructor(public payload: BannerListModel) { }
 }
 
 export class GetBannerListCountSuccess implements Action {
   type = ActionTypes.GET_BANNER_LIST_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetBannaerListCountFail implements Action {
   type = ActionTypes.GET_BANNER_LIST_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
+
+
+/* get child banner action*/
+
+export class GetChildBannerList implements Action {
+  type = ActionTypes.GET_CHILD_BANNER_LIST;
+
+  constructor(public payload: BannerListModel) { }
+}
+
+export class GetChildBannerListSuccess implements Action {
+  type = ActionTypes.GET_CHILD_BANNER_LIST_SUCCESS;
+
+  constructor(public payload: any) { }
+}
+
+export class GetChildBannaerListFail implements Action {
+  type = ActionTypes.GET_CHILD_BANNER_LIST_FAIL;
+
+  constructor(public payload: any) { }
+}
+
+
+
 
 /* get page list action*/
 
 export class GetPageList implements Action {
   type = ActionTypes.GET_PAGE_LIST;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetPageListSuccess implements Action {
   type = ActionTypes.GET_PAGE_LIST_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetPageListFail implements Action {
   type = ActionTypes.GET_PAGE_LIST_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 /* get settings action*/
@@ -320,19 +347,19 @@ export class GetPageListFail implements Action {
 export class GetSettings implements Action {
   type = ActionTypes.GET_SETTINGS_ACTION;
 
-  constructor(public payload = null) {}
+  constructor(public payload = null) { }
 }
 
 export class GetSettingsSuccess implements Action {
   type = ActionTypes.GET_SETTINGS_SUCCESS_ACTION;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetSettingsFail implements Action {
   type = ActionTypes.GET_SETTINGS_FAIL_ACTION;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 /* do contact us action*/
@@ -340,19 +367,19 @@ export class GetSettingsFail implements Action {
 export class DoContactUsAction implements Action {
   type = ActionTypes.DO_CONTACT_US_ACTION;
 
-  constructor(public payload: ContactUsRequestModel) {}
+  constructor(public payload: ContactUsRequestModel) { }
 }
 
 export class DoContactUsActionSuccess implements Action {
   type = ActionTypes.DO_CONTACT_US_SUCCESS_ACTION;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class DoContactUsActionFail implements Action {
   type = ActionTypes.DO_CONTACT_US_FAIL_ACTION;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 /* get page detail action*/
@@ -360,26 +387,26 @@ export class DoContactUsActionFail implements Action {
 export class GetPageDetails implements Action {
   type = ActionTypes.GET_PAGE_DETAIL;
 
-  constructor(public payload: ContactUsRequestModel) {}
+  constructor(public payload: ContactUsRequestModel) { }
 }
 
 export class GetPageDetailsSuccess implements Action {
   type = ActionTypes.GET_PAGE_DETAIL_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetPageDetailsFail implements Action {
   type = ActionTypes.GET_PAGE_DETAIL_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 /* available options */
 export class GetAvailableValue implements Action {
   type = ActionTypes.GET_AVAILABLE_VALUE;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 /* get country list action*/
@@ -387,19 +414,19 @@ export class GetAvailableValue implements Action {
 export class GetCountryList implements Action {
   type = ActionTypes.GET_COUNTRY_LIST;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetCountryListSuccess implements Action {
   type = ActionTypes.GET_COUNTRY_LIST_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetCountryListFail implements Action {
   type = ActionTypes.GET_COUNTRY_LIST_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 /* get Zone list action*/
@@ -407,19 +434,19 @@ export class GetCountryListFail implements Action {
 export class GetZoneList implements Action {
   type = ActionTypes.GET_ZONE_LIST;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetZoneListSuccess implements Action {
   type = ActionTypes.GET_ZONE_LIST_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetZoneListFail implements Action {
   type = ActionTypes.GET_ZONE_LIST_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 /* get Top deals list action*/
@@ -427,93 +454,93 @@ export class GetZoneListFail implements Action {
 export class GetTodayDealsList implements Action {
   type = ActionTypes.GET_TODAY_DEALS;
 
-  constructor(public payload: TodaydealModel) {}
+  constructor(public payload: TodaydealModel) { }
 }
 
 export class GetTodayDealsListSuccess implements Action {
   type = ActionTypes.GET_TODAY_DEALS_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetTodayDealsListFail implements Action {
   type = ActionTypes.GET_TODAY_DEALS_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 // service category list
 export class GetServiceCategory implements Action {
   type = ActionTypes.GET_SERVICE_CATEGORY;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetServiceCategorySuccess implements Action {
   type = ActionTypes.GET_SERVICE_CATEGORY_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetServiceCategoryFail implements Action {
   type = ActionTypes.GET_SERVICE_CATEGORY_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 // service list
 export class GetServiceList implements Action {
   type = ActionTypes.GET_SERVICE_LIST;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetServiceListSuccess implements Action {
   type = ActionTypes.GET_SERVICE_LIST_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetServiceListFail implements Action {
   type = ActionTypes.GET_SERVICE_LIST_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 // service enquiry
 export class CreateEnquiry implements Action {
   type = ActionTypes.CREATE_ENQUIRY;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class CreateEnquirySuccess implements Action {
   type = ActionTypes.CREATE_ENQUIRY_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class CreateEnquiryFail implements Action {
   type = ActionTypes.CREATE_ENQUIRY_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 // sub category
 export class GetSubCategoryList implements Action {
   type = ActionTypes.GET_SubCATEGORY_LIST;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetSubCategoryListSuccess implements Action {
   type = ActionTypes.GET_SubCATEGORY_LIST_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class GetSubCategoryListFail implements Action {
   type = ActionTypes.GET_SubCATEGORY_LIST_FAIL;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 export type Actions =
   | GetProductList
@@ -565,5 +592,8 @@ export type Actions =
   | CreateEnquiry
   | CreateEnquirySuccess
   | CreateEnquiryFail
-  | RemoveActiveCategoryId;
+  | RemoveActiveCategoryId
+  | GetChildBannerList
+  | GetChildBannerListSuccess
+  | GetChildBannaerListFail;
 

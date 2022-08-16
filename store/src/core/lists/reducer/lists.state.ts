@@ -36,6 +36,11 @@ export interface ListsState extends Map<string, any> {
   bannerLoaded: boolean;
   bannerFailed: boolean;
 
+  childBannerList: Array<BannerListResponseModel>;
+  childBannerLoading: boolean;
+  childBannerLoaded: boolean;
+  childBannerFailed: boolean;
+
   availableOptionsArray: any;
 
   bannerCount: any;

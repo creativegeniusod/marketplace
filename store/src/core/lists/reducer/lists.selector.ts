@@ -83,6 +83,29 @@ export const bannerCount = createSelector(
   getState,
   fromList.getBannerCount
 );
+
+
+// Child banner
+export const childBannerList = createSelector(
+  getState,
+  fromList.getChildBannerList
+);
+export const childBannerLoadingStatus = createSelector(
+  getState,
+  fromList.getChildListLoading
+);
+
+export const childBannerLoadedStatus = createSelector(
+  getState,
+  fromList.getChildListLoaded
+);
+export const childBannerFailedStatus = createSelector(
+  getState,
+  fromList.getChildListFailed
+);
+
+
+
 export const countLoadingStatus = createSelector(
   getState,
   fromList.getCountLoading

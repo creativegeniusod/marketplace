@@ -44,7 +44,7 @@ export class TrendingProductComponent implements OnInit, OnDestroy {
   public priceFrom = '';
   public priceTo = '';
   // pagination
-  public pagesize: any = 4;
+  public pagesize: any = 7;
   public index: any = 0;
   // load image path
   public imagePath: string;

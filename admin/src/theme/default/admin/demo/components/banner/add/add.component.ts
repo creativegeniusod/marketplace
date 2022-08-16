@@ -197,6 +197,7 @@ export class BannerAddComponent implements OnInit {
       category: ['', [Validators.required]],
       subcategory: [''],
       active: ['', [Validators.required]],
+      homebanner: ['', [Validators.required]],
       bannerLink: [null],
       position: [null],
       imageInput: ['', [Validators.required]]
@@ -221,6 +222,7 @@ export class BannerAddComponent implements OnInit {
       params.title = this.bannerForm.value.bannerTitle;
       params.category = parseInt(this.bannerForm.value.category);
       params.subcategory = parseInt(subCateval);
+      params.homebanner = parseInt(this.bannerForm.value.homebanner);
       params.content = this.bannerForm.value.bannerContent;
       params.position = +this.bannerForm.value.position;
       params.link = this.bannerForm.value.bannerLink;
@@ -253,13 +255,16 @@ export class BannerAddComponent implements OnInit {
         this.bannerForm.controls['bannerContent'].setValue(
           this.serviceData.content
         );
-        console.log(this.serviceData,this.bannerInfo[0].categoryChildId,"*******");
+        // console.log(this.serviceData,this.bannerInfo[0].categoryChildId,"*******");
         this.bannerForm.controls['imageInput'].setValue(this.serviceData.image); // <-- Set Value for Validation
         this.bannerLink = this.bannerInfo[0].link;
         this.position = this.bannerInfo[0].position;
         this.bannerForm.controls['active'].setValue(this.serviceData.active);
 
         this.bannerForm.controls['category'].setValue(this.serviceData.categoryId);
+
+        this.bannerForm.controls['homebanner'].setValue(this.serviceData.homebanner);
+
         if(this.serviceData.categoryId){
           this.getSubCategoryList(this.serviceData.categoryId);
           this.bannerForm.controls['subcategory'].setValue(this.serviceData.categoryChildId);

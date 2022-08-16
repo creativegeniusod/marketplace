@@ -14,6 +14,7 @@ export class BannerupdateModel {
   public link: string;
   public position: string;
   public bannerId: number;
+  public homebanner: number;
   public categoryId: number;
   public categoryChildId: number;
   public status: number;
@@ -23,6 +24,7 @@ export class BannerupdateModel {
     this.content = bannerupdate.content || '';
     this.image = bannerupdate.image || '';
     this.link = bannerupdate.link || '';
+    this.homebanner = bannerupdate.homebanner || '';
     this.categoryId = bannerupdate.categoryId || '';
     this.position = bannerupdate.position || '';
     if (bannerupdate.bannerId) {

@@ -63,7 +63,7 @@ export class CommonListController {
      */
     // Product list Function
     @Get('/banner-list')
-    public async bannerList(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number,@QueryParam('child') child: number, @QueryParam('keyword') keyword: string, @QueryParam('count')count: number | boolean, @Res() response: any): Promise<any> {
+    public async bannerList(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number,@QueryParam('child') child: number,@QueryParam('parent') parent: number, @QueryParam('keyword') keyword: string, @QueryParam('count')count: number | boolean, @Res() response: any): Promise<any> {
         const select = ['bannerId', 'categoryId','categoryChildId', 'title', 'image', 'imagePath', 'content', 'link', 'position', 'isActive'];
         const search = [
             {
@@ -73,15 +73,8 @@ export class CommonListController {
             },
         ];
         let parsmsAry;
-        if( child ==undefined){
+        if( child  !=undefined){
            parsmsAry= [
-                {
-                    name: 'isActive',
-                    value: 1,
-                }
-            ]          
-        }else{
-            parsmsAry= [
                 {
                     name: 'isActive',
                     value: 1,
@@ -90,7 +83,25 @@ export class CommonListController {
                     op: 'like',
                     value: child,
                 },
+            ]        
+        } else if(parent !=undefined){
+            parsmsAry= [
+                {
+                    name: 'isActive',
+                    value: 1,
+                },{
+                    name: 'categoryChildId',
+                    op: 'where',
+                    value: 0,
+                },
             ]
+        }else{
+            parsmsAry= [
+                {
+                    name: 'isActive',
+                    value: 1,
+                }
+            ]            
         }
         // if(child){}
         const WhereConditions = parsmsAry;

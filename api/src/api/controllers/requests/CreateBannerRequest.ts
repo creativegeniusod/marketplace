@@ -23,6 +23,8 @@ export class CreateBanner {
     public category: number;
 
     public subcategory: number;
+    
+    public homebanner: number;
 
     public position: number;
     @IsNotEmpty()

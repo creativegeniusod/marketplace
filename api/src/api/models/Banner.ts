@@ -42,6 +42,9 @@ export class Banner extends BaseModel {
     @Column({name: 'category_child_id'})
     public categoryChildId: number;
 
+    @Column({name: 'homebanner'})
+    public homebanner: number;
+    
     @Column({name: 'image'})
     public image: string;
 

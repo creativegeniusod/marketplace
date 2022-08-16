@@ -11,6 +11,7 @@ export class BannerlistResponseModel {
   public bannerId: number;
   public categoryId: number;
   public categoryChildId: number;
+  public homebanner: number;
   public position: number;
   public content: string;
   public image: string;
@@ -23,6 +24,7 @@ export class BannerlistResponseModel {
     this.bannerId = bannerlistResponse.bannerId || 0;
     this.categoryId = bannerlistResponse.categoryId || 0;
     this.categoryChildId = bannerlistResponse.categoryChildId || 0;
+    this.homebanner = bannerlistResponse.homebanner || 0;
     this.position = bannerlistResponse.position || 0;
     this.content = bannerlistResponse.content || '';
     this.image = bannerlistResponse.image || '';

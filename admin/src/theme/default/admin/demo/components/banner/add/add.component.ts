@@ -262,7 +262,7 @@ export class BannerAddComponent implements OnInit {
         this.bannerForm.controls['active'].setValue(this.serviceData.active);
 
         this.bannerForm.controls['category'].setValue(this.serviceData.categoryId);
-
+        console.log("**&&&&&&&&&***",this.serviceData,"**&&&&&&&&&**");
         this.bannerForm.controls['homebanner'].setValue(this.serviceData.homebanner);
 
         if(this.serviceData.categoryId){

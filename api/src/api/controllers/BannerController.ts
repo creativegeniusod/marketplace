@@ -79,15 +79,18 @@ export class BannerController {
                 await this.imageService.imageUpload((path + name), base64Data);
             }
             const newBanner = new Banner();
+            console.log("Hello",bannerParam);
             newBanner.title = bannerParam.title;
             newBanner.content = bannerParam.content;
+            newBanner.categoryId = bannerParam.category;
+            newBanner.categoryChildId = (bannerParam.subcategory==null?0:bannerParam.subcategory);
             newBanner.image = name;
             newBanner.imagePath = path;
             newBanner.link = bannerParam.link;
             newBanner.position = bannerParam.position;
             newBanner.isActive = bannerParam.status;
             const bannerSave = await this.bannerService.create(newBanner);
-   console.log(bannerSave + 'comminggg');
+            console.log(bannerSave + 'comminggg');
             if (bannerSave) {
                 const successResponse: any = {
                     status: 1,
@@ -294,6 +297,7 @@ export class BannerController {
         banner.content = bannerParam.content;
         banner.categoryId = bannerParam.category;
         banner.categoryChildId = bannerParam.subcategory;
+        banner.homebanner = bannerParam.homebanner;
         banner.link = bannerParam.link;
         banner.position = bannerParam.position;
         banner.isActive = bannerParam.status;

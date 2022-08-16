@@ -85,3 +85,49 @@ ls
 cd ..
 cp .htaccess admin/dist/
 cp .htaccess store/dist/browser/
+source ~/.profile
+ls
+git pull origin master
+ls
+cd api
+ls
+ng serve
+npm start
+ng start serve
+npm start serve
+kill -9 $(lsof -t -i:9000)
+npm start serve
+lsof -i tcp:9000
+kill -9 12475
+npm start serve
+lsof -i tcp:9000
+kill -9 12737
+npm start serve
+clear
+npm start serve
+lsof -i tcp:9000
+kill -9 13432
+kill -9 13432
+lsof -i tcp:9000
+npm start serve
+kill -9 `lsof -t -i:9000`
+npm start serve
+npm start serve
+ls
+cd ..
+git status
+git pull origin master
+ls
+git pull origin master
+git status
+git stash
+git status
+git pull origin master
+ls
+cd admin
+npm run build
+npm run build
+ng serve
+ls
+source ../.profile 
+npm run build

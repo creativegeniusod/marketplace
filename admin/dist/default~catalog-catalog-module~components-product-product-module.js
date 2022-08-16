@@ -1,112 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~catalog-catalog-module~components-categories-categories-module~components-product-product-mo~98489240"],{
-
-/***/ "./src/core/admin/catalog/category/categories.service.ts":
-/*!***************************************************************!*\
-  !*** ./src/core/admin/catalog/category/categories.service.ts ***!
-  \***************************************************************/
-/*! exports provided: CategoriesService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriesService", function() { return CategoriesService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _providers_api_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../providers/api/api */ "./src/core/admin/providers/api/api.ts");
-/*
- * SpurtCommerce
- * http://www.spurtcommerce.com
- *
- * Copyright (c) 2022 PICCOSOFT
- * Author piccosoft <support@spurtcommerce.com>
- * Licensed under the MIT license.
- */
-
-
-
-
-var CategoriesService = /** @class */ (function (_super) {
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](CategoriesService, _super);
-    function CategoriesService() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        // url
-        _this.url = _this.getBaseUrl();
-        // for get method
-        _this.params = {};
-        return _this;
-    }
-    // passing data to category edit
-    CategoriesService.prototype.setEditcategories = function (data) {
-        this.setEditvariable = data;
-    };
-    CategoriesService.prototype.getEditcategories = function () {
-        return this.setEditvariable;
-    };
-    /**
-     * Handles 'categoryListPagination' function. Calls get method with specific api address
-     * along its param.
-     *
-     * @param params from CategorylistForm.
-     */
-    CategoriesService.prototype.categoryListPagination = function (params) {
-        var reqOpts = {};
-        reqOpts = params;
-        return this.http.get(this.url + '/categoryList', { params: reqOpts });
-    };
-    /**
-     * Handles 'updateCategory' function. Calls put method with specific api address
-     * along its param.
-     *
-     * @param params from model.
-     */
-    CategoriesService.prototype.updateCategory = function (params) {
-        return this.http.put(this.url + '/update-category/' + params.categoryId, params);
-    };
-    /**
-     * Handles 'delete' function. Calls delete method with specific api address
-     * along its param.
-     *
-     * @param params from CategorydeleteForm
-     */
-    CategoriesService.prototype.delete = function (params) {
-        var httpOptions = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
-                'Content-Type': 'application/json'
-            }),
-            body: { categoryId: params.categoryId }
-        };
-        return this.http.delete(this.url + '/delete-category/' + params.categoryId, httpOptions);
-    };
-    /**
-     * Handles 'categoryList' function. Calls get method with specific api address
-     * along its param.
-     *
-     * @param params from CategorylistForm
-     */
-    CategoriesService.prototype.categoryList = function (params) {
-        var reqOpts = {};
-        reqOpts = params;
-        return this.http.get(this.url + '/categoryList', { params: reqOpts });
-    };
-    /**
-     * Handles 'addCategory' function. Calls post method with specific api address
-     * along its param.
-     *
-     * @param param from CategoryForm
-     */
-    CategoriesService.prototype.addCategory = function (param) {
-        return this.http.post(this.url + '/add-category', param);
-    };
-    CategoriesService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
-    ], CategoriesService);
-    return CategoriesService;
-}(_providers_api_api__WEBPACK_IMPORTED_MODULE_3__["Api"]));
-
-
-
-/***/ }),
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~catalog-catalog-module~components-product-product-module"],{
 
 /***/ "./src/core/admin/catalog/layout/layout.sandbox.ts":
 /*!*********************************************************!*\
@@ -353,7 +245,164 @@ var getTotalCategoryCountLoading = Object(reselect__WEBPACK_IMPORTED_MODULE_0__[
 var getTotalCategoryCountFailed = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatalogLayoutState, _layout_reducer__WEBPACK_IMPORTED_MODULE_1__["getTotalCategoryCountFailed"]);
 
 
+/***/ }),
+
+/***/ "./src/core/admin/catalog/product/product.service.ts":
+/*!***********************************************************!*\
+  !*** ./src/core/admin/catalog/product/product.service.ts ***!
+  \***********************************************************/
+/*! exports provided: ProductService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductService", function() { return ProductService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _providers_api_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../providers/api/api */ "./src/core/admin/providers/api/api.ts");
+/*
+ * SpurtCommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 PICCOSOFT
+ * Author piccosoft <support@spurtcommerce.com>
+ * Licensed under the MIT license.
+ */
+
+
+
+
+
+var ProductService = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](ProductService, _super);
+    function ProductService() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        // for get method
+        _this.params = {};
+        // url
+        _this.basUrl = _this.getBaseUrl();
+        return _this;
+    }
+    /**
+     * Handles 'productList' function. Calls get method with specific api address
+     * along its param.
+     *
+     * @param params from RatingReviewListModel
+     */
+    ProductService.prototype.productList = function (params) {
+        var reqOpts = {};
+        reqOpts = params;
+        return this.http.get(this.basUrl + '/product/productlist', {
+            params: reqOpts
+        });
+    };
+    /**
+     * Handles 'productCount' function. Calls get method with specific api address
+     * along its param.
+     *
+     * @param params from RatingReviewListModel
+     */
+    ProductService.prototype.productCount = function (params) {
+        var reqOpts = {};
+        reqOpts = params;
+        return this.http.get(this.basUrl + '/product/productlist', {
+            params: reqOpts
+        });
+    };
+    /**
+     * Handles 'productDelete' function. Calls delete method with specific api address
+     * along its param.
+     *
+     * @param params from ProductDeleteModel
+     */
+    ProductService.prototype.productDelete = function (params) {
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                'Content-Type': 'application/json'
+            }),
+            withCredentials: false,
+            body: { productId: params.productId }
+        };
+        return this.http.delete(this.basUrl + '/product/delete-product/' + params.productId, httpOptions);
+    };
+    /**
+     * Handles 'productAdd' function. Calls post method with specific api address
+     * along its param.
+     *
+     * @param param from Model
+     */
+    ProductService.prototype.productAdd = function (param) {
+        return this.http.post(this.basUrl + '/product/add-product', param);
+    };
+    /**
+     * Handles 'productDetail' function. Calls post method with specific api address
+     * along its param.
+     *
+     * @param param from Model
+     */
+    ProductService.prototype.productUpdate = function (param) {
+        return this.http.post(this.basUrl + '/product/update-product/' + param.productId, param);
+    };
+    /**
+     * Handles 'productDetail' function. Calls get method with specific api address
+     * along its param.
+     *
+     * @param param from DetailModel
+     */
+    ProductService.prototype.productDetail = function (param) {
+        return this.http.get(this.basUrl + '/product/product-detail/' + param.Id);
+    };
+    /**
+     * Handles 'productTodayDeals' function. Calls put method with specific api address
+     * along its param.
+     *
+     * @param params from model
+     */
+    ProductService.prototype.productTodayDeals = function (params) {
+        return this.http.put(this.basUrl + '/product/update-todayDeals/' + params.productId, params);
+    };
+    // getting option value
+    ProductService.prototype.gettingOptionApi = function (params) {
+        return this.http.get(this.basUrl + ("/option/getting-option-value/" + params));
+    };
+    /**
+     * Handles 'productBulkDelete' function. Calls post method with specific api address
+     * along its param.
+     *
+     * @param param from Model
+     */
+    ProductService.prototype.productBulkDelete = function (param) {
+        return this.http.post(this.basUrl + '/product/delete-product', param);
+    };
+    /**
+     * Handles 'ProductExcel' function. Calls put method with specific api address
+     * along its param.
+     *
+     * @param params from model
+     */
+    ProductService.prototype.productExcel = function (params) {
+        var reqOpts = {};
+        reqOpts.responseType = 'arraybuffer';
+        if (params) {
+            reqOpts.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]();
+            for (var k in params) {
+                if (k) {
+                    reqOpts.params = reqOpts.params.set(k, params[k]);
+                }
+            }
+        }
+        return this.http.get(this.basUrl + '/product/product-excel-list/', reqOpts);
+    };
+    ProductService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+    ], ProductService);
+    return ProductService;
+}(_providers_api_api__WEBPACK_IMPORTED_MODULE_3__["Api"]));
+
+
+
 /***/ })
 
 }]);
-//# sourceMappingURL=default~catalog-catalog-module~components-categories-categories-module~components-product-product-mo~98489240.js.map
+//# sourceMappingURL=default~catalog-catalog-module~components-product-product-module.js.map

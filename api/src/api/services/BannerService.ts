@@ -20,6 +20,7 @@ export class BannerService {
 
     // create banner
     public async create(banner: any): Promise<any> {
+        // console.log("***Create a new banner***")
         this.log.info('Create a new banner ');
         return this.bannerRepository.save(banner);
     }

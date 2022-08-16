@@ -30,9 +30,10 @@ import { BannerSandbox } from '../../../../../../../core/admin/demo/banners/bann
 import { BannerService } from '../../../../../../../core/admin/demo/banners/banner.service';
 import { ConfigService } from '../../../../../../../core/admin/service/config.service';
 import { CategoriesSandbox } from '../../../../../../../core/admin/catalog/category/categories.sandbox';
+import { CategoriesService } from '../../../../../../../core/admin/catalog/category/categories.service';
 
 @Component({
-  selector: 'app-cms-banner-add',
+  selector: 'app-demo-banner-add',
   templateUrl: 'add.component.html',
   encapsulation: ViewEncapsulation.None,
   styles: [
@@ -64,6 +65,8 @@ export class BannerAddComponent implements OnInit {
   public ImageUrl: any = '';
   public bannerForm: FormGroup;
   public bannerTitle: FormControl;
+  public category: FormControl;
+  public subcategory: FormControl;
   public bannerContent: FormControl;
   public bannerLink: FormControl;
   public position: FormControl;
@@ -94,6 +97,7 @@ export class BannerAddComponent implements OnInit {
     private route: ActivatedRoute,
     private changeDetectRef: ChangeDetectorRef,
     public categoriessandbox: CategoriesSandbox,
+    public categoryservice: CategoriesService,
     private configService: ConfigService,
     public sandbox: BannerSandbox,
     private service: BannerService
@@ -101,14 +105,17 @@ export class BannerAddComponent implements OnInit {
 
   ngOnInit() {
     this.getCategoryList()
+    // alert("df")
     this.imageUrl = this.configService.getImageUrl();
     this.postImageUrl = './assets/upload-banner/upload.png';
     this.initForm();
     this.editBannerData();
+    // alert(this.route.snapshot.paramMap.get('id'));
     this.editBannerId = this.route.snapshot.paramMap.get('id');
   }
 
   getCategoryList() {
+    // alert("hello");
     const param: any = {};
     param.limit = '';
     param.offset = '';
@@ -134,13 +141,13 @@ export class BannerAddComponent implements OnInit {
     param.sortOrder = '';
     param.parentInt = deviceValue;
     param.status = 1;
-    console.log(param,"make params");
+    console.log(param,"make params SubCategoryList");
     this.categoriessandbox.subcategorylist(param);
-    this.categoriessandbox.getSubCategoriesList$.subscribe( data => {
+    /*this.categoriessandbox.getSubCategoriesList$.subscribe( data => {
       if(data){
         console.log(data,"data"); 
       }
-    });    
+    }); */   
   }
 
   onSelectcategory(deviceValue){
@@ -187,7 +194,10 @@ export class BannerAddComponent implements OnInit {
     this.bannerForm = this.fb.group({
       bannerTitle: [null, [Validators.required]],
       bannerContent: [''],
+      category: ['', [Validators.required]],
+      subcategory: [''],
       active: ['', [Validators.required]],
+      homebanner: ['', [Validators.required]],
       bannerLink: [null],
       position: [null],
       imageInput: ['', [Validators.required]]
@@ -207,8 +217,12 @@ export class BannerAddComponent implements OnInit {
       this.validateAllFormFields(this.bannerForm);
       return;
     } else {
+      const subCateval=(this.bannerForm.value.subcategory=='null'?0:this.bannerForm.value.subcategory)
       const params: any = {};
       params.title = this.bannerForm.value.bannerTitle;
+      params.category = parseInt(this.bannerForm.value.category);
+      params.subcategory = parseInt(subCateval);
+      params.homebanner = parseInt(this.bannerForm.value.homebanner);
       params.content = this.bannerForm.value.bannerContent;
       params.position = +this.bannerForm.value.position;
       params.link = this.bannerForm.value.bannerLink;
@@ -230,6 +244,7 @@ export class BannerAddComponent implements OnInit {
   // editBanner Data
   editBannerData() {
     this.bannerInfo = [];
+
     this.serviceData = this.service.getbannerListdata();
     if (this.serviceData) {
       this.bannerInfo.push(this.serviceData);
@@ -240,10 +255,21 @@ export class BannerAddComponent implements OnInit {
         this.bannerForm.controls['bannerContent'].setValue(
           this.serviceData.content
         );
+        // console.log(this.serviceData,this.bannerInfo[0].categoryChildId,"*******");
         this.bannerForm.controls['imageInput'].setValue(this.serviceData.image); // <-- Set Value for Validation
         this.bannerLink = this.bannerInfo[0].link;
         this.position = this.bannerInfo[0].position;
         this.bannerForm.controls['active'].setValue(this.serviceData.active);
+
+        this.bannerForm.controls['category'].setValue(this.serviceData.categoryId);
+
+        this.bannerForm.controls['homebanner'].setValue(this.serviceData.homebanner);
+
+        if(this.serviceData.categoryId){
+          this.getSubCategoryList(this.serviceData.categoryId);
+          this.bannerForm.controls['subcategory'].setValue(this.serviceData.categoryChildId);
+        }
+
         this.postImageUrl =
           this.imageUrl + '?path=' +
           `${this.bannerInfo[0].imagePath}` + '&name=' +

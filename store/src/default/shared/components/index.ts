@@ -49,6 +49,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ControlsProductDetailComponent} from './controls-product-detail/controls-product-detail.component';
 import {GetDirectionsComponent} from '../get-directions/get-directions.component';
 import {AgmCoreModule} from '@agm/core';
+import { MainSubmenuCarouselComponent } from './main-submenu-carousel/main-submenu-carouselcomponent';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     wheelPropagation: true,
@@ -57,6 +58,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 export const COMPONENTS = [
     MainCarouselComponent,
+    MainSubmenuCarouselComponent,
     BrandsCarouselComponent,
     CategoryListComponent,
     BreadcrumbComponent,

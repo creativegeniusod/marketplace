@@ -4,7 +4,7 @@
         <div class="breadcrumbs-row noborder">
             <div class="bc-col">
                 <ul>
-                    <li><a href="javascript:void(0)"> DEMO </a></li>
+                    <li><a href="javascript:void(0)"> ADV </a></li>
                     <li><a href="javascript:void(0)" [routerLink]="['/demo/banners']"> Banners </a></li>
                     <li>Add Banners</li>
                 </ul>
@@ -31,7 +31,7 @@
             </div>
             <div class="flex ap-body cmsap-body">
                 <div class="ap-body-col">
-                    <div class="form-group">
+                    <div class="form-group">                       
                         <label>Banner Title<sup>*</sup> </label>
                         <input type="text" class="form-control" [(ngModel)]="bannerTitle" formControlName="bannerTitle" placeholder="Banner Title" [ngClass]="{ 'is-invalid': submitted && f.bannerTitle.errors }">
                         <div *ngIf="submitted && f.bannerTitle.errors" class="invalid-feedback">
@@ -74,32 +74,32 @@
 
                 <div class="ap-body-col">
                     <div class="form-group">
-                        <label>Position</label>
-                        <select class="custom-select col-12" id="categoryComponent" formControlName="categoryComponent" (change)="onSelectcategory($event.target.value)">
+                        <label>Categories<sup>*</sup></label>
+                        <select class="custom-select col-12" id="categoryComponent" formControlName="category" (change)="onSelectcategory($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.category.errors }">
                             <option value=''>- -Select- -</option>
                             <option selected *ngFor="let arr of categoriessandbox.getCategoriesList$ | async"
                             value={{arr.categoryId}}>{{arr.name}}
                             </option>
                         </select>
-                        <div *ngIf="submitted && f.position.errors" class="invalid-feedback">
+                        <!-- <div *ngIf="submitted && f.position.errors" class="invalid-feedback">
                             <div *ngIf="f.position.errors.required">Position is required
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="ap-body-col">
                     <div class="form-group">
-                        <label>Position</label>
-                        <select class="custom-select col-12" id="categoryComponent" formControlName="categoryComponent">
-                            <option value=''>- -Select sub category- -</option>
+                        <label>Sub Categories</label>
+                        <select class="custom-select col-12" id="subcategoryComponent" formControlName="subcategory" [ngClass]="{ 'is-invalid': submitted && f.subcategory.errors }">
+                            <option value=''>- -Select- -</option>
                             <option selected *ngFor="let arr of categoriessandbox.getSubCategoriesList$ | async"
                             value={{arr.categoryId}}>{{arr.name}}
                             </option>
                         </select>
-                        <div *ngIf="submitted && f.position.errors" class="invalid-feedback">
+                        <!-- <div *ngIf="submitted && f.position.errors" class="invalid-feedback">
                             <div *ngIf="f.position.errors.required">Position is required
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="ap-body-col">
@@ -113,7 +113,19 @@
                         <div *ngIf="submitted && f.active.errors" class="invalid-feedback">
                             <div *ngIf="f.active.errors.required">Status is required</div>
                         </div>
-
+                    </div>
+                </div>
+                <div class="ap-body-col">
+                    <div class="form-group">
+                        <label>Show on home page<sup>*</sup></label>
+                        <select class="custom-select col-12" formControlName="homebanner" id="homebanner" [ngClass]="{ 'is-invalid': submitted && f.homebanner.errors }">
+                            <option value="">- -Select Active- -</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                        <div *ngIf="submitted && f.homebanner.errors" class="invalid-feedback">
+                            <div *ngIf="f.homebanner.errors.required">Status is required</div>
+                        </div>
                     </div>
                 </div>
                 <!--col-->

@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~components-categories-categories-module~components-product-product-module"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~components-banner-banner-module~components-categories-categories-module~components-product-p~b060f34b"],{
 
 /***/ "./node_modules/lodash/lodash.js":
 /*!***************************************!*\
@@ -17301,6 +17301,7 @@ var CategoriesSandbox = /** @class */ (function () {
         this.router = router;
         this.levelsloop = [];
         this.getCategoriesList$ = this.appState.select(_reducer_categories_selectors__WEBPACK_IMPORTED_MODULE_6__["getCategoryList"]);
+        this.getSubCategoriesList$ = this.appState.select(_reducer_categories_selectors__WEBPACK_IMPORTED_MODULE_6__["getSubCategoryList"]);
         // CategoryFilterList
         this.getCategoriesFilterList$ = this.appState.select(_reducer_categories_selectors__WEBPACK_IMPORTED_MODULE_6__["getCategoryFilterList"]);
         this.getCategoriesListCount$ = this.appState.select(_reducer_categories_selectors__WEBPACK_IMPORTED_MODULE_6__["getCategoryListnCount"]);
@@ -17334,7 +17335,11 @@ var CategoriesSandbox = /** @class */ (function () {
         this.subscribe();
     }
     CategoriesSandbox.prototype.categorylist = function (value) {
+        // alert("i AM DISPATCH")
         this.appState.dispatch(new _action_categories_action__WEBPACK_IMPORTED_MODULE_3__["DoCategorieslistAction"](new _models_categorylist_model__WEBPACK_IMPORTED_MODULE_4__["CategorylistForm"](value)));
+    };
+    CategoriesSandbox.prototype.subcategorylist = function (value) {
+        this.appState.dispatch(new _action_categories_action__WEBPACK_IMPORTED_MODULE_3__["DoSubCategorieslistAction"](new _models_categorylist_model__WEBPACK_IMPORTED_MODULE_4__["CategorylistForm"](value)));
     };
     CategoriesSandbox.prototype.categorycountdata = function (value) {
         this.appState.dispatch(new _action_categories_action__WEBPACK_IMPORTED_MODULE_3__["DoCategoriescountAction"](new _models_categorycount_model__WEBPACK_IMPORTED_MODULE_11__["CategorycountForm"](value)));
@@ -17392,6 +17397,119 @@ var CategoriesSandbox = /** @class */ (function () {
     ], CategoriesSandbox);
     return CategoriesSandbox;
 }());
+
+
+
+/***/ }),
+
+/***/ "./src/core/admin/catalog/category/categories.service.ts":
+/*!***************************************************************!*\
+  !*** ./src/core/admin/catalog/category/categories.service.ts ***!
+  \***************************************************************/
+/*! exports provided: CategoriesService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriesService", function() { return CategoriesService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _providers_api_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../providers/api/api */ "./src/core/admin/providers/api/api.ts");
+/*
+ * SpurtCommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 PICCOSOFT
+ * Author piccosoft <support@spurtcommerce.com>
+ * Licensed under the MIT license.
+ */
+
+
+
+
+var CategoriesService = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](CategoriesService, _super);
+    function CategoriesService() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        // url
+        _this.url = _this.getBaseUrl();
+        // for get method
+        _this.params = {};
+        return _this;
+    }
+    // passing data to category edit
+    CategoriesService.prototype.setEditcategories = function (data) {
+        this.setEditvariable = data;
+    };
+    CategoriesService.prototype.getEditcategories = function () {
+        return this.setEditvariable;
+    };
+    /**
+     * Handles 'categoryListPagination' function. Calls get method with specific api address
+     * along its param.
+     *
+     * @param params from CategorylistForm.
+     */
+    CategoriesService.prototype.categoryListPagination = function (params) {
+        var reqOpts = {};
+        reqOpts = params;
+        return this.http.get(this.url + '/categoryList', { params: reqOpts });
+    };
+    /**
+     * Handles 'updateCategory' function. Calls put method with specific api address
+     * along its param.
+     *
+     * @param params from model.
+     */
+    CategoriesService.prototype.updateCategory = function (params) {
+        return this.http.put(this.url + '/update-category/' + params.categoryId, params);
+    };
+    /**
+     * Handles 'delete' function. Calls delete method with specific api address
+     * along its param.
+     *
+     * @param params from CategorydeleteForm
+     */
+    CategoriesService.prototype.delete = function (params) {
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                'Content-Type': 'application/json'
+            }),
+            body: { categoryId: params.categoryId }
+        };
+        return this.http.delete(this.url + '/delete-category/' + params.categoryId, httpOptions);
+    };
+    /**
+     * Handles 'categoryList' function. Calls get method with specific api address
+     * along its param.
+     *
+     * @param params from CategorylistForm
+     */
+    CategoriesService.prototype.categoryList = function (params) {
+        var reqOpts = {};
+        reqOpts = params;
+        return this.http.get(this.url + '/categoryList', { params: reqOpts });
+    };
+    CategoriesService.prototype.subcategoryList = function (params) {
+        var reqOpts = {};
+        reqOpts = params;
+        return this.http.get(this.url + '/categoryList', { params: reqOpts });
+    };
+    /**
+     * Handles 'addCategory' function. Calls post method with specific api address
+     * along its param.
+     *
+     * @param param from CategoryForm
+     */
+    CategoriesService.prototype.addCategory = function (param) {
+        return this.http.post(this.url + '/add-category', param);
+    };
+    CategoriesService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+    ], CategoriesService);
+    return CategoriesService;
+}(_providers_api_api__WEBPACK_IMPORTED_MODULE_3__["Api"]));
 
 
 
@@ -17516,6 +17634,7 @@ var CategorylistForm = /** @class */ (function () {
     function CategorylistForm(categorylistForm) {
         this.limit = categorylistForm.limit || '';
         this.offset = categorylistForm.offset || '';
+        this.parentInt = categorylistForm.parentInt || '';
         this.keyword = categorylistForm.keyword || '';
         this.sortOrder = categorylistForm.sortOrder || '';
         this.status = categorylistForm.status || '';
@@ -17567,13 +17686,14 @@ var CategoryupdateForm = /** @class */ (function () {
 /*!*************************************************************************!*\
   !*** ./src/core/admin/catalog/category/reducer/categories.selectors.ts ***!
   \*************************************************************************/
-/*! exports provided: getCatState, getCategoryList, getCategoryFilterList, getCategoryListnCount, getCategoriesListResponse, getCategoriesListRequestLoading, getCategoriesListRequestLoaded, getCategoriesListRequestFailed, getCategoryDoDelete, getDeleteCategoriesResponse, getDeleteCategoriesRequestLoading, getDeleteCategoriesRequestLoaded, getDeleteCategoriesRequestFailed, getAddCatagoryStatus, getAddCatagoryData, getAddCategoriesResponse, getAddCategoriesRequestLoading, getAddCategoriesRequestLoaded, getAddCategoriesRequestFailed, getUpdateCatagory, getUpdateCategoriesResponse, getUpdateCategoriesRequestLoading, getUpdateCategoriesRequestLoaded, getUpdateCategoriesRequestFailed, getCategoryCountdata, getUpdateCategoryBadresponse, getCategoriesCountResponse, getCategoriesCountRequestLoading, getCategoriesCountRequestLoaded, getCategoriesCountRequestFailed */
+/*! exports provided: getCatState, getCategoryList, getSubCategoryList, getCategoryFilterList, getCategoryListnCount, getCategoriesListResponse, getCategoriesListRequestLoading, getCategoriesListRequestLoaded, getCategoriesListRequestFailed, getCategoryDoDelete, getDeleteCategoriesResponse, getDeleteCategoriesRequestLoading, getDeleteCategoriesRequestLoaded, getDeleteCategoriesRequestFailed, getAddCatagoryStatus, getAddCatagoryData, getAddCategoriesResponse, getAddCategoriesRequestLoading, getAddCategoriesRequestLoaded, getAddCategoriesRequestFailed, getUpdateCatagory, getUpdateCategoriesResponse, getUpdateCategoriesRequestLoading, getUpdateCategoriesRequestLoaded, getUpdateCategoriesRequestFailed, getCategoryCountdata, getUpdateCategoryBadresponse, getCategoriesCountResponse, getCategoriesCountRequestLoading, getCategoriesCountRequestLoaded, getCategoriesCountRequestFailed */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCatState", function() { return getCatState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCategoryList", function() { return getCategoryList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSubCategoryList", function() { return getSubCategoryList; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCategoryFilterList", function() { return getCategoryFilterList; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCategoryListnCount", function() { return getCategoryListnCount; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCategoriesListResponse", function() { return getCategoriesListResponse; });
@@ -17622,6 +17742,8 @@ __webpack_require__.r(__webpack_exports__);
 var getCatState = function (state) { return state.categories; };
 // category list action
 var getCategoryList = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatState, _categories_reducer__WEBPACK_IMPORTED_MODULE_1__["getCategoryList"]);
+// category list action 
+var getSubCategoryList = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatState, _categories_reducer__WEBPACK_IMPORTED_MODULE_1__["getSubCategoryList"]);
 // getCategoryFilterList
 var getCategoryFilterList = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatState, _categories_reducer__WEBPACK_IMPORTED_MODULE_1__["getCategoryFilterList"]);
 var getCategoryListnCount = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getCatState, _categories_reducer__WEBPACK_IMPORTED_MODULE_1__["getCategoryListnCount"]);
@@ -17660,4 +17782,4 @@ var getCategoriesCountRequestFailed = Object(reselect__WEBPACK_IMPORTED_MODULE_0
 /***/ })
 
 }]);
-//# sourceMappingURL=default~components-categories-categories-module~components-product-product-module.js.map
+//# sourceMappingURL=default~components-banner-banner-module~components-categories-categories-module~components-product-p~b060f34b.js.map

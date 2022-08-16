@@ -31,7 +31,7 @@ export class ListsEffect {
     public title: Title,
     private meta: Meta,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ) { }
 
   @Effect()
   getProducts$: Observable<Action> = this.actions$.pipe(
@@ -130,6 +130,20 @@ export class ListsEffect {
       );
     })
   );
+
+  @Effect()
+  childBannerList$: Observable<Action> = this.actions$.pipe(
+    ofType(actions.ActionTypes.GET_CHILD_BANNER_LIST),
+    map((action: actions.GetChildBannerList) => action.payload),
+    switchMap(state => {
+      return this.authApi.getBannerList(state).pipe(
+        map(banner => new actions.GetChildBannerListSuccess(banner)),
+        catchError(error => of(new actions.GetChildBannaerListFail(error)))
+      );
+    })
+  );
+
+
   @Effect()
   bannerCount$: Observable<Action> = this.actions$.pipe(
     ofType(actions.ActionTypes.GET_BANNER_LIST_COUNT),

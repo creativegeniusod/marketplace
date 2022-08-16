@@ -107,12 +107,14 @@ export class ProductsComponent implements OnInit, OnDestroy {
             this.getProductList(this.startKey, this.viewOrder, this.categoryId);
           }
         }
+        this.getChildBannerList();
       })
     );
   }
 
   // initially remove local storage and calls listSandbox getSettings
   ngOnInit() {
+    this.getChildBannerList();
     if (!this.queryParams.id && this.keyword === '') {
       this.getProductList(this.startKey, this.viewOrder, this.categoryId);
     }
@@ -135,6 +137,16 @@ export class ProductsComponent implements OnInit, OnDestroy {
     if (window.innerWidth < 1280) {
       this.viewCol = 33.3;
     }
+  }
+
+
+  // fetch chield banner list from sandbox
+  getChildBannerList() {
+    const params: any = {};
+    params.limit = 4;
+    params.offset = 0;
+    params.child = this.categoryId;
+    this.listSandbox.getChildBannerList(params);
   }
 
   /**

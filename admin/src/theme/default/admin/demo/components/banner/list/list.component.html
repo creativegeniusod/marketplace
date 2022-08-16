@@ -4,13 +4,13 @@
         <div class="breadcrumbs-row">
             <div class="bc-col">
                 <ul>
-                    <li><a href="javascript:void(0)"> DEMO </a></li>
+                    <li><a href="javascript:void(0)"> ADV </a></li>
                     <li>Banners</li>
                 </ul>
             </div>
             <div class="bc-col-btn">
                 <button class="btn cms-btn" (click)="AddBanner()"><img
-                        src="assets/img/add-white-ico.png">Add Banner new
+                        src="assets/img/add-white-ico.png">Add Banner
                 </button>
             </div>
         </div>
@@ -55,6 +55,7 @@
                         <th scope="col">Image</th>
                         <th scope="col">Link</th>
                         <th scope="col">Position</th>
+                        <th scope="col">category</th>
                         <th scope="col" width="100">Action</th>
                     </tr>
                 </thead>
@@ -77,8 +78,10 @@
                         <td>{{bannerInfo.link}}
                         </td>
                         <td>{{bannerInfo.position}}</td>
+                        <td>{{bannerInfo.categoryId}} , {{bannerInfo.categoryChildId}}</td>
                         <!--<td>{{bannerInfo.position}}</td>-->
                         <td>
+                            <!-- {{bannerInfo | json }} -->
                             <a (click)="editBanner(bannerInfo)" href="javascript:void(0)"> <img src="assets/img/edit-ico.png"> </a>
 
                             <i style="margin-left: 15px;" [ngbPopover]="deleteContent" placement="left" #deletePop="ngbPopover" class="fas fa-trash"></i>

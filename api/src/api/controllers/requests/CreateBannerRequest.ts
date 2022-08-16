@@ -19,6 +19,10 @@ export class CreateBanner {
     public image: string;
 
     public link: string;
+    
+    public category: number;
+
+    public subcategory: number;
 
     public position: number;
     @IsNotEmpty()

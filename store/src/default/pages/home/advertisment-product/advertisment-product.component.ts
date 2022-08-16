@@ -31,7 +31,7 @@ export class AdvertismentProductComponent implements OnInit, OnDestroy {
   public sidenavOpen = true;
   // card view
   public viewType = 'grid';
-  public viewCol = 25;
+  public viewCol = 14;
   public sortings: Array<any>;
   public sortData: any = 'Price Low To High';
   condition: any;

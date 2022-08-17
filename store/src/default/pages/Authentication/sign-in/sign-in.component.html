@@ -1,14 +1,14 @@
-<div fxFlex="100" class="p-2 boder-right">
+<div fxFlex="100">
     <!-- <span style="padding: 2px; font-weight: 500;">or continue with</span> -->
 
     <h4><span>or continue with</span></h4>
-    <div class="text-center mt-2">
+    <div class="text-center mt-3 formIcons">
         <mat-icon>facebook</mat-icon>
         <mat-icon><img src="../../../../assets/images/google.png" alt=""></mat-icon>
         <mat-icon>apple</mat-icon>
     </div>
 
-    <h2 class="text-muted text-center">Sign In</h2>
+    <h2 class="signInTitle">Sign In</h2>
     <span>Become a Beaver Member and recieve exclusive offers customized for you</span>
     <form [formGroup]="loginForm" novalidate>
         <mat-form-field class="w-100 mt-2" [ngClass]="{'validationcolor':
@@ -37,8 +37,8 @@
             <mat-checkbox class="example-margin">Remember me!</mat-checkbox>
         </div>
 
-        <div class="text-center mt-2">
-            By continueing. I agree to the terms of use & pivacy polices
+        <div class="mt-2">
+            <h3>By continueing. I agree to the terms of use & pivacy polices</h3>
         </div>
 
         <div class="text-center mt-2">
@@ -47,18 +47,18 @@
 
                 <mat-icon *ngIf="!(authSandbox.loginLoading$ | async)">exit_to_app</mat-icon>
             </button> -->
-            <button mat-button color="primary" class="mat-elevation-z6" (click)="onLoginFormSubmit(loginForm.value)">
+            <button mat-button color="primary" class="signInBtn actionBtn" (click)="onLoginFormSubmit(loginForm.value)">
                 <i *ngIf="(authSandbox.loginLoading$ | async)" class="fa fa-spinner fa-spin"
                     style="font-size:24px"></i>Sign In</button>
         </div>
 
         <div class="text-center mt-2">
-            <button mat-button color="primary" class="mat-elevation-z6">Create A New Accout</button>
+            <button mat-button color="primary" class="createAccountBtn actionBtn">Create A New Accout</button>
         </div>
 
 
         <div fxLayout="row" fxLayoutAlign="space-between center" class="mt-2">
-            <h5 class="text-muted auth forgot">
+            <h5 class="text-center text-red auth w-100">
                 Become a seller</h5>
         </div>
 

@@ -162,3 +162,11 @@ ng serve
 source ~/.profile
 git pull  origin master
 git add .
+source ~/.profile
+git pull origin master
+git add -A
+git commit -m "add menu page"
+git commit -m "add menu page" --no-verify
+git pull origin master
+cd api
+npm start serve

@@ -5,7 +5,15 @@
                 <router-outlet></router-outlet>
             </div>
             <div fxFlex="100" fxFlex.gt-sm="50" class="p-2" ngClass.sm="mt-2" ngClass.xs="mt-2">
-                <h2 class="text-muted text-center">Sign up</h2>
+                <h4><span>or continue with</span></h4>
+
+                <div class="text-center mt-2">
+                    <mat-icon>facebook</mat-icon>
+                    <mat-icon><img src="../../../../assets/images/google.png" alt=""></mat-icon>
+                    <mat-icon>apple</mat-icon>
+                </div>
+                <!-- <h2 class="text-muted text-center">Sign up</h2> -->
+                <span>Become a Beaver Member</span>
                 <form [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit(registerForm.value)" novalidate>
                     <mat-form-field class="w-100 mt-2" [ngClass]="{validationcolor:registerForm.controls.name.hasError('required') && submitted }">
                         <input matInput placeholder="Full Name" formControlName="name" required>
@@ -28,15 +36,33 @@
                         <mat-error *ngIf="registerForm.controls['confirmPassword'].hasError('required') && submitted">Confirm Password is required</mat-error>
                         <mat-error *ngIf="registerForm.controls['confirmPassword'].hasError('mismatchedPasswords') && submitted">Passwords do not match</mat-error>
                     </mat-form-field>
-                    <mat-form-field class="w-100 mt-1">
-                        <input matInput type="text" maxlength=15 appOnlyNumber placeholder="Phone Number" formControlName="phoneNumber">
-
-                    </mat-form-field>
+                    <div class="text-center mt-2">
+                        <mat-checkbox class="example-margin">Remember me!</mat-checkbox>
+                    </div>
 
                     <div class="text-center mt-2">
-                        <button mat-fab color="primary" type="submit" class="mat-elevation-z6">
-                            <mat-icon>person_add</mat-icon>
+                        By continueing. I agree to the terms of use & pivacy polices
+                    </div>
+                    <!-- <mat-form-field class="w-100 mt-1">
+                        <input matInput type="text" maxlength=15 appOnlyNumber placeholder="Phone Number" formControlName="phoneNumber">
+
+                    </mat-form-field> -->
+
+                    <div class="text-center mt-2">
+                        <button color="primary" type="submit" class="mat-elevation-z6">
+                            <!-- <mat-icon>person_add</mat-icon> -->
+                            <button mat-button color="primary" class="mat-elevation-z6">Sign up</button>
                         </button>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="mt-2">
+                        <h5 class="text-muted auth forgot">
+                            Already have an account? </h5>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="mt-2">
+                        <h5 class="text-muted auth forgot">
+                            Become a seller</h5>
                     </div>
                 </form>
             </div>

@@ -50,6 +50,8 @@ import {ControlsProductDetailComponent} from './controls-product-detail/controls
 import {GetDirectionsComponent} from '../get-directions/get-directions.component';
 import {AgmCoreModule} from '@agm/core';
 import { MainSubmenuCarouselComponent } from './main-submenu-carousel/main-submenu-carouselcomponent';
+import { TrendingProductComponent } from './trending-product/trending-product.component';
+import { AdvertismentProductComponent } from './advertisment-product/advertisment-product.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     wheelPropagation: true,
@@ -75,7 +77,9 @@ export const COMPONENTS = [
     ProductDialogComponent,
     ControlsProductDetailComponent,
     GetDirectionsComponent,
-    CartNavComponent
+    CartNavComponent,
+    TrendingProductComponent,
+    AdvertismentProductComponent
 ];
 
 @NgModule({

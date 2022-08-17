@@ -159,3 +159,6 @@ cd store/
 ls
 pm2 status
 ng serve
+source ~/.profile
+git pull  origin master
+git add .

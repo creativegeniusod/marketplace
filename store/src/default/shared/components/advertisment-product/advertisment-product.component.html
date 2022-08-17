@@ -1,5 +1,4 @@
-{{viewCol}}
-<mat-sidenav-container>
+<mat-sidenav-container class="productsWrap">
   <mat-sidenav-content class="all-products" ngClass.gt-sm="p-left">
     <!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center"
       class="filter-row mat-elevation-z1 text-muted">
@@ -36,9 +35,8 @@
         </mat-card>
       </div> -->
       <div *ngFor="let product of [1,2,3,4,5,6,7]" fxFlex="100" [fxFlex.gt-sm]="viewCol" fxFlex.sm="50" class="col">
-        {{product['Images']}}
         <mat-card class="product-item text-center card-hover">
-          <img style="height:200px" src="/assets/images/mi{{product}}.jpg"
+          <img src="/assets/images/mi{{product}}.jpg"
             onError="this.src='/assets/images/default_image.png';">
         </mat-card>
       </div>

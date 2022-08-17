@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+ @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import '~swiper/dist/css/swiper.min.css';
@@ -69,9 +70,9 @@
             padding-left: 0;
             opacity: 1;
             .mat-tab-label-content {
-                font-size: 20px;
+                font-size: 22px;
                 color: black;
-                font-weight: 600;
+                font-weight: bold;
             }
         }
         .mat-tab-label-active {
@@ -82,17 +83,17 @@
             background: transparent !important;
         }
         .mat-tab-body-wrapper {
-            background: #fff;
+            /*background: #fff;
             -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
             -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
-            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);*/
             .swiper-slide {
                 .mat-card {
                     box-shadow: none;
                     &:hover {
-                        -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+                        /*-webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
                         -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
-                        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+                        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);*/
                     }
                 }
             }
@@ -338,12 +339,12 @@
     flex-wrap: wrap;
 }
 
- a {
+/* a {
     color: white !important;
     font-size: 12px;
     padding: 6px 20px 6px 0;
     min-width: 100px;
-}
+}*/
 // .account-pane {
 //     position: absolute;
 //     right: -60px !important;
@@ -366,6 +367,7 @@
 
         a.logo{
             display: flex;
+            margin-right: 10px;
 
             img{
                 height: 100px;
@@ -401,6 +403,116 @@
     height: 70px;
     width: auto;
     max-width: 100%;
+}
+
+.productsWrap .productCol{transform: none !important;}
+.app.green .mat-card:not([class*="mat-elevation-z"]) {
+    box-shadow: none;
+}
+/*.productsWrap .products-wrapper {
+    border: 1px solid #ddd;
+}*/
+.col.productDiv {
+    padding: 0;
+    /*border-right: 1px solid #ddd;*/
+}
+/*.productDiv .image-link:hover img {
+    transform: scale(1.1);
+}*/
+.productsWrap .mat-card{transform: none !important;padding: 0;}
+.productDiv .image-link img{
+    transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;    
+    -moz-transition: all 0.5s ease;    
+    -webkit-transition: all 0.5s ease;    
+}
+/*.custom-divider{margin-left: -16px;margin-right: -16px;}*/
+
+.mat-card, .mat-tab-label, .mat-tab-link, .mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-fab, .mat-mini-fab {font-family: 'Urbanist', sans-serif;}
+.app.green .mat-drawer-container{background: transparent;}
+
+.loginPage.mat-card {
+    background: #fff7ee !important;
+    margin: -16px;
+}
+.containerWrap {
+    max-width: 950px;
+    margin: 0 auto;
+}
+.all-products .product-item img{width: 100%;}
+.trending-products .all-products .product-item img {
+    height: 200px;
+    width: auto;
+}
+.trending-products .product-item .image-link {
+    border: 1px solid #d9d9d9;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.trending-products .product-item {
+    padding: 0 10px 20px 0;
+}
+.app.green .trending-products .product-item .title {
+    color: #000 !important;font-size: 16px;
+}
+.all-products {
+    margin-top: 10px;
+}
+.app.green .top-navbar.mat-toolbar a{font-size: 14px;}
+.loginPage h4 span {
+    background: #fff7ee !important;
+    font-size: 16px;
+    font-weight: 500;
+    text-shadow: 0 1px 2px #868686;
+}
+.formIcons .mat-icon.material-icons {
+    background: #fff;
+    margin: 0 10px;
+    padding: 15px 30px;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+.formIcons {
+    margin-bottom: 20px;
+}
+.signInTitle {
+    font-size: 40px;
+}
+.actionBtn {
+    background: #335EF7 !important;
+    color: #fff !important;
+    width: 100%;
+    border-radius: 25px !important;
+    padding: 5px 15px !important;
+}
+.loginPage h6 {
+    font-size: 18px;
+}
+.text-red {
+    color: #FF5354;
+}
+.loginPage h5{font-size: 16px;}
+.loginPage h3 {
+    font-size: 16px;
+}
+.loginPage .mat-form-field-label-wrapper{display: none;}
+.app.green .loginPage .mat-checkbox-frame {
+    border-color: rgba(0, 0, 0, 1);
+}
+.loginPage .mat-checkbox-label{color: #000000;}
+.mat-checkbox{font-family: 'Urbanist', sans-serif;}
+
+body{font-size: 16px;}
+.loginPage .mat-form-field-infix {
+    padding: 0;
+    border: none;
+}
+.loginPage input.mat-input-element {
+    background: #fff;
+    border: none !important;
+    margin: 0;
+    padding: 10px 20px;
+    box-sizing: border-box;
 }
 
 @media (max-width: 1400px){

@@ -1,43 +1,71 @@
-<mat-card>
-    <div fxLayout="row wrap">
-        <div fxFlex="100" fxFlex.gt-sm="50" class="p-2">
-            <router-outlet></router-outlet>
-        </div>
-        <div fxFlex="100" fxFlex.gt-sm="50" class="p-2" ngClass.sm="mt-2" ngClass.xs="mt-2">
-            <h2 class="text-muted text-center">Sign up</h2>
-            <form [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit(registerForm.value)" novalidate>
-                <mat-form-field class="w-100 mt-2" [ngClass]="{validationcolor:registerForm.controls.name.hasError('required') && submitted }">
-                    <input matInput placeholder="Full Name" formControlName="name" required>
-                    <mat-error *ngIf="registerForm.controls['name'].hasError('required') && submitted">Full Name is required</mat-error>
-                    <mat-error *ngIf="registerForm.controls['name'].hasError('minlength') && submitted">Full Name isn't long enough, minimum of 3 characters</mat-error>
-                    <mat-error *ngIf="registerForm.controls['name'].hasError('pattern') && submitted">Name must be string</mat-error>
-                </mat-form-field>
-                <mat-form-field class="w-100 mt-1" [ngClass]="{validationcolor:registerForm.controls.email.hasError('required') && submitted }">
-                    <input matInput placeholder="Email" formControlName="email" required>
-                    <mat-error *ngIf="registerForm.controls['email'].hasError('required') && submitted">Email is required</mat-error>
-                    <mat-error *ngIf="registerForm.controls['email'].hasError('invalidEmail') && submitted">Invalid email address</mat-error>
-                </mat-form-field>
-                <mat-form-field class="w-100 mt-1" [ngClass]="{validationcolor:registerForm.controls.password.hasError('required') && submitted }">
-                    <input matInput placeholder="Password" formControlName="password" type="password" minlength="5" required>
-                    <mat-error *ngIf="registerForm.controls['password'].hasError('required') && submitted">Password is required</mat-error>
-                    <mat-error *ngIf="registerForm.controls['password'].hasError('minlength') && submitted">Password isn't long enough, minimum of 5 characters</mat-error>
-                </mat-form-field>
-                <mat-form-field class="w-100 mt-1" [ngClass]="{validationcolor:registerForm.controls.confirmPassword.hasError('required') && submitted }">
-                    <input matInput placeholder="Confirm Password" formControlName="confirmPassword" type="password" required>
-                    <mat-error *ngIf="registerForm.controls['confirmPassword'].hasError('required') && submitted">Confirm Password is required</mat-error>
-                    <mat-error *ngIf="registerForm.controls['confirmPassword'].hasError('mismatchedPasswords') && submitted">Passwords do not match</mat-error>
-                </mat-form-field>
-                <mat-form-field class="w-100 mt-1">
-                    <input matInput type="text" maxlength=15 appOnlyNumber placeholder="Phone Number" formControlName="phoneNumber">
+<mat-card class="loginPage">
+    <div class="containerWrap">
+        <div fxLayout="row wrap">
+            <div fxFlex="100" fxFlex.gt-sm="50" class="p-2">
+                <router-outlet></router-outlet>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="50" class="p-2" ngClass.sm="mt-2" ngClass.xs="mt-2">
+                <h4><span>or continue with</span></h4>
 
-                </mat-form-field>
-
-                <div class="text-center mt-2">
-                    <button mat-fab color="primary" type="submit" class="mat-elevation-z6">
-                        <mat-icon>person_add</mat-icon>
-                    </button>
+                <div class="text-center mt-3 formIcons">
+                    <mat-icon>facebook</mat-icon>
+                    <mat-icon><img src="../../../../assets/images/google.png" alt=""></mat-icon>
+                    <mat-icon>apple</mat-icon>
                 </div>
-            </form>
+                <!-- <h2 class="text-muted text-center">Sign up</h2> -->
+                <h6>Become a Beaver Member</h6>
+                <form [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit(registerForm.value)" novalidate>
+                    <mat-form-field class="w-100 mt-2" [ngClass]="{validationcolor:registerForm.controls.name.hasError('required') && submitted }">
+                        <input matInput placeholder="Full Name" formControlName="name" required>
+                        <mat-error *ngIf="registerForm.controls['name'].hasError('required') && submitted">Full Name is required</mat-error>
+                        <mat-error *ngIf="registerForm.controls['name'].hasError('minlength') && submitted">Full Name isn't long enough, minimum of 3 characters</mat-error>
+                        <mat-error *ngIf="registerForm.controls['name'].hasError('pattern') && submitted">Name must be string</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="w-100 mt-1" [ngClass]="{validationcolor:registerForm.controls.email.hasError('required') && submitted }">
+                        <input matInput placeholder="Email" formControlName="email" required>
+                        <mat-error *ngIf="registerForm.controls['email'].hasError('required') && submitted">Email is required</mat-error>
+                        <mat-error *ngIf="registerForm.controls['email'].hasError('invalidEmail') && submitted">Invalid email address</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="w-100 mt-1" [ngClass]="{validationcolor:registerForm.controls.password.hasError('required') && submitted }">
+                        <input matInput placeholder="Password" formControlName="password" type="password" minlength="5" required>
+                        <mat-error *ngIf="registerForm.controls['password'].hasError('required') && submitted">Password is required</mat-error>
+                        <mat-error *ngIf="registerForm.controls['password'].hasError('minlength') && submitted">Password isn't long enough, minimum of 5 characters</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="w-100 mt-1" [ngClass]="{validationcolor:registerForm.controls.confirmPassword.hasError('required') && submitted }">
+                        <input matInput placeholder="Confirm Password" formControlName="confirmPassword" type="password" required>
+                        <mat-error *ngIf="registerForm.controls['confirmPassword'].hasError('required') && submitted">Confirm Password is required</mat-error>
+                        <mat-error *ngIf="registerForm.controls['confirmPassword'].hasError('mismatchedPasswords') && submitted">Passwords do not match</mat-error>
+                    </mat-form-field>
+                    <div class="text-center mt-2">
+                        <mat-checkbox class="example-margin">Remember me!</mat-checkbox>
+                    </div>
+
+                    <div class="mt-2">
+                        <h3>By continueing. I agree to the terms of use & pivacy polices</h3>
+                    </div>
+                    <!-- <mat-form-field class="w-100 mt-1">
+                        <input matInput type="text" maxlength=15 appOnlyNumber placeholder="Phone Number" formControlName="phoneNumber">
+
+                    </mat-form-field> -->
+
+                    <div class="text-center mt-2">
+                        <button type="submit" mat-button color="primary" class="signUpBtn actionBtn">
+                            <!-- <mat-icon>person_add</mat-icon> -->
+                            Sign up
+                        </button>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="mt-2">
+                        <h5 class="text-center text-red auth forgot w-100">
+                            Already have an account? </h5>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="mt-1">
+                        <h5 class="text-center text-red auth forgot w-100">
+                            Become a seller</h5>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </mat-card>

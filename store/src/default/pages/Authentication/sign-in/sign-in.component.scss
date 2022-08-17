@@ -30,3 +30,20 @@
 ::ng-deep .mat-form-field-label >  .mat-form-field-required-marker {
     color: gray  !important;
 }
+
+.boder-right {
+    border-right: 1px solid black;
+}
+
+h4 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+ } 
+ 
+ h4 span { 
+     background: #ffffff; 
+     padding:0 10px; 
+ }

@@ -40,7 +40,7 @@ export class AuthComponent implements OnInit {
             'email': ['', Validators.compose([Validators.required, emailValidator])],
             'password': ['', Validators.compose([Validators.required, Validators.minLength(5)])],
             'confirmPassword': ['', Validators.compose([Validators.required])],
-            'phoneNumber': ['', Validators.compose([Validators.required, Validators.pattern(mobileValidationPattern)])]
+            // 'phoneNumber': ['', Validators.compose([Validators.required, Validators.pattern(mobileValidationPattern)])]
         }, {validator: matchingPasswords('password', 'confirmPassword')});
 
     }

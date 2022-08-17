@@ -131,3 +131,31 @@ ng serve
 ls
 source ../.profile 
 npm run build
+source ~/.profile
+ls
+git pull origin master
+git status
+git add .
+git commit -m "issue resolve" --no-verify
+git pull origin master
+git status
+cd admin
+npm run build
+ng serve
+source ~/.profile
+cd store/
+ls
+npm run build
+ng serve
+ng serve --port 80
+npm run build
+source ~/.profile
+cd api
+npm start serve
+source ~/.profile
+pwd
+ls
+cd store/
+ls
+pm2 status
+ng serve

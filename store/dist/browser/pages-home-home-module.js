@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container>\n  <mat-sidenav-content class=\"all-products\" ngClass.gt-sm=\"p-left\">\n    <!-- <div fxLayout=\"row\" fxLayout.xs=\"column\" fxLayoutAlign=\"space-between center\"\n      class=\"filter-row mat-elevation-z1 text-muted\">\n      <button *ngIf=\"!sidenavOpen\" mat-icon-button (click)=\"sidenav.toggle()\">\n        <mat-icon>more_vert</mat-icon>\n      </button>\n      <div>\n\n        <mat-menu #sortMenu=\"matMenu\" xPosition=\"before\" class=\"app-dropdown\" overlapTrigger=\"true\">\n          <span (mouseleave)=\"sortMenuTrigger.closeMenu()\">\n            <button mat-menu-item *ngFor=\"let sort of sortings\" (click)=\"changeSorting(sort)\">\n              <span>{{sort.order}}</span>\n            </button>\n          </span>\n        </mat-menu>\n      </div>\n    </div> -->\n    <!-- *ngIf=\"listSandbox.productLoading$ | async\" -->\n    <div class=\"wrapper\">\n      <div class=\"overlay\">\n        <div class=\"spinner-wrapper\">\n          <app-spinner [isShow]=\"listSandbox.productLoading$ | async\"></app-spinner>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"viewType == 'grid'\" fxLayout=\"row wrap\" class=\"products-wrapper\">\n\n      <div *ngFor=\"let product of (listSandbox.productlist$ | async)\" fxFlex=\"100\" [fxFlex.gt-sm]=\"viewCol\"\n        fxFlex.sm=\"50\" class=\"col\">\n        <mat-card class=\"product-item text-center card-hover\">\n          <!-- <a [routerLink]=\"['/products/productdetails', product.productId]\" class=\"image-link\"> -->\n          <img *ngIf=\"product['Images'].defaultImage == 1\" style=\"height:200px\"\n            [src]=\"imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'\"\n            onError=\"this.src='/assets/images/default_image.png';\">\n        </mat-card>\n      </div>\n    </div>\n\n  </mat-sidenav-content>\n</mat-sidenav-container>"
+module.exports = "{{viewCol}}\n<mat-sidenav-container>\n  <mat-sidenav-content class=\"all-products\" ngClass.gt-sm=\"p-left\">\n    <!-- <div fxLayout=\"row\" fxLayout.xs=\"column\" fxLayoutAlign=\"space-between center\"\n      class=\"filter-row mat-elevation-z1 text-muted\">\n      <button *ngIf=\"!sidenavOpen\" mat-icon-button (click)=\"sidenav.toggle()\">\n        <mat-icon>more_vert</mat-icon>\n      </button>\n      <div>\n\n        <mat-menu #sortMenu=\"matMenu\" xPosition=\"before\" class=\"app-dropdown\" overlapTrigger=\"true\">\n          <span (mouseleave)=\"sortMenuTrigger.closeMenu()\">\n            <button mat-menu-item *ngFor=\"let sort of sortings\" (click)=\"changeSorting(sort)\">\n              <span>{{sort.order}}</span>\n            </button>\n          </span>\n        </mat-menu>\n      </div>\n    </div> -->\n    <!-- *ngIf=\"listSandbox.productLoading$ | async\" -->\n    <div class=\"wrapper\">\n      <div class=\"overlay\">\n        <div class=\"spinner-wrapper\">\n          <app-spinner [isShow]=\"listSandbox.productLoading$ | async\"></app-spinner>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"viewType == 'grid'\" fxLayout=\"row wrap\" class=\"products-wrapper\">\n\n      <!-- <div *ngFor=\"let product of (listSandbox.productlist$ | async)\" fxFlex=\"100\" [fxFlex.gt-sm]=\"viewCol\"\n        fxFlex.sm=\"50\" class=\"col\">\n        <mat-card class=\"product-item text-center card-hover\">\n          <img *ngIf=\"product['Images'].defaultImage == 1\" style=\"height:200px\"\n            [src]=\"imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'\"\n            onError=\"this.src='/assets/images/default_image.png';\">\n        </mat-card>\n      </div> -->\n      <div *ngFor=\"let product of [1,2,3,4,5,6,7]\" fxFlex=\"100\" [fxFlex.gt-sm]=\"viewCol\" fxFlex.sm=\"50\" class=\"col\">\n        {{product['Images']}}\n        <mat-card class=\"product-item text-center card-hover\">\n          <img style=\"height:200px\" src=\"/assets/images/mi{{product}}.jpg\"\n            onError=\"this.src='/assets/images/default_image.png';\">\n        </mat-card>\n      </div>\n    </div>\n\n  </mat-sidenav-content>\n</mat-sidenav-container>"
 
 /***/ }),
 
@@ -73,7 +73,7 @@ var AdvertismentProductComponent = /** @class */ (function () {
         this.sidenavOpen = true;
         // card view
         this.viewType = 'grid';
-        this.viewCol = 25;
+        this.viewCol = 14.28;
         this.sortData = 'Price Low To High';
         // parameters for product list
         this.startKey = 0;
@@ -84,7 +84,7 @@ var AdvertismentProductComponent = /** @class */ (function () {
         this.priceFrom = '';
         this.priceTo = '';
         // pagination
-        this.pagesize = 4;
+        this.pagesize = 100;
         this.index = 0;
         // product list
         this.isClicked = [];
@@ -213,7 +213,7 @@ var AdvertismentProductComponent = /** @class */ (function () {
         window.innerWidth < 960
             ? (this.sidenavOpen = false)
             : (this.sidenavOpen = true);
-        window.innerWidth < 1280 ? (this.viewCol = 33.3) : (this.viewCol = 25);
+        window.innerWidth < 1280 ? (this.viewCol = 33.3) : (this.viewCol = 14.28);
     };
     // changing the view type
     AdvertismentProductComponent.prototype.changeViewType = function (viewType, viewCol) {
@@ -559,7 +559,7 @@ var TrendingProductComponent = /** @class */ (function () {
         this.sidenavOpen = true;
         // card view
         this.viewType = 'grid';
-        this.viewCol = 25;
+        this.viewCol = 14.28;
         this.sortData = 'Price Low To High';
         // parameters for product list
         this.startKey = 0;
@@ -570,7 +570,7 @@ var TrendingProductComponent = /** @class */ (function () {
         this.priceFrom = '';
         this.priceTo = '';
         // pagination
-        this.pagesize = 4;
+        this.pagesize = 7;
         this.index = 0;
         // product list
         this.isClicked = [];
@@ -699,7 +699,7 @@ var TrendingProductComponent = /** @class */ (function () {
         window.innerWidth < 960
             ? (this.sidenavOpen = false)
             : (this.sidenavOpen = true);
-        window.innerWidth < 1280 ? (this.viewCol = 33.3) : (this.viewCol = 25);
+        window.innerWidth < 1280 ? (this.viewCol = 33.3) : (this.viewCol = 14.28);
     };
     // changing the view type
     TrendingProductComponent.prototype.changeViewType = function (viewType, viewCol) {

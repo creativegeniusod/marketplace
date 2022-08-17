@@ -85,6 +85,7 @@ export class BannerController {
             newBanner.categoryId = bannerParam.category;
             newBanner.categoryChildId = (bannerParam.subcategory==null?0:bannerParam.subcategory);
             newBanner.image = name;
+            newBanner.homebanner = bannerParam.homebanner;
             newBanner.imagePath = path;
             newBanner.link = bannerParam.link;
             newBanner.position = bannerParam.position;
@@ -128,6 +129,7 @@ export class BannerController {
      *      "content": "",
      *      "categoryId" : "",
      *      "categoryChildId" : "",
+     *      "homebanner" : "",
      *      "image": "",
      *      "imagePath": "",
      *      "link": "",
@@ -142,7 +144,7 @@ export class BannerController {
     @Get('/bannerlist')
     @Authorized()
     public async bannerList(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number, @QueryParam('keyword') keyword: string, @QueryParam('status')status: number, @QueryParam('count')count: number | boolean, @Res() response: any): Promise<any> {
-        const select = ['bannerId', 'categoryId','categoryChildId','title', 'image', 'imagePath', 'content', 'link', 'position', 'isActive'];
+        const select = ['bannerId', 'categoryId','categoryChildId','homebanner','title', 'image', 'imagePath', 'content', 'link', 'position', 'isActive'];
         const search = [
             {
                 name: 'title',
@@ -246,6 +248,7 @@ export class BannerController {
      *      "content" : "",
      *      "categoryId" : "",
      *      "categoryChildId" : "",
+     *      "homebanner" : "",
      *      "link" : "",
      *      "position" : "",
      *      "status" : "",
@@ -301,7 +304,8 @@ export class BannerController {
         banner.link = bannerParam.link;
         banner.position = bannerParam.position;
         banner.isActive = bannerParam.status;
-        console.log(banner,"&&&&&&&&&&&")
+        console.log(bannerParam,"&&&&&&&&&&&");
+        // return false;
         const bannerSave = await this.bannerService.create(banner);
 
         if (bannerSave) {

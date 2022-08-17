@@ -1,10 +1,16 @@
+<div *ngIf="(listSandbox.childBannerList$ | async)?.length > 0">
+    <app-main-submenu-carousel [categoryId]="categoryId"></app-main-submenu-carousel>
+</div>
 <mat-sidenav-container>
-    <mat-sidenav #sidenav [opened]="sidenavOpen" [mode]="sidenavOpen ? 'side' : 'over'" class="filter-sidenav" perfectScrollbar>
-        <app-spurt-product-filter (progressEmit)="receiveProgress($event)" [isClickedData]="isClicked" [brandId]="brand" [category]="categoryId">
+    <mat-sidenav #sidenav [opened]="sidenavOpen" [mode]="sidenavOpen ? 'side' : 'over'" class="filter-sidenav"
+        perfectScrollbar>
+        <app-spurt-product-filter (progressEmit)="receiveProgress($event)" [isClickedData]="isClicked" [brandId]="brand"
+            [category]="categoryId">
         </app-spurt-product-filter>
     </mat-sidenav>
     <mat-sidenav-content class="all-products" ngClass.gt-sm="p-left">
-        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" class="filter-row mat-elevation-z1 text-muted">
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center"
+            class="filter-row mat-elevation-z1 text-muted">
             <button *ngIf="!sidenavOpen" mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>more_vert</mat-icon>
             </button>
@@ -18,7 +24,7 @@
                     <span (mouseleave)="sortMenuTrigger.closeMenu()">
                         <button mat-menu-item *ngFor="let sort of sortings" (click)="changeSorting(sort)">
                             <span>{{sort.order}}</span>
-                    </button>
+                        </button>
                     </span>
                 </mat-menu>
             </div>
@@ -43,10 +49,13 @@
         </div>
         <div *ngIf="viewType == 'grid'" fxLayout="row wrap" class="products-wrapper">
 
-            <div *ngFor="let product of (listSandbox.productlist$ | async)" fxFlex="100" [fxFlex.gt-sm]="viewCol" fxFlex.sm="50" class="col">
+            <div *ngFor="let product of (listSandbox.productlist$ | async)" fxFlex="100" [fxFlex.gt-sm]="viewCol"
+                fxFlex.sm="50" class="col">
                 <mat-card class="product-item text-center card-hover">
                     <a [routerLink]="['/products/productdetails', product.productId]" class="image-link">
-                        <img *ngIf="product['Images'].defaultImage == 1" style="height:200px" [src]="imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'" onError="this.src='/assets/images/default_image.png';">
+                        <img *ngIf="product['Images'].defaultImage == 1" style="height:200px"
+                            [src]="imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'"
+                            onError="this.src='/assets/images/default_image.png';">
                     </a>
                     <!-- <h4 class="category text-muted text-truncate ">{{product.metaTagTitle }}</h4> -->
                     <a [routerLink]="['/products/productdetails', product.productId]" class="title text-truncate">
@@ -61,19 +70,23 @@
                     </div>
                     <div class="divider mt-2"></div>
                     <div class="icons">
-                        <app-controls [product]="product" [type]="'all'" (OpenProductDialog)="openProductDialog(product)"></app-controls>
+                        <app-controls [product]="product" [type]="'all'"
+                            (OpenProductDialog)="openProductDialog(product)"></app-controls>
                     </div>
                 </mat-card>
             </div>
         </div>
 
         <div *ngIf="viewType == 'list'" fxLayout="row wrap" class="products-wrapper">
-            <div *ngFor="let product of (listSandbox.productlist$ | async) | paginate: { itemsPerPage: count, currentPage: page }" fxFlex="100" class="col">
+            <div *ngFor="let product of (listSandbox.productlist$ | async) | paginate: { itemsPerPage: count, currentPage: page }"
+                fxFlex="100" class="col">
                 <mat-card class="product-item" style="height:90%">
                     <div fxLayout="row wrap">
                         <div fxFlex="100" fxFlex.gt-xs="40" class="p-2">
                             <a [routerLink]="['/products/productdetails', product.productId]" class="image-link">
-                                <img *ngIf="product.Images" [src]="imagePath + '?path=' + product.Images.containerName + '&name=' + product.Images.image + '&width=280&height=280'" onError="this.src='/assets/images/default_image.png';">
+                                <img *ngIf="product.Images"
+                                    [src]="imagePath + '?path=' + product.Images.containerName + '&name=' + product.Images.image + '&width=280&height=280'"
+                                    onError="this.src='/assets/images/default_image.png';">
                             </a>
                         </div>
                         <div fxFlex="100" fxFlex.gt-xs="60" class="p-2">
@@ -90,14 +103,16 @@
                             </div>
                             <div class="divider"></div>
                             <div class="icons">
-                                <app-controls [product]="product" [type]="'all'" (OpenProductDialog)="openProductDialog(product)"></app-controls>
+                                <app-controls [product]="product" [type]="'all'"
+                                    (OpenProductDialog)="openProductDialog(product)"></app-controls>
                             </div>
                         </div>
                     </div>
                 </mat-card>
             </div>
         </div>
-        <div *ngIf="(listSandbox.productLoaded$ | async) && (listSandbox.productlist$ | async)?.length == 0" fxLayout="row wrap">
+        <div *ngIf="(listSandbox.productLoaded$ | async) && (listSandbox.productlist$ | async)?.length == 0"
+            fxLayout="row wrap">
             <div fxFlex="100" fxFlex.gt-xs="90" class="p-2">
                 <p style="margin-left: 50%;margin-top:10%;color:gray">No Results Found</p>
             </div>
@@ -105,7 +120,8 @@
         <div *ngIf="(listSandbox.productlist$ | async)?.length > 0" fxLayout="row wrap">
             <div fxFlex="100">
                 <mat-card class="p-0 text-center">
-                    <mat-paginator [length]="listSandbox.productcount$|async" [pageSize]="pagesize" [pageIndex]="index" [pageSizeOptions]="[10,15,20]" (page)="onPageChange($event)">
+                    <mat-paginator [length]="listSandbox.productcount$|async" [pageSize]="pagesize" [pageIndex]="index"
+                        [pageSizeOptions]="[10,15,20]" (page)="onPageChange($event)">
                     </mat-paginator>
                     <!--<pagination-controls class="product-pagination" autoHide="false" maxSize="5"-->
                     <!--(pageChange)="onPageChanged($event)"></pagination-controls>-->

@@ -4,7 +4,7 @@
         <div class="breadcrumbs-row noborder">
             <div class="bc-col">
                 <ul>
-                    <li><a href="javascript:void(0)"> DEMO </a></li>
+                    <li><a href="javascript:void(0)"> ADV </a></li>
                     <li><a href="javascript:void(0)" [routerLink]="['/demo/banners']"> Banners </a></li>
                     <li>Add Banners</li>
                 </ul>
@@ -74,7 +74,7 @@
 
                 <div class="ap-body-col">
                     <div class="form-group">
-                        <label>Categories</label>
+                        <label>Categories<sup>*</sup></label>
                         <select class="custom-select col-12" id="categoryComponent" formControlName="category" (change)="onSelectcategory($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.category.errors }">
                             <option value=''>- -Select- -</option>
                             <option selected *ngFor="let arr of categoriessandbox.getCategoriesList$ | async"
@@ -112,6 +112,19 @@
                         </select>
                         <div *ngIf="submitted && f.active.errors" class="invalid-feedback">
                             <div *ngIf="f.active.errors.required">Status is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ap-body-col">
+                    <div class="form-group">
+                        <label>Show on home page<sup>*</sup></label>
+                        <select class="custom-select col-12" formControlName="homebanner" id="homebanner" [ngClass]="{ 'is-invalid': submitted && f.homebanner.errors }">
+                            <option value="">- -Select Active- -</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                        <div *ngIf="submitted && f.homebanner.errors" class="invalid-feedback">
+                            <div *ngIf="f.homebanner.errors.required">Status is required</div>
                         </div>
                     </div>
                 </div>

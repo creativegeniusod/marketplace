@@ -63,8 +63,8 @@ export class CommonListController {
      */
     // Product list Function
     @Get('/banner-list')
-    public async bannerList(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number,@QueryParam('child') child: number,@QueryParam('parent') parent: number, @QueryParam('keyword') keyword: string, @QueryParam('count')count: number | boolean, @Res() response: any): Promise<any> {
-        const select = ['bannerId', 'categoryId','categoryChildId', 'title', 'image', 'imagePath', 'content', 'link', 'position', 'isActive'];
+    public async bannerList(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number,@QueryParam('child') child: number,@QueryParam('slider') slider: number,@QueryParam('parent') parent: number, @QueryParam('keyword') keyword: string, @QueryParam('count')count: number | boolean, @Res() response: any): Promise<any> {
+        const select = ['bannerId', 'categoryId','categoryChildId','homebanner', 'title', 'image', 'imagePath', 'content', 'link', 'position', 'isActive'];
         const search = [
             {
                 name: 'title',
@@ -82,8 +82,12 @@ export class CommonListController {
                     name: 'categoryChildId',
                     op: 'like',
                     value: child,
-                },
-            ]        
+                },{
+                    name: 'homebanner',
+                    op: 'where',
+                    value: 0,
+                }
+            ]
         } else if(parent !=undefined){
             parsmsAry= [
                 {
@@ -94,6 +98,22 @@ export class CommonListController {
                     op: 'where',
                     value: 0,
                 },
+                {
+                    name: 'homebanner',
+                    op: 'where',
+                    value: 0,
+                },
+            ]
+        }else if(slider !=undefined){
+            parsmsAry= [
+                {
+                    name: 'isActive',
+                    value: 1,
+                },{
+                    name: 'homebanner',
+                    op: 'where',
+                    value: 1,
+                },
             ]
         }else{
             parsmsAry= [
@@ -101,11 +121,11 @@ export class CommonListController {
                     name: 'isActive',
                     value: 1,
                 }
-            ]            
+            ]
         }
         // if(child){}
         const WhereConditions = parsmsAry;
-        // console.log(WhereConditions);
+        console.log(WhereConditions);
         const bannerList: any = await this.bannerService.list(limit, offset, select, search, WhereConditions, count);
         const successResponse: any = {
             status: 1,

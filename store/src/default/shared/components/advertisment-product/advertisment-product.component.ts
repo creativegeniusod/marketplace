@@ -74,11 +74,11 @@ export class AdvertismentProductComponent implements OnInit, OnDestroy {
             localStorage.setItem('keywordData', query['keyword']);
             this.keyword = localStorage.getItem('keywordData');
           }
-          this.getProductList(this.startKey, this.viewOrder, this.categoryId);
+          // this.getProductList(this.startKey, this.viewOrder, this.categoryId);
         }
         if (query['brand']) {
           this.brand = query['brand'];
-          this.getProductList(this.startKey, this.viewOrder, this.categoryId);
+          // this.getProductList(this.startKey, this.viewOrder, this.categoryId);
         }
       })
     );
@@ -93,12 +93,12 @@ export class AdvertismentProductComponent implements OnInit, OnDestroy {
             this.brand = '';
             this.keyword = '';
             this.categoryId = '';
-            this.getProductList(this.startKey, this.viewOrder, this.categoryId);
+            // this.getProductList(this.startKey, this.viewOrder, this.categoryId);
           } else {
             this.isClicked = [];
             this.isClicked[this.queryParams.id] = true;
             this.categoryId = this.queryParams.id;
-            this.getProductList(this.startKey, this.viewOrder, this.categoryId);
+            // this.getProductList(this.startKey, this.viewOrder, this.categoryId);
           }
         }
       })
@@ -108,7 +108,7 @@ export class AdvertismentProductComponent implements OnInit, OnDestroy {
   // initially remove local storage and calls listSandbox getSettings
   ngOnInit() {
     if (!this.queryParams.id && this.keyword === '') {
-      this.getProductList(this.startKey, this.viewOrder, this.categoryId);
+      // this.getProductList(this.startKey, this.viewOrder, this.categoryId);
     }
     if (isPlatformBrowser(this.platformId)) {
       localStorage.removeItem('fromPrice');
@@ -207,7 +207,7 @@ export class AdvertismentProductComponent implements OnInit, OnDestroy {
   public changeSorting(sort) {
     this.sortData = sort.order;
     this.viewOrder = sort.value;
-    this.getProductList(this.startKey, this.viewOrder, this.categoryId);
+    // this.getProductList(this.startKey, this.viewOrder, this.categoryId);
   }
 
   // calls getProductList for pagination
@@ -224,7 +224,7 @@ export class AdvertismentProductComponent implements OnInit, OnDestroy {
       this.priceTo = '';
     }
 
-    this.getProductList(this.startKey, this.viewOrder, this.categoryId);
+    // this.getProductList(this.startKey, this.viewOrder, this.categoryId);
   }
 
   /**
@@ -243,7 +243,7 @@ export class AdvertismentProductComponent implements OnInit, OnDestroy {
     this.condition = event.condition;
     const defaultCallValue = this.viewOrder;
     this.categoryId = event.categoryId;
-    this.getProductList(0, defaultCallValue, event.categoryId);
+    // this.getProductList(0, defaultCallValue, event.categoryId);
   }
   ngOnDestroy() {
     this.subscription.forEach(each => {

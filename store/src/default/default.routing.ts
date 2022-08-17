@@ -33,6 +33,11 @@ export const routes: Routes = [
       },
 
       {
+        path: 'home/:id',
+        loadChildren: './pages/home-menu/home-menu.module#HomeMenuModule'
+      },
+
+      {
         path: 'underdeveloping',
         component: UnderDevelopingComponent,
         data: {

@@ -784,7 +784,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success",
-          "content": "HTTP/1.1 200 OK\n{\n     \"message\": \"Successfully got banner list\",\n     \"data\":\"{\n     \"bannerId\": \"\",\n     \"title\": \"\",\n     \"content\": \"\",\n     \"categoryId\" : \"\",\n     \"categoryChildId\" : \"\",\n     \"image\": \"\",\n     \"imagePath\": \"\",\n     \"link\": \"\",\n     \"position\": \"\",\n     }\"\n     \"status\": \"1\"\n}",
+          "content": "HTTP/1.1 200 OK\n{\n     \"message\": \"Successfully got banner list\",\n     \"data\":\"{\n     \"bannerId\": \"\",\n     \"title\": \"\",\n     \"content\": \"\",\n     \"categoryId\" : \"\",\n     \"categoryChildId\" : \"\",\n     \"homebanner\" : \"\",\n     \"image\": \"\",\n     \"imagePath\": \"\",\n     \"link\": \"\",\n     \"position\": \"\",\n     }\"\n     \"status\": \"1\"\n}",
           "type": "json"
         }
       ]
@@ -1064,7 +1064,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Input",
-          "content": "{\n     \"bannerId\" : \"\",\n     \"title\" : \"\",\n     \"image\" : \"\",\n     \"content\" : \"\",\n     \"categoryId\" : \"\",\n     \"categoryChildId\" : \"\",\n     \"link\" : \"\",\n     \"position\" : \"\",\n     \"status\" : \"\",\n}",
+          "content": "{\n     \"bannerId\" : \"\",\n     \"title\" : \"\",\n     \"image\" : \"\",\n     \"content\" : \"\",\n     \"categoryId\" : \"\",\n     \"categoryChildId\" : \"\",\n     \"homebanner\" : \"\",\n     \"link\" : \"\",\n     \"position\" : \"\",\n     \"status\" : \"\",\n}",
           "type": "json"
         }
       ]
@@ -2560,6 +2560,34 @@ define({ "api": [
     "filename": "src/api/controllers/CustomerController.ts",
     "groupTitle": "Customer",
     "name": "PutApiCustomerUpdateCustomerId"
+  },
+  {
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "varname1",
+            "description": "<p>No type.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "varname2",
+            "description": "<p>With type.</p>"
+          }
+        ]
+      }
+    },
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "src/public/apidoc/main.js",
+    "group": "D__odz_working_marketplace_api_src_public_apidoc_main_js",
+    "groupTitle": "D__odz_working_marketplace_api_src_public_apidoc_main_js",
+    "name": ""
   },
   {
     "type": "delete",
@@ -8788,34 +8816,6 @@ define({ "api": [
     "filename": "src/api/controllers/ZoneController.ts",
     "groupTitle": "Zone",
     "name": "PutApiZoneUpdateZoneId"
-  },
-  {
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "optional": false,
-            "field": "varname1",
-            "description": "<p>No type.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "varname2",
-            "description": "<p>With type.</p>"
-          }
-        ]
-      }
-    },
-    "type": "",
-    "url": "",
-    "version": "0.0.0",
-    "filename": "src/public/apidoc/main.js",
-    "group": "_var_www_html_test01_marketplace_api_src_public_apidoc_main_js",
-    "groupTitle": "_var_www_html_test01_marketplace_api_src_public_apidoc_main_js",
-    "name": ""
   },
   {
     "type": "get",

@@ -431,7 +431,7 @@
 }
 /*.custom-divider{margin-left: -16px;margin-right: -16px;}*/
 
-.mat-card, .mat-tab-label, .mat-tab-link, .mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-fab, .mat-mini-fab {font-family: 'Urbanist', sans-serif;}
+body, .mat-card, .mat-tab-label, .mat-tab-link, .mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-fab, .mat-mini-fab {font-family: 'Urbanist', sans-serif;}
 .app.green .mat-drawer-container{background: transparent;}
 
 .loginPage.mat-card {
@@ -446,6 +446,7 @@
 .trending-products .all-products .product-item .image-link img {
     height: 200px;
     width: auto;
+    object-fit: cover;
 }
 .trending-products .product-item .product-img {
     border: 1px solid #d9d9d9;
@@ -457,7 +458,7 @@
     padding: 0 10px 0 0;
 }
 .app.green .trending-products .product-item .title {
-    color: #000 !important;font-size: 16px;
+    color: #000 !important;font-size: 16px;font-weight: bold;
 }
 .all-products {
     margin-top: 10px;
@@ -580,10 +581,27 @@ body{font-size: 16px;}
 }
 .top-navbar.mat-toolbar .top-menu a span, .top-menu .mat-button-wrapper .blackStyle{font-size: 12px;}
 .headerCartIcon img{height: 20px;position: relative;top: 6px;}
+.app.green .products-tabs.featured-tabs:nth-of-type(1) .mat-tab-label {background: transparent;padding: 0;margin: 0;}
+.app .footer, .app .footer[_ngcontent-c8]{background: transparent !important;padding-bottom: 30px;}
+.footer p {
+    font-size: 13px;
+    font-weight: 500;
+}
+.footer .mat-button {
+    padding: 0;
+    min-width: 0;
+    line-height: normal;
+}
+.footer .col-title {
+    font-size: 14px;margin-bottom: 15px;
+}
+.footer-menu-item{line-height: normal;}
 
 @media (max-width: 1500px){
     .app.green .top-navbar.mat-toolbar a {padding: 5px 8px;}
     .top-navbar.mat-toolbar a span{font-size: 13px;}
+    .trending-products .all-products .product-item .image-link img {height: 150px;}
+    .app.green .trending-products .product-item .title{font-size: 14px;}
 }
 @media (max-width: 1400px){
     .app.green .top-navbar.mat-toolbar a {padding: 5px;}

@@ -6,18 +6,18 @@
         <mat-icon class="mat-icon-sm caret blackStyle">arrow_drop_down</mat-icon>
     </a>
     <a mat-button routerLink="/auth" *ngIf="!(commonSandbox.getProfile$ | async)?.email">
-        <mat-icon routerLink="/auth" class="mat-icon-sm account-icon blackStyle">person</mat-icon>
+        <mat-icon routerLink="/auth" class="mat-icon-sm account-icon blackStyle"><img src="../../../assets/images/Profile.png" /></mat-icon>
         <span fxShow="false" fxShow.gt-sm class="blackStyle">Profile</span>
     </a>
 
     <a mat-button *ngIf="!(commonSandbox.getProfile$ | async)?.email">
-        <mat-icon class="mat-icon-sm notification-icon blackStyle">notification_important</mat-icon>
+        <mat-icon class="mat-icon-sm notification-icon blackStyle"><img src="../../../assets/images/Notification.png" /></mat-icon>
         <span fxShow="false" fxShow.gt-sm class="blackStyle">Notification</span>
     </a>
 
     <span fxShow="false" fxShow.gt-sm>
         <a mat-button [routerLink]="['/wishlist']">
-            <mat-icon class="mat-icon-sm">favorite_border</mat-icon>
+            <mat-icon class="mat-icon-sm"><img src="../../../assets/images/heart.png" /></mat-icon>
             <span class="blackStyle">Wishlist
                 <ng-container *ngIf="commonSandbox.wishlistCount$ | async;else noWhishListCount">
                     ({{commonSandbox.wishlistCount$ | async}})

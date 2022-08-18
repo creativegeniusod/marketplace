@@ -1,7 +1,8 @@
 <div fxLayoutAlign="center center" class='navcart'>
     <app-top-menu></app-top-menu>
     <button mat-button [matMenuTriggerFor]="cartMenu" #cartMenuTrigger="matMenuTrigger" class="flex-row-button">
-        <mat-icon class="mat-icon-lg">shopping_cart</mat-icon>
+        <mat-icon class="mat-icon-lg"><img src="../../../assets/images/Buy.png" /></mat-icon>
+        <span fxShow="false" fxShow.gt-sm class="blackStyle">Cart</span>
         <span *ngIf="(cartSandbox.cartlistCount$ | async) > 0" class="cart-items-count">{{cartSandbox.cartlistCount$ |
             async}}</span>
         <div fxLayout="column" fxLayoutAlign="center center" fxShow="false" fxShow.gt-xs class="top-cart">

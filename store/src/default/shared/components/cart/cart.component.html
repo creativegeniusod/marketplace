@@ -1,6 +1,6 @@
 <div fxLayoutAlign="center center" class='navcart'>
     <app-top-menu></app-top-menu>
-    <button mat-button [matMenuTriggerFor]="cartMenu" #cartMenuTrigger="matMenuTrigger" class="flex-row-button">
+    <button mat-button [matMenuTriggerFor]="cartMenu" #cartMenuTrigger="matMenuTrigger" class="flex-row-button headerCartIcon">
         <mat-icon class="mat-icon-lg"><img src="../../../assets/images/Buy.png" /></mat-icon>
         <span fxShow="false" fxShow.gt-sm class="blackStyle">Cart</span>
         <span *ngIf="(cartSandbox.cartlistCount$ | async) > 0" class="cart-items-count">{{cartSandbox.cartlistCount$ |
@@ -11,7 +11,7 @@
                 <span>$ {{cartSandbox.totalCartPrice$ | async}}</span>
             </span>
         </div>
-        <mat-icon class="mat-icon-sm">arrow_drop_down</mat-icon>
+        <!-- <mat-icon class="mat-icon-sm">arrow_drop_down</mat-icon> -->
     </button>
     <mat-menu #cartMenu="matMenu" [overlapTrigger]="false" xPosition="before"
         class="top-menu-dropdown cart-pane cart-dropdown">

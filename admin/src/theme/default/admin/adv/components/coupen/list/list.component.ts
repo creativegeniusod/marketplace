@@ -58,7 +58,7 @@ export class CoupenListComponent implements OnInit {
   public checkmodules: any = [];
   public checkedData: any = [];
   public unCheckData: any = [];
-  public CoupenListImage = {};
+  public coupenListImage = {};
 
   beforeChange($event: NgbPanelChangeEvent) {
     if ($event.panelId === 'preventchange-2') {

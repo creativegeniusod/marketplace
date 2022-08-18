@@ -10,12 +10,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
-import { HomeComponent } from './home.component';
 import { ComponentsModule } from '../../shared/components/index';
 import { FormsModule } from '@angular/forms';
+import { HomeMenuComponent } from './home-menu.component';
 
 export const routes = [
-    { path: '', component: HomeComponent, pathMatch: 'full' }
+    { path: '', component: HomeMenuComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -27,9 +27,9 @@ export const routes = [
         ComponentsModule,
     ],
     declarations: [
-        HomeComponent,
+        HomeMenuComponent,
     ],
     providers: []
 })
-export class HomeModule {
+export class HomeMenuModule {
 }

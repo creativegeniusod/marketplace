@@ -92,7 +92,7 @@ export class BannerListComponent implements OnInit {
   // this function navigate  to  create page banner
   AddBanner() {
     this.service.setBannerListData('');
-    this.router.navigate(['/demo/banners/add']);
+    this.router.navigate(['/adv/banners/add']);
   }
 
   /**

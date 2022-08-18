@@ -22,7 +22,7 @@ import { RoleState } from './admin/settings/role/role-reducer/role.state';
 import { PageState } from './admin/cms/pages/pages-reducer/page.state';
 import { UserState } from './admin/settings/user/user-reducer/user.state';
 import { BannerState } from './admin/cms/banners/banner-store/banner.state';
-import { CoupenState } from './admin/cms/coupens/coupen-store/coupen.state';
+import { CoupenState } from './admin/adv/coupens/coupen-store/coupen.state';
 import { BrandState } from './admin/catalog/brand/reducer/brand.state';
 import { EmailTempState } from './admin/settings/localizations/emailtemplate/emailtemp-reducer/emailtemp.state';
 import { StockState } from './admin/settings/localizations/stockStatus/stock-reducer/stock.state';

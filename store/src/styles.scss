@@ -428,7 +428,7 @@
 }
 /*.custom-divider{margin-left: -16px;margin-right: -16px;}*/
 
-.mat-card, .mat-tab-label, .mat-tab-link {font-family: 'Urbanist', sans-serif;}
+.mat-card, .mat-tab-label, .mat-tab-link, .mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-fab, .mat-mini-fab {font-family: 'Urbanist', sans-serif;}
 .app.green .mat-drawer-container{background: transparent;}
 
 .loginPage.mat-card {
@@ -436,7 +436,7 @@
     margin: -16px;
 }
 .containerWrap {
-    max-width: 1170px;
+    max-width: 950px;
     margin: 0 auto;
 }
 .all-products .product-item img{width: 100%;}
@@ -457,6 +457,62 @@
 }
 .all-products {
     margin-top: 10px;
+}
+.app.green .top-navbar.mat-toolbar a{font-size: 14px;}
+.loginPage h4 span {
+    background: #fff7ee !important;
+    font-size: 16px;
+    font-weight: 500;
+    text-shadow: 0 1px 2px #868686;
+}
+.formIcons .mat-icon.material-icons {
+    background: #fff;
+    margin: 0 10px;
+    padding: 15px 30px;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+.formIcons {
+    margin-bottom: 20px;
+}
+.signInTitle {
+    font-size: 40px;
+}
+.actionBtn {
+    background: #335EF7 !important;
+    color: #fff !important;
+    width: 100%;
+    border-radius: 25px !important;
+    padding: 5px 15px !important;
+}
+.loginPage h6 {
+    font-size: 18px;
+}
+.text-red {
+    color: #FF5354;
+}
+.loginPage h5{font-size: 16px;}
+.loginPage h3 {
+    font-size: 16px;
+}
+.loginPage .mat-form-field-label-wrapper{display: none;}
+.app.green .loginPage .mat-checkbox-frame {
+    border-color: rgba(0, 0, 0, 1);
+}
+.loginPage .mat-checkbox-label{color: #000000;}
+.mat-checkbox{font-family: 'Urbanist', sans-serif;}
+
+body{font-size: 16px;}
+.loginPage .mat-form-field-infix {
+    padding: 0;
+    border: none;
+}
+.loginPage input.mat-input-element {
+    background: #fff;
+    border: none !important;
+    margin: 0;
+    padding: 10px 20px;
+    box-sizing: border-box;
 }
 
 @media (max-width: 1400px){

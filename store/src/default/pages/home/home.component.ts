@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
     // fetch banner list from sandbox
     getBannerList() {
         const params: any = {};
-        params.limit = 100;
+        params.limit = 7;
         params.offset = 0;
         // params.slider = 1;
         this.listSandbox.getBannerList(params);

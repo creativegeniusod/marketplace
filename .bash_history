@@ -170,3 +170,63 @@ git commit -m "add menu page" --no-verify
 git pull origin master
 cd api
 npm start serve
+source ~/.profile
+ls
+git status
+git pull origin master
+git add .
+git commit -m "add api env file "
+git commit -m "add api env file " --no-verify
+git pull origin master
+git status
+git status
+git pull origin master
+ls
+cd api
+s
+ls
+nano .env
+ls
+npm start serve
+sudo kill $(sudo lsof -t -i:9000)
+kill -9 `lsof -t -i:9000`
+npm start serve
+kill -9 `lsof -t -i:9000`
+lsof -i tcp:9000 
+npm start serve
+lsof -i tcp:9000 
+kill -9 16913
+source ~/.profile
+git status
+git add .
+git commit -m "change .env file" --no-verify
+git pull origin master
+git push origin master
+source ~/.profile
+git push origin master
+source ~/.profile
+cd store/
+npm run build
+ng serve
+source ~/.profile
+ls
+cd api
+npm start serve
+ls
+nano .env
+lsof -i tcp:9000 
+kill -9 18504
+lsof -i tcp:9000 
+kill -9 `lsof -t -i:9000`
+npm start serve
+cd .
+cd ..
+cd store/
+ls
+cd store/src/default/pages/Authentication/sign-in
+cd store/src/default/pages/Authentication/sign-in
+/store/src/default/pages/Authentication/sign-in
+cd ..
+admin
+cd admin/
+ls

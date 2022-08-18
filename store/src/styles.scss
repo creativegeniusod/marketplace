@@ -70,7 +70,7 @@
             padding-left: 0;
             opacity: 1;
             .mat-tab-label-content {
-                font-size: 22px;
+                font-size: 18px;
                 color: black;
                 font-weight: bold;
             }
@@ -367,7 +367,8 @@
 
         a.logo{
             display: flex;
-            margin-right: 10px;
+            margin-right: 50px;
+            padding: 0;
 
             img{
                 height: 100px;
@@ -378,12 +379,14 @@
 
 .top-navbar.mat-toolbar a span {
     color: #000;
+    font-weight: 600;
+    line-height: normal;
+    margin: 6px 0 0 0;
+    font-size: 15px;
 }
 
-.search-form .search-btn{
-    background: #FF5354 !important;
-}
-.app.green .top-navbar.mat-toolbar a{padding: 5px 10px;min-width: 0;}
+.search-form .search-btn{background: #FF5354 !important;border-radius: 0;}
+.app.green .top-navbar.mat-toolbar a{padding: 5px 12px;min-width: 0;}
 .app.green .top-navbar.mat-toolbar a.mat-button:hover {
     background: transparent !important;
 }
@@ -449,8 +452,8 @@
     padding: 20px;
     margin-bottom: 10px;
 }
-.trending-products .product-item {
-    padding: 0 10px 20px 0;
+.all-products .product-item {
+    padding: 0 10px 0 0;
 }
 .app.green .trending-products .product-item .title {
     color: #000 !important;font-size: 16px;
@@ -511,10 +514,29 @@ body{font-size: 16px;}
     background: #fff;
     border: none !important;
     margin: 0;
-    padding: 10px 20px;
+    padding: 15px 20px;
     box-sizing: border-box;
+    border-radius: 12px;
 }
 
+.loginPage .mat-form-field-underline {
+    display: none;
+}
+.search-form {border-radius: 0 !important;max-width: 90%;margin: 0 auto;}
+
+
+.app .theme-container-full.main {padding: 0;}
+.app .main-slider{height: 340px !important;margin-top: 0 !important;}
+.app .swiper-container{border-radius: 0 !important;}
+.site-container {
+    padding: 0 16px;
+}
+.app.green .featured-tabs .mat-tab-label{background: #D9D9D9;padding-left: 10px;margin-bottom: 15px;}
+
+@media (max-width: 1500px){
+    .app.green .top-navbar.mat-toolbar a {padding: 5px 8px;}
+    .top-navbar.mat-toolbar a span{font-size: 13px;}
+}
 @media (max-width: 1400px){
     .app.green .top-navbar.mat-toolbar a {padding: 5px;}
     .menu-img {height: 55px;}

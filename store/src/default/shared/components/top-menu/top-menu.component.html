@@ -1,9 +1,10 @@
 <div class="top-menu">
     <a mat-button [matMenuTriggerFor]="accountMenu" #accountMenuTrigger="matMenuTrigger" class="blackStyle"
         *ngIf="(commonSandbox.getProfile$ | async)?.email">
-        <mat-icon class="mat-icon-sm account-icon blackStyle">person</mat-icon>
+        <!-- <mat-icon class="mat-icon-sm account-icon blackStyle">person</mat-icon> -->
+        <mat-icon routerLink="/auth" class="mat-icon-sm account-icon blackStyle"><img src="../../../assets/images/Profile.png" /></mat-icon>
         <span fxShow="false" fxShow.gt-sm class="blackStyle">Account</span>
-        <mat-icon class="mat-icon-sm caret blackStyle">arrow_drop_down</mat-icon>
+        <!-- <mat-icon class="mat-icon-sm caret blackStyle">arrow_drop_down</mat-icon> -->
     </a>
     <a mat-button routerLink="/auth" *ngIf="!(commonSandbox.getProfile$ | async)?.email">
         <mat-icon routerLink="/auth" class="mat-icon-sm account-icon blackStyle"><img src="../../../assets/images/Profile.png" /></mat-icon>

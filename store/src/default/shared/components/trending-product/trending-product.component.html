@@ -68,6 +68,9 @@
             matTooltip="{{product.wishListStatus === 1 ? 'Added to wishlist': 'Add to wishlist'}}"
             (click)="addToWishList(product)">
             <mat-icon><img src="../../../assets/images/Add to wishlist.png" /></mat-icon>
+            <!-- <mat-icon [color]="isWish[product]" *ngIf="isWish[product] === 'warn'"><img
+                src="../../../assets/images/Add to wishlist.png" /></mat-icon>
+            <mat-icon *ngIf="isWish[product] !== 'warn'"><img src="../../../assets/images/Add to wishlist_red.png" /> -->
           </button>
           <div class="product-img">
             <a [routerLink]="['/products/productdetails', product.productId]" class="image-link">

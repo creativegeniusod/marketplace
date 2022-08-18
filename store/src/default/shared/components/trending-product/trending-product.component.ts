@@ -111,6 +111,16 @@ export class TrendingProductComponent implements OnInit, OnDestroy {
 
   // initially remove local storage and calls listSandbox getSettings
   ngOnInit() {
+
+    if (this.product) {
+      if (this.product.wishListStatus && this.product.wishListStatus === 1) {
+        this.isWish[this.product] = 'warn';
+      }
+      if (this.product.cartCount > 0) {
+        this.count = this.product.cartCount;
+      }
+    }
+
     if (!this.queryParams.id && this.keyword === '') {
       this.getProductList(this.startKey, this.viewOrder, this.categoryId);
     }
@@ -231,6 +241,7 @@ export class TrendingProductComponent implements OnInit, OnDestroy {
     this.getProductList(this.startKey, this.viewOrder, this.categoryId);
   }
 
+  public count = 1;
   public quantity: any = 1;
   public isWish: any = {};
   public isAdd = [];

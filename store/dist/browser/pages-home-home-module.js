@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-main-carousel></app-main-carousel>\r\n\r\n<div class=\"products-tabs featured-tabs\">\r\n    <mat-tab-group mat-stretch-tabs>\r\n        <mat-tab label=\"Most Popular and Trending\">\r\n            <app-trending-product></app-trending-product>\r\n        </mat-tab>\r\n    </mat-tab-group>\r\n</div>\r\n\r\n<div class=\"products-tabs featured-tabs\">\r\n    <mat-tab-group mat-stretch-tabs>\r\n        <mat-tab label=\"Dynamic Text Area\">\r\n            <app-advertisment-product></app-advertisment-product>\r\n        </mat-tab>\r\n    </mat-tab-group>\r\n</div>\r\n\r\n<div class=\"products-tabs featured-tabs\">\r\n    <mat-tab-group mat-stretch-tabs>\r\n        <mat-tab label=\"Dynamic Text Area\">\r\n            <app-advertisment-product></app-advertisment-product>\r\n        </mat-tab>\r\n    </mat-tab-group>\r\n</div>\r\n\r\n<div class=\"products-tabs featured-tabs\">\r\n    <mat-tab-group mat-stretch-tabs>\r\n        <mat-tab label=\"Dynamic Text Area\">\r\n            <app-advertisment-product></app-advertisment-product>\r\n        </mat-tab>\r\n    </mat-tab-group>\r\n</div>\r\n\r\n<div class=\"products-tabs featured-tabs\">\r\n    <mat-tab-group mat-stretch-tabs>\r\n        <mat-tab label=\"Dynamic Text Area\">\r\n            <app-advertisment-product></app-advertisment-product>\r\n        </mat-tab>\r\n    </mat-tab-group>\r\n</div>\r\n\r\n<div class=\"products-tabs featured-tabs\">\r\n    <mat-tab-group mat-stretch-tabs>\r\n        <mat-tab label=\"Dynamic Text Area\">\r\n            <app-advertisment-product></app-advertisment-product>\r\n        </mat-tab>\r\n    </mat-tab-group>\r\n</div>\r\n\r\n\r\n<!-- <div class=\"products-tabs featured-tabs\">\r\n    <mat-tab-group mat-stretch-tabs>\r\n        <mat-tab label=\"Today Deals\">\r\n            <app-products-carousel [products]=\"listSandbox.todayDealList$ | async\"></app-products-carousel>\r\n        </mat-tab>\r\n    </mat-tab-group>\r\n</div> -->\r\n\r\n<!-- <app-brands-carousel [brands]=\"listSandbox.manufacturer$ | async\"></app-brands-carousel> -->"
+module.exports = "<div class=\"siteWrap\">\r\n    <app-main-carousel class=\"home-carousel\"></app-main-carousel>\r\n    <div class=\"site-container\">\r\n        <div class=\"products-tabs featured-tabs\">\r\n            <mat-tab-group mat-stretch-tabs>\r\n                <mat-tab label=\"Most Popular and Trending\">\r\n                    <app-trending-product></app-trending-product>\r\n                </mat-tab>\r\n            </mat-tab-group>\r\n        </div>\r\n\r\n        <div class=\"products-tabs featured-tabs\">\r\n            <mat-tab-group mat-stretch-tabs>\r\n                <mat-tab label=\"Dynamic Text Area\">\r\n                    <app-advertisment-product></app-advertisment-product>\r\n                </mat-tab>\r\n            </mat-tab-group>\r\n        </div>\r\n\r\n        <div class=\"products-tabs featured-tabs\">\r\n            <mat-tab-group mat-stretch-tabs>\r\n                <mat-tab label=\"Dynamic Text Area\">\r\n                    <app-advertisment-product></app-advertisment-product>\r\n                </mat-tab>\r\n            </mat-tab-group>\r\n        </div>\r\n\r\n        <div class=\"products-tabs featured-tabs\">\r\n            <mat-tab-group mat-stretch-tabs>\r\n                <mat-tab label=\"Dynamic Text Area\">\r\n                    <app-advertisment-product></app-advertisment-product>\r\n                </mat-tab>\r\n            </mat-tab-group>\r\n        </div>\r\n\r\n        <div class=\"products-tabs featured-tabs\">\r\n            <mat-tab-group mat-stretch-tabs>\r\n                <mat-tab label=\"Dynamic Text Area\">\r\n                    <app-advertisment-product></app-advertisment-product>\r\n                </mat-tab>\r\n            </mat-tab-group>\r\n        </div>\r\n\r\n        <div class=\"products-tabs featured-tabs\">\r\n            <mat-tab-group mat-stretch-tabs>\r\n                <mat-tab label=\"Dynamic Text Area\">\r\n                    <app-advertisment-product></app-advertisment-product>\r\n                </mat-tab>\r\n            </mat-tab-group>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n<!-- <div class=\"products-tabs featured-tabs\">\r\n    <mat-tab-group mat-stretch-tabs>\r\n        <mat-tab label=\"Today Deals\">\r\n            <app-products-carousel [products]=\"listSandbox.todayDealList$ | async\"></app-products-carousel>\r\n        </mat-tab>\r\n    </mat-tab-group>\r\n</div> -->\r\n\r\n<!-- <app-brands-carousel [brands]=\"listSandbox.manufacturer$ | async\"></app-brands-carousel> -->"
 
 /***/ }),
 
@@ -67,7 +67,7 @@ var HomeComponent = /** @class */ (function () {
     HomeComponent.prototype.ngOnInit = function () {
         this.getBannerList();
         this.getBransList();
-        this.getTodayDealList();
+        // this.getTodayDealList();
         this.listSandbox.getSettings();
         if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_1__["isPlatformBrowser"])(this.platformId)) {
             localStorage.removeItem('checkout');
@@ -76,8 +76,9 @@ var HomeComponent = /** @class */ (function () {
     // fetch banner list from sandbox
     HomeComponent.prototype.getBannerList = function () {
         var params = {};
-        params.limit = 100;
+        params.limit = 7;
         params.offset = 0;
+        // params.slider = 1;
         this.listSandbox.getBannerList(params);
     };
     // fetch brand list from sandbox

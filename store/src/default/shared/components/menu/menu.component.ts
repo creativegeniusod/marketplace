@@ -7,14 +7,15 @@
  * Author piccosoft ltd <support@piccosoft.com>
  * Licensed under the MIT license.
  */
-import {Component, Input, OnInit, ViewChild, PLATFORM_ID,
+import {
+    Component, Input, OnInit, ViewChild, PLATFORM_ID,
     Inject
-  } from '@angular/core';
-  import { isPlatformBrowser } from '@angular/common';
-import {ListsSandbox} from '../../../../core/lists/lists.sandbox';
-import {Router} from '@angular/router';
-import {AppSettings, Settings} from '../../../app.settings';
-import {MatMenuTrigger} from '@angular/material';
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { ListsSandbox } from '../../../../core/lists/lists.sandbox';
+import { Router } from '@angular/router';
+import { AppSettings, Settings } from '../../../app.settings';
+import { MatMenuTrigger } from '@angular/material';
 
 @Component({
     selector: 'app-menu',
@@ -26,6 +27,9 @@ export class MenuComponent implements OnInit {
     @Input() categories: any;
     @Input() categoriesExpanded: any;
     @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+
+    public category = { name: 'Select Category' };
+    searchValue: any = '';
 
     // param calls getProductList
     private brand: number;
@@ -43,17 +47,19 @@ export class MenuComponent implements OnInit {
     public settings: Settings;
 
     constructor(public listSandbox: ListsSandbox,
-                public appSettings: AppSettings,
-                @Inject(PLATFORM_ID) private platformId: Object,
-                public router: Router) {
+        public appSettings: AppSettings,
+        @Inject(PLATFORM_ID) private platformId: Object,
+        public router: Router) {
         this.settings = this.appSettings.settings;
         if (isPlatformBrowser(this.platformId)) {
-        const setTheme = localStorage.getItem('optionsTheme');
-        this.settings.theme = setTheme;
+            const setTheme = localStorage.getItem('optionsTheme');
+            this.settings.theme = setTheme;
         }
     }
 
     ngOnInit() {
+
+
     }
 
 
@@ -90,5 +96,20 @@ export class MenuComponent implements OnInit {
      */
     sendUniqueId(productFilter) {
         this.listSandbox.productFilterData.next(productFilter);
+    }
+
+    // send the search value to product through navigation.If no value send 1 as default value.
+    public searchData(value) {
+        console.log('search', value);
+        this.searchValue = value;
+        if (!value) {
+            this.router.navigate(['/products'], {
+                queryParams: { keyword: this.searchValue }
+            });
+        } else {
+            this.router.navigate(['/products'], {
+                queryParams: { keyword: this.searchValue }
+            });
+        }
     }
 }

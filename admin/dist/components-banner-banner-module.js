@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["components-banner-banner-module"],{
 
-/***/ "./src/core/admin/demo/banners/banner-effect/banner.effect.ts":
-/*!********************************************************************!*\
-  !*** ./src/core/admin/demo/banners/banner-effect/banner.effect.ts ***!
-  \********************************************************************/
+/***/ "./src/core/admin/adv/banners/banner-effect/banner.effect.ts":
+/*!*******************************************************************!*\
+  !*** ./src/core/admin/adv/banners/banner-effect/banner.effect.ts ***!
+  \*******************************************************************/
 /*! exports provided: BannerEffect */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -15,11 +15,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../banner-action/banner.action */ "./src/core/admin/demo/banners/banner-action/banner.action.ts");
+/* harmony import */ var _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../banner-action/banner.action */ "./src/core/admin/adv/banners/banner-action/banner.action.ts");
 /* harmony import */ var rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/internal/operators */ "./node_modules/rxjs/internal/operators/index.js");
 /* harmony import */ var rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _banner_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../banner.service */ "./src/core/admin/demo/banners/banner.service.ts");
-/* harmony import */ var _banner_model_bannercount_response_model__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../banner-model/bannercount.response.model */ "./src/core/admin/demo/banners/banner-model/bannercount.response.model.ts");
+/* harmony import */ var _banner_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../banner.service */ "./src/core/admin/adv/banners/banner.service.ts");
+/* harmony import */ var _banner_model_bannercount_response_model__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../banner-model/bannercount.response.model */ "./src/core/admin/adv/banners/banner-model/bannercount.response.model.ts");
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
 /*
  * SpurtCommerce
@@ -154,10 +154,10 @@ var BannerEffect = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/core/admin/demo/banners/banner-model/bannercount.model.ts":
-/*!***********************************************************************!*\
-  !*** ./src/core/admin/demo/banners/banner-model/bannercount.model.ts ***!
-  \***********************************************************************/
+/***/ "./src/core/admin/adv/banners/banner-model/bannercount.model.ts":
+/*!**********************************************************************!*\
+  !*** ./src/core/admin/adv/banners/banner-model/bannercount.model.ts ***!
+  \**********************************************************************/
 /*! exports provided: BannercountModel */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -186,10 +186,10 @@ var BannercountModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/core/admin/demo/banners/banner-model/bannercount.response.model.ts":
-/*!********************************************************************************!*\
-  !*** ./src/core/admin/demo/banners/banner-model/bannercount.response.model.ts ***!
-  \********************************************************************************/
+/***/ "./src/core/admin/adv/banners/banner-model/bannercount.response.model.ts":
+/*!*******************************************************************************!*\
+  !*** ./src/core/admin/adv/banners/banner-model/bannercount.response.model.ts ***!
+  \*******************************************************************************/
 /*! exports provided: BannercountResponseModel */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -216,10 +216,10 @@ var BannercountResponseModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/core/admin/demo/banners/banner-model/bannerdelete.model.ts":
-/*!************************************************************************!*\
-  !*** ./src/core/admin/demo/banners/banner-model/bannerdelete.model.ts ***!
-  \************************************************************************/
+/***/ "./src/core/admin/adv/banners/banner-model/bannerdelete.model.ts":
+/*!***********************************************************************!*\
+  !*** ./src/core/admin/adv/banners/banner-model/bannerdelete.model.ts ***!
+  \***********************************************************************/
 /*! exports provided: BannerdeleteModel */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -245,10 +245,10 @@ var BannerdeleteModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/core/admin/demo/banners/banner-model/bannerlist.model.ts":
-/*!**********************************************************************!*\
-  !*** ./src/core/admin/demo/banners/banner-model/bannerlist.model.ts ***!
-  \**********************************************************************/
+/***/ "./src/core/admin/adv/banners/banner-model/bannerlist.model.ts":
+/*!*********************************************************************!*\
+  !*** ./src/core/admin/adv/banners/banner-model/bannerlist.model.ts ***!
+  \*********************************************************************/
 /*! exports provided: BannerlistModel */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -287,10 +287,10 @@ var BannerlistModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/core/admin/demo/banners/banner-reducer/banner.selector.ts":
-/*!***********************************************************************!*\
-  !*** ./src/core/admin/demo/banners/banner-reducer/banner.selector.ts ***!
-  \***********************************************************************/
+/***/ "./src/core/admin/adv/banners/banner-reducer/banner.selector.ts":
+/*!**********************************************************************!*\
+  !*** ./src/core/admin/adv/banners/banner-reducer/banner.selector.ts ***!
+  \**********************************************************************/
 /*! exports provided: getBannerState, getBannerlst, getbannerpagination, getAddBanners, getaddBanner, getdeletebanner, getbanneraddloaded, getbanneraddfailed, getbanneraddloading, getUpdatebanner, getbannerupdateloading, getbannerupdateloaded, getbannerupdatefailed, getbannerdeleteloading, getbannerdeleteloaded, getbannerdeletefailed, getbannercountloading, getbannercountloaded, getbannercountfailed, getbannerlistloaded, getbannerlistfailed, getbannerlistloading, getbannerListCount, getbannerListCountLoaded, getbannerListCountFailed, getbannerListCountLoading, getbannerListActive, getbannerListActiveLoaded, getbannerListACtiveFailed, getbannerListActiveLoading, getbannerListInActive, getbannerListInActiveLoaded, getbannerListInACtiveFailed, getbannerListInActiveLoading */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -331,7 +331,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListInACtiveFailed", function() { return getbannerListInACtiveFailed; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListInActiveLoading", function() { return getbannerListInActiveLoading; });
 /* harmony import */ var reselect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reselect */ "./node_modules/reselect/es/index.js");
-/* harmony import */ var _banner_reducer_banner_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../banner-reducer/banner.reducer */ "./src/core/admin/demo/banners/banner-reducer/banner.reducer.ts");
+/* harmony import */ var _banner_reducer_banner_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../banner-reducer/banner.reducer */ "./src/core/admin/adv/banners/banner-reducer/banner.reducer.ts");
 /*
  * SpurtCommerce
  * http://www.spurtcommerce.com
@@ -384,10 +384,10 @@ var getbannerListInActiveLoading = Object(reselect__WEBPACK_IMPORTED_MODULE_0__[
 
 /***/ }),
 
-/***/ "./src/core/admin/demo/banners/banner.sandbox.ts":
-/*!*******************************************************!*\
-  !*** ./src/core/admin/demo/banners/banner.sandbox.ts ***!
-  \*******************************************************/
+/***/ "./src/core/admin/adv/banners/banner.sandbox.ts":
+/*!******************************************************!*\
+  !*** ./src/core/admin/adv/banners/banner.sandbox.ts ***!
+  \******************************************************/
 /*! exports provided: BannerSandbox */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -398,12 +398,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
 /* harmony import */ var ng6_toastr_notifications__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ng6-toastr-notifications */ "./node_modules/ng6-toastr-notifications/fesm5/ng6-toastr-notifications.js");
-/* harmony import */ var _banners_banner_action_banner_action__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../banners/banner-action/banner.action */ "./src/core/admin/demo/banners/banner-action/banner.action.ts");
+/* harmony import */ var _banners_banner_action_banner_action__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../banners/banner-action/banner.action */ "./src/core/admin/adv/banners/banner-action/banner.action.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _banner_reducer_banner_selector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./banner-reducer/banner.selector */ "./src/core/admin/demo/banners/banner-reducer/banner.selector.ts");
-/* harmony import */ var _banner_model_bannerlist_model__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./banner-model/bannerlist.model */ "./src/core/admin/demo/banners/banner-model/bannerlist.model.ts");
-/* harmony import */ var _banner_model_bannerdelete_model__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./banner-model/bannerdelete.model */ "./src/core/admin/demo/banners/banner-model/bannerdelete.model.ts");
-/* harmony import */ var _banner_model_bannercount_model__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./banner-model/bannercount.model */ "./src/core/admin/demo/banners/banner-model/bannercount.model.ts");
+/* harmony import */ var _banner_reducer_banner_selector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./banner-reducer/banner.selector */ "./src/core/admin/adv/banners/banner-reducer/banner.selector.ts");
+/* harmony import */ var _banner_model_bannerlist_model__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./banner-model/bannerlist.model */ "./src/core/admin/adv/banners/banner-model/bannerlist.model.ts");
+/* harmony import */ var _banner_model_bannerdelete_model__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./banner-model/bannerdelete.model */ "./src/core/admin/adv/banners/banner-model/bannerdelete.model.ts");
+/* harmony import */ var _banner_model_bannercount_model__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./banner-model/bannercount.model */ "./src/core/admin/adv/banners/banner-model/bannercount.model.ts");
 
 /*
  * SpurtCommerce
@@ -499,14 +499,14 @@ var BannerSandbox = /** @class */ (function () {
         this.subscriptions.push(this.getAddNewBanner$.subscribe(function (data) {
             if (data && data.status === 1) {
                 if (data.message) {
-                    _this.router.navigate(['/demo/banners/list']);
+                    _this.router.navigate(['/adv/banners/list']);
                 }
             }
         }));
         this.subscriptions.push(this.getUpdatebanner$.subscribe(function (data) {
             if (data && data.status === 1) {
                 if (data.message) {
-                    _this.router.navigate(['/demo/banners/list']);
+                    _this.router.navigate(['/adv/banners/list']);
                 }
             }
         }));
@@ -527,10 +527,10 @@ var BannerSandbox = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/core/admin/demo/banners/banner.service.ts":
-/*!*******************************************************!*\
-  !*** ./src/core/admin/demo/banners/banner.service.ts ***!
-  \*******************************************************/
+/***/ "./src/core/admin/adv/banners/banner.service.ts":
+/*!******************************************************!*\
+  !*** ./src/core/admin/adv/banners/banner.service.ts ***!
+  \******************************************************/
 /*! exports provided: BannerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -610,21 +610,21 @@ var BannerService = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./src/theme/default/admin/demo/components/banner/add/add.component.html":
-/*!*******************************************************************************!*\
-  !*** ./src/theme/default/admin/demo/components/banner/add/add.component.html ***!
-  \*******************************************************************************/
+/***/ "./src/theme/default/admin/adv/components/banner/add/add.component.html":
+/*!******************************************************************************!*\
+  !*** ./src/theme/default/admin/adv/components/banner/add/add.component.html ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner-layout></app-banner-layout>\n<div class=\"row products-section\">\n    <div class=\"col-12\">\n        <div class=\"breadcrumbs-row noborder\">\n            <div class=\"bc-col\">\n                <ul>\n                    <li><a href=\"javascript:void(0)\"> ADV </a></li>\n                    <li><a href=\"javascript:void(0)\" [routerLink]=\"['/demo/banners']\"> Banners </a></li>\n                    <li>Add Banners</li>\n                </ul>\n            </div>\n            <div class=\"bc-col-btn ap-col-btn\">\n                <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-save\"><img\n                        src=\"assets/img/tick-round-white.png\">Save\n                </button>\n                <button (click)=\"bannerCancel()\" class=\"btn btn-cancel\"><img\n                        src=\"assets/img/close-white-ico.png\">Cancel\n                </button>\n            </div>\n        </div>\n    </div>\n    <!--Breadcrumbs-->\n</div>\n\n<div class=\"flex addproduct-wrap addgroup-wrap\">\n\n    <div class=\"card ap-general\">\n        <form (ngSubmit)=\"onSubmit()\" [formGroup]=\"bannerForm\">\n            <div class=\"ap-header\">\n                General Information\n            </div>\n            <div class=\"flex ap-body cmsap-body\">\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">                       \n                        <label>Banner Title<sup>*</sup> </label>\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"bannerTitle\" formControlName=\"bannerTitle\" placeholder=\"Banner Title\" [ngClass]=\"{ 'is-invalid': submitted && f.bannerTitle.errors }\">\n                        <div *ngIf=\"submitted && f.bannerTitle.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.bannerTitle.errors.required\">Banner Title is required\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!--Col-->\n                <div class=\"ap-body-col width100\">\n                    <div class=\"form-group\">\n                        <label>Banner Content</label>\n                        <ckeditor formControlName=\"bannerContent\" [ngClass]=\"{'Validationcolor':bannerForm.get('bannerContent').hasError('required') && bannerForm.get('bannerContent').touched&&submitted==true}\">\n                        </ckeditor>\n\n                    </div>\n                </div>\n                <!--Col-->\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Link</label>\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"bannerLink\" formControlName=\"bannerLink\" placeholder=\"Enter Link\" [ngClass]=\"{ 'is-invalid': submitted && f.bannerLink.errors }\">\n                        <div *ngIf=\"submitted && f.bannerLink.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.bannerLink.errors.required\">Link is required\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!--Col-->\n                 <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Position</label>\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"position\" formControlName=\"position\" placeholder=\"Enter Position \" [ngClass]=\"{ 'is-invalid': submitted && f.position.errors }\">\n                        <div *ngIf=\"submitted && f.position.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.position.errors.required\">Position is required\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Categories<sup>*</sup></label>\n                        <select class=\"custom-select col-12\" id=\"categoryComponent\" formControlName=\"category\" (change)=\"onSelectcategory($event.target.value)\" [ngClass]=\"{ 'is-invalid': submitted && f.category.errors }\">\n                            <option value=''>- -Select- -</option>\n                            <option selected *ngFor=\"let arr of categoriessandbox.getCategoriesList$ | async\"\n                            value={{arr.categoryId}}>{{arr.name}}\n                            </option>\n                        </select>\n                        <!-- <div *ngIf=\"submitted && f.position.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.position.errors.required\">Position is required\n                            </div>\n                        </div> -->\n                    </div>\n                </div>\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Sub Categories</label>\n                        <select class=\"custom-select col-12\" id=\"subcategoryComponent\" formControlName=\"subcategory\" [ngClass]=\"{ 'is-invalid': submitted && f.subcategory.errors }\">\n                            <option value=''>- -Select- -</option>\n                            <option selected *ngFor=\"let arr of categoriessandbox.getSubCategoriesList$ | async\"\n                            value={{arr.categoryId}}>{{arr.name}}\n                            </option>\n                        </select>\n                        <!-- <div *ngIf=\"submitted && f.position.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.position.errors.required\">Position is required\n                            </div>\n                        </div> -->\n                    </div>\n                </div>\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Active<sup>*</sup></label>\n                        <select class=\"custom-select col-12\" formControlName=\"active\" id=\"inlineFormCustomSelect\" [ngClass]=\"{ 'is-invalid': submitted && f.active.errors }\">\n                            <option value=\"\">- -Select Active- -</option>\n                            <option value=\"1\">Yes</option>\n                            <option value=\"0\">No</option>\n                        </select>\n                        <div *ngIf=\"submitted && f.active.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.active.errors.required\">Status is required</div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Show on home page<sup>*</sup></label>\n                        <select class=\"custom-select col-12\" formControlName=\"homebanner\" id=\"homebanner\" [ngClass]=\"{ 'is-invalid': submitted && f.homebanner.errors }\">\n                            <option value=\"\">- -Select Active- -</option>\n                            <option value=\"1\">Yes</option>\n                            <option value=\"0\">No</option>\n                        </select>\n                        <div *ngIf=\"submitted && f.homebanner.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.homebanner.errors.required\">Status is required</div>\n                        </div>\n                    </div>\n                </div>\n                <!--col-->\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <div class=\"image-col\">\n                            <div class=\"img-dflt\">\n                                <input type=\"file\" name=\"userImg\" (change)=\"uploadChange($event)\" accept=\"image/*\" #filePath style=\"display: none\">\n                                <input type=\"hidden\" name=\"fileHidden\" formControlName=\"imageInput\"/> <!-- Validation Field -->\n                                <img [src]=\"postImageUrl\" width=\"13%\" height=\"13%\">\n                                <p></p>\n                                <button (click)=\"uploadButtonClick()\" type=\"button\">Upload Picture\n                                </button>\n                            </div>\n                        </div>\n                        <div style=\"color:#f62d51\" *ngIf=\"submitted && f.imageInput.errors\">\n                            <div *ngIf=\"f.imageInput.errors.required\">Image is required</div>\n                        </div>\n                    </div>\n                 \n\n                </div>\n                <!--col-->\n            </div>\n        </form>\n    </div>\n    <!--General-->\n\n\n</div>"
+module.exports = "<app-banner-layout></app-banner-layout>\n<div class=\"row products-section\">\n    <div class=\"col-12\">\n        <div class=\"breadcrumbs-row noborder\">\n            <div class=\"bc-col\">\n                <ul>\n                    <li><a href=\"javascript:void(0)\"> ADV </a></li>\n                    <li><a href=\"javascript:void(0)\" [routerLink]=\"['/adv/banners']\"> Banners </a></li>\n                    <li>Add Banners</li>\n                </ul>\n            </div>\n            <div class=\"bc-col-btn ap-col-btn\">\n                <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-save\"><img\n                        src=\"assets/img/tick-round-white.png\">Save\n                </button>\n                <button (click)=\"bannerCancel()\" class=\"btn btn-cancel\"><img\n                        src=\"assets/img/close-white-ico.png\">Cancel\n                </button>\n            </div>\n        </div>\n    </div>\n    <!--Breadcrumbs-->\n</div>\n\n<div class=\"flex addproduct-wrap addgroup-wrap\">\n\n    <div class=\"card ap-general\">\n        <form (ngSubmit)=\"onSubmit()\" [formGroup]=\"bannerForm\">\n            <div class=\"ap-header\">\n                General Information\n            </div>\n            <div class=\"flex ap-body cmsap-body\">\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">                       \n                        <label>Banner Title<sup>*</sup> </label>\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"bannerTitle\" formControlName=\"bannerTitle\" placeholder=\"Banner Title\" [ngClass]=\"{ 'is-invalid': submitted && f.bannerTitle.errors }\">\n                        <div *ngIf=\"submitted && f.bannerTitle.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.bannerTitle.errors.required\">Banner Title is required\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!--Col-->\n                <div class=\"ap-body-col width100\">\n                    <div class=\"form-group\">\n                        <label>Banner Content</label>\n                        <ckeditor formControlName=\"bannerContent\" [ngClass]=\"{'Validationcolor':bannerForm.get('bannerContent').hasError('required') && bannerForm.get('bannerContent').touched&&submitted==true}\">\n                        </ckeditor>\n\n                    </div>\n                </div>\n                <!--Col-->\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Link</label>\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"bannerLink\" formControlName=\"bannerLink\" placeholder=\"Enter Link\" [ngClass]=\"{ 'is-invalid': submitted && f.bannerLink.errors }\">\n                        <div *ngIf=\"submitted && f.bannerLink.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.bannerLink.errors.required\">Link is required\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!--Col-->\n                 <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Position</label>\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"position\" formControlName=\"position\" placeholder=\"Enter Position \" [ngClass]=\"{ 'is-invalid': submitted && f.position.errors }\">\n                        <div *ngIf=\"submitted && f.position.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.position.errors.required\">Position is required\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Categories<sup>*</sup></label>\n                        <select class=\"custom-select col-12\" id=\"categoryComponent\" formControlName=\"category\" (change)=\"onSelectcategory($event.target.value)\" [ngClass]=\"{ 'is-invalid': submitted && f.category.errors }\">\n                            <option value=''>- -Select- -</option>\n                            <option selected *ngFor=\"let arr of categoriessandbox.getCategoriesList$ | async\"\n                            value={{arr.categoryId}}>{{arr.name}}\n                            </option>\n                        </select>\n                        <!-- <div *ngIf=\"submitted && f.position.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.position.errors.required\">Position is required\n                            </div>\n                        </div> -->\n                    </div>\n                </div>\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Sub Categories</label>\n                        <select class=\"custom-select col-12\" id=\"subcategoryComponent\" formControlName=\"subcategory\" [ngClass]=\"{ 'is-invalid': submitted && f.subcategory.errors }\">\n                            <option value=''>- -Select- -</option>\n                            <option selected *ngFor=\"let arr of categoriessandbox.getSubCategoriesList$ | async\"\n                            value={{arr.categoryId}}>{{arr.name}}\n                            </option>\n                        </select>\n                        <!-- <div *ngIf=\"submitted && f.position.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.position.errors.required\">Position is required\n                            </div>\n                        </div> -->\n                    </div>\n                </div>\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Active<sup>*</sup></label>\n                        <select class=\"custom-select col-12\" formControlName=\"active\" id=\"inlineFormCustomSelect\" [ngClass]=\"{ 'is-invalid': submitted && f.active.errors }\">\n                            <option value=\"\">- -Select Active- -</option>\n                            <option value=\"1\">Yes</option>\n                            <option value=\"0\">No</option>\n                        </select>\n                        <div *ngIf=\"submitted && f.active.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.active.errors.required\">Status is required</div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <label>Show on home page<sup>*</sup></label>\n                        <select class=\"custom-select col-12\" formControlName=\"homebanner\" id=\"homebanner\" [ngClass]=\"{ 'is-invalid': submitted && f.homebanner.errors }\">\n                            <option value=\"\">- -Select Active- -</option>\n                            <option value=\"1\">Yes</option>\n                            <option value=\"0\">No</option>\n                        </select>\n                        <div *ngIf=\"submitted && f.homebanner.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"f.homebanner.errors.required\">Status is required</div>\n                        </div>\n                    </div>\n                </div>\n                <!--col-->\n                <div class=\"ap-body-col\">\n                    <div class=\"form-group\">\n                        <div class=\"image-col\">\n                            <div class=\"img-dflt\">\n                                <input type=\"file\" name=\"userImg\" (change)=\"uploadChange($event)\" accept=\"image/*\" #filePath style=\"display: none\">\n                                <input type=\"hidden\" name=\"fileHidden\" formControlName=\"imageInput\"/> <!-- Validation Field -->\n                                <img [src]=\"postImageUrl\" width=\"13%\" height=\"13%\">\n                                <p></p>\n                                <button (click)=\"uploadButtonClick()\" type=\"button\">Upload Picture\n                                </button>\n                            </div>\n                        </div>\n                        <div style=\"color:#f62d51\" *ngIf=\"submitted && f.imageInput.errors\">\n                            <div *ngIf=\"f.imageInput.errors.required\">Image is required</div>\n                        </div>\n                    </div>\n                 \n\n                </div>\n                <!--col-->\n            </div>\n        </form>\n    </div>\n    <!--General-->\n\n\n</div>"
 
 /***/ }),
 
-/***/ "./src/theme/default/admin/demo/components/banner/add/add.component.ts":
-/*!*****************************************************************************!*\
-  !*** ./src/theme/default/admin/demo/components/banner/add/add.component.ts ***!
-  \*****************************************************************************/
+/***/ "./src/theme/default/admin/adv/components/banner/add/add.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/theme/default/admin/adv/components/banner/add/add.component.ts ***!
+  \****************************************************************************/
 /*! exports provided: BannerAddComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -636,8 +636,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _core_admin_demo_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../../core/admin/demo/banners/banner.sandbox */ "./src/core/admin/demo/banners/banner.sandbox.ts");
-/* harmony import */ var _core_admin_demo_banners_banner_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../../core/admin/demo/banners/banner.service */ "./src/core/admin/demo/banners/banner.service.ts");
+/* harmony import */ var _core_admin_adv_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../../core/admin/adv/banners/banner.sandbox */ "./src/core/admin/adv/banners/banner.sandbox.ts");
+/* harmony import */ var _core_admin_adv_banners_banner_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../../core/admin/adv/banners/banner.service */ "./src/core/admin/adv/banners/banner.service.ts");
 /* harmony import */ var _core_admin_service_config_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../../core/admin/service/config.service */ "./src/core/admin/service/config.service.ts");
 /* harmony import */ var _core_admin_catalog_category_categories_sandbox__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../../core/admin/catalog/category/categories.sandbox */ "./src/core/admin/catalog/category/categories.sandbox.ts");
 /* harmony import */ var _core_admin_catalog_category_categories_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../../core/admin/catalog/category/categories.service */ "./src/core/admin/catalog/category/categories.service.ts");
@@ -764,7 +764,7 @@ var BannerAddComponent = /** @class */ (function () {
     //  cancel it  navigate  to - add page to  list page
     BannerAddComponent.prototype.bannerCancel = function () {
         this.service.setBannerListData('');
-        this.router.navigate(['/demo/banners/list']);
+        this.router.navigate(['/adv/banners/list']);
     };
     // Form  Initialization
     BannerAddComponent.prototype.initForm = function () {
@@ -794,7 +794,8 @@ var BannerAddComponent = /** @class */ (function () {
             return;
         }
         else {
-            var subCateval = (this.bannerForm.value.subcategory == 'null' ? 0 : this.bannerForm.value.subcategory);
+            // console.log(this.bannerForm.value.subcategory,"**********")
+            var subCateval = ((this.bannerForm.value.subcategory == null || this.bannerForm.value.subcategory == "") ? 0 : this.bannerForm.value.subcategory);
             var params = {};
             params.title = this.bannerForm.value.bannerTitle;
             params.category = parseInt(this.bannerForm.value.category);
@@ -902,8 +903,8 @@ var BannerAddComponent = /** @class */ (function () {
     ], BannerAddComponent.prototype, "filePath", void 0);
     BannerAddComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-demo-banner-add',
-            template: __webpack_require__(/*! ./add.component.html */ "./src/theme/default/admin/demo/components/banner/add/add.component.html"),
+            selector: 'app-adv-banner-add',
+            template: __webpack_require__(/*! ./add.component.html */ "./src/theme/default/admin/adv/components/banner/add/add.component.html"),
             encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
             styles: ["\n      .dark-modal .modal-content {\n        background-color: #009efb;\n        color: white;\n      }\n\n      .dark-modal .close {\n        color: white;\n      }\n\n      .light-blue-backdrop {\n        background-color: #5cb3fd;\n      }\n\n      .image-manager .modal-dialog {\n        max-width: 70%;\n      }\n    "]
         }),
@@ -916,8 +917,8 @@ var BannerAddComponent = /** @class */ (function () {
             _core_admin_catalog_category_categories_sandbox__WEBPACK_IMPORTED_MODULE_8__["CategoriesSandbox"],
             _core_admin_catalog_category_categories_service__WEBPACK_IMPORTED_MODULE_9__["CategoriesService"],
             _core_admin_service_config_service__WEBPACK_IMPORTED_MODULE_7__["ConfigService"],
-            _core_admin_demo_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_5__["BannerSandbox"],
-            _core_admin_demo_banners_banner_service__WEBPACK_IMPORTED_MODULE_6__["BannerService"]])
+            _core_admin_adv_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_5__["BannerSandbox"],
+            _core_admin_adv_banners_banner_service__WEBPACK_IMPORTED_MODULE_6__["BannerService"]])
     ], BannerAddComponent);
     return BannerAddComponent;
 }());
@@ -926,10 +927,10 @@ var BannerAddComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/theme/default/admin/demo/components/banner/banner.module.ts":
-/*!*************************************************************************!*\
-  !*** ./src/theme/default/admin/demo/components/banner/banner.module.ts ***!
-  \*************************************************************************/
+/***/ "./src/theme/default/admin/adv/components/banner/banner.module.ts":
+/*!************************************************************************!*\
+  !*** ./src/theme/default/admin/adv/components/banner/banner.module.ts ***!
+  \************************************************************************/
 /*! exports provided: BannerModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -941,19 +942,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _default_common_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../default.common.module */ "./src/theme/default/default.common.module.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _add_add_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./add/add.component */ "./src/theme/default/admin/demo/components/banner/add/add.component.ts");
-/* harmony import */ var _list_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./list/list.component */ "./src/theme/default/admin/demo/components/banner/list/list.component.ts");
+/* harmony import */ var _add_add_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./add/add.component */ "./src/theme/default/admin/adv/components/banner/add/add.component.ts");
+/* harmony import */ var _list_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./list/list.component */ "./src/theme/default/admin/adv/components/banner/list/list.component.ts");
 /* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var _core_admin_demo_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../core/admin/demo/banners/banner.sandbox */ "./src/core/admin/demo/banners/banner.sandbox.ts");
-/* harmony import */ var _core_admin_demo_banners_banner_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../core/admin/demo/banners/banner.service */ "./src/core/admin/demo/banners/banner.service.ts");
-/* harmony import */ var _core_admin_demo_banners_banner_effect_banner_effect__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../../core/admin/demo/banners/banner-effect/banner.effect */ "./src/core/admin/demo/banners/banner-effect/banner.effect.ts");
+/* harmony import */ var _core_admin_adv_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../core/admin/adv/banners/banner.sandbox */ "./src/core/admin/adv/banners/banner.sandbox.ts");
+/* harmony import */ var _core_admin_adv_banners_banner_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../core/admin/adv/banners/banner.service */ "./src/core/admin/adv/banners/banner.service.ts");
+/* harmony import */ var _core_admin_adv_banners_banner_effect_banner_effect__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../../core/admin/adv/banners/banner-effect/banner.effect */ "./src/core/admin/adv/banners/banner-effect/banner.effect.ts");
 /* harmony import */ var _core_admin_catalog_category_categories_sandbox__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../../core/admin/catalog/category/categories.sandbox */ "./src/core/admin/catalog/category/categories.sandbox.ts");
 /* harmony import */ var _core_admin_catalog_category_categories_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../../../core/admin/catalog/category/categories.service */ "./src/core/admin/catalog/category/categories.service.ts");
-/* harmony import */ var _banner_routing__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./banner.routing */ "./src/theme/default/admin/demo/components/banner/banner.routing.ts");
+/* harmony import */ var _banner_routing__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./banner.routing */ "./src/theme/default/admin/adv/components/banner/banner.routing.ts");
 /* harmony import */ var _default_material_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../../default.material.module */ "./src/theme/default/default.material.module.ts");
 /* harmony import */ var ng2_ckeditor__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ng2-ckeditor */ "./node_modules/ng2-ckeditor/lib/ng2-ckeditor.js");
 /* harmony import */ var ng2_ckeditor__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(ng2_ckeditor__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _shared_banner_layout_banner_layout_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../shared/banner-layout/banner-layout.component */ "./src/theme/default/admin/demo/components/shared/banner-layout/banner-layout.component.ts");
+/* harmony import */ var _shared_banner_layout_banner_layout_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../shared/banner-layout/banner-layout.component */ "./src/theme/default/admin/adv/components/shared/banner-layout/banner-layout.component.ts");
 
 /*
  * SpurtCommerce
@@ -1002,10 +1003,10 @@ var BannerModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
                 _default_material_module__WEBPACK_IMPORTED_MODULE_14__["MaterialModule"],
                 _banner_routing__WEBPACK_IMPORTED_MODULE_13__["BannerRoutingModule"],
-                _ngrx_effects__WEBPACK_IMPORTED_MODULE_7__["EffectsModule"].forRoot([_core_admin_demo_banners_banner_effect_banner_effect__WEBPACK_IMPORTED_MODULE_10__["BannerEffect"]]),
+                _ngrx_effects__WEBPACK_IMPORTED_MODULE_7__["EffectsModule"].forRoot([_core_admin_adv_banners_banner_effect_banner_effect__WEBPACK_IMPORTED_MODULE_10__["BannerEffect"]]),
                 ng2_ckeditor__WEBPACK_IMPORTED_MODULE_15__["CKEditorModule"]
             ],
-            providers: [_core_admin_demo_banners_banner_service__WEBPACK_IMPORTED_MODULE_9__["BannerService"], _core_admin_demo_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_8__["BannerSandbox"], _core_admin_catalog_category_categories_service__WEBPACK_IMPORTED_MODULE_12__["CategoriesService"], _core_admin_catalog_category_categories_sandbox__WEBPACK_IMPORTED_MODULE_11__["CategoriesSandbox"]],
+            providers: [_core_admin_adv_banners_banner_service__WEBPACK_IMPORTED_MODULE_9__["BannerService"], _core_admin_adv_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_8__["BannerSandbox"], _core_admin_catalog_category_categories_service__WEBPACK_IMPORTED_MODULE_12__["CategoriesService"], _core_admin_catalog_category_categories_sandbox__WEBPACK_IMPORTED_MODULE_11__["CategoriesSandbox"]],
             bootstrap: [],
             entryComponents: []
         })
@@ -1017,10 +1018,10 @@ var BannerModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/theme/default/admin/demo/components/banner/banner.routing.ts":
-/*!**************************************************************************!*\
-  !*** ./src/theme/default/admin/demo/components/banner/banner.routing.ts ***!
-  \**************************************************************************/
+/***/ "./src/theme/default/admin/adv/components/banner/banner.routing.ts":
+/*!*************************************************************************!*\
+  !*** ./src/theme/default/admin/adv/components/banner/banner.routing.ts ***!
+  \*************************************************************************/
 /*! exports provided: BannerRoutingModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1030,8 +1031,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _add_add_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./add/add.component */ "./src/theme/default/admin/demo/components/banner/add/add.component.ts");
-/* harmony import */ var _list_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./list/list.component */ "./src/theme/default/admin/demo/components/banner/list/list.component.ts");
+/* harmony import */ var _add_add_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./add/add.component */ "./src/theme/default/admin/adv/components/banner/add/add.component.ts");
+/* harmony import */ var _list_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./list/list.component */ "./src/theme/default/admin/adv/components/banner/list/list.component.ts");
 
 /*
  * SpurtCommerce
@@ -1071,32 +1072,32 @@ var BannerRoutingModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/theme/default/admin/demo/components/banner/list/list.component.html":
-/*!*********************************************************************************!*\
-  !*** ./src/theme/default/admin/demo/components/banner/list/list.component.html ***!
-  \*********************************************************************************/
+/***/ "./src/theme/default/admin/adv/components/banner/list/list.component.html":
+/*!********************************************************************************!*\
+  !*** ./src/theme/default/admin/adv/components/banner/list/list.component.html ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner-layout></app-banner-layout>\n<div class=\"row products-section products-sub-section\">\n    <div class=\"col-12\">\n        <div class=\"breadcrumbs-row\">\n            <div class=\"bc-col\">\n                <ul>\n                    <li><a href=\"javascript:void(0)\"> ADV </a></li>\n                    <li>Banners</li>\n                </ul>\n            </div>\n            <div class=\"bc-col-btn\">\n                <button class=\"btn cms-btn\" (click)=\"AddBanner()\"><img\n                        src=\"assets/img/add-white-ico.png\">Add Banner\n                </button>\n            </div>\n        </div>\n    </div>\n    <!--Breadcrumbs-->\n    <div class=\"col-12\">\n        <div class=\"flex filter-row\">\n            <div class=\"filter-lft\">\n            </div>\n            <!--Lft-->\n            <div class=\"filter-nav-list\">\n                <ul class=\"flex\">\n                    <li *ngIf=\"checkedData.length==0\" style=\"margin-left: 15px;\">\n                        <a (click)=\"bulkDeleteEmpty()\"><img src=\"assets/img/delete-ico-pink.png\"> Delete\n                        </a>\n                    </li>\n                    <li *ngIf=\"checkedData.length>0\" style=\"margin-left: 15px;\" [ngbPopover]=\"deleteContent1\" placement=\"left\" #deletePop=\"ngbPopover\">\n                        <a><img src=\"assets/img/delete-ico-pink.png\"> Delete\n                        </a>\n                    </li>\n                </ul>\n            </div>\n            <!--Right-->\n        </div>\n    </div>\n</div>\n\n<div class=\"flex product-wrap\">\n    <!--Filter-->\n    <div class=\"product-table\" style=\"width: 100%\">\n        <div class=\"table-responsive\">\n            <table class=\"table\">\n                <thead>\n                    <tr>\n                        <th scope=\"col\" width=\"5%\">\n                            <div class=\"form-group\">\n                                <div class=\"custom-control custom-checkbox mr-sm-2\">\n                                </div>\n                            </div>\n                        </th>\n                        <th scope=\"col\">Title</th>\n                        <th scope=\"col\">Image</th>\n                        <th scope=\"col\">Link</th>\n                        <th scope=\"col\">Position</th>\n                        <th scope=\"col\">category</th>\n                        <th scope=\"col\" width=\"100\">Action</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor=\"let bannerInfo of sandbox.getbannerlist$ | async; let i=index\">\n                        <th scope=\"row\" class=\"text-center\">\n                            <div class=\"form-group\">\n                                <div class=\"custom-control custom-checkbox mr-sm-2\">\n                                    <input type=\"checkbox\" class=\"custom-control-input\" (click)=\"selectChkBox($event, bannerInfo.bannerId)\" id={{bannerInfo.bannerId}} [checked]=\"checkCondition[bannerInfo.bannerId]\" [ngModelOptions]=\"{standalone: true}\" [(ngModel)]=\"checkmodules[bannerInfo.bannerId]\">\n                                    <label class=\"custom-control-label\" for={{bannerInfo.bannerId}}></label>\n                                </div>\n                            </div>\n                        </th>\n                        <td> {{bannerInfo.title}}</td>\n                        <td>\n                            <img *ngIf=\"bannerInfo.image\" [src]=\"imageUrl + '?path=' + bannerInfo.imagePath + '&name=' + bannerInfo.image + '&width=60&height=60'\" onError=\"this.src='/assets/error-images/Load icon Products.png';\" (load)=\"BannerListImageLoading(bannerInfo.bannerId)\"\n                                [hidden]=\"!bannerListImage[bannerInfo.bannerId]\">\n                            <img src=\"./assets/error-images/Load icon Products.png\" [hidden]=\"bannerListImage[bannerInfo.bannerId]\">\n                        </td>\n                        <td>{{bannerInfo.link}}\n                        </td>\n                        <td>{{bannerInfo.position}}</td>\n                        <td>{{bannerInfo.categoryId}} , {{bannerInfo.categoryChildId}}</td>\n                        <!--<td>{{bannerInfo.position}}</td>-->\n                        <td>\n                            <!-- {{bannerInfo | json }} -->\n                            <a (click)=\"editBanner(bannerInfo)\" href=\"javascript:void(0)\"> <img src=\"assets/img/edit-ico.png\"> </a>\n\n                            <i style=\"margin-left: 15px;\" [ngbPopover]=\"deleteContent\" placement=\"left\" #deletePop=\"ngbPopover\" class=\"fas fa-trash\"></i>\n                            <ng-template #deleteContent>\n                                <div class=\"style\">\n                                    <div class=\"modal-header\">\n                                        <h6 class=\"modal-title\" style=\"margin-left: 17%;\"> Do you want to delete ?</h6>\n\n                                    </div>\n\n                                    <div class=\"modal-footer\" style=\"margin-right: 23%;\">\n                                        <button type=\"button\" class=\"btn btn-danger\" (click)=\"deletePop.close()\" data-dismiss=\"modal\">No\n                                    </button>\n                                        <button type=\"button\" class=\"btn btn-success\" (click)=\"deleteBanner(bannerInfo.bannerId, deletePop)\" data-dismiss=\"modal\">\n                                        Yes\n                                    </button>\n                                    </div>\n                                </div>\n                            </ng-template>\n                        </td>\n                    </tr>\n                </tbody>\n            </table>\n            <div class=\"no_data\" *ngIf=\"(sandbox.getbannerlist$ |async)?.length==0\">\n                <p>Items not found</p>\n            </div>\n            <div class=\"flex table-footer\">\n                <div class=\"view-rec\">\n                </div>\n                <!--mat pagination-->\n                <mat-paginator [length]=\"sandbox.getbannerpagelength$ | async\" [pageSize]=\"pageSize\" [pageIndex]=\"index\" [pageSizeOptions]=\"[pageSize]\" (page)=\"onPageChange($event)\">\n                </mat-paginator>\n                <!-- pagination end here-->\n            </div>\n        </div>\n    </div>\n    <!--Table-->\n\n</div>\n<ng-template #deleteContent1>\n    <div class=\"style\">\n        <div class=\"modal-header\">\n            <h6 class=\"modal-title\" style=\"margin-left: 17%;\"> Do you want to delete ?</h6>\n\n        </div>\n\n        <div class=\"modal-footer\" style=\"margin-right: 23%;\">\n            <button type=\"button\" class=\"btn btn-danger\" (click)=\"deletePop.close()\" data-dismiss=\"modal\">No\n                </button>\n            <button type=\"button\" class=\"btn btn-success\" (click)=\"bulkDelete()\" data-dismiss=\"modal\">\n                    Yes\n                </button>\n        </div>\n    </div>\n</ng-template>"
+module.exports = "<app-banner-layout></app-banner-layout>\n<div class=\"row products-section products-sub-section\">\n    <div class=\"col-12\">\n        <div class=\"breadcrumbs-row\">\n            <div class=\"bc-col\">\n                <ul>\n                    <li><a href=\"javascript:void(0)\"> ADV </a></li>\n                    <li>Banners</li>\n                </ul>\n            </div>\n            <div class=\"bc-col-btn\">\n                <button class=\"btn cms-btn\" (click)=\"AddBanner()\"><img\n                        src=\"assets/img/add-white-ico.png\">Add Banner\n                </button>\n            </div>\n        </div>\n    </div>\n    <!--Breadcrumbs-->\n    <div class=\"col-12\">\n        <div class=\"flex filter-row\">\n            <div class=\"filter-lft\">\n            </div>\n            <!--Lft-->\n            <div class=\"filter-nav-list\">\n                <ul class=\"flex\">\n                    <li *ngIf=\"checkedData.length==0\" style=\"margin-left: 15px;\">\n                        <a (click)=\"bulkDeleteEmpty()\"><img src=\"assets/img/delete-ico-pink.png\"> Delete\n                        </a>\n                    </li>\n                    <li *ngIf=\"checkedData.length>0\" style=\"margin-left: 15px;\" [ngbPopover]=\"deleteContent1\" placement=\"left\" #deletePop=\"ngbPopover\">\n                        <a><img src=\"assets/img/delete-ico-pink.png\"> Delete\n                        </a>\n                    </li>\n                </ul>\n            </div>\n            <!--Right-->\n        </div>\n    </div>\n</div>\n\n<div class=\"flex product-wrap\">\n    <!--Filter-->\n    <div class=\"product-table\" style=\"width: 100%\">\n        <div class=\"table-responsive\">\n            <table class=\"table\">\n                <thead>\n                    <tr>\n                        <th scope=\"col\" width=\"5%\">\n                            <div class=\"form-group\">\n                                <div class=\"custom-control custom-checkbox mr-sm-2\">\n                                </div>\n                            </div>\n                        </th>\n                        <th scope=\"col\">Title</th>\n                        <th scope=\"col\">Image</th>\n                        <th scope=\"col\">Link</th>\n                        <th scope=\"col\">Position</th>\n                        <th scope=\"col\" width=\"100\">Action</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor=\"let bannerInfo of sandbox.getbannerlist$ | async; let i=index\">\n                        <th scope=\"row\" class=\"text-center\">\n                            <div class=\"form-group\">\n                                <div class=\"custom-control custom-checkbox mr-sm-2\">\n                                    <input type=\"checkbox\" class=\"custom-control-input\" (click)=\"selectChkBox($event, bannerInfo.bannerId)\" id={{bannerInfo.bannerId}} [checked]=\"checkCondition[bannerInfo.bannerId]\" [ngModelOptions]=\"{standalone: true}\" [(ngModel)]=\"checkmodules[bannerInfo.bannerId]\">\n                                    <label class=\"custom-control-label\" for={{bannerInfo.bannerId}}></label>\n                                </div>\n                            </div>\n                        </th>\n                        <td> {{bannerInfo.title}}</td>\n                        <td>\n                            <img *ngIf=\"bannerInfo.image\" [src]=\"imageUrl + '?path=' + bannerInfo.imagePath + '&name=' + bannerInfo.image + '&width=60&height=60'\" onError=\"this.src='/assets/error-images/Load icon Products.png';\" (load)=\"BannerListImageLoading(bannerInfo.bannerId)\"\n                                [hidden]=\"!bannerListImage[bannerInfo.bannerId]\">\n                            <img src=\"./assets/error-images/Load icon Products.png\" [hidden]=\"bannerListImage[bannerInfo.bannerId]\">\n                        </td>\n                        <td>{{bannerInfo.link}}\n                        </td>\n                        <td>{{bannerInfo.position}}</td>                        \n                        <!--<td>{{bannerInfo.position}}</td>-->\n                        <td>\n                            <!-- {{bannerInfo | json }} -->\n                            <a (click)=\"editBanner(bannerInfo)\" href=\"javascript:void(0)\"> <img src=\"assets/img/edit-ico.png\"> </a>\n\n                            <i style=\"margin-left: 15px;\" [ngbPopover]=\"deleteContent\" placement=\"left\" #deletePop=\"ngbPopover\" class=\"fas fa-trash\"></i>\n                            <ng-template #deleteContent>\n                                <div class=\"style\">\n                                    <div class=\"modal-header\">\n                                        <h6 class=\"modal-title\" style=\"margin-left: 17%;\"> Do you want to delete ?</h6>\n\n                                    </div>\n\n                                    <div class=\"modal-footer\" style=\"margin-right: 23%;\">\n                                        <button type=\"button\" class=\"btn btn-danger\" (click)=\"deletePop.close()\" data-dismiss=\"modal\">No\n                                    </button>\n                                        <button type=\"button\" class=\"btn btn-success\" (click)=\"deleteBanner(bannerInfo.bannerId, deletePop)\" data-dismiss=\"modal\">\n                                        Yes\n                                    </button>\n                                    </div>\n                                </div>\n                            </ng-template>\n                        </td>\n                    </tr>\n                </tbody>\n            </table>\n            <div class=\"no_data\" *ngIf=\"(sandbox.getbannerlist$ |async)?.length==0\">\n                <p>Items not found</p>\n            </div>\n            <div class=\"flex table-footer\">\n                <div class=\"view-rec\">\n                </div>\n                <!--mat pagination-->\n                <mat-paginator [length]=\"sandbox.getbannerpagelength$ | async\" [pageSize]=\"pageSize\" [pageIndex]=\"index\" [pageSizeOptions]=\"[pageSize]\" (page)=\"onPageChange($event)\">\n                </mat-paginator>\n                <!-- pagination end here-->\n            </div>\n        </div>\n    </div>\n    <!--Table-->\n\n</div>\n<ng-template #deleteContent1>\n    <div class=\"style\">\n        <div class=\"modal-header\">\n            <h6 class=\"modal-title\" style=\"margin-left: 17%;\"> Do you want to delete ?</h6>\n\n        </div>\n\n        <div class=\"modal-footer\" style=\"margin-right: 23%;\">\n            <button type=\"button\" class=\"btn btn-danger\" (click)=\"deletePop.close()\" data-dismiss=\"modal\">No\n                </button>\n            <button type=\"button\" class=\"btn btn-success\" (click)=\"bulkDelete()\" data-dismiss=\"modal\">\n                    Yes\n                </button>\n        </div>\n    </div>\n</ng-template>"
 
 /***/ }),
 
-/***/ "./src/theme/default/admin/demo/components/banner/list/list.component.scss":
-/*!*********************************************************************************!*\
-  !*** ./src/theme/default/admin/demo/components/banner/list/list.component.scss ***!
-  \*********************************************************************************/
+/***/ "./src/theme/default/admin/adv/components/banner/list/list.component.scss":
+/*!********************************************************************************!*\
+  !*** ./src/theme/default/admin/adv/components/banner/list/list.component.scss ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {\n  background-color: #f2086d !important;\n  border: #f2086d !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9hZG1pbi9zcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9kZW1vL2NvbXBvbmVudHMvYmFubmVyL2xpc3QvbGlzdC5jb21wb25lbnQuc2NzcyIsInNyYy90aGVtZS9kZWZhdWx0L2FkbWluL2RlbW8vY29tcG9uZW50cy9iYW5uZXIvbGlzdC9saXN0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usb0NBQUE7RUFDQSwwQkFBQTtBQ0NGIiwiZmlsZSI6InNyYy90aGVtZS9kZWZhdWx0L2FkbWluL2RlbW8vY29tcG9uZW50cy9iYW5uZXIvbGlzdC9saXN0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmN1c3RvbS1jaGVja2JveCAuY3VzdG9tLWNvbnRyb2wtaW5wdXQ6Y2hlY2tlZCB+IC5jdXN0b20tY29udHJvbC1sYWJlbDo6YmVmb3JlIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2YyMDg2ZCAhaW1wb3J0YW50O1xuICBib3JkZXI6ICNmMjA4NmQgIWltcG9ydGFudDtcbn0iLCIuY3VzdG9tLWNoZWNrYm94IC5jdXN0b20tY29udHJvbC1pbnB1dDpjaGVja2VkIH4gLmN1c3RvbS1jb250cm9sLWxhYmVsOjpiZWZvcmUge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjIwODZkICFpbXBvcnRhbnQ7XG4gIGJvcmRlcjogI2YyMDg2ZCAhaW1wb3J0YW50O1xufSJdfQ== */"
+module.exports = ".custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {\n  background-color: #f2086d !important;\n  border: #f2086d !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9hZG1pbi9zcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9hZHYvY29tcG9uZW50cy9iYW5uZXIvbGlzdC9saXN0LmNvbXBvbmVudC5zY3NzIiwic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vYWR2L2NvbXBvbmVudHMvYmFubmVyL2xpc3QvbGlzdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG9DQUFBO0VBQ0EsMEJBQUE7QUNDRiIsImZpbGUiOiJzcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9hZHYvY29tcG9uZW50cy9iYW5uZXIvbGlzdC9saXN0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmN1c3RvbS1jaGVja2JveCAuY3VzdG9tLWNvbnRyb2wtaW5wdXQ6Y2hlY2tlZCB+IC5jdXN0b20tY29udHJvbC1sYWJlbDo6YmVmb3JlIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2YyMDg2ZCAhaW1wb3J0YW50O1xuICBib3JkZXI6ICNmMjA4NmQgIWltcG9ydGFudDtcbn0iLCIuY3VzdG9tLWNoZWNrYm94IC5jdXN0b20tY29udHJvbC1pbnB1dDpjaGVja2VkIH4gLmN1c3RvbS1jb250cm9sLWxhYmVsOjpiZWZvcmUge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjIwODZkICFpbXBvcnRhbnQ7XG4gIGJvcmRlcjogI2YyMDg2ZCAhaW1wb3J0YW50O1xufSJdfQ== */"
 
 /***/ }),
 
-/***/ "./src/theme/default/admin/demo/components/banner/list/list.component.ts":
-/*!*******************************************************************************!*\
-  !*** ./src/theme/default/admin/demo/components/banner/list/list.component.ts ***!
-  \*******************************************************************************/
+/***/ "./src/theme/default/admin/adv/components/banner/list/list.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/theme/default/admin/adv/components/banner/list/list.component.ts ***!
+  \******************************************************************************/
 /*! exports provided: BannerListComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1106,8 +1107,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _core_admin_demo_banners_banner_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../core/admin/demo/banners/banner.service */ "./src/core/admin/demo/banners/banner.service.ts");
-/* harmony import */ var _core_admin_demo_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../../core/admin/demo/banners/banner.sandbox */ "./src/core/admin/demo/banners/banner.sandbox.ts");
+/* harmony import */ var _core_admin_adv_banners_banner_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../core/admin/adv/banners/banner.service */ "./src/core/admin/adv/banners/banner.service.ts");
+/* harmony import */ var _core_admin_adv_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../../core/admin/adv/banners/banner.sandbox */ "./src/core/admin/adv/banners/banner.sandbox.ts");
 /* harmony import */ var _core_admin_catalog_category_categories_sandbox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../../core/admin/catalog/category/categories.sandbox */ "./src/core/admin/catalog/category/categories.sandbox.ts");
 /* harmony import */ var _core_admin_service_config_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../../core/admin/service/config.service */ "./src/core/admin/service/config.service.ts");
 /* harmony import */ var ng6_toastr_notifications__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ng6-toastr-notifications */ "./node_modules/ng6-toastr-notifications/fesm5/ng6-toastr-notifications.js");
@@ -1177,7 +1178,7 @@ var BannerListComponent = /** @class */ (function () {
     // this function navigate  to  create page banner
     BannerListComponent.prototype.AddBanner = function () {
         this.service.setBannerListData('');
-        this.router.navigate(['/demo/banners/add']);
+        this.router.navigate(['/adv/banners/add']);
     };
     /**
      * Handles form 'submit' event. Calls sandbox getBannerList . function if form is valid.
@@ -1208,7 +1209,7 @@ var BannerListComponent = /** @class */ (function () {
         params.keyword = this.keyword;
         params.count = 1;
         // params.status = 1;
-        // alert("demo component");
+        // alert("ADV component");
         this.sandbox.getBannerListCount(params);
     };
     // mat pagination function
@@ -1222,7 +1223,7 @@ var BannerListComponent = /** @class */ (function () {
     //  edit
     BannerListComponent.prototype.editBanner = function (bannerData) {
         this.service.setBannerListData(bannerData);
-        this.router.navigate(['/demo/banners/edit', bannerData.bannerId]);
+        this.router.navigate(['/adv/banners/edit', bannerData.bannerId]);
     };
     //  function deleteBanner to delete particular id in banner list
     BannerListComponent.prototype.deleteBanner = function (bannerId, deletePop) {
@@ -1295,13 +1296,13 @@ var BannerListComponent = /** @class */ (function () {
     BannerListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-spurt-cms-banner-list',
-            template: __webpack_require__(/*! ./list.component.html */ "./src/theme/default/admin/demo/components/banner/list/list.component.html"),
+            template: __webpack_require__(/*! ./list.component.html */ "./src/theme/default/admin/adv/components/banner/list/list.component.html"),
             encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
-            styles: ["\n      .dark-modal .modal-content {\n        background-color: #009efb;\n        color: white;\n      }\n\n      .dark-modal .close {\n        color: white;\n      }\n\n      .light-blue-backdrop {\n        background-color: #5cb3fd;\n      }\n\n      .image-manager .modal-dialog {\n        max-width: 70%;\n      }\n    ", __webpack_require__(/*! ./list.component.scss */ "./src/theme/default/admin/demo/components/banner/list/list.component.scss")]
+            styles: ["\n      .dark-modal .modal-content {\n        background-color: #009efb;\n        color: white;\n      }\n\n      .dark-modal .close {\n        color: white;\n      }\n\n      .light-blue-backdrop {\n        background-color: #5cb3fd;\n      }\n\n      .image-manager .modal-dialog {\n        max-width: 70%;\n      }\n    ", __webpack_require__(/*! ./list.component.scss */ "./src/theme/default/admin/adv/components/banner/list/list.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_core_admin_demo_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_4__["BannerSandbox"],
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_core_admin_adv_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_4__["BannerSandbox"],
             _core_admin_catalog_category_categories_sandbox__WEBPACK_IMPORTED_MODULE_5__["CategoriesSandbox"],
-            _core_admin_demo_banners_banner_service__WEBPACK_IMPORTED_MODULE_3__["BannerService"],
+            _core_admin_adv_banners_banner_service__WEBPACK_IMPORTED_MODULE_3__["BannerService"],
             ng6_toastr_notifications__WEBPACK_IMPORTED_MODULE_7__["ToastrManager"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
             _core_admin_service_config_service__WEBPACK_IMPORTED_MODULE_6__["ConfigService"]])
@@ -1313,10 +1314,10 @@ var BannerListComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/theme/default/admin/demo/components/shared/banner-layout/banner-layout.component.html":
-/*!***************************************************************************************************!*\
-  !*** ./src/theme/default/admin/demo/components/shared/banner-layout/banner-layout.component.html ***!
-  \***************************************************************************************************/
+/***/ "./src/theme/default/admin/adv/components/shared/banner-layout/banner-layout.component.html":
+/*!**************************************************************************************************!*\
+  !*** ./src/theme/default/admin/adv/components/shared/banner-layout/banner-layout.component.html ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1324,21 +1325,21 @@ module.exports = "<div class=\"row products-section\">\n    <div class=\"col-12 
 
 /***/ }),
 
-/***/ "./src/theme/default/admin/demo/components/shared/banner-layout/banner-layout.component.scss":
-/*!***************************************************************************************************!*\
-  !*** ./src/theme/default/admin/demo/components/shared/banner-layout/banner-layout.component.scss ***!
-  \***************************************************************************************************/
+/***/ "./src/theme/default/admin/adv/components/shared/banner-layout/banner-layout.component.scss":
+/*!**************************************************************************************************!*\
+  !*** ./src/theme/default/admin/adv/components/shared/banner-layout/banner-layout.component.scss ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9kZW1vL2NvbXBvbmVudHMvc2hhcmVkL2Jhbm5lci1sYXlvdXQvYmFubmVyLWxheW91dC5jb21wb25lbnQuc2NzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9hZHYvY29tcG9uZW50cy9zaGFyZWQvYmFubmVyLWxheW91dC9iYW5uZXItbGF5b3V0LmNvbXBvbmVudC5zY3NzIn0= */"
 
 /***/ }),
 
-/***/ "./src/theme/default/admin/demo/components/shared/banner-layout/banner-layout.component.ts":
-/*!*************************************************************************************************!*\
-  !*** ./src/theme/default/admin/demo/components/shared/banner-layout/banner-layout.component.ts ***!
-  \*************************************************************************************************/
+/***/ "./src/theme/default/admin/adv/components/shared/banner-layout/banner-layout.component.ts":
+/*!************************************************************************************************!*\
+  !*** ./src/theme/default/admin/adv/components/shared/banner-layout/banner-layout.component.ts ***!
+  \************************************************************************************************/
 /*! exports provided: BannerLayoutComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1347,7 +1348,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BannerLayoutComponent", function() { return BannerLayoutComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _core_admin_demo_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../core/admin/demo/banners/banner.sandbox */ "./src/core/admin/demo/banners/banner.sandbox.ts");
+/* harmony import */ var _core_admin_adv_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../core/admin/adv/banners/banner.sandbox */ "./src/core/admin/adv/banners/banner.sandbox.ts");
 
 /*
  * spurtcommerce
@@ -1375,11 +1376,11 @@ var BannerLayoutComponent = /** @class */ (function () {
     BannerLayoutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-banner-layout',
-            template: __webpack_require__(/*! ./banner-layout.component.html */ "./src/theme/default/admin/demo/components/shared/banner-layout/banner-layout.component.html"),
+            template: __webpack_require__(/*! ./banner-layout.component.html */ "./src/theme/default/admin/adv/components/shared/banner-layout/banner-layout.component.html"),
             changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
-            styles: [__webpack_require__(/*! ./banner-layout.component.scss */ "./src/theme/default/admin/demo/components/shared/banner-layout/banner-layout.component.scss")]
+            styles: [__webpack_require__(/*! ./banner-layout.component.scss */ "./src/theme/default/admin/adv/components/shared/banner-layout/banner-layout.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_core_admin_demo_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_2__["BannerSandbox"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_core_admin_adv_banners_banner_sandbox__WEBPACK_IMPORTED_MODULE_2__["BannerSandbox"]])
     ], BannerLayoutComponent);
     return BannerLayoutComponent;
 }());

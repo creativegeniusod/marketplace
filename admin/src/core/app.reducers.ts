@@ -17,7 +17,8 @@ import * as fromZone from './admin/settings/localizations/zone/zone-reducer/zone
 import * as fromRole from './admin/settings/role/role-reducer/role.reducer';
 import * as fromPages from './admin/cms/pages/pages-reducer/pages.reducer';
 import * as fromUser from './admin/settings/user/user-reducer/user.reducer';
-import * as fromBanner from './admin/demo/banners/banner-reducer/banner.reducer';
+import * as fromBanner from './admin/adv/banners/banner-reducer/banner.reducer';
+import * as fromCoupen from './admin/adv/coupens/coupen-reducer/coupen.reducer';
 import * as fromBrand from './admin/catalog/brand/reducer/brand.reducer';
 import * as fromEmailtemp from './admin/settings/localizations/emailtemplate/emailtemp-reducer/emailtemp.reducer';
 import * as fromStockstatus from './admin/settings/localizations/stockStatus/stock-reducer/stock.reducer';
@@ -79,6 +80,7 @@ export const reducers: ActionReducerMap<State> = {
   pages: fromPages.reducer,
   user: fromUser.reducer,
   banner: fromBanner.reducer,
+  coupen: fromCoupen.reducer,
   brand: fromBrand.reducer,
   emailtemp: fromEmailtemp.reducer,
   stockstatus: fromStockstatus.reducer,

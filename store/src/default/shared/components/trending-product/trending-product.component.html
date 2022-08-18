@@ -33,7 +33,7 @@
   </div>
 </div> -->
 
-<mat-sidenav-container class="productsWrap trending-products" >
+<mat-sidenav-container class="productsWrap trending-products">
   <mat-sidenav-content class="all-products" ngClass.gt-sm="p-left">
     <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center"
       class="filter-row mat-elevation-z1 text-muted">
@@ -63,25 +63,42 @@
       <div *ngFor="let product of (listSandbox.productlist$ | async)" fxFlex="100" [fxFlex.gt-sm]="viewCol"
         fxFlex.sm="50" class="col productDiv">
         <mat-card class="product-item text-center card-hover productCol">
-          <a [routerLink]="['/products/productdetails', product.productId]" class="image-link">
-            <img *ngIf="product['Images'].defaultImage == 1"
-              [src]="imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'"
-              onError="this.src='/assets/images/default_image.png';">
-          </a>
+          <!-- <mat-icon class="mat-icon-lg"><img src="../../../assets/images/Add to wishlist.png" /></mat-icon> -->
+          <button class="wishIcon" mat-icon-button
+            matTooltip="{{product.wishListStatus === 1 ? 'Added to wishlist': 'Add to wishlist'}}"
+            (click)="addToWishList(product)">
+            <mat-icon><img src="../../../assets/images/Add to wishlist.png" /></mat-icon>
+            <!-- <mat-icon [color]="isWish[product]" *ngIf="isWish[product] === 'warn'"><img
+                src="../../../assets/images/Add to wishlist.png" /></mat-icon>
+            <mat-icon *ngIf="isWish[product] !== 'warn'"><img src="../../../assets/images/Add to wishlist_red.png" /> -->
+          </button>
+          <div class="product-img">
+            <a [routerLink]="['/products/productdetails', product.productId]" class="image-link">
+              <img *ngIf="product['Images'].defaultImage == 1"
+                [src]="imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'"
+                onError="this.src='/assets/images/default_image.png';">
+            </a>
+            <div class="productRating">
+              <div>
+                <div class="halfstar1">&#x2605; 4.3 | <span>234</span></div>
+              </div>
+            </div>
+          </div>
           <!-- <h4 class="category text-muted text-truncate ">{{product.metaTagTitle }}</h4> -->
           <a [routerLink]="['/products/productdetails', product.productId]" class="title text-truncate">
             {{product.name}}
           </a>
           <div fxLayout="row" fxLayoutAlign="space-between center" class="prices">
-            <div fxLayout="column" fxLayoutAlign="center start">
+            <div fxLayout="row" fxLayoutAlign="center center" class="priceAndIcons">
+              <p class="regularPrice">$300</p>
               <p class="new-price">
                 $ {{product.price}}
               </p>
+              <app-controls [product]="product" [type]="'all'" (OpenProductDialog)="openProductDialog(product)">
+              </app-controls>
             </div>
           </div>
           <div class="icons">
-            <app-controls [product]="product" [type]="'all'" (OpenProductDialog)="openProductDialog(product)">
-            </app-controls>
           </div>
         </mat-card>
       </div>

@@ -64,17 +64,19 @@
         fxFlex.sm="50" class="col productDiv">
         <mat-card class="product-item text-center card-hover productCol">
           <!-- <mat-icon class="mat-icon-lg"><img src="../../../assets/images/Add to wishlist.png" /></mat-icon> -->
-          <button mat-icon-button>
+          <button class="wishIcon" mat-icon-button>
             <mat-icon><img src="../../../assets/images/Add to wishlist.png" /></mat-icon>
           </button>
-          <a [routerLink]="['/products/productdetails', product.productId]" class="image-link">
-            <img *ngIf="product['Images'].defaultImage == 1"
-              [src]="imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'"
-              onError="this.src='/assets/images/default_image.png';">
-          </a>
-          <div class="item">
-            <div>
-              <div class="halfstar1">&#x2605; 4.3|234</div>
+          <div class="product-img">
+            <a [routerLink]="['/products/productdetails', product.productId]" class="image-link">
+              <img *ngIf="product['Images'].defaultImage == 1"
+                [src]="imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'"
+                onError="this.src='/assets/images/default_image.png';">
+            </a>
+            <div class="productRating">
+              <div>
+                <div class="halfstar1">&#x2605; 4.3 | <span>234</span></div>
+              </div>
             </div>
           </div>
           <!-- <h4 class="category text-muted text-truncate ">{{product.metaTagTitle }}</h4> -->
@@ -82,15 +84,15 @@
             {{product.name}}
           </a>
           <div fxLayout="row" fxLayoutAlign="space-between center" class="prices">
-            <div fxLayout="column" fxLayoutAlign="center start">
+            <div fxLayout="row" fxLayoutAlign="center center" class="priceAndIcons">
+              <p class="regularPrice">$300</p>
               <p class="new-price">
                 $ {{product.price}}
               </p>
+              <app-controls [product]="product" [type]="'all'" (OpenProductDialog)="openProductDialog(product)"></app-controls>
             </div>
           </div>
           <div class="icons">
-            <app-controls [product]="product" [type]="'all'" (OpenProductDialog)="openProductDialog(product)">
-            </app-controls>
           </div>
         </mat-card>
       </div>

@@ -64,7 +64,9 @@
         fxFlex.sm="50" class="col productDiv">
         <mat-card class="product-item text-center card-hover productCol">
           <!-- <mat-icon class="mat-icon-lg"><img src="../../../assets/images/Add to wishlist.png" /></mat-icon> -->
-          <button class="wishIcon" mat-icon-button>
+          <button class="wishIcon" mat-icon-button
+            matTooltip="{{product.wishListStatus === 1 ? 'Added to wishlist': 'Add to wishlist'}}"
+            (click)="addToWishList(product)">
             <mat-icon><img src="../../../assets/images/Add to wishlist.png" /></mat-icon>
           </button>
           <div class="product-img">
@@ -89,7 +91,8 @@
               <p class="new-price">
                 $ {{product.price}}
               </p>
-              <app-controls [product]="product" [type]="'all'" (OpenProductDialog)="openProductDialog(product)"></app-controls>
+              <app-controls [product]="product" [type]="'all'" (OpenProductDialog)="openProductDialog(product)">
+              </app-controls>
             </div>
           </div>
           <div class="icons">

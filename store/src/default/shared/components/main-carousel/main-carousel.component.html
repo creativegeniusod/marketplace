@@ -9,7 +9,7 @@
                         <div fxLayout="column" fxLayoutAlign="center center" class="content">
                             <h1>{{slide.title}}</h1>
                             <h3 [innerHtml]='slide.content'></h3>
-                            <button mat-raised-button color="primary" routerLink="/products">Shop now</button>
+                            <button mat-raised-button color="primary" [routerLink]="['/products', slide.categoryId]">Shop now</button>
                         </div>
                     </div>
                 </div>

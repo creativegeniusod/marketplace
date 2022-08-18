@@ -1,4 +1,4 @@
-import { AfterViewInit } from '@angular/core';
+import { AfterViewInit, EventEmitter, Input, Output } from '@angular/core';
 import {
   Component,
   OnInit,
@@ -17,6 +17,8 @@ import { Subscription } from 'rxjs';
 import { ListsSandbox } from 'src/core/lists/lists.sandbox';
 import { ConfigService } from 'src/core/service/config.service';
 import { ProductDialogComponent } from 'src/default/shared/components/products-carousel/product-dialog/product-dialog.component';
+import { WishlistSandbox } from 'src/core/wishlist/wishlist.sandbox';
+import { ProductControlSandbox } from 'src/core/product-control/product-control.sandbox';
 
 @Component({
   selector: 'app-trending-product',
@@ -63,6 +65,8 @@ export class TrendingProductComponent implements OnInit, OnDestroy {
     public listSandbox: ListsSandbox,
     private configService: ConfigService,
     private changeDetectRef: ChangeDetectorRef,
+    public controlSandbox: ProductControlSandbox,
+    public wishlistSandbox: WishlistSandbox,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     // subscribe route params
@@ -107,6 +111,16 @@ export class TrendingProductComponent implements OnInit, OnDestroy {
 
   // initially remove local storage and calls listSandbox getSettings
   ngOnInit() {
+
+    if (this.product) {
+      if (this.product.wishListStatus && this.product.wishListStatus === 1) {
+        this.isWish[this.product] = 'warn';
+      }
+      if (this.product.cartCount > 0) {
+        this.count = this.product.cartCount;
+      }
+    }
+
     if (!this.queryParams.id && this.keyword === '') {
       this.getProductList(this.startKey, this.viewOrder, this.categoryId);
     }
@@ -226,6 +240,51 @@ export class TrendingProductComponent implements OnInit, OnDestroy {
 
     this.getProductList(this.startKey, this.viewOrder, this.categoryId);
   }
+
+  public count = 1;
+  public quantity: any = 1;
+  public isWish: any = {};
+  public isAdd = [];
+  public products: any;
+  @Input() product: any;
+  @Input() type: string;
+  @Input() cartOptionValueArray: any;
+  optionValueArray: any = [];
+  optionNameSelected: any;
+  totalPrice = 0;
+  @Output() OpenProductDialog: EventEmitter<any> = new EventEmitter();
+  @Output() QuantityChange: EventEmitter<any> = new EventEmitter<any>();
+  @Output() closePopup: EventEmitter<any> = new EventEmitter<any>();
+
+  // add product to wishlist
+  public addToWishList(product) {
+    if (this.isWish[this.product] && this.isWish[this.product] === 'warn') {
+      this.isWish[product] = '';
+      const params: any = {};
+      params.wishlistProductId = product.productId;
+      this.wishlistSandbox.deleteWishlist(params);
+    } else {
+      this.isWish[product] = 'warn';
+      this.isAdd = [];
+      this.isAdd[product.productId] = true;
+      let currentUser: any;
+      if (isPlatformBrowser(this.platformId)) {
+        currentUser = JSON.parse(localStorage.getItem('user'));
+      }
+      if (currentUser) {
+        const params: any = {};
+        params.productId = product.productId;
+        params.productOptionValueId = '';
+        this.controlSandbox.addToWishlist(params);
+      } else {
+        if (this.type === 'popup') {
+          this.closePopup.emit('close');
+        }
+        this.router.navigate(['/auth']);
+      }
+    }
+  }
+
 
   /**
    *  receive data which is emitted from the child component through event emitter,

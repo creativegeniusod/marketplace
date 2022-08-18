@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
         this.getBannerList();
         this.getBransList();
-        this.getTodayDealList();
+        // this.getTodayDealList();
         this.listSandbox.getSettings();
         if (isPlatformBrowser(this.platformId)) {
             localStorage.removeItem('checkout');
@@ -37,8 +37,9 @@ export class HomeComponent implements OnInit {
     // fetch banner list from sandbox
     getBannerList() {
         const params: any = {};
-        params.limit = 100;
+        params.limit = 7;
         params.offset = 0;
+        // params.slider = 1;
         this.listSandbox.getBannerList(params);
     }
     // fetch brand list from sandbox

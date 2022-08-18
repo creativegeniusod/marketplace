@@ -34,13 +34,28 @@
             onError="this.src='/assets/images/default_image.png';">
         </mat-card>
       </div> -->
-      <div *ngFor="let product of [1,2,3,4,5,6,7]" fxFlex="100" [fxFlex.gt-sm]="viewCol" fxFlex.sm="50" class="col">
-        <mat-card class="product-item text-center card-hover">
-          <img src="/assets/images/mi{{product}}.jpg"
-            onError="this.src='/assets/images/default_image.png';">
-        </mat-card>
+      <!-- <div *ngFor="let product of listSandbox.bannerList$ | async; let  i= index" fxFlex="100" [fxFlex.gt-sm]="viewCol"
+        fxFlex.sm="50" class="col">
+        <a [routerLink]="['/products', product.categoryId]" class="title text-truncate">
+          <mat-card class="product-item text-center card-hover">
+            <img src="/assets/images/mi{{i +1}}.jpg" onError="this.src='/assets/images/default_image.png';">
+          </mat-card>
+        </a>
+      </div> -->
+
+      <div *ngFor="let product of listSandbox.bannerList$ | async" fxFlex="100" [fxFlex.gt-sm]="viewCol" fxFlex.sm="50"
+        class="col">
+        <a [routerLink]="['/products', product.categoryId]" class="title text-truncate">
+          <mat-card class="product-item text-center card-hover">
+            <img [src]="imagePath + '?path=' + product.imagePath + '&name=' + product.image + '&width=260&height=260'">
+          </mat-card>
+        </a>
       </div>
+
+
     </div>
+
+
 
   </mat-sidenav-content>
 </mat-sidenav-container>

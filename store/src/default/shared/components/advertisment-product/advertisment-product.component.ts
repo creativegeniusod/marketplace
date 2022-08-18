@@ -34,7 +34,7 @@ export class AdvertismentProductComponent implements OnInit, OnDestroy {
   public viewCol = 14.28;
   public sortings: Array<any>;
   public sortData: any = 'Price Low To High';
-  condition: any;
+  public condition: any;
   // parameters for product list
   public startKey = 0;
   public viewOrder = 'ASC';

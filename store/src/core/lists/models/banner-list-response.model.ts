@@ -18,6 +18,7 @@ export class BannerListResponseModel {
     public containerName: string;
     public viewPageCount: number;
     public isActive: number;
+    public homebanner: number
 
     constructor(bannerResponse: any) {
         this.bannerId = bannerResponse.bannerId || '';
@@ -31,5 +32,6 @@ export class BannerListResponseModel {
         this.containerName = bannerResponse.containerName || '';
         this.viewPageCount = bannerResponse.viewPageCount || 0;
         this.isActive = bannerResponse.isActive || 0;
+        this.homebanner = bannerResponse.homebanner || 0;
     }
 }

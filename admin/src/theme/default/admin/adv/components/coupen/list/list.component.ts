@@ -10,13 +10,14 @@ import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { NgbPanelChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 // Store Module
-import { BannerService } from '../../../../../../../core/admin/cms/banners/banner.service';
-import { BannerSandbox } from '../../../../../../../core/admin/cms/banners/banner.sandbox';
+import { CoupenService } from '../../../../../../../core/admin/adv/coupens/coupen.service';
+import { CoupenSandbox } from '../../../../../../../core/admin/adv/coupens/coupen.sandbox';
+import { CategoriesSandbox } from '../../../../../../../core/admin/catalog/category/categories.sandbox';
 import { ConfigService } from '../../../../../../../core/admin/service/config.service';
 import { ToastrManager } from 'ng6-toastr-notifications';
 
 @Component({
-  selector: 'app-spurt-cms-banner-list',
+  selector: 'app-spurt-cms-coupen-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
   encapsulation: ViewEncapsulation.None,
@@ -41,7 +42,7 @@ import { ToastrManager } from 'ng6-toastr-notifications';
     `
   ]
 })
-export class BannerListComponent implements OnInit {
+export class CoupenListComponent implements OnInit {
   //  variables
   public closeResult: string;
   public page: any;
@@ -57,7 +58,7 @@ export class BannerListComponent implements OnInit {
   public checkmodules: any = [];
   public checkedData: any = [];
   public unCheckData: any = [];
-  public bannerListImage = {};
+  public coupenListImage = {};
 
   beforeChange($event: NgbPanelChangeEvent) {
     if ($event.panelId === 'preventchange-2') {
@@ -70,15 +71,17 @@ export class BannerListComponent implements OnInit {
   }
 
   constructor(
-    public sandbox: BannerSandbox,
-    private service: BannerService,
+    public sandbox: CoupenSandbox,
+    public categoriessandbox: CategoriesSandbox,
+    private service: CoupenService,
     private toastr: ToastrManager,
     private router: Router,
     private configService: ConfigService
   ) {}
 
-  // initially calls regSubscriptionEvents,bannerList
-  ngOnInit() {
+  // initially calls regSubscriptionEvents,coupenList
+  ngOnInit  () {
+    // this.getCategoryList();  commented for the time
     this.pageSize = localStorage.getItem('itemsPerPage')
       ? localStorage.getItem('itemsPerPage')
       : this.pageSize;
@@ -86,45 +89,57 @@ export class BannerListComponent implements OnInit {
     this.pagenationCount = true;
     this.regSubscriptionEvents();
     this.index = 0;
-    this.bannerList(this.offset, this.keyword);
+    this.coupenList(this.offset, this.keyword);
   }
 
-  // this function navigate  to  create page banner
-  AddBanner() {
-    this.service.setBannerListData('');
-    this.router.navigate(['/adv/banners/add']);
+   // calling category list api with pagination
+  getCategoryList() {
+    const param: any = {};
+    param.limit = '';
+    param.offset = '';
+    param.keyword = undefined;
+    param.sortOrder = '';
+    param.status = 1;
+    this.categoriessandbox.categorylist(param);    
+  }
+
+  // this function navigate  to  create page coupen
+  AddCoupen() {
+    this.service.setCoupenListData('');
+    this.router.navigate(['/adv/Coupen/add']);
   }
 
   /**
-   * Handles form 'submit' event. Calls sandbox getBannerList . function if form is valid.
+   * Handles form 'submit' event. Calls sandbox getCoupenList . function if form is valid.
    *
    * @param event form event
    * @param form entire form value
    */
 
-  bannerList(offset: number = 0, keyword) {
+  coupenList(offset: number = 0, keyword) {
     const params: any = {};
     params.offset = offset;
     params.limit = this.pageSize;
     params.keyword = this.keyword;
-    this.sandbox.getBannerList(params);
+    this.sandbox.getCoupenList(params);
     if (this.pagenationCount) {
       params.count = 'true';
-      this.sandbox.getBannerPagination(params);
+      this.sandbox.getCoupenPagination(params);
     }
-    this.bannerListCount(0, keyword);
+    console.log("Get banne action");
+    this.coupenListCount(0, keyword);
   }
 
   // to get total count
-  bannerListCount(offset: number = 0, keyword) {
+  coupenListCount(offset: number = 0, keyword) {
     const params: any = {};
     params.offset = offset;
     params.limit = this.pageSize;
     params.keyword = this.keyword;
     params.count = 1;
-    // alert("hi")
     // params.status = 1;
-    this.sandbox.getBannerListCount(params);
+    // alert("ADV component");
+    this.sandbox.getCoupenListCount(params);
   }
 
   // mat pagination function
@@ -133,27 +148,27 @@ export class BannerListComponent implements OnInit {
     this.pageSize = event.pageSize;
     this.index = event.pageIndex;
     const offset = event.pageSize * event.pageIndex;
-    this.bannerList(offset, this.pageSize);
+    this.coupenList(offset, this.pageSize);
   }
 
   //  edit
-  editBanner(bannerData) {
-    this.service.setBannerListData(bannerData);
-    this.router.navigate(['/cms/banners/edit', bannerData.bannerId]);
+  editCoupen(coupenData) {
+    this.service.setCoupenListData(coupenData);
+    this.router.navigate(['/adv/coupens/edit', coupenData.coupenId]);
   }
 
-  //  function deleteBanner to delete particular id in banner list
-  deleteBanner(bannerId, deletePop) {
+  //  function deleteCoupen to delete particular id in coupen list
+  deleteCoupen(coupenId, deletePop) {
     this.popoverContent = deletePop;
     event.stopPropagation();
-    this.sandbox.deletebanner({ bannerId: bannerId });
+    this.sandbox.deletecoupen({ coupenId: coupenId });
   }
 
   // popup  regSubscriptionEvents
   regSubscriptionEvents() {
-    this.sandbox.getdeletebanner$.subscribe(_delete => {
+    this.sandbox.getdeletecoupen$.subscribe(_delete => {
       if (_delete && _delete.status && _delete.status === 1) {
-        this.bannerList(this.offset, this.keyword);
+        this.coupenList(this.offset, this.keyword);
       }
     });
   }
@@ -162,14 +177,14 @@ export class BannerListComponent implements OnInit {
   bulkDelete() {
     this.unCheckData = [];
     const param: any = {};
-    param.bannerId = this.checkedData;
+    param.coupenId = this.checkedData;
     this.sandbox.bulkDelete(param);
     this.checkedData = [];
-    this.sandbox.getdeletebanner$.subscribe(_delete => {
+    this.sandbox.getdeletecoupen$.subscribe(_delete => {
       if (_delete) {
         if (_delete.status === 1) {
           this.checkedData = [];
-          this.bannerList(this.offset, this.keyword);
+          this.coupenList(this.offset, this.keyword);
         }
       }
     });
@@ -196,7 +211,7 @@ export class BannerListComponent implements OnInit {
 
   // bulkDeleteEmpty
   bulkDeleteEmpty() {
-    this.showNotificationError('Choose atleast one Banner');
+    this.showNotificationError('Choose atleast one Coupen');
   }
 
   /**
@@ -208,8 +223,8 @@ export class BannerListComponent implements OnInit {
     this.toastr.errorToastr(message);
   }
 
-  // BannerList Image Loader
-  BannerListImageLoading(id) {
-    this.bannerListImage[id] = true;
+  // CoupenList Image Loader
+  CoupenListImageLoading(id) {
+    this.coupenListImage[id] = true;
   }
 }

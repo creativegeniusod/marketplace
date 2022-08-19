@@ -103,6 +103,11 @@ export class CommonListController {
                     op: 'where',
                     value: 0,
                 },
+                {
+                    name: 'categoryId',
+                    op: 'like',
+                    value: parent,
+                },
             ]
         }else if(slider !=undefined){
             parsmsAry= [

@@ -181,6 +181,10 @@ export class CommonListController {
                 name: 'isActive',
                 op: 'where',
                 value: 1,
+            },  {
+                name: 'parentInt',
+                op: 'where',
+                value: 0,
             },
         ];
         const WhereConditions = [];

@@ -1,4 +1,4 @@
-<div class="slider-wrapper">
+<div class="slider-wrapper" *ngIf="(listSandbox.bannerList$ | async)?.length > 0">
     <div class="main-slider">
         <div class="swiper-container h-100" [swiper]="config">
             <div class="swiper-wrapper h-100">
@@ -36,3 +36,19 @@
         </div>
     </div> -->
 </div>
+
+<div class="slider-wrapper" *ngIf="(listSandbox.bannerList$ | async)?.length == 0">
+    <div class="main-slider">
+        <div class="swiper-container h-100" [swiper]="config">
+            <div class="swiper-wrapper h-100">
+                <div class="swiper-slide">
+                    <div [attr.data-background]="'../../../../assets/images/default-image.jpg' + '&width=1860&height=1860'" class="slide-item swiper-lazy">
+                        <div class="mask"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

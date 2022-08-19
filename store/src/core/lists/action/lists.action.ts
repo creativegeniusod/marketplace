@@ -115,6 +115,15 @@ export const ActionTypes = {
   GET_SubCATEGORY_LIST: type('[SUB_CATEGORY] SUB CATEGORY'),
   GET_SubCATEGORY_LIST_SUCCESS: type('[SUB_CATEGORY] SUB CATEGORY SUCCESS'),
   GET_SubCATEGORY_LIST_FAIL: type('[SUB_CATEGORY] SUB CATEGORY FAIL'),
+
+  GET_TRENDING_PRODUCT_LIST: type('[TRENDING_PRODUCT] TRENDING PRODUCT'),
+  GET_TRENDING_PRODUCT_LIST_SUCCESS: type('[TRENDING_PRODUCT] TRENDING PRODUCT SUCCESS'),
+  GET_TRENDING_PRODUCT_LIST_FAIL: type('[TRENDING_PRODUCT] TRENDING PRODUCT FAIL'),
+
+  GET_ADVERTISEMENT_PRODUCT_LIST: type('[ADVERTISEMENT] ADVERTISEMENT PRODUCT'),
+  GET_ADVERTISEMENT_PRODUCT_LIST_SUCCESS: type('[ADVERTISEMENT] ADVERTISEMENT PRODUCT SUCCESS'),
+  GET_ADVERTISEMENT_PRODUCT_LIST_FAIL: type('[ADVERTISEMENT] ADVERTISEMENT PRODUCT FAIL'),
+
 };
 
 
@@ -542,6 +551,43 @@ export class GetSubCategoryListFail implements Action {
 
   constructor(public payload: any) { }
 }
+
+
+// Most trending
+export class GetTrendingProductList implements Action {
+  type = ActionTypes.GET_TRENDING_PRODUCT_LIST;
+  constructor(public payload: any) { }
+}
+
+export class GetTrendingProductSuccess implements Action {
+  type = ActionTypes.GET_TRENDING_PRODUCT_LIST_SUCCESS;
+  constructor(public payload: any) { }
+}
+
+export class GetTrendingProductFail implements Action {
+  type = ActionTypes.GET_TRENDING_PRODUCT_LIST_FAIL;
+  constructor(public payload: any) { }
+}
+
+
+
+// get advertisement list
+export class GetAdvertisementProductList implements Action {
+  type = ActionTypes.GET_ADVERTISEMENT_PRODUCT_LIST;
+  constructor(public payload: any) { }
+}
+
+export class GetAdvertisementProductListSuccess implements Action {
+  type = ActionTypes.GET_ADVERTISEMENT_PRODUCT_LIST_SUCCESS;
+  constructor(public payload: any) { }
+}
+
+export class GetAdvertisementProductListFail implements Action {
+  type = ActionTypes.GET_ADVERTISEMENT_PRODUCT_LIST_FAIL;
+  constructor(public payload: any) { }
+}
+
+
 export type Actions =
   | GetProductList
   | GetProductListSuccess
@@ -595,5 +641,10 @@ export type Actions =
   | RemoveActiveCategoryId
   | GetChildBannerList
   | GetChildBannerListSuccess
-  | GetChildBannaerListFail;
-
+  | GetChildBannaerListFail
+  | GetTrendingProductList
+  | GetTrendingProductSuccess
+  | GetTrendingProductFail
+  | GetAdvertisementProductList
+  | GetAdvertisementProductListSuccess
+  | GetAdvertisementProductListFail;

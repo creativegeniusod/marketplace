@@ -245,6 +245,17 @@ export class AdvertismentProductComponent implements OnInit, OnDestroy {
     this.categoryId = event.categoryId;
     // this.getProductList(0, defaultCallValue, event.categoryId);
   }
+
+
+  getAdvertisementProductList() {
+    const params: any = {};
+    params.limit = 100;
+    params.offset = 0;
+    // params.parent = this.categoryId
+    this.listSandbox.getAdvertisementList(params);
+  }
+
+  
   ngOnDestroy() {
     this.subscription.forEach(each => {
       each.unsubscribe();

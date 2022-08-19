@@ -33,13 +33,13 @@ export class HomeMenuComponent implements OnInit {
     }
     // Initially calls getBannerList,getBransList
     ngOnInit() {
-        this.getBannerList();
-        this.getBransList();
-        this.getTodayDealList();
-        this.listSandbox.getSettings();
-        if (isPlatformBrowser(this.platformId)) {
-            localStorage.removeItem('checkout');
-        }
+        // this.getBannerList();
+        // this.getBransList();
+        // this.getTodayDealList();
+        // this.listSandbox.getSettings();
+        // if (isPlatformBrowser(this.platformId)) {
+        //     localStorage.removeItem('checkout');
+        // }
     }
     // fetch banner list from sandbox
     getBannerList() {

@@ -107,6 +107,10 @@ export interface ListsState extends Map<string, any> {
   SelectedcategoryId: any;
   symbolSetting: any;
 
+  advertisementList: Array<BannerListResponseModel>;
+  advertisementLoading: boolean;
+  advertisementLoaded: boolean;
+  advertisementFailed: boolean;
 
 }
 
@@ -196,4 +200,8 @@ export const listsRecord = Record({
 
   symbolSetting: {},
 
+  advertisementProductList: [],
+  advertisementProductListLoading: false,
+  advertisementProductListLoaded: false,
+  advertisementProductListFailed: false,
 });

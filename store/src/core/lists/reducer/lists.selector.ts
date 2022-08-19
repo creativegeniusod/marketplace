@@ -104,6 +104,13 @@ export const childBannerFailedStatus = createSelector(
   fromList.getChildListFailed
 );
 
+// start get advertisement product list
+export const advertisementProductList = createSelector(
+  getState,
+  fromList.getAdvertisementProductList
+);
+// end
+
 
 
 export const countLoadingStatus = createSelector(

@@ -33,7 +33,7 @@ export const routes: Routes = [
       },
 
       {
-        path: 'home/:id',
+        path: 'shop/:name/:id',
         loadChildren: './pages/home-menu/home-menu.module#HomeMenuModule'
       },
 

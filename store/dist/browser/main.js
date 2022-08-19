@@ -1434,7 +1434,7 @@ var CommonRecord = Object(immutable__WEBPACK_IMPORTED_MODULE_0__["Record"])({
 /*!***********************************************!*\
   !*** ./src/core/lists/action/lists.action.ts ***!
   \***********************************************/
-/*! exports provided: ActionTypes, GetProductList, GetProductListSuccess, GetProductListFail, GetActiveCategory, GetActiveCategorySuccess, GetActiveCategoryFail, RemoveActiveCategoryId, GetProductCount, GetProductCountSuccess, GetProductCountFail, GetProductDetail, GetProductDetailSuccess, GetProductDetailFail, GetProductDetailMandatory, GetProductDetailMandatorySuccess, GetProductDetailMandatoryFail, GetCategoryList, GetCategoryListSuccess, GetCategoryListFail, GetManufacturerList, ManufacturerListSuccess, ManufacturerListtFail, GetBannerList, GetBannerListSuccess, GetBannaerListFail, GetBannerListCount, GetBannerListCountSuccess, GetBannaerListCountFail, GetChildBannerList, GetChildBannerListSuccess, GetChildBannaerListFail, GetPageList, GetPageListSuccess, GetPageListFail, GetSettings, GetSettingsSuccess, GetSettingsFail, DoContactUsAction, DoContactUsActionSuccess, DoContactUsActionFail, GetPageDetails, GetPageDetailsSuccess, GetPageDetailsFail, GetAvailableValue, GetCountryList, GetCountryListSuccess, GetCountryListFail, GetZoneList, GetZoneListSuccess, GetZoneListFail, GetTodayDealsList, GetTodayDealsListSuccess, GetTodayDealsListFail, GetServiceCategory, GetServiceCategorySuccess, GetServiceCategoryFail, GetServiceList, GetServiceListSuccess, GetServiceListFail, CreateEnquiry, CreateEnquirySuccess, CreateEnquiryFail, GetSubCategoryList, GetSubCategoryListSuccess, GetSubCategoryListFail */
+/*! exports provided: ActionTypes, GetProductList, GetProductListSuccess, GetProductListFail, GetActiveCategory, GetActiveCategorySuccess, GetActiveCategoryFail, RemoveActiveCategoryId, GetProductCount, GetProductCountSuccess, GetProductCountFail, GetProductDetail, GetProductDetailSuccess, GetProductDetailFail, GetProductDetailMandatory, GetProductDetailMandatorySuccess, GetProductDetailMandatoryFail, GetCategoryList, GetCategoryListSuccess, GetCategoryListFail, GetManufacturerList, ManufacturerListSuccess, ManufacturerListtFail, GetBannerList, GetBannerListSuccess, GetBannaerListFail, GetBannerListCount, GetBannerListCountSuccess, GetBannaerListCountFail, GetChildBannerList, GetChildBannerListSuccess, GetChildBannaerListFail, GetPageList, GetPageListSuccess, GetPageListFail, GetSettings, GetSettingsSuccess, GetSettingsFail, DoContactUsAction, DoContactUsActionSuccess, DoContactUsActionFail, GetPageDetails, GetPageDetailsSuccess, GetPageDetailsFail, GetAvailableValue, GetCountryList, GetCountryListSuccess, GetCountryListFail, GetZoneList, GetZoneListSuccess, GetZoneListFail, GetTodayDealsList, GetTodayDealsListSuccess, GetTodayDealsListFail, GetServiceCategory, GetServiceCategorySuccess, GetServiceCategoryFail, GetServiceList, GetServiceListSuccess, GetServiceListFail, CreateEnquiry, CreateEnquirySuccess, CreateEnquiryFail, GetSubCategoryList, GetSubCategoryListSuccess, GetSubCategoryListFail, GetTrendingProductList, GetTrendingProductSuccess, GetTrendingProductFail, GetAdvertisementProductList, GetAdvertisementProductListSuccess, GetAdvertisementProductListFail */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1505,6 +1505,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetSubCategoryList", function() { return GetSubCategoryList; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetSubCategoryListSuccess", function() { return GetSubCategoryListSuccess; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetSubCategoryListFail", function() { return GetSubCategoryListFail; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetTrendingProductList", function() { return GetTrendingProductList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetTrendingProductSuccess", function() { return GetTrendingProductSuccess; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetTrendingProductFail", function() { return GetTrendingProductFail; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetAdvertisementProductList", function() { return GetAdvertisementProductList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetAdvertisementProductListSuccess", function() { return GetAdvertisementProductListSuccess; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetAdvertisementProductListFail", function() { return GetAdvertisementProductListFail; });
 /* harmony import */ var _shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/utility/utilityHelpers */ "./src/core/shared/utility/utilityHelpers.ts");
 
 var ActionTypes = {
@@ -1574,6 +1580,12 @@ var ActionTypes = {
     GET_SubCATEGORY_LIST: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[SUB_CATEGORY] SUB CATEGORY'),
     GET_SubCATEGORY_LIST_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[SUB_CATEGORY] SUB CATEGORY SUCCESS'),
     GET_SubCATEGORY_LIST_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[SUB_CATEGORY] SUB CATEGORY FAIL'),
+    GET_TRENDING_PRODUCT_LIST: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[TRENDING_PRODUCT] TRENDING PRODUCT'),
+    GET_TRENDING_PRODUCT_LIST_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[TRENDING_PRODUCT] TRENDING PRODUCT SUCCESS'),
+    GET_TRENDING_PRODUCT_LIST_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[TRENDING_PRODUCT] TRENDING PRODUCT FAIL'),
+    GET_ADVERTISEMENT_PRODUCT_LIST: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[ADVERTISEMENT] ADVERTISEMENT PRODUCT'),
+    GET_ADVERTISEMENT_PRODUCT_LIST_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[ADVERTISEMENT] ADVERTISEMENT PRODUCT SUCCESS'),
+    GET_ADVERTISEMENT_PRODUCT_LIST_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[ADVERTISEMENT] ADVERTISEMENT PRODUCT FAIL'),
 };
 /* get product action*/
 var GetProductList = /** @class */ (function () {
@@ -2117,6 +2129,56 @@ var GetSubCategoryListFail = /** @class */ (function () {
     return GetSubCategoryListFail;
 }());
 
+// Most trending
+var GetTrendingProductList = /** @class */ (function () {
+    function GetTrendingProductList(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.GET_TRENDING_PRODUCT_LIST;
+    }
+    return GetTrendingProductList;
+}());
+
+var GetTrendingProductSuccess = /** @class */ (function () {
+    function GetTrendingProductSuccess(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.GET_TRENDING_PRODUCT_LIST_SUCCESS;
+    }
+    return GetTrendingProductSuccess;
+}());
+
+var GetTrendingProductFail = /** @class */ (function () {
+    function GetTrendingProductFail(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.GET_TRENDING_PRODUCT_LIST_FAIL;
+    }
+    return GetTrendingProductFail;
+}());
+
+// get advertisement list
+var GetAdvertisementProductList = /** @class */ (function () {
+    function GetAdvertisementProductList(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.GET_ADVERTISEMENT_PRODUCT_LIST;
+    }
+    return GetAdvertisementProductList;
+}());
+
+var GetAdvertisementProductListSuccess = /** @class */ (function () {
+    function GetAdvertisementProductListSuccess(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.GET_ADVERTISEMENT_PRODUCT_LIST_SUCCESS;
+    }
+    return GetAdvertisementProductListSuccess;
+}());
+
+var GetAdvertisementProductListFail = /** @class */ (function () {
+    function GetAdvertisementProductListFail(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.GET_ADVERTISEMENT_PRODUCT_LIST_FAIL;
+    }
+    return GetAdvertisementProductListFail;
+}());
+
 
 
 /***/ }),
@@ -2276,6 +2338,9 @@ var ListsEffect = /** @class */ (function () {
         this.getSubCategory$ = this.actions$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["ofType"])(_action_lists_action__WEBPACK_IMPORTED_MODULE_7__["ActionTypes"].GET_SubCATEGORY_LIST), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])(function (state) {
             return _this.authApi.getSubCategoryList(state).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (data) { return new _action_lists_action__WEBPACK_IMPORTED_MODULE_7__["GetSubCategoryListSuccess"](data); }), Object(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(function (error) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(new _action_lists_action__WEBPACK_IMPORTED_MODULE_7__["GetSubCategoryListFail"](error)); }));
         }));
+        this.advertisementProductList$ = this.actions$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["ofType"])(_action_lists_action__WEBPACK_IMPORTED_MODULE_7__["ActionTypes"].GET_ADVERTISEMENT_PRODUCT_LIST), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])(function (state) {
+            return _this.authApi.getAdvertisementList(state).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (banner) { return new _action_lists_action__WEBPACK_IMPORTED_MODULE_7__["GetAdvertisementProductListSuccess"](banner); }), Object(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(function (error) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(new _action_lists_action__WEBPACK_IMPORTED_MODULE_7__["GetAdvertisementProductListFail"](error)); }));
+        }));
     }
     __decorate([
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
@@ -2345,6 +2410,10 @@ var ListsEffect = /** @class */ (function () {
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
         __metadata("design:type", rxjs__WEBPACK_IMPORTED_MODULE_3__["Observable"])
     ], ListsEffect.prototype, "getSubCategory$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
+        __metadata("design:type", rxjs__WEBPACK_IMPORTED_MODULE_3__["Observable"])
+    ], ListsEffect.prototype, "advertisementProductList$", void 0);
     ListsEffect = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
         __param(6, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"])),
@@ -2482,6 +2551,8 @@ var ListsSandbox = /** @class */ (function () {
         // active category
         this.getactiveCategoryID$ = this.appState$.select(_reducer_lists_selector__WEBPACK_IMPORTED_MODULE_5__["getactiveCategoryID"]);
         this.symbolSetting$ = this.appState$.select(_reducer_lists_selector__WEBPACK_IMPORTED_MODULE_5__["symbolSetting"]);
+        /* get advertisementlist */
+        this.advertisementProductList$ = this.appState$.select(_reducer_lists_selector__WEBPACK_IMPORTED_MODULE_5__["advertisementProductList"]);
         this.subscriptions = [];
         /** create a subject send the value from menucomponent and recieve value to productFilterComponent*/
         this.productFilterData = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
@@ -2551,9 +2622,11 @@ var ListsSandbox = /** @class */ (function () {
     ListsSandbox.prototype.removeActiveCategory = function () {
         this.appState$.dispatch(new _action_lists_action__WEBPACK_IMPORTED_MODULE_4__["RemoveActiveCategoryId"]());
     };
-    ListsSandbox.prototype.getCategory = function (params) {
-        this.appState$.dispatch(new _action_lists_action__WEBPACK_IMPORTED_MODULE_4__["GetSubCategoryList"](params));
+    // start get advertisement list 
+    ListsSandbox.prototype.getAdvertisementList = function (params) {
+        this.appState$.dispatch(new _action_lists_action__WEBPACK_IMPORTED_MODULE_4__["GetAdvertisementProductList"](params));
     };
+    // end get advertisement list
     /** subscribe   value **/
     ListsSandbox.prototype.registerEvents = function () {
         var _this = this;
@@ -2753,6 +2826,20 @@ var ListsService = /** @class */ (function (_super) {
         return this.http.get(this.base + 'list/specific-category-list', {
             params: param
         });
+    };
+    /* get Advertisement List list api*/
+    ListsService.prototype.getAdvertisementList = function (params) {
+        this.base = this.getBaseUrl();
+        var reqOpts = {};
+        if (params) {
+            reqOpts.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]();
+            for (var k in params) {
+                if (k) {
+                    reqOpts.params = reqOpts.params.set(k, params[k]);
+                }
+            }
+        }
+        return this.http.get(this.base + 'list/banner-list', reqOpts);
     };
     ListsService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])()
@@ -3422,7 +3509,7 @@ var ZoneCountryResponseModel = /** @class */ (function () {
 /*!*************************************************!*\
   !*** ./src/core/lists/reducer/lists.reducer.ts ***!
   \*************************************************/
-/*! exports provided: initialState, reducer, productList, activeCategoryID, maxProductPrice, getProductCount, productLoading, productLoaded, productFailed, categoryList, manufacturer, productDetail, productDetailMandatory, getAvailableOptionsArray, getBannerList, getListLoading, getListLoaded, getListFailed, getBannerCount, getCountLoading, getCountLoaded, getCountFailed, getChildBannerList, getChildListLoading, getChildListLoaded, getChildListFailed, getPageList, getPageListLoading, getPageListLoaded, getPageListFailed, getSettingDetail, getContactUsLoading, getContactUsLoaded, getContactUsFailed, getContactDetail, getPageDetailLoading, getPageDetailLoaded, getPageDetailFailed, getPageDetail, getManufacturerLoading, getManufacturerLoaded, getManufacturerFailed, getProductDetailLoading, getProductDetailLoaded, getProductDetailFailed, getCountryList, getCountryLoading, getCountryLoaded, getCountryFailed, getZoneList, getZoneLoading, getZoneLoaded, getZoneFailed, getTodayDealList, getTodayDealLoading, getTodayDealLoaded, getTodayDealFailed, getPriceLoading, subCategoryList, subCategoryLoading, subCategoryLoaded, selectedCategoryId, getSymbolSetting */
+/*! exports provided: initialState, reducer, productList, activeCategoryID, maxProductPrice, getProductCount, productLoading, productLoaded, productFailed, categoryList, manufacturer, productDetail, productDetailMandatory, getAvailableOptionsArray, getBannerList, getListLoading, getListLoaded, getListFailed, getBannerCount, getCountLoading, getCountLoaded, getCountFailed, getChildBannerList, getChildListLoading, getChildListLoaded, getChildListFailed, getPageList, getPageListLoading, getPageListLoaded, getPageListFailed, getSettingDetail, getContactUsLoading, getContactUsLoaded, getContactUsFailed, getContactDetail, getPageDetailLoading, getPageDetailLoaded, getPageDetailFailed, getPageDetail, getManufacturerLoading, getManufacturerLoaded, getManufacturerFailed, getProductDetailLoading, getProductDetailLoaded, getProductDetailFailed, getCountryList, getCountryLoading, getCountryLoaded, getCountryFailed, getZoneList, getZoneLoading, getZoneLoaded, getZoneFailed, getTodayDealList, getTodayDealLoading, getTodayDealLoaded, getTodayDealFailed, getPriceLoading, subCategoryList, subCategoryLoading, subCategoryLoaded, selectedCategoryId, getSymbolSetting, getAdvertisementProductList */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3490,6 +3577,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "subCategoryLoaded", function() { return subCategoryLoaded; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectedCategoryId", function() { return selectedCategoryId; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSymbolSetting", function() { return getSymbolSetting; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAdvertisementProductList", function() { return getAdvertisementProductList; });
 /* harmony import */ var _action_lists_action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../action/lists.action */ "./src/core/lists/action/lists.action.ts");
 /* harmony import */ var _lists_state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lists.state */ "./src/core/lists/reducer/lists.state.ts");
 /* harmony import */ var _models_banner_list_response_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/banner-list-response.model */ "./src/core/lists/models/banner-list-response.model.ts");
@@ -4032,6 +4120,14 @@ function reducer(state, _a) {
                 subcategoryFailed: false
             });
         }
+        case _action_lists_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].GET_ADVERTISEMENT_PRODUCT_LIST: {
+            return Object.assign({}, state, {
+                advertisementList: state,
+                advertisementLoading: false,
+                advertisementLoaded: true,
+                advertisementFailed: false
+            });
+        }
         default: {
             return state;
         }
@@ -4072,9 +4168,7 @@ var getPageListLoading = function (state) { return state.pageListLoading; };
 var getPageListLoaded = function (state) { return state.pageListLoaded; };
 var getPageListFailed = function (state) { return state.pageListFailed; };
 var getSettingDetail = function (state) { return state.settingDetail; };
-var getContactUsLoading = function (state) {
-    return state.contactUsLoading;
-};
+var getContactUsLoading = function (state) { return state.contactUsLoading; };
 var getContactUsLoaded = function (state) { return state.contactusLoaded; };
 var getContactUsFailed = function (state) { return state.contactusFailed; };
 var getContactDetail = function (state) { return state.contactDetail; };
@@ -4130,6 +4224,7 @@ var selectedCategoryId = function (state) {
     return state.SelectedcategoryId;
 };
 var getSymbolSetting = function (state) { return state.symbolSetting; };
+var getAdvertisementProductList = function (state) { return state.products; };
 
 
 /***/ }),
@@ -4138,7 +4233,7 @@ var getSymbolSetting = function (state) { return state.symbolSetting; };
 /*!**************************************************!*\
   !*** ./src/core/lists/reducer/lists.selector.ts ***!
   \**************************************************/
-/*! exports provided: getState, getProductList, getactiveCategoryID, getMaxProductPrice, getProductCount, getCategoryList, getManufacturer, getProductDetail, getproductDetailMandatory, getProductLoading, getProductLoaded, getProductFailed, getAvailableOptionsArray, bannerList, bannerLoadingStatus, bannerLoadedStatus, bannerFailedStatus, bannerCount, childBannerList, childBannerLoadingStatus, childBannerLoadedStatus, childBannerFailedStatus, countLoadingStatus, countLoadedStatus, countFailedStatus, getPageList, pageListLoadingStatus, pageListLoadedStatus, pageListFailedStatus, settingDetail, contactUsLoadingStatus, contactUsLoadedStatus, contactUsFailedStatus, getContactDetail, pageDetailLoadingStatus, pageDetailLoadedStatus, pageDetailFailedStatus, pageDetail, manufacturerLoadingStatus, manufacturerLoadedStatus, manufacturerFailedStatus, productDetailLoadingStatus, productDetailLoadedStatus, productDetailFailedStatus, countryList, countryLoading, countryLoaded, countryFailed, zoneList, zoneLoading, zoneLoaded, zoneFailed, todayDealList, todayDealLoading, todayDealLoaded, todayDealFailed, priceLoading, subCategoryList, subCategoryLoading, subCategoryLoaded, subCategoryID, symbolSetting */
+/*! exports provided: getState, getProductList, getactiveCategoryID, getMaxProductPrice, getProductCount, getCategoryList, getManufacturer, getProductDetail, getproductDetailMandatory, getProductLoading, getProductLoaded, getProductFailed, getAvailableOptionsArray, bannerList, bannerLoadingStatus, bannerLoadedStatus, bannerFailedStatus, bannerCount, childBannerList, childBannerLoadingStatus, childBannerLoadedStatus, childBannerFailedStatus, advertisementProductList, countLoadingStatus, countLoadedStatus, countFailedStatus, getPageList, pageListLoadingStatus, pageListLoadedStatus, pageListFailedStatus, settingDetail, contactUsLoadingStatus, contactUsLoadedStatus, contactUsFailedStatus, getContactDetail, pageDetailLoadingStatus, pageDetailLoadedStatus, pageDetailFailedStatus, pageDetail, manufacturerLoadingStatus, manufacturerLoadedStatus, manufacturerFailedStatus, productDetailLoadingStatus, productDetailLoadedStatus, productDetailFailedStatus, countryList, countryLoading, countryLoaded, countryFailed, zoneList, zoneLoading, zoneLoaded, zoneFailed, todayDealList, todayDealLoading, todayDealLoaded, todayDealFailed, priceLoading, subCategoryList, subCategoryLoading, subCategoryLoaded, subCategoryID, symbolSetting */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4165,6 +4260,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "childBannerLoadingStatus", function() { return childBannerLoadingStatus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "childBannerLoadedStatus", function() { return childBannerLoadedStatus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "childBannerFailedStatus", function() { return childBannerFailedStatus; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "advertisementProductList", function() { return advertisementProductList; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "countLoadingStatus", function() { return countLoadingStatus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "countLoadedStatus", function() { return countLoadedStatus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "countFailedStatus", function() { return countFailedStatus; });
@@ -4240,6 +4336,9 @@ var childBannerList = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelect
 var childBannerLoadingStatus = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getState, _lists_reducer__WEBPACK_IMPORTED_MODULE_1__["getChildListLoading"]);
 var childBannerLoadedStatus = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getState, _lists_reducer__WEBPACK_IMPORTED_MODULE_1__["getChildListLoaded"]);
 var childBannerFailedStatus = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getState, _lists_reducer__WEBPACK_IMPORTED_MODULE_1__["getChildListFailed"]);
+// start get advertisement product list
+var advertisementProductList = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getState, _lists_reducer__WEBPACK_IMPORTED_MODULE_1__["getAdvertisementProductList"]);
+// end
 var countLoadingStatus = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getState, _lists_reducer__WEBPACK_IMPORTED_MODULE_1__["getCountLoading"]);
 var countLoadedStatus = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getState, _lists_reducer__WEBPACK_IMPORTED_MODULE_1__["getCountLoaded"]);
 var countFailedStatus = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getState, _lists_reducer__WEBPACK_IMPORTED_MODULE_1__["getCountFailed"]);
@@ -4372,6 +4471,10 @@ var listsRecord = Object(immutable__WEBPACK_IMPORTED_MODULE_0__["Record"])({
     subcategoryFailed: false,
     SelectedcategoryId: '',
     symbolSetting: {},
+    advertisementProductList: [],
+    advertisementProductListLoading: false,
+    advertisementProductListLoaded: false,
+    advertisementProductListFailed: false,
 });
 
 
@@ -6977,7 +7080,7 @@ var routes = [
                 loadChildren: './pages/home/home.module#HomeModule'
             },
             {
-                path: 'home/:id',
+                path: 'shop/:name/:id',
                 loadChildren: './pages/home-menu/home-menu.module#HomeMenuModule'
             },
             {
@@ -7576,6 +7679,13 @@ var AdvertismentProductComponent = /** @class */ (function () {
         this.categoryId = event.categoryId;
         // this.getProductList(0, defaultCallValue, event.categoryId);
     };
+    AdvertismentProductComponent.prototype.getAdvertisementProductList = function () {
+        var params = {};
+        params.limit = 100;
+        params.offset = 0;
+        // params.parent = this.categoryId
+        this.listSandbox.getAdvertisementList(params);
+    };
     AdvertismentProductComponent.prototype.ngOnDestroy = function () {
         this.subscription.forEach(function (each) {
             each.unsubscribe();
@@ -7990,7 +8100,7 @@ module.exports = "<div fxLayoutAlign=\"center center\" class='navcart'>\n    <ap
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".cart-items-count {\n  position: absolute;\n  top: -3px;\n  left: 26px;\n  background: #f44336;\n  height: 18px;\n  width: 18px;\n  line-height: 18px;\n  border-radius: 50%;\n  font-size: 11px; }\n\n.navcart {\n  margin-left: -113px; }\n\n.flex-row-button {\n  margin-left: 6%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9zdG9yZS9zcmMvZGVmYXVsdC9zaGFyZWQvY29tcG9uZW50cy9jYXJ0L2NhcnQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxtQkFBa0I7RUFDbEIsVUFBUztFQUNULFdBQVU7RUFDVixvQkFBbUI7RUFDbkIsYUFBWTtFQUNaLFlBQVc7RUFDWCxrQkFBaUI7RUFDakIsbUJBQWtCO0VBQ2xCLGdCQUFlLEVBQ2hCOztBQUNEO0VBQ0Usb0JBQW1CLEVBQ3BCOztBQUNEO0VBQ0UsZ0JBQWUsRUFDaEIiLCJmaWxlIjoic3JjL2RlZmF1bHQvc2hhcmVkL2NvbXBvbmVudHMvY2FydC9jYXJ0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcnQtaXRlbXMtY291bnR7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAtM3B4O1xuICBsZWZ0OiAyNnB4O1xuICBiYWNrZ3JvdW5kOiAjZjQ0MzM2O1xuICBoZWlnaHQ6IDE4cHg7XG4gIHdpZHRoOiAxOHB4O1xuICBsaW5lLWhlaWdodDogMThweDtcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICBmb250LXNpemU6IDExcHg7XG59XG4ubmF2Y2FydCB7XG4gIG1hcmdpbi1sZWZ0OiAtMTEzcHg7XG59XG4uZmxleC1yb3ctYnV0dG9ue1xuICBtYXJnaW4tbGVmdDogNiU7XG59Il19 */"
+module.exports = ".cart-items-count {\n  position: absolute;\n  top: -3px;\n  left: 26px;\n  background: #f44336;\n  height: 18px;\n  width: 18px;\n  line-height: 18px;\n  border-radius: 50%;\n  font-size: 11px;\n  color: #fff; }\n\n.navcart {\n  margin-left: -113px; }\n\n.flex-row-button {\n  margin-left: 6%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9zdG9yZS9zcmMvZGVmYXVsdC9zaGFyZWQvY29tcG9uZW50cy9jYXJ0L2NhcnQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxtQkFBa0I7RUFDbEIsVUFBUztFQUNULFdBQVU7RUFDVixvQkFBbUI7RUFDbkIsYUFBWTtFQUNaLFlBQVc7RUFDWCxrQkFBaUI7RUFDakIsbUJBQWtCO0VBQ2xCLGdCQUFlO0VBQ2YsWUFBVyxFQUNaOztBQUNEO0VBQ0Usb0JBQW1CLEVBQ3BCOztBQUNEO0VBQ0UsZ0JBQWUsRUFDaEIiLCJmaWxlIjoic3JjL2RlZmF1bHQvc2hhcmVkL2NvbXBvbmVudHMvY2FydC9jYXJ0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcnQtaXRlbXMtY291bnR7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAtM3B4O1xuICBsZWZ0OiAyNnB4O1xuICBiYWNrZ3JvdW5kOiAjZjQ0MzM2O1xuICBoZWlnaHQ6IDE4cHg7XG4gIHdpZHRoOiAxOHB4O1xuICBsaW5lLWhlaWdodDogMThweDtcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICBmb250LXNpemU6IDExcHg7XG4gIGNvbG9yOiAjZmZmO1xufVxuLm5hdmNhcnQge1xuICBtYXJnaW4tbGVmdDogLTExM3B4O1xufVxuLmZsZXgtcm93LWJ1dHRvbntcbiAgbWFyZ2luLWxlZnQ6IDYlO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -9151,7 +9261,7 @@ var ComponentsModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"slider-wrapper\">\r\n    <div class=\"main-slider\">\r\n        <div class=\"swiper-container h-100\" [swiper]=\"config\">\r\n            <div class=\"swiper-wrapper h-100\">\r\n                <div *ngFor=\"let slide of listSandbox.bannerList$ | async\" class=\"swiper-slide\">\r\n                    <div [attr.data-background]=\"imagePath + '?path=' + slide.imagePath + '&name=' + slide.image + '&width=1860&height=1860'\" class=\"slide-item swiper-lazy\">\r\n                        <!--<div [attr.data-background]=\"imagePath + slide.imagePath + slide.image\" class=\"slide-item swiper-lazy\">-->\r\n                        <div class=\"mask\"></div>\r\n                        <div fxLayout=\"column\" fxLayoutAlign=\"center center\" class=\"content\">\r\n                            <h1>{{slide.title}}</h1>\r\n                            <h3 [innerHtml]='slide.content'></h3>\r\n                            <button mat-raised-button color=\"primary\" [routerLink]=\"['/products', slide.categoryId]\">Shop now</button>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"swiper-pagination white\"></div>\r\n            <button mat-mini-fab color=\"primary\" class=\"swiper-button-prev swipe-arrow\"><mat-icon>keyboard_arrow_left</mat-icon></button>\r\n            <button mat-mini-fab color=\"primary\" class=\"swiper-button-next swipe-arrow\"><mat-icon>keyboard_arrow_right</mat-icon></button>\r\n        </div>\r\n    </div>\r\n    <!-- <div class=\"main-slider-right\">\r\n        <div class=\"msr-col\" style=\"background-image: url(assets/images/slider-right-img1.png)\">\r\n            <div class=\"msr-col-content\">\r\n                <h3>Summer Collection</h3>\r\n                <p>New Arrivals On Sale</p>\r\n                <button mat-raised-button color=\"primary\" (click)=\"allProducts()\">Shop now</button>\r\n            </div>\r\n        </div>\r\n        <div class=\"msr-col-btm\" style=\"background-image: url(assets/images/slider-right-img2.png)\">\r\n            <div class=\"msr-col-content\">\r\n                <h3>Shoes for you</h3>\r\n                <p>Now starting at $89</p>\r\n                <button mat-raised-button color=\"primary\" (click)=\"allProducts()\">Shop now</button>\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n</div>"
+module.exports = "<div class=\"slider-wrapper\" *ngIf=\"(listSandbox.bannerList$ | async)?.length > 0\">\r\n    <div class=\"main-slider\">\r\n        <div class=\"swiper-container h-100\" [swiper]=\"config\">\r\n            <div class=\"swiper-wrapper h-100\">\r\n                <div *ngFor=\"let slide of listSandbox.bannerList$ | async\" class=\"swiper-slide\">\r\n                    <div [attr.data-background]=\"imagePath + '?path=' + slide.imagePath + '&name=' + slide.image + '&width=1860&height=1860'\" class=\"slide-item swiper-lazy\">\r\n                        <!--<div [attr.data-background]=\"imagePath + slide.imagePath + slide.image\" class=\"slide-item swiper-lazy\">-->\r\n                        <div class=\"mask\"></div>\r\n                        <div fxLayout=\"column\" fxLayoutAlign=\"center center\" class=\"content\">\r\n                            <h1>{{slide.title}}</h1>\r\n                            <h3 [innerHtml]='slide.content'></h3>\r\n                            <button mat-raised-button color=\"primary\" [routerLink]=\"['/products', slide.categoryId]\">Shop now</button>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"swiper-pagination white\"></div>\r\n            <button mat-mini-fab color=\"primary\" class=\"swiper-button-prev swipe-arrow\"><mat-icon>keyboard_arrow_left</mat-icon></button>\r\n            <button mat-mini-fab color=\"primary\" class=\"swiper-button-next swipe-arrow\"><mat-icon>keyboard_arrow_right</mat-icon></button>\r\n        </div>\r\n    </div>\r\n    <!-- <div class=\"main-slider-right\">\r\n        <div class=\"msr-col\" style=\"background-image: url(assets/images/slider-right-img1.png)\">\r\n            <div class=\"msr-col-content\">\r\n                <h3>Summer Collection</h3>\r\n                <p>New Arrivals On Sale</p>\r\n                <button mat-raised-button color=\"primary\" (click)=\"allProducts()\">Shop now</button>\r\n            </div>\r\n        </div>\r\n        <div class=\"msr-col-btm\" style=\"background-image: url(assets/images/slider-right-img2.png)\">\r\n            <div class=\"msr-col-content\">\r\n                <h3>Shoes for you</h3>\r\n                <p>Now starting at $89</p>\r\n                <button mat-raised-button color=\"primary\" (click)=\"allProducts()\">Shop now</button>\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n</div>\r\n\r\n<div class=\"slider-wrapper\" *ngIf=\"(listSandbox.bannerList$ | async)?.length == 0\">\r\n    <div class=\"main-slider\">\r\n        <div class=\"swiper-container h-100\" [swiper]=\"config\">\r\n            <div class=\"swiper-wrapper h-100\">\r\n                <div class=\"swiper-slide\">\r\n                    <div [attr.data-background]=\"'../../../../assets/images/default-image.jpg' + '&width=1860&height=1860'\" class=\"slide-item swiper-lazy\">\r\n                        <div class=\"mask\"></div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -9377,7 +9487,7 @@ var MainSubmenuCarouselComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar class=\"top-navbar mat-elevation-z2\" fxLayoutAlign=\"\" color=\"primary\">\r\n    <a class=\"logo\" routerLink=\"/\" (click)=\"closeSubMenus()\"><img src=\"assets/images/logo1.png\"></a>\r\n    <!-- <a mat-button [routerLink]=\"['/']\" routerLinkActive=\"horizontal-active-link\" [routerLinkActiveOptions]=\"{exact:true}\"> <img src=\"assets/images/home.png\"> </a> -->\r\n    <!-- <a mat-button (click)=\"sendUniqueId('productFilter')\" [routerLink]=\"['/products/', 'All']\" class=\"colorMenu\"\r\n        routerLinkActive=\"colorMenu\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        AllProducts\r\n    </a> -->\r\n    <a mat-button class=\"colorMenu\" routerLinkActive=\"horizontal-active-link\"\r\n        *ngFor=\"let category of categories;let i=index\" [routerLinkActiveOptions]=\"{exact:true}\"\r\n        [matMenuTriggerFor]=\"menu\" (click)=\"indexData(i,category.categoryId)\" [routerLink]=\"['/home', category.categoryId]\">\r\n        <img class=\"menu-img\" src=\"assets/images/1-a.png\">\r\n        <span class=\"menu-text\">{{category.name}}</span>\r\n        <!-- <mat-icon class=\"caret\">arrow_drop_down</mat-icon> -->\r\n    </a>\r\n    <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\" class=\"mega-menu category-menu app-dropdown\">\r\n        <span>\r\n            <div fxLayout=\"row wrap\" *ngIf=\"((index)||(index === 0))\">\r\n                <div fxFlex=\"20\" fxLayout=\"column\" class=\"p-1\" *ngFor=\"let subCategory of categories[index].children\">\r\n                    <a mat-menu-item [routerLink]=\"['/products', subCategory.categoryId]\"\r\n                        [routerLinkActiveOptions]=\"{exact:true}\" (click)=\"linkActive()\"\r\n                        routerLinkActive=\"horizontal-active-link\">\r\n                        <b>{{subCategory.name}}</b>\r\n                    </a>\r\n                    <mat-divider></mat-divider>\r\n                    <div *ngIf=\"subCategory.children\">\r\n                        <div *ngFor=\"let grandsubCategory of subCategory.children;let j=index\">\r\n                            <a mat-menu-item [routerLink]=\"['/products', grandsubCategory.categoryId]\"\r\n                                [routerLinkActiveOptions]=\"{exact:true}\" (click)=\"linkActive()\"\r\n                                routerLinkActive=\"horizontal-active-link\">\r\n                                {{grandsubCategory.name}}</a>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n        </span>\r\n    </mat-menu>\r\n    <!-- <a mat-button routerLink=\"/contact\" routerLinkActive=\"horizontal-active-link\"\r\n        [routerLinkActiveOptions]=\"{exact:true}\">Contact</a> -->\r\n\r\n    <div class=\"search-algin\" fxFlex fxFlexOffset.gt-sm=\"1\" fxShow=\"false\" fxShow.gt-sm>\r\n        <form method=\"get\" class=\"search-form\" fxLayout=\"row\">\r\n            <mat-menu #categoriesMenu=\"matMenu\" [overlapTrigger]=\"false\" xPosition=\"before\" class=\"categories-dropdown\">\r\n            </mat-menu>\r\n            <input type=\"text\" placeholder=\"What are you looking for ?\" fxFlex\r\n                (keyup)=\"searchData($event.target.value)\">\r\n            <button mat-mini-fab (click)=\"search()\" type=\"button\"\r\n                class=\"search-btn mat-elevation-z0 mat-mini-fab mat-accent\">\r\n                Search\r\n            </button>\r\n        </form>\r\n    </div>\r\n\r\n    <div fxFlexOffset=\"10\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n        <app-spurt-cart></app-spurt-cart>\r\n    </div>\r\n</mat-toolbar>\r\n\r\n"
+module.exports = "<mat-toolbar class=\"top-navbar mat-elevation-z2\" fxLayoutAlign=\"\" color=\"primary\">\r\n    <a class=\"logo\" routerLink=\"/\" (click)=\"closeSubMenus()\"><img src=\"assets/images/logo1.png\"></a>\r\n    <!-- <a mat-button [routerLink]=\"['/']\" routerLinkActive=\"horizontal-active-link\" [routerLinkActiveOptions]=\"{exact:true}\"> <img src=\"assets/images/home.png\"> </a> -->\r\n    <!-- <a mat-button (click)=\"sendUniqueId('productFilter')\" [routerLink]=\"['/products/', 'All']\" class=\"colorMenu\"\r\n        routerLinkActive=\"colorMenu\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        AllProducts\r\n    </a> -->\r\n    <a mat-button class=\"colorMenu\" routerLinkActive=\"horizontal-active-link\"\r\n        *ngFor=\"let category of categories;let i=index\" [routerLinkActiveOptions]=\"{exact:true}\"\r\n        [matMenuTriggerFor]=\"menu\" (click)=\"indexData(i,category.categoryId)\"\r\n        [routerLink]=\"['/shop', category.name, category.categoryId]\">\r\n        <img class=\"menu-img\" src=\"assets/images/1-a.png\">\r\n        <span class=\"menu-text\">{{category.name}}</span>\r\n        <!-- <mat-icon class=\"caret\">arrow_drop_down</mat-icon> -->\r\n    </a>\r\n    <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\" class=\"mega-menu category-menu app-dropdown\">\r\n        <span>\r\n            <div fxLayout=\"row wrap\" *ngIf=\"((index)||(index === 0))\">\r\n                <div fxFlex=\"20\" fxLayout=\"column\" class=\"p-1\" *ngFor=\"let subCategory of categories[index].children\">\r\n                    <a mat-menu-item [routerLink]=\"['/products', subCategory.categoryId]\"\r\n                        [routerLinkActiveOptions]=\"{exact:true}\" (click)=\"linkActive()\"\r\n                        routerLinkActive=\"horizontal-active-link\">\r\n                        <b>{{subCategory.name}}</b>\r\n                    </a>\r\n                    <mat-divider></mat-divider>\r\n                    <div *ngIf=\"subCategory.children\">\r\n                        <div *ngFor=\"let grandsubCategory of subCategory.children;let j=index\">\r\n                            <a mat-menu-item [routerLink]=\"['/products', grandsubCategory.categoryId]\"\r\n                                [routerLinkActiveOptions]=\"{exact:true}\" (click)=\"linkActive()\"\r\n                                routerLinkActive=\"horizontal-active-link\">\r\n                                {{grandsubCategory.name}}</a>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n        </span>\r\n    </mat-menu>\r\n    <!-- <a mat-button routerLink=\"/contact\" routerLinkActive=\"horizontal-active-link\"\r\n        [routerLinkActiveOptions]=\"{exact:true}\">Contact</a> -->\r\n\r\n    <div class=\"search-algin\" fxFlex fxFlexOffset.gt-sm=\"1\" fxShow=\"false\" fxShow.gt-sm>\r\n        <form method=\"get\" class=\"search-form\" fxLayout=\"row\">\r\n            <mat-menu #categoriesMenu=\"matMenu\" [overlapTrigger]=\"false\" xPosition=\"before\" class=\"categories-dropdown\">\r\n            </mat-menu>\r\n            <input type=\"text\" placeholder=\"What are you looking for ?\" fxFlex\r\n                (keyup)=\"searchData($event.target.value)\">\r\n            <button mat-mini-fab (click)=\"search()\" type=\"button\"\r\n                class=\"search-btn mat-elevation-z0 mat-mini-fab mat-accent\">\r\n                Search\r\n            </button>\r\n        </form>\r\n    </div>\r\n\r\n    <div fxFlexOffset=\"10\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n        <app-spurt-cart></app-spurt-cart>\r\n    </div>\r\n</mat-toolbar>"
 
 /***/ }),
 

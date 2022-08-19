@@ -270,3 +270,13 @@ npm run build
 ng serve
 source ~/.profile
 git pull origin master
+source ~/.profile
+git pull origin master
+git add .
+git commit -m "working on menu item"
+git commit -m "working on menu itme pages" --no-verify
+git pull origin master
+git push origin master
+cd store
+npm run build
+ng serve

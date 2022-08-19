@@ -19,7 +19,11 @@ const cmsRoutes: Routes = [
       {
         path: 'banners',
         loadChildren: './components/banner/banner.module#BannerModule'
-      }
+      },
+      {
+        path: 'coupens',
+        loadChildren: './components/coupen/coupen.module#CoupenModule'
+      },
     ]
   }
 ];

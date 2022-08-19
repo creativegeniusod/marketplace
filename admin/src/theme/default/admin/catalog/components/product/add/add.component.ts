@@ -378,7 +378,7 @@ export class ProductAddComponent implements OnInit, OnDestroy {
     // console.log(localStorage.getItem('userdetails'),"*****&****")
 
     console.log(user,"user Id");
-    return false;
+    // return false;
     this.onetimeEdit = true;
     this.param.productName = user.productName;
     this.param.metaTagTitle = user.metaTagTitle;
@@ -405,7 +405,7 @@ export class ProductAddComponent implements OnInit, OnDestroy {
       this.param.productId = this.editId;
       this.productSandbox.doProductUpdate(this.param);
     } else {
-      console.log("******",user,'params', this.param);
+      // console.log("******",user,'params', this.param);
       this.productSandbox.doProductAdd(this.param);
     }
   }

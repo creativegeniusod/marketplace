@@ -553,6 +553,14 @@ export function reducer(
         subcategoryFailed: false
       });
     }
+    case actions.ActionTypes.GET_ADVERTISEMENT_PRODUCT_LIST: {
+      return Object.assign({}, state, {
+        advertisementList: state,
+        advertisementLoading: false,
+        advertisementLoaded: true,
+        advertisementFailed: false
+      });
+    }
     default: {
       return state;
     }
@@ -597,8 +605,7 @@ export const getPageListLoading = (state: ListsState) => state.pageListLoading;
 export const getPageListLoaded = (state: ListsState) => state.pageListLoaded;
 export const getPageListFailed = (state: ListsState) => state.pageListFailed;
 export const getSettingDetail = (state: ListsState) => state.settingDetail;
-export const getContactUsLoading = (state: ListsState) =>
-  state.contactUsLoading;
+export const getContactUsLoading = (state: ListsState) => state.contactUsLoading;
 export const getContactUsLoaded = (state: ListsState) => state.contactusLoaded;
 export const getContactUsFailed = (state: ListsState) => state.contactusFailed;
 export const getContactDetail = (state: ListsState) => state.contactDetail;
@@ -651,3 +658,4 @@ export const selectedCategoryId = (state: ListsState) =>
   state.SelectedcategoryId;
 export const getSymbolSetting = (state: ListsState) => state.symbolSetting;
 
+export const getAdvertisementProductList = (state: ListsState) => state.products;

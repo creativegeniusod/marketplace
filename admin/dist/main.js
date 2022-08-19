@@ -8,6 +8,10 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./adv/adv.module": [
+		"./src/theme/default/admin/adv/adv.module.ts",
+		"adv-adv-module"
+	],
 	"./authentication/authentication.module": [
 		"./src/theme/default/admin/authentication/authentication.module.ts",
 		"authentication-authentication-module"
@@ -24,7 +28,7 @@ var map = {
 		"cms-cms-module"
 	],
 	"./components/banner/banner.module": [
-		"./src/theme/default/admin/demo/components/banner/banner.module.ts",
+		"./src/theme/default/admin/adv/components/banner/banner.module.ts",
 		"default~components-banner-banner-module~components-categories-categories-module~components-product-p~b060f34b",
 		"common",
 		"components-banner-banner-module"
@@ -106,10 +110,6 @@ var map = {
 	"./dashboard/dashboard.module": [
 		"./src/theme/default/admin/dashboard/dashboard.module.ts",
 		"dashboard-dashboard-module"
-	],
-	"./demo/demo.module": [
-		"./src/theme/default/admin/demo/demo.module.ts",
-		"demo-demo-module"
 	],
 	"./emailtemplate/emailtemplate.module": [
 		"./src/theme/default/admin/settings/components/localizations/emailtemplate/emailtemplate.module.ts",
@@ -1670,6 +1670,1616 @@ var CustomerLayoutStateRecord = Object(immutable__WEBPACK_IMPORTED_MODULE_0__["R
     inactiveCustomerCountLoading: false,
     inactiveCustomerCountLoaded: false,
     inactiveCustomerCountFailed: false
+});
+
+
+/***/ }),
+
+/***/ "./src/core/admin/adv/banners/banner-action/banner.action.ts":
+/*!*******************************************************************!*\
+  !*** ./src/core/admin/adv/banners/banner-action/banner.action.ts ***!
+  \*******************************************************************/
+/*! exports provided: ActionTypes, DoBannerListAction, DoBannerListSuccessAction, DoBannerListFailAction, DoBannerListCountAction, DoBannerListCountSuccessAction, DoBannerListCountFailAction, DoBannerListActiveAction, DoBannerListActiveSuccessAction, DoBannerListActiveFailAction, DoBannerListInActiveAction, DoBannerListInActiveSuccessAction, DoBannerListInActiveFailAction, DoBannerPaginationAction, DoBannerPaginationSuccessAction, DoBannerPaginationFailAction, DoBannerAddAction, DoBannerAddSuccessAction, DoBannerAddFailAction, DoBannerUpdateAction, DoBannerUpdateSuccessAction, DoBannerUpdateFailAction, DoBannerDeleteAction, DoBannerDeleteSuccessAction, DoBannerDeleteFailAction, DoBannerBulkDelete, DoBannerBulkDeleteSuccess, DoBannerBulkDeleteFail */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActionTypes", function() { return ActionTypes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListAction", function() { return DoBannerListAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListSuccessAction", function() { return DoBannerListSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListFailAction", function() { return DoBannerListFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListCountAction", function() { return DoBannerListCountAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListCountSuccessAction", function() { return DoBannerListCountSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListCountFailAction", function() { return DoBannerListCountFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListActiveAction", function() { return DoBannerListActiveAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListActiveSuccessAction", function() { return DoBannerListActiveSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListActiveFailAction", function() { return DoBannerListActiveFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListInActiveAction", function() { return DoBannerListInActiveAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListInActiveSuccessAction", function() { return DoBannerListInActiveSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListInActiveFailAction", function() { return DoBannerListInActiveFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerPaginationAction", function() { return DoBannerPaginationAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerPaginationSuccessAction", function() { return DoBannerPaginationSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerPaginationFailAction", function() { return DoBannerPaginationFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerAddAction", function() { return DoBannerAddAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerAddSuccessAction", function() { return DoBannerAddSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerAddFailAction", function() { return DoBannerAddFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerUpdateAction", function() { return DoBannerUpdateAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerUpdateSuccessAction", function() { return DoBannerUpdateSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerUpdateFailAction", function() { return DoBannerUpdateFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerDeleteAction", function() { return DoBannerDeleteAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerDeleteSuccessAction", function() { return DoBannerDeleteSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerDeleteFailAction", function() { return DoBannerDeleteFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerBulkDelete", function() { return DoBannerBulkDelete; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerBulkDeleteSuccess", function() { return DoBannerBulkDeleteSuccess; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerBulkDeleteFail", function() { return DoBannerBulkDeleteFail; });
+/* harmony import */ var _shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../shared/utility/utilityHelpers */ "./src/core/admin/shared/utility/utilityHelpers.ts");
+/*
+ * spurtcommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 piccosoft ltd
+ * Author piccosoft ltd <support@piccosoft.com>
+ * Licensed under the MIT license.
+ */
+
+var ActionTypes = {
+    DO_BANNER_LIST: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do BannerList'),
+    DO_BANNER_LIST_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Success'),
+    DO_BANNER_LIST_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Fail'),
+    DO_BANNER_LIST_COUNT: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do BannerList count'),
+    DO_BANNER_LIST_SUCCESS_COUNT: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Success count'),
+    DO_BANNER_LIST_FAIL_COUNT: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Fail count'),
+    DO_BANNER_LIST_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do BannerList active'),
+    DO_BANNER_LIST_SUCCESS_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Success active'),
+    DO_BANNER_LIST_FAIL_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Fail active'),
+    DO_BANNER_LIST_IN_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do BannerList In-active'),
+    DO_BANNER_LIST_SUCCESS_IN_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Success In-active'),
+    DO_BANNER_LIST_FAIL_IN_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Fail In-active'),
+    DO_BANNER_PAGINATION_ACTION: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Pagination] Do Banner Paination '),
+    DO_BANNER_PAGINATION_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Pagination] Do Banner Paination  Success'),
+    DO_BANNER_PAGINATION_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Pagination] Do Banner Paination  Fail'),
+    DO_ADD_BANNER_ACTION: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Add] Do Banner Add '),
+    DO_ADD_BANNER_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Add] Do Banner Add  Success'),
+    DO_ADD_BANNER_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Add] Do Banner Add  Fail'),
+    DO_UPDATE_BANNER_ACTION: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Update] Do Banner Update '),
+    DO_UPDATE_BANNER_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Update] Do Banner Update  Success'),
+    DO_UPDATE_BANNER_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Update] Do Banner Update  Fail'),
+    DO_DELETE_BANNER_ACTION: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Delete] Do Banner Delete '),
+    DO_DELETE_BANNER_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Delete] Do Banner Delete  Success'),
+    DO_DELETE_BANNER_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Delete] Do Banner Delete  Fail'),
+    DO_BANNER_BULK_DELETE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[BANNER BULK DELETE] DO Banner Bulk Delete'),
+    DO_BANNER_BULK_DELETE_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[BANNER BULK DELETE SUCCESS] Do Banner Bulk Delete Success'),
+    DO_BANNER_BULK_DELETE_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[BANNER BULK DELETE] Do Banner Bulk Delete Fail')
+};
+// BANNER LIST
+var DoBannerListAction = /** @class */ (function () {
+    function DoBannerListAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_LIST;
+    }
+    return DoBannerListAction;
+}());
+
+var DoBannerListSuccessAction = /** @class */ (function () {
+    function DoBannerListSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_LIST_SUCCESS;
+    }
+    return DoBannerListSuccessAction;
+}());
+
+var DoBannerListFailAction = /** @class */ (function () {
+    function DoBannerListFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_LIST_FAIL;
+    }
+    return DoBannerListFailAction;
+}());
+
+// BANNER COUNT LIST
+var DoBannerListCountAction = /** @class */ (function () {
+    function DoBannerListCountAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_LIST_COUNT;
+    }
+    return DoBannerListCountAction;
+}());
+
+var DoBannerListCountSuccessAction = /** @class */ (function () {
+    function DoBannerListCountSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_LIST_SUCCESS_COUNT;
+    }
+    return DoBannerListCountSuccessAction;
+}());
+
+var DoBannerListCountFailAction = /** @class */ (function () {
+    function DoBannerListCountFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_LIST_FAIL_COUNT;
+    }
+    return DoBannerListCountFailAction;
+}());
+
+// BANNER ACTIVE LIST
+var DoBannerListActiveAction = /** @class */ (function () {
+    function DoBannerListActiveAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_LIST_ACTIVE;
+    }
+    return DoBannerListActiveAction;
+}());
+
+var DoBannerListActiveSuccessAction = /** @class */ (function () {
+    function DoBannerListActiveSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_LIST_SUCCESS_ACTIVE;
+    }
+    return DoBannerListActiveSuccessAction;
+}());
+
+var DoBannerListActiveFailAction = /** @class */ (function () {
+    function DoBannerListActiveFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_LIST_FAIL_ACTIVE;
+    }
+    return DoBannerListActiveFailAction;
+}());
+
+// BANNER IN-ACTIVE LIST
+var DoBannerListInActiveAction = /** @class */ (function () {
+    function DoBannerListInActiveAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_LIST_IN_ACTIVE;
+    }
+    return DoBannerListInActiveAction;
+}());
+
+var DoBannerListInActiveSuccessAction = /** @class */ (function () {
+    function DoBannerListInActiveSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_LIST_SUCCESS_IN_ACTIVE;
+    }
+    return DoBannerListInActiveSuccessAction;
+}());
+
+var DoBannerListInActiveFailAction = /** @class */ (function () {
+    function DoBannerListInActiveFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_LIST_FAIL_IN_ACTIVE;
+    }
+    return DoBannerListInActiveFailAction;
+}());
+
+// Banner LIST  PAGINATION
+var DoBannerPaginationAction = /** @class */ (function () {
+    function DoBannerPaginationAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_PAGINATION_ACTION;
+    }
+    return DoBannerPaginationAction;
+}());
+
+var DoBannerPaginationSuccessAction = /** @class */ (function () {
+    function DoBannerPaginationSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_PAGINATION_SUCCESS;
+    }
+    return DoBannerPaginationSuccessAction;
+}());
+
+var DoBannerPaginationFailAction = /** @class */ (function () {
+    function DoBannerPaginationFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_PAGINATION_SUCCESS;
+    }
+    return DoBannerPaginationFailAction;
+}());
+
+// Add BANNER ACTION
+var DoBannerAddAction = /** @class */ (function () {
+    function DoBannerAddAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_ADD_BANNER_ACTION;
+        console.log('add banner action', payload);
+    }
+    return DoBannerAddAction;
+}());
+
+var DoBannerAddSuccessAction = /** @class */ (function () {
+    function DoBannerAddSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_ADD_BANNER_SUCCESS;
+    }
+    return DoBannerAddSuccessAction;
+}());
+
+var DoBannerAddFailAction = /** @class */ (function () {
+    function DoBannerAddFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_ADD_BANNER_FAIL;
+    }
+    return DoBannerAddFailAction;
+}());
+
+// # UPDATE BANNER ACTION
+var DoBannerUpdateAction = /** @class */ (function () {
+    function DoBannerUpdateAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_UPDATE_BANNER_ACTION;
+    }
+    return DoBannerUpdateAction;
+}());
+
+var DoBannerUpdateSuccessAction = /** @class */ (function () {
+    function DoBannerUpdateSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_UPDATE_BANNER_SUCCESS;
+    }
+    return DoBannerUpdateSuccessAction;
+}());
+
+var DoBannerUpdateFailAction = /** @class */ (function () {
+    function DoBannerUpdateFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_UPDATE_BANNER_FAIL;
+    }
+    return DoBannerUpdateFailAction;
+}());
+
+// #  DELETE BANNER ACTION
+var DoBannerDeleteAction = /** @class */ (function () {
+    function DoBannerDeleteAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_DELETE_BANNER_ACTION;
+    }
+    return DoBannerDeleteAction;
+}());
+
+var DoBannerDeleteSuccessAction = /** @class */ (function () {
+    function DoBannerDeleteSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_DELETE_BANNER_SUCCESS;
+    }
+    return DoBannerDeleteSuccessAction;
+}());
+
+var DoBannerDeleteFailAction = /** @class */ (function () {
+    function DoBannerDeleteFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_DELETE_BANNER_FAIL;
+    }
+    return DoBannerDeleteFailAction;
+}());
+
+// Do Banner Bulk Delete
+var DoBannerBulkDelete = /** @class */ (function () {
+    function DoBannerBulkDelete(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_BULK_DELETE;
+    }
+    return DoBannerBulkDelete;
+}());
+
+var DoBannerBulkDeleteSuccess = /** @class */ (function () {
+    function DoBannerBulkDeleteSuccess(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_BULK_DELETE_SUCCESS;
+    }
+    return DoBannerBulkDeleteSuccess;
+}());
+
+var DoBannerBulkDeleteFail = /** @class */ (function () {
+    function DoBannerBulkDeleteFail(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_BANNER_BULK_DELETE_FAIL;
+    }
+    return DoBannerBulkDeleteFail;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/core/admin/adv/banners/banner-model/banneradd.response.model.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/core/admin/adv/banners/banner-model/banneradd.response.model.ts ***!
+  \*****************************************************************************/
+/*! exports provided: BanneraddResponseModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BanneraddResponseModel", function() { return BanneraddResponseModel; });
+/*
+ * SpurtCommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 PICCOSOFT
+ * Author piccosoft <support@spurtcommerce.com>
+ * Licensed under the MIT license.
+ */
+var BanneraddResponseModel = /** @class */ (function () {
+    function BanneraddResponseModel(banneraddResponse) {
+        this.bannerId = banneraddResponse.bannerId || 0;
+        this.position = banneraddResponse.position || 0;
+        this.content = banneraddResponse.content || '';
+        this.image = banneraddResponse.image || '';
+        this.imagePath = banneraddResponse.imagePath || '';
+        this.link = banneraddResponse.link || '';
+        this.title = banneraddResponse.title || '';
+        this.createdDate = banneraddResponse.createdDate || '';
+        this.active = banneraddResponse.isActive;
+    }
+    return BanneraddResponseModel;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/core/admin/adv/banners/banner-model/bannerlist.response.model.ts":
+/*!******************************************************************************!*\
+  !*** ./src/core/admin/adv/banners/banner-model/bannerlist.response.model.ts ***!
+  \******************************************************************************/
+/*! exports provided: BannerlistResponseModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BannerlistResponseModel", function() { return BannerlistResponseModel; });
+/*
+ * SpurtCommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 PICCOSOFT
+ * Author piccosoft <support@spurtcommerce.com>
+ * Licensed under the MIT license.
+ */
+var BannerlistResponseModel = /** @class */ (function () {
+    function BannerlistResponseModel(bannerlistResponse) {
+        this.bannerId = bannerlistResponse.bannerId || 0;
+        this.categoryId = bannerlistResponse.categoryId || 0;
+        this.categoryChildId = bannerlistResponse.categoryChildId || 0;
+        this.homebanner = bannerlistResponse.homebanner || 0;
+        this.position = bannerlistResponse.position || 0;
+        this.content = bannerlistResponse.content || '';
+        this.image = bannerlistResponse.image || '';
+        this.imagePath = bannerlistResponse.imagePath || '';
+        this.link = bannerlistResponse.link || '';
+        this.title = bannerlistResponse.title || '';
+        this.active = bannerlistResponse.isActive;
+    }
+    return BannerlistResponseModel;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/core/admin/adv/banners/banner-reducer/banner.reducer.ts":
+/*!*********************************************************************!*\
+  !*** ./src/core/admin/adv/banners/banner-reducer/banner.reducer.ts ***!
+  \*********************************************************************/
+/*! exports provided: initialState, reducer, getbanneraddloaded, getbanneraddfailed, getbanneraddloading, getbannerupdateloading, getbannerupdateloaded, getbannerupdatefailed, getbannerdeleteloading, getbannerdeleteloaded, getbannerdeletefailed, getbannerpagination, getbannercountloading, getbannercountloaded, getbannercountfailed, getbannerlistloaded, getbannerlistfailed, getbannerlistloading, getBannerlist, getAddBanner, getaddBanner, getUpdatebanner, getdeletebanner, getbannerListCount, getbannerListCountLoaded, getbannerListCountFailed, getbannerListCountLoading, getbannerListActive, getbannerListActiveLoaded, getbannerListACtiveFailed, getbannerListActiveLoading, getbannerListInActive, getbannerListInActiveLoaded, getbannerListInACtiveFailed, getbannerListInActiveLoading */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbanneraddloaded", function() { return getbanneraddloaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbanneraddfailed", function() { return getbanneraddfailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbanneraddloading", function() { return getbanneraddloading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerupdateloading", function() { return getbannerupdateloading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerupdateloaded", function() { return getbannerupdateloaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerupdatefailed", function() { return getbannerupdatefailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerdeleteloading", function() { return getbannerdeleteloading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerdeleteloaded", function() { return getbannerdeleteloaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerdeletefailed", function() { return getbannerdeletefailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerpagination", function() { return getbannerpagination; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannercountloading", function() { return getbannercountloading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannercountloaded", function() { return getbannercountloaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannercountfailed", function() { return getbannercountfailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerlistloaded", function() { return getbannerlistloaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerlistfailed", function() { return getbannerlistfailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerlistloading", function() { return getbannerlistloading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBannerlist", function() { return getBannerlist; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAddBanner", function() { return getAddBanner; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getaddBanner", function() { return getaddBanner; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUpdatebanner", function() { return getUpdatebanner; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getdeletebanner", function() { return getdeletebanner; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListCount", function() { return getbannerListCount; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListCountLoaded", function() { return getbannerListCountLoaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListCountFailed", function() { return getbannerListCountFailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListCountLoading", function() { return getbannerListCountLoading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListActive", function() { return getbannerListActive; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListActiveLoaded", function() { return getbannerListActiveLoaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListACtiveFailed", function() { return getbannerListACtiveFailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListActiveLoading", function() { return getbannerListActiveLoading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListInActive", function() { return getbannerListInActive; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListInActiveLoaded", function() { return getbannerListInActiveLoaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListInACtiveFailed", function() { return getbannerListInACtiveFailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListInActiveLoading", function() { return getbannerListInActiveLoading; });
+/* harmony import */ var _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../banner-action/banner.action */ "./src/core/admin/adv/banners/banner-action/banner.action.ts");
+/* harmony import */ var _banner_store_banner_state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../banner-store/banner.state */ "./src/core/admin/adv/banners/banner-store/banner.state.ts");
+/* harmony import */ var _banner_model_bannerlist_response_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../banner-model/bannerlist.response.model */ "./src/core/admin/adv/banners/banner-model/bannerlist.response.model.ts");
+/* harmony import */ var _banner_model_banneradd_response_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../banner-model/banneradd.response.model */ "./src/core/admin/adv/banners/banner-model/banneradd.response.model.ts");
+/*
+ * SpurtCommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 PICCOSOFT
+ * Author piccosoft <support@spurtcommerce.com>
+ * Licensed under the MIT license.
+ */
+
+
+
+
+var initialState = new _banner_store_banner_state__WEBPACK_IMPORTED_MODULE_1__["BannerRecordState"]();
+function reducer(state, _a) {
+    if (state === void 0) { state = initialState; }
+    var type = _a.type, payload = _a.payload;
+    if (!type) {
+        return state;
+    }
+    switch (type) {
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST: {
+            return Object.assign({}, state, {
+                bannerListCountLoaded: true,
+                bannerListCountFailed: false,
+                bannerListCountLoading: false
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_COUNT: {
+            return Object.assign({}, state, {
+                bannerListCountLoaded: true,
+                bannerListCountFailed: false,
+                bannerListCountLoading: false
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_SUCCESS_COUNT: {
+            return Object.assign({}, state, {
+                bannerListCount: payload,
+                bannerListCountLoaded: true,
+                bannerListCountFailed: false,
+                bannerListCountLoading: false
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_FAIL_COUNT: {
+            return Object.assign({}, state, {
+                bannerListCountLoaded: true,
+                bannerListCountFailed: false,
+                bannerListCountLoading: false
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_ACTIVE: {
+            return Object.assign({}, state, {
+                bannerListActiveLoaded: true,
+                bannerListACtiveFailed: false,
+                bannerListActiveLoading: false
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_SUCCESS_ACTIVE: {
+            return Object.assign({}, state, {
+                bannerListActive: payload,
+                bannerListActiveLoaded: true,
+                bannerListACtiveFailed: false,
+                bannerListActiveLoading: false
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_FAIL_ACTIVE: {
+            return Object.assign({}, state, {
+                bannerListInActiveLoaded: true,
+                bannerListAInCtiveFailed: false,
+                bannerListInActiveLoading: false
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_IN_ACTIVE: {
+            return Object.assign({}, state, {
+                bannerListInActiveLoaded: true,
+                bannerListInACtiveFailed: false,
+                bannerListInActiveLoading: false
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_SUCCESS_IN_ACTIVE: {
+            return Object.assign({}, state, {
+                bannerListInActive: payload,
+                bannerListInActiveLoaded: true,
+                bannerListInACtiveFailed: false,
+                bannerListInActiveLoading: false
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_FAIL_IN_ACTIVE: {
+            return Object.assign({}, state, {
+                bannerListActiveLoaded: true,
+                bannerListACtiveFailed: false,
+                bannerListActiveLoading: false
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_PAGINATION_ACTION: {
+            return Object.assign({}, state, {
+                bannerCountLoading: true,
+                bannerCountLoaded: false,
+                bannerCountFailed: false
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_ADD_BANNER_ACTION: {
+            return Object.assign({}, state, {
+                bannerAddLoaded: true,
+                bannerAddFailed: false,
+                bannerAddLoading: false
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_UPDATE_BANNER_ACTION: {
+            return Object.assign({}, state, {
+                bannerUpdateLoading: true,
+                bannerUpdateLoaded: false,
+                bannerUpdateFailed: false
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_DELETE_BANNER_ACTION: {
+            return Object.assign({}, state, {
+                bannerDeleteLoading: true,
+                bannerDeleteLoaded: false,
+                bannerDeleteFailed: false
+            });
+        }
+        // # Success functions
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_SUCCESS: {
+            var bannerListModel = payload.data.map(function (_bannerlistModel) {
+                var tempbannerListModel = new _banner_model_bannerlist_response_model__WEBPACK_IMPORTED_MODULE_2__["BannerlistResponseModel"](_bannerlistModel);
+                return tempbannerListModel;
+            });
+            return Object.assign({}, state, {
+                bannerListLoaded: true,
+                bannerListFailed: false,
+                bannerListLoading: false,
+                bannerList: bannerListModel
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_ADD_BANNER_SUCCESS: {
+            var addBanner = new _banner_model_banneradd_response_model__WEBPACK_IMPORTED_MODULE_3__["BanneraddResponseModel"](payload.data);
+            return Object.assign({}, state, {
+                bannerAddLoaded: true,
+                bannerAddFailed: false,
+                bannerAddLoading: false,
+                newBanner: payload,
+                addBanner: addBanner
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_UPDATE_BANNER_SUCCESS: {
+            return Object.assign({}, state, {
+                bannerUpdateLoaded: true,
+                bannerUpdateFailed: false,
+                bannerUpdateLoading: false,
+                updateBanner: payload
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_DELETE_BANNER_SUCCESS: {
+            return Object.assign({}, state, {
+                bannerDeleteLoaded: true,
+                bannerDeleteFailed: false,
+                bannerDeleteLoading: false,
+                deleteBanner: payload
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_PAGINATION_SUCCESS: {
+            return Object.assign({}, state, {
+                bannerCountLoaded: true,
+                bannerCountFailed: false,
+                bannerCountLoading: false,
+                bannerPagination: payload.bannercount.data
+            });
+        }
+        // failure functions
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_ADD_BANNER_FAIL: {
+            return Object.assign({}, state, {
+                bannerAddLoaded: false,
+                bannerAddFailed: true,
+                bannerAddLoading: false,
+                newBanner: payload
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_UPDATE_BANNER_FAIL: {
+            return Object.assign({}, state, {
+                bannerUpdateLoaded: false,
+                bannerUpdateFailed: true,
+                bannerUpdateLoading: false,
+                updateBanner: payload
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_FAIL: {
+            return Object.assign({}, state, {
+                bannerListLoaded: false,
+                bannerListFailed: true,
+                bannerListLoading: false
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_PAGINATION_FAIL: {
+            return Object.assign({}, initialState, {
+                changePSW: payload,
+                failed: true
+            });
+        }
+        // Bulk Delete
+        // Banner delete action
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_BULK_DELETE: {
+            return Object.assign({}, state, {});
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_BULK_DELETE_SUCCESS: {
+            return Object.assign({}, state, {
+                deleteBanner: payload
+            });
+        }
+        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_BULK_DELETE_FAIL: {
+            return Object.assign({}, state, {
+                deleteBanner: payload
+            });
+        }
+        default: {
+            return state;
+        }
+    }
+}
+var getbanneraddloaded = function (state) { return state.bannerAddLoaded; };
+var getbanneraddfailed = function (state) { return state.bannerAddFailed; };
+var getbanneraddloading = function (state) {
+    return state.bannerAddLoading;
+};
+var getbannerupdateloading = function (state) {
+    return state.bannerUpdateLoading;
+};
+var getbannerupdateloaded = function (state) {
+    return state.bannerUpdateLoaded;
+};
+var getbannerupdatefailed = function (state) {
+    return state.bannerUpdateFailed;
+};
+var getbannerdeleteloading = function (state) {
+    return state.bannerDeleteLoading;
+};
+var getbannerdeleteloaded = function (state) {
+    return state.bannerDeleteLoaded;
+};
+var getbannerdeletefailed = function (state) {
+    return state.bannerDeleteFailed;
+};
+var getbannerpagination = function (state) {
+    return state.bannerPagination;
+};
+var getbannercountloading = function (state) {
+    return state.bannerCountLoading;
+};
+var getbannercountloaded = function (state) {
+    return state.bannerCountLoaded;
+};
+var getbannercountfailed = function (state) {
+    return state.bannerCountFailed;
+};
+var getbannerlistloaded = function (state) {
+    return state.bannerListLoaded;
+};
+var getbannerlistfailed = function (state) {
+    return state.bannerListFailed;
+};
+var getbannerlistloading = function (state) {
+    return state.bannerListLoading;
+};
+var getBannerlist = function (state) { return state.bannerList; };
+var getAddBanner = function (state) { return state.newBanner; };
+var getaddBanner = function (state) { return state.addBanner; };
+var getUpdatebanner = function (state) { return state.updateBanner; };
+var getdeletebanner = function (state) { return state.deleteBanner; };
+var getbannerListCount = function (state) { return state.bannerListCount; };
+var getbannerListCountLoaded = function (state) {
+    return state.bannerListCountLoaded;
+};
+var getbannerListCountFailed = function (state) {
+    return state.bannerListCountFailed;
+};
+var getbannerListCountLoading = function (state) {
+    return state.bannerListCountLoading;
+};
+var getbannerListActive = function (state) {
+    return state.bannerListActive;
+};
+var getbannerListActiveLoaded = function (state) {
+    return state.bannerListActiveLoaded;
+};
+var getbannerListACtiveFailed = function (state) {
+    return state.bannerListACtiveFailed;
+};
+var getbannerListActiveLoading = function (state) {
+    return state.bannerListActiveLoading;
+};
+var getbannerListInActive = function (state) {
+    return state.bannerListInActive;
+};
+var getbannerListInActiveLoaded = function (state) {
+    return state.bannerListInActiveLoaded;
+};
+var getbannerListInACtiveFailed = function (state) {
+    return state.bannerListInACtiveFailed;
+};
+var getbannerListInActiveLoading = function (state) {
+    return state.bannerListInActiveLoading;
+};
+
+
+/***/ }),
+
+/***/ "./src/core/admin/adv/banners/banner-store/banner.state.ts":
+/*!*****************************************************************!*\
+  !*** ./src/core/admin/adv/banners/banner-store/banner.state.ts ***!
+  \*****************************************************************/
+/*! exports provided: BannerRecordState */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BannerRecordState", function() { return BannerRecordState; });
+/* harmony import */ var immutable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! immutable */ "./node_modules/immutable/dist/immutable.js");
+/* harmony import */ var immutable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(immutable__WEBPACK_IMPORTED_MODULE_0__);
+/*
+ * SpurtCommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 PICCOSOFT
+ * Author piccosoft <support@spurtcommerce.com>
+ * Licensed under the MIT license.
+ */
+
+var BannerRecordState = Object(immutable__WEBPACK_IMPORTED_MODULE_0__["Record"])({
+    bannerList: {},
+    bannerPagination: {},
+    newBanner: {},
+    updateBanner: {},
+    deleteBanner: {},
+    addBanner: {},
+    bannerListCount: {},
+    bannerListLoaded: false,
+    bannerListFailed: false,
+    bannerListLoading: false,
+    bannerAddLoaded: false,
+    bannerAddFailed: false,
+    bannerAddLoading: false,
+    bannerUpdateLoading: false,
+    bannerUpdateLoaded: false,
+    bannerUpdateFailed: false,
+    bannerDeleteLoading: false,
+    bannerDeleteLoaded: false,
+    bannerDeleteFailed: false,
+    bannerCountLoading: false,
+    bannerCountLoaded: false,
+    bannerCountFailed: false,
+    bannerListCountLoaded: false,
+    bannerListCountFailed: false,
+    bannerListCountLoading: false,
+    bannerListActive: {},
+    bannerListActiveLoaded: false,
+    bannerListACtiveFailed: false,
+    bannerListActiveLoading: false,
+    bannerListInActive: {},
+    bannerListInActiveLoaded: false,
+    bannerListInACtiveFailed: false,
+    bannerListInActiveLoading: false
+});
+
+
+/***/ }),
+
+/***/ "./src/core/admin/adv/coupens/coupen-action/coupen.action.ts":
+/*!*******************************************************************!*\
+  !*** ./src/core/admin/adv/coupens/coupen-action/coupen.action.ts ***!
+  \*******************************************************************/
+/*! exports provided: ActionTypes, DoCoupenListAction, DoCoupenListSuccessAction, DoCoupenListFailAction, DoCoupenListCountAction, DoCoupenListCountSuccessAction, DoCoupenListCountFailAction, DoCoupenListActiveAction, DoCoupenListActiveSuccessAction, DoCoupenListActiveFailAction, DoCoupenListInActiveAction, DoCoupenListInActiveSuccessAction, DoCoupenListInActiveFailAction, DoCoupenPaginationAction, DoCoupenPaginationSuccessAction, DoCoupenPaginationFailAction, DoCoupenAddAction, DoCoupenAddSuccessAction, DoCoupenAddFailAction, DoCoupenUpdateAction, DoCoupenUpdateSuccessAction, DoCoupenUpdateFailAction, DoCoupenDeleteAction, DoCoupenDeleteSuccessAction, DoCoupenDeleteFailAction, DoCoupenBulkDelete, DoCoupenBulkDeleteSuccess, DoCoupenBulkDeleteFail */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActionTypes", function() { return ActionTypes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenListAction", function() { return DoCoupenListAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenListSuccessAction", function() { return DoCoupenListSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenListFailAction", function() { return DoCoupenListFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenListCountAction", function() { return DoCoupenListCountAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenListCountSuccessAction", function() { return DoCoupenListCountSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenListCountFailAction", function() { return DoCoupenListCountFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenListActiveAction", function() { return DoCoupenListActiveAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenListActiveSuccessAction", function() { return DoCoupenListActiveSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenListActiveFailAction", function() { return DoCoupenListActiveFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenListInActiveAction", function() { return DoCoupenListInActiveAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenListInActiveSuccessAction", function() { return DoCoupenListInActiveSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenListInActiveFailAction", function() { return DoCoupenListInActiveFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenPaginationAction", function() { return DoCoupenPaginationAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenPaginationSuccessAction", function() { return DoCoupenPaginationSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenPaginationFailAction", function() { return DoCoupenPaginationFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenAddAction", function() { return DoCoupenAddAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenAddSuccessAction", function() { return DoCoupenAddSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenAddFailAction", function() { return DoCoupenAddFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenUpdateAction", function() { return DoCoupenUpdateAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenUpdateSuccessAction", function() { return DoCoupenUpdateSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenUpdateFailAction", function() { return DoCoupenUpdateFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenDeleteAction", function() { return DoCoupenDeleteAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenDeleteSuccessAction", function() { return DoCoupenDeleteSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenDeleteFailAction", function() { return DoCoupenDeleteFailAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenBulkDelete", function() { return DoCoupenBulkDelete; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenBulkDeleteSuccess", function() { return DoCoupenBulkDeleteSuccess; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoCoupenBulkDeleteFail", function() { return DoCoupenBulkDeleteFail; });
+/* harmony import */ var _shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../shared/utility/utilityHelpers */ "./src/core/admin/shared/utility/utilityHelpers.ts");
+/*
+ * spurtcommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 piccosoft ltd
+ * Author piccosoft ltd <support@piccosoft.com>
+ * Licensed under the MIT license.
+ */
+
+var ActionTypes = {
+    DO_COUPEN_LIST: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen] Do CoupenList'),
+    DO_COUPEN_LIST_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen] Do Coupen Success'),
+    DO_COUPEN_LIST_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen] Do Coupen Fail'),
+    DO_COUPEN_LIST_COUNT: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen] Do CoupenList count'),
+    DO_COUPEN_LIST_SUCCESS_COUNT: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen] Do Coupen Success count'),
+    DO_COUPEN_LIST_FAIL_COUNT: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen] Do Coupen Fail count'),
+    DO_COUPEN_LIST_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen] Do CoupenList active'),
+    DO_COUPEN_LIST_SUCCESS_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen] Do Coupen Success active'),
+    DO_COUPEN_LIST_FAIL_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen] Do Coupen Fail active'),
+    DO_COUPEN_LIST_IN_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen] Do CoupenList In-active'),
+    DO_COUPEN_LIST_SUCCESS_IN_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen] Do Coupen Success In-active'),
+    DO_COUPEN_LIST_FAIL_IN_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen] Do Coupen Fail In-active'),
+    DO_COUPEN_PAGINATION_ACTION: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen Pagination] Do Coupen Paination '),
+    DO_COUPEN_PAGINATION_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen Pagination] Do Coupen Paination  Success'),
+    DO_COUPEN_PAGINATION_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen Pagination] Do Coupen Paination  Fail'),
+    DO_ADD_COUPEN_ACTION: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen Add] Do Coupen Add '),
+    DO_ADD_COUPEN_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen Add] Do Coupen Add  Success'),
+    DO_ADD_COUPEN_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen Add] Do Coupen Add  Fail'),
+    DO_UPDATE_COUPEN_ACTION: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen Update] Do Coupen Update '),
+    DO_UPDATE_COUPEN_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen Update] Do Coupen Update  Success'),
+    DO_UPDATE_COUPEN_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen Update] Do Coupen Update  Fail'),
+    DO_DELETE_COUPEN_ACTION: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen Delete] Do Coupen Delete '),
+    DO_DELETE_COUPEN_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen Delete] Do Coupen Delete  Success'),
+    DO_DELETE_COUPEN_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Coupen Delete] Do Coupen Delete  Fail'),
+    DO_COUPEN_BULK_DELETE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[COUPEN BULK DELETE] DO Coupen Bulk Delete'),
+    DO_COUPEN_BULK_DELETE_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[COUPEN BULK DELETE SUCCESS] Do Coupen Bulk Delete Success'),
+    DO_COUPEN_BULK_DELETE_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[COUPEN BULK DELETE] Do Coupen Bulk Delete Fail')
+};
+// COUPEN LIST
+var DoCoupenListAction = /** @class */ (function () {
+    function DoCoupenListAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_LIST;
+    }
+    return DoCoupenListAction;
+}());
+
+var DoCoupenListSuccessAction = /** @class */ (function () {
+    function DoCoupenListSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_LIST_SUCCESS;
+    }
+    return DoCoupenListSuccessAction;
+}());
+
+var DoCoupenListFailAction = /** @class */ (function () {
+    function DoCoupenListFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_LIST_FAIL;
+    }
+    return DoCoupenListFailAction;
+}());
+
+// COUPEN COUNT LIST
+var DoCoupenListCountAction = /** @class */ (function () {
+    function DoCoupenListCountAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_LIST_COUNT;
+    }
+    return DoCoupenListCountAction;
+}());
+
+var DoCoupenListCountSuccessAction = /** @class */ (function () {
+    function DoCoupenListCountSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_LIST_SUCCESS_COUNT;
+    }
+    return DoCoupenListCountSuccessAction;
+}());
+
+var DoCoupenListCountFailAction = /** @class */ (function () {
+    function DoCoupenListCountFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_LIST_FAIL_COUNT;
+    }
+    return DoCoupenListCountFailAction;
+}());
+
+// COUPEN ACTIVE LIST
+var DoCoupenListActiveAction = /** @class */ (function () {
+    function DoCoupenListActiveAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_LIST_ACTIVE;
+    }
+    return DoCoupenListActiveAction;
+}());
+
+var DoCoupenListActiveSuccessAction = /** @class */ (function () {
+    function DoCoupenListActiveSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_LIST_SUCCESS_ACTIVE;
+    }
+    return DoCoupenListActiveSuccessAction;
+}());
+
+var DoCoupenListActiveFailAction = /** @class */ (function () {
+    function DoCoupenListActiveFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_LIST_FAIL_ACTIVE;
+    }
+    return DoCoupenListActiveFailAction;
+}());
+
+// COUPEN IN-ACTIVE LIST
+var DoCoupenListInActiveAction = /** @class */ (function () {
+    function DoCoupenListInActiveAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_LIST_IN_ACTIVE;
+    }
+    return DoCoupenListInActiveAction;
+}());
+
+var DoCoupenListInActiveSuccessAction = /** @class */ (function () {
+    function DoCoupenListInActiveSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_LIST_SUCCESS_IN_ACTIVE;
+    }
+    return DoCoupenListInActiveSuccessAction;
+}());
+
+var DoCoupenListInActiveFailAction = /** @class */ (function () {
+    function DoCoupenListInActiveFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_LIST_FAIL_IN_ACTIVE;
+    }
+    return DoCoupenListInActiveFailAction;
+}());
+
+// Coupen LIST  PAGINATION
+var DoCoupenPaginationAction = /** @class */ (function () {
+    function DoCoupenPaginationAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_PAGINATION_ACTION;
+    }
+    return DoCoupenPaginationAction;
+}());
+
+var DoCoupenPaginationSuccessAction = /** @class */ (function () {
+    function DoCoupenPaginationSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_PAGINATION_SUCCESS;
+    }
+    return DoCoupenPaginationSuccessAction;
+}());
+
+var DoCoupenPaginationFailAction = /** @class */ (function () {
+    function DoCoupenPaginationFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_PAGINATION_SUCCESS;
+    }
+    return DoCoupenPaginationFailAction;
+}());
+
+// Add COUPEN ACTION
+var DoCoupenAddAction = /** @class */ (function () {
+    function DoCoupenAddAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_ADD_COUPEN_ACTION;
+        console.log('add coupen action', payload);
+    }
+    return DoCoupenAddAction;
+}());
+
+var DoCoupenAddSuccessAction = /** @class */ (function () {
+    function DoCoupenAddSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_ADD_COUPEN_SUCCESS;
+    }
+    return DoCoupenAddSuccessAction;
+}());
+
+var DoCoupenAddFailAction = /** @class */ (function () {
+    function DoCoupenAddFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_ADD_COUPEN_FAIL;
+    }
+    return DoCoupenAddFailAction;
+}());
+
+// # UPDATE COUPEN ACTION
+var DoCoupenUpdateAction = /** @class */ (function () {
+    function DoCoupenUpdateAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_UPDATE_COUPEN_ACTION;
+    }
+    return DoCoupenUpdateAction;
+}());
+
+var DoCoupenUpdateSuccessAction = /** @class */ (function () {
+    function DoCoupenUpdateSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_UPDATE_COUPEN_SUCCESS;
+    }
+    return DoCoupenUpdateSuccessAction;
+}());
+
+var DoCoupenUpdateFailAction = /** @class */ (function () {
+    function DoCoupenUpdateFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_UPDATE_COUPEN_FAIL;
+    }
+    return DoCoupenUpdateFailAction;
+}());
+
+// #  DELETE COUPEN ACTION
+var DoCoupenDeleteAction = /** @class */ (function () {
+    function DoCoupenDeleteAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_DELETE_COUPEN_ACTION;
+    }
+    return DoCoupenDeleteAction;
+}());
+
+var DoCoupenDeleteSuccessAction = /** @class */ (function () {
+    function DoCoupenDeleteSuccessAction(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_DELETE_COUPEN_SUCCESS;
+    }
+    return DoCoupenDeleteSuccessAction;
+}());
+
+var DoCoupenDeleteFailAction = /** @class */ (function () {
+    function DoCoupenDeleteFailAction(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_DELETE_COUPEN_FAIL;
+    }
+    return DoCoupenDeleteFailAction;
+}());
+
+// Do Coupen Bulk Delete
+var DoCoupenBulkDelete = /** @class */ (function () {
+    function DoCoupenBulkDelete(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_BULK_DELETE;
+    }
+    return DoCoupenBulkDelete;
+}());
+
+var DoCoupenBulkDeleteSuccess = /** @class */ (function () {
+    function DoCoupenBulkDeleteSuccess(payload) {
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_BULK_DELETE_SUCCESS;
+    }
+    return DoCoupenBulkDeleteSuccess;
+}());
+
+var DoCoupenBulkDeleteFail = /** @class */ (function () {
+    function DoCoupenBulkDeleteFail(payload) {
+        if (payload === void 0) { payload = null; }
+        this.payload = payload;
+        this.type = ActionTypes.DO_COUPEN_BULK_DELETE_FAIL;
+    }
+    return DoCoupenBulkDeleteFail;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/core/admin/adv/coupens/coupen-model/coupenadd.response.model.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/core/admin/adv/coupens/coupen-model/coupenadd.response.model.ts ***!
+  \*****************************************************************************/
+/*! exports provided: CoupenaddResponseModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoupenaddResponseModel", function() { return CoupenaddResponseModel; });
+/*
+ * SpurtCommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 PICCOSOFT
+ * Author piccosoft <support@spurtcommerce.com>
+ * Licensed under the MIT license.
+ */
+var CoupenaddResponseModel = /** @class */ (function () {
+    function CoupenaddResponseModel(coupenaddResponse) {
+        this.bannerId = coupenaddResponse.bannerId || 0;
+        this.position = coupenaddResponse.position || 0;
+        this.content = coupenaddResponse.content || '';
+        this.image = coupenaddResponse.image || '';
+        this.imagePath = coupenaddResponse.imagePath || '';
+        this.link = coupenaddResponse.link || '';
+        this.title = coupenaddResponse.title || '';
+        this.createdDate = coupenaddResponse.createdDate || '';
+        this.active = coupenaddResponse.isActive;
+    }
+    return CoupenaddResponseModel;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/core/admin/adv/coupens/coupen-model/coupenlist.response.model.ts":
+/*!******************************************************************************!*\
+  !*** ./src/core/admin/adv/coupens/coupen-model/coupenlist.response.model.ts ***!
+  \******************************************************************************/
+/*! exports provided: CoupenlistResponseModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoupenlistResponseModel", function() { return CoupenlistResponseModel; });
+/*
+ * SpurtCommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 PICCOSOFT
+ * Author piccosoft <support@spurtcommerce.com>
+ * Licensed under the MIT license.
+ */
+var CoupenlistResponseModel = /** @class */ (function () {
+    function CoupenlistResponseModel(coupenlistResponse) {
+        this.coupenId = coupenlistResponse.coupenId || 0;
+        this.categoryId = coupenlistResponse.categoryId || 0;
+        this.categoryChildId = coupenlistResponse.categoryChildId || 0;
+        this.homecoupen = coupenlistResponse.homecoupen || 0;
+        this.position = coupenlistResponse.position || 0;
+        this.content = coupenlistResponse.content || '';
+        this.image = coupenlistResponse.image || '';
+        this.imagePath = coupenlistResponse.imagePath || '';
+        this.link = coupenlistResponse.link || '';
+        this.title = coupenlistResponse.title || '';
+        this.active = coupenlistResponse.isActive;
+    }
+    return CoupenlistResponseModel;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/core/admin/adv/coupens/coupen-reducer/coupen.reducer.ts":
+/*!*********************************************************************!*\
+  !*** ./src/core/admin/adv/coupens/coupen-reducer/coupen.reducer.ts ***!
+  \*********************************************************************/
+/*! exports provided: initialState, reducer, getcoupenaddloaded, getcoupenaddfailed, getcoupenaddloading, getcoupenupdateloading, getcoupenupdateloaded, getcoupenupdatefailed, getcoupendeleteloading, getcoupendeleteloaded, getcoupendeletefailed, getcoupenpagination, getcoupencountloading, getcoupencountloaded, getcoupencountfailed, getcoupenlistloaded, getcoupenlistfailed, getcoupenlistloading, getCoupenlist, getAddCoupen, getaddCoupen, getUpdatecoupen, getdeletecoupen, getcoupenListCount, getcoupenListCountLoaded, getcoupenListCountFailed, getcoupenListCountLoading, getcoupenListActive, getcoupenListActiveLoaded, getcoupenListACtiveFailed, getcoupenListActiveLoading, getcoupenListInActive, getcoupenListInActiveLoaded, getcoupenListInACtiveFailed, getcoupenListInActiveLoading */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenaddloaded", function() { return getcoupenaddloaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenaddfailed", function() { return getcoupenaddfailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenaddloading", function() { return getcoupenaddloading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenupdateloading", function() { return getcoupenupdateloading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenupdateloaded", function() { return getcoupenupdateloaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenupdatefailed", function() { return getcoupenupdatefailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupendeleteloading", function() { return getcoupendeleteloading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupendeleteloaded", function() { return getcoupendeleteloaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupendeletefailed", function() { return getcoupendeletefailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenpagination", function() { return getcoupenpagination; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupencountloading", function() { return getcoupencountloading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupencountloaded", function() { return getcoupencountloaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupencountfailed", function() { return getcoupencountfailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenlistloaded", function() { return getcoupenlistloaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenlistfailed", function() { return getcoupenlistfailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenlistloading", function() { return getcoupenlistloading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCoupenlist", function() { return getCoupenlist; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAddCoupen", function() { return getAddCoupen; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getaddCoupen", function() { return getaddCoupen; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUpdatecoupen", function() { return getUpdatecoupen; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getdeletecoupen", function() { return getdeletecoupen; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenListCount", function() { return getcoupenListCount; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenListCountLoaded", function() { return getcoupenListCountLoaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenListCountFailed", function() { return getcoupenListCountFailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenListCountLoading", function() { return getcoupenListCountLoading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenListActive", function() { return getcoupenListActive; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenListActiveLoaded", function() { return getcoupenListActiveLoaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenListACtiveFailed", function() { return getcoupenListACtiveFailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenListActiveLoading", function() { return getcoupenListActiveLoading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenListInActive", function() { return getcoupenListInActive; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenListInActiveLoaded", function() { return getcoupenListInActiveLoaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenListInACtiveFailed", function() { return getcoupenListInACtiveFailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getcoupenListInActiveLoading", function() { return getcoupenListInActiveLoading; });
+/* harmony import */ var _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../coupen-action/coupen.action */ "./src/core/admin/adv/coupens/coupen-action/coupen.action.ts");
+/* harmony import */ var _coupen_store_coupen_state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../coupen-store/coupen.state */ "./src/core/admin/adv/coupens/coupen-store/coupen.state.ts");
+/* harmony import */ var _coupen_model_coupenlist_response_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../coupen-model/coupenlist.response.model */ "./src/core/admin/adv/coupens/coupen-model/coupenlist.response.model.ts");
+/* harmony import */ var _coupen_model_coupenadd_response_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../coupen-model/coupenadd.response.model */ "./src/core/admin/adv/coupens/coupen-model/coupenadd.response.model.ts");
+/*
+ * SpurtCommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 PICCOSOFT
+ * Author piccosoft <support@spurtcommerce.com>
+ * Licensed under the MIT license.
+ */
+
+
+
+
+var initialState = new _coupen_store_coupen_state__WEBPACK_IMPORTED_MODULE_1__["CoupenRecordState"]();
+function reducer(state, _a) {
+    if (state === void 0) { state = initialState; }
+    var type = _a.type, payload = _a.payload;
+    if (!type) {
+        return state;
+    }
+    switch (type) {
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_LIST: {
+            return Object.assign({}, state, {
+                coupenListCountLoaded: true,
+                coupenListCountFailed: false,
+                coupenListCountLoading: false
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_LIST_COUNT: {
+            return Object.assign({}, state, {
+                coupenListCountLoaded: true,
+                coupenListCountFailed: false,
+                coupenListCountLoading: false
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_LIST_SUCCESS_COUNT: {
+            return Object.assign({}, state, {
+                coupenListCount: payload,
+                coupenListCountLoaded: true,
+                coupenListCountFailed: false,
+                coupenListCountLoading: false
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_LIST_FAIL_COUNT: {
+            return Object.assign({}, state, {
+                coupenListCountLoaded: true,
+                coupenListCountFailed: false,
+                coupenListCountLoading: false
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_LIST_ACTIVE: {
+            return Object.assign({}, state, {
+                coupenListActiveLoaded: true,
+                coupenListACtiveFailed: false,
+                coupenListActiveLoading: false
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_LIST_SUCCESS_ACTIVE: {
+            return Object.assign({}, state, {
+                coupenListActive: payload,
+                coupenListActiveLoaded: true,
+                coupenListACtiveFailed: false,
+                coupenListActiveLoading: false
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_LIST_FAIL_ACTIVE: {
+            return Object.assign({}, state, {
+                coupenListInActiveLoaded: true,
+                coupenListAInCtiveFailed: false,
+                coupenListInActiveLoading: false
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_LIST_IN_ACTIVE: {
+            return Object.assign({}, state, {
+                coupenListInActiveLoaded: true,
+                coupenListInACtiveFailed: false,
+                coupenListInActiveLoading: false
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_LIST_SUCCESS_IN_ACTIVE: {
+            return Object.assign({}, state, {
+                coupenListInActive: payload,
+                coupenListInActiveLoaded: true,
+                coupenListInACtiveFailed: false,
+                coupenListInActiveLoading: false
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_LIST_FAIL_IN_ACTIVE: {
+            return Object.assign({}, state, {
+                coupenListActiveLoaded: true,
+                coupenListACtiveFailed: false,
+                coupenListActiveLoading: false
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_PAGINATION_ACTION: {
+            return Object.assign({}, state, {
+                coupenCountLoading: true,
+                coupenCountLoaded: false,
+                coupenCountFailed: false
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_ADD_COUPEN_ACTION: {
+            return Object.assign({}, state, {
+                coupenAddLoaded: true,
+                coupenAddFailed: false,
+                coupenAddLoading: false
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_UPDATE_COUPEN_ACTION: {
+            return Object.assign({}, state, {
+                coupenUpdateLoading: true,
+                coupenUpdateLoaded: false,
+                coupenUpdateFailed: false
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_DELETE_COUPEN_ACTION: {
+            return Object.assign({}, state, {
+                coupenDeleteLoading: true,
+                coupenDeleteLoaded: false,
+                coupenDeleteFailed: false
+            });
+        }
+        // # Success functions
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_LIST_SUCCESS: {
+            var coupenListModel = payload.data.map(function (_coupenlistModel) {
+                var tempcoupenListModel = new _coupen_model_coupenlist_response_model__WEBPACK_IMPORTED_MODULE_2__["CoupenlistResponseModel"](_coupenlistModel);
+                return tempcoupenListModel;
+            });
+            return Object.assign({}, state, {
+                coupenListLoaded: true,
+                coupenListFailed: false,
+                coupenListLoading: false,
+                coupenList: coupenListModel
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_ADD_COUPEN_SUCCESS: {
+            var addCoupen = new _coupen_model_coupenadd_response_model__WEBPACK_IMPORTED_MODULE_3__["CoupenaddResponseModel"](payload.data);
+            return Object.assign({}, state, {
+                coupenAddLoaded: true,
+                coupenAddFailed: false,
+                coupenAddLoading: false,
+                newCoupen: payload,
+                addCoupen: addCoupen
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_UPDATE_COUPEN_SUCCESS: {
+            return Object.assign({}, state, {
+                coupenUpdateLoaded: true,
+                coupenUpdateFailed: false,
+                coupenUpdateLoading: false,
+                updateCoupen: payload
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_DELETE_COUPEN_SUCCESS: {
+            return Object.assign({}, state, {
+                coupenDeleteLoaded: true,
+                coupenDeleteFailed: false,
+                coupenDeleteLoading: false,
+                deleteCoupen: payload
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_PAGINATION_SUCCESS: {
+            return Object.assign({}, state, {
+                coupenCountLoaded: true,
+                coupenCountFailed: false,
+                coupenCountLoading: false,
+                coupenPagination: payload.coupencount.data
+            });
+        }
+        // failure functions
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_ADD_COUPEN_FAIL: {
+            return Object.assign({}, state, {
+                coupenAddLoaded: false,
+                coupenAddFailed: true,
+                coupenAddLoading: false,
+                newCoupen: payload
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_UPDATE_COUPEN_FAIL: {
+            return Object.assign({}, state, {
+                coupenUpdateLoaded: false,
+                coupenUpdateFailed: true,
+                coupenUpdateLoading: false,
+                updateCoupen: payload
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_LIST_FAIL: {
+            return Object.assign({}, state, {
+                coupenListLoaded: false,
+                coupenListFailed: true,
+                coupenListLoading: false
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_PAGINATION_FAIL: {
+            return Object.assign({}, initialState, {
+                changePSW: payload,
+                failed: true
+            });
+        }
+        // Bulk Delete
+        // Coupen delete action
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_BULK_DELETE: {
+            return Object.assign({}, state, {});
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_BULK_DELETE_SUCCESS: {
+            return Object.assign({}, state, {
+                deleteCoupen: payload
+            });
+        }
+        case _coupen_action_coupen_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_COUPEN_BULK_DELETE_FAIL: {
+            return Object.assign({}, state, {
+                deleteCoupen: payload
+            });
+        }
+        default: {
+            return state;
+        }
+    }
+}
+var getcoupenaddloaded = function (state) { return state.coupenAddLoaded; };
+var getcoupenaddfailed = function (state) { return state.coupenAddFailed; };
+var getcoupenaddloading = function (state) {
+    return state.coupenAddLoading;
+};
+var getcoupenupdateloading = function (state) {
+    return state.coupenUpdateLoading;
+};
+var getcoupenupdateloaded = function (state) {
+    return state.coupenUpdateLoaded;
+};
+var getcoupenupdatefailed = function (state) {
+    return state.coupenUpdateFailed;
+};
+var getcoupendeleteloading = function (state) {
+    return state.coupenDeleteLoading;
+};
+var getcoupendeleteloaded = function (state) {
+    return state.coupenDeleteLoaded;
+};
+var getcoupendeletefailed = function (state) {
+    return state.coupenDeleteFailed;
+};
+var getcoupenpagination = function (state) {
+    return state.coupenPagination;
+};
+var getcoupencountloading = function (state) {
+    return state.coupenCountLoading;
+};
+var getcoupencountloaded = function (state) {
+    return state.coupenCountLoaded;
+};
+var getcoupencountfailed = function (state) {
+    return state.coupenCountFailed;
+};
+var getcoupenlistloaded = function (state) {
+    return state.coupenListLoaded;
+};
+var getcoupenlistfailed = function (state) {
+    return state.coupenListFailed;
+};
+var getcoupenlistloading = function (state) {
+    return state.coupenListLoading;
+};
+var getCoupenlist = function (state) { return state.coupenList; };
+var getAddCoupen = function (state) { return state.newCoupen; };
+var getaddCoupen = function (state) { return state.addCoupen; };
+var getUpdatecoupen = function (state) { return state.updateCoupen; };
+var getdeletecoupen = function (state) { return state.deleteCoupen; };
+var getcoupenListCount = function (state) { return state.coupenListCount; };
+var getcoupenListCountLoaded = function (state) {
+    return state.coupenListCountLoaded;
+};
+var getcoupenListCountFailed = function (state) {
+    return state.coupenListCountFailed;
+};
+var getcoupenListCountLoading = function (state) {
+    return state.coupenListCountLoading;
+};
+var getcoupenListActive = function (state) {
+    return state.coupenListActive;
+};
+var getcoupenListActiveLoaded = function (state) {
+    return state.coupenListActiveLoaded;
+};
+var getcoupenListACtiveFailed = function (state) {
+    return state.coupenListACtiveFailed;
+};
+var getcoupenListActiveLoading = function (state) {
+    return state.coupenListActiveLoading;
+};
+var getcoupenListInActive = function (state) {
+    return state.coupenListInActive;
+};
+var getcoupenListInActiveLoaded = function (state) {
+    return state.coupenListInActiveLoaded;
+};
+var getcoupenListInACtiveFailed = function (state) {
+    return state.coupenListInACtiveFailed;
+};
+var getcoupenListInActiveLoading = function (state) {
+    return state.coupenListInActiveLoading;
+};
+
+
+/***/ }),
+
+/***/ "./src/core/admin/adv/coupens/coupen-store/coupen.state.ts":
+/*!*****************************************************************!*\
+  !*** ./src/core/admin/adv/coupens/coupen-store/coupen.state.ts ***!
+  \*****************************************************************/
+/*! exports provided: CoupenRecordState */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoupenRecordState", function() { return CoupenRecordState; });
+/* harmony import */ var immutable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! immutable */ "./node_modules/immutable/dist/immutable.js");
+/* harmony import */ var immutable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(immutable__WEBPACK_IMPORTED_MODULE_0__);
+/*
+ * SpurtCommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 PICCOSOFT
+ * Author piccosoft <support@spurtcommerce.com>
+ * Licensed under the MIT license.
+ */
+
+var CoupenRecordState = Object(immutable__WEBPACK_IMPORTED_MODULE_0__["Record"])({
+    coupenList: {},
+    coupenPagination: {},
+    newCoupen: {},
+    updateCoupen: {},
+    deleteCoupen: {},
+    addCoupen: {},
+    coupenListCount: {},
+    coupenListLoaded: false,
+    coupenListFailed: false,
+    coupenListLoading: false,
+    coupenAddLoaded: false,
+    coupenAddFailed: false,
+    coupenAddLoading: false,
+    coupenUpdateLoading: false,
+    coupenUpdateLoaded: false,
+    coupenUpdateFailed: false,
+    coupenDeleteLoading: false,
+    coupenDeleteLoaded: false,
+    coupenDeleteFailed: false,
+    coupenCountLoading: false,
+    coupenCountLoaded: false,
+    coupenCountFailed: false,
+    coupenListCountLoaded: false,
+    coupenListCountFailed: false,
+    coupenListCountLoading: false,
+    coupenListActive: {},
+    coupenListActiveLoaded: false,
+    coupenListACtiveFailed: false,
+    coupenListActiveLoading: false,
+    coupenListInActive: {},
+    coupenListInACtiveFailed: false,
+    coupenListInActiveLoaded: false,
+    coupenListInActiveLoading: false
 });
 
 
@@ -7200,810 +8810,6 @@ var DashboardStateRecord = Object(immutable__WEBPACK_IMPORTED_MODULE_0__["Record
     recentSellingProductLoading: false,
     recentSellingProductLoaded: false,
     recentSellingProductFailed: false
-});
-
-
-/***/ }),
-
-/***/ "./src/core/admin/demo/banners/banner-action/banner.action.ts":
-/*!********************************************************************!*\
-  !*** ./src/core/admin/demo/banners/banner-action/banner.action.ts ***!
-  \********************************************************************/
-/*! exports provided: ActionTypes, DoBannerListAction, DoBannerListSuccessAction, DoBannerListFailAction, DoBannerListCountAction, DoBannerListCountSuccessAction, DoBannerListCountFailAction, DoBannerListActiveAction, DoBannerListActiveSuccessAction, DoBannerListActiveFailAction, DoBannerListInActiveAction, DoBannerListInActiveSuccessAction, DoBannerListInActiveFailAction, DoBannerPaginationAction, DoBannerPaginationSuccessAction, DoBannerPaginationFailAction, DoBannerAddAction, DoBannerAddSuccessAction, DoBannerAddFailAction, DoBannerUpdateAction, DoBannerUpdateSuccessAction, DoBannerUpdateFailAction, DoBannerDeleteAction, DoBannerDeleteSuccessAction, DoBannerDeleteFailAction, DoBannerBulkDelete, DoBannerBulkDeleteSuccess, DoBannerBulkDeleteFail */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActionTypes", function() { return ActionTypes; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListAction", function() { return DoBannerListAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListSuccessAction", function() { return DoBannerListSuccessAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListFailAction", function() { return DoBannerListFailAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListCountAction", function() { return DoBannerListCountAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListCountSuccessAction", function() { return DoBannerListCountSuccessAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListCountFailAction", function() { return DoBannerListCountFailAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListActiveAction", function() { return DoBannerListActiveAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListActiveSuccessAction", function() { return DoBannerListActiveSuccessAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListActiveFailAction", function() { return DoBannerListActiveFailAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListInActiveAction", function() { return DoBannerListInActiveAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListInActiveSuccessAction", function() { return DoBannerListInActiveSuccessAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerListInActiveFailAction", function() { return DoBannerListInActiveFailAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerPaginationAction", function() { return DoBannerPaginationAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerPaginationSuccessAction", function() { return DoBannerPaginationSuccessAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerPaginationFailAction", function() { return DoBannerPaginationFailAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerAddAction", function() { return DoBannerAddAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerAddSuccessAction", function() { return DoBannerAddSuccessAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerAddFailAction", function() { return DoBannerAddFailAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerUpdateAction", function() { return DoBannerUpdateAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerUpdateSuccessAction", function() { return DoBannerUpdateSuccessAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerUpdateFailAction", function() { return DoBannerUpdateFailAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerDeleteAction", function() { return DoBannerDeleteAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerDeleteSuccessAction", function() { return DoBannerDeleteSuccessAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerDeleteFailAction", function() { return DoBannerDeleteFailAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerBulkDelete", function() { return DoBannerBulkDelete; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerBulkDeleteSuccess", function() { return DoBannerBulkDeleteSuccess; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoBannerBulkDeleteFail", function() { return DoBannerBulkDeleteFail; });
-/* harmony import */ var _shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../shared/utility/utilityHelpers */ "./src/core/admin/shared/utility/utilityHelpers.ts");
-/*
- * spurtcommerce
- * http://www.spurtcommerce.com
- *
- * Copyright (c) 2022 piccosoft ltd
- * Author piccosoft ltd <support@piccosoft.com>
- * Licensed under the MIT license.
- */
-
-var ActionTypes = {
-    DO_BANNER_LIST: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do BannerList'),
-    DO_BANNER_LIST_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Success'),
-    DO_BANNER_LIST_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Fail'),
-    DO_BANNER_LIST_COUNT: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do BannerList count'),
-    DO_BANNER_LIST_SUCCESS_COUNT: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Success count'),
-    DO_BANNER_LIST_FAIL_COUNT: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Fail count'),
-    DO_BANNER_LIST_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do BannerList active'),
-    DO_BANNER_LIST_SUCCESS_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Success active'),
-    DO_BANNER_LIST_FAIL_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Fail active'),
-    DO_BANNER_LIST_IN_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do BannerList In-active'),
-    DO_BANNER_LIST_SUCCESS_IN_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Success In-active'),
-    DO_BANNER_LIST_FAIL_IN_ACTIVE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner] Do Banner Fail In-active'),
-    DO_BANNER_PAGINATION_ACTION: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Pagination] Do Banner Paination '),
-    DO_BANNER_PAGINATION_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Pagination] Do Banner Paination  Success'),
-    DO_BANNER_PAGINATION_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Pagination] Do Banner Paination  Fail'),
-    DO_ADD_BANNER_ACTION: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Add] Do Banner Add '),
-    DO_ADD_BANNER_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Add] Do Banner Add  Success'),
-    DO_ADD_BANNER_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Add] Do Banner Add  Fail'),
-    DO_UPDATE_BANNER_ACTION: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Update] Do Banner Update '),
-    DO_UPDATE_BANNER_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Update] Do Banner Update  Success'),
-    DO_UPDATE_BANNER_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Update] Do Banner Update  Fail'),
-    DO_DELETE_BANNER_ACTION: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Delete] Do Banner Delete '),
-    DO_DELETE_BANNER_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Delete] Do Banner Delete  Success'),
-    DO_DELETE_BANNER_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[Banner Delete] Do Banner Delete  Fail'),
-    DO_BANNER_BULK_DELETE: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[BANNER BULK DELETE] DO Banner Bulk Delete'),
-    DO_BANNER_BULK_DELETE_SUCCESS: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[BANNER BULK DELETE SUCCESS] Do Banner Bulk Delete Success'),
-    DO_BANNER_BULK_DELETE_FAIL: Object(_shared_utility_utilityHelpers__WEBPACK_IMPORTED_MODULE_0__["type"])('[BANNER BULK DELETE] Do Banner Bulk Delete Fail')
-};
-// BANNER LIST
-var DoBannerListAction = /** @class */ (function () {
-    function DoBannerListAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_LIST;
-    }
-    return DoBannerListAction;
-}());
-
-var DoBannerListSuccessAction = /** @class */ (function () {
-    function DoBannerListSuccessAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_LIST_SUCCESS;
-    }
-    return DoBannerListSuccessAction;
-}());
-
-var DoBannerListFailAction = /** @class */ (function () {
-    function DoBannerListFailAction(payload) {
-        if (payload === void 0) { payload = null; }
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_LIST_FAIL;
-    }
-    return DoBannerListFailAction;
-}());
-
-// BANNER COUNT LIST
-var DoBannerListCountAction = /** @class */ (function () {
-    function DoBannerListCountAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_LIST_COUNT;
-    }
-    return DoBannerListCountAction;
-}());
-
-var DoBannerListCountSuccessAction = /** @class */ (function () {
-    function DoBannerListCountSuccessAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_LIST_SUCCESS_COUNT;
-    }
-    return DoBannerListCountSuccessAction;
-}());
-
-var DoBannerListCountFailAction = /** @class */ (function () {
-    function DoBannerListCountFailAction(payload) {
-        if (payload === void 0) { payload = null; }
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_LIST_FAIL_COUNT;
-    }
-    return DoBannerListCountFailAction;
-}());
-
-// BANNER ACTIVE LIST
-var DoBannerListActiveAction = /** @class */ (function () {
-    function DoBannerListActiveAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_LIST_ACTIVE;
-    }
-    return DoBannerListActiveAction;
-}());
-
-var DoBannerListActiveSuccessAction = /** @class */ (function () {
-    function DoBannerListActiveSuccessAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_LIST_SUCCESS_ACTIVE;
-    }
-    return DoBannerListActiveSuccessAction;
-}());
-
-var DoBannerListActiveFailAction = /** @class */ (function () {
-    function DoBannerListActiveFailAction(payload) {
-        if (payload === void 0) { payload = null; }
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_LIST_FAIL_ACTIVE;
-    }
-    return DoBannerListActiveFailAction;
-}());
-
-// BANNER IN-ACTIVE LIST
-var DoBannerListInActiveAction = /** @class */ (function () {
-    function DoBannerListInActiveAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_LIST_IN_ACTIVE;
-    }
-    return DoBannerListInActiveAction;
-}());
-
-var DoBannerListInActiveSuccessAction = /** @class */ (function () {
-    function DoBannerListInActiveSuccessAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_LIST_SUCCESS_IN_ACTIVE;
-    }
-    return DoBannerListInActiveSuccessAction;
-}());
-
-var DoBannerListInActiveFailAction = /** @class */ (function () {
-    function DoBannerListInActiveFailAction(payload) {
-        if (payload === void 0) { payload = null; }
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_LIST_FAIL_IN_ACTIVE;
-    }
-    return DoBannerListInActiveFailAction;
-}());
-
-// Banner LIST  PAGINATION
-var DoBannerPaginationAction = /** @class */ (function () {
-    function DoBannerPaginationAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_PAGINATION_ACTION;
-    }
-    return DoBannerPaginationAction;
-}());
-
-var DoBannerPaginationSuccessAction = /** @class */ (function () {
-    function DoBannerPaginationSuccessAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_PAGINATION_SUCCESS;
-    }
-    return DoBannerPaginationSuccessAction;
-}());
-
-var DoBannerPaginationFailAction = /** @class */ (function () {
-    function DoBannerPaginationFailAction(payload) {
-        if (payload === void 0) { payload = null; }
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_PAGINATION_SUCCESS;
-    }
-    return DoBannerPaginationFailAction;
-}());
-
-// Add BANNER ACTION
-var DoBannerAddAction = /** @class */ (function () {
-    function DoBannerAddAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_ADD_BANNER_ACTION;
-        console.log('add banner action', payload);
-    }
-    return DoBannerAddAction;
-}());
-
-var DoBannerAddSuccessAction = /** @class */ (function () {
-    function DoBannerAddSuccessAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_ADD_BANNER_SUCCESS;
-    }
-    return DoBannerAddSuccessAction;
-}());
-
-var DoBannerAddFailAction = /** @class */ (function () {
-    function DoBannerAddFailAction(payload) {
-        if (payload === void 0) { payload = null; }
-        this.payload = payload;
-        this.type = ActionTypes.DO_ADD_BANNER_FAIL;
-    }
-    return DoBannerAddFailAction;
-}());
-
-// # UPDATE BANNER ACTION
-var DoBannerUpdateAction = /** @class */ (function () {
-    function DoBannerUpdateAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_UPDATE_BANNER_ACTION;
-    }
-    return DoBannerUpdateAction;
-}());
-
-var DoBannerUpdateSuccessAction = /** @class */ (function () {
-    function DoBannerUpdateSuccessAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_UPDATE_BANNER_SUCCESS;
-    }
-    return DoBannerUpdateSuccessAction;
-}());
-
-var DoBannerUpdateFailAction = /** @class */ (function () {
-    function DoBannerUpdateFailAction(payload) {
-        if (payload === void 0) { payload = null; }
-        this.payload = payload;
-        this.type = ActionTypes.DO_UPDATE_BANNER_FAIL;
-    }
-    return DoBannerUpdateFailAction;
-}());
-
-// #  DELETE BANNER ACTION
-var DoBannerDeleteAction = /** @class */ (function () {
-    function DoBannerDeleteAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_DELETE_BANNER_ACTION;
-    }
-    return DoBannerDeleteAction;
-}());
-
-var DoBannerDeleteSuccessAction = /** @class */ (function () {
-    function DoBannerDeleteSuccessAction(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_DELETE_BANNER_SUCCESS;
-    }
-    return DoBannerDeleteSuccessAction;
-}());
-
-var DoBannerDeleteFailAction = /** @class */ (function () {
-    function DoBannerDeleteFailAction(payload) {
-        if (payload === void 0) { payload = null; }
-        this.payload = payload;
-        this.type = ActionTypes.DO_DELETE_BANNER_FAIL;
-    }
-    return DoBannerDeleteFailAction;
-}());
-
-// Do Banner Bulk Delete
-var DoBannerBulkDelete = /** @class */ (function () {
-    function DoBannerBulkDelete(payload) {
-        if (payload === void 0) { payload = null; }
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_BULK_DELETE;
-    }
-    return DoBannerBulkDelete;
-}());
-
-var DoBannerBulkDeleteSuccess = /** @class */ (function () {
-    function DoBannerBulkDeleteSuccess(payload) {
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_BULK_DELETE_SUCCESS;
-    }
-    return DoBannerBulkDeleteSuccess;
-}());
-
-var DoBannerBulkDeleteFail = /** @class */ (function () {
-    function DoBannerBulkDeleteFail(payload) {
-        if (payload === void 0) { payload = null; }
-        this.payload = payload;
-        this.type = ActionTypes.DO_BANNER_BULK_DELETE_FAIL;
-    }
-    return DoBannerBulkDeleteFail;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/core/admin/demo/banners/banner-model/banneradd.response.model.ts":
-/*!******************************************************************************!*\
-  !*** ./src/core/admin/demo/banners/banner-model/banneradd.response.model.ts ***!
-  \******************************************************************************/
-/*! exports provided: BanneraddResponseModel */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BanneraddResponseModel", function() { return BanneraddResponseModel; });
-/*
- * SpurtCommerce
- * http://www.spurtcommerce.com
- *
- * Copyright (c) 2022 PICCOSOFT
- * Author piccosoft <support@spurtcommerce.com>
- * Licensed under the MIT license.
- */
-var BanneraddResponseModel = /** @class */ (function () {
-    function BanneraddResponseModel(banneraddResponse) {
-        this.bannerId = banneraddResponse.bannerId || 0;
-        this.position = banneraddResponse.position || 0;
-        this.content = banneraddResponse.content || '';
-        this.image = banneraddResponse.image || '';
-        this.imagePath = banneraddResponse.imagePath || '';
-        this.link = banneraddResponse.link || '';
-        this.title = banneraddResponse.title || '';
-        this.createdDate = banneraddResponse.createdDate || '';
-        this.active = banneraddResponse.isActive;
-    }
-    return BanneraddResponseModel;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/core/admin/demo/banners/banner-model/bannerlist.response.model.ts":
-/*!*******************************************************************************!*\
-  !*** ./src/core/admin/demo/banners/banner-model/bannerlist.response.model.ts ***!
-  \*******************************************************************************/
-/*! exports provided: BannerlistResponseModel */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BannerlistResponseModel", function() { return BannerlistResponseModel; });
-/*
- * SpurtCommerce
- * http://www.spurtcommerce.com
- *
- * Copyright (c) 2022 PICCOSOFT
- * Author piccosoft <support@spurtcommerce.com>
- * Licensed under the MIT license.
- */
-var BannerlistResponseModel = /** @class */ (function () {
-    function BannerlistResponseModel(bannerlistResponse) {
-        this.bannerId = bannerlistResponse.bannerId || 0;
-        this.categoryId = bannerlistResponse.categoryId || 0;
-        this.categoryChildId = bannerlistResponse.categoryChildId || 0;
-        this.position = bannerlistResponse.position || 0;
-        this.content = bannerlistResponse.content || '';
-        this.image = bannerlistResponse.image || '';
-        this.imagePath = bannerlistResponse.imagePath || '';
-        this.link = bannerlistResponse.link || '';
-        this.title = bannerlistResponse.title || '';
-        this.active = bannerlistResponse.isActive;
-    }
-    return BannerlistResponseModel;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/core/admin/demo/banners/banner-reducer/banner.reducer.ts":
-/*!**********************************************************************!*\
-  !*** ./src/core/admin/demo/banners/banner-reducer/banner.reducer.ts ***!
-  \**********************************************************************/
-/*! exports provided: initialState, reducer, getbanneraddloaded, getbanneraddfailed, getbanneraddloading, getbannerupdateloading, getbannerupdateloaded, getbannerupdatefailed, getbannerdeleteloading, getbannerdeleteloaded, getbannerdeletefailed, getbannerpagination, getbannercountloading, getbannercountloaded, getbannercountfailed, getbannerlistloaded, getbannerlistfailed, getbannerlistloading, getBannerlist, getAddBanner, getaddBanner, getUpdatebanner, getdeletebanner, getbannerListCount, getbannerListCountLoaded, getbannerListCountFailed, getbannerListCountLoading, getbannerListActive, getbannerListActiveLoaded, getbannerListACtiveFailed, getbannerListActiveLoading, getbannerListInActive, getbannerListInActiveLoaded, getbannerListInACtiveFailed, getbannerListInActiveLoading */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbanneraddloaded", function() { return getbanneraddloaded; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbanneraddfailed", function() { return getbanneraddfailed; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbanneraddloading", function() { return getbanneraddloading; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerupdateloading", function() { return getbannerupdateloading; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerupdateloaded", function() { return getbannerupdateloaded; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerupdatefailed", function() { return getbannerupdatefailed; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerdeleteloading", function() { return getbannerdeleteloading; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerdeleteloaded", function() { return getbannerdeleteloaded; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerdeletefailed", function() { return getbannerdeletefailed; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerpagination", function() { return getbannerpagination; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannercountloading", function() { return getbannercountloading; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannercountloaded", function() { return getbannercountloaded; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannercountfailed", function() { return getbannercountfailed; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerlistloaded", function() { return getbannerlistloaded; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerlistfailed", function() { return getbannerlistfailed; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerlistloading", function() { return getbannerlistloading; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBannerlist", function() { return getBannerlist; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAddBanner", function() { return getAddBanner; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getaddBanner", function() { return getaddBanner; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUpdatebanner", function() { return getUpdatebanner; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getdeletebanner", function() { return getdeletebanner; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListCount", function() { return getbannerListCount; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListCountLoaded", function() { return getbannerListCountLoaded; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListCountFailed", function() { return getbannerListCountFailed; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListCountLoading", function() { return getbannerListCountLoading; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListActive", function() { return getbannerListActive; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListActiveLoaded", function() { return getbannerListActiveLoaded; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListACtiveFailed", function() { return getbannerListACtiveFailed; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListActiveLoading", function() { return getbannerListActiveLoading; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListInActive", function() { return getbannerListInActive; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListInActiveLoaded", function() { return getbannerListInActiveLoaded; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListInACtiveFailed", function() { return getbannerListInACtiveFailed; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getbannerListInActiveLoading", function() { return getbannerListInActiveLoading; });
-/* harmony import */ var _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../banner-action/banner.action */ "./src/core/admin/demo/banners/banner-action/banner.action.ts");
-/* harmony import */ var _banner_store_banner_state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../banner-store/banner.state */ "./src/core/admin/demo/banners/banner-store/banner.state.ts");
-/* harmony import */ var _banner_model_bannerlist_response_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../banner-model/bannerlist.response.model */ "./src/core/admin/demo/banners/banner-model/bannerlist.response.model.ts");
-/* harmony import */ var _banner_model_banneradd_response_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../banner-model/banneradd.response.model */ "./src/core/admin/demo/banners/banner-model/banneradd.response.model.ts");
-/*
- * SpurtCommerce
- * http://www.spurtcommerce.com
- *
- * Copyright (c) 2022 PICCOSOFT
- * Author piccosoft <support@spurtcommerce.com>
- * Licensed under the MIT license.
- */
-
-
-
-
-var initialState = new _banner_store_banner_state__WEBPACK_IMPORTED_MODULE_1__["BannerRecordState"]();
-function reducer(state, _a) {
-    if (state === void 0) { state = initialState; }
-    var type = _a.type, payload = _a.payload;
-    if (!type) {
-        return state;
-    }
-    switch (type) {
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST: {
-            return Object.assign({}, state, {
-                bannerListCountLoaded: true,
-                bannerListCountFailed: false,
-                bannerListCountLoading: false
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_COUNT: {
-            return Object.assign({}, state, {
-                bannerListCountLoaded: true,
-                bannerListCountFailed: false,
-                bannerListCountLoading: false
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_SUCCESS_COUNT: {
-            return Object.assign({}, state, {
-                bannerListCount: payload,
-                bannerListCountLoaded: true,
-                bannerListCountFailed: false,
-                bannerListCountLoading: false
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_FAIL_COUNT: {
-            return Object.assign({}, state, {
-                bannerListCountLoaded: true,
-                bannerListCountFailed: false,
-                bannerListCountLoading: false
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_ACTIVE: {
-            return Object.assign({}, state, {
-                bannerListActiveLoaded: true,
-                bannerListACtiveFailed: false,
-                bannerListActiveLoading: false
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_SUCCESS_ACTIVE: {
-            return Object.assign({}, state, {
-                bannerListActive: payload,
-                bannerListActiveLoaded: true,
-                bannerListACtiveFailed: false,
-                bannerListActiveLoading: false
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_FAIL_ACTIVE: {
-            return Object.assign({}, state, {
-                bannerListInActiveLoaded: true,
-                bannerListAInCtiveFailed: false,
-                bannerListInActiveLoading: false
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_IN_ACTIVE: {
-            return Object.assign({}, state, {
-                bannerListInActiveLoaded: true,
-                bannerListInACtiveFailed: false,
-                bannerListInActiveLoading: false
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_SUCCESS_IN_ACTIVE: {
-            return Object.assign({}, state, {
-                bannerListInActive: payload,
-                bannerListInActiveLoaded: true,
-                bannerListInACtiveFailed: false,
-                bannerListInActiveLoading: false
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_FAIL_IN_ACTIVE: {
-            return Object.assign({}, state, {
-                bannerListActiveLoaded: true,
-                bannerListACtiveFailed: false,
-                bannerListActiveLoading: false
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_PAGINATION_ACTION: {
-            return Object.assign({}, state, {
-                bannerCountLoading: true,
-                bannerCountLoaded: false,
-                bannerCountFailed: false
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_ADD_BANNER_ACTION: {
-            return Object.assign({}, state, {
-                bannerAddLoaded: true,
-                bannerAddFailed: false,
-                bannerAddLoading: false
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_UPDATE_BANNER_ACTION: {
-            return Object.assign({}, state, {
-                bannerUpdateLoading: true,
-                bannerUpdateLoaded: false,
-                bannerUpdateFailed: false
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_DELETE_BANNER_ACTION: {
-            return Object.assign({}, state, {
-                bannerDeleteLoading: true,
-                bannerDeleteLoaded: false,
-                bannerDeleteFailed: false
-            });
-        }
-        // # Success functions
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_SUCCESS: {
-            var bannerListModel = payload.data.map(function (_bannerlistModel) {
-                var tempbannerListModel = new _banner_model_bannerlist_response_model__WEBPACK_IMPORTED_MODULE_2__["BannerlistResponseModel"](_bannerlistModel);
-                return tempbannerListModel;
-            });
-            return Object.assign({}, state, {
-                bannerListLoaded: true,
-                bannerListFailed: false,
-                bannerListLoading: false,
-                bannerList: bannerListModel
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_ADD_BANNER_SUCCESS: {
-            var addBanner = new _banner_model_banneradd_response_model__WEBPACK_IMPORTED_MODULE_3__["BanneraddResponseModel"](payload.data);
-            return Object.assign({}, state, {
-                bannerAddLoaded: true,
-                bannerAddFailed: false,
-                bannerAddLoading: false,
-                newBanner: payload,
-                addBanner: addBanner
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_UPDATE_BANNER_SUCCESS: {
-            return Object.assign({}, state, {
-                bannerUpdateLoaded: true,
-                bannerUpdateFailed: false,
-                bannerUpdateLoading: false,
-                updateBanner: payload
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_DELETE_BANNER_SUCCESS: {
-            return Object.assign({}, state, {
-                bannerDeleteLoaded: true,
-                bannerDeleteFailed: false,
-                bannerDeleteLoading: false,
-                deleteBanner: payload
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_PAGINATION_SUCCESS: {
-            return Object.assign({}, state, {
-                bannerCountLoaded: true,
-                bannerCountFailed: false,
-                bannerCountLoading: false,
-                bannerPagination: payload.bannercount.data
-            });
-        }
-        // failure functions
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_ADD_BANNER_FAIL: {
-            return Object.assign({}, state, {
-                bannerAddLoaded: false,
-                bannerAddFailed: true,
-                bannerAddLoading: false,
-                newBanner: payload
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_UPDATE_BANNER_FAIL: {
-            return Object.assign({}, state, {
-                bannerUpdateLoaded: false,
-                bannerUpdateFailed: true,
-                bannerUpdateLoading: false,
-                updateBanner: payload
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_LIST_FAIL: {
-            return Object.assign({}, state, {
-                bannerListLoaded: false,
-                bannerListFailed: true,
-                bannerListLoading: false
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_PAGINATION_FAIL: {
-            return Object.assign({}, initialState, {
-                changePSW: payload,
-                failed: true
-            });
-        }
-        // Bulk Delete
-        // Banner delete action
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_BULK_DELETE: {
-            return Object.assign({}, state, {});
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_BULK_DELETE_SUCCESS: {
-            return Object.assign({}, state, {
-                deleteBanner: payload
-            });
-        }
-        case _banner_action_banner_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].DO_BANNER_BULK_DELETE_FAIL: {
-            return Object.assign({}, state, {
-                deleteBanner: payload
-            });
-        }
-        default: {
-            return state;
-        }
-    }
-}
-var getbanneraddloaded = function (state) { return state.bannerAddLoaded; };
-var getbanneraddfailed = function (state) { return state.bannerAddFailed; };
-var getbanneraddloading = function (state) {
-    return state.bannerAddLoading;
-};
-var getbannerupdateloading = function (state) {
-    return state.bannerUpdateLoading;
-};
-var getbannerupdateloaded = function (state) {
-    return state.bannerUpdateLoaded;
-};
-var getbannerupdatefailed = function (state) {
-    return state.bannerUpdateFailed;
-};
-var getbannerdeleteloading = function (state) {
-    return state.bannerDeleteLoading;
-};
-var getbannerdeleteloaded = function (state) {
-    return state.bannerDeleteLoaded;
-};
-var getbannerdeletefailed = function (state) {
-    return state.bannerDeleteFailed;
-};
-var getbannerpagination = function (state) {
-    return state.bannerPagination;
-};
-var getbannercountloading = function (state) {
-    return state.bannerCountLoading;
-};
-var getbannercountloaded = function (state) {
-    return state.bannerCountLoaded;
-};
-var getbannercountfailed = function (state) {
-    return state.bannerCountFailed;
-};
-var getbannerlistloaded = function (state) {
-    return state.bannerListLoaded;
-};
-var getbannerlistfailed = function (state) {
-    return state.bannerListFailed;
-};
-var getbannerlistloading = function (state) {
-    return state.bannerListLoading;
-};
-var getBannerlist = function (state) { return state.bannerList; };
-var getAddBanner = function (state) { return state.newBanner; };
-var getaddBanner = function (state) { return state.addBanner; };
-var getUpdatebanner = function (state) { return state.updateBanner; };
-var getdeletebanner = function (state) { return state.deleteBanner; };
-var getbannerListCount = function (state) { return state.bannerListCount; };
-var getbannerListCountLoaded = function (state) {
-    return state.bannerListCountLoaded;
-};
-var getbannerListCountFailed = function (state) {
-    return state.bannerListCountFailed;
-};
-var getbannerListCountLoading = function (state) {
-    return state.bannerListCountLoading;
-};
-var getbannerListActive = function (state) {
-    return state.bannerListActive;
-};
-var getbannerListActiveLoaded = function (state) {
-    return state.bannerListActiveLoaded;
-};
-var getbannerListACtiveFailed = function (state) {
-    return state.bannerListACtiveFailed;
-};
-var getbannerListActiveLoading = function (state) {
-    return state.bannerListActiveLoading;
-};
-var getbannerListInActive = function (state) {
-    return state.bannerListInActive;
-};
-var getbannerListInActiveLoaded = function (state) {
-    return state.bannerListInActiveLoaded;
-};
-var getbannerListInACtiveFailed = function (state) {
-    return state.bannerListInACtiveFailed;
-};
-var getbannerListInActiveLoading = function (state) {
-    return state.bannerListInActiveLoading;
-};
-
-
-/***/ }),
-
-/***/ "./src/core/admin/demo/banners/banner-store/banner.state.ts":
-/*!******************************************************************!*\
-  !*** ./src/core/admin/demo/banners/banner-store/banner.state.ts ***!
-  \******************************************************************/
-/*! exports provided: BannerRecordState */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BannerRecordState", function() { return BannerRecordState; });
-/* harmony import */ var immutable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! immutable */ "./node_modules/immutable/dist/immutable.js");
-/* harmony import */ var immutable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(immutable__WEBPACK_IMPORTED_MODULE_0__);
-/*
- * SpurtCommerce
- * http://www.spurtcommerce.com
- *
- * Copyright (c) 2022 PICCOSOFT
- * Author piccosoft <support@spurtcommerce.com>
- * Licensed under the MIT license.
- */
-
-var BannerRecordState = Object(immutable__WEBPACK_IMPORTED_MODULE_0__["Record"])({
-    bannerList: {},
-    bannerPagination: {},
-    newBanner: {},
-    updateBanner: {},
-    deleteBanner: {},
-    addBanner: {},
-    bannerListCount: {},
-    bannerListLoaded: false,
-    bannerListFailed: false,
-    bannerListLoading: false,
-    bannerAddLoaded: false,
-    bannerAddFailed: false,
-    bannerAddLoading: false,
-    bannerUpdateLoading: false,
-    bannerUpdateLoaded: false,
-    bannerUpdateFailed: false,
-    bannerDeleteLoading: false,
-    bannerDeleteLoaded: false,
-    bannerDeleteFailed: false,
-    bannerCountLoading: false,
-    bannerCountLoaded: false,
-    bannerCountFailed: false,
-    bannerListCountLoaded: false,
-    bannerListCountFailed: false,
-    bannerListCountLoading: false,
-    bannerListActive: {},
-    bannerListActiveLoaded: false,
-    bannerListACtiveFailed: false,
-    bannerListActiveLoading: false,
-    bannerListInActive: {},
-    bannerListInActiveLoaded: false,
-    bannerListInACtiveFailed: false,
-    bannerListInActiveLoading: false
 });
 
 
@@ -16528,26 +17334,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _admin_settings_role_role_reducer_role_reducer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./admin/settings/role/role-reducer/role.reducer */ "./src/core/admin/settings/role/role-reducer/role.reducer.ts");
 /* harmony import */ var _admin_cms_pages_pages_reducer_pages_reducer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./admin/cms/pages/pages-reducer/pages.reducer */ "./src/core/admin/cms/pages/pages-reducer/pages.reducer.ts");
 /* harmony import */ var _admin_settings_user_user_reducer_user_reducer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./admin/settings/user/user-reducer/user.reducer */ "./src/core/admin/settings/user/user-reducer/user.reducer.ts");
-/* harmony import */ var _admin_demo_banners_banner_reducer_banner_reducer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./admin/demo/banners/banner-reducer/banner.reducer */ "./src/core/admin/demo/banners/banner-reducer/banner.reducer.ts");
-/* harmony import */ var _admin_catalog_brand_reducer_brand_reducer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./admin/catalog/brand/reducer/brand.reducer */ "./src/core/admin/catalog/brand/reducer/brand.reducer.ts");
-/* harmony import */ var _admin_settings_localizations_emailtemplate_emailtemp_reducer_emailtemp_reducer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./admin/settings/localizations/emailtemplate/emailtemp-reducer/emailtemp.reducer */ "./src/core/admin/settings/localizations/emailtemplate/emailtemp-reducer/emailtemp.reducer.ts");
-/* harmony import */ var _admin_settings_localizations_stockStatus_stock_reducer_stock_reducer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./admin/settings/localizations/stockStatus/stock-reducer/stock.reducer */ "./src/core/admin/settings/localizations/stockStatus/stock-reducer/stock.reducer.ts");
-/* harmony import */ var _admin_sales_orders_orders_reducer_orders_reducer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./admin/sales/orders/orders-reducer/orders.reducer */ "./src/core/admin/sales/orders/orders-reducer/orders.reducer.ts");
-/* harmony import */ var _admin_profile_editprofile_reducer_editprofile_reducer__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./admin/profile/editprofile/reducer/editprofile.reducer */ "./src/core/admin/profile/editprofile/reducer/editprofile.reducer.ts");
-/* harmony import */ var _admin_profile_changepassword_changepassword_reducer_changepassword_reducer__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./admin/profile/changepassword/changepassword-reducer/changepassword.reducer */ "./src/core/admin/profile/changepassword/changepassword-reducer/changepassword.reducer.ts");
-/* harmony import */ var _admin_catalog_category_reducer_categories_reducer__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./admin/catalog/category/reducer/categories.reducer */ "./src/core/admin/catalog/category/reducer/categories.reducer.ts");
-/* harmony import */ var _admin_catalog_media_reducer_media_reducer__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./admin/catalog/media/reducer/media.reducer */ "./src/core/admin/catalog/media/reducer/media.reducer.ts");
-/* harmony import */ var _admin_dashboard_reducer_dashboard_reducer__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./admin/dashboard/reducer/dashboard.reducer */ "./src/core/admin/dashboard/reducer/dashboard.reducer.ts");
-/* harmony import */ var _admin_settings_generalsetting_generalsetting_reducer_generalsetting_reducer__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./admin/settings/generalsetting/generalsetting-reducer/generalsetting.reducer */ "./src/core/admin/settings/generalsetting/generalsetting-reducer/generalsetting.reducer.ts");
-/* harmony import */ var _admin_settings_siteSettings_social_social_reducer_social_reducer__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./admin/settings/siteSettings/social/social-reducer/social.reducer */ "./src/core/admin/settings/siteSettings/social/social-reducer/social.reducer.ts");
-/* harmony import */ var _admin_settings_siteSettings_seo_seo_reducer_seo_reducer__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./admin/settings/siteSettings/seo/seo-reducer/seo-reducer */ "./src/core/admin/settings/siteSettings/seo/seo-reducer/seo-reducer.ts");
-/* harmony import */ var _admin_catalog_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./admin/catalog/layout/reducer/layout.reducer */ "./src/core/admin/catalog/layout/reducer/layout.reducer.ts");
-/* harmony import */ var _admin_Customers_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./admin/Customers/layout/reducer/layout.reducer */ "./src/core/admin/Customers/layout/reducer/layout.reducer.ts");
-/* harmony import */ var _admin_sales_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./admin/sales/layout/reducer/layout.reducer */ "./src/core/admin/sales/layout/reducer/layout.reducer.ts");
-/* harmony import */ var _admin_settings_personalize_product_product_reducer_product_reducer__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./admin/settings/personalize/product/product-reducer/product-reducer */ "./src/core/admin/settings/personalize/product/product-reducer/product-reducer.ts");
-/* harmony import */ var _admin_settings_personalize_order_order_reducer_order_reducer__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./admin/settings/personalize/order/order-reducer/order-reducer */ "./src/core/admin/settings/personalize/order/order-reducer/order-reducer.ts");
-/* harmony import */ var _admin_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./admin/layout/reducer/layout.reducer */ "./src/core/admin/layout/reducer/layout.reducer.ts");
-/* harmony import */ var _admin_Customers_customers_group_customers_group_reducer_customers_group_reducer__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./admin/Customers/customers-group/customers-group-reducer/customers-group.reducer */ "./src/core/admin/Customers/customers-group/customers-group-reducer/customers-group.reducer.ts");
+/* harmony import */ var _admin_adv_banners_banner_reducer_banner_reducer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./admin/adv/banners/banner-reducer/banner.reducer */ "./src/core/admin/adv/banners/banner-reducer/banner.reducer.ts");
+/* harmony import */ var _admin_adv_coupens_coupen_reducer_coupen_reducer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./admin/adv/coupens/coupen-reducer/coupen.reducer */ "./src/core/admin/adv/coupens/coupen-reducer/coupen.reducer.ts");
+/* harmony import */ var _admin_catalog_brand_reducer_brand_reducer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./admin/catalog/brand/reducer/brand.reducer */ "./src/core/admin/catalog/brand/reducer/brand.reducer.ts");
+/* harmony import */ var _admin_settings_localizations_emailtemplate_emailtemp_reducer_emailtemp_reducer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./admin/settings/localizations/emailtemplate/emailtemp-reducer/emailtemp.reducer */ "./src/core/admin/settings/localizations/emailtemplate/emailtemp-reducer/emailtemp.reducer.ts");
+/* harmony import */ var _admin_settings_localizations_stockStatus_stock_reducer_stock_reducer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./admin/settings/localizations/stockStatus/stock-reducer/stock.reducer */ "./src/core/admin/settings/localizations/stockStatus/stock-reducer/stock.reducer.ts");
+/* harmony import */ var _admin_sales_orders_orders_reducer_orders_reducer__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./admin/sales/orders/orders-reducer/orders.reducer */ "./src/core/admin/sales/orders/orders-reducer/orders.reducer.ts");
+/* harmony import */ var _admin_profile_editprofile_reducer_editprofile_reducer__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./admin/profile/editprofile/reducer/editprofile.reducer */ "./src/core/admin/profile/editprofile/reducer/editprofile.reducer.ts");
+/* harmony import */ var _admin_profile_changepassword_changepassword_reducer_changepassword_reducer__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./admin/profile/changepassword/changepassword-reducer/changepassword.reducer */ "./src/core/admin/profile/changepassword/changepassword-reducer/changepassword.reducer.ts");
+/* harmony import */ var _admin_catalog_category_reducer_categories_reducer__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./admin/catalog/category/reducer/categories.reducer */ "./src/core/admin/catalog/category/reducer/categories.reducer.ts");
+/* harmony import */ var _admin_catalog_media_reducer_media_reducer__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./admin/catalog/media/reducer/media.reducer */ "./src/core/admin/catalog/media/reducer/media.reducer.ts");
+/* harmony import */ var _admin_dashboard_reducer_dashboard_reducer__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./admin/dashboard/reducer/dashboard.reducer */ "./src/core/admin/dashboard/reducer/dashboard.reducer.ts");
+/* harmony import */ var _admin_settings_generalsetting_generalsetting_reducer_generalsetting_reducer__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./admin/settings/generalsetting/generalsetting-reducer/generalsetting.reducer */ "./src/core/admin/settings/generalsetting/generalsetting-reducer/generalsetting.reducer.ts");
+/* harmony import */ var _admin_settings_siteSettings_social_social_reducer_social_reducer__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./admin/settings/siteSettings/social/social-reducer/social.reducer */ "./src/core/admin/settings/siteSettings/social/social-reducer/social.reducer.ts");
+/* harmony import */ var _admin_settings_siteSettings_seo_seo_reducer_seo_reducer__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./admin/settings/siteSettings/seo/seo-reducer/seo-reducer */ "./src/core/admin/settings/siteSettings/seo/seo-reducer/seo-reducer.ts");
+/* harmony import */ var _admin_catalog_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./admin/catalog/layout/reducer/layout.reducer */ "./src/core/admin/catalog/layout/reducer/layout.reducer.ts");
+/* harmony import */ var _admin_Customers_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./admin/Customers/layout/reducer/layout.reducer */ "./src/core/admin/Customers/layout/reducer/layout.reducer.ts");
+/* harmony import */ var _admin_sales_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./admin/sales/layout/reducer/layout.reducer */ "./src/core/admin/sales/layout/reducer/layout.reducer.ts");
+/* harmony import */ var _admin_settings_personalize_product_product_reducer_product_reducer__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./admin/settings/personalize/product/product-reducer/product-reducer */ "./src/core/admin/settings/personalize/product/product-reducer/product-reducer.ts");
+/* harmony import */ var _admin_settings_personalize_order_order_reducer_order_reducer__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./admin/settings/personalize/order/order-reducer/order-reducer */ "./src/core/admin/settings/personalize/order/order-reducer/order-reducer.ts");
+/* harmony import */ var _admin_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./admin/layout/reducer/layout.reducer */ "./src/core/admin/layout/reducer/layout.reducer.ts");
+/* harmony import */ var _admin_Customers_customers_group_customers_group_reducer_customers_group_reducer__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./admin/Customers/customers-group/customers-group-reducer/customers-group.reducer */ "./src/core/admin/Customers/customers-group/customers-group-reducer/customers-group.reducer.ts");
 /*
  * spurtcommerce
  * http://www.spurtcommerce.com
@@ -16556,6 +17363,7 @@ __webpack_require__.r(__webpack_exports__);
  * Author piccosoft ltd <support@piccosoft.com>
  * Licensed under the MIT license.
  */
+
 
 
 
@@ -16603,10 +17411,10 @@ __webpack_require__.r(__webpack_exports__);
 var reducers = {
     auth: _admin_auth_reducer_auth_reducer__WEBPACK_IMPORTED_MODULE_1__["reducer"],
     common: _admin_logout_reducer_common_reducer__WEBPACK_IMPORTED_MODULE_2__["reducer"],
-    media: _admin_catalog_media_reducer_media_reducer__WEBPACK_IMPORTED_MODULE_19__["reducer"],
-    categories: _admin_catalog_category_reducer_categories_reducer__WEBPACK_IMPORTED_MODULE_18__["reducer"],
+    media: _admin_catalog_media_reducer_media_reducer__WEBPACK_IMPORTED_MODULE_20__["reducer"],
+    categories: _admin_catalog_category_reducer_categories_reducer__WEBPACK_IMPORTED_MODULE_19__["reducer"],
     product: _admin_catalog_product_product_reducer_product_reducer__WEBPACK_IMPORTED_MODULE_3__["reducer"],
-    changepassword: _admin_profile_changepassword_changepassword_reducer_changepassword_reducer__WEBPACK_IMPORTED_MODULE_17__["reducer"],
+    changepassword: _admin_profile_changepassword_changepassword_reducer_changepassword_reducer__WEBPACK_IMPORTED_MODULE_18__["reducer"],
     customer: _admin_Customers_customers_customer_reducer_customer_reducer__WEBPACK_IMPORTED_MODULE_5__["reducer"],
     orderStatus: _admin_settings_localizations_orderstatus_orderstatus_reducer_orderstatus_reducer__WEBPACK_IMPORTED_MODULE_4__["reducer"],
     country: _admin_settings_localizations_country_country_reducer_country_reducer__WEBPACK_IMPORTED_MODULE_6__["reducer"],
@@ -16614,23 +17422,24 @@ var reducers = {
     role: _admin_settings_role_role_reducer_role_reducer__WEBPACK_IMPORTED_MODULE_8__["reducer"],
     pages: _admin_cms_pages_pages_reducer_pages_reducer__WEBPACK_IMPORTED_MODULE_9__["reducer"],
     user: _admin_settings_user_user_reducer_user_reducer__WEBPACK_IMPORTED_MODULE_10__["reducer"],
-    banner: _admin_demo_banners_banner_reducer_banner_reducer__WEBPACK_IMPORTED_MODULE_11__["reducer"],
-    brand: _admin_catalog_brand_reducer_brand_reducer__WEBPACK_IMPORTED_MODULE_12__["reducer"],
-    emailtemp: _admin_settings_localizations_emailtemplate_emailtemp_reducer_emailtemp_reducer__WEBPACK_IMPORTED_MODULE_13__["reducer"],
-    stockstatus: _admin_settings_localizations_stockStatus_stock_reducer_stock_reducer__WEBPACK_IMPORTED_MODULE_14__["reducer"],
-    salesorder: _admin_sales_orders_orders_reducer_orders_reducer__WEBPACK_IMPORTED_MODULE_15__["reducer"],
-    editprofile: _admin_profile_editprofile_reducer_editprofile_reducer__WEBPACK_IMPORTED_MODULE_16__["reducer"],
-    dashboard: _admin_dashboard_reducer_dashboard_reducer__WEBPACK_IMPORTED_MODULE_20__["reducer"],
-    generalsetting: _admin_settings_generalsetting_generalsetting_reducer_generalsetting_reducer__WEBPACK_IMPORTED_MODULE_21__["reducer"],
-    social: _admin_settings_siteSettings_social_social_reducer_social_reducer__WEBPACK_IMPORTED_MODULE_22__["reducer"],
-    seosetting: _admin_settings_siteSettings_seo_seo_reducer_seo_reducer__WEBPACK_IMPORTED_MODULE_23__["reducer"],
-    catalogLayout: _admin_catalog_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_24__["reducer"],
-    customerLayout: _admin_Customers_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_25__["reducer"],
-    salesLayout: _admin_sales_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_26__["reducer"],
-    personalizeProduct: _admin_settings_personalize_product_product_reducer_product_reducer__WEBPACK_IMPORTED_MODULE_27__["reducer"],
-    personalizeOrder: _admin_settings_personalize_order_order_reducer_order_reducer__WEBPACK_IMPORTED_MODULE_28__["reducer"],
-    layout: _admin_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_29__["reducer"],
-    customersGroup: _admin_Customers_customers_group_customers_group_reducer_customers_group_reducer__WEBPACK_IMPORTED_MODULE_30__["reducer"],
+    banner: _admin_adv_banners_banner_reducer_banner_reducer__WEBPACK_IMPORTED_MODULE_11__["reducer"],
+    coupen: _admin_adv_coupens_coupen_reducer_coupen_reducer__WEBPACK_IMPORTED_MODULE_12__["reducer"],
+    brand: _admin_catalog_brand_reducer_brand_reducer__WEBPACK_IMPORTED_MODULE_13__["reducer"],
+    emailtemp: _admin_settings_localizations_emailtemplate_emailtemp_reducer_emailtemp_reducer__WEBPACK_IMPORTED_MODULE_14__["reducer"],
+    stockstatus: _admin_settings_localizations_stockStatus_stock_reducer_stock_reducer__WEBPACK_IMPORTED_MODULE_15__["reducer"],
+    salesorder: _admin_sales_orders_orders_reducer_orders_reducer__WEBPACK_IMPORTED_MODULE_16__["reducer"],
+    editprofile: _admin_profile_editprofile_reducer_editprofile_reducer__WEBPACK_IMPORTED_MODULE_17__["reducer"],
+    dashboard: _admin_dashboard_reducer_dashboard_reducer__WEBPACK_IMPORTED_MODULE_21__["reducer"],
+    generalsetting: _admin_settings_generalsetting_generalsetting_reducer_generalsetting_reducer__WEBPACK_IMPORTED_MODULE_22__["reducer"],
+    social: _admin_settings_siteSettings_social_social_reducer_social_reducer__WEBPACK_IMPORTED_MODULE_23__["reducer"],
+    seosetting: _admin_settings_siteSettings_seo_seo_reducer_seo_reducer__WEBPACK_IMPORTED_MODULE_24__["reducer"],
+    catalogLayout: _admin_catalog_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_25__["reducer"],
+    customerLayout: _admin_Customers_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_26__["reducer"],
+    salesLayout: _admin_sales_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_27__["reducer"],
+    personalizeProduct: _admin_settings_personalize_product_product_reducer_product_reducer__WEBPACK_IMPORTED_MODULE_28__["reducer"],
+    personalizeOrder: _admin_settings_personalize_order_order_reducer_order_reducer__WEBPACK_IMPORTED_MODULE_29__["reducer"],
+    layout: _admin_layout_reducer_layout_reducer__WEBPACK_IMPORTED_MODULE_30__["reducer"],
+    customersGroup: _admin_Customers_customers_group_customers_group_reducer_customers_group_reducer__WEBPACK_IMPORTED_MODULE_31__["reducer"],
 };
 function logger(reducer) {
     return function (state, action) {
@@ -16835,8 +17644,8 @@ var appRoutes = [
                 canActivate: [_core_admin_providers_auth_guard__WEBPACK_IMPORTED_MODULE_4__["AuthGuard"]]
             },
             {
-                path: 'demo',
-                loadChildren: './demo/demo.module#DEMOModule',
+                path: 'adv',
+                loadChildren: './adv/adv.module#ADVModule',
                 canActivate: [_core_admin_providers_auth_guard__WEBPACK_IMPORTED_MODULE_4__["AuthGuard"]]
             },
             {
@@ -17182,7 +17991,7 @@ module.exports = "<!-- <div class=\"auth-wrapper\">\n    <div class=\"logo-left\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".marg {\n  width: 100%;\n  margin: auto;\n  position: fixed;\n}\n\n.login {\n  margin: auto;\n  width: 85%;\n  background: url('mask.svg') right no-repeat #eaeaea;\n  height: 530px;\n  -o-object-fit: contain;\n  object-fit: contain;\n  margin-top: 6%;\n  background-position: right;\n  border-radius: 10px;\n}\n\n.login .spurt-img {\n  margin: auto;\n  display: block;\n  padding-top: 16%;\n  width: 80%;\n}\n\n.login .txt {\n  font-family: \"Poppins\", sans-serif;\n  font-size: 18px;\n  font-weight: normal;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #a7a7a7;\n  text-align: left;\n  padding: 6% 15%;\n}\n\n.login .form-control {\n  font-family: Poppins;\n  font-size: 14px;\n  font-weight: normal;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: 0.53px;\n  color: #000000 !important;\n  height: 53px;\n  border-radius: 2px;\n  border: solid 1px #d6d6d6;\n  background-color: #ffffff;\n  margin-bottom: 8%;\n}\n\n.login .card-align {\n  margin-top: 23%;\n}\n\n.login .cards {\n  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);\n  background-color: #ffffff;\n  width: 70%;\n  margin: auto;\n  padding: 3% 5%;\n}\n\n.login .cards .admin {\n  font-family: \"Poppins\", sans-serif;\n  font-size: 18px;\n  font-weight: 600;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #264151;\n  margin-bottom: 7%;\n}\n\n.login .cards .btn-log {\n  height: 53px;\n  background-color: #264151;\n  font-family: Poppins;\n  font-size: 18px;\n  font-weight: 500;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #ffffff;\n  width: 100%;\n  margin: 5% 0% 3%;\n}\n\n.login .cards .forgot {\n  font-family: Roboto;\n  font-size: 14px;\n  font-weight: normal;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #514c4c;\n  text-decoration: underline;\n  text-align: right;\n  margin: 3% 0% 5%;\n}\n\n.ttt {\n  font-family: Roboto;\n  font-size: 14px;\n  font-weight: 500;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: 0.4px;\n  color: #9c9c9c;\n  text-align: center;\n  margin-left: 40%;\n}\n\n.placeholder-fix:focus::-webkit-input-placeholder {\n  color: transparent;\n}\n\n.placeholder-fix:focus::-moz-placeholder {\n  color: transparent;\n}\n\n.placeholder-fix:-moz-placeholder {\n  color: transparent;\n}\n\n@media (max-width: 1024px) {\n  .login {\n    margin-top: 6%;\n    margin-left: 5%;\n    width: 91%;\n  }\n}\n\n@media (max-width: 768px) {\n  .login {\n    margin-top: 6%;\n    width: 85%;\n  }\n  .card-align {\n    margin-top: 30% !important;\n  }\n  .spurt-img {\n    margin: auto;\n    display: block;\n    padding-top: 23% !important;\n    width: 70%;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvdGVzdDAxL21hcmtldHBsYWNlL2FkbWluL3NyYy90aGVtZS9kZWZhdWx0L2FkbWluL2xheW91dC9hdXRoL2F1dGguY29tcG9uZW50LnNjc3MiLCJzcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9sYXlvdXQvYXV0aC9hdXRoLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSxlQUFBO0FDQ0o7O0FERUE7RUFDSSxZQUFBO0VBQ0EsVUFBQTtFQUVBLG1EQUFBO0VBQ0EsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBRUEsMEJBQUE7RUFDQSxtQkFBQTtBQ0RKOztBREVJO0VBQ0ksWUFBQTtFQUNBLGNBQUE7RUFDQSxnQkFBQTtFQUNBLFVBQUE7QUNBUjs7QURFSTtFQUNJLGtDQUFBO0VBQ0EsZUFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7RUFDQSxvQkFBQTtFQUNBLG1CQUFBO0VBQ0Esc0JBQUE7RUFDQSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSxlQUFBO0FDQVI7O0FERUk7RUFDSSxvQkFBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0Esb0JBQUE7RUFDQSxtQkFBQTtFQUNBLHNCQUFBO0VBQ0EseUJBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSx5QkFBQTtFQUNBLHlCQUFBO0VBQ0EsaUJBQUE7QUNBUjs7QURFSTtFQUNJLGVBQUE7QUNBUjs7QURFSTtFQUNJLDRDQUFBO0VBQ0EseUJBQUE7RUFDQSxVQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7QUNBUjs7QURDUTtFQUNJLGtDQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxvQkFBQTtFQUNBLG1CQUFBO0VBQ0Esc0JBQUE7RUFDQSxjQUFBO0VBQ0EsaUJBQUE7QUNDWjs7QURDUTtFQUNJLFlBQUE7RUFDQSx5QkFBQTtFQUNBLG9CQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxvQkFBQTtFQUNBLG1CQUFBO0VBQ0Esc0JBQUE7RUFDQSxjQUFBO0VBQ0EsV0FBQTtFQUNBLGdCQUFBO0FDQ1o7O0FEQ1E7RUFDSSxtQkFBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0Esb0JBQUE7RUFDQSxtQkFBQTtFQUNBLHNCQUFBO0VBQ0EsY0FBQTtFQUNBLDBCQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtBQ0NaOztBRElBO0VBQ0ksbUJBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLG9CQUFBO0VBQ0EsbUJBQUE7RUFDQSxxQkFBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0FDREo7O0FESUE7RUFDSSxrQkFBQTtBQ0RKOztBRElBO0VBQ0ksa0JBQUE7QUNESjs7QURJQTtFQUNJLGtCQUFBO0FDREo7O0FESUE7RUFDSTtJQUNJLGNBQUE7SUFDQSxlQUFBO0lBQ0EsVUFBQTtFQ0ROO0FBQ0Y7O0FESUE7RUFDSTtJQUNJLGNBQUE7SUFDQSxVQUFBO0VDRk47RURJRTtJQUNJLDBCQUFBO0VDRk47RURJRTtJQUNJLFlBQUE7SUFDQSxjQUFBO0lBQ0EsMkJBQUE7SUFDQSxVQUFBO0VDRk47QUFDRiIsImZpbGUiOiJzcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9sYXlvdXQvYXV0aC9hdXRoLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hcmcge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIG1hcmdpbjogYXV0bztcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG59XG5cbi5sb2dpbiB7XG4gICAgbWFyZ2luOiBhdXRvO1xuICAgIHdpZHRoOiA4NSU7XG4gICAgLy8gYmFja2dyb3VuZC1jb2xvcjojZWFlYWVhICFpbXBvcnRhbnQ7XG4gICAgYmFja2dyb3VuZDogdXJsKCdhc3NldHMvaW1nL21hc2suc3ZnJykgcmlnaHQgbm8tcmVwZWF0ICNlYWVhZWE7XG4gICAgaGVpZ2h0OiA1MzBweDtcbiAgICAtby1vYmplY3QtZml0OiBjb250YWluO1xuICAgIG9iamVjdC1maXQ6IGNvbnRhaW47XG4gICAgbWFyZ2luLXRvcDogNiU7XG4gICAgLy8gbWFyZ2luLWxlZnQ6IDE1JTtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiByaWdodDtcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICAgIC5zcHVydC1pbWcge1xuICAgICAgICBtYXJnaW46IGF1dG87XG4gICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgICBwYWRkaW5nLXRvcDogMTYlO1xuICAgICAgICB3aWR0aDogODAlO1xuICAgIH1cbiAgICAudHh0IHtcbiAgICAgICAgZm9udC1mYW1pbHk6ICdQb3BwaW5zJywgc2Fucy1zZXJpZjtcbiAgICAgICAgZm9udC1zaXplOiAxOHB4O1xuICAgICAgICBmb250LXdlaWdodDogbm9ybWFsO1xuICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XG4gICAgICAgIGZvbnQtc3RyZXRjaDogbm9ybWFsO1xuICAgICAgICBsaW5lLWhlaWdodDogbm9ybWFsO1xuICAgICAgICBsZXR0ZXItc3BhY2luZzogbm9ybWFsO1xuICAgICAgICBjb2xvcjogI2E3YTdhNztcbiAgICAgICAgdGV4dC1hbGlnbjogbGVmdDtcbiAgICAgICAgcGFkZGluZzogNiUgMTUlO1xuICAgIH1cbiAgICAuZm9ybS1jb250cm9sIHtcbiAgICAgICAgZm9udC1mYW1pbHk6IFBvcHBpbnM7XG4gICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcbiAgICAgICAgZm9udC1zdHlsZTogbm9ybWFsO1xuICAgICAgICBmb250LXN0cmV0Y2g6IG5vcm1hbDtcbiAgICAgICAgbGluZS1oZWlnaHQ6IG5vcm1hbDtcbiAgICAgICAgbGV0dGVyLXNwYWNpbmc6IDAuNTNweDtcbiAgICAgICAgY29sb3I6ICMwMDAwMDAgIWltcG9ydGFudDtcbiAgICAgICAgaGVpZ2h0OiA1M3B4O1xuICAgICAgICBib3JkZXItcmFkaXVzOiAycHg7XG4gICAgICAgIGJvcmRlcjogc29saWQgMXB4ICNkNmQ2ZDY7XG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7XG4gICAgICAgIG1hcmdpbi1ib3R0b206IDglO1xuICAgIH1cbiAgICAuY2FyZC1hbGlnbiB7XG4gICAgICAgIG1hcmdpbi10b3A6IDIzJTtcbiAgICB9XG4gICAgLmNhcmRzIHtcbiAgICAgICAgYm94LXNoYWRvdzogMCAycHggMTBweCAwIHJnYmEoMCwgMCwgMCwgMC4xNSk7XG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7XG4gICAgICAgIHdpZHRoOiA3MCU7XG4gICAgICAgIG1hcmdpbjogYXV0bztcbiAgICAgICAgcGFkZGluZzogMyUgNSU7XG4gICAgICAgIC5hZG1pbiB7XG4gICAgICAgICAgICBmb250LWZhbWlseTogJ1BvcHBpbnMnLCBzYW5zLXNlcmlmO1xuICAgICAgICAgICAgZm9udC1zaXplOiAxOHB4O1xuICAgICAgICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICAgICAgICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgICAgICAgICAgIGZvbnQtc3RyZXRjaDogbm9ybWFsO1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6IG5vcm1hbDtcbiAgICAgICAgICAgIGxldHRlci1zcGFjaW5nOiBub3JtYWw7XG4gICAgICAgICAgICBjb2xvcjogIzI2NDE1MTtcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDclO1xuICAgICAgICB9XG4gICAgICAgIC5idG4tbG9nIHtcbiAgICAgICAgICAgIGhlaWdodDogNTNweDtcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyNjQxNTE7XG4gICAgICAgICAgICBmb250LWZhbWlseTogUG9wcGlucztcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMThweDtcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gICAgICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XG4gICAgICAgICAgICBmb250LXN0cmV0Y2g6IG5vcm1hbDtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiBub3JtYWw7XG4gICAgICAgICAgICBsZXR0ZXItc3BhY2luZzogbm9ybWFsO1xuICAgICAgICAgICAgY29sb3I6ICNmZmZmZmY7XG4gICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgIG1hcmdpbjogNSUgMCUgMyU7XG4gICAgICAgIH1cbiAgICAgICAgLmZvcmdvdCB7XG4gICAgICAgICAgICBmb250LWZhbWlseTogUm9ib3RvO1xuICAgICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICAgICAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcbiAgICAgICAgICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgICAgICAgICAgIGZvbnQtc3RyZXRjaDogbm9ybWFsO1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6IG5vcm1hbDtcbiAgICAgICAgICAgIGxldHRlci1zcGFjaW5nOiBub3JtYWw7XG4gICAgICAgICAgICBjb2xvcjogIzUxNGM0YztcbiAgICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xuICAgICAgICAgICAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gICAgICAgICAgICBtYXJnaW46IDMlIDAlIDUlO1xuICAgICAgICB9XG4gICAgfVxufVxuXG4udHR0IHtcbiAgICBmb250LWZhbWlseTogUm9ib3RvO1xuICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICBmb250LXdlaWdodDogNTAwO1xuICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgICBmb250LXN0cmV0Y2g6IG5vcm1hbDtcbiAgICBsaW5lLWhlaWdodDogbm9ybWFsO1xuICAgIGxldHRlci1zcGFjaW5nOiAwLjRweDtcbiAgICBjb2xvcjogIzljOWM5YztcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgbWFyZ2luLWxlZnQ6IDQwJTtcbn1cblxuLnBsYWNlaG9sZGVyLWZpeDpmb2N1czo6LXdlYmtpdC1pbnB1dC1wbGFjZWhvbGRlciB7XG4gICAgY29sb3I6IHRyYW5zcGFyZW50O1xufVxuXG4ucGxhY2Vob2xkZXItZml4OmZvY3VzOjotbW96LXBsYWNlaG9sZGVyIHtcbiAgICBjb2xvcjogdHJhbnNwYXJlbnQ7XG59XG5cbi5wbGFjZWhvbGRlci1maXg6LW1vei1wbGFjZWhvbGRlciB7XG4gICAgY29sb3I6IHRyYW5zcGFyZW50O1xufVxuXG5AbWVkaWEgKG1heC13aWR0aDogMTAyNHB4KSB7XG4gICAgLmxvZ2luIHtcbiAgICAgICAgbWFyZ2luLXRvcDogNiU7XG4gICAgICAgIG1hcmdpbi1sZWZ0OiA1JTtcbiAgICAgICAgd2lkdGg6IDkxJVxuICAgIH1cbn1cblxuQG1lZGlhIChtYXgtd2lkdGg6IDc2OHB4KSB7XG4gICAgLmxvZ2luIHtcbiAgICAgICAgbWFyZ2luLXRvcDogNiU7XG4gICAgICAgIHdpZHRoOiA4NSVcbiAgICB9XG4gICAgLmNhcmQtYWxpZ24ge1xuICAgICAgICBtYXJnaW4tdG9wOiAzMCUgIWltcG9ydGFudDtcbiAgICB9XG4gICAgLnNwdXJ0LWltZyB7XG4gICAgICAgIG1hcmdpbjogYXV0bztcbiAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICAgIHBhZGRpbmctdG9wOiAyMyUgIWltcG9ydGFudDtcbiAgICAgICAgd2lkdGg6IDcwJTtcbiAgICB9XG59IiwiLm1hcmcge1xuICB3aWR0aDogMTAwJTtcbiAgbWFyZ2luOiBhdXRvO1xuICBwb3NpdGlvbjogZml4ZWQ7XG59XG5cbi5sb2dpbiB7XG4gIG1hcmdpbjogYXV0bztcbiAgd2lkdGg6IDg1JTtcbiAgYmFja2dyb3VuZDogdXJsKFwiYXNzZXRzL2ltZy9tYXNrLnN2Z1wiKSByaWdodCBuby1yZXBlYXQgI2VhZWFlYTtcbiAgaGVpZ2h0OiA1MzBweDtcbiAgLW8tb2JqZWN0LWZpdDogY29udGFpbjtcbiAgb2JqZWN0LWZpdDogY29udGFpbjtcbiAgbWFyZ2luLXRvcDogNiU7XG4gIGJhY2tncm91bmQtcG9zaXRpb246IHJpZ2h0O1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xufVxuLmxvZ2luIC5zcHVydC1pbWcge1xuICBtYXJnaW46IGF1dG87XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwYWRkaW5nLXRvcDogMTYlO1xuICB3aWR0aDogODAlO1xufVxuLmxvZ2luIC50eHQge1xuICBmb250LWZhbWlseTogXCJQb3BwaW5zXCIsIHNhbnMtc2VyaWY7XG4gIGZvbnQtc2l6ZTogMThweDtcbiAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LXN0cmV0Y2g6IG5vcm1hbDtcbiAgbGluZS1oZWlnaHQ6IG5vcm1hbDtcbiAgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDtcbiAgY29sb3I6ICNhN2E3YTc7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIHBhZGRpbmc6IDYlIDE1JTtcbn1cbi5sb2dpbiAuZm9ybS1jb250cm9sIHtcbiAgZm9udC1mYW1pbHk6IFBvcHBpbnM7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LXN0cmV0Y2g6IG5vcm1hbDtcbiAgbGluZS1oZWlnaHQ6IG5vcm1hbDtcbiAgbGV0dGVyLXNwYWNpbmc6IDAuNTNweDtcbiAgY29sb3I6ICMwMDAwMDAgIWltcG9ydGFudDtcbiAgaGVpZ2h0OiA1M3B4O1xuICBib3JkZXItcmFkaXVzOiAycHg7XG4gIGJvcmRlcjogc29saWQgMXB4ICNkNmQ2ZDY7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7XG4gIG1hcmdpbi1ib3R0b206IDglO1xufVxuLmxvZ2luIC5jYXJkLWFsaWduIHtcbiAgbWFyZ2luLXRvcDogMjMlO1xufVxuLmxvZ2luIC5jYXJkcyB7XG4gIGJveC1zaGFkb3c6IDAgMnB4IDEwcHggMCByZ2JhKDAsIDAsIDAsIDAuMTUpO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmO1xuICB3aWR0aDogNzAlO1xuICBtYXJnaW46IGF1dG87XG4gIHBhZGRpbmc6IDMlIDUlO1xufVxuLmxvZ2luIC5jYXJkcyAuYWRtaW4ge1xuICBmb250LWZhbWlseTogXCJQb3BwaW5zXCIsIHNhbnMtc2VyaWY7XG4gIGZvbnQtc2l6ZTogMThweDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LXN0cmV0Y2g6IG5vcm1hbDtcbiAgbGluZS1oZWlnaHQ6IG5vcm1hbDtcbiAgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDtcbiAgY29sb3I6ICMyNjQxNTE7XG4gIG1hcmdpbi1ib3R0b206IDclO1xufVxuLmxvZ2luIC5jYXJkcyAuYnRuLWxvZyB7XG4gIGhlaWdodDogNTNweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzI2NDE1MTtcbiAgZm9udC1mYW1pbHk6IFBvcHBpbnM7XG4gIGZvbnQtc2l6ZTogMThweDtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LXN0cmV0Y2g6IG5vcm1hbDtcbiAgbGluZS1oZWlnaHQ6IG5vcm1hbDtcbiAgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDtcbiAgY29sb3I6ICNmZmZmZmY7XG4gIHdpZHRoOiAxMDAlO1xuICBtYXJnaW46IDUlIDAlIDMlO1xufVxuLmxvZ2luIC5jYXJkcyAuZm9yZ290IHtcbiAgZm9udC1mYW1pbHk6IFJvYm90bztcbiAgZm9udC1zaXplOiAxNHB4O1xuICBmb250LXdlaWdodDogbm9ybWFsO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtc3RyZXRjaDogbm9ybWFsO1xuICBsaW5lLWhlaWdodDogbm9ybWFsO1xuICBsZXR0ZXItc3BhY2luZzogbm9ybWFsO1xuICBjb2xvcjogIzUxNGM0YztcbiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XG4gIHRleHQtYWxpZ246IHJpZ2h0O1xuICBtYXJnaW46IDMlIDAlIDUlO1xufVxuXG4udHR0IHtcbiAgZm9udC1mYW1pbHk6IFJvYm90bztcbiAgZm9udC1zaXplOiAxNHB4O1xuICBmb250LXdlaWdodDogNTAwO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtc3RyZXRjaDogbm9ybWFsO1xuICBsaW5lLWhlaWdodDogbm9ybWFsO1xuICBsZXR0ZXItc3BhY2luZzogMC40cHg7XG4gIGNvbG9yOiAjOWM5YzljO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIG1hcmdpbi1sZWZ0OiA0MCU7XG59XG5cbi5wbGFjZWhvbGRlci1maXg6Zm9jdXM6Oi13ZWJraXQtaW5wdXQtcGxhY2Vob2xkZXIge1xuICBjb2xvcjogdHJhbnNwYXJlbnQ7XG59XG5cbi5wbGFjZWhvbGRlci1maXg6Zm9jdXM6Oi1tb3otcGxhY2Vob2xkZXIge1xuICBjb2xvcjogdHJhbnNwYXJlbnQ7XG59XG5cbi5wbGFjZWhvbGRlci1maXg6LW1vei1wbGFjZWhvbGRlciB7XG4gIGNvbG9yOiB0cmFuc3BhcmVudDtcbn1cblxuQG1lZGlhIChtYXgtd2lkdGg6IDEwMjRweCkge1xuICAubG9naW4ge1xuICAgIG1hcmdpbi10b3A6IDYlO1xuICAgIG1hcmdpbi1sZWZ0OiA1JTtcbiAgICB3aWR0aDogOTElO1xuICB9XG59XG5AbWVkaWEgKG1heC13aWR0aDogNzY4cHgpIHtcbiAgLmxvZ2luIHtcbiAgICBtYXJnaW4tdG9wOiA2JTtcbiAgICB3aWR0aDogODUlO1xuICB9XG4gIC5jYXJkLWFsaWduIHtcbiAgICBtYXJnaW4tdG9wOiAzMCUgIWltcG9ydGFudDtcbiAgfVxuICAuc3B1cnQtaW1nIHtcbiAgICBtYXJnaW46IGF1dG87XG4gICAgZGlzcGxheTogYmxvY2s7XG4gICAgcGFkZGluZy10b3A6IDIzJSAhaW1wb3J0YW50O1xuICAgIHdpZHRoOiA3MCU7XG4gIH1cbn0iXX0= */"
+module.exports = ".marg {\n  width: 100%;\n  margin: auto;\n  position: fixed;\n}\n\n.login {\n  margin: auto;\n  width: 85%;\n  background: url('mask.svg') right no-repeat #eaeaea;\n  height: 530px;\n  -o-object-fit: contain;\n  object-fit: contain;\n  margin-top: 6%;\n  background-position: right;\n  border-radius: 10px;\n}\n\n.login .spurt-img {\n  margin: auto;\n  display: block;\n  padding-top: 16%;\n  width: 80%;\n}\n\n.login .txt {\n  font-family: \"Poppins\", sans-serif;\n  font-size: 18px;\n  font-weight: normal;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #a7a7a7;\n  text-align: left;\n  padding: 6% 15%;\n}\n\n.login .form-control {\n  font-family: Poppins;\n  font-size: 14px;\n  font-weight: normal;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: 0.53px;\n  color: #000000 !important;\n  height: 53px;\n  border-radius: 2px;\n  border: solid 1px #d6d6d6;\n  background-color: #ffffff;\n  margin-bottom: 8%;\n}\n\n.login .card-align {\n  margin-top: 23%;\n}\n\n.login .cards {\n  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);\n  background-color: #ffffff;\n  width: 70%;\n  margin: auto;\n  padding: 3% 5%;\n}\n\n.login .cards .admin {\n  font-family: \"Poppins\", sans-serif;\n  font-size: 18px;\n  font-weight: 600;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #264151;\n  margin-bottom: 7%;\n}\n\n.login .cards .btn-log {\n  height: 53px;\n  background-color: #264151;\n  font-family: Poppins;\n  font-size: 18px;\n  font-weight: 500;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #ffffff;\n  width: 100%;\n  margin: 5% 0% 3%;\n}\n\n.login .cards .forgot {\n  font-family: Roboto;\n  font-size: 14px;\n  font-weight: normal;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #514c4c;\n  text-decoration: underline;\n  text-align: right;\n  margin: 3% 0% 5%;\n}\n\n.ttt {\n  font-family: Roboto;\n  font-size: 14px;\n  font-weight: 500;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: 0.4px;\n  color: #9c9c9c;\n  text-align: center;\n  margin-left: 40%;\n}\n\n.placeholder-fix:focus::-webkit-input-placeholder {\n  color: transparent;\n}\n\n.placeholder-fix:focus::-moz-placeholder {\n  color: transparent;\n}\n\n.placeholder-fix:-moz-placeholder {\n  color: transparent;\n}\n\n@media (max-width: 1024px) {\n  .login {\n    margin-top: 6%;\n    margin-left: 5%;\n    width: 91%;\n  }\n}\n\n@media (max-width: 768px) {\n  .login {\n    margin-top: 6%;\n    width: 85%;\n  }\n  .card-align {\n    margin-top: 30% !important;\n  }\n  .spurt-img {\n    margin: auto;\n    display: block;\n    padding-top: 23% !important;\n    width: 70%;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9hZG1pbi9zcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9sYXlvdXQvYXV0aC9hdXRoLmNvbXBvbmVudC5zY3NzIiwic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vbGF5b3V0L2F1dGgvYXV0aC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtBQ0NKOztBREVBO0VBQ0ksWUFBQTtFQUNBLFVBQUE7RUFFQSxtREFBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0VBQ0EsY0FBQTtFQUVBLDBCQUFBO0VBQ0EsbUJBQUE7QUNESjs7QURFSTtFQUNJLFlBQUE7RUFDQSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSxVQUFBO0FDQVI7O0FERUk7RUFDSSxrQ0FBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0Esb0JBQUE7RUFDQSxtQkFBQTtFQUNBLHNCQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtBQ0FSOztBREVJO0VBQ0ksb0JBQUE7RUFDQSxlQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtFQUNBLG9CQUFBO0VBQ0EsbUJBQUE7RUFDQSxzQkFBQTtFQUNBLHlCQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EseUJBQUE7RUFDQSx5QkFBQTtFQUNBLGlCQUFBO0FDQVI7O0FERUk7RUFDSSxlQUFBO0FDQVI7O0FERUk7RUFDSSw0Q0FBQTtFQUNBLHlCQUFBO0VBQ0EsVUFBQTtFQUNBLFlBQUE7RUFDQSxjQUFBO0FDQVI7O0FEQ1E7RUFDSSxrQ0FBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0Esb0JBQUE7RUFDQSxtQkFBQTtFQUNBLHNCQUFBO0VBQ0EsY0FBQTtFQUNBLGlCQUFBO0FDQ1o7O0FEQ1E7RUFDSSxZQUFBO0VBQ0EseUJBQUE7RUFDQSxvQkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0Esb0JBQUE7RUFDQSxtQkFBQTtFQUNBLHNCQUFBO0VBQ0EsY0FBQTtFQUNBLFdBQUE7RUFDQSxnQkFBQTtBQ0NaOztBRENRO0VBQ0ksbUJBQUE7RUFDQSxlQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtFQUNBLG9CQUFBO0VBQ0EsbUJBQUE7RUFDQSxzQkFBQTtFQUNBLGNBQUE7RUFDQSwwQkFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7QUNDWjs7QURJQTtFQUNJLG1CQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxvQkFBQTtFQUNBLG1CQUFBO0VBQ0EscUJBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtBQ0RKOztBRElBO0VBQ0ksa0JBQUE7QUNESjs7QURJQTtFQUNJLGtCQUFBO0FDREo7O0FESUE7RUFDSSxrQkFBQTtBQ0RKOztBRElBO0VBQ0k7SUFDSSxjQUFBO0lBQ0EsZUFBQTtJQUNBLFVBQUE7RUNETjtBQUNGOztBRElBO0VBQ0k7SUFDSSxjQUFBO0lBQ0EsVUFBQTtFQ0ZOO0VESUU7SUFDSSwwQkFBQTtFQ0ZOO0VESUU7SUFDSSxZQUFBO0lBQ0EsY0FBQTtJQUNBLDJCQUFBO0lBQ0EsVUFBQTtFQ0ZOO0FBQ0YiLCJmaWxlIjoic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vbGF5b3V0L2F1dGgvYXV0aC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYXJnIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBtYXJnaW46IGF1dG87XG4gICAgcG9zaXRpb246IGZpeGVkO1xufVxuXG4ubG9naW4ge1xuICAgIG1hcmdpbjogYXV0bztcbiAgICB3aWR0aDogODUlO1xuICAgIC8vIGJhY2tncm91bmQtY29sb3I6I2VhZWFlYSAhaW1wb3J0YW50O1xuICAgIGJhY2tncm91bmQ6IHVybCgnYXNzZXRzL2ltZy9tYXNrLnN2ZycpIHJpZ2h0IG5vLXJlcGVhdCAjZWFlYWVhO1xuICAgIGhlaWdodDogNTMwcHg7XG4gICAgLW8tb2JqZWN0LWZpdDogY29udGFpbjtcbiAgICBvYmplY3QtZml0OiBjb250YWluO1xuICAgIG1hcmdpbi10b3A6IDYlO1xuICAgIC8vIG1hcmdpbi1sZWZ0OiAxNSU7XG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogcmlnaHQ7XG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcbiAgICAuc3B1cnQtaW1nIHtcbiAgICAgICAgbWFyZ2luOiBhdXRvO1xuICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgcGFkZGluZy10b3A6IDE2JTtcbiAgICAgICAgd2lkdGg6IDgwJTtcbiAgICB9XG4gICAgLnR4dCB7XG4gICAgICAgIGZvbnQtZmFtaWx5OiAnUG9wcGlucycsIHNhbnMtc2VyaWY7XG4gICAgICAgIGZvbnQtc2l6ZTogMThweDtcbiAgICAgICAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcbiAgICAgICAgZm9udC1zdHlsZTogbm9ybWFsO1xuICAgICAgICBmb250LXN0cmV0Y2g6IG5vcm1hbDtcbiAgICAgICAgbGluZS1oZWlnaHQ6IG5vcm1hbDtcbiAgICAgICAgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDtcbiAgICAgICAgY29sb3I6ICNhN2E3YTc7XG4gICAgICAgIHRleHQtYWxpZ246IGxlZnQ7XG4gICAgICAgIHBhZGRpbmc6IDYlIDE1JTtcbiAgICB9XG4gICAgLmZvcm0tY29udHJvbCB7XG4gICAgICAgIGZvbnQtZmFtaWx5OiBQb3BwaW5zO1xuICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBub3JtYWw7XG4gICAgICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgICAgICAgZm9udC1zdHJldGNoOiBub3JtYWw7XG4gICAgICAgIGxpbmUtaGVpZ2h0OiBub3JtYWw7XG4gICAgICAgIGxldHRlci1zcGFjaW5nOiAwLjUzcHg7XG4gICAgICAgIGNvbG9yOiAjMDAwMDAwICFpbXBvcnRhbnQ7XG4gICAgICAgIGhlaWdodDogNTNweDtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMnB4O1xuICAgICAgICBib3JkZXI6IHNvbGlkIDFweCAjZDZkNmQ2O1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmO1xuICAgICAgICBtYXJnaW4tYm90dG9tOiA4JTtcbiAgICB9XG4gICAgLmNhcmQtYWxpZ24ge1xuICAgICAgICBtYXJnaW4tdG9wOiAyMyU7XG4gICAgfVxuICAgIC5jYXJkcyB7XG4gICAgICAgIGJveC1zaGFkb3c6IDAgMnB4IDEwcHggMCByZ2JhKDAsIDAsIDAsIDAuMTUpO1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmO1xuICAgICAgICB3aWR0aDogNzAlO1xuICAgICAgICBtYXJnaW46IGF1dG87XG4gICAgICAgIHBhZGRpbmc6IDMlIDUlO1xuICAgICAgICAuYWRtaW4ge1xuICAgICAgICAgICAgZm9udC1mYW1pbHk6ICdQb3BwaW5zJywgc2Fucy1zZXJpZjtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMThweDtcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XG4gICAgICAgICAgICBmb250LXN0cmV0Y2g6IG5vcm1hbDtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiBub3JtYWw7XG4gICAgICAgICAgICBsZXR0ZXItc3BhY2luZzogbm9ybWFsO1xuICAgICAgICAgICAgY29sb3I6ICMyNjQxNTE7XG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiA3JTtcbiAgICAgICAgfVxuICAgICAgICAuYnRuLWxvZyB7XG4gICAgICAgICAgICBoZWlnaHQ6IDUzcHg7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjY0MTUxO1xuICAgICAgICAgICAgZm9udC1mYW1pbHk6IFBvcHBpbnM7XG4gICAgICAgICAgICBmb250LXNpemU6IDE4cHg7XG4gICAgICAgICAgICBmb250LXdlaWdodDogNTAwO1xuICAgICAgICAgICAgZm9udC1zdHlsZTogbm9ybWFsO1xuICAgICAgICAgICAgZm9udC1zdHJldGNoOiBub3JtYWw7XG4gICAgICAgICAgICBsaW5lLWhlaWdodDogbm9ybWFsO1xuICAgICAgICAgICAgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDtcbiAgICAgICAgICAgIGNvbG9yOiAjZmZmZmZmO1xuICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICBtYXJnaW46IDUlIDAlIDMlO1xuICAgICAgICB9XG4gICAgICAgIC5mb3Jnb3Qge1xuICAgICAgICAgICAgZm9udC1mYW1pbHk6IFJvYm90bztcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBub3JtYWw7XG4gICAgICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XG4gICAgICAgICAgICBmb250LXN0cmV0Y2g6IG5vcm1hbDtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiBub3JtYWw7XG4gICAgICAgICAgICBsZXR0ZXItc3BhY2luZzogbm9ybWFsO1xuICAgICAgICAgICAgY29sb3I6ICM1MTRjNGM7XG4gICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbiAgICAgICAgICAgIHRleHQtYWxpZ246IHJpZ2h0O1xuICAgICAgICAgICAgbWFyZ2luOiAzJSAwJSA1JTtcbiAgICAgICAgfVxuICAgIH1cbn1cblxuLnR0dCB7XG4gICAgZm9udC1mYW1pbHk6IFJvYm90bztcbiAgICBmb250LXNpemU6IDE0cHg7XG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgICBmb250LXN0eWxlOiBub3JtYWw7XG4gICAgZm9udC1zdHJldGNoOiBub3JtYWw7XG4gICAgbGluZS1oZWlnaHQ6IG5vcm1hbDtcbiAgICBsZXR0ZXItc3BhY2luZzogMC40cHg7XG4gICAgY29sb3I6ICM5YzljOWM7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIG1hcmdpbi1sZWZ0OiA0MCU7XG59XG5cbi5wbGFjZWhvbGRlci1maXg6Zm9jdXM6Oi13ZWJraXQtaW5wdXQtcGxhY2Vob2xkZXIge1xuICAgIGNvbG9yOiB0cmFuc3BhcmVudDtcbn1cblxuLnBsYWNlaG9sZGVyLWZpeDpmb2N1czo6LW1vei1wbGFjZWhvbGRlciB7XG4gICAgY29sb3I6IHRyYW5zcGFyZW50O1xufVxuXG4ucGxhY2Vob2xkZXItZml4Oi1tb3otcGxhY2Vob2xkZXIge1xuICAgIGNvbG9yOiB0cmFuc3BhcmVudDtcbn1cblxuQG1lZGlhIChtYXgtd2lkdGg6IDEwMjRweCkge1xuICAgIC5sb2dpbiB7XG4gICAgICAgIG1hcmdpbi10b3A6IDYlO1xuICAgICAgICBtYXJnaW4tbGVmdDogNSU7XG4gICAgICAgIHdpZHRoOiA5MSVcbiAgICB9XG59XG5cbkBtZWRpYSAobWF4LXdpZHRoOiA3NjhweCkge1xuICAgIC5sb2dpbiB7XG4gICAgICAgIG1hcmdpbi10b3A6IDYlO1xuICAgICAgICB3aWR0aDogODUlXG4gICAgfVxuICAgIC5jYXJkLWFsaWduIHtcbiAgICAgICAgbWFyZ2luLXRvcDogMzAlICFpbXBvcnRhbnQ7XG4gICAgfVxuICAgIC5zcHVydC1pbWcge1xuICAgICAgICBtYXJnaW46IGF1dG87XG4gICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgICBwYWRkaW5nLXRvcDogMjMlICFpbXBvcnRhbnQ7XG4gICAgICAgIHdpZHRoOiA3MCU7XG4gICAgfVxufSIsIi5tYXJnIHtcbiAgd2lkdGg6IDEwMCU7XG4gIG1hcmdpbjogYXV0bztcbiAgcG9zaXRpb246IGZpeGVkO1xufVxuXG4ubG9naW4ge1xuICBtYXJnaW46IGF1dG87XG4gIHdpZHRoOiA4NSU7XG4gIGJhY2tncm91bmQ6IHVybChcImFzc2V0cy9pbWcvbWFzay5zdmdcIikgcmlnaHQgbm8tcmVwZWF0ICNlYWVhZWE7XG4gIGhlaWdodDogNTMwcHg7XG4gIC1vLW9iamVjdC1maXQ6IGNvbnRhaW47XG4gIG9iamVjdC1maXQ6IGNvbnRhaW47XG4gIG1hcmdpbi10b3A6IDYlO1xuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiByaWdodDtcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcbn1cbi5sb2dpbiAuc3B1cnQtaW1nIHtcbiAgbWFyZ2luOiBhdXRvO1xuICBkaXNwbGF5OiBibG9jaztcbiAgcGFkZGluZy10b3A6IDE2JTtcbiAgd2lkdGg6IDgwJTtcbn1cbi5sb2dpbiAudHh0IHtcbiAgZm9udC1mYW1pbHk6IFwiUG9wcGluc1wiLCBzYW5zLXNlcmlmO1xuICBmb250LXNpemU6IDE4cHg7XG4gIGZvbnQtd2VpZ2h0OiBub3JtYWw7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC1zdHJldGNoOiBub3JtYWw7XG4gIGxpbmUtaGVpZ2h0OiBub3JtYWw7XG4gIGxldHRlci1zcGFjaW5nOiBub3JtYWw7XG4gIGNvbG9yOiAjYTdhN2E3O1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBwYWRkaW5nOiA2JSAxNSU7XG59XG4ubG9naW4gLmZvcm0tY29udHJvbCB7XG4gIGZvbnQtZmFtaWx5OiBQb3BwaW5zO1xuICBmb250LXNpemU6IDE0cHg7XG4gIGZvbnQtd2VpZ2h0OiBub3JtYWw7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC1zdHJldGNoOiBub3JtYWw7XG4gIGxpbmUtaGVpZ2h0OiBub3JtYWw7XG4gIGxldHRlci1zcGFjaW5nOiAwLjUzcHg7XG4gIGNvbG9yOiAjMDAwMDAwICFpbXBvcnRhbnQ7XG4gIGhlaWdodDogNTNweDtcbiAgYm9yZGVyLXJhZGl1czogMnB4O1xuICBib3JkZXI6IHNvbGlkIDFweCAjZDZkNmQ2O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmO1xuICBtYXJnaW4tYm90dG9tOiA4JTtcbn1cbi5sb2dpbiAuY2FyZC1hbGlnbiB7XG4gIG1hcmdpbi10b3A6IDIzJTtcbn1cbi5sb2dpbiAuY2FyZHMge1xuICBib3gtc2hhZG93OiAwIDJweCAxMHB4IDAgcmdiYSgwLCAwLCAwLCAwLjE1KTtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcbiAgd2lkdGg6IDcwJTtcbiAgbWFyZ2luOiBhdXRvO1xuICBwYWRkaW5nOiAzJSA1JTtcbn1cbi5sb2dpbiAuY2FyZHMgLmFkbWluIHtcbiAgZm9udC1mYW1pbHk6IFwiUG9wcGluc1wiLCBzYW5zLXNlcmlmO1xuICBmb250LXNpemU6IDE4cHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC1zdHJldGNoOiBub3JtYWw7XG4gIGxpbmUtaGVpZ2h0OiBub3JtYWw7XG4gIGxldHRlci1zcGFjaW5nOiBub3JtYWw7XG4gIGNvbG9yOiAjMjY0MTUxO1xuICBtYXJnaW4tYm90dG9tOiA3JTtcbn1cbi5sb2dpbiAuY2FyZHMgLmJ0bi1sb2cge1xuICBoZWlnaHQ6IDUzcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICMyNjQxNTE7XG4gIGZvbnQtZmFtaWx5OiBQb3BwaW5zO1xuICBmb250LXNpemU6IDE4cHg7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC1zdHJldGNoOiBub3JtYWw7XG4gIGxpbmUtaGVpZ2h0OiBub3JtYWw7XG4gIGxldHRlci1zcGFjaW5nOiBub3JtYWw7XG4gIGNvbG9yOiAjZmZmZmZmO1xuICB3aWR0aDogMTAwJTtcbiAgbWFyZ2luOiA1JSAwJSAzJTtcbn1cbi5sb2dpbiAuY2FyZHMgLmZvcmdvdCB7XG4gIGZvbnQtZmFtaWx5OiBSb2JvdG87XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LXN0cmV0Y2g6IG5vcm1hbDtcbiAgbGluZS1oZWlnaHQ6IG5vcm1hbDtcbiAgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDtcbiAgY29sb3I6ICM1MTRjNGM7XG4gIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xuICB0ZXh0LWFsaWduOiByaWdodDtcbiAgbWFyZ2luOiAzJSAwJSA1JTtcbn1cblxuLnR0dCB7XG4gIGZvbnQtZmFtaWx5OiBSb2JvdG87XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LXN0cmV0Y2g6IG5vcm1hbDtcbiAgbGluZS1oZWlnaHQ6IG5vcm1hbDtcbiAgbGV0dGVyLXNwYWNpbmc6IDAuNHB4O1xuICBjb2xvcjogIzljOWM5YztcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBtYXJnaW4tbGVmdDogNDAlO1xufVxuXG4ucGxhY2Vob2xkZXItZml4OmZvY3VzOjotd2Via2l0LWlucHV0LXBsYWNlaG9sZGVyIHtcbiAgY29sb3I6IHRyYW5zcGFyZW50O1xufVxuXG4ucGxhY2Vob2xkZXItZml4OmZvY3VzOjotbW96LXBsYWNlaG9sZGVyIHtcbiAgY29sb3I6IHRyYW5zcGFyZW50O1xufVxuXG4ucGxhY2Vob2xkZXItZml4Oi1tb3otcGxhY2Vob2xkZXIge1xuICBjb2xvcjogdHJhbnNwYXJlbnQ7XG59XG5cbkBtZWRpYSAobWF4LXdpZHRoOiAxMDI0cHgpIHtcbiAgLmxvZ2luIHtcbiAgICBtYXJnaW4tdG9wOiA2JTtcbiAgICBtYXJnaW4tbGVmdDogNSU7XG4gICAgd2lkdGg6IDkxJTtcbiAgfVxufVxuQG1lZGlhIChtYXgtd2lkdGg6IDc2OHB4KSB7XG4gIC5sb2dpbiB7XG4gICAgbWFyZ2luLXRvcDogNiU7XG4gICAgd2lkdGg6IDg1JTtcbiAgfVxuICAuY2FyZC1hbGlnbiB7XG4gICAgbWFyZ2luLXRvcDogMzAlICFpbXBvcnRhbnQ7XG4gIH1cbiAgLnNwdXJ0LWltZyB7XG4gICAgbWFyZ2luOiBhdXRvO1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIHBhZGRpbmctdG9wOiAyMyUgIWltcG9ydGFudDtcbiAgICB3aWR0aDogNzAlO1xuICB9XG59Il19 */"
 
 /***/ }),
 
@@ -17728,7 +18537,7 @@ var ComponentsModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- ============================================================== -->\n<!-- toggle and nav items -->\n<!-- ============================================================== -->\n<ul class=\"navbar-nav float-left mr-auto navbar-left\">\n    <!-- ============================================================== -->\n    <li class=\"nav-item dashboard-nav\">\n        <a href=\"javascript:void(0)\" class=\"nav-link\" [routerLink]=\"['/dashboard']\" [routerLinkActive]=\"'active'\">\n            <img src=\"assets/img/dashboard-ico.png\"> Dashboard </a>\n    </li>\n    <!--<li class=\"nav-item\">-->\n    <!--<a href=\"javascript:void(0)\" class=\"nav-link\"> <img src=\"assets/img/sales-ico.png\"> Sales </a>-->\n    <!--</li>-->\n\n    <li class=\"nav-item mega-dropdown sales-nav\">\n        <a class=\"nav-link waves-effect waves-dark\" [routerLink]=\"['/sales']\" [routerLinkActive]=\"'active'\" href=\"javascript:void(0)\" aria-expanded=\"false\">\n            <span class=\"d-md-block\"> <img src=\"assets/img/catelog-ico.png\"> Sales\n      </span>\n        </a>\n    </li>\n    <!-- mega menu -->\n    <!-- ============================================================== -->\n    <li class=\"nav-item mega-dropdown catalog-nav\">\n        <a class=\"nav-link waves-effect waves-dark\" href=\"javascript:void(0)\" [routerLink]=\"['/catalog']\" [routerLinkActive]=\"'active'\">\n            <span class=\"d-md-block\"> <img src=\"assets/img/catelog-ico.png\">Catalog\n          </span>\n        </a>\n    </li>\n    <!-- ============================================================== -->\n    <!-- End mega menu -->\n    <li class=\"nav-item mega-dropdown customers-nav\">\n        <a [routerLink]=\"['/customers']\" [routerLinkActive]=\"'active'\" class=\"nav-link waves-effect waves-dark\" href=\"javascript:void(0)\">\n            <span class=\"d-md-block\"> <img src=\"assets/img/customers-ico.png\">Customers\n    </span>\n        </a>\n    </li>\n    <li class=\"nav-item mega-dropdown customers-nav\">\n        <a [routerLink]=\"['/demo']\" [routerLinkActive]=\"'active'\" class=\"nav-link waves-effect waves-dark\" href=\"javascript:void(0)\">\n            <span class=\"d-md-block\"> <img src=\"assets/img/customers-ico.png\">Demo\n    </span>\n        </a>\n    </li>\n    <li class=\"nav-item mega-dropdown cms-nav\">\n        <a [routerLink]=\"['/cms']\" [routerLinkActive]=\"'active'\" class=\"nav-link waves-effect waves-dark\" href=\"javascript:void(0)\">\n            <span class=\"d-md-block\"> <img src=\"assets/img/cms-ico.png\">CMS</span>\n        </a>\n    </li>\n</ul>\n<!-- ============================================================== -->\n<!-- Right side toggle and nav items -->\n<!-- ============================================================== -->\n<app-profile-bar (logout)=\"logout.emit($event)\" [userDetails]=\"userDetails\"></app-profile-bar>"
+module.exports = "<!-- ============================================================== -->\n<!-- toggle and nav items -->\n<!-- ============================================================== -->\n<ul class=\"navbar-nav float-left mr-auto navbar-left\">\n    <!-- ============================================================== -->\n    <li class=\"nav-item dashboard-nav\">\n        <a href=\"javascript:void(0)\" class=\"nav-link\" [routerLink]=\"['/dashboard']\" [routerLinkActive]=\"'active'\">\n            <img src=\"assets/img/dashboard-ico.png\"> Dashboard </a>\n    </li>\n    <!--<li class=\"nav-item\">-->\n    <!--<a href=\"javascript:void(0)\" class=\"nav-link\"> <img src=\"assets/img/sales-ico.png\"> Sales </a>-->\n    <!--</li>-->\n\n    <li class=\"nav-item mega-dropdown sales-nav\">\n        <a class=\"nav-link waves-effect waves-dark\" [routerLink]=\"['/sales']\" [routerLinkActive]=\"'active'\" href=\"javascript:void(0)\" aria-expanded=\"false\">\n            <span class=\"d-md-block\"> <img src=\"assets/img/catelog-ico.png\"> Sales\n      </span>\n        </a>\n    </li>\n    <!-- mega menu -->\n    <!-- ============================================================== -->\n    <li class=\"nav-item mega-dropdown catalog-nav\">\n        <a class=\"nav-link waves-effect waves-dark\" href=\"javascript:void(0)\" [routerLink]=\"['/catalog']\" [routerLinkActive]=\"'active'\">\n            <span class=\"d-md-block\"> <img src=\"assets/img/catelog-ico.png\">Catalog\n          </span>\n        </a>\n    </li>\n    <!-- ============================================================== -->\n    <!-- End mega menu -->\n    <li class=\"nav-item mega-dropdown customers-nav\">\n        <a [routerLink]=\"['/customers']\" [routerLinkActive]=\"'active'\" class=\"nav-link waves-effect waves-dark\" href=\"javascript:void(0)\">\n            <span class=\"d-md-block\"> <img src=\"assets/img/customers-ico.png\">Customers\n    </span>\n        </a>\n    </li>\n    <li class=\"nav-item mega-dropdown customers-nav\">\n        <a [routerLink]=\"['/adv']\" [routerLinkActive]=\"'active'\" class=\"nav-link waves-effect waves-dark\" href=\"javascript:void(0)\">\n            <span class=\"d-md-block\"> <img src=\"assets/img/customers-ico.png\">ADV\n    </span>\n        </a>\n    </li>\n    <li class=\"nav-item mega-dropdown cms-nav\">\n        <a [routerLink]=\"['/cms']\" [routerLinkActive]=\"'active'\" class=\"nav-link waves-effect waves-dark\" href=\"javascript:void(0)\">\n            <span class=\"d-md-block\"> <img src=\"assets/img/cms-ico.png\">CMS</span>\n        </a>\n    </li>\n</ul>\n<!-- ============================================================== -->\n<!-- Right side toggle and nav items -->\n<!-- ============================================================== -->\n<app-profile-bar (logout)=\"logout.emit($event)\" [userDetails]=\"userDetails\"></app-profile-bar>"
 
 /***/ }),
 
@@ -17807,7 +18616,7 @@ module.exports = "<div class=\"pagination\">\n    <ul class=\"flex\" *ngIf=\"pag
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "a {\n  cursor: pointer;\n  color: #444;\n}\n\n.pagination {\n  padding-right: 15px;\n}\n\n#first {\n  background: #001830 !important;\n  color: #fff;\n}\n\n#first span {\n  padding: 0 5px;\n}\n\n#last {\n  background: #001830 !important;\n  color: #fff;\n}\n\n#last span {\n  padding: 0 5px;\n}\n\n.pagination ul li a {\n  display: block;\n  border: thin solid #e8e8e8;\n  padding: 5px 10px;\n  font-size: 11px;\n  font-weight: 600;\n  color: #999;\n  border-radius: 2px;\n  margin: 7px 5px;\n}\n\n.pagination ul li.active a {\n  background: #04ad73;\n  color: #fff;\n}\n\n.disabled {\n  display: none !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvdGVzdDAxL21hcmtldHBsYWNlL2FkbWluL3NyYy90aGVtZS9kZWZhdWx0L2FkbWluL3NoYXJlZC9jb21wb25lbnRzL3BhZ2luYXRpb24vcGFnZXIuY29tcG9uZW50LnNjc3MiLCJzcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9zaGFyZWQvY29tcG9uZW50cy9wYWdpbmF0aW9uL3BhZ2VyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsZUFBQTtFQUNBLFdBQUE7QUNERjs7QURLQTtFQUNFLG1CQUFBO0FDRkY7O0FES0E7RUFDRSw4QkFBQTtFQUNBLFdBQUE7QUNGRjs7QURHRTtFQUNFLGNBQUE7QUNESjs7QURNQTtFQUNFLDhCQUFBO0VBQ0EsV0FBQTtBQ0hGOztBRElFO0VBQ0UsY0FBQTtBQ0ZKOztBRE1BO0VBQ0UsY0FBQTtFQUNBLDBCQUFBO0VBQ0EsaUJBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0FDSEY7O0FETUE7RUFDRSxtQkFBQTtFQUNBLFdBQUE7QUNIRjs7QURLQTtFQUNFLHdCQUFBO0FDRkYiLCJmaWxlIjoic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vc2hhcmVkL2NvbXBvbmVudHMvcGFnaW5hdGlvbi9wYWdlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8vQGltcG9ydCBcIi4uLy4uLy4uLy4uL3N0eWxlcy92YXJpYWJsZXMuc2Nzc1wiO1xuXG5hIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBjb2xvcjogIzQ0NDtcblxufVxuXG4ucGFnaW5hdGlvbiB7XG4gIHBhZGRpbmctcmlnaHQ6IDE1cHg7XG59XG5cbiNmaXJzdCB7XG4gIGJhY2tncm91bmQ6ICMwMDE4MzAgIWltcG9ydGFudDtcbiAgY29sb3I6ICNmZmY7XG4gIHNwYW57XG4gICAgcGFkZGluZzowIDVweDtcbiAgfVxuXG59XG5cbiNsYXN0IHtcbiAgYmFja2dyb3VuZDogIzAwMTgzMCAhaW1wb3J0YW50O1xuICBjb2xvcjogI2ZmZjtcbiAgc3BhbntcbiAgICBwYWRkaW5nOjAgNXB4O1xuICB9XG59XG5cbi5wYWdpbmF0aW9uIHVsIGxpIGEge1xuICBkaXNwbGF5OiBibG9jaztcbiAgYm9yZGVyOiB0aGluIHNvbGlkICNlOGU4ZTg7XG4gIHBhZGRpbmc6IDVweCAxMHB4O1xuICBmb250LXNpemU6IDExcHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIGNvbG9yOiAjOTk5O1xuICBib3JkZXItcmFkaXVzOiAycHg7XG4gIG1hcmdpbjogN3B4IDVweDtcbn1cblxuLnBhZ2luYXRpb24gdWwgbGkuYWN0aXZlIGEge1xuICBiYWNrZ3JvdW5kOiAjMDRhZDczO1xuICBjb2xvcjogI2ZmZjtcbn1cbi5kaXNhYmxlZHtcbiAgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50O1xufSIsImEge1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIGNvbG9yOiAjNDQ0O1xufVxuXG4ucGFnaW5hdGlvbiB7XG4gIHBhZGRpbmctcmlnaHQ6IDE1cHg7XG59XG5cbiNmaXJzdCB7XG4gIGJhY2tncm91bmQ6ICMwMDE4MzAgIWltcG9ydGFudDtcbiAgY29sb3I6ICNmZmY7XG59XG4jZmlyc3Qgc3BhbiB7XG4gIHBhZGRpbmc6IDAgNXB4O1xufVxuXG4jbGFzdCB7XG4gIGJhY2tncm91bmQ6ICMwMDE4MzAgIWltcG9ydGFudDtcbiAgY29sb3I6ICNmZmY7XG59XG4jbGFzdCBzcGFuIHtcbiAgcGFkZGluZzogMCA1cHg7XG59XG5cbi5wYWdpbmF0aW9uIHVsIGxpIGEge1xuICBkaXNwbGF5OiBibG9jaztcbiAgYm9yZGVyOiB0aGluIHNvbGlkICNlOGU4ZTg7XG4gIHBhZGRpbmc6IDVweCAxMHB4O1xuICBmb250LXNpemU6IDExcHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIGNvbG9yOiAjOTk5O1xuICBib3JkZXItcmFkaXVzOiAycHg7XG4gIG1hcmdpbjogN3B4IDVweDtcbn1cblxuLnBhZ2luYXRpb24gdWwgbGkuYWN0aXZlIGEge1xuICBiYWNrZ3JvdW5kOiAjMDRhZDczO1xuICBjb2xvcjogI2ZmZjtcbn1cblxuLmRpc2FibGVkIHtcbiAgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50O1xufSJdfQ== */"
+module.exports = "a {\n  cursor: pointer;\n  color: #444;\n}\n\n.pagination {\n  padding-right: 15px;\n}\n\n#first {\n  background: #001830 !important;\n  color: #fff;\n}\n\n#first span {\n  padding: 0 5px;\n}\n\n#last {\n  background: #001830 !important;\n  color: #fff;\n}\n\n#last span {\n  padding: 0 5px;\n}\n\n.pagination ul li a {\n  display: block;\n  border: thin solid #e8e8e8;\n  padding: 5px 10px;\n  font-size: 11px;\n  font-weight: 600;\n  color: #999;\n  border-radius: 2px;\n  margin: 7px 5px;\n}\n\n.pagination ul li.active a {\n  background: #04ad73;\n  color: #fff;\n}\n\n.disabled {\n  display: none !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9hZG1pbi9zcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9zaGFyZWQvY29tcG9uZW50cy9wYWdpbmF0aW9uL3BhZ2VyLmNvbXBvbmVudC5zY3NzIiwic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vc2hhcmVkL2NvbXBvbmVudHMvcGFnaW5hdGlvbi9wYWdlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNFLGVBQUE7RUFDQSxXQUFBO0FDREY7O0FES0E7RUFDRSxtQkFBQTtBQ0ZGOztBREtBO0VBQ0UsOEJBQUE7RUFDQSxXQUFBO0FDRkY7O0FER0U7RUFDRSxjQUFBO0FDREo7O0FETUE7RUFDRSw4QkFBQTtFQUNBLFdBQUE7QUNIRjs7QURJRTtFQUNFLGNBQUE7QUNGSjs7QURNQTtFQUNFLGNBQUE7RUFDQSwwQkFBQTtFQUNBLGlCQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtBQ0hGOztBRE1BO0VBQ0UsbUJBQUE7RUFDQSxXQUFBO0FDSEY7O0FES0E7RUFDRSx3QkFBQTtBQ0ZGIiwiZmlsZSI6InNyYy90aGVtZS9kZWZhdWx0L2FkbWluL3NoYXJlZC9jb21wb25lbnRzL3BhZ2luYXRpb24vcGFnZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvL0BpbXBvcnQgXCIuLi8uLi8uLi8uLi9zdHlsZXMvdmFyaWFibGVzLnNjc3NcIjtcblxuYSB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgY29sb3I6ICM0NDQ7XG5cbn1cblxuLnBhZ2luYXRpb24ge1xuICBwYWRkaW5nLXJpZ2h0OiAxNXB4O1xufVxuXG4jZmlyc3Qge1xuICBiYWNrZ3JvdW5kOiAjMDAxODMwICFpbXBvcnRhbnQ7XG4gIGNvbG9yOiAjZmZmO1xuICBzcGFue1xuICAgIHBhZGRpbmc6MCA1cHg7XG4gIH1cblxufVxuXG4jbGFzdCB7XG4gIGJhY2tncm91bmQ6ICMwMDE4MzAgIWltcG9ydGFudDtcbiAgY29sb3I6ICNmZmY7XG4gIHNwYW57XG4gICAgcGFkZGluZzowIDVweDtcbiAgfVxufVxuXG4ucGFnaW5hdGlvbiB1bCBsaSBhIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIGJvcmRlcjogdGhpbiBzb2xpZCAjZThlOGU4O1xuICBwYWRkaW5nOiA1cHggMTBweDtcbiAgZm9udC1zaXplOiAxMXB4O1xuICBmb250LXdlaWdodDogNjAwO1xuICBjb2xvcjogIzk5OTtcbiAgYm9yZGVyLXJhZGl1czogMnB4O1xuICBtYXJnaW46IDdweCA1cHg7XG59XG5cbi5wYWdpbmF0aW9uIHVsIGxpLmFjdGl2ZSBhIHtcbiAgYmFja2dyb3VuZDogIzA0YWQ3MztcbiAgY29sb3I6ICNmZmY7XG59XG4uZGlzYWJsZWR7XG4gIGRpc3BsYXk6IG5vbmUgIWltcG9ydGFudDtcbn0iLCJhIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBjb2xvcjogIzQ0NDtcbn1cblxuLnBhZ2luYXRpb24ge1xuICBwYWRkaW5nLXJpZ2h0OiAxNXB4O1xufVxuXG4jZmlyc3Qge1xuICBiYWNrZ3JvdW5kOiAjMDAxODMwICFpbXBvcnRhbnQ7XG4gIGNvbG9yOiAjZmZmO1xufVxuI2ZpcnN0IHNwYW4ge1xuICBwYWRkaW5nOiAwIDVweDtcbn1cblxuI2xhc3Qge1xuICBiYWNrZ3JvdW5kOiAjMDAxODMwICFpbXBvcnRhbnQ7XG4gIGNvbG9yOiAjZmZmO1xufVxuI2xhc3Qgc3BhbiB7XG4gIHBhZGRpbmc6IDAgNXB4O1xufVxuXG4ucGFnaW5hdGlvbiB1bCBsaSBhIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIGJvcmRlcjogdGhpbiBzb2xpZCAjZThlOGU4O1xuICBwYWRkaW5nOiA1cHggMTBweDtcbiAgZm9udC1zaXplOiAxMXB4O1xuICBmb250LXdlaWdodDogNjAwO1xuICBjb2xvcjogIzk5OTtcbiAgYm9yZGVyLXJhZGl1czogMnB4O1xuICBtYXJnaW46IDdweCA1cHg7XG59XG5cbi5wYWdpbmF0aW9uIHVsIGxpLmFjdGl2ZSBhIHtcbiAgYmFja2dyb3VuZDogIzA0YWQ3MztcbiAgY29sb3I6ICNmZmY7XG59XG5cbi5kaXNhYmxlZCB7XG4gIGRpc3BsYXk6IG5vbmUgIWltcG9ydGFudDtcbn0iXX0= */"
 
 /***/ }),
 
@@ -18094,7 +18903,7 @@ module.exports = "<ngb-rating [(rate)]=\"ratingValue\" [readonly]=\"true\" max=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".star {\n  font-size: 1.4rem;\n  color: #d3d3d3;\n  position: relative;\n}\n\n.full {\n  color: #ffdc1c;\n  overflow: hidden;\n}\n\n.half {\n  position: absolute;\n  overflow: hidden;\n  color: #ffdc1c;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvdGVzdDAxL21hcmtldHBsYWNlL2FkbWluL3NyYy90aGVtZS9kZWZhdWx0L2FkbWluL3NoYXJlZC9jb21wb25lbnRzL3JhdGluZy9yYXRpbmcuY29tcG9uZW50LnNjc3MiLCJzcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9zaGFyZWQvY29tcG9uZW50cy9yYXRpbmcvcmF0aW5nLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7QUNDSjs7QURFQTtFQUNJLGNBQUE7RUFDQSxnQkFBQTtBQ0NKOztBREVBO0VBQ0ksa0JBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7QUNDSiIsImZpbGUiOiJzcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9zaGFyZWQvY29tcG9uZW50cy9yYXRpbmcvcmF0aW5nLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnN0YXIge1xuICAgIGZvbnQtc2l6ZTogMS40cmVtO1xuICAgIGNvbG9yOiAjZDNkM2QzO1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cblxuLmZ1bGwge1xuICAgIGNvbG9yOiAjZmZkYzFjO1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG59XG5cbi5oYWxmIHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICBjb2xvcjogI2ZmZGMxYztcbn0iLCIuc3RhciB7XG4gIGZvbnQtc2l6ZTogMS40cmVtO1xuICBjb2xvcjogI2QzZDNkMztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuXG4uZnVsbCB7XG4gIGNvbG9yOiAjZmZkYzFjO1xuICBvdmVyZmxvdzogaGlkZGVuO1xufVxuXG4uaGFsZiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgY29sb3I6ICNmZmRjMWM7XG59Il19 */"
+module.exports = ".star {\n  font-size: 1.4rem;\n  color: #d3d3d3;\n  position: relative;\n}\n\n.full {\n  color: #ffdc1c;\n  overflow: hidden;\n}\n\n.half {\n  position: absolute;\n  overflow: hidden;\n  color: #ffdc1c;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9hZG1pbi9zcmMvdGhlbWUvZGVmYXVsdC9hZG1pbi9zaGFyZWQvY29tcG9uZW50cy9yYXRpbmcvcmF0aW5nLmNvbXBvbmVudC5zY3NzIiwic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vc2hhcmVkL2NvbXBvbmVudHMvcmF0aW5nL3JhdGluZy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGlCQUFBO0VBQ0EsY0FBQTtFQUNBLGtCQUFBO0FDQ0o7O0FERUE7RUFDSSxjQUFBO0VBQ0EsZ0JBQUE7QUNDSjs7QURFQTtFQUNJLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0FDQ0oiLCJmaWxlIjoic3JjL3RoZW1lL2RlZmF1bHQvYWRtaW4vc2hhcmVkL2NvbXBvbmVudHMvcmF0aW5nL3JhdGluZy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zdGFyIHtcbiAgICBmb250LXNpemU6IDEuNHJlbTtcbiAgICBjb2xvcjogI2QzZDNkMztcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG5cbi5mdWxsIHtcbiAgICBjb2xvcjogI2ZmZGMxYztcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xufVxuXG4uaGFsZiB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgY29sb3I6ICNmZmRjMWM7XG59IiwiLnN0YXIge1xuICBmb250LXNpemU6IDEuNHJlbTtcbiAgY29sb3I6ICNkM2QzZDM7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cblxuLmZ1bGwge1xuICBjb2xvcjogI2ZmZGMxYztcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cblxuLmhhbGYge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGNvbG9yOiAjZmZkYzFjO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -18665,7 +19474,7 @@ var MaterialModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/test01/marketplace/admin/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /webroot/public_html/websites/odz/marketplace/admin/src/main.ts */"./src/main.ts");
 
 
 /***/ })

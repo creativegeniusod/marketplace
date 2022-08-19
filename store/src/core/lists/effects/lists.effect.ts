@@ -281,4 +281,16 @@ export class ListsEffect {
       );
     })
   );
+
+  @Effect()
+  advertisementProductList$: Observable<Action> = this.actions$.pipe(
+    ofType(actions.ActionTypes.GET_ADVERTISEMENT_PRODUCT_LIST),
+    map((action: actions.GetAdvertisementProductList) => action.payload),
+    switchMap(state => {
+      return this.authApi.getAdvertisementList(state).pipe(
+        map(banner => new actions.GetAdvertisementProductListSuccess(banner)),
+        catchError(error => of(new actions.GetAdvertisementProductListFail(error)))
+      );
+    })
+  );
 }

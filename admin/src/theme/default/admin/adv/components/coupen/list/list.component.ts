@@ -106,7 +106,7 @@ export class CoupenListComponent implements OnInit {
   // this function navigate  to  create page coupen
   AddCoupen() {
     this.service.setCoupenListData('');
-    this.router.navigate(['/adv/Coupen/add']);
+    this.router.navigate(['/adv/Coupens/add']);
   }
 
   /**

@@ -621,7 +621,7 @@ var ProductAddComponent = /** @class */ (function () {
         }
         // console.log(localStorage.getItem('userdetails'),"*****&****")
         console.log(user, "user Id");
-        return false;
+        // return false;
         this.onetimeEdit = true;
         this.param.productName = user.productName;
         this.param.metaTagTitle = user.metaTagTitle;
@@ -646,7 +646,7 @@ var ProductAddComponent = /** @class */ (function () {
             this.productSandbox.doProductUpdate(this.param);
         }
         else {
-            console.log("******", user, 'params', this.param);
+            // console.log("******",user,'params', this.param);
             this.productSandbox.doProductAdd(this.param);
         }
     };

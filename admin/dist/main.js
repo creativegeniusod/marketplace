@@ -29,7 +29,7 @@ var map = {
 	],
 	"./components/banner/banner.module": [
 		"./src/theme/default/admin/adv/components/banner/banner.module.ts",
-		"default~components-banner-banner-module~components-categories-categories-module~components-product-p~b060f34b",
+		"default~components-banner-banner-module~components-categories-categories-module~components-coupen-co~10e4c156",
 		"common",
 		"components-banner-banner-module"
 	],
@@ -42,9 +42,15 @@ var map = {
 	],
 	"./components/categories/categories.module": [
 		"./src/theme/default/admin/catalog/components/categories/categories.module.ts",
-		"default~components-banner-banner-module~components-categories-categories-module~components-product-p~b060f34b",
+		"default~components-banner-banner-module~components-categories-categories-module~components-coupen-co~10e4c156",
 		"common",
 		"components-categories-categories-module"
+	],
+	"./components/coupen/coupen.module": [
+		"./src/theme/default/admin/adv/components/coupen/coupen.module.ts",
+		"default~components-banner-banner-module~components-categories-categories-module~components-coupen-co~10e4c156",
+		"common",
+		"components-coupen-coupen-module"
 	],
 	"./components/customer/customer.module": [
 		"./src/theme/default/admin/customers/components/customer/customer.module.ts",
@@ -76,7 +82,7 @@ var map = {
 	],
 	"./components/product/product.module": [
 		"./src/theme/default/admin/catalog/components/product/product.module.ts",
-		"default~components-banner-banner-module~components-categories-categories-module~components-product-p~b060f34b",
+		"default~components-banner-banner-module~components-categories-categories-module~components-coupen-co~10e4c156",
 		"default~catalog-catalog-module~components-brand-brand-module~components-product-product-module",
 		"default~components-brand-brand-module~components-product-product-module",
 		"default~catalog-catalog-module~components-product-product-module",

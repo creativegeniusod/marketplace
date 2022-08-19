@@ -22,7 +22,10 @@ const coupenRoutes: Routes = [
     component: CoupenAddComponent
   }
 ];
-
+/*const coupenRoutes: Routes = [
+    { path: '', component: CoupenListComponent }
+];*/
+// console.log("dddd")
 @NgModule({
   imports: [RouterModule.forChild(coupenRoutes)],
   exports: [RouterModule]

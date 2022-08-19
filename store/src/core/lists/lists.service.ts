@@ -173,11 +173,27 @@ export class ListsService extends Api {
     });
   }
 
-    /* subcategory list api*/
-    getSubCategoryList(param) {
-      this.base = this.getBaseUrl();
-      return this.http.get(this.base + 'list/specific-category-list', {
-        params: param
-      });
+  /* subcategory list api*/
+  getSubCategoryList(param) {
+    this.base = this.getBaseUrl();
+    return this.http.get(this.base + 'list/specific-category-list', {
+      params: param
+    });
+  }
+
+  /* get Advertisement List list api*/
+  public getAdvertisementList(params: any): Observable<any> {
+    this.base = this.getBaseUrl();
+    const reqOpts: any = {};
+    if (params) {
+      reqOpts.params = new HttpParams();
+      for (const k in params) {
+        if (k) {
+          reqOpts.params = reqOpts.params.set(k, params[k]);
+        }
+      }
     }
+    return this.http.get(this.base + 'list/banner-list', reqOpts);
+  }
+
 }

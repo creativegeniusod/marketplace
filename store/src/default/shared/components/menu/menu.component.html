@@ -7,7 +7,8 @@
     </a> -->
     <a mat-button class="colorMenu" routerLinkActive="horizontal-active-link"
         *ngFor="let category of categories;let i=index" [routerLinkActiveOptions]="{exact:true}"
-        [matMenuTriggerFor]="menu" (click)="indexData(i,category.categoryId)" [routerLink]="['/home', category.categoryId]">
+        [matMenuTriggerFor]="menu" (click)="indexData(i,category.categoryId)"
+        [routerLink]="['/shop', category.name, category.categoryId]">
         <img class="menu-img" src="assets/images/1-a.png">
         <span class="menu-text">{{category.name}}</span>
         <!-- <mat-icon class="caret">arrow_drop_down</mat-icon> -->
@@ -55,4 +56,3 @@
         <app-spurt-cart></app-spurt-cart>
     </div>
 </mat-toolbar>
-

@@ -230,3 +230,43 @@ cd ..
 admin
 cd admin/
 ls
+ls
+source ~/.profile
+ls
+cd api
+ls
+npm start serve
+kill -9 $(lsof -t -i:9000)
+lsof -i tcp:9000 
+npm start serve
+cd ..
+source ~/.profile
+cd api
+ls
+npm start serve
+source ~/.profile
+ls
+git status
+git add .
+git commit -m "old changes 18 aug live"
+git commit -m "old changes 18 aug live" --no-verify
+git pull origin master
+git status
+cd admin
+npm run build
+ng serve
+cd ..
+git status
+git add .
+git commit -m "new changes .env update 18 aug" --no-verify
+git pull origin master
+cd admin
+npm run build
+source ~/.profile
+cd store
+npm run build
+cd store
+npm run build
+ng serve
+source ~/.profile
+git pull origin master

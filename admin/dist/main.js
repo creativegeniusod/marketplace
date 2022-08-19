@@ -17521,10 +17521,10 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
-    baseUrl: 'http://localhost:9000/api',
-    imageUrl: 'http://localhost:9000/api/media/image-resize/',
-    // baseUrl: 'http://stagingwebsites.info:9000/api',
-    // imageUrl: 'http://stagingwebsites.info:9000/api/media/image-resize/',
+    // baseUrl: 'http://localhost:9000/api',
+    // imageUrl: 'http://localhost:9000/api/media/image-resize/',
+    baseUrl: 'http://stagingwebsites.info:9000/api',
+    imageUrl: 'http://stagingwebsites.info:9000/api/media/image-resize/',
     productUrl: '',
     pluginUrl: '' //<Your API url>
 };

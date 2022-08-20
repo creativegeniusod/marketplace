@@ -280,3 +280,109 @@ git push origin master
 cd store
 npm run build
 ng serve
+source ~/.profile
+git status
+git add .
+git commit -m "18 Aug" --no-verify
+git pull origin master
+git status
+cd api
+kill -9 `lsof -t -i:9000`
+npm start serve
+kill -9 $(lsof -t -i:9000)
+lsof -i tcp:9000 
+npm start serve
+lsof -i tcp:9000 
+kill -9 30189
+npm start serve
+kill -9 $(lsof -t -i:9000)
+source ~/.profile
+ls
+cd admin
+ls
+npm run build 
+ng serve 
+lsof -i tcp:4200 
+kill -9 20991
+ng serve 
+cd ..
+cd api
+npm start serve
+kill -9 $(lsof -t -i:9000)
+lsof -i tcp:9000 
+npm start serve
+npm start serve
+lsof -i tcp:9000 
+kill -9 17965
+npm start serve
+lsof -i tcp:9000 
+kill -9 18559
+lsof -i tcp:9000 
+lsof -i tcp:9000 
+npm start serve
+cd ..
+git pull origin master
+git status
+git add .
+git commit -m "new " --no-verify
+git pull origin master
+ls
+cd admin
+ls
+cd src
+ls
+cd theme/default/
+ls
+cd admin/
+ls
+cd catalog/
+ls
+cd components/
+ls
+cd product/
+ls
+cd add/
+ls
+cd add.component.ts 
+nano add.component.ts 
+cd ~
+ls
+cd admin/
+npm run build
+ng serve
+kill -9 $(lsof -t -i:4200)
+ng serve
+source ~/.profile
+cd store
+npm run build
+ng serve
+kill -9 $(lsof -t -i:4200)
+ng serve
+source ~/.profile
+cd api
+npm start serve
+kill -9 `lsof -t -i:9000`
+npm start serve
+kill -9 `lsof -t -i:9000`
+kill -9 `lsof -t -i:9000`
+kill -9 `lsof -t -i:9000`
+npm start serve
+source ~/.profile
+cd store
+npm run build
+source ~/.profile
+cd store
+npm run build
+cd..
+cd aapi
+cd api
+cd..
+cd..
+ls
+cd ..
+cd api
+npm start serve
+kill -9 $(lsof -t -i:9000)
+npm start serve
+npm start serve
+exit

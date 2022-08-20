@@ -107,6 +107,7 @@ export class AdvertismentProductComponent implements OnInit, OnDestroy {
 
   // initially remove local storage and calls listSandbox getSettings
   ngOnInit() {
+    this.getAdvertisementProductList();
     if (!this.queryParams.id && this.keyword === '') {
       // this.getProductList(this.startKey, this.viewOrder, this.categoryId);
     }
@@ -249,7 +250,7 @@ export class AdvertismentProductComponent implements OnInit, OnDestroy {
 
   getAdvertisementProductList() {
     const params: any = {};
-    params.limit = 100;
+    params.limit = 10;
     params.offset = 0;
     // params.parent = this.categoryId
     this.listSandbox.getAdvertisementList(params);

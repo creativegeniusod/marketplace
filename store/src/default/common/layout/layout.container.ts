@@ -68,6 +68,7 @@ export class LayoutContainerComponent implements OnInit, AfterViewInit {
         params.offset = 0;
         params.keyword = '';
         params.sortOrder = '';
+        params.parent = 'home'
         this.listSandBox.getCategoryList(params);
     }
 

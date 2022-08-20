@@ -132,6 +132,7 @@ export class CommonListController {
         const WhereConditions = parsmsAry;
         console.log(WhereConditions);
         const bannerList: any = await this.bannerService.list(limit, offset, select, search, WhereConditions, count);
+        console.log(bannerList,"***********")
         const successResponse: any = {
             status: 1,
             message: 'Successfully got banner list',

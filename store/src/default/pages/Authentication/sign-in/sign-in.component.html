@@ -10,17 +10,20 @@
 
     <h2 class="signInTitle">Sign In</h2>
     <span>Become a Beaver Member and recieve exclusive offers customized for you</span>
-    <form [formGroup]="loginForm" novalidate>
-        <mat-form-field class="w-100 mt-2" [ngClass]="{'validationcolor':
-    (loginForm.controls.email.hasError('required') && submitted)}">
-            <input matInput placeholder="Email" formControlName="email">
-            <mat-error *ngIf="loginForm.controls['email'].hasError('required') && submitted">
-                Email is required
-            </mat-error>
-            <mat-error *ngIf="loginForm.controls['email'].hasError('invalidEmail') && submitted">
-                Invalid email address
-            </mat-error>
-        </mat-form-field>
+    <form [formGroup]="loginForm" novalidate class="mt-2">
+        <div class="formField fieldWithIcon emailIcon">
+            <mat-form-field class="w-100 mt-1" [ngClass]="{'validationcolor':
+        (loginForm.controls.email.hasError('required') && submitted)}">
+                <input matInput placeholder="Email" formControlName="email">
+                <mat-error *ngIf="loginForm.controls['email'].hasError('required') && submitted">
+                    Email is required
+                </mat-error>
+                <mat-error *ngIf="loginForm.controls['email'].hasError('invalidEmail') && submitted">
+                    Invalid email address
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="formField fieldWithIcon emailIcon">
         <mat-form-field class="w-100 mt-1" [ngClass]="{'validationcolor':
     (loginForm.controls.password.hasError('required') && submitted)}">
             <input matInput placeholder="Password" formControlName="password" type="password">
@@ -31,7 +34,7 @@
                 Password isn't long enough, minimum of 5 characters
             </mat-error>
         </mat-form-field>
-
+    </div>
 
         <div class="text-center mt-2">
             <mat-checkbox class="example-margin">Remember me!</mat-checkbox>

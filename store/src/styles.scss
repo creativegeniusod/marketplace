@@ -743,6 +743,9 @@ body {
     font-size: 12px;
     text-transform: uppercase;
 }
+.headerCartIcon:hover .blackStyle {
+    color: #FF5354 !important;
+}
 
 .top-navbar.mat-toolbar .top-menu a span,
 .top-menu .mat-button-wrapper .blackStyle {

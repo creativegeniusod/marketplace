@@ -522,7 +522,6 @@ body,
 
 .loginPage.mat-card {
     background: #fff7ee !important;
-    margin: -16px;
 }
 
 .containerWrap {
@@ -589,11 +588,14 @@ body,
 }
 
 .actionBtn {
-    background: #335EF7 !important;
+    background: rgb(95,130,255) !important;
+    background: linear-gradient(90deg, rgba(95,130,255,1) 0%, rgba(51,94,247,1) 100%) !important;
     color: #fff !important;
     width: 100%;
     border-radius: 25px !important;
     padding: 5px 15px !important;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .loginPage h6 {
@@ -613,11 +615,19 @@ body,
 }
 
 .loginPage .mat-form-field-label-wrapper {
-    display: none;
+    font-size: 14px;
+    font-family: 'Urbanist', sans-serif;
+    color: #000;
+    top: 0px;
+    padding: 0;
+    left: 15px;
 }
+
+.loginPage .fieldWithIcon .mat-form-field-label-wrapper{left: 50px;}
 
 .app.green .loginPage .mat-checkbox-frame {
     border-color: rgba(0, 0, 0, 1);
+    border-radius: 5px;
 }
 
 .loginPage .mat-checkbox-label {
@@ -733,6 +743,9 @@ body {
     font-size: 12px;
     text-transform: uppercase;
 }
+.headerCartIcon:hover .blackStyle {
+    color: #FF5354 !important;
+}
 
 .top-navbar.mat-toolbar .top-menu a span,
 .top-menu .mat-button-wrapper .blackStyle {
@@ -813,4 +826,24 @@ body {
     .menu-img {
         height: 55px;
     }
+}
+
+.emailIcon{position: relative;}
+.emailIcon:before {content: "";height: 20px;width: 20px;position: absolute;background: url(/assets/images/emailIcon.png);z-index: 1;
+top: 25px;left: 20px;}
+.lockIcon{position: relative;}
+.lockIcon:before {content: "";height: 20px;width: 20px;position: absolute;background: url(/assets/images/lockIcon.png);z-index: 1;
+top: 25px;left: 20px;}
+
+
+.loginPage .fieldWithIcon input.mat-input-element {padding-left: 50px;}
+
+
+@media (min-width: 960px){
+    .formSignInUp{position: relative;justify-content: space-between;}
+    .formSignInUp:before {content: "";height: 80%;position: absolute;left: 50%;background: #000;width: 1px;top: 35px;}
+}
+
+@media (max-width: 767px){
+    .formIcons .mat-icon.material-icons{margin: 0 5px;padding: 10px 15px;}
 }

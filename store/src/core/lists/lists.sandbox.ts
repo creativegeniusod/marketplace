@@ -74,7 +74,10 @@ import {
   childBannerLoadingStatus,
   childBannerLoadedStatus,
   childBannerFailedStatus,
-  advertisementProductList
+  advertisementProductList,
+  advertisementProductListLoading,
+  advertisementProductListLoadedStatus,
+  advertisementProductListFailedStatus
 
 } from './reducer/lists.selector';
 import { ContactUsRequestModel } from './models/contact-us-request.model';
@@ -189,6 +192,10 @@ export class ListsSandbox {
 
   /* get advertisementlist */
   public advertisementProductList$ = this.appState$.select(advertisementProductList);
+  public advertisementProductListLoading$ = this.appState$.select(advertisementProductListLoading);
+  public advertisementProductListLoaded$ = this.appState$.select(advertisementProductListLoadedStatus);
+  public advertisementProductListFailed$ = this.appState$.select(advertisementProductListFailedStatus);
+
 
 
   private subscriptions: Array<Subscription> = [];
@@ -284,12 +291,13 @@ export class ListsSandbox {
     this.appState$.dispatch(new authAction.RemoveActiveCategoryId());
   }
 
- // start get advertisement list 
+  // start get advertisement list 
   public getAdvertisementList(params): void {
     this.appState$.dispatch(new authAction.GetAdvertisementProductList(params));
   }
+
   // end get advertisement list
-  
+
 
   /** subscribe   value **/
   public registerEvents() {

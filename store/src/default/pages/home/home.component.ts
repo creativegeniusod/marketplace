@@ -6,10 +6,10 @@
  * Author piccosoft ltd <support@piccosoft.com>
  * Licensed under the MIT license.
  */
-import {Component, OnInit, PLATFORM_ID, Inject} from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
 
 import { isPlatformBrowser } from '@angular/common';
-import {ListsSandbox} from '../../../core/lists/lists.sandbox';
+import { ListsSandbox } from '../../../core/lists/lists.sandbox';
 
 
 @Component({
@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
         params.offset = 0;
         params.keyword = '';
         params.sku = '';
-       // params.count = '';
+        // params.count = '';
         this.listSandbox.getTodayDealList(params);
     }
 

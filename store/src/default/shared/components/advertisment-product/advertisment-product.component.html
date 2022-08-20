@@ -24,9 +24,13 @@
         </div>
       </div>
     </div>
-    <div *ngIf="viewType == 'grid'" fxLayout="row wrap" class="products-wrapper">
+    <ng-container *ngFor="let item of [1,2,3,4,5]">
+      <div class="advertisement-heading" *ngIf="((listSandbox.bannerList$ | async) | keyvalue)?.length">
+        <h4>Dynamic Text Area</h4>
+      </div>
+      <div *ngIf="viewType == 'grid'" fxLayout="row wrap" class="products-wrapper">
 
-      <!-- <div *ngFor="let product of (listSandbox.productlist$ | async)" fxFlex="100" [fxFlex.gt-sm]="viewCol"
+        <!-- <div *ngFor="let product of (listSandbox.productlist$ | async)" fxFlex="100" [fxFlex.gt-sm]="viewCol"
         fxFlex.sm="50" class="col">
         <mat-card class="product-item text-center card-hover">
           <img *ngIf="product['Images'].defaultImage == 1" style="height:200px"
@@ -34,7 +38,7 @@
             onError="this.src='/assets/images/default_image.png';">
         </mat-card>
       </div> -->
-      <!-- <div *ngFor="let product of listSandbox.bannerList$ | async; let  i= index" fxFlex="100" [fxFlex.gt-sm]="viewCol"
+        <!-- <div *ngFor="let product of listSandbox.bannerList$ | async; let  i= index" fxFlex="100" [fxFlex.gt-sm]="viewCol"
         fxFlex.sm="50" class="col">
         <a [routerLink]="['/products', product.categoryId]" class="title text-truncate">
           <mat-card class="product-item text-center card-hover">
@@ -42,19 +46,19 @@
           </mat-card>
         </a>
       </div> -->
+        <div *ngFor="let product of listSandbox.bannerList$ | async" fxFlex="100" [fxFlex.gt-sm]="viewCol"
+          fxFlex.sm="50" class="col">
+          <a [routerLink]="['/products', product.categoryId]" class="title text-truncate">
+            <mat-card class="product-item text-center card-hover">
+              <img
+                [src]="imagePath + '?path=' + product.imagePath + '&name=' + product.image + '&width=260&height=260'">
+            </mat-card>
+          </a>
+        </div>
 
-      <div *ngFor="let product of listSandbox.bannerList$ | async" fxFlex="100" [fxFlex.gt-sm]="viewCol" fxFlex.sm="50"
-        class="col">
-        <a [routerLink]="['/products', product.categoryId]" class="title text-truncate">
-          <mat-card class="product-item text-center card-hover">
-            <img [src]="imagePath + '?path=' + product.imagePath + '&name=' + product.image + '&width=260&height=260'">
-          </mat-card>
-        </a>
+
       </div>
-
-
-    </div>
-
+    </ng-container>
 
 
   </mat-sidenav-content>

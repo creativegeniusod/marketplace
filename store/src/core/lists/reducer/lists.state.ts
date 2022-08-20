@@ -107,10 +107,10 @@ export interface ListsState extends Map<string, any> {
   SelectedcategoryId: any;
   symbolSetting: any;
 
-  advertisementList: Array<BannerListResponseModel>;
-  advertisementLoading: boolean;
-  advertisementLoaded: boolean;
-  advertisementFailed: boolean;
+  advertisementProductList: Array<BannerListResponseModel>;
+  advertisementProductListLoading: boolean;
+  advertisementProductListLoaded: boolean;
+  advertisementProductListFailed: boolean;
 
 }
 

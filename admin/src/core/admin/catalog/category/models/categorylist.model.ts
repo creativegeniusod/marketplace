@@ -11,6 +11,7 @@ export class CategorylistForm {
   public limit: number;
   public offset: number;
   public parentInt: number;
+  public adv: string;
   public keyword: string;
   public sortOrder: string;
   public status: string;
@@ -18,6 +19,7 @@ export class CategorylistForm {
     this.limit = categorylistForm.limit || '';
     this.offset = categorylistForm.offset || '';
     this.parentInt = categorylistForm.parentInt || '';
+    this.adv = categorylistForm.adv || '';
     this.keyword = categorylistForm.keyword || '';
     this.sortOrder = categorylistForm.sortOrder || '';
     this.status = categorylistForm.status || '';

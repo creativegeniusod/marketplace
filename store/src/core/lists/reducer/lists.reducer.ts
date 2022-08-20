@@ -555,10 +555,29 @@ export function reducer(
     }
     case actions.ActionTypes.GET_ADVERTISEMENT_PRODUCT_LIST: {
       return Object.assign({}, state, {
-        advertisementList: state,
-        advertisementLoading: false,
-        advertisementLoaded: true,
-        advertisementFailed: false
+        advertisementProductList: state,
+        advertisementProductListLoading: false,
+        advertisementProductListLoaded: true,
+        advertisementProductListFailed: false
+      });
+    }
+    case actions.ActionTypes.GET_ADVERTISEMENT_PRODUCT_LIST_SUCCESS: {
+      const bannerModel = payload.data.map(_list => {
+        const tempModel = new BannerListResponseModel(_list);
+        return tempModel;
+      });
+      return Object.assign({}, state, {
+        advertisementProductList: bannerModel,
+        advertisementProductListLoading: false,
+        advertisementProductListLoaded: true,
+        advertisementProductListFailed: false
+      });
+    }
+    case actions.ActionTypes.GET_ADVERTISEMENT_PRODUCT_LIST_FAIL: {
+      return Object.assign({}, state, {
+        advertisementProductListLoading: false,
+        advertisementProductListLoaded: true,
+        advertisementProductListFailed: true
       });
     }
     default: {
@@ -658,4 +677,7 @@ export const selectedCategoryId = (state: ListsState) =>
   state.SelectedcategoryId;
 export const getSymbolSetting = (state: ListsState) => state.symbolSetting;
 
-export const getAdvertisementProductList = (state: ListsState) => state.products;
+export const getAdvertisementProductList = (state: ListsState) => state.advertisementProductList;
+export const getAdvertisementProductListLoading = (state: ListsState) => state.advertisementProductListLoading;
+export const getAdvertisementProductListLoaded = (state: ListsState) => state.advertisementProductListLoaded;
+export const getAdvertisementProductListFailed = (state: ListsState) => state.advertisementProductListFailed

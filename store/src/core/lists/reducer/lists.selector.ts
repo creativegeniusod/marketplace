@@ -109,6 +109,20 @@ export const advertisementProductList = createSelector(
   getState,
   fromList.getAdvertisementProductList
 );
+
+export const advertisementProductListLoading = createSelector(
+  getState,
+  fromList.getAdvertisementProductListLoading
+);
+
+export const advertisementProductListLoadedStatus = createSelector(
+  getState,
+  fromList.getAdvertisementProductListLoaded
+);
+export const advertisementProductListFailedStatus = createSelector(
+  getState,
+  fromList.getAdvertisementProductListFailed
+);
 // end
 
 

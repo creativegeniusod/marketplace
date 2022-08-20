@@ -302,28 +302,58 @@ export class CategoryController {
      */
     @Get('/categorylist')
     @Authorized()
-    public async categorylist(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number,@QueryParam('parentInt') parentInt: number, @QueryParam('keyword') keyword: string, @QueryParam('sortOrder') sortOrder: number, @QueryParam('status') status: number, @QueryParam('count') count: number | boolean, @Res() response: any): Promise<any> {
+    public async categorylist(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number,@QueryParam('parentInt') parentInt: number, @QueryParam('keyword') keyword: string, @QueryParam('adv') adv: string, @QueryParam('sortOrder') sortOrder: number, @QueryParam('status') status: number, @QueryParam('count') count: number | boolean, @Res() response: any): Promise<any> {
         console.log(keyword);
         const select = ['categoryId', 'name',  'parentInt', 'sortOrder', 'metaTagTitle', 'metaTagDescription', 'metaTagKeyword', 'isActive'];
-        if(parentInt==undefined){
-            parentInt=0;
+        let mainAry;
+        if(adv && adv != undefined){
+           mainAry= [
+                {
+                    name: 'name',
+                    op: 'like',
+                    value: keyword,
+                }, {
+                    name: 'isActive',
+                    op: 'where',
+                    value: status,
+                },{
+                    name: 'parentInt',
+                    op: 'where',
+                    value: 0,
+                },
+            ];
+        }else if(parentInt && parentInt != undefined){
+            console.log("***undefined***")
+           mainAry= [
+                {
+                    name: 'name',
+                    op: 'like',
+                    value: keyword,
+                }, {
+                    name: 'isActive',
+                    op: 'where',
+                    value: status,
+                },{
+                    name: 'parentInt',
+                    op: 'where',
+                    value: parentInt,
+                },
+            ];
+        }else{
+            mainAry= [
+                {
+                    name: 'name',
+                    op: 'like',
+                    value: keyword,
+                }, {
+                    name: 'isActive',
+                    op: 'where',
+                    value: status,
+                }
+            ];
         }
-        // console.log(parentInt,"&&&&&&**")
-        const search = [
-            {
-                name: 'name',
-                op: 'like',
-                value: keyword,
-            }, {
-                name: 'isActive',
-                op: 'where',
-                value: status,
-            }, {
-                name: 'parentInt',
-                op: 'where',
-                value: parentInt,
-            },
-        ];
+        const search = mainAry
+        console.log(search)
         const WhereConditions = [];
         const category: any = await this.categoryService.list(limit, offset, select, search, WhereConditions, sortOrder, count);
        if (count) {

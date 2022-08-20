@@ -154,6 +154,7 @@ export class CommonListController {
      * {
      *      "limit" : "",
      *      "offset": "",
+     *      "parent": "",
      *      "keyorder": "",
      *      "sortOrder": "",
      *      "count": "",
@@ -170,23 +171,44 @@ export class CommonListController {
      */
     // Category List Function
     @Get('/category-list')
-    public async ParentCategoryList(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number, @QueryParam('keyword') keyword: string, @QueryParam('sortOrder') sortOrder: number, @QueryParam('count') count: number | boolean, @Req() request: any, @Res() response: any): Promise<any> {
+    public async ParentCategoryList(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number, @QueryParam('keyword') keyword: string, @QueryParam('parent') parent: string, @QueryParam('sortOrder') sortOrder: number, @QueryParam('count') count: number | boolean, @Req() request: any, @Res() response: any): Promise<any> {
         const select = ['categoryId', 'name', 'parentInt', 'sortOrder', 'metaTagTitle', 'metaTagDescription', 'metaTagKeyword', 'isActive'];
-        const search = [
-            {
-                name: 'name',
-                op: 'like',
-                value: keyword,
-            }, {
-                name: 'isActive',
-                op: 'where',
-                value: 1,
-            },  {
-                name: 'parentInt',
-                op: 'where',
-                value: 0,
-            },
-        ];
+        let mainAry;
+        if(parent !=undefined){
+            mainAry= [
+                {
+                    name: 'name',
+                    op: 'like',
+                    value: keyword,
+                }, {
+                    name: 'isActive',
+                    op: 'where',
+                    value: 1,
+                },{
+                    name: 'parentInt',
+                    op: 'where',
+                    value: 0,
+                },
+            ];
+        }else{
+            mainAry= [
+                {
+                    name: 'name',
+                    op: 'like',
+                    value: keyword,
+                }, {
+                    name: 'isActive',
+                    op: 'where',
+                    value: 1,
+                },{
+                    name: 'parentInt',
+                    op: 'where',
+                    value: 0,
+                },
+            ];
+
+        }
+        const search = mainAry
         const WhereConditions = [];
         const categoryData = await this.categoryService.list(limit, offset, select, search, WhereConditions, sortOrder, count);
         if (count) {

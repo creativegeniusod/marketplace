@@ -17635,6 +17635,7 @@ var CategorylistForm = /** @class */ (function () {
         this.limit = categorylistForm.limit || '';
         this.offset = categorylistForm.offset || '';
         this.parentInt = categorylistForm.parentInt || '';
+        this.adv = categorylistForm.adv || '';
         this.keyword = categorylistForm.keyword || '';
         this.sortOrder = categorylistForm.sortOrder || '';
         this.status = categorylistForm.status || '';

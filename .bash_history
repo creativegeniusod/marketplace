@@ -386,3 +386,48 @@ kill -9 $(lsof -t -i:9000)
 npm start serve
 npm start serve
 exit
+source ~/.profile
+cd api
+lsof -i tcp:9000
+kill -9 11277
+lsof -i tcp:9000
+kill -9 `lsof -t -i:9000`
+npm start serve
+source ~/.profile
+cd store
+npm run build
+source ~/.profile
+cd admin
+npm run build 
+ng serve
+cd ..
+git status
+git add .
+git commit -m "new" --no-verify 
+git pull origin master
+git status
+git add .
+git commit -m "new updare Aug 20" --no-verify
+git pull origin master
+cd admin
+npm run build
+ng serve
+source ~/.profile
+ls
+cd admin
+ls
+npm run build
+source ~/.profile
+cd api
+ls
+npm run serve
+npm start serve
+kill -9 `lsof -t -i:9000`
+lsof -i tcp:9000
+npm start serve
+source ~/.profile
+cd store
+npm run build
+ng serve
+kill -9 $(lsof -t -i:4200)
+ng serve

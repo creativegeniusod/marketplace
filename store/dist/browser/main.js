@@ -2553,6 +2553,9 @@ var ListsSandbox = /** @class */ (function () {
         this.symbolSetting$ = this.appState$.select(_reducer_lists_selector__WEBPACK_IMPORTED_MODULE_5__["symbolSetting"]);
         /* get advertisementlist */
         this.advertisementProductList$ = this.appState$.select(_reducer_lists_selector__WEBPACK_IMPORTED_MODULE_5__["advertisementProductList"]);
+        this.advertisementProductListLoading$ = this.appState$.select(_reducer_lists_selector__WEBPACK_IMPORTED_MODULE_5__["advertisementProductListLoading"]);
+        this.advertisementProductListLoaded$ = this.appState$.select(_reducer_lists_selector__WEBPACK_IMPORTED_MODULE_5__["advertisementProductListLoadedStatus"]);
+        this.advertisementProductListFailed$ = this.appState$.select(_reducer_lists_selector__WEBPACK_IMPORTED_MODULE_5__["advertisementProductListFailedStatus"]);
         this.subscriptions = [];
         /** create a subject send the value from menucomponent and recieve value to productFilterComponent*/
         this.productFilterData = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
@@ -3509,7 +3512,7 @@ var ZoneCountryResponseModel = /** @class */ (function () {
 /*!*************************************************!*\
   !*** ./src/core/lists/reducer/lists.reducer.ts ***!
   \*************************************************/
-/*! exports provided: initialState, reducer, productList, activeCategoryID, maxProductPrice, getProductCount, productLoading, productLoaded, productFailed, categoryList, manufacturer, productDetail, productDetailMandatory, getAvailableOptionsArray, getBannerList, getListLoading, getListLoaded, getListFailed, getBannerCount, getCountLoading, getCountLoaded, getCountFailed, getChildBannerList, getChildListLoading, getChildListLoaded, getChildListFailed, getPageList, getPageListLoading, getPageListLoaded, getPageListFailed, getSettingDetail, getContactUsLoading, getContactUsLoaded, getContactUsFailed, getContactDetail, getPageDetailLoading, getPageDetailLoaded, getPageDetailFailed, getPageDetail, getManufacturerLoading, getManufacturerLoaded, getManufacturerFailed, getProductDetailLoading, getProductDetailLoaded, getProductDetailFailed, getCountryList, getCountryLoading, getCountryLoaded, getCountryFailed, getZoneList, getZoneLoading, getZoneLoaded, getZoneFailed, getTodayDealList, getTodayDealLoading, getTodayDealLoaded, getTodayDealFailed, getPriceLoading, subCategoryList, subCategoryLoading, subCategoryLoaded, selectedCategoryId, getSymbolSetting, getAdvertisementProductList */
+/*! exports provided: initialState, reducer, productList, activeCategoryID, maxProductPrice, getProductCount, productLoading, productLoaded, productFailed, categoryList, manufacturer, productDetail, productDetailMandatory, getAvailableOptionsArray, getBannerList, getListLoading, getListLoaded, getListFailed, getBannerCount, getCountLoading, getCountLoaded, getCountFailed, getChildBannerList, getChildListLoading, getChildListLoaded, getChildListFailed, getPageList, getPageListLoading, getPageListLoaded, getPageListFailed, getSettingDetail, getContactUsLoading, getContactUsLoaded, getContactUsFailed, getContactDetail, getPageDetailLoading, getPageDetailLoaded, getPageDetailFailed, getPageDetail, getManufacturerLoading, getManufacturerLoaded, getManufacturerFailed, getProductDetailLoading, getProductDetailLoaded, getProductDetailFailed, getCountryList, getCountryLoading, getCountryLoaded, getCountryFailed, getZoneList, getZoneLoading, getZoneLoaded, getZoneFailed, getTodayDealList, getTodayDealLoading, getTodayDealLoaded, getTodayDealFailed, getPriceLoading, subCategoryList, subCategoryLoading, subCategoryLoaded, selectedCategoryId, getSymbolSetting, getAdvertisementProductList, getAdvertisementProductListLoading, getAdvertisementProductListLoaded, getAdvertisementProductListFailed */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3578,6 +3581,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectedCategoryId", function() { return selectedCategoryId; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSymbolSetting", function() { return getSymbolSetting; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAdvertisementProductList", function() { return getAdvertisementProductList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAdvertisementProductListLoading", function() { return getAdvertisementProductListLoading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAdvertisementProductListLoaded", function() { return getAdvertisementProductListLoaded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAdvertisementProductListFailed", function() { return getAdvertisementProductListFailed; });
 /* harmony import */ var _action_lists_action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../action/lists.action */ "./src/core/lists/action/lists.action.ts");
 /* harmony import */ var _lists_state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lists.state */ "./src/core/lists/reducer/lists.state.ts");
 /* harmony import */ var _models_banner_list_response_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/banner-list-response.model */ "./src/core/lists/models/banner-list-response.model.ts");
@@ -4122,10 +4128,29 @@ function reducer(state, _a) {
         }
         case _action_lists_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].GET_ADVERTISEMENT_PRODUCT_LIST: {
             return Object.assign({}, state, {
-                advertisementList: state,
-                advertisementLoading: false,
-                advertisementLoaded: true,
-                advertisementFailed: false
+                advertisementProductList: state,
+                advertisementProductListLoading: false,
+                advertisementProductListLoaded: true,
+                advertisementProductListFailed: false
+            });
+        }
+        case _action_lists_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].GET_ADVERTISEMENT_PRODUCT_LIST_SUCCESS: {
+            var bannerModel = payload.data.map(function (_list) {
+                var tempModel = new _models_banner_list_response_model__WEBPACK_IMPORTED_MODULE_2__["BannerListResponseModel"](_list);
+                return tempModel;
+            });
+            return Object.assign({}, state, {
+                advertisementProductList: bannerModel,
+                advertisementProductListLoading: false,
+                advertisementProductListLoaded: true,
+                advertisementProductListFailed: false
+            });
+        }
+        case _action_lists_action__WEBPACK_IMPORTED_MODULE_0__["ActionTypes"].GET_ADVERTISEMENT_PRODUCT_LIST_FAIL: {
+            return Object.assign({}, state, {
+                advertisementProductListLoading: false,
+                advertisementProductListLoaded: true,
+                advertisementProductListFailed: true
             });
         }
         default: {
@@ -4224,7 +4249,10 @@ var selectedCategoryId = function (state) {
     return state.SelectedcategoryId;
 };
 var getSymbolSetting = function (state) { return state.symbolSetting; };
-var getAdvertisementProductList = function (state) { return state.products; };
+var getAdvertisementProductList = function (state) { return state.advertisementProductList; };
+var getAdvertisementProductListLoading = function (state) { return state.advertisementProductListLoading; };
+var getAdvertisementProductListLoaded = function (state) { return state.advertisementProductListLoaded; };
+var getAdvertisementProductListFailed = function (state) { return state.advertisementProductListFailed; };
 
 
 /***/ }),
@@ -4233,7 +4261,7 @@ var getAdvertisementProductList = function (state) { return state.products; };
 /*!**************************************************!*\
   !*** ./src/core/lists/reducer/lists.selector.ts ***!
   \**************************************************/
-/*! exports provided: getState, getProductList, getactiveCategoryID, getMaxProductPrice, getProductCount, getCategoryList, getManufacturer, getProductDetail, getproductDetailMandatory, getProductLoading, getProductLoaded, getProductFailed, getAvailableOptionsArray, bannerList, bannerLoadingStatus, bannerLoadedStatus, bannerFailedStatus, bannerCount, childBannerList, childBannerLoadingStatus, childBannerLoadedStatus, childBannerFailedStatus, advertisementProductList, countLoadingStatus, countLoadedStatus, countFailedStatus, getPageList, pageListLoadingStatus, pageListLoadedStatus, pageListFailedStatus, settingDetail, contactUsLoadingStatus, contactUsLoadedStatus, contactUsFailedStatus, getContactDetail, pageDetailLoadingStatus, pageDetailLoadedStatus, pageDetailFailedStatus, pageDetail, manufacturerLoadingStatus, manufacturerLoadedStatus, manufacturerFailedStatus, productDetailLoadingStatus, productDetailLoadedStatus, productDetailFailedStatus, countryList, countryLoading, countryLoaded, countryFailed, zoneList, zoneLoading, zoneLoaded, zoneFailed, todayDealList, todayDealLoading, todayDealLoaded, todayDealFailed, priceLoading, subCategoryList, subCategoryLoading, subCategoryLoaded, subCategoryID, symbolSetting */
+/*! exports provided: getState, getProductList, getactiveCategoryID, getMaxProductPrice, getProductCount, getCategoryList, getManufacturer, getProductDetail, getproductDetailMandatory, getProductLoading, getProductLoaded, getProductFailed, getAvailableOptionsArray, bannerList, bannerLoadingStatus, bannerLoadedStatus, bannerFailedStatus, bannerCount, childBannerList, childBannerLoadingStatus, childBannerLoadedStatus, childBannerFailedStatus, advertisementProductList, advertisementProductListLoading, advertisementProductListLoadedStatus, advertisementProductListFailedStatus, countLoadingStatus, countLoadedStatus, countFailedStatus, getPageList, pageListLoadingStatus, pageListLoadedStatus, pageListFailedStatus, settingDetail, contactUsLoadingStatus, contactUsLoadedStatus, contactUsFailedStatus, getContactDetail, pageDetailLoadingStatus, pageDetailLoadedStatus, pageDetailFailedStatus, pageDetail, manufacturerLoadingStatus, manufacturerLoadedStatus, manufacturerFailedStatus, productDetailLoadingStatus, productDetailLoadedStatus, productDetailFailedStatus, countryList, countryLoading, countryLoaded, countryFailed, zoneList, zoneLoading, zoneLoaded, zoneFailed, todayDealList, todayDealLoading, todayDealLoaded, todayDealFailed, priceLoading, subCategoryList, subCategoryLoading, subCategoryLoaded, subCategoryID, symbolSetting */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4261,6 +4289,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "childBannerLoadedStatus", function() { return childBannerLoadedStatus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "childBannerFailedStatus", function() { return childBannerFailedStatus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "advertisementProductList", function() { return advertisementProductList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "advertisementProductListLoading", function() { return advertisementProductListLoading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "advertisementProductListLoadedStatus", function() { return advertisementProductListLoadedStatus; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "advertisementProductListFailedStatus", function() { return advertisementProductListFailedStatus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "countLoadingStatus", function() { return countLoadingStatus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "countLoadedStatus", function() { return countLoadedStatus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "countFailedStatus", function() { return countFailedStatus; });
@@ -4338,6 +4369,9 @@ var childBannerLoadedStatus = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["crea
 var childBannerFailedStatus = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getState, _lists_reducer__WEBPACK_IMPORTED_MODULE_1__["getChildListFailed"]);
 // start get advertisement product list
 var advertisementProductList = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getState, _lists_reducer__WEBPACK_IMPORTED_MODULE_1__["getAdvertisementProductList"]);
+var advertisementProductListLoading = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getState, _lists_reducer__WEBPACK_IMPORTED_MODULE_1__["getAdvertisementProductListLoading"]);
+var advertisementProductListLoadedStatus = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getState, _lists_reducer__WEBPACK_IMPORTED_MODULE_1__["getAdvertisementProductListLoaded"]);
+var advertisementProductListFailedStatus = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getState, _lists_reducer__WEBPACK_IMPORTED_MODULE_1__["getAdvertisementProductListFailed"]);
 // end
 var countLoadingStatus = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getState, _lists_reducer__WEBPACK_IMPORTED_MODULE_1__["getCountLoading"]);
 var countLoadedStatus = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getState, _lists_reducer__WEBPACK_IMPORTED_MODULE_1__["getCountLoaded"]);
@@ -6695,6 +6729,7 @@ var LayoutContainerComponent = /** @class */ (function () {
         params.offset = 0;
         params.keyword = '';
         params.sortOrder = '';
+        params.parent = 'home';
         this.listSandBox.getCategoryList(params);
     };
     // scroll the window to the top
@@ -7428,7 +7463,7 @@ var NotFoundComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container class=\"productsWrap\">\n  <mat-sidenav-content class=\"all-products\" ngClass.gt-sm=\"p-left\">\n    <!-- <div fxLayout=\"row\" fxLayout.xs=\"column\" fxLayoutAlign=\"space-between center\"\n      class=\"filter-row mat-elevation-z1 text-muted\">\n      <button *ngIf=\"!sidenavOpen\" mat-icon-button (click)=\"sidenav.toggle()\">\n        <mat-icon>more_vert</mat-icon>\n      </button>\n      <div>\n\n        <mat-menu #sortMenu=\"matMenu\" xPosition=\"before\" class=\"app-dropdown\" overlapTrigger=\"true\">\n          <span (mouseleave)=\"sortMenuTrigger.closeMenu()\">\n            <button mat-menu-item *ngFor=\"let sort of sortings\" (click)=\"changeSorting(sort)\">\n              <span>{{sort.order}}</span>\n            </button>\n          </span>\n        </mat-menu>\n      </div>\n    </div> -->\n    <!-- *ngIf=\"listSandbox.productLoading$ | async\" -->\n    <div class=\"wrapper\">\n      <div class=\"overlay\">\n        <div class=\"spinner-wrapper\">\n          <app-spinner [isShow]=\"listSandbox.productLoading$ | async\"></app-spinner>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"viewType == 'grid'\" fxLayout=\"row wrap\" class=\"products-wrapper\">\n\n      <!-- <div *ngFor=\"let product of (listSandbox.productlist$ | async)\" fxFlex=\"100\" [fxFlex.gt-sm]=\"viewCol\"\n        fxFlex.sm=\"50\" class=\"col\">\n        <mat-card class=\"product-item text-center card-hover\">\n          <img *ngIf=\"product['Images'].defaultImage == 1\" style=\"height:200px\"\n            [src]=\"imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'\"\n            onError=\"this.src='/assets/images/default_image.png';\">\n        </mat-card>\n      </div> -->\n      <!-- <div *ngFor=\"let product of listSandbox.bannerList$ | async; let  i= index\" fxFlex=\"100\" [fxFlex.gt-sm]=\"viewCol\"\n        fxFlex.sm=\"50\" class=\"col\">\n        <a [routerLink]=\"['/products', product.categoryId]\" class=\"title text-truncate\">\n          <mat-card class=\"product-item text-center card-hover\">\n            <img src=\"/assets/images/mi{{i +1}}.jpg\" onError=\"this.src='/assets/images/default_image.png';\">\n          </mat-card>\n        </a>\n      </div> -->\n\n      <div *ngFor=\"let product of listSandbox.bannerList$ | async\" fxFlex=\"100\" [fxFlex.gt-sm]=\"viewCol\" fxFlex.sm=\"50\"\n        class=\"col\">\n        <a [routerLink]=\"['/products', product.categoryId]\" class=\"title text-truncate\">\n          <mat-card class=\"product-item text-center card-hover\">\n            <img [src]=\"imagePath + '?path=' + product.imagePath + '&name=' + product.image + '&width=260&height=260'\">\n          </mat-card>\n        </a>\n      </div>\n\n\n    </div>\n\n\n\n  </mat-sidenav-content>\n</mat-sidenav-container>"
+module.exports = "<mat-sidenav-container class=\"productsWrap\">\n  <mat-sidenav-content class=\"all-products\" ngClass.gt-sm=\"p-left\">\n    <!-- <div fxLayout=\"row\" fxLayout.xs=\"column\" fxLayoutAlign=\"space-between center\"\n      class=\"filter-row mat-elevation-z1 text-muted\">\n      <button *ngIf=\"!sidenavOpen\" mat-icon-button (click)=\"sidenav.toggle()\">\n        <mat-icon>more_vert</mat-icon>\n      </button>\n      <div>\n\n        <mat-menu #sortMenu=\"matMenu\" xPosition=\"before\" class=\"app-dropdown\" overlapTrigger=\"true\">\n          <span (mouseleave)=\"sortMenuTrigger.closeMenu()\">\n            <button mat-menu-item *ngFor=\"let sort of sortings\" (click)=\"changeSorting(sort)\">\n              <span>{{sort.order}}</span>\n            </button>\n          </span>\n        </mat-menu>\n      </div>\n    </div> -->\n    <!-- *ngIf=\"listSandbox.productLoading$ | async\" -->\n    <div class=\"wrapper\">\n      <div class=\"overlay\">\n        <div class=\"spinner-wrapper\">\n          <app-spinner [isShow]=\"listSandbox.productLoading$ | async\"></app-spinner>\n        </div>\n      </div>\n    </div>\n    <ng-container *ngFor=\"let item of [1,2,3,4,5]\">\n      <div class=\"advertisement-heading\" *ngIf=\"((listSandbox.bannerList$ | async) | keyvalue)?.length\">\n        <h4>Dynamic Text Area</h4>\n      </div>\n      <div *ngIf=\"viewType == 'grid'\" fxLayout=\"row wrap\" class=\"products-wrapper\">\n\n        <!-- <div *ngFor=\"let product of (listSandbox.productlist$ | async)\" fxFlex=\"100\" [fxFlex.gt-sm]=\"viewCol\"\n        fxFlex.sm=\"50\" class=\"col\">\n        <mat-card class=\"product-item text-center card-hover\">\n          <img *ngIf=\"product['Images'].defaultImage == 1\" style=\"height:200px\"\n            [src]=\"imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'\"\n            onError=\"this.src='/assets/images/default_image.png';\">\n        </mat-card>\n      </div> -->\n        <!-- <div *ngFor=\"let product of listSandbox.bannerList$ | async; let  i= index\" fxFlex=\"100\" [fxFlex.gt-sm]=\"viewCol\"\n        fxFlex.sm=\"50\" class=\"col\">\n        <a [routerLink]=\"['/products', product.categoryId]\" class=\"title text-truncate\">\n          <mat-card class=\"product-item text-center card-hover\">\n            <img src=\"/assets/images/mi{{i +1}}.jpg\" onError=\"this.src='/assets/images/default_image.png';\">\n          </mat-card>\n        </a>\n      </div> -->\n        <div *ngFor=\"let product of listSandbox.bannerList$ | async\" fxFlex=\"100\" [fxFlex.gt-sm]=\"viewCol\"\n          fxFlex.sm=\"50\" class=\"col\">\n          <a [routerLink]=\"['/products', product.categoryId]\" class=\"title text-truncate\">\n            <mat-card class=\"product-item text-center card-hover\">\n              <img\n                [src]=\"imagePath + '?path=' + product.imagePath + '&name=' + product.image + '&width=260&height=260'\">\n            </mat-card>\n          </a>\n        </div>\n\n\n      </div>\n    </ng-container>\n\n\n  </mat-sidenav-content>\n</mat-sidenav-container>"
 
 /***/ }),
 
@@ -7550,6 +7585,7 @@ var AdvertismentProductComponent = /** @class */ (function () {
     }
     // initially remove local storage and calls listSandbox getSettings
     AdvertismentProductComponent.prototype.ngOnInit = function () {
+        this.getAdvertisementProductList();
         if (!this.queryParams.id && this.keyword === '') {
             // this.getProductList(this.startKey, this.viewOrder, this.categoryId);
         }
@@ -7681,7 +7717,7 @@ var AdvertismentProductComponent = /** @class */ (function () {
     };
     AdvertismentProductComponent.prototype.getAdvertisementProductList = function () {
         var params = {};
-        params.limit = 100;
+        params.limit = 10;
         params.offset = 0;
         // params.parent = this.categoryId
         this.listSandbox.getAdvertisementList(params);

@@ -703,6 +703,7 @@ var BannerAddComponent = /** @class */ (function () {
         param.offset = '';
         param.keyword = undefined;
         param.sortOrder = '';
+        param.adv = '1';
         param.parentInt = 0;
         param.status = 1;
         console.log(param, "make params");

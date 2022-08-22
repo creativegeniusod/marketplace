@@ -1633,7 +1633,7 @@ var ProductsComponent = /** @class */ (function () {
         this.sidenavOpen = true;
         // card view
         this.viewType = 'grid';
-        this.viewCol = 25;
+        this.viewCol = 14;
         this.sortData = 'Price Low To High';
         // parameters for product list
         this.startKey = 0;
@@ -1783,7 +1783,7 @@ var ProductsComponent = /** @class */ (function () {
         window.innerWidth < 960
             ? (this.sidenavOpen = false)
             : (this.sidenavOpen = true);
-        window.innerWidth < 1280 ? (this.viewCol = 33.3) : (this.viewCol = 25);
+        window.innerWidth < 1280 ? (this.viewCol = 33.3) : (this.viewCol = 14);
     };
     // changing the view type
     ProductsComponent.prototype.changeViewType = function (viewType, viewCol) {

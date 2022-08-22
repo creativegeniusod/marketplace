@@ -1,18 +1,42 @@
 <div class="top-menu">
+
+    <a fxShow="true" fxHide.gt-sm="true" mat-button (click)="toogleInput()">
+        <mat-icon class="mat-icon-sm account-icon blackStyle"><img
+            src="../../../assets/images/search.png" /></mat-icon>
+    </a>
+   
+
+    <div *ngIf="isSearchInput" class="search-algin" fxFlex fxFlexOffset.gt-sm="1" fxShow="true" fxShow.gt-sm>
+        <form method="get" class="search-form" fxLayout="row">
+            <mat-menu #categoriesMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="categories-dropdown">
+            </mat-menu>
+            <input type="text" placeholder="What are you looking for ?" fxFlex
+                (keyup)="searchData($event.target.value)">
+            <button mat-mini-fab (click)="search()" type="button"
+                class="search-btn mat-elevation-z0 mat-mini-fab mat-accent">
+                Search
+            </button>
+        </form>
+    </div>
+
+
     <a mat-button [matMenuTriggerFor]="accountMenu" #accountMenuTrigger="matMenuTrigger" class="blackStyle"
         *ngIf="(commonSandbox.getProfile$ | async)?.email">
         <!-- <mat-icon class="mat-icon-sm account-icon blackStyle">person</mat-icon> -->
-        <mat-icon routerLink="/auth" class="mat-icon-sm account-icon blackStyle"><img src="../../../assets/images/Profile.png" /></mat-icon>
+        <mat-icon routerLink="/auth" class="mat-icon-sm account-icon blackStyle"><img
+                src="../../../assets/images/Profile.png" /></mat-icon>
         <span fxShow="false" fxShow.gt-sm class="blackStyle">Account</span>
         <!-- <mat-icon class="mat-icon-sm caret blackStyle">arrow_drop_down</mat-icon> -->
     </a>
     <a mat-button routerLink="/auth" *ngIf="!(commonSandbox.getProfile$ | async)?.email">
-        <mat-icon routerLink="/auth" class="mat-icon-sm account-icon blackStyle"><img src="../../../assets/images/Profile.png" /></mat-icon>
+        <mat-icon routerLink="/auth" class="mat-icon-sm account-icon blackStyle"><img
+                src="../../../assets/images/Profile.png" /></mat-icon>
         <span fxShow="false" fxShow.gt-sm class="blackStyle">Profile</span>
     </a>
 
     <a mat-button>
-        <mat-icon class="mat-icon-sm notification-icon blackStyle"><img src="../../../assets/images/Notification.png" /></mat-icon>
+        <mat-icon class="mat-icon-sm notification-icon blackStyle"><img src="../../../assets/images/Notification.png" />
+        </mat-icon>
         <span fxShow="false" fxShow.gt-sm class="blackStyle">Notification</span>
     </a>
 

@@ -18,6 +18,13 @@
                 Search
             </button>
         </form>
+        <div mat-dialog-content *ngIf="searchLists?.length > 0 && searchValue">
+            <ul>
+                <li *ngFor="let list of searchLists">
+                    <a class="title text-truncate">{{list.name}}</a>
+                </li>
+            </ul>
+        </div>
     </div>
 
 

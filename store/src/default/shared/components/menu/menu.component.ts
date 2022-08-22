@@ -45,6 +45,7 @@ export class MenuComponent implements OnInit {
     public categorylinkActive: string;
     // theme
     public settings: Settings;
+    public searchLists: any = [];
 
     constructor(public listSandbox: ListsSandbox,
         public appSettings: AppSettings,
@@ -100,16 +101,40 @@ export class MenuComponent implements OnInit {
 
     // send the search value to product through navigation.If no value send 1 as default value.
     public searchData(value) {
-        console.log('search', value);
         this.searchValue = value;
         if (!value) {
-            this.router.navigate(['/products'], {
-                queryParams: { keyword: this.searchValue }
-            });
+            // this.router.navigate(['/products'], {
+            //     queryParams: { keyword: this.searchValue }
+            // });
+            this.searchLists = [];
         } else {
-            this.router.navigate(['/products'], {
-                queryParams: { keyword: this.searchValue }
-            });
+            // this.router.navigate(['/products'], {
+            //     queryParams: { keyword: this.searchValue }
+            // });
+            this.getProductList(this.searchValue);
         }
+    }
+
+    /**
+   * fetch product list from service. calling getProductList function from sandbox
+   *
+   * @param keyword filter
+   */
+    getProductList(keyword) {
+        const params: any = {};
+        params.limit = 100;
+        params.offset = 0;
+        params.categoryId = this.categoryId ? this.categoryId : '';
+        params.keyword = keyword;
+        params.price = 'ASC';
+        params.priceFrom = 0;
+        params.priceTo = '';
+        if (keyword) {
+            this.listSandbox.getProductList(params)
+            this.listSandbox.productlist$.subscribe(data => {
+                this.searchLists = [...data];
+            })
+        }
+
     }
 }

@@ -11,12 +11,12 @@
         <span fxShow="false" fxShow.gt-sm class="blackStyle">Profile</span>
     </a>
 
-    <a mat-button *ngIf="!(commonSandbox.getProfile$ | async)?.email">
+    <a mat-button>
         <mat-icon class="mat-icon-sm notification-icon blackStyle"><img src="../../../assets/images/Notification.png" /></mat-icon>
         <span fxShow="false" fxShow.gt-sm class="blackStyle">Notification</span>
     </a>
 
-    <span fxShow="false" fxShow.gt-sm>
+    <span fxShow="true" fxShow.gt-sm>
         <a mat-button [routerLink]="['/wishlist']">
             <mat-icon class="mat-icon-sm"><img src="../../../assets/images/heart.png" /></mat-icon>
             <span class="blackStyle">Wishlist

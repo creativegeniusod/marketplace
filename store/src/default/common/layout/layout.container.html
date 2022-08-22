@@ -10,7 +10,7 @@
     <!-- <mat-toolbar>
         <app-spurt-header-menu [categories]="listSandBox.categoryList$ | async" class="head"></app-spurt-header-menu>
     </mat-toolbar> -->
-    <app-menu fxShow="false" fxShow.gt-sm [categories]="listSandBox.categoryList$ | async"></app-menu>
+    <app-menu [categories]="listSandBox.categoryList$ | async"></app-menu>
 
     <div class="theme-container-full main">
         <!-- <app-breadcrumb></app-breadcrumb> -->
@@ -18,7 +18,7 @@
     </div>
     <app-options></app-options>
 <!-- footer -->
-    <app-menu fxShow="false" fxShow.gt-sm [categories]="listSandBox.categoryList$ | async"></app-menu>
+    <app-menu [categories]="listSandBox.categoryList$ | async"></app-menu>
     <app-footer></app-footer>
     <!--  -->
 

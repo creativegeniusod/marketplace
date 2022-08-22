@@ -837,11 +837,20 @@ top: 25px;left: 20px;}
 
 
 .loginPage .fieldWithIcon input.mat-input-element {padding-left: 50px;}
-
+.mat-expansion-panel-header, .categories-dropdown .mat-menu-item{font-family: 'Urbanist', sans-serif;}
 
 @media (min-width: 960px){
     .formSignInUp{position: relative;justify-content: space-between;}
     .formSignInUp:before {content: "";height: 80%;position: absolute;left: 50%;background: #000;width: 1px;top: 35px;}
+}
+
+@media (max-width: 959px){
+    .search-algin {display: none !important;}
+    .app.green .mat-toolbar.mat-primary a.logo img {height: 50px;}
+    .app.green .mat-toolbar.mat-primary a.logo {margin-right: auto;margin-left: 10px;}
+    .top-navbar.mat-toolbar-single-row {justify-content: space-between !important;}
+    .headerCartIcon img {top: -5px;}
+    .categories-dropdown .mat-menu-item {height: auto;line-height: normal;padding: 7px 10px;}
 }
 
 @media (max-width: 767px){

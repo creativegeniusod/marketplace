@@ -51,10 +51,10 @@
         </mat-menu>
       </div>
     </div>
-    <div class="wrapper" *ngIf="listSandbox.productLoading$ | async">
+    <div class="wrapper" *ngIf="listSandbox?.productLoading$ | async">
       <div class="overlay">
         <div class="spinner-wrapper">
-          <app-spinner [isShow]="listSandbox.productLoading$ | async"></app-spinner>
+          <app-spinner [isShow]="listSandbox?.productLoading$ | async"></app-spinner>
         </div>
       </div>
     </div>

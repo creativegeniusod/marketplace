@@ -86,6 +86,11 @@ export class MenuComponent implements OnInit {
         });
     }
 
+
+    closeMyMenu() {
+        this.trigger.closeMenu();
+    }
+
     // Make category link active if category got selected
     linkActive() {
         this.categorylinkActive = this.categoryId;

@@ -120,6 +120,24 @@ export class TopMenuComponent implements OnInit, OnDestroy {
 
   }
 
+  search() {
+    this.router.navigate(['/products'], {
+      queryParams: { keyword: this.searchValue }
+    });
+    this.searchValue = ''
+  }
+
+  getSerchProduct(list){
+    if(list) {
+      this.router.navigate(['/products'], {
+        queryParams: { keyword:list.name }
+    });
+    this.searchLists = [];
+    this.searchValue = ''
+    }
+    
+  }
+
   ngOnDestroy() {
     this.subscriptions.forEach(each => {
       each.unsubscribe();

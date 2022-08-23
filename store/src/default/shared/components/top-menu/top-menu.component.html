@@ -5,23 +5,57 @@
             <i class="fa fa-search"></i>
         </mat-icon>
     </a>
-   
+
 
     <div *ngIf="isSearchInput" class="search-algin" fxFlex fxFlexOffset.gt-sm="1" fxShow="true" fxShow.gt-sm>
         <form method="get" class="search-form" fxLayout="row">
             <mat-menu #categoriesMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="categories-dropdown">
             </mat-menu>
-            <input type="text" placeholder="What are you looking for ?" fxFlex
-                (keyup)="searchData($event.target.value)">
-            <button mat-mini-fab (click)="search()" type="button"
+            <input type="text" placeholder="What are you looking for ?" fxFlex (keyup)="searchData($event.target.value)"
+                [(ngModel)]="searchValue" name="searchValue" (keyup.enter)="
+                search()" autocomplete="off">
+            <!-- <button mat-mini-fab (click)="search()" type="button"
                 class="search-btn mat-elevation-z0 mat-mini-fab mat-accent">
                 Search
-            </button>
+            </button> -->
         </form>
         <div mat-dialog-content *ngIf="searchLists?.length > 0 && searchValue">
+            <div>
+                <h5>Recent</h5>
+                <h5>Clear All</h5>
+            </div>
             <ul>
                 <li *ngFor="let list of searchLists">
-                    <a class="title text-truncate">{{list.name}}</a>
+                    <a class="title text-truncate" href="javascript:void(0)"
+                        (click)="getSerchProduct(list)">{{list.name}}</a>
+                        <mat-icon class="mat-icon-sm close-icon blackStyle">close</mat-icon>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div fxShow="true" fxHide.lt-md class="search-algin" fxFlex fxFlexOffset.gt-sm="1" fxShow="true" fxShow.gt-sm>
+        <form method="get" class="search-form" fxLayout="row">
+            <mat-menu #categoriesMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="categories-dropdown">
+            </mat-menu>
+            <input type="text" placeholder="What are you looking for ?" fxFlex (keyup)="searchData($event.target.value)"
+                [(ngModel)]="searchValue" name="searchValue" (keyup.enter)="
+                search()">
+            <!-- <button mat-mini-fab (click)="search()" type="button"
+                class="search-btn mat-elevation-z0 mat-mini-fab mat-accent">
+                Search
+            </button> -->
+        </form>
+        <div mat-dialog-content *ngIf="searchLists?.length > 0 && searchValue">
+            <div>
+                <h5>Recent</h5>
+                <h5>Clear All</h5>
+            </div>
+            <ul>
+                <li *ngFor="let list of searchLists">
+                    <a class="title text-truncate" href="javascript:void(0)"
+                        (click)="getSerchProduct(list)">{{list.name}}</a>
+                        <mat-icon class="mat-icon-sm close-icon blackStyle">close</mat-icon>
                 </li>
             </ul>
         </div>

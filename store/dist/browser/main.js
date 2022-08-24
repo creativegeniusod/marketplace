@@ -6630,7 +6630,7 @@ var ContainerModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container>\n\n    <mat-sidenav [opened]=\"false\" mode=\"over\" #sidenav class=\"sidenav mat-elevation-z6\">\n        <app-spurt-side-bar></app-spurt-side-bar>\n    </mat-sidenav>\n\n    <!-- <mat-toolbar class=\"head-toolbar\">\n        <app-spurt-header class=\"head\"></app-spurt-header>\n    </mat-toolbar> -->\n    <!-- <mat-toolbar>\n        <app-spurt-header-menu [categories]=\"listSandBox.categoryList$ | async\" class=\"head\"></app-spurt-header-menu>\n    </mat-toolbar> -->\n    <app-menu fxShow=\"false\" fxShow.gt-sm [categories]=\"listSandBox.categoryList$ | async\"></app-menu>\n\n    <div class=\"theme-container-full main\">\n        <!-- <app-breadcrumb></app-breadcrumb> -->\n        <router-outlet></router-outlet>\n    </div>\n    <app-options></app-options>\n<!-- footer -->\n    <app-menu fxShow=\"false\" fxShow.gt-sm [categories]=\"listSandBox.categoryList$ | async\"></app-menu>\n    <app-footer></app-footer>\n    <!--  -->\n\n    <div *ngIf=\"showBackToTop\" fxLayout=\"row\" fxLayoutAlign=\"center center\" class=\"back-to-top transition\"\n         (click)=\"scrollToTop()\">\n        <mat-icon>arrow_upward</mat-icon>\n    </div>\n\n\n</mat-sidenav-container>"
+module.exports = "<mat-sidenav-container>\n\n    <mat-sidenav [opened]=\"false\" mode=\"over\" #sidenav class=\"sidenav mat-elevation-z6\">\n        <app-spurt-side-bar></app-spurt-side-bar>\n    </mat-sidenav>\n\n    <!-- <mat-toolbar class=\"head-toolbar\">\n        <app-spurt-header class=\"head\"></app-spurt-header>\n    </mat-toolbar> -->\n    <!-- <mat-toolbar>\n        <app-spurt-header-menu [categories]=\"listSandBox.categoryList$ | async\" class=\"head\"></app-spurt-header-menu>\n    </mat-toolbar> -->\n    <app-menu [categories]=\"listSandBox.categoryList$ | async\"></app-menu>\n\n    <div class=\"theme-container-full main\">\n        <!-- <app-breadcrumb></app-breadcrumb> -->\n        <router-outlet></router-outlet>\n    </div>\n    <app-options></app-options>\n<!-- footer -->\n    <app-menu [categories]=\"listSandBox.categoryList$ | async\"></app-menu>\n    <app-footer></app-footer>\n    <!--  -->\n\n    <div *ngIf=\"showBackToTop\" fxLayout=\"row\" fxLayoutAlign=\"center center\" class=\"back-to-top transition\"\n         (click)=\"scrollToTop()\">\n        <mat-icon>arrow_upward</mat-icon>\n    </div>\n\n\n</mat-sidenav-container>"
 
 /***/ }),
 
@@ -9523,7 +9523,7 @@ var MainSubmenuCarouselComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar class=\"top-navbar mat-elevation-z2\" fxLayoutAlign=\"\" color=\"primary\">\r\n    <a class=\"logo\" routerLink=\"/\" (click)=\"closeSubMenus()\"><img src=\"assets/images/logo1.png\"></a>\r\n    <!-- <a mat-button [routerLink]=\"['/']\" routerLinkActive=\"horizontal-active-link\" [routerLinkActiveOptions]=\"{exact:true}\"> <img src=\"assets/images/home.png\"> </a> -->\r\n    <!-- <a mat-button (click)=\"sendUniqueId('productFilter')\" [routerLink]=\"['/products/', 'All']\" class=\"colorMenu\"\r\n        routerLinkActive=\"colorMenu\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        AllProducts\r\n    </a> -->\r\n    <a mat-button class=\"colorMenu\" routerLinkActive=\"horizontal-active-link\"\r\n        *ngFor=\"let category of categories;let i=index\" [routerLinkActiveOptions]=\"{exact:true}\"\r\n        [matMenuTriggerFor]=\"menu\" (click)=\"indexData(i,category.categoryId)\"\r\n        [routerLink]=\"['/shop', category.name, category.categoryId]\">\r\n        <img class=\"menu-img\" src=\"assets/images/1-a.png\">\r\n        <span class=\"menu-text\">{{category.name}}</span>\r\n        <!-- <mat-icon class=\"caret\">arrow_drop_down</mat-icon> -->\r\n    </a>\r\n    <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\" class=\"mega-menu category-menu app-dropdown\">\r\n        <span>\r\n            <div fxLayout=\"row wrap\" *ngIf=\"((index)||(index === 0))\">\r\n                <div fxFlex=\"20\" fxLayout=\"column\" class=\"p-1\" *ngFor=\"let subCategory of categories[index].children\">\r\n                    <a mat-menu-item [routerLink]=\"['/products', subCategory.categoryId]\"\r\n                        [routerLinkActiveOptions]=\"{exact:true}\" (click)=\"linkActive()\"\r\n                        routerLinkActive=\"horizontal-active-link\">\r\n                        <b>{{subCategory.name}}</b>\r\n                    </a>\r\n                    <mat-divider></mat-divider>\r\n                    <div *ngIf=\"subCategory.children\">\r\n                        <div *ngFor=\"let grandsubCategory of subCategory.children;let j=index\">\r\n                            <a mat-menu-item [routerLink]=\"['/products', grandsubCategory.categoryId]\"\r\n                                [routerLinkActiveOptions]=\"{exact:true}\" (click)=\"linkActive()\"\r\n                                routerLinkActive=\"horizontal-active-link\">\r\n                                {{grandsubCategory.name}}</a>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n        </span>\r\n    </mat-menu>\r\n    <!-- <a mat-button routerLink=\"/contact\" routerLinkActive=\"horizontal-active-link\"\r\n        [routerLinkActiveOptions]=\"{exact:true}\">Contact</a> -->\r\n\r\n    <div class=\"search-algin\" fxFlex fxFlexOffset.gt-sm=\"1\" fxShow=\"false\" fxShow.gt-sm>\r\n        <form method=\"get\" class=\"search-form\" fxLayout=\"row\">\r\n            <mat-menu #categoriesMenu=\"matMenu\" [overlapTrigger]=\"false\" xPosition=\"before\" class=\"categories-dropdown\">\r\n            </mat-menu>\r\n            <input type=\"text\" placeholder=\"What are you looking for ?\" fxFlex\r\n                (keyup)=\"searchData($event.target.value)\">\r\n            <button mat-mini-fab (click)=\"search()\" type=\"button\"\r\n                class=\"search-btn mat-elevation-z0 mat-mini-fab mat-accent\">\r\n                Search\r\n            </button>\r\n        </form>\r\n    </div>\r\n\r\n    <div fxFlexOffset=\"10\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n        <app-spurt-cart></app-spurt-cart>\r\n    </div>\r\n</mat-toolbar>"
+module.exports = "<mat-toolbar class=\"top-navbar mat-elevation-z2\" fxLayoutAlign=\"\" color=\"primary\">\r\n    <button mat-icon-button (click)=\"sidenav.toggle()\" fxShow=\"true\" fxHide.gt-sm>\r\n        <mat-icon>menu</mat-icon>\r\n    </button>\r\n    <a class=\"logo\" routerLink=\"/\" (click)=\"closeSubMenus()\"><img src=\"assets/images/logo1.png\"></a>\r\n    <!-- <a mat-button [routerLink]=\"['/']\" routerLinkActive=\"horizontal-active-link\" [routerLinkActiveOptions]=\"{exact:true}\"> <img src=\"assets/images/home.png\"> </a> -->\r\n    <!-- <a mat-button (click)=\"sendUniqueId('productFilter')\" [routerLink]=\"['/products/', 'All']\" class=\"colorMenu\"\r\n        routerLinkActive=\"colorMenu\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        AllProducts\r\n    </a> -->\r\n    <div fxShow=\"true\" fxHide.lt-md>\r\n        <!-- (click)=\"indexData(i,category.categoryId)\" -->\r\n        <a mat-button class=\"colorMenu\" routerLinkActive=\"horizontal-active-link\"\r\n            *ngFor=\"let category of categories;let i=index\" [routerLinkActiveOptions]=\"{exact:true}\"\r\n            [matMenuTriggerFor]=\"menu\" [routerLink]=\"['/shop', category.name, category.categoryId]\"\r\n            (mouseover)=\"indexData(i,category.categoryId)\">\r\n            <img class=\"menu-img\" src=\"assets/images/1-a.png\">\r\n            <span class=\"menu-text\">{{category.name}}</span>\r\n            <!-- <mat-icon class=\"caret\">arrow_drop_down</mat-icon> -->\r\n        </a>\r\n        <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\" class=\"mega-menu category-menu app-dropdown\"\r\n            [hasBackdrop]=\"false\" (mouseleave)=\"$event.stopPropagation()\" >\r\n            <span>\r\n                <div fxLayout=\"row wrap\" *ngIf=\"((index)||(index === 0))\">\r\n                    <div fxFlex=\"20\" fxLayout=\"column\" class=\"p-1\"\r\n                        *ngFor=\"let subCategory of categories[index].children\">\r\n                        <a mat-menu-item [routerLink]=\"['/products', subCategory.categoryId]\"\r\n                            [routerLinkActiveOptions]=\"{exact:true}\" (click)=\"linkActive()\"\r\n                            routerLinkActive=\"horizontal-active-link\">\r\n                            <b>{{subCategory.name}}</b>\r\n                        </a>\r\n                        <mat-divider></mat-divider>\r\n                        <div *ngIf=\"subCategory.children\">\r\n                            <div *ngFor=\"let grandsubCategory of subCategory.children;let j=index\">\r\n                                <a mat-menu-item [routerLink]=\"['/products', grandsubCategory.categoryId]\"\r\n                                    [routerLinkActiveOptions]=\"{exact:true}\" (click)=\"linkActive()\"\r\n                                    routerLinkActive=\"horizontal-active-link\">\r\n                                    {{grandsubCategory.name}}</a>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n            </span>\r\n        </mat-menu>\r\n    </div>\r\n    <!-- <a mat-button routerLink=\"/contact\" routerLinkActive=\"horizontal-active-link\"\r\n        [routerLinkActiveOptions]=\"{exact:true}\">Contact</a> -->\r\n\r\n    <div fxShow=\"true\" fxHide.lt-md class=\"search-algin\" fxFlex fxFlexOffset.gt-sm=\"1\" fxShow=\"true\" fxShow.gt-sm>\r\n        <form method=\"get\" class=\"search-form\" fxLayout=\"row\">\r\n            <mat-menu #categoriesMenu=\"matMenu\" [overlapTrigger]=\"false\" xPosition=\"before\" class=\"categories-dropdown\">\r\n            </mat-menu>\r\n            <input type=\"text\" placeholder=\"What are you looking for ?\" fxFlex\r\n                (keyup)=\"searchData($event.target.value)\">\r\n            <button mat-mini-fab (click)=\"search()\" type=\"button\"\r\n                class=\"search-btn mat-elevation-z0 mat-mini-fab mat-accent\">\r\n                Search\r\n            </button>\r\n        </form>\r\n        <div mat-dialog-content *ngIf=\"searchLists?.length > 0 && searchValue\">\r\n            <ul>\r\n                <li *ngFor=\"let list of searchLists\">\r\n                    <a class=\"title text-truncate\">{{list.name}}</a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"menu-right\" fxFlexOffset=\"10\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n        <app-spurt-cart></app-spurt-cart>\r\n    </div>\r\n</mat-toolbar>\r\n\r\n\r\n<!-- <mat-sidenav-container fxFlexFill> -->\r\n<mat-sidenav #sidenav>\r\n    <mat-nav-list>\r\n        <a (click)=\"sidenav.toggle()\" href=\"javascript:void(0)\" mat-list-item>Close</a>\r\n        <div class=\"categories-wrapper categories-dropdown\" perfectScrollbar>\r\n            <app-category-list [isClicked]=\"isClickedData\" [categories]=\"listSandbox.categoryList$ | async\"\r\n                (change)=\"onChangeCategory($event)\" [categoryId]=\"category\"></app-category-list>\r\n\r\n        </div>\r\n    </mat-nav-list>\r\n</mat-sidenav>\r\n<!-- </mat-sidenav-container> -->"
 
 /***/ }),
 
@@ -9589,6 +9589,7 @@ var MenuComponent = /** @class */ (function () {
         this.router = router;
         this.category = { name: 'Select Category' };
         this.searchValue = '';
+        this.searchLists = [];
         this.settings = this.appSettings.settings;
         if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_1__["isPlatformBrowser"])(this.platformId)) {
             var setTheme = localStorage.getItem('optionsTheme');
@@ -9630,16 +9631,39 @@ var MenuComponent = /** @class */ (function () {
     };
     // send the search value to product through navigation.If no value send 1 as default value.
     MenuComponent.prototype.searchData = function (value) {
-        console.log('search', value);
         this.searchValue = value;
         if (!value) {
-            this.router.navigate(['/products'], {
-                queryParams: { keyword: this.searchValue }
-            });
+            // this.router.navigate(['/products'], {
+            //     queryParams: { keyword: this.searchValue }
+            // });
+            this.searchLists = [];
         }
         else {
-            this.router.navigate(['/products'], {
-                queryParams: { keyword: this.searchValue }
+            // this.router.navigate(['/products'], {
+            //     queryParams: { keyword: this.searchValue }
+            // });
+            this.getProductList(this.searchValue);
+        }
+    };
+    /**
+   * fetch product list from service. calling getProductList function from sandbox
+   *
+   * @param keyword filter
+   */
+    MenuComponent.prototype.getProductList = function (keyword) {
+        var _this = this;
+        var params = {};
+        params.limit = 100;
+        params.offset = 0;
+        params.categoryId = this.categoryId ? this.categoryId : '';
+        params.keyword = keyword;
+        params.price = 'ASC';
+        params.priceFrom = 0;
+        params.priceTo = '';
+        if (keyword) {
+            this.listSandbox.getProductList(params);
+            this.listSandbox.productlist$.subscribe(function (data) {
+                _this.searchLists = data.slice();
             });
         }
     };
@@ -10456,7 +10480,7 @@ var sidenavMenuItems = [
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"top-menu\">\r\n    <a mat-button [matMenuTriggerFor]=\"accountMenu\" #accountMenuTrigger=\"matMenuTrigger\" class=\"blackStyle\"\r\n        *ngIf=\"(commonSandbox.getProfile$ | async)?.email\">\r\n        <!-- <mat-icon class=\"mat-icon-sm account-icon blackStyle\">person</mat-icon> -->\r\n        <mat-icon routerLink=\"/auth\" class=\"mat-icon-sm account-icon blackStyle\"><img src=\"../../../assets/images/Profile.png\" /></mat-icon>\r\n        <span fxShow=\"false\" fxShow.gt-sm class=\"blackStyle\">Account</span>\r\n        <!-- <mat-icon class=\"mat-icon-sm caret blackStyle\">arrow_drop_down</mat-icon> -->\r\n    </a>\r\n    <a mat-button routerLink=\"/auth\" *ngIf=\"!(commonSandbox.getProfile$ | async)?.email\">\r\n        <mat-icon routerLink=\"/auth\" class=\"mat-icon-sm account-icon blackStyle\"><img src=\"../../../assets/images/Profile.png\" /></mat-icon>\r\n        <span fxShow=\"false\" fxShow.gt-sm class=\"blackStyle\">Profile</span>\r\n    </a>\r\n\r\n    <a mat-button *ngIf=\"!(commonSandbox.getProfile$ | async)?.email\">\r\n        <mat-icon class=\"mat-icon-sm notification-icon blackStyle\"><img src=\"../../../assets/images/Notification.png\" /></mat-icon>\r\n        <span fxShow=\"false\" fxShow.gt-sm class=\"blackStyle\">Notification</span>\r\n    </a>\r\n\r\n    <span fxShow=\"false\" fxShow.gt-sm>\r\n        <a mat-button [routerLink]=\"['/wishlist']\">\r\n            <mat-icon class=\"mat-icon-sm\"><img src=\"../../../assets/images/heart.png\" /></mat-icon>\r\n            <span class=\"blackStyle\">Wishlist\r\n                <ng-container *ngIf=\"commonSandbox.wishlistCount$ | async;else noWhishListCount\">\r\n                    ({{commonSandbox.wishlistCount$ | async}})\r\n                </ng-container>\r\n                <ng-template #noWhishListCount>\r\n                    (0)\r\n                </ng-template>\r\n            </span>\r\n        </a>\r\n    </span>\r\n\r\n    <mat-menu #accountMenu=\"matMenu\" [overlapTrigger]=\"false\" xPosition=\"before\"\r\n        class=\"app-dropdown account-pane account\">\r\n        <span>\r\n            <div fxLayout=\"row\" fxLayoutAlign=\"space-around center\" class=\"user-info\"\r\n                *ngIf=\"(commonSandbox.getProfile$ | async)?.email\">\r\n                <img *ngIf='(commonSandbox.getProfile$ | async)?.avatarPath'\r\n                    [src]=\"imagePath + '?path=' + (commonSandbox.getProfile$ | async)?.avatarPath + '&name=' + (commonSandbox.getProfile$ | async)?.avatar + '&width=60&height=60'\"\r\n                    alt=\"user-image\" width=\"50\">\r\n                <img *ngIf='!(commonSandbox.getProfile$ | async)?.avatarPath' src=\"./assets/images/others/user.jpg\"\r\n                    alt=\"user-image\" width=\"50\">\r\n                <p>{{(commonSandbox.getProfile$ | async)?.firstName}}<br> <small>{{(commonSandbox.getProfile$ |\r\n                        async)?.email}}\r\n                    </small></p>\r\n            </div>\r\n            <div class=\"divider\"></div>\r\n            <a mat-menu-item routerLink=\"/account/orders\">\r\n                <mat-icon class=\"mat-icon-sm\">\r\n                    <mat-icon>description</mat-icon>\r\n                </mat-icon>\r\n                <span>Order History</span>\r\n            </a>\r\n            <a mat-menu-item routerLink=\"/account\">\r\n                <mat-icon class=\"mat-icon-sm\">settings</mat-icon>\r\n                <span>Account Settings</span>\r\n            </a>\r\n            <div class=\"divider\"></div>\r\n            <a mat-menu-item (click)=\"signOut()\">\r\n                <mat-icon class=\"mat-icon-sm\">power_settings_new</mat-icon>\r\n                <span>Sign Out</span>\r\n            </a>\r\n        </span>\r\n    </mat-menu>\r\n</div>"
+module.exports = "<div class=\"top-menu\">\r\n\r\n    <a class=\"mobileSearchIcon\" fxShow=\"true\" fxHide.gt-sm=\"true\" mat-button (click)=\"toogleInput()\">\r\n        <mat-icon class=\"mat-icon-sm account-icon blackStyle\">\r\n            <i class=\"fa fa-search\"></i>\r\n        </mat-icon>\r\n    </a>\r\n   \r\n\r\n    <div *ngIf=\"isSearchInput\" class=\"search-algin\" fxFlex fxFlexOffset.gt-sm=\"1\" fxShow=\"true\" fxShow.gt-sm>\r\n        <form method=\"get\" class=\"search-form\" fxLayout=\"row\">\r\n            <mat-menu #categoriesMenu=\"matMenu\" [overlapTrigger]=\"false\" xPosition=\"before\" class=\"categories-dropdown\">\r\n            </mat-menu>\r\n            <input type=\"text\" placeholder=\"What are you looking for ?\" fxFlex\r\n                (keyup)=\"searchData($event.target.value)\">\r\n            <button mat-mini-fab (click)=\"search()\" type=\"button\"\r\n                class=\"search-btn mat-elevation-z0 mat-mini-fab mat-accent\">\r\n                Search\r\n            </button>\r\n        </form>\r\n        <div mat-dialog-content *ngIf=\"searchLists?.length > 0 && searchValue\">\r\n            <ul>\r\n                <li *ngFor=\"let list of searchLists\">\r\n                    <a class=\"title text-truncate\">{{list.name}}</a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <a mat-button [matMenuTriggerFor]=\"accountMenu\" #accountMenuTrigger=\"matMenuTrigger\" class=\"blackStyle\"\r\n        *ngIf=\"(commonSandbox.getProfile$ | async)?.email\">\r\n        <!-- <mat-icon class=\"mat-icon-sm account-icon blackStyle\">person</mat-icon> -->\r\n        <mat-icon routerLink=\"/auth\" class=\"mat-icon-sm account-icon blackStyle\"><img\r\n                src=\"../../../assets/images/Profile.png\" /></mat-icon>\r\n        <span fxShow=\"false\" fxShow.gt-sm class=\"blackStyle\">Account</span>\r\n        <!-- <mat-icon class=\"mat-icon-sm caret blackStyle\">arrow_drop_down</mat-icon> -->\r\n    </a>\r\n    <a mat-button routerLink=\"/auth\" *ngIf=\"!(commonSandbox.getProfile$ | async)?.email\">\r\n        <mat-icon routerLink=\"/auth\" class=\"mat-icon-sm account-icon blackStyle\"><img\r\n                src=\"../../../assets/images/Profile.png\" /></mat-icon>\r\n        <span fxShow=\"false\" fxShow.gt-sm class=\"blackStyle\">Profile</span>\r\n    </a>\r\n\r\n    <a mat-button>\r\n        <mat-icon class=\"mat-icon-sm notification-icon blackStyle\"><img src=\"../../../assets/images/Notification.png\" />\r\n        </mat-icon>\r\n        <span fxShow=\"false\" fxShow.gt-sm class=\"blackStyle\">Notification</span>\r\n    </a>\r\n\r\n    <span fxShow=\"true\" fxShow.gt-sm>\r\n        <a mat-button [routerLink]=\"['/wishlist']\">\r\n            <mat-icon class=\"mat-icon-sm\"><img src=\"../../../assets/images/heart.png\" /></mat-icon>\r\n            <span fxShow=\"false\" fxShow.gt-sm class=\"blackStyle\">Wishlist\r\n                <ng-container *ngIf=\"commonSandbox.wishlistCount$ | async;else noWhishListCount\">\r\n                    ({{commonSandbox.wishlistCount$ | async}})\r\n                </ng-container>\r\n                <ng-template #noWhishListCount>\r\n                    (0)\r\n                </ng-template>\r\n            </span>\r\n        </a>\r\n    </span>\r\n\r\n    <mat-menu #accountMenu=\"matMenu\" [overlapTrigger]=\"false\" xPosition=\"before\"\r\n        class=\"app-dropdown account-pane account\">\r\n        <span>\r\n            <div fxLayout=\"row\" fxLayoutAlign=\"space-around center\" class=\"user-info\"\r\n                *ngIf=\"(commonSandbox.getProfile$ | async)?.email\">\r\n                <img *ngIf='(commonSandbox.getProfile$ | async)?.avatarPath'\r\n                    [src]=\"imagePath + '?path=' + (commonSandbox.getProfile$ | async)?.avatarPath + '&name=' + (commonSandbox.getProfile$ | async)?.avatar + '&width=60&height=60'\"\r\n                    alt=\"user-image\" width=\"50\">\r\n                <img *ngIf='!(commonSandbox.getProfile$ | async)?.avatarPath' src=\"./assets/images/others/user.jpg\"\r\n                    alt=\"user-image\" width=\"50\">\r\n                <p>{{(commonSandbox.getProfile$ | async)?.firstName}}<br> <small>{{(commonSandbox.getProfile$ |\r\n                        async)?.email}}\r\n                    </small></p>\r\n            </div>\r\n            <div class=\"divider\"></div>\r\n            <a mat-menu-item routerLink=\"/account/orders\">\r\n                <mat-icon class=\"mat-icon-sm\">\r\n                    <mat-icon>description</mat-icon>\r\n                </mat-icon>\r\n                <span>Order History</span>\r\n            </a>\r\n            <a mat-menu-item routerLink=\"/account\">\r\n                <mat-icon class=\"mat-icon-sm\">settings</mat-icon>\r\n                <span>Account Settings</span>\r\n            </a>\r\n            <div class=\"divider\"></div>\r\n            <a mat-menu-item (click)=\"signOut()\">\r\n                <mat-icon class=\"mat-icon-sm\">power_settings_new</mat-icon>\r\n                <span>Sign Out</span>\r\n            </a>\r\n        </span>\r\n    </mat-menu>\r\n</div>"
 
 /***/ }),
 
@@ -10531,6 +10555,9 @@ var TopMenuComponent = /** @class */ (function () {
         this.index = 0;
         // public languageKey = 'language';
         this.subscriptions = [];
+        this.isSearchInput = false;
+        this.searchValue = '';
+        this.searchLists = [];
     }
     /**calls commonSandbox doGetProfile with default param
      * after calls commonSandbox getWishlistCounts.
@@ -10549,6 +10576,9 @@ var TopMenuComponent = /** @class */ (function () {
             }
         }
     };
+    TopMenuComponent.prototype.toogleInput = function () {
+        this.isSearchInput = !this.isSearchInput;
+    };
     /**first clear the local storage data.
      * calls commonSandbox doSignout,
      * Then navigate to authentication module
@@ -10561,6 +10591,44 @@ var TopMenuComponent = /** @class */ (function () {
         this.commonSandbox.doSignout();
         this.productControl.clearCart();
         this.router.navigate(['/auth']);
+    };
+    // send the search value to product through navigation.If no value send 1 as default value.
+    TopMenuComponent.prototype.searchData = function (value) {
+        this.searchValue = value;
+        if (!value) {
+            // this.router.navigate(['/products'], {
+            //     queryParams: { keyword: this.searchValue }
+            // });
+            this.searchLists = [];
+        }
+        else {
+            // this.router.navigate(['/products'], {
+            //     queryParams: { keyword: this.searchValue }
+            // });
+            this.getProductList(this.searchValue);
+        }
+    };
+    /**
+       * fetch product list from service. calling getProductList function from sandbox
+       *
+       * @param keyword filter
+       */
+    TopMenuComponent.prototype.getProductList = function (keyword) {
+        var _this = this;
+        var params = {};
+        params.limit = 100;
+        params.offset = 0;
+        params.categoryId = '';
+        params.keyword = keyword;
+        params.price = 'ASC';
+        params.priceFrom = 0;
+        params.priceTo = '';
+        if (keyword) {
+            this.listSandbox.getProductList(params);
+            this.listSandbox.productlist$.subscribe(function (data) {
+                _this.searchLists = data.slice();
+            });
+        }
     };
     TopMenuComponent.prototype.ngOnDestroy = function () {
         this.subscriptions.forEach(function (each) {

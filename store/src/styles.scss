@@ -820,7 +820,7 @@ body {
 
 @media (max-width: 1400px) {
     .app.green .top-navbar.mat-toolbar a {
-        padding: 5px;
+        padding: 5p;
     }
 
     .menu-img {
@@ -837,11 +837,25 @@ top: 25px;left: 20px;}
 
 
 .loginPage .fieldWithIcon input.mat-input-element {padding-left: 50px;}
-
+.mat-expansion-panel-header, .categories-dropdown .mat-menu-item{font-family: 'Urbanist', sans-serif;}
 
 @media (min-width: 960px){
     .formSignInUp{position: relative;justify-content: space-between;}
     .formSignInUp:before {content: "";height: 80%;position: absolute;left: 50%;background: #000;width: 1px;top: 35px;}
+}
+
+@media (max-width: 959px){
+    .app.green .mat-toolbar.mat-primary a.logo img {height: 50px;}
+    .app.green .mat-toolbar.mat-primary a.logo {margin-right: auto;margin-left: 10px;}
+    .top-navbar.mat-toolbar-single-row {justify-content: space-between !important;}
+    .headerCartIcon img {top: -5px;height: 17px;}
+    .categories-dropdown .mat-menu-item {height: auto;line-height: normal;padding: 7px 10px;}
+    .search-algin.ng-star-inserted { position: fixed;top: 61px;z-index: 123;left: 0;width: 100%;padding: 10px 10px;background: #fff;}
+    .mobileSearchIcon.mat-button {padding-left: 3px !important;padding-right: 3px !important;}
+    .mobileSearchIcon .fa.fa-search{font-size: 15px;float: left;margin: 2px 0 0 0;}
+    .top-navbar .mat-icon-sm img {height: 16px;}
+    .app.green .top-navbar.mat-toolbar a {padding: 5px;}
+    .flex-row-button.headerCartIcon {padding: 5px;min-width: auto;}
 }
 
 @media (max-width: 767px){

@@ -31,6 +31,11 @@ export class TopMenuComponent implements OnInit, OnDestroy {
   public index = 0;
   // public languageKey = 'language';
   private subscriptions: Array<Subscription> = [];
+  isSearchInput: boolean = false;
+  searchValue: any = '';
+  public searchLists: any = [];
+
+
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     public configService: ConfigService,
@@ -39,7 +44,7 @@ export class TopMenuComponent implements OnInit, OnDestroy {
     public commonSandbox: CommonSandbox,
     public productControl: ProductControlSandbox,
     public snackBar: MatSnackBar
-  ) {}
+  ) { }
 
   /**calls commonSandbox doGetProfile with default param
    * after calls commonSandbox getWishlistCounts.
@@ -59,6 +64,10 @@ export class TopMenuComponent implements OnInit, OnDestroy {
     }
   }
 
+  toogleInput() {
+    this.isSearchInput = !this.isSearchInput;
+  }
+
   /**first clear the local storage data.
    * calls commonSandbox doSignout,
    * Then navigate to authentication module
@@ -72,6 +81,45 @@ export class TopMenuComponent implements OnInit, OnDestroy {
     this.productControl.clearCart();
     this.router.navigate(['/auth']);
   }
+
+  // send the search value to product through navigation.If no value send 1 as default value.
+  public searchData(value) {
+    this.searchValue = value;
+    if (!value) {
+      // this.router.navigate(['/products'], {
+      //     queryParams: { keyword: this.searchValue }
+      // });
+      this.searchLists = [];
+    } else {
+      // this.router.navigate(['/products'], {
+      //     queryParams: { keyword: this.searchValue }
+      // });
+      this.getProductList(this.searchValue);
+    }
+  }
+  /**
+     * fetch product list from service. calling getProductList function from sandbox
+     *
+     * @param keyword filter
+     */
+  getProductList(keyword) {
+    const params: any = {};
+    params.limit = 100;
+    params.offset = 0;
+    params.categoryId = '';
+    params.keyword = keyword;
+    params.price = 'ASC';
+    params.priceFrom = 0;
+    params.priceTo = '';
+    if (keyword) {
+      this.listSandbox.getProductList(params)
+      this.listSandbox.productlist$.subscribe(data => {
+        this.searchLists = [...data];
+      })
+    }
+
+  }
+
   ngOnDestroy() {
     this.subscriptions.forEach(each => {
       each.unsubscribe();

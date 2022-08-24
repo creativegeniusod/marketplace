@@ -431,3 +431,27 @@ npm run build
 ng serve
 kill -9 $(lsof -t -i:4200)
 ng serve
+source ~/.profile
+ls
+cd api
+npm run serve
+npm start serve
+source ~/.profile
+ls
+git status
+git add .
+git commit -m "old changes" --no-verify
+git pull origin master
+git pull origin master
+git status
+git pull origin master
+cd admin
+npm run build
+ng serve
+cd ..
+source ~/.profile
+cd store
+npm run build
+ng serve
+kill -9 $(lsof -t -i:4200)
+ng serve

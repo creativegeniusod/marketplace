@@ -38,6 +38,7 @@ export class SignInComponent implements OnInit {
 
   // Initially initialize the reactive form
   ngOnInit() {
+     this.fbLibrary();
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, emailValidator])],
       password: [
@@ -55,10 +56,54 @@ export class SignInComponent implements OnInit {
     if (this.loginForm.valid) {
       const params = this.loginForm.value;
       params.type = 'normal';
+      console.log(params,"")
+      // return false;
       this.authSandbox.doLogin(params);
       this.submitted = false;
     }
   }
+
+  fbLibrary() { 
+
+    (window as any).fbAsyncInit = function() {
+      window['FB'].init({
+        appId      : '1815259135478978',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v3.1'
+      });
+      window['FB'].AppEvents.logPageView();
+    };
+ 
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+ 
+}
+
+  public login() {
+ 
+    window['FB'].login((response) => {
+        console.log('login response',response);
+        if (response.authResponse) {
+ 
+          window['FB'].api('/me', {
+            fields: 'last_name, first_name, email'
+          }, (userInfo) => {
+ 
+            console.log("user information");
+            console.log(userInfo);
+          });
+           
+        } else {
+          console.log('User login failed');
+        }
+    }, {scope: 'email'});
+}
 
   // reset the form fields
   resetAllFormFields(formGroup: FormGroup) {

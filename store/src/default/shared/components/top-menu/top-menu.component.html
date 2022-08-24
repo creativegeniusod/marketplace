@@ -76,7 +76,8 @@
         <span fxShow="false" fxShow.gt-sm class="blackStyle">Profile</span>
     </a> -->
 
-    <a mat-button>
+    <a mat-button mat-button [matMenuTriggerFor]="notificationMenu" #notificationMenuTrigger="matMenuTrigger"
+        class="blackStyle">
         <mat-icon class="mat-icon-sm notification-icon blackStyle"><img src="../../../assets/images/Notification.png" />
         </mat-icon>
         <span fxShow="false" fxShow.gt-sm class="blackStyle">Notification</span>
@@ -99,7 +100,6 @@
     <mat-menu #accountMenu="matMenu" [overlapTrigger]="false" xPosition="before"
         class="app-dropdown account-pane account">
         <h3 class="mt-1">My Profile</h3>
-        <a mat-menu-item></a>
         <span>
             <div fxLayout="row" fxLayoutAlign="space-around center" class="user-info"
                 *ngIf="(commonSandbox.getProfile$ | async)?.email">
@@ -121,7 +121,9 @@
             </a> -->
 
             <!-- new mwnu -->
-
+            <a mat-menu-item routerLink="/auth" *ngIf="!(commonSandbox.getProfile$ | async)?.email">
+                <span>SignIn/SignUp</span>
+            </a>
             <a mat-menu-item>
                 <span>Public Profile Settings</span>
             </a>
@@ -146,9 +148,7 @@
             <a mat-menu-item>
                 <span>Become a Seller</span>
             </a>
-            <a mat-menu-item routerLink="/auth" *ngIf="!(commonSandbox.getProfile$ | async)?.email">
-                <span>SignIn/SignUp</span>
-            </a>
+
 
             <!--  -->
 
@@ -161,6 +161,38 @@
                 <mat-icon class="mat-icon-sm">power_settings_new</mat-icon>
                 <span>Sign Out</span>
             </a>
+        </span>
+    </mat-menu>
+
+    <mat-menu #notificationMenu="matMenu" [overlapTrigger]="false" xPosition="before"
+        class="app-dropdown account-pane account">
+        <span>
+        <h3 class="mt-1">Notifications</h3>
+        <a mat-menu-item>
+            <span>Your order number: 293823 has been shipped and we will notify you when its ready for delievery</span>
+        </a>
+        <a mat-menu-item>
+            <span>Your order number: 293823 has been packeed and we will notify you when its shipped</span>
+        </a>
+        <a mat-menu-item>
+            <span>Thank you for placing order</span>
+        </a>
+        <a mat-menu-item>
+            <span>Notifications</span>
+        </a>
+        <a mat-menu-item>
+            <span>Notifications</span>
+        </a>
+        <a mat-menu-item>
+            <span>Notifications</span>
+        </a>
+        <a mat-menu-item>
+            <span>Notifications</span>
+        </a>
+        <a mat-menu-item>
+            <span>Notifications</span>
+        </a>
+
         </span>
     </mat-menu>
 </div>

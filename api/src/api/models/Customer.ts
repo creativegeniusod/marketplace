@@ -106,6 +106,15 @@ export class Customer extends BaseModel {
     @Column({name: 'is_active'})
     public isActive: number;
 
+    @Column({name: 'interest'})
+    public interest: string;
+
+    @Column({name: 'bio'})
+    public bio: string;
+
+    @Column({name: 'iam'})
+    public iam: string;
+
     @BeforeInsert()
     public async createDetails(): Promise<void> {
         this.createdDate = moment().format('YYYY-MM-DD HH:mm:ss');

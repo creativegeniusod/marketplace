@@ -32,6 +32,12 @@ export class CustomerEditProfileRequest {
     })
     public emailId: string;
 
+    public interest: string;
+
+    public bio: string;
+    
+    public iam: string;
+
     @IsOptional()
     @IsNotEmpty()
     public phoneNumber: number;

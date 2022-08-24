@@ -13,14 +13,14 @@
         <a mat-button class="colorMenu" routerLinkActive="horizontal-active-link"
             *ngFor="let category of categories;let i=index" [routerLinkActiveOptions]="{exact:true}"
             [matMenuTriggerFor]="menu" [routerLink]="['/shop', category.name, category.categoryId]"
-            (mouseover)="indexData(i,category.categoryId)">
+            (mouseover)="indexData(i,category.categoryId)" #matMenuTrigger="matMenuTrigger">
             <img class="menu-img" src="assets/images/1-a.png">
             <span class="menu-text">{{category.name}}</span>
             <!-- <mat-icon class="caret">arrow_drop_down</mat-icon> -->
         </a>
         <mat-menu #menu="matMenu" [overlapTrigger]="false" class="mega-menu category-menu app-dropdown"
-            [hasBackdrop]="false" (mouseleave)="$event.stopPropagation()" >
-            <span>
+            [hasBackdrop]="false" (mouseleave)="$event.stopPropagation()">
+            <span (mouseleave)="closeMyMenu()">
                 <div fxLayout="row wrap" *ngIf="((index)||(index === 0))">
                     <div fxFlex="20" fxLayout="column" class="p-1"
                         *ngFor="let subCategory of categories[index].children">
@@ -47,7 +47,7 @@
     <!-- <a mat-button routerLink="/contact" routerLinkActive="horizontal-active-link"
         [routerLinkActiveOptions]="{exact:true}">Contact</a> -->
 
-    <div fxShow="true" fxHide.lt-md class="search-algin" fxFlex fxFlexOffset.gt-sm="1" fxShow="true" fxShow.gt-sm>
+    <!-- <div fxShow="true" fxHide.lt-md class="search-algin" fxFlex fxFlexOffset.gt-sm="1" fxShow="true" fxShow.gt-sm>
         <form method="get" class="search-form" fxLayout="row">
             <mat-menu #categoriesMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="categories-dropdown">
             </mat-menu>
@@ -65,7 +65,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> -->
 
 
     <div class="menu-right" fxFlexOffset="10" fxLayout="row" fxLayoutAlign="center center">

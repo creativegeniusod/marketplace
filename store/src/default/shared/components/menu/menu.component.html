@@ -8,14 +8,14 @@
         routerLinkActive="colorMenu" [routerLinkActiveOptions]="{exact:true}">
         AllProducts
     </a> -->
-    <div fxShow="true" fxHide.lt-md>
+    <div class="menuWrap" fxShow="true" fxHide.lt-md>
         <!-- (click)="indexData(i,category.categoryId)" -->
         <a mat-button class="colorMenu" routerLinkActive="horizontal-active-link"
             *ngFor="let category of categories;let i=index" [routerLinkActiveOptions]="{exact:true}"
             [matMenuTriggerFor]="menu" [routerLink]="['/shop', category.name, category.categoryId]"
             (mouseover)="indexData(i,category.categoryId)" #matMenuTrigger="matMenuTrigger">
             <img class="menu-img" src="assets/images/1-a.png">
-            <span class="menu-text">{{category.name}}</span>
+            <!-- <span class="menu-text">{{category.name}}</span> -->
             <!-- <mat-icon class="caret">arrow_drop_down</mat-icon> -->
         </a>
         <mat-menu #menu="matMenu" [overlapTrigger]="false" class="mega-menu category-menu app-dropdown"
@@ -43,6 +43,7 @@
 
             </span>
         </mat-menu>
+
     </div>
     <!-- <a mat-button routerLink="/contact" routerLinkActive="horizontal-active-link"
         [routerLinkActiveOptions]="{exact:true}">Contact</a> -->
@@ -68,8 +69,8 @@
     </div> -->
 
 
-    <div class="menu-right" fxFlexOffset="10" fxLayout="row" fxLayoutAlign="center center">
-        <app-spurt-cart></app-spurt-cart>
+    <div class="menu-right" fxLayout="row" fxLayoutAlign="center center">
+        <app-spurt-cart class="menuTag"></app-spurt-cart>
     </div>
 </mat-toolbar>
 

@@ -92,10 +92,11 @@
             <div fxLayout="row" fxLayoutAlign="center center" class="priceAndIcons">
               <p class="regularPrice">$300</p>
               <p class="new-price">
-                $ {{product.price}}
+                $ {{product.price}} 
               </p>
-              <app-controls [product]="product" [type]="'all'" (OpenProductDialog)="openProductDialog(product)">
-              </app-controls>
+              <p><strong> 50% OFF</strong></p>
+             <!--  <app-controls [product]="product" [type]="'all'" (OpenProductDialog)="openProductDialog(product)">
+              </app-controls> -->
             </div>
           </div>
           <div class="icons">

@@ -28,7 +28,7 @@
                 <li *ngFor="let list of searchLists">
                     <a class="title text-truncate" href="javascript:void(0)"
                         (click)="getSerchProduct(list)">{{list.name}}</a>
-                        <mat-icon class="mat-icon-sm close-icon blackStyle">close</mat-icon>
+                    <mat-icon class="mat-icon-sm close-icon blackStyle">close</mat-icon>
                 </li>
             </ul>
         </div>
@@ -55,28 +55,29 @@
                 <li *ngFor="let list of searchLists">
                     <a class="title text-truncate" href="javascript:void(0)"
                         (click)="getSerchProduct(list)">{{list.name}}</a>
-                        <mat-icon class="mat-icon-sm close-icon blackStyle">close</mat-icon>
+                    <mat-icon class="mat-icon-sm close-icon blackStyle">close</mat-icon>
                 </li>
             </ul>
         </div>
     </div>
 
 
-    <a mat-button [matMenuTriggerFor]="accountMenu" #accountMenuTrigger="matMenuTrigger" class="blackStyle"
-        *ngIf="(commonSandbox.getProfile$ | async)?.email">
+    <!-- *ngIf="(commonSandbox.getProfile$ | async)?.email" -->
+    <a mat-button [matMenuTriggerFor]="accountMenu" #accountMenuTrigger="matMenuTrigger" class="blackStyle">
         <!-- <mat-icon class="mat-icon-sm account-icon blackStyle">person</mat-icon> -->
         <mat-icon routerLink="/auth" class="mat-icon-sm account-icon blackStyle"><img
                 src="../../../assets/images/Profile.png" /></mat-icon>
-        <span fxShow="false" fxShow.gt-sm class="blackStyle">Account</span>
+        <span fxShow="false" fxShow.gt-sm class="blackStyle">Profile</span>
         <!-- <mat-icon class="mat-icon-sm caret blackStyle">arrow_drop_down</mat-icon> -->
     </a>
-    <a mat-button routerLink="/auth" *ngIf="!(commonSandbox.getProfile$ | async)?.email">
+    <!-- <a mat-button routerLink="/auth" *ngIf="!(commonSandbox.getProfile$ | async)?.email">
         <mat-icon routerLink="/auth" class="mat-icon-sm account-icon blackStyle"><img
                 src="../../../assets/images/Profile.png" /></mat-icon>
         <span fxShow="false" fxShow.gt-sm class="blackStyle">Profile</span>
-    </a>
+    </a> -->
 
-    <a mat-button>
+    <a mat-button mat-button [matMenuTriggerFor]="notificationMenu" #notificationMenuTrigger="matMenuTrigger"
+        class="blackStyle">
         <mat-icon class="mat-icon-sm notification-icon blackStyle"><img src="../../../assets/images/Notification.png" />
         </mat-icon>
         <span fxShow="false" fxShow.gt-sm class="blackStyle">Notification</span>
@@ -98,6 +99,7 @@
 
     <mat-menu #accountMenu="matMenu" [overlapTrigger]="false" xPosition="before"
         class="app-dropdown account-pane account">
+        <h3 class="mt-1">My Profile</h3>
         <span>
             <div fxLayout="row" fxLayoutAlign="space-around center" class="user-info"
                 *ngIf="(commonSandbox.getProfile$ | async)?.email">
@@ -111,21 +113,86 @@
                     </small></p>
             </div>
             <div class="divider"></div>
-            <a mat-menu-item routerLink="/account/orders">
+            <!-- <a mat-menu-item routerLink="/account/orders">
                 <mat-icon class="mat-icon-sm">
                     <mat-icon>description</mat-icon>
                 </mat-icon>
                 <span>Order History</span>
+            </a> -->
+
+            <!-- new mwnu -->
+            <a mat-menu-item routerLink="/auth" *ngIf="!(commonSandbox.getProfile$ | async)?.email">
+                <span>SignIn/SignUp</span>
             </a>
-            <a mat-menu-item routerLink="/account">
+            <a mat-menu-item>
+                <span>Public Profile Settings</span>
+            </a>
+            <a mat-menu-item>
+                <span>Personal Information Settings</span>
+            </a>
+            <a mat-menu-item>
+                <span>Address Settings</span>
+            </a>
+            <a mat-menu-item>
+                <span>Influencer Management</span>
+            </a>
+            <a mat-menu-item routerLink="/account/orders">
+                <span>My orders</span>
+            </a>
+            <a mat-menu-item>
+                <span>Contact Us</span>
+            </a>
+            <a mat-menu-item>
+                <span>Need Help</span>
+            </a>
+            <a mat-menu-item>
+                <span>Become a Seller</span>
+            </a>
+
+
+            <!--  -->
+
+            <!-- <a mat-menu-item routerLink="/account">
                 <mat-icon class="mat-icon-sm">settings</mat-icon>
                 <span>Account Settings</span>
-            </a>
+            </a> -->
             <div class="divider"></div>
-            <a mat-menu-item (click)="signOut()">
+            <a mat-menu-item (click)="signOut()" *ngIf="(commonSandbox.getProfile$ | async)?.email">
                 <mat-icon class="mat-icon-sm">power_settings_new</mat-icon>
                 <span>Sign Out</span>
             </a>
+        </span>
+    </mat-menu>
+
+    <mat-menu #notificationMenu="matMenu" [overlapTrigger]="false" xPosition="before"
+        class="app-dropdown account-pane account">
+        <span>
+        <h3 class="mt-1">Notifications</h3>
+        <a mat-menu-item>
+            <span>Your order number: 293823 has been shipped and we will notify you when its ready for delievery</span>
+        </a>
+        <a mat-menu-item>
+            <span>Your order number: 293823 has been packeed and we will notify you when its shipped</span>
+        </a>
+        <a mat-menu-item>
+            <span>Thank you for placing order</span>
+        </a>
+        <a mat-menu-item>
+            <span>Notifications</span>
+        </a>
+        <a mat-menu-item>
+            <span>Notifications</span>
+        </a>
+        <a mat-menu-item>
+            <span>Notifications</span>
+        </a>
+        <a mat-menu-item>
+            <span>Notifications</span>
+        </a>
+        <a mat-menu-item>
+            <span>Notifications</span>
+        </a>
+
         </span>
     </mat-menu>
 </div>

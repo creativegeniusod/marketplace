@@ -98,8 +98,8 @@
     </span>
 
     <mat-menu #accountMenu="matMenu" [overlapTrigger]="false" xPosition="before"
-        class="app-dropdown account-pane account">
-        <h3 class="mt-1">My Profile</h3>
+        class="app-dropdown account-pane account menu-drop">
+        <h3>My Profile</h3>
         <span>
             <div fxLayout="row" fxLayoutAlign="space-around center" class="user-info"
                 *ngIf="(commonSandbox.getProfile$ | async)?.email">
@@ -165,9 +165,10 @@
     </mat-menu>
 
     <mat-menu #notificationMenu="matMenu" [overlapTrigger]="false" xPosition="before"
-        class="app-dropdown account-pane account">
+        class="app-dropdown account-pane account menu-drop">
         <span>
-        <h3 class="mt-1">Notifications</h3>
+        <h3>Notifications</h3>
+        <div class="divider"></div>
         <a mat-menu-item>
             <span>Your order number: 293823 has been shipped and we will notify you when its ready for delievery</span>
         </a>

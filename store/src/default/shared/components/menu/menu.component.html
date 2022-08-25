@@ -8,6 +8,11 @@
         routerLinkActive="colorMenu" [routerLinkActiveOptions]="{exact:true}">
         AllProducts
     </a> -->
+    <button mat-button [matMenuTriggerFor]="animals" (mouseover)="indexData1('animals')">Animal index</button>
+    <mat-menu #animals="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+  <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+</mat-menu>
     <div fxShow="true" fxHide.lt-md>
         <!-- (click)="indexData(i,category.categoryId)" -->
         <a mat-button class="colorMenu" routerLinkActive="horizontal-active-link"

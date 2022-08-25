@@ -54,6 +54,10 @@ import {
 import { PipesModule } from './pipes/pipes.module';
 import { FaqComponent } from './components/faq/faq.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
+import { HelpComponent } from './components/help/help.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TAndCComponent } from './components/t-and-c/t-and-c.component';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   wheelPropagation: true,
   suppressScrollX: true
@@ -63,6 +67,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   imports: [
     CommonModule,
     RouterModule,
+    ReactiveFormsModule,
     SwiperModule,
     FlexLayoutModule,
     MatAutocompleteModule,
@@ -134,8 +139,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatToolbarModule,
     MatTooltipModule,
     MatStepperModule,
-    BannersComponent  ],
-  declarations: [SpinnerComponent, BannersComponent, FaqComponent, PrivacyPolicyComponent],
+    BannersComponent],
+  declarations: [SpinnerComponent, BannersComponent, FaqComponent, PrivacyPolicyComponent, ContactusComponent, HelpComponent, TAndCComponent],
   entryComponents: [],
   providers: [
     {
@@ -144,4 +149,4 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     }
   ]
 })
-export class SharedModule {}
+export class SharedModule { }

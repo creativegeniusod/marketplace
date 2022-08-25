@@ -15,6 +15,7 @@ export class ProductsResponseModel {
   public metaTagTitle: string;
   public name: string;
   public price: string;
+  public regular: string;
   public productId: string;
   public Images: Array<any>;
   public quantity: string;
@@ -34,6 +35,7 @@ export class ProductsResponseModel {
     this.metaTagTitle = listResponse.metaTagTitle || '';
     this.name = listResponse.name || '';
     this.price = listResponse.price || '';
+    this.regular = listResponse.regular || '';
     this.productId = listResponse.productId || '';
     this.Images = listResponse.Images || [];
     this.quantity = listResponse.quantity || '';

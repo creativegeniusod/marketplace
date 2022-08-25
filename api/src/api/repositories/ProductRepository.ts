@@ -13,7 +13,7 @@ import {OrderProduct} from '../models/OrderProduct';
 @EntityRepository(Product)
 export class ProductRepository extends Repository<Product> {
 
-    public async productList(limit: number, offset: number, select: any = [], searchConditions: any = [], whereConditions: any = [], categoryId: any = [], priceFrom: string, priceTo: string, price: number,regular: number, count: number | boolean): Promise<any> {
+    public async productList(limit: number, offset: number, select: any = [], searchConditions: any = [], whereConditions: any = [], categoryId: any = [], priceFrom: string, priceTo: string, price: number, count: number | boolean): Promise<any> {
         console.log(select);
         const query: any = await this.manager.createQueryBuilder(Product, 'product');
         // Select
@@ -96,7 +96,7 @@ export class ProductRepository extends Repository<Product> {
         return query.getRawOne();
     }
     // custom product list
-    public async customProductList(limit: number, offset: number, categoryId: any = [], manufacturerId: number, condition: number, keyword: string, priceFrom: string, priceTo: string, price: string,regular: string): Promise<Product[]> {
+    public async customProductList(limit: number, offset: number, categoryId: any = [], manufacturerId: number, condition: number, keyword: string, priceFrom: string, priceTo: string, price: string): Promise<Product[]> {
 
         let sql: any = 'SELECT p.product_id as productId, p.price,p.regular, p.sku, p.upc, p.quantity, p.stock_status_id as stockStatusId, p.manufacturer_id as manufacturerId, p.date_available as dateAvailable,' +
             ' p.sort_order as sortOrder, p.name, p.description, p.amount, p.condition, p.meta_tag_title as metaTagTitle, p.meta_tag_description as metaTagDescription, p.meta_tag_keyword as metaTagKeyword , p.is_active as is_active'  + ' ';

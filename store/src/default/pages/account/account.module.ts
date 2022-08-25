@@ -32,8 +32,6 @@ import { AccountSandbox } from '../../../core/account/account.sandbox';
 import { CommonService } from '../../../core/common/common.service';
 import { AccountService } from '../../../core/account/account.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ContactusComponent } from './contactus/contactus.component';
-import { HelpComponent } from './help/help.component';
 
 
 
@@ -48,8 +46,7 @@ export const routes = [
             { path: 'order-detail/:id', component: OrderDetailComponent, data: { breadcrumb: 'Order Detail' } },
         ],
     },
-    { path: 'contactus', component: ContactusComponent, data: { breadcrumb: 'Contact Us' } },
-    { path: 'help', component: HelpComponent, data: { breadcrumb: 'Help' } }
+
 ];
 
 @NgModule({
@@ -69,9 +66,7 @@ export const routes = [
         DashboardComponent,
         InformationComponent,
         OrdersComponent,
-        OrderDetailComponent,
-        ContactusComponent,
-        HelpComponent
+        OrderDetailComponent
     ],
     providers: [CommonSandbox,
         AccountSandbox,

@@ -93,11 +93,11 @@
           </a>
           <div fxLayout="row" fxLayoutAlign="space-between center" class="prices">
             <div fxLayout="row" fxLayoutAlign="center center" class="priceAndIcons">
-              <p class="regularPrice">${{product.price}}</p>
+              <p class="regularPrice" *ngIf="product.regular">${{product.regular}}</p>
               <p class="new-price">
                 $ {{product.price}}
               </p>
-              <p><strong> 50% OFF</strong></p>
+              <p *ngIf="product.regular"><strong>{{(product.price/product.regular)*100  | number : '1.0-0'}}% OFF</strong></p>
               <!--  <app-controls [product]="product" [type]="'all'" (OpenProductDialog)="openProductDialog(product)">
               </app-controls> -->
             </div>

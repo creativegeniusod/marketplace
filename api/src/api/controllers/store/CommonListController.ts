@@ -281,8 +281,8 @@ export class CommonListController {
                              @QueryParam('manufacturerId') manufacturerId: string, @QueryParam('categoryId') categoryId: string, @QueryParam('priceFrom') priceFrom: string,
                              @QueryParam('priceTo') priceTo: string, @QueryParam('price') price: number, @QueryParam('condition') condition: number, @QueryParam('count') count: number | boolean, @Req() request: any, @Res() response: any): Promise<any> {
         console.log(manufacturerId);
-        const select = ['product.productId', 'product.sku', 'product.name', 'product.quantity', 'product.description', 'product.price',
-            'product.isActive AS isActive', 'product.manufacturerId AS manufacturerId', 'product.location AS location', 'product.minimumQuantity AS minimumQuantity',
+        const select = ['product.productId', 'product.sku', 'product.name', 'product.quantity', 'product.description', 'product.price','product.regular',
+            'product.isActive AS isActive', 'product.manufacturerId AS manufactureraId', 'product.location AS location', 'product.minimumQuantity AS minimumQuantity',
             'product.subtractStock', 'product.stockStatusId', 'product.shipping', 'product.sortOrder', 'product.condition',
             'product.dateAvailable', 'product.amount', 'product.metaTagTitle', 'product.metaTagDescription', 'product.metaTagKeyword', 'product.discount'];
 

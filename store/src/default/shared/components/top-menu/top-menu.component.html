@@ -14,12 +14,8 @@
             <input type="text" placeholder="What are you looking for ?" fxFlex (keyup)="searchData($event.target.value)"
                 [(ngModel)]="searchValue" name="searchValue" (keyup.enter)="
                 search()" autocomplete="off">
-            <!-- <button mat-mini-fab (click)="search()" type="button"
-                class="search-btn mat-elevation-z0 mat-mini-fab mat-accent">
-                Search
-            </button> -->
         </form>
-        <div mat-dialog-content *ngIf="searchLists?.length > 0 && searchValue">
+        <div mat-dialog-content *ngIf="!show && searchLists.length > 0">
             <div class="searchTitles">
                 <h5>Recent</h5>
                 <h5>Clear All</h5>
@@ -35,18 +31,14 @@
     </div>
 
     <div fxShow="true" fxHide.lt-md class="search-algin" fxFlex fxFlexOffset.gt-sm="1" fxShow="true" fxShow.gt-sm>
-        <form method="get" class="search-form" fxLayout="row">
+        <form method="get" class="search-form" fxLayout="row"  (click) =" outsideClick($event)">
             <mat-menu #categoriesMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="categories-dropdown">
             </mat-menu>
             <input type="text" placeholder="What are you looking for ?" fxFlex (keyup)="searchData($event.target.value)"
                 [(ngModel)]="searchValue" name="searchValue" (keyup.enter)="
-                search()">
-            <!-- <button mat-mini-fab (click)="search()" type="button"
-                class="search-btn mat-elevation-z0 mat-mini-fab mat-accent">
-                Search
-            </button> -->
+                search()" autocomplete="off">
         </form>
-        <div mat-dialog-content *ngIf="searchLists?.length > 0 && searchValue">
+        <div mat-dialog-content  *ngIf="!show && searchLists.length > 0">
             <div>
                 <h5>Recent</h5>
                 <h5>Clear All</h5>

@@ -927,6 +927,15 @@ html.cdk-global-scrollblock{position: static;}
 .profileIcon span.blackStyle {
     margin-top: 8px !important;
  }
+ .app .footer {
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+    margin-top: 50px;
+}
+.cdk-overlay-pane {
+    position: fixed;
+}
+
 
 @media (max-width: 1480px){
     .priceAndIcons p, .product-item .prices .new-price {font-size: 14px;}

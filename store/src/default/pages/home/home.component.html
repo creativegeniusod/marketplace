@@ -3,16 +3,14 @@
     <div class="site-container">
 
 
-        <div class="products-tabs featured-tabs">
+        <div class="products-tabs featured-tabs test">
             <div *ngIf="(listSandbox.productLoaded$ | async) && (listSandbox.productlist$ | async)?.length == 0"
                 fxLayout="row wrap">
                 <div fxFlex="100" fxFlex.gt-xs="90" class="p-2">
-                    <img style="margin-left: 45%;" src="../../../assets/images/default-image.jpg" alt="not found"
+                    <img src="../../../assets/images/default-image.jpg" alt="not found"
                         height="150" width="150">
-                    <p style="margin-left: 50%;margin-top:1%;color:rgb(17, 15, 15); font-weight: 900; font-size: 20px;">
-                        No Found</p>
-                    <p style="margin-left: 30%;margin-top:1%;color:gray">Sorry, the keyword you entered cannot be found,
-                        please check again or search with anotherkeyword </p>
+                    <p>No Found</p>
+                    <p >Sorry, the keyword you entered cannot be found, please check again or search with anotherkeyword </p>
                 </div>
             </div>
         </div>

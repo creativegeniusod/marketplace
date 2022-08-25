@@ -157,6 +157,7 @@ export class ProductController {
      *      "upc" : "",
      *      "model" : "",
      *      "price" : "",
+     *      "regular" : "",
      *      "location" : "",
      *      "outOfStockStatus" : "",
      *      "requiredShipping" : "",
@@ -186,6 +187,8 @@ export class ProductController {
     @Authorized()
     public async addProduct(@Body({validate: true}) product: AddProductRequest, @Res() response: any): Promise<any> {
         const newProduct: any = new Product();
+        console.log(newProduct,"&&&&&&&&&")
+        // return false;
         newProduct.name = product.productName;
         newProduct.userid = '65';
         newProduct.description = product.productDescription;
@@ -193,6 +196,7 @@ export class ProductController {
         newProduct.upc = product.upc;
         newProduct.location = product.location;
         newProduct.price = product.price;
+        newProduct.regular = product.regular;
         newProduct.stockStatusId = product.outOfStockStatus;
         newProduct.shipping = product.requiredShipping;
         newProduct.dateAvailable = moment(product.dateAvailable).toISOString();
@@ -280,6 +284,7 @@ export class ProductController {
      *      "upc" : "",
      *      "model" : "",
      *      "price" : "",
+     *      "regular" : "",
      *      "location" : "",
      *      "outOfStockStatus" : "",
      *      "requiredShipping" : "",
@@ -322,12 +327,14 @@ export class ProductController {
             };
             return response.status(400).send(errorResponse);
         }
+        console.log(updateProduct,"***********")
         updateProduct.name = product.productName;
         updateProduct.description = product.productDescription;
         updateProduct.sku = product.sku;
         updateProduct.upc = product.upc;
         updateProduct.location = product.location;
         updateProduct.price = product.price;
+        updateProduct.regular = product.regular;
         updateProduct.stockStatusId = product.outOfStockStatus;
         updateProduct.shipping = product.requiredShipping;
         updateProduct.dateAvailable = moment(product.dateAvailable).toISOString();

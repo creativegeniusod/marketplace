@@ -113,8 +113,8 @@ export class ProductService {
     }
 
     // product list
-    public async productList(limit: number, offset: number, select: any = [], searchConditions: any = [], whereConditions: any = [], categoryId: any = [], priceFrom: string, priceTo: string, price: number, count: number | boolean): Promise<any> {
-        return await this.productRepository.productList(limit, offset, select, searchConditions, whereConditions, categoryId, priceFrom, priceTo, price, count);
+    public async productList(limit: number, offset: number, select: any = [], searchConditions: any = [], whereConditions: any = [], categoryId: any = [], priceFrom: string, priceTo: string, price: number,regular: number, count: number | boolean): Promise<any> {
+        return await this.productRepository.productList(limit, offset, select, searchConditions, whereConditions, categoryId, priceFrom, priceTo, price,regular, count);
     }
 
     // Recent selling product
@@ -128,8 +128,8 @@ export class ProductService {
     }
 
      // product list
-     public async customProductList(limit: number, offset: number, categoryId: any = [], manufacturerId: number, condition: number, keyword: string, priceFrom: string, priceTo: string, price: string): Promise<Product[]> {
-        return await this.productRepository.customProductList(limit, offset, categoryId, manufacturerId, condition, keyword, priceFrom, priceTo, price);
+     public async customProductList(limit: number, offset: number, categoryId: any = [], manufacturerId: number, condition: number, keyword: string, priceFrom: string, priceTo: string, price: string,regular: string): Promise<Product[]> {
+        return await this.productRepository.customProductList(limit, offset, categoryId, manufacturerId, condition, keyword, priceFrom, priceTo, price,regular);
     }
 
      // Product count

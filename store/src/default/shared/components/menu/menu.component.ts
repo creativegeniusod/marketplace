@@ -69,17 +69,11 @@ export class MenuComponent implements OnInit {
      * @param categoryId from event
      * **/
     indexData(index, id) {
-        console.log("dd")
         this.index = index;
         this.categoryId = id;
         this.trigger.openMenu();
         this.openMegaMenu();
     }
-     indexData1(indexData1) {
-        console.log(indexData1)
-        
-    }
-
 
     openMegaMenu() {
         const pane = document.getElementsByClassName('cdk-overlay-pane');
@@ -93,11 +87,8 @@ export class MenuComponent implements OnInit {
     }
 
 
-    closeMyMenu(item=null) {
-        // console.log("Toggle",item.length)
-        // if(item.length==0){
-        this.trigger.closeMenu();            
-        // }
+    closeMyMenu() {
+        this.trigger.closeMenu();
     }
 
     // Make category link active if category got selected

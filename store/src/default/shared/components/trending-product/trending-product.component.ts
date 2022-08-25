@@ -304,10 +304,7 @@ export class TrendingProductComponent implements OnInit, OnDestroy {
     this.categoryId = event.categoryId;
     this.getProductList(0, defaultCallValue, event.categoryId);
   }
-
-  ngAfterContentChecked(): void {
-    this.changeDetectRef.detectChanges();
- }
+   
   ngOnDestroy() {
     this.subscription.forEach(each => {
       each.unsubscribe();

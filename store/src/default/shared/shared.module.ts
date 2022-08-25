@@ -52,6 +52,8 @@ import {
   PerfectScrollbarConfigInterface
 } from 'ngx-perfect-scrollbar';
 import { PipesModule } from './pipes/pipes.module';
+import { FaqComponent } from './components/faq/faq.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   wheelPropagation: true,
   suppressScrollX: true
@@ -133,7 +135,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatTooltipModule,
     MatStepperModule,
     BannersComponent  ],
-  declarations: [SpinnerComponent, BannersComponent],
+  declarations: [SpinnerComponent, BannersComponent, FaqComponent, PrivacyPolicyComponent],
   entryComponents: [],
   providers: [
     {

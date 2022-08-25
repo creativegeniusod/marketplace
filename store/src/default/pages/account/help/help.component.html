@@ -1,0 +1,37 @@
+<div fxLayout="row wrap">
+  <div fxFlex="100" fxFlex.gt-sm="50" class="p-2">
+    <h3>Need Help</h3>
+    <h3>Dynamic Text Area</h3>
+    <p>Contact chat support</p>
+    <h4><span>or submit request and we will get back to you</span></h4>
+    <form [formGroup]="helpForm" (ngSubmit)="onhelpFormFormSubmit()">
+
+      <mat-form-field class="w-100 mt-2">
+        <mat-label>Category</mat-label>
+        <select matNativeControl formControlName="category">
+          <option value="men">Men</option>
+          <option value="women">Women</option>
+          <option value="kids">Kids</option>
+        </select>
+        <mat-error *ngIf="((helpForm.controls['category'].errors?.required)&&(ifSubmitted==true))">
+          Category is required </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="w-100 mt-2">
+        <input matInput placeholder="Subject" formControlName="subject">
+        <mat-error *ngIf="((helpForm.controls['subject'].errors?.required)&&(ifSubmitted==true))">
+          Subject is required </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-100 mt-2">
+        <input matInput placeholder="Description" formControlName="description">
+        <mat-error *ngIf="((helpForm.controls['description'].errors?.required)&&(ifSubmitted==true))">
+          Description is required </mat-error>
+      </mat-form-field>
+      <div class="text-center mt-2">
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

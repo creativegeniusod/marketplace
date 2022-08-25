@@ -1,11 +1,13 @@
 <app-main-carousel></app-main-carousel>
 
 <div class="products-tabs featured-tabs">
-    <mat-tab-group mat-stretch-tabs>
-        <mat-tab label="Most Popular and Trending">
-            <app-trending-product></app-trending-product>
-        </mat-tab>
-    </mat-tab-group>
+    <app-product-not-found
+        *ngIf="(listSandbox.productLoaded$ | async) && (listSandbox.productlist$ | async)?.length == 0">
+    </app-product-not-found>
+</div>
+
+<div class="products-tabs featured-tabs">
+    <app-trending-product></app-trending-product>
 </div>
 <div class="products-tabs featured-tabs">
     <app-advertisment-product></app-advertisment-product>

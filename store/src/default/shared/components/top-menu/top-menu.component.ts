@@ -119,7 +119,6 @@ export class TopMenuComponent implements OnInit, OnDestroy {
       this.searchLists = [...data];
     })
     // }
-
   }
 
   search() {

@@ -7,7 +7,7 @@
  * Author piccosoft ltd <support@piccosoft.com>
  * Licensed under the MIT license.
  */
-import {Component, Input, Output, EventEmitter, OnChanges, OnInit, OnDestroy, DoCheck} from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnChanges, OnInit, OnDestroy, DoCheck, ChangeDetectorRef} from '@angular/core';
 import {ListsSandbox} from '../../../../core/lists/lists.sandbox';
 import {Subscription} from 'rxjs';
 import {CommonService} from '../../../../core/common/common.service';
@@ -34,7 +34,7 @@ export class CategoryListComponent implements OnChanges, OnInit, OnDestroy, DoCh
      // subscriptions
      private subscriptions: Array<Subscription> = [];
      @Input() categoryParentId;
-     constructor(public listSandBox: ListsSandbox, private commonService: CommonService) {
+     constructor(public listSandBox: ListsSandbox, private commonService: CommonService, private changeDetectRef: ChangeDetectorRef) {
          this.subscribe();
      }
 
@@ -79,11 +79,20 @@ export class CategoryListComponent implements OnChanges, OnInit, OnDestroy, DoCh
              }
          }));
      }
+
+    
+
      // OnDestroy Unsubscribe the old subscribed values
      ngOnDestroy() {
          this.subscriptions.forEach(each => {
              each.unsubscribe();
          });
      }
+
+     ngAfterContentChecked(): void {
+        this.changeDetectRef.detectChanges();
+     }
+    
+
 }
 

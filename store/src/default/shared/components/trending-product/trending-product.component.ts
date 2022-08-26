@@ -304,6 +304,12 @@ export class TrendingProductComponent implements OnInit, OnDestroy {
     this.categoryId = event.categoryId;
     this.getProductList(0, defaultCallValue, event.categoryId);
   }
+
+  getDiscPerc(regularPrice, price){
+    let newPrice = Number(regularPrice) - Number(price);
+    let perct = (newPrice/ Number(regularPrice)) *100
+    return perct;
+  } 
    
   ngOnDestroy() {
     this.subscription.forEach(each => {

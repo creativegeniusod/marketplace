@@ -66,6 +66,7 @@
       <div *ngFor="let product of (listSandbox.productlist$ | async)" fxFlex="100" [fxFlex.gt-sm]="viewCol"
         fxFlex.sm="50" class="col productDiv">
         <mat-card class="product-item text-center card-hover productCol">
+          
           <!-- <mat-icon class="mat-icon-lg"><img src="../../../assets/images/Add to wishlist.png" /></mat-icon> -->
           <button class="wishIcon" mat-icon-button
             matTooltip="{{product.wishListStatus === 1 ? 'Added to wishlist': 'Add to wishlist'}}"
@@ -77,8 +78,8 @@
           </button>
           <div class="product-img">
             <a [routerLink]="['/products/productdetails', product.productId]" class="image-link">
-              <img *ngIf="product['Images'].defaultImage == 1"
-                [src]="imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'"
+              <!-- *ngIf="product['Images'].defaultImage == 1" -->
+              <img  [src]="imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'"
                 onError="this.src='/assets/images/default_image.png';">
             </a>
             <div class="productRating">
@@ -97,7 +98,7 @@
               <p class="new-price">
                 $ {{product.price}}
               </p>
-              <p *ngIf="product.regular"><strong>{{(product.price/product.regular)*100  | number : '1.0-0'}}% OFF</strong></p>
+              <p *ngIf="product.regular"><strong>{{getDiscPerc(product.regular, product.price)  | number: '1.0-0'}}% OFF</strong></p>
               <!--  <app-controls [product]="product" [type]="'all'" (OpenProductDialog)="openProductDialog(product)">
               </app-controls> -->
             </div>

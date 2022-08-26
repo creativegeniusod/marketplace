@@ -3,11 +3,11 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { UtilService } from 'src/core/shared/utility/utility.service';
 
 @Component({
-  selector: 'app-faq',
-  templateUrl: './faq.component.html',
-  styleUrls: ['./faq.component.scss']
+  selector: 'app-footer-pages',
+  templateUrl: './footer-pages.component.html',
+  styleUrls: ['./footer-pages.component.scss']
 })
-export class FaqComponent implements OnInit {
+export class FooterPagesComponent implements OnInit {
 
   faqData: any;
   pageName: String;

@@ -9,6 +9,7 @@
 
 export class PagesaddModel {
   public title: string;
+  public slug: string;
   public content: string;
   public metaTagTitle: string;
   public metaTagContent: string;
@@ -18,6 +19,7 @@ export class PagesaddModel {
 
   constructor(PagesAddForm: any) {
     this.title = PagesAddForm.title || '';
+    this.slug = PagesAddForm.slug || '';
     this.content = PagesAddForm.content || '';
     this.metaTagTitle = PagesAddForm.metaTagTitle || '';
     this.metaTagContent = PagesAddForm.metaTagContent || '';

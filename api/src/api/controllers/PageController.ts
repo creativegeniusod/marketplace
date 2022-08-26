@@ -12,6 +12,7 @@ import {CreatePage} from './requests/CreatePageRequest';
 import {PageService} from '../services/PageService';
 import {UpdatePage} from './requests/UpdatePageRequest';
 import {DeletePageRequest} from './requests/DeletePageRequest';
+var slugify = require('slugify')
 
 @JsonController('/page')
 export class PageController {
@@ -32,6 +33,7 @@ export class PageController {
      * @apiParamExample {json} Input
      * {
      *      "title" : "",
+     *      "slug" : "",
      *      "content" : "",
      *      "metaTagTitle" : "",
      *      "metaTagContent" : "",
@@ -54,6 +56,7 @@ export class PageController {
 
         const page = new Page();
         page.title = pageParam.title;
+        page.slug = slugify(pageParam.slug);
         page.content = pageParam.content;
         page.isActive = pageParam.active;
         page.metaTagTitle = pageParam.metaTagTitle;
@@ -109,7 +112,7 @@ export class PageController {
     @Get('/pagelist')
     @Authorized()
     public async pageList(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number, @QueryParam('keyword') keyword: string, @QueryParam('status')status: number, @QueryParam('count')count: number|boolean, @Res() response: any): Promise<any> {
-        const select = ['pageId', 'title', 'content', 'isActive', 'metaTagTitle', 'metaTagContent', 'metaTagKeyword'];
+        const select = ['pageId', 'title','slug' ,'content', 'isActive', 'metaTagTitle', 'metaTagContent', 'metaTagKeyword'];
         const search = [
             {
                 name    : 'title',
@@ -238,6 +241,7 @@ export class PageController {
         }
 
         page.title = pageParam.title;
+        page.slug = slugify(pageParam.slug);
         page.content = pageParam.content;
         page.isActive = pageParam.active;
         page.metaTagTitle = pageParam.metaTagTitle;

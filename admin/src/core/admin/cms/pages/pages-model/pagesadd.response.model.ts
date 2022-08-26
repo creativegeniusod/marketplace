@@ -13,6 +13,7 @@ export class PagesaddResponseModel {
   public metaTagContent: string;
   public isActive: number;
   public title: string;
+  public slug: string;
   public pageId: number;
   public metaTagTitle: string;
   public metaTagKeyword: string;
@@ -26,5 +27,6 @@ export class PagesaddResponseModel {
     this.isActive = addResponse.isActive || 0;
     this.pageId = addResponse.pageId || 0;
     this.title = addResponse.title || '';
+    this.slug = addResponse.slug || '';
   }
 }

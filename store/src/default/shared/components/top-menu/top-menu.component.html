@@ -55,7 +55,7 @@
 
 
     <!-- *ngIf="(commonSandbox.getProfile$ | async)?.email" -->
-    <a mat-button [matMenuTriggerFor]="accountMenu" #accountMenuTrigger="matMenuTrigger" class="blackStyle">
+    <a mat-button [matMenuTriggerFor]="accountMenu" #accountMenuTrigger="matMenuTrigger" class="blackStyle profileIcon">
         <!-- <mat-icon class="mat-icon-sm account-icon blackStyle">person</mat-icon> -->
         <mat-icon routerLink="/auth" class="mat-icon-sm account-icon blackStyle"><img
                 src="../../../assets/images/Profile.png" /></mat-icon>
@@ -131,10 +131,10 @@
             <a mat-menu-item routerLink="/account/orders">
                 <span>My orders</span>
             </a>
-            <a mat-menu-item>
+            <a mat-menu-item routerLink="/contactus">
                 <span>Contact Us</span>
             </a>
-            <a mat-menu-item>
+            <a mat-menu-item  routerLink="/help">
                 <span>Need Help</span>
             </a>
             <a mat-menu-item>

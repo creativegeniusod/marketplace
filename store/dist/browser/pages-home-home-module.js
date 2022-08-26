@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"siteWrap\">\r\n    <app-main-carousel class=\"home-carousel\"></app-main-carousel>\r\n    <div class=\"site-container\">\r\n        <div class=\"products-tabs featured-tabs\">\r\n            <mat-tab-group mat-stretch-tabs>\r\n                <mat-tab label=\"Most Popular and Trending\">\r\n                    <app-trending-product></app-trending-product>\r\n                </mat-tab>\r\n            </mat-tab-group>\r\n        </div>\r\n\r\n        <div class=\"products-tabs featured-tabs\">\r\n            <mat-tab-group mat-stretch-tabs>\r\n                <mat-tab label=\"Dynamic Text Area\">\r\n                    <app-advertisment-product></app-advertisment-product>\r\n                </mat-tab>\r\n            </mat-tab-group>\r\n        </div>\r\n\r\n        <div class=\"products-tabs featured-tabs\">\r\n            <mat-tab-group mat-stretch-tabs>\r\n                <mat-tab label=\"Dynamic Text Area\">\r\n                    <app-advertisment-product></app-advertisment-product>\r\n                </mat-tab>\r\n            </mat-tab-group>\r\n        </div>\r\n\r\n        <div class=\"products-tabs featured-tabs\">\r\n            <mat-tab-group mat-stretch-tabs>\r\n                <mat-tab label=\"Dynamic Text Area\">\r\n                    <app-advertisment-product></app-advertisment-product>\r\n                </mat-tab>\r\n            </mat-tab-group>\r\n        </div>\r\n\r\n        <div class=\"products-tabs featured-tabs\">\r\n            <mat-tab-group mat-stretch-tabs>\r\n                <mat-tab label=\"Dynamic Text Area\">\r\n                    <app-advertisment-product></app-advertisment-product>\r\n                </mat-tab>\r\n            </mat-tab-group>\r\n        </div>\r\n\r\n        <div class=\"products-tabs featured-tabs\">\r\n            <mat-tab-group mat-stretch-tabs>\r\n                <mat-tab label=\"Dynamic Text Area\">\r\n                    <app-advertisment-product></app-advertisment-product>\r\n                </mat-tab>\r\n            </mat-tab-group>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n<!-- <div class=\"products-tabs featured-tabs\">\r\n    <mat-tab-group mat-stretch-tabs>\r\n        <mat-tab label=\"Today Deals\">\r\n            <app-products-carousel [products]=\"listSandbox.todayDealList$ | async\"></app-products-carousel>\r\n        </mat-tab>\r\n    </mat-tab-group>\r\n</div> -->\r\n\r\n<!-- <app-brands-carousel [brands]=\"listSandbox.manufacturer$ | async\"></app-brands-carousel> -->"
+module.exports = "<div class=\"siteWrap\">\r\n    <app-main-carousel class=\"home-carousel\"></app-main-carousel>\r\n    <div class=\"site-container\">\r\n\r\n        <div class=\"products-tabs featured-tabs\"\r\n            *ngIf=\"(listSandbox.productLoaded$ | async) && (listSandbox.productlist$ | async)?.length == 0\">\r\n            <app-product-not-found></app-product-not-found>\r\n        </div>\r\n\r\n        <div class=\"products-tabs featured-tabs\">\r\n            <app-trending-product></app-trending-product>\r\n        </div>\r\n\r\n        <div class=\"products-tabs featured-tabs\">\r\n            <app-advertisment-product></app-advertisment-product>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n<!-- <div class=\"products-tabs featured-tabs\">\r\n    <mat-tab-group mat-stretch-tabs>\r\n        <mat-tab label=\"Today Deals\">\r\n            <app-products-carousel [products]=\"listSandbox.todayDealList$ | async\"></app-products-carousel>\r\n        </mat-tab>\r\n    </mat-tab-group>\r\n</div> -->\r\n\r\n<!-- <app-brands-carousel [brands]=\"listSandbox.manufacturer$ | async\"></app-brands-carousel> -->"
 
 /***/ }),
 
@@ -18,7 +18,7 @@ module.exports = "<div class=\"siteWrap\">\r\n    <app-main-carousel class=\"hom
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".products-tabs {\n  margin-top: 30px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9zdG9yZS9zcmMvZGVmYXVsdC9wYWdlcy9ob21lL2hvbWUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxpQkFBZ0IsRUFDbkIiLCJmaWxlIjoic3JjL2RlZmF1bHQvcGFnZXMvaG9tZS9ob21lLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByb2R1Y3RzLXRhYnN7XHJcbiAgICBtYXJnaW4tdG9wOiAzMHB4OyAgIFxyXG59Il19 */"
+module.exports = ".products-tabs {\n  margin-top: 30px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvdGVzdDAyL21hcmtldHBsYWNlL3N0b3JlL3NyYy9kZWZhdWx0L3BhZ2VzL2hvbWUvaG9tZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGlCQUFnQixFQUNuQiIsImZpbGUiOiJzcmMvZGVmYXVsdC9wYWdlcy9ob21lL2hvbWUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJvZHVjdHMtdGFic3tcclxuICAgIG1hcmdpbi10b3A6IDMwcHg7ICAgXHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -59,8 +59,9 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(listSandbox, platformId) {
+    function HomeComponent(listSandbox, changeDetectRef, platformId) {
         this.listSandbox = listSandbox;
+        this.changeDetectRef = changeDetectRef;
         this.platformId = platformId;
     }
     // Initially calls getBannerList,getBransList
@@ -99,14 +100,18 @@ var HomeComponent = /** @class */ (function () {
         // params.count = '';
         this.listSandbox.getTodayDealList(params);
     };
+    HomeComponent.prototype.ngAfterContentChecked = function () {
+        this.changeDetectRef.detectChanges();
+    };
     HomeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-home',
             template: __webpack_require__(/*! ./home.component.html */ "./src/default/pages/home/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.scss */ "./src/default/pages/home/home.component.scss")]
         }),
-        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"])),
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"])),
         __metadata("design:paramtypes", [_core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_2__["ListsSandbox"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"],
             Object])
     ], HomeComponent);
     return HomeComponent;

@@ -6,7 +6,7 @@
  * Author piccosoft ltd <support@piccosoft.com>
  * Licensed under the MIT license.
  */
-import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, Inject, ChangeDetectorRef } from '@angular/core';
 
 import { isPlatformBrowser } from '@angular/common';
 import { ListsSandbox } from '../../../core/lists/lists.sandbox';
@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
 
     constructor(
         public listSandbox: ListsSandbox,
+        private changeDetectRef: ChangeDetectorRef,
         @Inject(PLATFORM_ID) private platformId: Object) {
     }
     // Initially calls getBannerList,getBransList
@@ -61,5 +62,9 @@ export class HomeComponent implements OnInit {
         // params.count = '';
         this.listSandbox.getTodayDealList(params);
     }
+
+    ngAfterContentChecked(): void {
+        this.changeDetectRef.detectChanges();
+     }
 
 }

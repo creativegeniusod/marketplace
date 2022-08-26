@@ -16,6 +16,11 @@ import { AuthGuard } from '../core/service/auth.guard';
 import { LayoutAuthGuard } from '../core/service/layout_auth.guard';
 import { UnderDevelopingComponent } from './pages/layout/under-developing/under-developing.component';
 import { GetDirectionsComponent } from './shared/get-directions/get-directions.component';
+import { HelpComponent } from './shared/components/help/help.component';
+import { FaqComponent } from './shared/components/faq/faq.component';
+import { PrivacyPolicyComponent } from './shared/components/privacy-policy/privacy-policy.component';
+import { ContactusComponent } from './shared/components/contactus/contactus.component';
+import { TAndCComponent } from './shared/components/t-and-c/t-and-c.component';
 
 export const routes: Routes = [
   {
@@ -114,6 +119,13 @@ export const routes: Routes = [
           urls: [{ title: 'Wishlist', url: '' }]
         }
       },
+      { path: 'help', component: HelpComponent },
+      { path: 'contactus', component: ContactusComponent },
+      { path: 'faq', component: FaqComponent, pathMatch: 'full' },
+      { path: 'privacy', component: PrivacyPolicyComponent, pathMatch: 'full' },
+      { path: 'tAndC', component: TAndCComponent, pathMatch: 'full' },
+      { path: 'return', component: PrivacyPolicyComponent, pathMatch: 'full' },
+
     ]
   },
   {
@@ -126,4 +138,4 @@ export const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class DefaultRoutingModule {}
+export class DefaultRoutingModule { }

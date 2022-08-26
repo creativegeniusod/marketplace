@@ -389,11 +389,11 @@ export class CommonListController {
 
 
     @Get('/getPage')
-    public async getPage(@QueryParam('id') id: number, @Res() response: any): Promise<any> {
+    public async getPage(@QueryParam('slug') slug: string, @Res() response: any): Promise<any> {
         /*const select = ['pageId', 'title', 'content', 'isActive', 'metaTagTitle', 'metaTagContent', 'metaTagKeyword'];*/
         const page = await this.pageService.findOne({
             where: {
-                pageId: id,
+                slug: slug,
             },
         });
             if (page) {

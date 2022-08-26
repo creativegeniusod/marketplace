@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-main-carousel></app-main-carousel>\n\n<div class=\"products-tabs featured-tabs\">\n    <mat-tab-group mat-stretch-tabs *ngIf=\"(listSandbox?.productlist$ | async)?.length > 0\">\n        <mat-tab label=\"Most Popular and Trending\">\n            <app-trending-product></app-trending-product>\n        </mat-tab>\n    </mat-tab-group>\n</div>\n\n<div class=\"products-tabs featured-tabs\">\n    <mat-tab-group mat-stretch-tabs>\n        <mat-tab label=\"Dynamic Text Area\">\n            <app-advertisment-product></app-advertisment-product>\n        </mat-tab>\n    </mat-tab-group>\n</div>\n\n<div class=\"products-tabs featured-tabs\">\n    <mat-tab-group mat-stretch-tabs>\n        <mat-tab label=\"Dynamic Text Area\">\n            <app-advertisment-product></app-advertisment-product>\n        </mat-tab>\n    </mat-tab-group>\n</div>\n\n<div class=\"products-tabs featured-tabs\">\n    <mat-tab-group mat-stretch-tabs>\n        <mat-tab label=\"Dynamic Text Area\">\n            <app-advertisment-product></app-advertisment-product>\n        </mat-tab>\n    </mat-tab-group>\n</div>\n\n<div class=\"products-tabs featured-tabs\">\n    <mat-tab-group mat-stretch-tabs>\n        <mat-tab label=\"Dynamic Text Area\">\n            <app-advertisment-product></app-advertisment-product>\n        </mat-tab>\n    </mat-tab-group>\n</div>\n\n<div class=\"products-tabs featured-tabs\">\n    <mat-tab-group mat-stretch-tabs>\n        <mat-tab label=\"Dynamic Text Area\">\n            <app-advertisment-product></app-advertisment-product>\n        </mat-tab>\n    </mat-tab-group>\n</div>\n\n\n<!-- <div class=\"products-tabs featured-tabs\">\n    <mat-tab-group mat-stretch-tabs>\n        <mat-tab label=\"Today Deals\">\n            <app-products-carousel [products]=\"listSandbox.todayDealList$ | async\"></app-products-carousel>\n        </mat-tab>\n    </mat-tab-group>\n</div> -->\n\n<!-- <app-brands-carousel [brands]=\"listSandbox.manufacturer$ | async\"></app-brands-carousel> -->"
+module.exports = "<app-main-carousel></app-main-carousel>\n\n<div class=\"products-tabs featured-tabs\">\n    <app-product-not-found\n        *ngIf=\"(listSandbox.productLoaded$ | async) && (listSandbox.productlist$ | async)?.length == 0\">\n    </app-product-not-found>\n</div>\n\n<div class=\"products-tabs featured-tabs\">\n    <app-trending-product></app-trending-product>\n</div>\n<div class=\"products-tabs featured-tabs\">\n    <app-advertisment-product></app-advertisment-product>\n</div>\n\n\n\n<!-- <div class=\"products-tabs featured-tabs\">\n    <mat-tab-group mat-stretch-tabs>\n        <mat-tab label=\"Today Deals\">\n            <app-products-carousel [products]=\"listSandbox.todayDealList$ | async\"></app-products-carousel>\n        </mat-tab>\n    </mat-tab-group>\n</div> -->\n\n<!-- <app-brands-carousel [brands]=\"listSandbox.manufacturer$ | async\"></app-brands-carousel> -->"
 
 /***/ }),
 
@@ -18,7 +18,7 @@ module.exports = "<app-main-carousel></app-main-carousel>\n\n<div class=\"produc
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".products-tabs {\n  margin-top: 30px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9zdG9yZS9zcmMvZGVmYXVsdC9wYWdlcy9ob21lLW1lbnUvaG9tZS1tZW51LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWdCLEVBQ25CIiwiZmlsZSI6InNyYy9kZWZhdWx0L3BhZ2VzL2hvbWUtbWVudS9ob21lLW1lbnUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJvZHVjdHMtdGFic3tcbiAgICBtYXJnaW4tdG9wOiAzMHB4OyAgIFxufSJdfQ== */"
+module.exports = ".products-tabs {\n  margin-top: 30px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvdGVzdDAyL21hcmtldHBsYWNlL3N0b3JlL3NyYy9kZWZhdWx0L3BhZ2VzL2hvbWUtbWVudS9ob21lLW1lbnUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxpQkFBZ0IsRUFDbkIiLCJmaWxlIjoic3JjL2RlZmF1bHQvcGFnZXMvaG9tZS1tZW51L2hvbWUtbWVudS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wcm9kdWN0cy10YWJze1xuICAgIG1hcmdpbi10b3A6IDMwcHg7ICAgXG59Il19 */"
 
 /***/ }),
 
@@ -33,9 +33,8 @@ module.exports = ".products-tabs {\n  margin-top: 30px; }\n\n/*# sourceMappingUR
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeMenuComponent", function() { return HomeMenuComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../core/lists/lists.sandbox */ "./src/core/lists/lists.sandbox.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../core/lists/lists.sandbox */ "./src/core/lists/lists.sandbox.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,7 +58,6 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 
-
 var HomeMenuComponent = /** @class */ (function () {
     function HomeMenuComponent(listSandbox, platformId, activatedRoute) {
         var _this = this;
@@ -74,13 +72,13 @@ var HomeMenuComponent = /** @class */ (function () {
     }
     // Initially calls getBannerList,getBransList
     HomeMenuComponent.prototype.ngOnInit = function () {
-        this.getBannerList();
-        this.getBransList();
-        this.getTodayDealList();
-        this.listSandbox.getSettings();
-        if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_1__["isPlatformBrowser"])(this.platformId)) {
-            localStorage.removeItem('checkout');
-        }
+        // this.getBannerList();
+        // this.getBransList();
+        // this.getTodayDealList();
+        // this.listSandbox.getSettings();
+        // if (isPlatformBrowser(this.platformId)) {
+        //     localStorage.removeItem('checkout');
+        // }
     };
     // fetch banner list from sandbox
     HomeMenuComponent.prototype.getBannerList = function () {
@@ -115,9 +113,9 @@ var HomeMenuComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./home-menu.component.scss */ "./src/default/pages/home-menu/home-menu.component.scss")]
         }),
         __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"])),
-        __metadata("design:paramtypes", [_core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_2__["ListsSandbox"],
+        __metadata("design:paramtypes", [_core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_1__["ListsSandbox"],
             Object,
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
     ], HomeMenuComponent);
     return HomeMenuComponent;
 }());

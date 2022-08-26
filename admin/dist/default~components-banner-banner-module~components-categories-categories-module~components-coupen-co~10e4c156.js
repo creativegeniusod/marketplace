@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~components-banner-banner-module~components-categories-categories-module~components-product-p~b060f34b"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~components-banner-banner-module~components-categories-categories-module~components-coupen-co~10e4c156"],{
 
 /***/ "./node_modules/lodash/lodash.js":
 /*!***************************************!*\
@@ -17635,6 +17635,7 @@ var CategorylistForm = /** @class */ (function () {
         this.limit = categorylistForm.limit || '';
         this.offset = categorylistForm.offset || '';
         this.parentInt = categorylistForm.parentInt || '';
+        this.adv = categorylistForm.adv || '';
         this.keyword = categorylistForm.keyword || '';
         this.sortOrder = categorylistForm.sortOrder || '';
         this.status = categorylistForm.status || '';
@@ -17782,4 +17783,4 @@ var getCategoriesCountRequestFailed = Object(reselect__WEBPACK_IMPORTED_MODULE_0
 /***/ })
 
 }]);
-//# sourceMappingURL=default~components-banner-banner-module~components-categories-categories-module~components-product-p~b060f34b.js.map
+//# sourceMappingURL=default~components-banner-banner-module~components-categories-categories-module~components-coupen-co~10e4c156.js.map

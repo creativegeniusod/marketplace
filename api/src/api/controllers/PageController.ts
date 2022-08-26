@@ -139,6 +139,55 @@ export class PageController {
             return response.status(200).send(successResponse);
         }
 
+    // Page List API
+    /**
+     * @api {get} /api/page/getPage Page List API
+     * @apiGroup Page
+     * @apiHeader {String} Authorization
+     * @apiParam (Request body) {Number} limit limit
+     * @apiParam (Request body) {Number} offset offset
+     * @apiParam (Request body) {String} keyword keyword
+     * @apiParam (Request body) {Number} status status
+     * @apiParam (Request body) {Number} count count should be number or boolean
+     * @apiSuccessExample {json} Success
+     * HTTP/1.1 200 OK
+     * {
+     *      "message": "Successfully get page list",
+     *      "data":{
+     *      "pageId" : "",
+     *      "title" : "",
+     *      "content" : "",
+     *      "active" : "",
+     *      "metaTagTitle" : "",
+     *      "metaTagContent" : "",
+     *      "metaTagKeyword" : "",
+     *      }
+     *      "status": "1"
+     * }
+     * @apiSampleRequest /api/page/getPage
+     * @apiErrorExample {json} Page error
+     * HTTP/1.1 500 Internal Server Error
+     */
+
+    @Get('/getPage')
+    @Authorized()
+    public async getPage(@QueryParam('id') id: number, @Res() response: any): Promise<any> {
+        /*const select = ['pageId', 'title', 'content', 'isActive', 'metaTagTitle', 'metaTagContent', 'metaTagKeyword'];*/
+        const page = await this.pageService.findOne({
+            where: {
+                pageId: id,
+            },
+        });
+            if (page) {
+                const successRes: any = {
+                    status: 1,
+                    message: 'Successfully got pages count',
+                    data: page,
+                };
+                return response.status(200).send(successRes);
+            }
+        }    
+
     // Update Page API
     /**
      * @api {put} /api/page/update-page/:id Update Page API

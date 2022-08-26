@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="mat-table wishlist-table" *ngIf="(wishlistSandbox.wishlist$ | async)?.length > 0">
-        <div class="mat-header-row">
+        <!-- <div class="mat-header-row">
             <div class="mat-header-cell">Product</div>
             <div class="mat-header-cell">Name</div>
             <div class="mat-header-cell" style="margin-left: 15px">Price</div>
@@ -20,8 +20,8 @@
                 <div class="px-1">Action
                 </div>
             </div>
-        </div>
-        <div *ngFor="let product of wishlistSandbox.wishlist$ | async" class="mat-row">
+        </div> -->
+        <!-- <div *ngFor="let product of wishlistSandbox.wishlist$ | async" class="mat-row">
             <div class="mat-cell"><img *ngIf="product.productImage" [src]="imagePath+ '?path=' + product.productImage.containerName + '&name=' + product.productImage.image + '&width=300&height=300'" onError="this.src='/assets/images/default_image.png';">
             </div>
             <div class="mat-cell"><a [routerLink]="['/products/productdetails', product.productId]" class="product-name">{{product.product.name}}</a>
@@ -42,6 +42,6 @@
                     <span [hidden]="!(wishlistSandbox.wishlistLoading$ | async)" class="spinner-border spinner-border-sm pull-right" role="status" aria-hidden="true"></span>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </mat-card>

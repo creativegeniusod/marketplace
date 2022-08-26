@@ -40,6 +40,7 @@ export class UpdateProductRequest {
     @IsNotEmpty()
     public price: string;
 
+    public regular: string;
     // @IsNotEmpty()
     public location: string;
 

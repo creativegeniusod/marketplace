@@ -6,7 +6,7 @@
  * Author piccosoft ltd <support@piccosoft.com>
  * Licensed under the MIT license.
  */
-import { Component, OnInit, Inject, PLATFORM_ID, OnDestroy } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID, OnDestroy, HostListener, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfigService } from '../../../../core/service/config.service';
 import { CommonSandbox } from '../../../../core/common/common.sandbox';
@@ -43,7 +43,8 @@ export class TopMenuComponent implements OnInit, OnDestroy {
     public listSandbox: ListsSandbox,
     public commonSandbox: CommonSandbox,
     public productControl: ProductControlSandbox,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private _elementRef: ElementRef
   ) { }
 
   /**calls commonSandbox doGetProfile with default param
@@ -94,8 +95,9 @@ export class TopMenuComponent implements OnInit, OnDestroy {
       // this.router.navigate(['/products'], {
       //     queryParams: { keyword: this.searchValue }
       // });
-      this.getProductList(this.searchValue);
+      // this.getProductList(this.searchValue);
     }
+    this.getProductList(this.searchValue);
   }
   /**
      * fetch product list from service. calling getProductList function from sandbox
@@ -111,13 +113,12 @@ export class TopMenuComponent implements OnInit, OnDestroy {
     params.price = 'ASC';
     params.priceFrom = 0;
     params.priceTo = '';
-    if (keyword) {
-      this.listSandbox.getProductList(params)
-      this.listSandbox.productlist$.subscribe(data => {
-        this.searchLists = [...data];
-      })
-    }
-
+    // if (keyword) {
+    this.listSandbox.getProductList(params)
+    this.listSandbox.productlist$.subscribe(data => {
+      this.searchLists = [...data];
+    })
+    // }
   }
 
   search() {
@@ -127,16 +128,28 @@ export class TopMenuComponent implements OnInit, OnDestroy {
     this.searchValue = ''
   }
 
-  getSerchProduct(list){
-    if(list) {
+  getSerchProduct(list) {
+    if (list) {
       this.router.navigate(['/products'], {
-        queryParams: { keyword:list.name }
-    });
-    this.searchLists = [];
-    this.searchValue = ''
+        queryParams: { keyword: list.name }
+      });
+      this.searchLists = [];
+      this.searchValue = ''
     }
-    
+
   }
+  show: boolean = true;
+  @HostListener('document:click', ['$event.target'])
+  public onClick(targetElement) {
+    const clickedInside = this._elementRef.nativeElement.contains(targetElement);
+    if (!clickedInside) {
+      this.show = true;
+    } else {
+      this.show = false;
+    }
+  }
+
+  outsideClick() { }
 
   ngOnDestroy() {
     this.subscriptions.forEach(each => {

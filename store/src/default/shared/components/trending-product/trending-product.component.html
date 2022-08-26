@@ -51,12 +51,15 @@
         </mat-menu>
       </div>
     </div>
-    <div class="wrapper" *ngIf="listSandbox?.productLoading$ | async">
+    <!-- <div class="wrapper" *ngIf="listSandbox?.productLoading$ | async">
       <div class="overlay">
         <div class="spinner-wrapper">
           <app-spinner [isShow]="listSandbox?.productLoading$ | async"></app-spinner>
         </div>
       </div>
+    </div> -->
+    <div class="advertisement-heading" *ngIf="((listSandbox.productlist$ | async) | keyvalue)?.length">
+      <h4>Most Popular and Trending</h4>
     </div>
     <div *ngIf="viewType == 'grid'" fxLayout="row wrap" class="products-wrapper">
 
@@ -90,12 +93,12 @@
           </a>
           <div fxLayout="row" fxLayoutAlign="space-between center" class="prices">
             <div fxLayout="row" fxLayoutAlign="center center" class="priceAndIcons">
-              <p class="regularPrice">$300</p>
+              <p class="regularPrice" *ngIf="product.regular">${{product.regular}}</p>
               <p class="new-price">
-                $ {{product.price}} 
+                $ {{product.price}}
               </p>
-              <p><strong> 50% OFF</strong></p>
-             <!--  <app-controls [product]="product" [type]="'all'" (OpenProductDialog)="openProductDialog(product)">
+              <p *ngIf="product.regular"><strong>{{(product.price/product.regular)*100  | number : '1.0-0'}}% OFF</strong></p>
+              <!--  <app-controls [product]="product" [type]="'all'" (OpenProductDialog)="openProductDialog(product)">
               </app-controls> -->
             </div>
           </div>

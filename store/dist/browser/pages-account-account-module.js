@@ -77929,9 +77929,9 @@ var routes = [
             { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_8__["DashboardComponent"], data: { breadcrumb: 'Dashboard' } },
             { path: 'information', component: _information_information_component__WEBPACK_IMPORTED_MODULE_9__["InformationComponent"], data: { breadcrumb: 'Information' } },
             { path: 'orders', component: _orders_orders_component__WEBPACK_IMPORTED_MODULE_10__["OrdersComponent"], data: { breadcrumb: 'Orders' } },
-            { path: 'order-detail/:id', component: _orderdetail_orderdetail_component__WEBPACK_IMPORTED_MODULE_11__["OrderDetailComponent"], data: { breadcrumb: 'Order Detail' } }
-        ]
-    }
+            { path: 'order-detail/:id', component: _orderdetail_orderdetail_component__WEBPACK_IMPORTED_MODULE_11__["OrderDetailComponent"], data: { breadcrumb: 'Order Detail' } },
+        ],
+    },
 ];
 var AccountModule = /** @class */ (function () {
     function AccountModule() {

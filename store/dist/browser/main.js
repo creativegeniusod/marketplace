@@ -3283,6 +3283,7 @@ var ProductsResponseModel = /** @class */ (function () {
         this.metaTagTitle = listResponse.metaTagTitle || '';
         this.name = listResponse.name || '';
         this.price = listResponse.price || '';
+        this.regular = listResponse.regular || '';
         this.productId = listResponse.productId || '';
         this.Images = listResponse.Images || [];
         this.quantity = listResponse.quantity || '';
@@ -6630,7 +6631,7 @@ var ContainerModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container>\n\n    <mat-sidenav [opened]=\"false\" mode=\"over\" #sidenav class=\"sidenav mat-elevation-z6\">\n        <app-spurt-side-bar></app-spurt-side-bar>\n    </mat-sidenav>\n\n    <!-- <mat-toolbar class=\"head-toolbar\">\n        <app-spurt-header class=\"head\"></app-spurt-header>\n    </mat-toolbar> -->\n    <!-- <mat-toolbar>\n        <app-spurt-header-menu [categories]=\"listSandBox.categoryList$ | async\" class=\"head\"></app-spurt-header-menu>\n    </mat-toolbar> -->\n    <app-menu [categories]=\"listSandBox.categoryList$ | async\"></app-menu>\n\n    <div class=\"theme-container-full main\">\n        <!-- <app-breadcrumb></app-breadcrumb> -->\n        <router-outlet></router-outlet>\n    </div>\n    <app-options></app-options>\n<!-- footer -->\n    <app-menu [categories]=\"listSandBox.categoryList$ | async\"></app-menu>\n    <app-footer></app-footer>\n    <!--  -->\n\n    <div *ngIf=\"showBackToTop\" fxLayout=\"row\" fxLayoutAlign=\"center center\" class=\"back-to-top transition\"\n         (click)=\"scrollToTop()\">\n        <mat-icon>arrow_upward</mat-icon>\n    </div>\n\n\n</mat-sidenav-container>"
+module.exports = "<mat-sidenav-container>\n\n    <mat-sidenav [opened]=\"false\" mode=\"over\" #sidenav class=\"sidenav mat-elevation-z6\">\n        <app-spurt-side-bar></app-spurt-side-bar>\n    </mat-sidenav>\n\n    <!-- <mat-toolbar class=\"head-toolbar\">\n        <app-spurt-header class=\"head\"></app-spurt-header>\n    </mat-toolbar> -->\n    <!-- <mat-toolbar>\n        <app-spurt-header-menu [categories]=\"listSandBox.categoryList$ | async\" class=\"head\"></app-spurt-header-menu>\n    </mat-toolbar> -->\n    <app-menu [categories]=\"listSandBox.categoryList$ | async\"></app-menu>\n\n    <div class=\"theme-container-full main\">\n        <!-- <app-breadcrumb></app-breadcrumb> -->\n        <router-outlet></router-outlet>\n    </div>\n    <app-options></app-options>\n<!-- footer -->\n    <!-- <app-menu [categories]=\"listSandBox.categoryList$ | async\"></app-menu> -->\n    <app-footer></app-footer>\n    <!--  -->\n\n    <div *ngIf=\"showBackToTop\" fxLayout=\"row\" fxLayoutAlign=\"center center\" class=\"back-to-top transition\"\n         (click)=\"scrollToTop()\">\n        <mat-icon>arrow_upward</mat-icon>\n    </div>\n\n\n</mat-sidenav-container>"
 
 /***/ }),
 
@@ -7076,6 +7077,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_service_layout_auth_guard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../core/service/layout_auth.guard */ "./src/core/service/layout_auth.guard.ts");
 /* harmony import */ var _pages_layout_under_developing_under_developing_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/layout/under-developing/under-developing.component */ "./src/default/pages/layout/under-developing/under-developing.component.ts");
 /* harmony import */ var _shared_get_directions_get_directions_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./shared/get-directions/get-directions.component */ "./src/default/shared/get-directions/get-directions.component.ts");
+/* harmony import */ var _shared_components_help_help_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./shared/components/help/help.component */ "./src/default/shared/components/help/help.component.ts");
+/* harmony import */ var _shared_components_faq_faq_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./shared/components/faq/faq.component */ "./src/default/shared/components/faq/faq.component.ts");
+/* harmony import */ var _shared_components_privacy_policy_privacy_policy_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./shared/components/privacy-policy/privacy-policy.component */ "./src/default/shared/components/privacy-policy/privacy-policy.component.ts");
+/* harmony import */ var _shared_components_contactus_contactus_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./shared/components/contactus/contactus.component */ "./src/default/shared/components/contactus/contactus.component.ts");
+/* harmony import */ var _shared_components_t_and_c_t_and_c_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./shared/components/t-and-c/t-and-c.component */ "./src/default/shared/components/t-and-c/t-and-c.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7093,6 +7099,11 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 // components
+
+
+
+
+
 
 
 
@@ -7194,6 +7205,12 @@ var routes = [
                     urls: [{ title: 'Wishlist', url: '' }]
                 }
             },
+            { path: 'help', component: _shared_components_help_help_component__WEBPACK_IMPORTED_MODULE_9__["HelpComponent"] },
+            { path: 'contactus', component: _shared_components_contactus_contactus_component__WEBPACK_IMPORTED_MODULE_12__["ContactusComponent"] },
+            { path: 'faq', component: _shared_components_faq_faq_component__WEBPACK_IMPORTED_MODULE_10__["FaqComponent"], pathMatch: 'full' },
+            { path: 'privacy', component: _shared_components_privacy_policy_privacy_policy_component__WEBPACK_IMPORTED_MODULE_11__["PrivacyPolicyComponent"], pathMatch: 'full' },
+            { path: 'tAndC', component: _shared_components_t_and_c_t_and_c_component__WEBPACK_IMPORTED_MODULE_13__["TAndCComponent"], pathMatch: 'full' },
+            { path: 'return', component: _shared_components_privacy_policy_privacy_policy_component__WEBPACK_IMPORTED_MODULE_11__["PrivacyPolicyComponent"], pathMatch: 'full' },
         ]
     },
     {
@@ -8136,7 +8153,7 @@ module.exports = "<div fxLayoutAlign=\"center center\" class='navcart'>\n    <ap
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".cart-items-count {\n  position: absolute;\n  top: -3px;\n  left: 26px;\n  background: #f44336;\n  height: 18px;\n  width: 18px;\n  line-height: 18px;\n  border-radius: 50%;\n  font-size: 11px;\n  color: #fff; }\n\n.navcart {\n  margin-left: -113px; }\n\n.flex-row-button {\n  margin-left: 6%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9zdG9yZS9zcmMvZGVmYXVsdC9zaGFyZWQvY29tcG9uZW50cy9jYXJ0L2NhcnQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxtQkFBa0I7RUFDbEIsVUFBUztFQUNULFdBQVU7RUFDVixvQkFBbUI7RUFDbkIsYUFBWTtFQUNaLFlBQVc7RUFDWCxrQkFBaUI7RUFDakIsbUJBQWtCO0VBQ2xCLGdCQUFlO0VBQ2YsWUFBVyxFQUNaOztBQUNEO0VBQ0Usb0JBQW1CLEVBQ3BCOztBQUNEO0VBQ0UsZ0JBQWUsRUFDaEIiLCJmaWxlIjoic3JjL2RlZmF1bHQvc2hhcmVkL2NvbXBvbmVudHMvY2FydC9jYXJ0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcnQtaXRlbXMtY291bnR7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAtM3B4O1xuICBsZWZ0OiAyNnB4O1xuICBiYWNrZ3JvdW5kOiAjZjQ0MzM2O1xuICBoZWlnaHQ6IDE4cHg7XG4gIHdpZHRoOiAxOHB4O1xuICBsaW5lLWhlaWdodDogMThweDtcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICBmb250LXNpemU6IDExcHg7XG4gIGNvbG9yOiAjZmZmO1xufVxuLm5hdmNhcnQge1xuICBtYXJnaW4tbGVmdDogLTExM3B4O1xufVxuLmZsZXgtcm93LWJ1dHRvbntcbiAgbWFyZ2luLWxlZnQ6IDYlO1xufSJdfQ== */"
+module.exports = ".cart-items-count {\n  position: absolute;\n  top: -3px;\n  left: 26px;\n  background: #f44336;\n  height: 18px;\n  width: 18px;\n  line-height: 18px;\n  border-radius: 50%;\n  font-size: 11px;\n  color: #fff; }\n\n.flex-row-button {\n  margin-left: 6%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9zdG9yZS9zcmMvZGVmYXVsdC9zaGFyZWQvY29tcG9uZW50cy9jYXJ0L2NhcnQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxtQkFBa0I7RUFDbEIsVUFBUztFQUNULFdBQVU7RUFDVixvQkFBbUI7RUFDbkIsYUFBWTtFQUNaLFlBQVc7RUFDWCxrQkFBaUI7RUFDakIsbUJBQWtCO0VBQ2xCLGdCQUFlO0VBQ2YsWUFBVyxFQUNaOztBQUlEO0VBQ0UsZ0JBQWUsRUFDaEIiLCJmaWxlIjoic3JjL2RlZmF1bHQvc2hhcmVkL2NvbXBvbmVudHMvY2FydC9jYXJ0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcnQtaXRlbXMtY291bnR7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAtM3B4O1xuICBsZWZ0OiAyNnB4O1xuICBiYWNrZ3JvdW5kOiAjZjQ0MzM2O1xuICBoZWlnaHQ6IDE4cHg7XG4gIHdpZHRoOiAxOHB4O1xuICBsaW5lLWhlaWdodDogMThweDtcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICBmb250LXNpemU6IDExcHg7XG4gIGNvbG9yOiAjZmZmO1xufVxuLm5hdmNhcnQge1xuICAvLyBtYXJnaW4tbGVmdDogLTExM3B4O1xufVxuLmZsZXgtcm93LWJ1dHRvbntcbiAgbWFyZ2luLWxlZnQ6IDYlO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -8394,6 +8411,93 @@ var CategoryListComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_1__["ListsSandbox"], _core_common_common_service__WEBPACK_IMPORTED_MODULE_2__["CommonService"]])
     ], CategoryListComponent);
     return CategoryListComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/default/shared/components/contactus/contactus.component.html":
+/*!**************************************************************************!*\
+  !*** ./src/default/shared/components/contactus/contactus.component.html ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div fxLayout=\"row wrap\">\n  <div fxFlex=\"100\" fxFlex.gt-sm=\"50\" class=\"p-2\">\n    <h3>Contact us</h3>\n    <form [formGroup]=\"contactUsForm\" (ngSubmit)=\"onContactUsFormSubmit()\">\n      <mat-form-field class=\"w-100 mt-2\">\n        <input matInput placeholder=\"Subject\" formControlName=\"subject\">\n        <mat-error *ngIf=\"((contactUsForm.controls['subject'].errors?.required)&&(ifSubmitted==true))\">\n          Subject is required </mat-error>\n      </mat-form-field>\n\n      <mat-form-field class=\"w-100 mt-2\">\n        <mat-label>Department</mat-label>\n        <select matNativeControl formControlName=\"department\">\n          <option value=\"customer\">CUSTOMER</option>\n          <option value=\"vendor\">VENDOR</option>\n          <option value=\"corporate\">CORPORATE</option>\n        </select>\n        <mat-error *ngIf=\"((contactUsForm.controls['department'].errors?.required)&&(ifSubmitted==true))\">\n          Department is required </mat-error>\n      </mat-form-field>\n\n      <mat-form-field class=\"w-100 mt-2\">\n        <input matInput placeholder=\"Description\" formControlName=\"description\">\n        <mat-error *ngIf=\"((contactUsForm.controls['description'].errors?.required)&&(ifSubmitted==true))\">\n          Description is required </mat-error>\n      </mat-form-field>\n      <div class=\"text-center mt-2\">\n        <button mat-raised-button color=\"primary\" type=\"submit\">Submit</button>\n      </div>\n    </form>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/default/shared/components/contactus/contactus.component.scss":
+/*!**************************************************************************!*\
+  !*** ./src/default/shared/components/contactus/contactus.component.scss ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvZGVmYXVsdC9zaGFyZWQvY29tcG9uZW50cy9jb250YWN0dXMvY29udGFjdHVzLmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/default/shared/components/contactus/contactus.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/default/shared/components/contactus/contactus.component.ts ***!
+  \************************************************************************/
+/*! exports provided: ContactusComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactusComponent", function() { return ContactusComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ContactusComponent = /** @class */ (function () {
+    function ContactusComponent(formBuilder) {
+        this.formBuilder = formBuilder;
+        this.ifSubmitted = false;
+    }
+    ContactusComponent.prototype.ngOnInit = function () {
+        this.initContactUsForm();
+    };
+    // build a form for info  by gouping the form control
+    ContactusComponent.prototype.initContactUsForm = function () {
+        this.contactUsForm = this.formBuilder.group({
+            'subject': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
+            'department': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
+            'description': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
+        });
+    };
+    ContactusComponent.prototype.onContactUsFormSubmit = function () {
+        if (this.contactUsForm.valid) {
+            var params = this.contactUsForm.value;
+            this.ifSubmitted = false;
+            this.contactUsForm.reset();
+            this.contactUsForm.clearValidators();
+        }
+        else {
+            this.ifSubmitted = true;
+        }
+    };
+    ContactusComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-contactus',
+            template: __webpack_require__(/*! ./contactus.component.html */ "./src/default/shared/components/contactus/contactus.component.html"),
+            styles: [__webpack_require__(/*! ./contactus.component.scss */ "./src/default/shared/components/contactus/contactus.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
+    ], ContactusComponent);
+    return ContactusComponent;
 }());
 
 
@@ -8835,6 +8939,69 @@ var ControlsComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/default/shared/components/faq/faq.component.html":
+/*!**************************************************************!*\
+  !*** ./src/default/shared/components/faq/faq.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h4>FAQs</h4>\n<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p>\n<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p>\n<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p>\n<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p>"
+
+/***/ }),
+
+/***/ "./src/default/shared/components/faq/faq.component.scss":
+/*!**************************************************************!*\
+  !*** ./src/default/shared/components/faq/faq.component.scss ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvZGVmYXVsdC9zaGFyZWQvY29tcG9uZW50cy9mYXEvZmFxLmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/default/shared/components/faq/faq.component.ts":
+/*!************************************************************!*\
+  !*** ./src/default/shared/components/faq/faq.component.ts ***!
+  \************************************************************/
+/*! exports provided: FaqComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FaqComponent", function() { return FaqComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FaqComponent = /** @class */ (function () {
+    function FaqComponent() {
+    }
+    FaqComponent.prototype.ngOnInit = function () {
+    };
+    FaqComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-faq',
+            template: __webpack_require__(/*! ./faq.component.html */ "./src/default/shared/components/faq/faq.component.html"),
+            styles: [__webpack_require__(/*! ./faq.component.scss */ "./src/default/shared/components/faq/faq.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], FaqComponent);
+    return FaqComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/default/shared/components/footer/footer.component.html":
 /*!********************************************************************!*\
   !*** ./src/default/shared/components/footer/footer.component.html ***!
@@ -8842,7 +9009,7 @@ var ControlsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<footer class=\"footer\">\r\n    <div fxLayout=\"row wrap\" fxLayoutAlign=\"space-between\" class=\"py-3 theme-container\">\r\n\r\n        <div fxFlex=\"100\" fxFlex.gt-sm=\"25\" fxFlex.sm=\"25\" class=\"useful-links\">\r\n            <h3 class=\"col-title\">USEFUL LINKS FOR CUSTOMER</h3>\r\n            <div class=\"footer-menu-item\"><a mat-button>Contact us</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>FAQs</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>T&C</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Shiping</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Returns</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Pricavy policy</a></div>\r\n\r\n            <h3 class=\"col-title mt-3\">JOIN OUR COMMUNITY</h3>\r\n            <div class=\"footer-menu-item\"><a mat-button>Blog</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Instagram</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Facebook</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Tiktok</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Twitter</a></div>\r\n\r\n        </div>\r\n        <div fxFlex=\"100\" fxFlex.gt-sm=\"25\" fxFlex.sm=\"25\" ngClass.xs=\"mt-2\">\r\n\r\n\r\n            <h3 class=\"col-title\">USEFUL LINKS FOR VENDOR</h3>\r\n            <div class=\"footer-menu-item\"><a mat-button>Contact us</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>FAQs</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>T&C</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Shiping</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Returns</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Pricavy policy</a></div>\r\n\r\n            <h3 class=\"mt-3 col-title\">CORPORATE</h3>\r\n            <div class=\"footer-menu-item\"><a mat-button>Contact us</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Careers</a></div>\r\n\r\n        </div>\r\n\r\n\r\n\r\n\r\n\r\n        <!-- *ngIf=\"(listSandbox.settingDetail$ | async) as contact\" -->\r\n        <div fxFlex=\"100\" fxFlex.gt-sm=\"50\" fxFlex.sm=\"50\" ngClass.sm=\"mt-2\" ngClass.xs=\"mt-2\">\r\n            <h3 class=\"col-title\">ABOUT US</h3>\r\n            <p fxLayout=\"row\">\r\n                iuwh dwdeiw kwehdoiweo  wedihwiue   hwedq owi qoiw qwhdqw  jgdyu uhdiuwd u wdyu gw huw ydiqw dq  qw idqiw  qwjdqwdiqdq    wdyuq idqiwd qk qw do q qhwdu q  iqpwdi p2qdp  oidw ur2dqwd jwiudyut 32y 2dwe  wedw giiwd hd iuwdiu ywdh  yiud owdow hd owdowd w doi uwdow udo  wdoiw udoiw udo wd oiw uoiwudoi odoiw dwoi  eiod woid uoiwd w oiwoeu oiew wudoiw udoiw ud  uwdiouoie u u oiwueoid uwe w oiwuoiw uoi  ueoiwudoiw euoi w oiweudoiwe u wue oiwufoiew   uwoiefuweoif uwoie  uwoifeuewoi ufoiew  uewoif uewoiufoiew uweoif uweoi fewo  owuf oiwfuoiew f  eoifuweoif oiuo   uweoioiew f we foiwe ufoiw  uoiewufoiewfuw iuwh dwdeiw kwehdoiweo  wedihwiue   hwedq owi qoiw qwhdqw  jgdyu uhdiuwd u wdyu gw huw ydiqw dq  qw idqiw  qwjdqwdiqdq    wdyuq idqiwd qk qw do q qhwdu q  iqpwdi p2qdp  oidw ur2dqwd jwiudyut 32y 2dwe  wedw giiwd hd iuwdiu ywdh  yiud owdow hd owdowd w doi uwdow udo  wdoiw udoiw udo wd oiw uoiwudoi odoiw dwoi  eiod woid uoiwd w oiwoeu oiew wudoiw udoiw ud  uwdiouoie u u oiwueoid uwe w oiwuoiw uoi  ueoiwudoiw euoi w oiweudoiwe u wue oiwufoiew   uwoiefuweoif uwoie  uwoifeuewoi ufoiew  uewoif uewoiufoiew uweoif uweoi fewo  owuf oiwfuoiew f  eoifuweoif oiuo   uweoioiew f we foiwe ufoiw  uoiewufoiewfuw iuwh dwdeiw kwehdoiweo  wedihwiue   hwedq owi qoiw qwhdqw  jgdyu uhdiuwd u wdyu gw huw ydiqw dq  qw idqiw  qwjdqwdiqdq    wdyuq idqiwd qk qw do q qhwdu q  iqpwdi p2qdp  oidw ur2dqwd jwiudyut 32y 2dwe  wedw giiwd hd iuwdiu ywdh  yiud owdow hd owdowd w doi uwdow udo  wdoiw udoiw udo wd oiw uoiwudoi odoiw dwoi  eiod woid uoiwd w oiwoeu oiew wudoiw udoiw ud  uwdiouoie u u oiwueoid uwe w oiwuoiw uoi  ueoiwudoiw euoi w oiweudoiwe u wue oiwufoiew   uwoiefuweoif uwoie  uwoifeuewoi ufoiew  uewoif uewoiufoiew uweoif uweoi fewo  owuf oiwfuoiew f  eoifuweoif oiuo   uweoioiew f we foiwe ufoiw  uoiewufoiewfuw \r\n\r\n\r\n            </p>\r\n        </div>\r\n    </div>\r\n    <div fxLayout=\"row wrap\" fxLayoutAlign=\"space-between\" class=\"theme-container\">\r\n        <h3 class=\"col-title\">ABOUT US</h3>\r\n        <p fxLayout=\"row\">\r\n            iuwh dwdeiw kwehdoiweo  wedihwiue   hwedq owi qoiw qwhdqw  jgdyu uhdiuwd u wdyu gw huw ydiqw dq  qw idqiw  qwjdqwdiqdq    wdyuq idqiwd qk qw do q qhwdu q  iqpwdi p2qdp  oidw ur2dqwd jwiudyut 32y 2dwe  wedw giiwd hd iuwdiu ywdh  yiud owdow hd owdowd w doi uwdow udo  wdoiw udoiw udo wd oiw uoiwudoi odoiw dwoi  eiod woid uoiwd w oiwoeu oiew wudoiw udoiw ud  uwdiouoie u u oiwueoid uwe w oiwuoiw uoi  ueoiwudoiw euoi w oiweudoiwe u wue oiwufoiew   uwoiefuweoif uwoie  uwoifeuewoi ufoiew  uewoif uewoiufoiew uweoif uweoi fewo  owuf oiwfuoiew f  eoifuweoif oiuo   uweoioiew f we foiwe ufoiw  uoiewufoiewfuw iuwh dwdeiw kwehdoiweo  wedihwiue   hwedq owi qoiw qwhdqw  jgdyu uhdiuwd u wdyu gw huw ydiqw dq  qw idqiw  qwjdqwdiqdq    wdyuq idqiwd qk qw do q qhwdu q  iqpwdi p2qdp  oidw ur2dqwd jwiudyut 32y 2dwe  wedw giiwd hd iuwdiu ywdh  yiud owdow hd owdowd w doi uwdow udo  wdoiw udoiw udo wd oiw uoiwudoi odoiw dwoi  eiod woid uoiwd w oiwoeu oiew wudoiw udoiw ud  uwdiouoie u u oiwueoid uwe w oiwuoiw uoi  ueoiwudoiw euoi w oiweudoiwe u wue oiwufoiew   uwoiefuweoif uwoie  uwoifeuewoi ufoiew  uewoif uewoiufoiew uweoif uweoi fewo  owuf oiwfuoiew f  eoifuweoif oiuo   uweoioiew f we foiwe ufoiw  uoiewufoiewfuw iuwh dwdeiw kwehdoiweo  wedihwiue   hwedq owi qoiw qwhdqw  jgdyu uhdiuwd u wdyu gw huw ydiqw dq  qw idqiw  qwjdqwdiqdq    wdyuq idqiwd qk qw do q qhwdu q  iqpwdi p2qdp  oidw ur2dqwd jwiudyut 32y 2dwe  wedw giiwd hd iuwdiu ywdh  yiud owdow hd owdowd w doi uwdow udo  wdoiw udoiw udo wd oiw uoiwudoi odoiw dwoi  eiod woid uoiwd w oiwoeu oiew wudoiw udoiw ud  uwdiouoie u u oiwueoid uwe w oiwuoiw uoi  ueoiwudoiw euoi w oiweudoiwe u wue oiwufoiew   uwoiefuweoif uwoie  uwoifeuewoi ufoiew  uewoif uewoiufoiew uweoif uweoi fewo  owuf oiwfuoiew f  eoifuweoif oiuo   uweoioiew f we foiwe ufoiw  uoiewufoiewfuw iuwh dwdeiw kwehdoiweo  wedihwiue   hwedq owi qoiw qwhdqw  jgdyu uhdiuwd u wdyu gw huw ydiqw dq  qw idqiw  qwjdqwdiqdq    wdyuq idqiwd qk qw do q qhwdu q  iqpwdi p2qdp  oidw ur2dqwd jwiudyut 32y 2dwe  wedw giiwd hd iuwdiu ywdh  yiud owdow hd owdowd w doi uwdow udo  wdoiw udoiw udo wd oiw uoiwudoi odoiw dwoi  eiod woid uoiwd w oiwoeu oiew wudoiw udoiw ud  uwdiouoie u u oiwueoid uwe w oiwuoiw uoi  ueoiwudoiw euoi w oiweudoiwe u wue oiwufoiew   uwoiefuweoif uwoie  uwoifeuewoi ufoiew  uewoif uewoiufoiew uweoif uweoi fewo  owuf oiwfuoiew f  eoifuweoif oiuo   uweoioiew f we foiwe ufoiw  uoiewufoiewfuw iuwh dwdeiw kwehdoiweo  wedihwiue   hwedq owi qoiw qwhdqw  jgdyu uhdiuwd u wdyu gw huw ydiqw dq  qw idqiw  qwjdqwdiqdq    wdyuq idqiwd qk qw do q qhwdu q  iqpwdi p2qdp  oidw ur2dqwd jwiudyut 32y 2dwe  wedw giiwd hd iuwdiu ywdh  yiud owdow hd owdowd w doi uwdow udo  wdoiw udoiw udo wd oiw uoiwudoi odoiw dwoi  eiod woid uoiwd w oiwoeu oiew wudoiw udoiw ud  uwdiouoie u u oiwueoid uwe w oiwuoiw uoi  ueoiwudoiw euoi w oiweudoiwe u wue oiwufoiew   uwoiefuweoif uwoie  uwoifeuewoi ufoiew  uewoif uewoiufoiew uweoif uweoi fewo  owuf oiwfuoiew f  eoifuweoif oiuo   uweoioiew f we foiwe ufoiw  uoiewufoiewfuw iuwh dwdeiw kwehdoiweo  wedihwiue   hwedq owi qoiw qwhdqw  jgdyu uhdiuwd u wdyu gw huw ydiqw dq  qw idqiw  qwjdqwdiqdq    wdyuq idqiwd qk qw do q qhwdu q  iqpwdi p2qdp  oidw ur2dqwd jwiudyut 32y 2dwe  wedw giiwd hd iuwdiu ywdh  yiud owdow hd owdowd w doi uwdow udo  wdoiw udoiw udo wd oiw uoiwudoi odoiw dwoi  eiod woid uoiwd w oiwoeu oiew wudoiw udoiw ud  uwdiouoie u u oiwueoid uwe w oiwuoiw uoi  ueoiwudoiw euoi w oiweudoiwe u wue oiwufoiew   uwoiefuweoif uwoie  uwoifeuewoi ufoiew  uewoif uewoiufoiew uweoif uweoi fewo  owuf oiwfuoiew f  eoifuweoif oiuo   uweoioiew f we foiwe ufoiw  uoiewufoiewfuw\r\n        </p>\r\n    </div>\r\n    <!-- <div fxLayout=\"row\" fxLayout.xs=\"column\" fxLayoutAlign=\"space-between center\" class=\"py-2 copyright theme-container\">\r\n        <p ngClass.xs=\"mt-1\" class=\"copyright\">Copyright © 2022, Beaver ecommerce</p>\r\n    </div> -->\r\n</footer>\r\n\r\n<!-- <footer class=\"bg-primary footer\">\r\n    <div fxLayout=\"row wrap\" fxLayoutAlign=\"space-between\" class=\"py-3 theme-container\">\r\n        <div fxFlex=\"100\" fxFlex.gt-sm=\"60\" fxFlex.sm=\"50\" class=\"useful-links\">\r\n            <h3 class=\"col-title\">USEFUL LINKS</h3>\r\n            <p class=\"mt-2\" *ngFor=\"let links of listSandbox.pageList$ | async\">\r\n                <a [routerLink]=\"['/page-detail', links.pageId]\" class=\"white-color\">{{links.title}}</a></p>\r\n        </div>\r\n        60iv fxFlex=\"100\" fxFlex.gt-sm=\"20\" fxFlex.sm=\"20\" ngClass.xs=\"mt-2\" *ngIf=\"(listSandbox.settingDetail$ | async) as contact\">\r\n            <h3 class=\"col-title\">CONTACT INFORMATION</h3>\r\n            <p fxLayout=\"row\" fxLayoutAlign=\"start center\" class=\"mt-2 \">\r\n                <mat-icon class=\"mr-1\">location_on</mat-icon>\r\n                <span>{{contact.storeAddress}}</span>\r\n            </p>\r\n            <p fxLayout=\"row\" fxLayoutAlign=\"start center\" class=\"mt-1 \">\r\n                <mat-icon class=\"mr-1\">call</mat-icon>\r\n                <span>{{contact.storeTelephone}}</span>\r\n            </p>\r\n            <p fxLayout=\"row\" fxLayoutAlign=\"start center\" class=\"mt-1 \">\r\n                <mat-icon class=\"mr-1\">mail_outline</mat-icon>\r\n                <span>{{contact.storeEmail}}</span>\r\n            </p>\r\n            <p fxLayout=\"row\" fxLayoutAlign=\"start center\" class=\"mt-1 \">\r\n                <mat-icon class=\"mr-1\">schedule</mat-icon>\r\n                <span>Mon - Sun / 9:00AM - 8:00PM</span>\r\n            </p>\r\n            <p fxLayout=\"row\" fxLayoutAlign=\"start center\" class=\"mt-1\">\r\n                <mat-icon class=\"mr-1\">directions</mat-icon>\r\n                <a class=\" white-color\" [routerLink]=\"['/getdirections']\">Get directions</a>\r\n            </p>\r\n        </div>\r\n        <div fxFlex=\"100\" fxFlex.gt-sm=\"20\" ngClass.sm=\"mt-2\" ngClass.xs=\"mt-2\" *ngIf=\"(listSandbox.settingDetail$ | async) as contact\">\r\n            <h3 class=\"col-title\">SOCIAL MEDIA</h3>\r\n            <p class=\"mt-2\">\r\n                <a (click)=\"openLink(contact.facebook)\" class=\"link\"> <img src=\"assets/images/others/facebook.png\"> </a>\r\n            </p>\r\n            <p class=\"mt-2\">\r\n                <a (click)=\"openLink(contact.google)\" class=\"link\"> <img src=\"assets/images/others/google+.png\"> </a>\r\n            </p>\r\n            <p class=\"mt-2\">\r\n                <a (click)=\"openLink(contact.twitter)\" class=\"link\"> <img src=\"assets/images/others/twitter.png\"> </a>\r\n            </p>\r\n        </div>\r\n        <div class=\"android-div\">\r\n            <img class=\"android-img\" src=\"assets/images/others/android.png\" (click)=\"downloadApp()\"></div>\r\n    </div>\r\n    <div fxLayout=\"row\" fxLayout.xs=\"column\" fxLayoutAlign=\"space-between center\" class=\"copyright theme-container\">\r\n        <p ngClass.xs=\"mt-1\" class=\"copyright\">Copyright © 2022,Piccosoft Software labs India Private Limited</p>\r\n    </div>\r\n</footer> -->"
+module.exports = "<footer class=\"footer\">\r\n    <div fxLayout=\"row wrap\" fxLayoutAlign=\"space-between\" class=\"py-3 theme-container\">\r\n\r\n        <div fxFlex=\"100\" fxFlex.gt-sm=\"25\" fxFlex.sm=\"25\" class=\"useful-links\">\r\n            <h3 class=\"col-title\">USEFUL LINKS FOR CUSTOMER</h3>\r\n            <div class=\"footer-menu-item\"><a mat-button routerLink=\"/contactus\">Contact us</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button routerLink=\"/faq\">FAQs</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button routerLink=\"/tAndC\">T&C</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Shiping</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button routerLink=\"/faq\">Returns</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button routerLink=\"/privacy\">Pricavy policy</a></div>\r\n\r\n            <h3 class=\"col-title mt-3\">JOIN OUR COMMUNITY</h3>\r\n            <div class=\"footer-menu-item\"><a mat-button>Blog</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Instagram</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Facebook</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Tiktok</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Twitter</a></div>\r\n\r\n        </div>\r\n        <div fxFlex=\"100\" fxFlex.gt-sm=\"25\" fxFlex.sm=\"25\" ngClass.xs=\"mt-2\">\r\n\r\n\r\n            <h3 class=\"col-title\">USEFUL LINKS FOR VENDOR</h3>\r\n            <div class=\"footer-menu-item\"><a mat-button routerLink=\"/contactus\">Contact us</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button routerLink=\"/faq\">FAQs</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button routerLink=\"/tAndC\">T&C</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Shiping</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button routerLink=\"/faq\">Returns</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button routerLink=\"/privacy\">Pricavy policy</a></div>\r\n\r\n            <h3 class=\"mt-3 col-title\">CORPORATE</h3>\r\n            <div class=\"footer-menu-item\"><a mat-button routerLink=\"/contactus\">Contact us</a></div>\r\n            <div class=\"footer-menu-item\"><a mat-button>Careers</a></div>\r\n\r\n        </div>\r\n\r\n\r\n\r\n\r\n\r\n        <!-- *ngIf=\"(listSandbox.settingDetail$ | async) as contact\" -->\r\n        <div fxFlex=\"100\" fxFlex.gt-sm=\"50\" fxFlex.sm=\"50\" ngClass.sm=\"mt-2\" ngClass.xs=\"mt-2\">\r\n            <h3 class=\"col-title\">ABOUT US</h3>\r\n            <p fxLayout=\"row\">\r\n                iuwh dwdeiw kwehdoiweo wedihwiue hwedq owi qoiw qwhdqw jgdyu uhdiuwd u wdyu gw huw ydiqw dq qw idqiw\r\n                qwjdqwdiqdq wdyuq idqiwd qk qw do q qhwdu q iqpwdi p2qdp oidw ur2dqwd jwiudyut 32y 2dwe wedw giiwd hd\r\n                iuwdiu ywdh yiud owdow hd owdowd w doi uwdow udo wdoiw udoiw udo wd oiw uoiwudoi odoiw dwoi eiod woid\r\n                uoiwd w oiwoeu oiew wudoiw udoiw ud uwdiouoie u u oiwueoid uwe w oiwuoiw uoi ueoiwudoiw euoi w\r\n                oiweudoiwe u wue oiwufoiew uwoiefuweoif uwoie uwoifeuewoi ufoiew uewoif uewoiufoiew uweoif uweoi fewo\r\n                owuf oiwfuoiew f eoifuweoif oiuo uweoioiew f we foiwe ufoiw uoiewufoiewfuw iuwh dwdeiw kwehdoiweo\r\n                wedihwiue hwedq owi qoiw qwhdqw jgdyu uhdiuwd u wdyu gw huw ydiqw dq qw idqiw qwjdqwdiqdq wdyuq idqiwd\r\n                qk qw do q qhwdu q iqpwdi p2qdp oidw ur2dqwd jwiudyut 32y 2dwe wedw giiwd hd iuwdiu ywdh yiud owdow hd\r\n                owdowd w doi uwdow udo wdoiw udoiw udo wd oiw uoiwudoi odoiw dwoi eiod woid uoiwd w oiwoeu oiew wudoiw\r\n                udoiw ud uwdiouoie u u oiwueoid uwe w oiwuoiw uoi ueoiwudoiw euoi w oiweudoiwe u wue oiwufoiew\r\n                uwoiefuweoif uwoie uwoifeuewoi ufoiew uewoif uewoiufoiew uweoif uweoi fewo owuf oiwfuoiew f eoifuweoif\r\n                oiuo uweoioiew f we foiwe ufoiw uoiewufoiewfuw iuwh dwdeiw kwehdoiweo wedihwiue hwedq owi qoiw qwhdqw\r\n                jgdyu uhdiuwd u wdyu gw huw ydiqw dq qw idqiw qwjdqwdiqdq wdyuq idqiwd qk qw do q qhwdu q iqpwdi p2qdp\r\n                oidw ur2dqwd jwiudyut 32y 2dwe wedw giiwd hd iuwdiu ywdh yiud owdow hd owdowd w doi uwdow udo wdoiw\r\n                udoiw udo wd oiw uoiwudoi odoiw dwoi eiod woid uoiwd w oiwoeu oiew wudoiw udoiw ud uwdiouoie u u\r\n                oiwueoid uwe w oiwuoiw uoi ueoiwudoiw euoi w oiweudoiwe u wue oiwufoiew uwoiefuweoif uwoie uwoifeuewoi\r\n                ufoiew uewoif uewoiufoiew uweoif uweoi fewo owuf oiwfuoiew f eoifuweoif oiuo uweoioiew f we foiwe ufoiw\r\n                uoiewufoiewfuw\r\n\r\n\r\n            </p>\r\n        </div>\r\n    </div>\r\n    <div fxLayout=\"row wrap\" fxLayoutAlign=\"space-between\" class=\"theme-container\">\r\n        <h3 class=\"col-title\">ABOUT US</h3>\r\n        <p fxLayout=\"row\">\r\n            iuwh dwdeiw kwehdoiweo wedihwiue hwedq owi qoiw qwhdqw jgdyu uhdiuwd u wdyu gw huw ydiqw dq qw idqiw\r\n            qwjdqwdiqdq wdyuq idqiwd qk qw do q qhwdu q iqpwdi p2qdp oidw ur2dqwd jwiudyut 32y 2dwe wedw giiwd hd iuwdiu\r\n            ywdh yiud owdow hd owdowd w doi uwdow udo wdoiw udoiw udo wd oiw uoiwudoi odoiw dwoi eiod woid uoiwd w\r\n            oiwoeu oiew wudoiw udoiw ud uwdiouoie u u oiwueoid uwe w oiwuoiw uoi ueoiwudoiw euoi w oiweudoiwe u wue\r\n            oiwufoiew uwoiefuweoif uwoie uwoifeuewoi ufoiew uewoif uewoiufoiew uweoif uweoi fewo owuf oiwfuoiew f\r\n            eoifuweoif oiuo uweoioiew f we foiwe ufoiw uoiewufoiewfuw iuwh dwdeiw kwehdoiweo wedihwiue hwedq owi qoiw\r\n            qwhdqw jgdyu uhdiuwd u wdyu gw huw ydiqw dq qw idqiw qwjdqwdiqdq wdyuq idqiwd qk qw do q qhwdu q iqpwdi\r\n            p2qdp oidw ur2dqwd jwiudyut 32y 2dwe wedw giiwd hd iuwdiu ywdh yiud owdow hd owdowd w doi uwdow udo wdoiw\r\n            udoiw udo wd oiw uoiwudoi odoiw dwoi eiod woid uoiwd w oiwoeu oiew wudoiw udoiw ud uwdiouoie u u oiwueoid\r\n            uwe w oiwuoiw uoi ueoiwudoiw euoi w oiweudoiwe u wue oiwufoiew uwoiefuweoif uwoie uwoifeuewoi ufoiew uewoif\r\n            uewoiufoiew uweoif uweoi fewo owuf oiwfuoiew f eoifuweoif oiuo uweoioiew f we foiwe ufoiw uoiewufoiewfuw\r\n            iuwh dwdeiw kwehdoiweo wedihwiue hwedq owi qoiw qwhdqw jgdyu uhdiuwd u wdyu gw huw ydiqw dq qw idqiw\r\n            qwjdqwdiqdq wdyuq idqiwd qk qw do q qhwdu q iqpwdi p2qdp oidw ur2dqwd jwiudyut 32y 2dwe wedw giiwd hd iuwdiu\r\n            ywdh yiud owdow hd owdowd w doi uwdow udo wdoiw udoiw udo wd oiw uoiwudoi odoiw dwoi eiod woid uoiwd w\r\n            oiwoeu oiew wudoiw udoiw ud uwdiouoie u u oiwueoid uwe w oiwuoiw uoi ueoiwudoiw euoi w oiweudoiwe u wue\r\n            oiwufoiew uwoiefuweoif uwoie uwoifeuewoi ufoiew uewoif uewoiufoiew uweoif uweoi fewo owuf oiwfuoiew f\r\n            eoifuweoif oiuo uweoioiew f we foiwe ufoiw uoiewufoiewfuw iuwh dwdeiw kwehdoiweo wedihwiue hwedq owi qoiw\r\n            qwhdqw jgdyu uhdiuwd u wdyu gw huw ydiqw dq qw idqiw qwjdqwdiqdq wdyuq idqiwd qk qw do q qhwdu q iqpwdi\r\n            p2qdp oidw ur2dqwd jwiudyut 32y 2dwe wedw giiwd hd iuwdiu ywdh yiud owdow hd owdowd w doi uwdow udo wdoiw\r\n            udoiw udo wd oiw uoiwudoi odoiw dwoi eiod woid uoiwd w oiwoeu oiew wudoiw udoiw ud uwdiouoie u u oiwueoid\r\n            uwe w oiwuoiw uoi ueoiwudoiw euoi w oiweudoiwe u wue oiwufoiew uwoiefuweoif uwoie uwoifeuewoi ufoiew uewoif\r\n            uewoiufoiew uweoif uweoi fewo owuf oiwfuoiew f eoifuweoif oiuo uweoioiew f we foiwe ufoiw uoiewufoiewfuw\r\n            iuwh dwdeiw kwehdoiweo wedihwiue hwedq owi qoiw qwhdqw jgdyu uhdiuwd u wdyu gw huw ydiqw dq qw idqiw\r\n            qwjdqwdiqdq wdyuq idqiwd qk qw do q qhwdu q iqpwdi p2qdp oidw ur2dqwd jwiudyut 32y 2dwe wedw giiwd hd iuwdiu\r\n            ywdh yiud owdow hd owdowd w doi uwdow udo wdoiw udoiw udo wd oiw uoiwudoi odoiw dwoi eiod woid uoiwd w\r\n            oiwoeu oiew wudoiw udoiw ud uwdiouoie u u oiwueoid uwe w oiwuoiw uoi ueoiwudoiw euoi w oiweudoiwe u wue\r\n            oiwufoiew uwoiefuweoif uwoie uwoifeuewoi ufoiew uewoif uewoiufoiew uweoif uweoi fewo owuf oiwfuoiew f\r\n            eoifuweoif oiuo uweoioiew f we foiwe ufoiw uoiewufoiewfuw iuwh dwdeiw kwehdoiweo wedihwiue hwedq owi qoiw\r\n            qwhdqw jgdyu uhdiuwd u wdyu gw huw ydiqw dq qw idqiw qwjdqwdiqdq wdyuq idqiwd qk qw do q qhwdu q iqpwdi\r\n            p2qdp oidw ur2dqwd jwiudyut 32y 2dwe wedw giiwd hd iuwdiu ywdh yiud owdow hd owdowd w doi uwdow udo wdoiw\r\n            udoiw udo wd oiw uoiwudoi odoiw dwoi eiod woid uoiwd w oiwoeu oiew wudoiw udoiw ud uwdiouoie u u oiwueoid\r\n            uwe w oiwuoiw uoi ueoiwudoiw euoi w oiweudoiwe u wue oiwufoiew uwoiefuweoif uwoie uwoifeuewoi ufoiew uewoif\r\n            uewoiufoiew uweoif uweoi fewo owuf oiwfuoiew f eoifuweoif oiuo uweoioiew f we foiwe ufoiw uoiewufoiewfuw\r\n        </p>\r\n    </div>\r\n    <!-- <div fxLayout=\"row\" fxLayout.xs=\"column\" fxLayoutAlign=\"space-between center\" class=\"py-2 copyright theme-container\">\r\n        <p ngClass.xs=\"mt-1\" class=\"copyright\">Copyright © 2022, Beaver ecommerce</p>\r\n    </div> -->\r\n</footer>\r\n\r\n<!-- <footer class=\"bg-primary footer\">\r\n    <div fxLayout=\"row wrap\" fxLayoutAlign=\"space-between\" class=\"py-3 theme-container\">\r\n        <div fxFlex=\"100\" fxFlex.gt-sm=\"60\" fxFlex.sm=\"50\" class=\"useful-links\">\r\n            <h3 class=\"col-title\">USEFUL LINKS</h3>\r\n            <p class=\"mt-2\" *ngFor=\"let links of listSandbox.pageList$ | async\">\r\n                <a [routerLink]=\"['/page-detail', links.pageId]\" class=\"white-color\">{{links.title}}</a></p>\r\n        </div>\r\n        60iv fxFlex=\"100\" fxFlex.gt-sm=\"20\" fxFlex.sm=\"20\" ngClass.xs=\"mt-2\" *ngIf=\"(listSandbox.settingDetail$ | async) as contact\">\r\n            <h3 class=\"col-title\">CONTACT INFORMATION</h3>\r\n            <p fxLayout=\"row\" fxLayoutAlign=\"start center\" class=\"mt-2 \">\r\n                <mat-icon class=\"mr-1\">location_on</mat-icon>\r\n                <span>{{contact.storeAddress}}</span>\r\n            </p>\r\n            <p fxLayout=\"row\" fxLayoutAlign=\"start center\" class=\"mt-1 \">\r\n                <mat-icon class=\"mr-1\">call</mat-icon>\r\n                <span>{{contact.storeTelephone}}</span>\r\n            </p>\r\n            <p fxLayout=\"row\" fxLayoutAlign=\"start center\" class=\"mt-1 \">\r\n                <mat-icon class=\"mr-1\">mail_outline</mat-icon>\r\n                <span>{{contact.storeEmail}}</span>\r\n            </p>\r\n            <p fxLayout=\"row\" fxLayoutAlign=\"start center\" class=\"mt-1 \">\r\n                <mat-icon class=\"mr-1\">schedule</mat-icon>\r\n                <span>Mon - Sun / 9:00AM - 8:00PM</span>\r\n            </p>\r\n            <p fxLayout=\"row\" fxLayoutAlign=\"start center\" class=\"mt-1\">\r\n                <mat-icon class=\"mr-1\">directions</mat-icon>\r\n                <a class=\" white-color\" [routerLink]=\"['/getdirections']\">Get directions</a>\r\n            </p>\r\n        </div>\r\n        <div fxFlex=\"100\" fxFlex.gt-sm=\"20\" ngClass.sm=\"mt-2\" ngClass.xs=\"mt-2\" *ngIf=\"(listSandbox.settingDetail$ | async) as contact\">\r\n            <h3 class=\"col-title\">SOCIAL MEDIA</h3>\r\n            <p class=\"mt-2\">\r\n                <a (click)=\"openLink(contact.facebook)\" class=\"link\"> <img src=\"assets/images/others/facebook.png\"> </a>\r\n            </p>\r\n            <p class=\"mt-2\">\r\n                <a (click)=\"openLink(contact.google)\" class=\"link\"> <img src=\"assets/images/others/google+.png\"> </a>\r\n            </p>\r\n            <p class=\"mt-2\">\r\n                <a (click)=\"openLink(contact.twitter)\" class=\"link\"> <img src=\"assets/images/others/twitter.png\"> </a>\r\n            </p>\r\n        </div>\r\n        <div class=\"android-div\">\r\n            <img class=\"android-img\" src=\"assets/images/others/android.png\" (click)=\"downloadApp()\"></div>\r\n    </div>\r\n    <div fxLayout=\"row\" fxLayout.xs=\"column\" fxLayoutAlign=\"space-between center\" class=\"copyright theme-container\">\r\n        <p ngClass.xs=\"mt-1\" class=\"copyright\">Copyright © 2022,Piccosoft Software labs India Private Limited</p>\r\n    </div>\r\n</footer> -->"
 
 /***/ }),
 
@@ -9124,6 +9291,93 @@ var HeaderComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/default/shared/components/help/help.component.html":
+/*!****************************************************************!*\
+  !*** ./src/default/shared/components/help/help.component.html ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div fxLayout=\"row wrap\">\n  <div fxFlex=\"100\" fxFlex.gt-sm=\"50\" class=\"p-2\">\n    <h3>Need Help</h3>\n    <h3>Dynamic Text Area</h3>\n    <p>Contact chat support</p>\n    <h4><span>or submit request and we will get back to you</span></h4>\n    <form [formGroup]=\"helpForm\" (ngSubmit)=\"onhelpFormFormSubmit()\">\n\n      <mat-form-field class=\"w-100 mt-2\">\n        <mat-label>Category</mat-label>\n        <select matNativeControl formControlName=\"category\">\n          <option value=\"men\">Men</option>\n          <option value=\"women\">Women</option>\n          <option value=\"kids\">Kids</option>\n        </select>\n        <mat-error *ngIf=\"((helpForm.controls['category'].errors?.required)&&(ifSubmitted==true))\">\n          Category is required </mat-error>\n      </mat-form-field>\n\n\n      <mat-form-field class=\"w-100 mt-2\">\n        <input matInput placeholder=\"Subject\" formControlName=\"subject\">\n        <mat-error *ngIf=\"((helpForm.controls['subject'].errors?.required)&&(ifSubmitted==true))\">\n          Subject is required </mat-error>\n      </mat-form-field>\n\n      <mat-form-field class=\"w-100 mt-2\">\n        <input matInput placeholder=\"Description\" formControlName=\"description\">\n        <mat-error *ngIf=\"((helpForm.controls['description'].errors?.required)&&(ifSubmitted==true))\">\n          Description is required </mat-error>\n      </mat-form-field>\n      <div class=\"text-center mt-2\">\n        <button mat-raised-button color=\"primary\" type=\"submit\">Submit</button>\n      </div>\n    </form>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/default/shared/components/help/help.component.scss":
+/*!****************************************************************!*\
+  !*** ./src/default/shared/components/help/help.component.scss ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvZGVmYXVsdC9zaGFyZWQvY29tcG9uZW50cy9oZWxwL2hlbHAuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/default/shared/components/help/help.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/default/shared/components/help/help.component.ts ***!
+  \**************************************************************/
+/*! exports provided: HelpComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HelpComponent", function() { return HelpComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var HelpComponent = /** @class */ (function () {
+    function HelpComponent(formBuilder) {
+        this.formBuilder = formBuilder;
+        this.ifSubmitted = false;
+    }
+    HelpComponent.prototype.ngOnInit = function () {
+        this.initHelpForm();
+    };
+    // build a form for info  by gouping the form control
+    HelpComponent.prototype.initHelpForm = function () {
+        this.helpForm = this.formBuilder.group({
+            'category': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
+            'subject': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
+            'description': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
+        });
+    };
+    HelpComponent.prototype.onhelpFormFormSubmit = function () {
+        if (this.helpForm.valid) {
+            var params = this.helpForm.value;
+            this.ifSubmitted = false;
+            this.helpForm.reset();
+            this.helpForm.clearValidators();
+        }
+        else {
+            this.ifSubmitted = true;
+        }
+    };
+    HelpComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-help',
+            template: __webpack_require__(/*! ./help.component.html */ "./src/default/shared/components/help/help.component.html"),
+            styles: [__webpack_require__(/*! ./help.component.scss */ "./src/default/shared/components/help/help.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
+    ], HelpComponent);
+    return HelpComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/default/shared/components/index.ts":
 /*!************************************************!*\
   !*** ./src/default/shared/components/index.ts ***!
@@ -9172,6 +9426,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_submenu_carousel_main_submenu_carouselcomponent__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./main-submenu-carousel/main-submenu-carouselcomponent */ "./src/default/shared/components/main-submenu-carousel/main-submenu-carouselcomponent.ts");
 /* harmony import */ var _trending_product_trending_product_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./trending-product/trending-product.component */ "./src/default/shared/components/trending-product/trending-product.component.ts");
 /* harmony import */ var _advertisment_product_advertisment_product_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./advertisment-product/advertisment-product.component */ "./src/default/shared/components/advertisment-product/advertisment-product.component.ts");
+/* harmony import */ var _product_not_found_product_not_found_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./product-not-found/product-not-found.component */ "./src/default/shared/components/product-not-found/product-not-found.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9227,6 +9482,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var DEFAULT_PERFECT_SCROLLBAR_CONFIG = {
     wheelPropagation: true,
     suppressScrollX: true
@@ -9252,7 +9508,8 @@ var COMPONENTS = [
     _get_directions_get_directions_component__WEBPACK_IMPORTED_MODULE_32__["GetDirectionsComponent"],
     _cart_cart_component__WEBPACK_IMPORTED_MODULE_19__["CartNavComponent"],
     _trending_product_trending_product_component__WEBPACK_IMPORTED_MODULE_35__["TrendingProductComponent"],
-    _advertisment_product_advertisment_product_component__WEBPACK_IMPORTED_MODULE_36__["AdvertismentProductComponent"]
+    _advertisment_product_advertisment_product_component__WEBPACK_IMPORTED_MODULE_36__["AdvertismentProductComponent"],
+    _product_not_found_product_not_found_component__WEBPACK_IMPORTED_MODULE_37__["ProductNotFoundComponent"]
 ];
 var ComponentsModule = /** @class */ (function () {
     function ComponentsModule() {
@@ -9523,7 +9780,7 @@ var MainSubmenuCarouselComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar class=\"top-navbar mat-elevation-z2\" fxLayoutAlign=\"\" color=\"primary\">\r\n    <button mat-icon-button (click)=\"sidenav.toggle()\" fxShow=\"true\" fxHide.gt-sm>\r\n        <mat-icon>menu</mat-icon>\r\n    </button>\r\n    <a class=\"logo\" routerLink=\"/\" (click)=\"closeSubMenus()\"><img src=\"assets/images/logo1.png\"></a>\r\n    <!-- <a mat-button [routerLink]=\"['/']\" routerLinkActive=\"horizontal-active-link\" [routerLinkActiveOptions]=\"{exact:true}\"> <img src=\"assets/images/home.png\"> </a> -->\r\n    <!-- <a mat-button (click)=\"sendUniqueId('productFilter')\" [routerLink]=\"['/products/', 'All']\" class=\"colorMenu\"\r\n        routerLinkActive=\"colorMenu\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        AllProducts\r\n    </a> -->\r\n    <div fxShow=\"true\" fxHide.lt-md>\r\n        <!-- (click)=\"indexData(i,category.categoryId)\" -->\r\n        <a mat-button class=\"colorMenu\" routerLinkActive=\"horizontal-active-link\"\r\n            *ngFor=\"let category of categories;let i=index\" [routerLinkActiveOptions]=\"{exact:true}\"\r\n            [matMenuTriggerFor]=\"menu\" [routerLink]=\"['/shop', category.name, category.categoryId]\"\r\n            (mouseover)=\"indexData(i,category.categoryId)\">\r\n            <img class=\"menu-img\" src=\"assets/images/1-a.png\">\r\n            <span class=\"menu-text\">{{category.name}}</span>\r\n            <!-- <mat-icon class=\"caret\">arrow_drop_down</mat-icon> -->\r\n        </a>\r\n        <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\" class=\"mega-menu category-menu app-dropdown\"\r\n            [hasBackdrop]=\"false\" (mouseleave)=\"$event.stopPropagation()\" >\r\n            <span>\r\n                <div fxLayout=\"row wrap\" *ngIf=\"((index)||(index === 0))\">\r\n                    <div fxFlex=\"20\" fxLayout=\"column\" class=\"p-1\"\r\n                        *ngFor=\"let subCategory of categories[index].children\">\r\n                        <a mat-menu-item [routerLink]=\"['/products', subCategory.categoryId]\"\r\n                            [routerLinkActiveOptions]=\"{exact:true}\" (click)=\"linkActive()\"\r\n                            routerLinkActive=\"horizontal-active-link\">\r\n                            <b>{{subCategory.name}}</b>\r\n                        </a>\r\n                        <mat-divider></mat-divider>\r\n                        <div *ngIf=\"subCategory.children\">\r\n                            <div *ngFor=\"let grandsubCategory of subCategory.children;let j=index\">\r\n                                <a mat-menu-item [routerLink]=\"['/products', grandsubCategory.categoryId]\"\r\n                                    [routerLinkActiveOptions]=\"{exact:true}\" (click)=\"linkActive()\"\r\n                                    routerLinkActive=\"horizontal-active-link\">\r\n                                    {{grandsubCategory.name}}</a>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n            </span>\r\n        </mat-menu>\r\n    </div>\r\n    <!-- <a mat-button routerLink=\"/contact\" routerLinkActive=\"horizontal-active-link\"\r\n        [routerLinkActiveOptions]=\"{exact:true}\">Contact</a> -->\r\n\r\n    <div fxShow=\"true\" fxHide.lt-md class=\"search-algin\" fxFlex fxFlexOffset.gt-sm=\"1\" fxShow=\"true\" fxShow.gt-sm>\r\n        <form method=\"get\" class=\"search-form\" fxLayout=\"row\">\r\n            <mat-menu #categoriesMenu=\"matMenu\" [overlapTrigger]=\"false\" xPosition=\"before\" class=\"categories-dropdown\">\r\n            </mat-menu>\r\n            <input type=\"text\" placeholder=\"What are you looking for ?\" fxFlex\r\n                (keyup)=\"searchData($event.target.value)\">\r\n            <button mat-mini-fab (click)=\"search()\" type=\"button\"\r\n                class=\"search-btn mat-elevation-z0 mat-mini-fab mat-accent\">\r\n                Search\r\n            </button>\r\n        </form>\r\n        <div mat-dialog-content *ngIf=\"searchLists?.length > 0 && searchValue\">\r\n            <ul>\r\n                <li *ngFor=\"let list of searchLists\">\r\n                    <a class=\"title text-truncate\">{{list.name}}</a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"menu-right\" fxFlexOffset=\"10\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n        <app-spurt-cart></app-spurt-cart>\r\n    </div>\r\n</mat-toolbar>\r\n\r\n\r\n<!-- <mat-sidenav-container fxFlexFill> -->\r\n<mat-sidenav #sidenav>\r\n    <mat-nav-list>\r\n        <a (click)=\"sidenav.toggle()\" href=\"javascript:void(0)\" mat-list-item>Close</a>\r\n        <div class=\"categories-wrapper categories-dropdown\" perfectScrollbar>\r\n            <app-category-list [isClicked]=\"isClickedData\" [categories]=\"listSandbox.categoryList$ | async\"\r\n                (change)=\"onChangeCategory($event)\" [categoryId]=\"category\"></app-category-list>\r\n\r\n        </div>\r\n    </mat-nav-list>\r\n</mat-sidenav>\r\n<!-- </mat-sidenav-container> -->"
+module.exports = "<mat-toolbar class=\"top-navbar mat-elevation-z2\" fxLayoutAlign=\"\" color=\"primary\">\r\n    <button mat-icon-button (click)=\"sidenav.toggle()\" fxShow=\"true\" fxHide.gt-sm>\r\n        <mat-icon>menu</mat-icon>\r\n    </button>\r\n    <a class=\"logo\" routerLink=\"/\" (click)=\"closeSubMenus()\"><img src=\"assets/images/logo1.png\"></a>\r\n    <!-- <a mat-button [routerLink]=\"['/']\" routerLinkActive=\"horizontal-active-link\" [routerLinkActiveOptions]=\"{exact:true}\"> <img src=\"assets/images/home.png\"> </a> -->\r\n    <!-- <a mat-button (click)=\"sendUniqueId('productFilter')\" [routerLink]=\"['/products/', 'All']\" class=\"colorMenu\"\r\n        routerLinkActive=\"colorMenu\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        AllProducts\r\n    </a> -->\r\n    <div class=\"menuWrap\" fxShow=\"true\" fxHide.lt-md>\r\n        <!-- (click)=\"indexData(i,category.categoryId)\" -->\r\n        <a mat-button class=\"colorMenu\" routerLinkActive=\"horizontal-active-link\"\r\n            *ngFor=\"let category of categories;let i=index\" [routerLinkActiveOptions]=\"{exact:true}\"\r\n            [matMenuTriggerFor]=\"menu\" [routerLink]=\"['/shop', category.name, category.categoryId]\"\r\n            (mouseover)=\"indexData(i,category.categoryId)\" #matMenuTrigger=\"matMenuTrigger\">\r\n            <img class=\"menu-img\" src=\"assets/images/1-a.png\">\r\n            <!-- <span class=\"menu-text\">{{category.name}}</span> -->\r\n            <!-- <mat-icon class=\"caret\">arrow_drop_down</mat-icon> -->\r\n        </a>\r\n        <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\" class=\"mega-menu category-menu app-dropdown\"\r\n            [hasBackdrop]=\"false\" (mouseleave)=\"$event.stopPropagation()\">\r\n            <span (mouseleave)=\"closeMyMenu()\">\r\n                <div fxLayout=\"row wrap\" *ngIf=\"((index)||(index === 0))\">\r\n                    <div fxFlex=\"20\" fxLayout=\"column\" class=\"p-1\"\r\n                        *ngFor=\"let subCategory of categories[index].children\">\r\n                        <a mat-menu-item [routerLink]=\"['/products', subCategory.categoryId]\"\r\n                            [routerLinkActiveOptions]=\"{exact:true}\" (click)=\"linkActive()\"\r\n                            routerLinkActive=\"horizontal-active-link\">\r\n                            <b>{{subCategory.name}}</b>\r\n                        </a>\r\n                        <mat-divider></mat-divider>\r\n                        <div *ngIf=\"subCategory.children\">\r\n                            <div *ngFor=\"let grandsubCategory of subCategory.children;let j=index\">\r\n                                <a mat-menu-item [routerLink]=\"['/products', grandsubCategory.categoryId]\"\r\n                                    [routerLinkActiveOptions]=\"{exact:true}\" (click)=\"linkActive()\"\r\n                                    routerLinkActive=\"horizontal-active-link\">\r\n                                    {{grandsubCategory.name}}</a>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n            </span>\r\n        </mat-menu>\r\n\r\n    </div>\r\n    <!-- <a mat-button routerLink=\"/contact\" routerLinkActive=\"horizontal-active-link\"\r\n        [routerLinkActiveOptions]=\"{exact:true}\">Contact</a> -->\r\n\r\n    <!-- <div fxShow=\"true\" fxHide.lt-md class=\"search-algin\" fxFlex fxFlexOffset.gt-sm=\"1\" fxShow=\"true\" fxShow.gt-sm>\r\n        <form method=\"get\" class=\"search-form\" fxLayout=\"row\">\r\n            <mat-menu #categoriesMenu=\"matMenu\" [overlapTrigger]=\"false\" xPosition=\"before\" class=\"categories-dropdown\">\r\n            </mat-menu>\r\n            <input type=\"text\" placeholder=\"What are you looking for ?\" fxFlex\r\n                (keyup)=\"searchData($event.target.value)\">\r\n            <button mat-mini-fab (click)=\"search()\" type=\"button\"\r\n                class=\"search-btn mat-elevation-z0 mat-mini-fab mat-accent\">\r\n                Search\r\n            </button>\r\n        </form>\r\n        <div mat-dialog-content *ngIf=\"searchLists?.length > 0 && searchValue\">\r\n            <ul>\r\n                <li *ngFor=\"let list of searchLists\">\r\n                    <a class=\"title text-truncate\">{{list.name}}</a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div> -->\r\n\r\n\r\n    <div class=\"menu-right\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n        <app-spurt-cart class=\"menuTag\"></app-spurt-cart>\r\n    </div>\r\n</mat-toolbar>\r\n\r\n\r\n<!-- <mat-sidenav-container fxFlexFill> -->\r\n<mat-sidenav #sidenav>\r\n    <mat-nav-list>\r\n        <a (click)=\"sidenav.toggle()\" href=\"javascript:void(0)\" mat-list-item>Close</a>\r\n        <div class=\"categories-wrapper categories-dropdown\" perfectScrollbar>\r\n            <app-category-list [isClicked]=\"isClickedData\" [categories]=\"listSandbox.categoryList$ | async\"\r\n                (change)=\"onChangeCategory($event)\" [categoryId]=\"category\"></app-category-list>\r\n\r\n        </div>\r\n    </mat-nav-list>\r\n</mat-sidenav>\r\n<!-- </mat-sidenav-container> -->"
 
 /***/ }),
 
@@ -9617,6 +9874,9 @@ var MenuComponent = /** @class */ (function () {
                 }
             }
         });
+    };
+    MenuComponent.prototype.closeMyMenu = function () {
+        this.trigger.closeMenu();
     };
     // Make category link active if category got selected
     MenuComponent.prototype.linkActive = function () {
@@ -9803,6 +10063,143 @@ var OptionsComponent = /** @class */ (function () {
             _core_common_common_service__WEBPACK_IMPORTED_MODULE_3__["CommonService"]])
     ], OptionsComponent);
     return OptionsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/default/shared/components/privacy-policy/privacy-policy.component.html":
+/*!************************************************************************************!*\
+  !*** ./src/default/shared/components/privacy-policy/privacy-policy.component.html ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h4>Privacy and Policy</h4>\n<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p>\n<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p>\n<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p>\n<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p>"
+
+/***/ }),
+
+/***/ "./src/default/shared/components/privacy-policy/privacy-policy.component.scss":
+/*!************************************************************************************!*\
+  !*** ./src/default/shared/components/privacy-policy/privacy-policy.component.scss ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvZGVmYXVsdC9zaGFyZWQvY29tcG9uZW50cy9wcml2YWN5LXBvbGljeS9wcml2YWN5LXBvbGljeS5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/default/shared/components/privacy-policy/privacy-policy.component.ts":
+/*!**********************************************************************************!*\
+  !*** ./src/default/shared/components/privacy-policy/privacy-policy.component.ts ***!
+  \**********************************************************************************/
+/*! exports provided: PrivacyPolicyComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrivacyPolicyComponent", function() { return PrivacyPolicyComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PrivacyPolicyComponent = /** @class */ (function () {
+    function PrivacyPolicyComponent() {
+    }
+    PrivacyPolicyComponent.prototype.ngOnInit = function () {
+    };
+    PrivacyPolicyComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-privacy-policy',
+            template: __webpack_require__(/*! ./privacy-policy.component.html */ "./src/default/shared/components/privacy-policy/privacy-policy.component.html"),
+            styles: [__webpack_require__(/*! ./privacy-policy.component.scss */ "./src/default/shared/components/privacy-policy/privacy-policy.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], PrivacyPolicyComponent);
+    return PrivacyPolicyComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/default/shared/components/product-not-found/product-not-found.component.html":
+/*!******************************************************************************************!*\
+  !*** ./src/default/shared/components/product-not-found/product-not-found.component.html ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div fxLayout=\"row wrap\">\n    <div fxFlex=\"100\" fxFlex.gt-xs=\"90\" class=\"p-2\">\n        <img src=\"../../../assets/images/default-image.jpg\" alt=\"not found\" height=\"150\" width=\"150\">\n        <p>No Found</p>\n        <p>Sorry, the keyword you entered cannot be found, please\n            check again or search with anotherkeyword </p>\n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/default/shared/components/product-not-found/product-not-found.component.scss":
+/*!******************************************************************************************!*\
+  !*** ./src/default/shared/components/product-not-found/product-not-found.component.scss ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".box {\n  border-radius: 0; }\n  .box .box-header {\n    height: 180px; }\n  .box .box-header .error {\n      font-size: 48px;\n      margin-bottom: 12px; }\n  .box .box-content {\n    position: relative;\n    height: 180px; }\n  .box .box-content .box-content-inner {\n      position: absolute;\n      top: -34px;\n      left: 34px;\n      right: 34px;\n      height: 180px; }\n  .box .box-content .box-content-header {\n      font-size: 16px;\n      text-transform: uppercase;\n      font-weight: 500; }\n  .box .box-content .box-content-header.server-error {\n        margin-bottom: 36px; }\n  .box .box-content .box-text {\n      margin-bottom: 10px;\n      text-align: center; }\n  .box .box-content .box-text::last-child {\n        margin-bottom: 15px; }\n  .box .box-content .box-footer {\n      position: relative;\n      bottom: 16px; }\n  .box .box-content .box-footer button {\n        min-width: 70px;\n        margin: 0 2px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93ZWJyb290L3B1YmxpY19odG1sL3dlYnNpdGVzL29kei9tYXJrZXRwbGFjZS9zdG9yZS9zcmMvZGVmYXVsdC9zaGFyZWQvY29tcG9uZW50cy9wcm9kdWN0LW5vdC1mb3VuZC9wcm9kdWN0LW5vdC1mb3VuZC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGlCQUFnQixFQTBDbkI7RUEzQ0Q7SUFHUSxjQUFhLEVBS2hCO0VBUkw7TUFLWSxnQkFBZTtNQUNmLG9CQUFtQixFQUN0QjtFQVBUO0lBVVEsbUJBQWtCO0lBQ2xCLGNBQWEsRUErQmhCO0VBMUNMO01BYVksbUJBQWtCO01BQ2xCLFdBQVU7TUFDVixXQUFVO01BQ1YsWUFBVztNQUNYLGNBQWEsRUFDaEI7RUFsQlQ7TUFvQlksZ0JBQWU7TUFDZiwwQkFBeUI7TUFDekIsaUJBQWUsRUFJbEI7RUExQlQ7UUF3QmdCLG9CQUFtQixFQUN0QjtFQXpCYjtNQTRCWSxvQkFBbUI7TUFDbkIsbUJBQWtCLEVBSXJCO0VBakNUO1FBK0JnQixvQkFBbUIsRUFDdEI7RUFoQ2I7TUFtQ1ksbUJBQWtCO01BQ2xCLGFBQVksRUFLZjtFQXpDVDtRQXNDZ0IsZ0JBQWU7UUFDZixjQUFhLEVBQ2hCIiwiZmlsZSI6InNyYy9kZWZhdWx0L3NoYXJlZC9jb21wb25lbnRzL3Byb2R1Y3Qtbm90LWZvdW5kL3Byb2R1Y3Qtbm90LWZvdW5kLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJveHtcbiAgICBib3JkZXItcmFkaXVzOiAwO1xuICAgIC5ib3gtaGVhZGVye1xuICAgICAgICBoZWlnaHQ6IDE4MHB4O1xuICAgICAgICAuZXJyb3J7XG4gICAgICAgICAgICBmb250LXNpemU6IDQ4cHg7XG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAxMnB4O1xuICAgICAgICB9XG4gICAgfVxuICAgIC5ib3gtY29udGVudHtcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICBoZWlnaHQ6IDE4MHB4OyAgICAgXG4gICAgICAgIC5ib3gtY29udGVudC1pbm5lcntcbiAgICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgICAgIHRvcDogLTM0cHg7XG4gICAgICAgICAgICBsZWZ0OiAzNHB4O1xuICAgICAgICAgICAgcmlnaHQ6IDM0cHg7XG4gICAgICAgICAgICBoZWlnaHQ6IDE4MHB4O1xuICAgICAgICB9XG4gICAgICAgIC5ib3gtY29udGVudC1oZWFkZXJ7XG4gICAgICAgICAgICBmb250LXNpemU6IDE2cHg7IFxuICAgICAgICAgICAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OjUwMDtcbiAgICAgICAgICAgICYuc2VydmVyLWVycm9ye1xuICAgICAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDM2cHg7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgLmJveC10ZXh0e1xuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICAgICY6Omxhc3QtY2hpbGR7XG4gICAgICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMTVweDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICAuYm94LWZvb3RlcntcbiAgICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgICAgIGJvdHRvbTogMTZweDtcbiAgICAgICAgICAgIGJ1dHRvbntcbiAgICAgICAgICAgICAgICBtaW4td2lkdGg6IDcwcHg7XG4gICAgICAgICAgICAgICAgbWFyZ2luOiAwIDJweDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgIH1cbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/default/shared/components/product-not-found/product-not-found.component.ts":
+/*!****************************************************************************************!*\
+  !*** ./src/default/shared/components/product-not-found/product-not-found.component.ts ***!
+  \****************************************************************************************/
+/*! exports provided: ProductNotFoundComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductNotFoundComponent", function() { return ProductNotFoundComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+/*
+ * spurtcommerce
+ * http://www.spurtcommerce.com
+ *
+ * Copyright (c) 2022 piccosoft ltd
+ * Author piccosoft ltd <support@piccosoft.com>
+ * Licensed under the MIT license.
+ */
+
+
+var ProductNotFoundComponent = /** @class */ (function () {
+    function ProductNotFoundComponent(router) {
+        this.router = router;
+    }
+    ProductNotFoundComponent.prototype.ngOnInit = function () {
+    };
+    ProductNotFoundComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-product-not-found',
+            template: __webpack_require__(/*! ./product-not-found.component.html */ "./src/default/shared/components/product-not-found/product-not-found.component.html"),
+            styles: [__webpack_require__(/*! ./product-not-found.component.scss */ "./src/default/shared/components/product-not-found/product-not-found.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+    ], ProductNotFoundComponent);
+    return ProductNotFoundComponent;
 }());
 
 
@@ -10473,6 +10870,69 @@ var sidenavMenuItems = [
 
 /***/ }),
 
+/***/ "./src/default/shared/components/t-and-c/t-and-c.component.html":
+/*!**********************************************************************!*\
+  !*** ./src/default/shared/components/t-and-c/t-and-c.component.html ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h4>Term and condition</h4>\n<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p>\n<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p>\n<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p>\n<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p>"
+
+/***/ }),
+
+/***/ "./src/default/shared/components/t-and-c/t-and-c.component.scss":
+/*!**********************************************************************!*\
+  !*** ./src/default/shared/components/t-and-c/t-and-c.component.scss ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvZGVmYXVsdC9zaGFyZWQvY29tcG9uZW50cy90LWFuZC1jL3QtYW5kLWMuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/default/shared/components/t-and-c/t-and-c.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/default/shared/components/t-and-c/t-and-c.component.ts ***!
+  \********************************************************************/
+/*! exports provided: TAndCComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TAndCComponent", function() { return TAndCComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var TAndCComponent = /** @class */ (function () {
+    function TAndCComponent() {
+    }
+    TAndCComponent.prototype.ngOnInit = function () {
+    };
+    TAndCComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-t-and-c',
+            template: __webpack_require__(/*! ./t-and-c.component.html */ "./src/default/shared/components/t-and-c/t-and-c.component.html"),
+            styles: [__webpack_require__(/*! ./t-and-c.component.scss */ "./src/default/shared/components/t-and-c/t-and-c.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], TAndCComponent);
+    return TAndCComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/default/shared/components/top-menu/top-menu.component.html":
 /*!************************************************************************!*\
   !*** ./src/default/shared/components/top-menu/top-menu.component.html ***!
@@ -10480,7 +10940,7 @@ var sidenavMenuItems = [
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"top-menu\">\r\n\r\n    <a class=\"mobileSearchIcon\" fxShow=\"true\" fxHide.gt-sm=\"true\" mat-button (click)=\"toogleInput()\">\r\n        <mat-icon class=\"mat-icon-sm account-icon blackStyle\">\r\n            <i class=\"fa fa-search\"></i>\r\n        </mat-icon>\r\n    </a>\r\n   \r\n\r\n    <div *ngIf=\"isSearchInput\" class=\"search-algin\" fxFlex fxFlexOffset.gt-sm=\"1\" fxShow=\"true\" fxShow.gt-sm>\r\n        <form method=\"get\" class=\"search-form\" fxLayout=\"row\">\r\n            <mat-menu #categoriesMenu=\"matMenu\" [overlapTrigger]=\"false\" xPosition=\"before\" class=\"categories-dropdown\">\r\n            </mat-menu>\r\n            <input type=\"text\" placeholder=\"What are you looking for ?\" fxFlex\r\n                (keyup)=\"searchData($event.target.value)\">\r\n            <button mat-mini-fab (click)=\"search()\" type=\"button\"\r\n                class=\"search-btn mat-elevation-z0 mat-mini-fab mat-accent\">\r\n                Search\r\n            </button>\r\n        </form>\r\n        <div mat-dialog-content *ngIf=\"searchLists?.length > 0 && searchValue\">\r\n            <ul>\r\n                <li *ngFor=\"let list of searchLists\">\r\n                    <a class=\"title text-truncate\">{{list.name}}</a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <a mat-button [matMenuTriggerFor]=\"accountMenu\" #accountMenuTrigger=\"matMenuTrigger\" class=\"blackStyle\"\r\n        *ngIf=\"(commonSandbox.getProfile$ | async)?.email\">\r\n        <!-- <mat-icon class=\"mat-icon-sm account-icon blackStyle\">person</mat-icon> -->\r\n        <mat-icon routerLink=\"/auth\" class=\"mat-icon-sm account-icon blackStyle\"><img\r\n                src=\"../../../assets/images/Profile.png\" /></mat-icon>\r\n        <span fxShow=\"false\" fxShow.gt-sm class=\"blackStyle\">Account</span>\r\n        <!-- <mat-icon class=\"mat-icon-sm caret blackStyle\">arrow_drop_down</mat-icon> -->\r\n    </a>\r\n    <a mat-button routerLink=\"/auth\" *ngIf=\"!(commonSandbox.getProfile$ | async)?.email\">\r\n        <mat-icon routerLink=\"/auth\" class=\"mat-icon-sm account-icon blackStyle\"><img\r\n                src=\"../../../assets/images/Profile.png\" /></mat-icon>\r\n        <span fxShow=\"false\" fxShow.gt-sm class=\"blackStyle\">Profile</span>\r\n    </a>\r\n\r\n    <a mat-button>\r\n        <mat-icon class=\"mat-icon-sm notification-icon blackStyle\"><img src=\"../../../assets/images/Notification.png\" />\r\n        </mat-icon>\r\n        <span fxShow=\"false\" fxShow.gt-sm class=\"blackStyle\">Notification</span>\r\n    </a>\r\n\r\n    <span fxShow=\"true\" fxShow.gt-sm>\r\n        <a mat-button [routerLink]=\"['/wishlist']\">\r\n            <mat-icon class=\"mat-icon-sm\"><img src=\"../../../assets/images/heart.png\" /></mat-icon>\r\n            <span fxShow=\"false\" fxShow.gt-sm class=\"blackStyle\">Wishlist\r\n                <ng-container *ngIf=\"commonSandbox.wishlistCount$ | async;else noWhishListCount\">\r\n                    ({{commonSandbox.wishlistCount$ | async}})\r\n                </ng-container>\r\n                <ng-template #noWhishListCount>\r\n                    (0)\r\n                </ng-template>\r\n            </span>\r\n        </a>\r\n    </span>\r\n\r\n    <mat-menu #accountMenu=\"matMenu\" [overlapTrigger]=\"false\" xPosition=\"before\"\r\n        class=\"app-dropdown account-pane account\">\r\n        <span>\r\n            <div fxLayout=\"row\" fxLayoutAlign=\"space-around center\" class=\"user-info\"\r\n                *ngIf=\"(commonSandbox.getProfile$ | async)?.email\">\r\n                <img *ngIf='(commonSandbox.getProfile$ | async)?.avatarPath'\r\n                    [src]=\"imagePath + '?path=' + (commonSandbox.getProfile$ | async)?.avatarPath + '&name=' + (commonSandbox.getProfile$ | async)?.avatar + '&width=60&height=60'\"\r\n                    alt=\"user-image\" width=\"50\">\r\n                <img *ngIf='!(commonSandbox.getProfile$ | async)?.avatarPath' src=\"./assets/images/others/user.jpg\"\r\n                    alt=\"user-image\" width=\"50\">\r\n                <p>{{(commonSandbox.getProfile$ | async)?.firstName}}<br> <small>{{(commonSandbox.getProfile$ |\r\n                        async)?.email}}\r\n                    </small></p>\r\n            </div>\r\n            <div class=\"divider\"></div>\r\n            <a mat-menu-item routerLink=\"/account/orders\">\r\n                <mat-icon class=\"mat-icon-sm\">\r\n                    <mat-icon>description</mat-icon>\r\n                </mat-icon>\r\n                <span>Order History</span>\r\n            </a>\r\n            <a mat-menu-item routerLink=\"/account\">\r\n                <mat-icon class=\"mat-icon-sm\">settings</mat-icon>\r\n                <span>Account Settings</span>\r\n            </a>\r\n            <div class=\"divider\"></div>\r\n            <a mat-menu-item (click)=\"signOut()\">\r\n                <mat-icon class=\"mat-icon-sm\">power_settings_new</mat-icon>\r\n                <span>Sign Out</span>\r\n            </a>\r\n        </span>\r\n    </mat-menu>\r\n</div>"
+module.exports = "<div class=\"top-menu\">\r\n\r\n    <a class=\"mobileSearchIcon\" fxShow=\"true\" fxHide.gt-sm=\"true\" mat-button (click)=\"toogleInput()\">\r\n        <mat-icon class=\"mat-icon-sm account-icon blackStyle\">\r\n            <i class=\"fa fa-search\"></i>\r\n        </mat-icon>\r\n    </a>\r\n\r\n\r\n    <div *ngIf=\"isSearchInput\" class=\"search-algin\" fxFlex fxFlexOffset.gt-sm=\"1\" fxShow=\"true\" fxShow.gt-sm>\r\n        <form method=\"get\" class=\"search-form\" fxLayout=\"row\">\r\n            <mat-menu #categoriesMenu=\"matMenu\" [overlapTrigger]=\"false\" xPosition=\"before\" class=\"categories-dropdown\">\r\n            </mat-menu>\r\n            <input type=\"text\" placeholder=\"What are you looking for ?\" fxFlex (keyup)=\"searchData($event.target.value)\"\r\n                [(ngModel)]=\"searchValue\" name=\"searchValue\" (keyup.enter)=\"\r\n                search()\" autocomplete=\"off\">\r\n        </form>\r\n        <div mat-dialog-content *ngIf=\"!show && searchLists.length > 0\">\r\n            <div class=\"searchTitles\">\r\n                <h5>Recent</h5>\r\n                <h5>Clear All</h5>\r\n            </div>\r\n            <ul>\r\n                <li *ngFor=\"let list of searchLists\">\r\n                    <a class=\"title text-truncate\" href=\"javascript:void(0)\"\r\n                        (click)=\"getSerchProduct(list)\">{{list.name}}</a>\r\n                    <mat-icon class=\"mat-icon-sm close-icon blackStyle\">close</mat-icon>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n\r\n    <div fxShow=\"true\" fxHide.lt-md class=\"search-algin\" fxFlex fxFlexOffset.gt-sm=\"1\" fxShow=\"true\" fxShow.gt-sm>\r\n        <form method=\"get\" class=\"search-form\" fxLayout=\"row\"  (click) =\" outsideClick($event)\">\r\n            <mat-menu #categoriesMenu=\"matMenu\" [overlapTrigger]=\"false\" xPosition=\"before\" class=\"categories-dropdown\">\r\n            </mat-menu>\r\n            <input type=\"text\" placeholder=\"What are you looking for ?\" fxFlex (keyup)=\"searchData($event.target.value)\"\r\n                [(ngModel)]=\"searchValue\" name=\"searchValue\" (keyup.enter)=\"\r\n                search()\" autocomplete=\"off\">\r\n        </form>\r\n        <div mat-dialog-content  *ngIf=\"!show && searchLists.length > 0\">\r\n            <div>\r\n                <h5>Recent</h5>\r\n                <h5>Clear All</h5>\r\n            </div>\r\n            <ul>\r\n                <li *ngFor=\"let list of searchLists\">\r\n                    <a class=\"title text-truncate\" href=\"javascript:void(0)\"\r\n                        (click)=\"getSerchProduct(list)\">{{list.name}}</a>\r\n                    <mat-icon class=\"mat-icon-sm close-icon blackStyle\">close</mat-icon>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <!-- *ngIf=\"(commonSandbox.getProfile$ | async)?.email\" -->\r\n    <a mat-button [matMenuTriggerFor]=\"accountMenu\" #accountMenuTrigger=\"matMenuTrigger\" class=\"blackStyle\">\r\n        <!-- <mat-icon class=\"mat-icon-sm account-icon blackStyle\">person</mat-icon> -->\r\n        <mat-icon routerLink=\"/auth\" class=\"mat-icon-sm account-icon blackStyle\"><img\r\n                src=\"../../../assets/images/Profile.png\" /></mat-icon>\r\n        <span fxShow=\"false\" fxShow.gt-sm class=\"blackStyle\">Profile</span>\r\n        <!-- <mat-icon class=\"mat-icon-sm caret blackStyle\">arrow_drop_down</mat-icon> -->\r\n    </a>\r\n    <!-- <a mat-button routerLink=\"/auth\" *ngIf=\"!(commonSandbox.getProfile$ | async)?.email\">\r\n        <mat-icon routerLink=\"/auth\" class=\"mat-icon-sm account-icon blackStyle\"><img\r\n                src=\"../../../assets/images/Profile.png\" /></mat-icon>\r\n        <span fxShow=\"false\" fxShow.gt-sm class=\"blackStyle\">Profile</span>\r\n    </a> -->\r\n\r\n    <a mat-button mat-button [matMenuTriggerFor]=\"notificationMenu\" #notificationMenuTrigger=\"matMenuTrigger\"\r\n        class=\"blackStyle\">\r\n        <mat-icon class=\"mat-icon-sm notification-icon blackStyle\"><img src=\"../../../assets/images/Notification.png\" />\r\n        </mat-icon>\r\n        <span fxShow=\"false\" fxShow.gt-sm class=\"blackStyle\">Notification</span>\r\n    </a>\r\n\r\n    <span fxShow=\"true\" fxShow.gt-sm>\r\n        <a mat-button [routerLink]=\"['/wishlist']\">\r\n            <mat-icon class=\"mat-icon-sm\"><img src=\"../../../assets/images/heart.png\" /></mat-icon>\r\n            <span fxShow=\"false\" fxShow.gt-sm class=\"blackStyle\">Wishlist\r\n                <ng-container *ngIf=\"commonSandbox.wishlistCount$ | async;else noWhishListCount\">\r\n                    ({{commonSandbox.wishlistCount$ | async}})\r\n                </ng-container>\r\n                <ng-template #noWhishListCount>\r\n                    (0)\r\n                </ng-template>\r\n            </span>\r\n        </a>\r\n    </span>\r\n\r\n    <mat-menu #accountMenu=\"matMenu\" [overlapTrigger]=\"false\" xPosition=\"before\"\r\n        class=\"app-dropdown account-pane account menu-drop\">\r\n        <h3>My Profile</h3>\r\n        <span>\r\n            <div fxLayout=\"row\" fxLayoutAlign=\"space-around center\" class=\"user-info\"\r\n                *ngIf=\"(commonSandbox.getProfile$ | async)?.email\">\r\n                <img *ngIf='(commonSandbox.getProfile$ | async)?.avatarPath'\r\n                    [src]=\"imagePath + '?path=' + (commonSandbox.getProfile$ | async)?.avatarPath + '&name=' + (commonSandbox.getProfile$ | async)?.avatar + '&width=60&height=60'\"\r\n                    alt=\"user-image\" width=\"50\">\r\n                <img *ngIf='!(commonSandbox.getProfile$ | async)?.avatarPath' src=\"./assets/images/others/user.jpg\"\r\n                    alt=\"user-image\" width=\"50\">\r\n                <p>{{(commonSandbox.getProfile$ | async)?.firstName}}<br> <small>{{(commonSandbox.getProfile$ |\r\n                        async)?.email}}\r\n                    </small></p>\r\n            </div>\r\n            <div class=\"divider\"></div>\r\n            <!-- <a mat-menu-item routerLink=\"/account/orders\">\r\n                <mat-icon class=\"mat-icon-sm\">\r\n                    <mat-icon>description</mat-icon>\r\n                </mat-icon>\r\n                <span>Order History</span>\r\n            </a> -->\r\n\r\n            <!-- new mwnu -->\r\n            <a mat-menu-item routerLink=\"/auth\" *ngIf=\"!(commonSandbox.getProfile$ | async)?.email\">\r\n                <span>SignIn/SignUp</span>\r\n            </a>\r\n            <a mat-menu-item>\r\n                <span>Public Profile Settings</span>\r\n            </a>\r\n            <a mat-menu-item>\r\n                <span>Personal Information Settings</span>\r\n            </a>\r\n            <a mat-menu-item>\r\n                <span>Address Settings</span>\r\n            </a>\r\n            <a mat-menu-item>\r\n                <span>Influencer Management</span>\r\n            </a>\r\n            <a mat-menu-item routerLink=\"/account/orders\">\r\n                <span>My orders</span>\r\n            </a>\r\n            <a mat-menu-item routerLink=\"/contactus\">\r\n                <span>Contact Us</span>\r\n            </a>\r\n            <a mat-menu-item  routerLink=\"/help\">\r\n                <span>Need Help</span>\r\n            </a>\r\n            <a mat-menu-item>\r\n                <span>Become a Seller</span>\r\n            </a>\r\n\r\n\r\n            <!--  -->\r\n\r\n            <!-- <a mat-menu-item routerLink=\"/account\">\r\n                <mat-icon class=\"mat-icon-sm\">settings</mat-icon>\r\n                <span>Account Settings</span>\r\n            </a> -->\r\n            <div class=\"divider\"></div>\r\n            <a mat-menu-item (click)=\"signOut()\" *ngIf=\"(commonSandbox.getProfile$ | async)?.email\">\r\n                <mat-icon class=\"mat-icon-sm\">power_settings_new</mat-icon>\r\n                <span>Sign Out</span>\r\n            </a>\r\n        </span>\r\n    </mat-menu>\r\n\r\n    <mat-menu #notificationMenu=\"matMenu\" [overlapTrigger]=\"false\" xPosition=\"before\"\r\n        class=\"app-dropdown account-pane account menu-drop\">\r\n        <span>\r\n        <h3>Notifications</h3>\r\n        <div class=\"divider\"></div>\r\n        <a mat-menu-item>\r\n            <span>Your order number: 293823 has been shipped and we will notify you when its ready for delievery</span>\r\n        </a>\r\n        <a mat-menu-item>\r\n            <span>Your order number: 293823 has been packeed and we will notify you when its shipped</span>\r\n        </a>\r\n        <a mat-menu-item>\r\n            <span>Thank you for placing order</span>\r\n        </a>\r\n        <a mat-menu-item>\r\n            <span>Notifications</span>\r\n        </a>\r\n        <a mat-menu-item>\r\n            <span>Notifications</span>\r\n        </a>\r\n        <a mat-menu-item>\r\n            <span>Notifications</span>\r\n        </a>\r\n        <a mat-menu-item>\r\n            <span>Notifications</span>\r\n        </a>\r\n        <a mat-menu-item>\r\n            <span>Notifications</span>\r\n        </a>\r\n\r\n        </span>\r\n    </mat-menu>\r\n</div>"
 
 /***/ }),
 
@@ -10544,7 +11004,7 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 var TopMenuComponent = /** @class */ (function () {
-    function TopMenuComponent(platformId, configService, router, listSandbox, commonSandbox, productControl, snackBar) {
+    function TopMenuComponent(platformId, configService, router, listSandbox, commonSandbox, productControl, snackBar, _elementRef) {
         this.platformId = platformId;
         this.configService = configService;
         this.router = router;
@@ -10552,12 +11012,14 @@ var TopMenuComponent = /** @class */ (function () {
         this.commonSandbox = commonSandbox;
         this.productControl = productControl;
         this.snackBar = snackBar;
+        this._elementRef = _elementRef;
         this.index = 0;
         // public languageKey = 'language';
         this.subscriptions = [];
         this.isSearchInput = false;
         this.searchValue = '';
         this.searchLists = [];
+        this.show = true;
     }
     /**calls commonSandbox doGetProfile with default param
      * after calls commonSandbox getWishlistCounts.
@@ -10605,8 +11067,9 @@ var TopMenuComponent = /** @class */ (function () {
             // this.router.navigate(['/products'], {
             //     queryParams: { keyword: this.searchValue }
             // });
-            this.getProductList(this.searchValue);
+            // this.getProductList(this.searchValue);
         }
+        this.getProductList(this.searchValue);
     };
     /**
        * fetch product list from service. calling getProductList function from sandbox
@@ -10623,18 +11086,49 @@ var TopMenuComponent = /** @class */ (function () {
         params.price = 'ASC';
         params.priceFrom = 0;
         params.priceTo = '';
-        if (keyword) {
-            this.listSandbox.getProductList(params);
-            this.listSandbox.productlist$.subscribe(function (data) {
-                _this.searchLists = data.slice();
+        // if (keyword) {
+        this.listSandbox.getProductList(params);
+        this.listSandbox.productlist$.subscribe(function (data) {
+            _this.searchLists = data.slice();
+        });
+        // }
+    };
+    TopMenuComponent.prototype.search = function () {
+        this.router.navigate(['/products'], {
+            queryParams: { keyword: this.searchValue }
+        });
+        this.searchValue = '';
+    };
+    TopMenuComponent.prototype.getSerchProduct = function (list) {
+        if (list) {
+            this.router.navigate(['/products'], {
+                queryParams: { keyword: list.name }
             });
+            this.searchLists = [];
+            this.searchValue = '';
         }
     };
+    TopMenuComponent.prototype.onClick = function (targetElement) {
+        var clickedInside = this._elementRef.nativeElement.contains(targetElement);
+        if (!clickedInside) {
+            this.show = true;
+        }
+        else {
+            this.show = false;
+        }
+    };
+    TopMenuComponent.prototype.outsideClick = function () { };
     TopMenuComponent.prototype.ngOnDestroy = function () {
         this.subscriptions.forEach(function (each) {
             each.unsubscribe();
         });
     };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('document:click', ['$event.target']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", void 0)
+    ], TopMenuComponent.prototype, "onClick", null);
     TopMenuComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-top-menu',
@@ -10648,7 +11142,8 @@ var TopMenuComponent = /** @class */ (function () {
             _core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_7__["ListsSandbox"],
             _core_common_common_sandbox__WEBPACK_IMPORTED_MODULE_3__["CommonSandbox"],
             _core_product_control_product_control_sandbox__WEBPACK_IMPORTED_MODULE_4__["ProductControlSandbox"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSnackBar"]])
+            _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSnackBar"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]])
     ], TopMenuComponent);
     return TopMenuComponent;
 }());
@@ -10664,7 +11159,7 @@ var TopMenuComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"spinner-wrapper\">\n  <app-spinner></app-spinner>\n</div>\n\n<div class=\"content\">\n  <div fxLayout=\"row wrap\" fxLayoutGap=\"16px grid\">\n    <div fxFlex=\"25%\" fxFlex.xs=\"100%\" fxFlex.sm=\"33%\" *ngFor=\"let num of [1,2,3,4]\">\n      <mat-card class=\"mat-elevation-z4\">\n        <img mat-card-image src=\"../../../../assets/images/ms-row-img.png\">\n        <mat-card-content>\n          <p>\n            The Himalayas is a mountain range in Asia.\n          </p>\n        </mat-card-content>\n        <mat-card-actions>\n          <div class='prod-icon'>\n            <button mat-icon-button>\n              <mat-icon>favorite</mat-icon>\n            </button>\n            <button mat-icon-button matTooltip=\"Quick view\">\n              <mat-icon>remove_red_eye</mat-icon>\n            </button>\n            <button mat-icon-button matTooltip=\"Add to cart\">\n              <mat-icon>shopping_cart</mat-icon>\n            </button>\n            <span class=\"cart-lk\">\n              <a> Add to Cart </a>\n            </span>\n          </div>\n        </mat-card-actions>\n      </mat-card>\n    </div>\n  </div>\n</div> -->\n\n<mat-sidenav-container class=\"productsWrap trending-products\">\n  <mat-sidenav-content class=\"all-products\" ngClass.gt-sm=\"p-left\">\n    <div fxLayout=\"row\" fxLayout.xs=\"column\" fxLayoutAlign=\"space-between center\"\n      class=\"filter-row mat-elevation-z1 text-muted\">\n      <button *ngIf=\"!sidenavOpen\" mat-icon-button (click)=\"sidenav.toggle()\">\n        <mat-icon>more_vert</mat-icon>\n      </button>\n      <div>\n\n        <mat-menu #sortMenu=\"matMenu\" xPosition=\"before\" class=\"app-dropdown\" overlapTrigger=\"true\">\n          <span (mouseleave)=\"sortMenuTrigger.closeMenu()\">\n            <button mat-menu-item *ngFor=\"let sort of sortings\" (click)=\"changeSorting(sort)\">\n              <span>{{sort.order}}</span>\n            </button>\n          </span>\n        </mat-menu>\n      </div>\n    </div>\n    <div class=\"wrapper\" *ngIf=\"listSandbox.productLoading$ | async\">\n      <div class=\"overlay\">\n        <div class=\"spinner-wrapper\">\n          <app-spinner [isShow]=\"listSandbox.productLoading$ | async\"></app-spinner>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"viewType == 'grid'\" fxLayout=\"row wrap\" class=\"products-wrapper\">\n\n      <div *ngFor=\"let product of (listSandbox.productlist$ | async)\" fxFlex=\"100\" [fxFlex.gt-sm]=\"viewCol\"\n        fxFlex.sm=\"50\" class=\"col productDiv\">\n        <mat-card class=\"product-item text-center card-hover productCol\">\n          <!-- <mat-icon class=\"mat-icon-lg\"><img src=\"../../../assets/images/Add to wishlist.png\" /></mat-icon> -->\n          <button class=\"wishIcon\" mat-icon-button\n            matTooltip=\"{{product.wishListStatus === 1 ? 'Added to wishlist': 'Add to wishlist'}}\"\n            (click)=\"addToWishList(product)\">\n            <mat-icon><img src=\"../../../assets/images/Add to wishlist.png\" /></mat-icon>\n            <!-- <mat-icon [color]=\"isWish[product]\" *ngIf=\"isWish[product] === 'warn'\"><img\n                src=\"../../../assets/images/Add to wishlist.png\" /></mat-icon>\n            <mat-icon *ngIf=\"isWish[product] !== 'warn'\"><img src=\"../../../assets/images/Add to wishlist_red.png\" /> -->\n          </button>\n          <div class=\"product-img\">\n            <a [routerLink]=\"['/products/productdetails', product.productId]\" class=\"image-link\">\n              <img *ngIf=\"product['Images'].defaultImage == 1\"\n                [src]=\"imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'\"\n                onError=\"this.src='/assets/images/default_image.png';\">\n            </a>\n            <div class=\"productRating\">\n              <div>\n                <div class=\"halfstar1\">&#x2605; 4.3 | <span>234</span></div>\n              </div>\n            </div>\n          </div>\n          <!-- <h4 class=\"category text-muted text-truncate \">{{product.metaTagTitle }}</h4> -->\n          <a [routerLink]=\"['/products/productdetails', product.productId]\" class=\"title text-truncate\">\n            {{product.name}}\n          </a>\n          <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"prices\">\n            <div fxLayout=\"row\" fxLayoutAlign=\"center center\" class=\"priceAndIcons\">\n              <p class=\"regularPrice\">$300</p>\n              <p class=\"new-price\">\n                $ {{product.price}}\n              </p>\n              <app-controls [product]=\"product\" [type]=\"'all'\" (OpenProductDialog)=\"openProductDialog(product)\">\n              </app-controls>\n            </div>\n          </div>\n          <div class=\"icons\">\n          </div>\n        </mat-card>\n      </div>\n    </div>\n\n  </mat-sidenav-content>\n</mat-sidenav-container>"
+module.exports = "<!-- <div class=\"spinner-wrapper\">\n  <app-spinner></app-spinner>\n</div>\n\n<div class=\"content\">\n  <div fxLayout=\"row wrap\" fxLayoutGap=\"16px grid\">\n    <div fxFlex=\"25%\" fxFlex.xs=\"100%\" fxFlex.sm=\"33%\" *ngFor=\"let num of [1,2,3,4]\">\n      <mat-card class=\"mat-elevation-z4\">\n        <img mat-card-image src=\"../../../../assets/images/ms-row-img.png\">\n        <mat-card-content>\n          <p>\n            The Himalayas is a mountain range in Asia.\n          </p>\n        </mat-card-content>\n        <mat-card-actions>\n          <div class='prod-icon'>\n            <button mat-icon-button>\n              <mat-icon>favorite</mat-icon>\n            </button>\n            <button mat-icon-button matTooltip=\"Quick view\">\n              <mat-icon>remove_red_eye</mat-icon>\n            </button>\n            <button mat-icon-button matTooltip=\"Add to cart\">\n              <mat-icon>shopping_cart</mat-icon>\n            </button>\n            <span class=\"cart-lk\">\n              <a> Add to Cart </a>\n            </span>\n          </div>\n        </mat-card-actions>\n      </mat-card>\n    </div>\n  </div>\n</div> -->\n\n<mat-sidenav-container class=\"productsWrap trending-products\">\n  <mat-sidenav-content class=\"all-products\" ngClass.gt-sm=\"p-left\">\n    <div fxLayout=\"row\" fxLayout.xs=\"column\" fxLayoutAlign=\"space-between center\"\n      class=\"filter-row mat-elevation-z1 text-muted\">\n      <button *ngIf=\"!sidenavOpen\" mat-icon-button (click)=\"sidenav.toggle()\">\n        <mat-icon>more_vert</mat-icon>\n      </button>\n      <div>\n\n        <mat-menu #sortMenu=\"matMenu\" xPosition=\"before\" class=\"app-dropdown\" overlapTrigger=\"true\">\n          <span (mouseleave)=\"sortMenuTrigger.closeMenu()\">\n            <button mat-menu-item *ngFor=\"let sort of sortings\" (click)=\"changeSorting(sort)\">\n              <span>{{sort.order}}</span>\n            </button>\n          </span>\n        </mat-menu>\n      </div>\n    </div>\n    <!-- <div class=\"wrapper\" *ngIf=\"listSandbox?.productLoading$ | async\">\n      <div class=\"overlay\">\n        <div class=\"spinner-wrapper\">\n          <app-spinner [isShow]=\"listSandbox?.productLoading$ | async\"></app-spinner>\n        </div>\n      </div>\n    </div> -->\n    <div class=\"advertisement-heading\" *ngIf=\"((listSandbox.productlist$ | async) | keyvalue)?.length\">\n      <h4>Most Popular and Trending</h4>\n    </div>\n    <div *ngIf=\"viewType == 'grid'\" fxLayout=\"row wrap\" class=\"products-wrapper\">\n\n      <div *ngFor=\"let product of (listSandbox.productlist$ | async)\" fxFlex=\"100\" [fxFlex.gt-sm]=\"viewCol\"\n        fxFlex.sm=\"50\" class=\"col productDiv\">\n        <mat-card class=\"product-item text-center card-hover productCol\">\n          <!-- <mat-icon class=\"mat-icon-lg\"><img src=\"../../../assets/images/Add to wishlist.png\" /></mat-icon> -->\n          <button class=\"wishIcon\" mat-icon-button\n            matTooltip=\"{{product.wishListStatus === 1 ? 'Added to wishlist': 'Add to wishlist'}}\"\n            (click)=\"addToWishList(product)\">\n            <mat-icon><img src=\"../../../assets/images/Add to wishlist.png\" /></mat-icon>\n            <!-- <mat-icon [color]=\"isWish[product]\" *ngIf=\"isWish[product] === 'warn'\"><img\n                src=\"../../../assets/images/Add to wishlist.png\" /></mat-icon>\n            <mat-icon *ngIf=\"isWish[product] !== 'warn'\"><img src=\"../../../assets/images/Add to wishlist_red.png\" /> -->\n          </button>\n          <div class=\"product-img\">\n            <a [routerLink]=\"['/products/productdetails', product.productId]\" class=\"image-link\">\n              <img *ngIf=\"product['Images'].defaultImage == 1\"\n                [src]=\"imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'\"\n                onError=\"this.src='/assets/images/default_image.png';\">\n            </a>\n            <div class=\"productRating\">\n              <div>\n                <div class=\"halfstar1\">&#x2605; 4.3 | <span>234</span></div>\n              </div>\n            </div>\n          </div>\n          <!-- <h4 class=\"category text-muted text-truncate \">{{product.metaTagTitle }}</h4> -->\n          <a [routerLink]=\"['/products/productdetails', product.productId]\" class=\"title text-truncate\">\n            {{product.name}}\n          </a>\n          <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"prices\">\n            <div fxLayout=\"row\" fxLayoutAlign=\"center center\" class=\"priceAndIcons\">\n              <p class=\"regularPrice\" *ngIf=\"product.regular\">${{product.regular}}</p>\n              <p class=\"new-price\">\n                $ {{product.price}}\n              </p>\n              <p *ngIf=\"product.regular\"><strong>{{(product.price/product.regular)*100  | number : '1.0-0'}}% OFF</strong></p>\n              <!--  <app-controls [product]=\"product\" [type]=\"'all'\" (OpenProductDialog)=\"openProductDialog(product)\">\n              </app-controls> -->\n            </div>\n          </div>\n          <div class=\"icons\">\n          </div>\n        </mat-card>\n      </div>\n    </div>\n\n  </mat-sidenav-content>\n</mat-sidenav-container>"
 
 /***/ }),
 
@@ -10968,6 +11463,9 @@ var TrendingProductComponent = /** @class */ (function () {
         var defaultCallValue = this.viewOrder;
         this.categoryId = event.categoryId;
         this.getProductList(0, defaultCallValue, event.categoryId);
+    };
+    TrendingProductComponent.prototype.ngAfterContentChecked = function () {
+        this.changeDetectRef.detectChanges();
     };
     TrendingProductComponent.prototype.ngOnDestroy = function () {
         this.subscription.forEach(function (each) {
@@ -11394,6 +11892,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_banners_banners_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/banners/banners.component */ "./src/default/shared/components/banners/banners.component.ts");
 /* harmony import */ var ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-perfect-scrollbar */ "./node_modules/ngx-perfect-scrollbar/dist/ngx-perfect-scrollbar.es5.js");
 /* harmony import */ var _pipes_pipes_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pipes/pipes.module */ "./src/default/shared/pipes/pipes.module.ts");
+/* harmony import */ var _components_faq_faq_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/faq/faq.component */ "./src/default/shared/components/faq/faq.component.ts");
+/* harmony import */ var _components_privacy_policy_privacy_policy_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/privacy-policy/privacy-policy.component */ "./src/default/shared/components/privacy-policy/privacy-policy.component.ts");
+/* harmony import */ var _components_contactus_contactus_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/contactus/contactus.component */ "./src/default/shared/components/contactus/contactus.component.ts");
+/* harmony import */ var _components_help_help_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/help/help.component */ "./src/default/shared/components/help/help.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _components_t_and_c_t_and_c_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/t-and-c/t-and-c.component */ "./src/default/shared/components/t-and-c/t-and-c.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11419,6 +11923,12 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
+
+
+
 var DEFAULT_PERFECT_SCROLLBAR_CONFIG = {
     wheelPropagation: true,
     suppressScrollX: true
@@ -11431,6 +11941,7 @@ var SharedModule = /** @class */ (function () {
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_14__["ReactiveFormsModule"],
                 ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_3__["SwiperModule"],
                 _angular_flex_layout__WEBPACK_IMPORTED_MODULE_4__["FlexLayoutModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatAutocompleteModule"],
@@ -11504,7 +12015,7 @@ var SharedModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatStepperModule"],
                 _components_banners_banners_component__WEBPACK_IMPORTED_MODULE_7__["BannersComponent"]
             ],
-            declarations: [_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_6__["SpinnerComponent"], _components_banners_banners_component__WEBPACK_IMPORTED_MODULE_7__["BannersComponent"]],
+            declarations: [_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_6__["SpinnerComponent"], _components_banners_banners_component__WEBPACK_IMPORTED_MODULE_7__["BannersComponent"], _components_faq_faq_component__WEBPACK_IMPORTED_MODULE_10__["FaqComponent"], _components_privacy_policy_privacy_policy_component__WEBPACK_IMPORTED_MODULE_11__["PrivacyPolicyComponent"], _components_contactus_contactus_component__WEBPACK_IMPORTED_MODULE_12__["ContactusComponent"], _components_help_help_component__WEBPACK_IMPORTED_MODULE_13__["HelpComponent"], _components_t_and_c_t_and_c_component__WEBPACK_IMPORTED_MODULE_15__["TAndCComponent"]],
             entryComponents: [],
             providers: [
                 {
@@ -11694,6 +12205,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
+    facebookAppId: '314930319788683',
     storeUrl: 'http://stagingwebsites.info:9000/api/',
     imageUrl: 'http://stagingwebsites.info:9000/api/media/image-resize/' // <Your API url for image resize>
     // storeUrl: 'http://localhost:9000/api/', // <Your API base url>

@@ -17527,10 +17527,10 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
-    // baseUrl: 'http://localhost:9000/api',
-    // imageUrl: 'http://localhost:9000/api/media/image-resize/',
-    baseUrl: 'http://stagingwebsites.info:9000/api',
-    imageUrl: 'http://stagingwebsites.info:9000/api/media/image-resize/',
+    baseUrl: 'http://localhost:9000/api',
+    imageUrl: 'http://localhost:9000/api/media/image-resize/',
+    // baseUrl: 'http://stagingwebsites.info:9000/api',
+    // imageUrl: 'http://stagingwebsites.info:9000/api/media/image-resize/',
     productUrl: '',
     pluginUrl: '' //<Your API url>
 };
@@ -17986,7 +17986,7 @@ var AdminModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"auth-wrapper\">\n    <div class=\"logo-left\">\n        <img src=\"assets/img/logo-v22.png\">\n        <h3> Welcome </h3>\n        <p>\n             <span>\n                Spurt Demo\n            </span>- technology and thoughtfulness combine for a seamless e-commerce\n        </p>\n    </div> -->\n<!--Left-->\n\n\n<!-- ============================================================== -->\n<!-- Only router without any element -->\n<!-- ============================================================== -->\n<!-- <router-outlet></router-outlet>\n</div> -->\n\n<div class=\"marg\">\n    <div class=\"login\">\n        <div class=\"row\">\n            <div class=\"col-md-7 col-sm-6\">\n                <img src=\"assets/img/spurt_v3.png\" class=\"spurt-img\">\n                <div class=\"txt\">A quick and easy Node JS and Angular eCommerce solution to develop an awesome e-commerce Website</div>\n            </div>\n            <div class=\"col-md-5 col-sm-6\">\n                <router-outlet></router-outlet>\n\n            </div>\n        </div>\n\n    </div>\n    <div class=\"ttt\"> Piccosoft Software Labs India (P) Ltd. © 2019. All Rights Reserved.</div>\n</div>"
+module.exports = "<!-- <div class=\"auth-wrapper\">\n    <div class=\"logo-left\">\n        <img src=\"assets/img/logo-v22.png\">\n        <h3> Welcome </h3>\n        <p>\n             <span>\n                Spurt Demo\n            </span>- technology and thoughtfulness combine for a seamless e-commerce\n        </p>\n    </div> -->\n<!--Left-->\n\n\n<!-- ============================================================== -->\n<!-- Only router without any element -->\n<!-- ============================================================== -->\n<!-- <router-outlet></router-outlet>\n</div> -->\n\n<div class=\"marg\">\n    <div class=\"login\">\n        <div class=\"row\">\n            <div class=\"col-md-7 col-sm-6\">\n                <img src=\"assets/img/logo1.png\"  style=\"width: 20%;\" class=\"spurt-img\">\n                <div class=\"txt\">Beaver</div>\n            </div>\n            <div class=\"col-md-5 col-sm-6\">\n                <router-outlet></router-outlet>\n\n            </div>\n        </div>\n\n    </div>\n    <div class=\"ttt\"> Beaver Software Labs  Ltd. © 2022. All Rights Reserved.</div>\n</div>"
 
 /***/ }),
 

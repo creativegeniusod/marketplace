@@ -109,6 +109,7 @@ var ProductUpdateModel = /** @class */ (function () {
         this.model = ProdupdateForm.model || 0;
         this.location = ProdupdateForm.location || '';
         this.price = ProdupdateForm.price || '';
+        this.regular = ProdupdateForm.regular || '';
         this.outOfStockStatus = ProdupdateForm.outOfStockStatus || '';
         this.requiredShipping = ProdupdateForm.requiredShipping || '';
         this.dateAvailable = ProdupdateForm.dateAvailable || '';

@@ -55,6 +55,7 @@ export class ProductAddComponent implements OnInit, OnDestroy {
   public model: FormControl;
   public location: FormControl;
   public price: FormControl;
+  public regular: FormControl;
   public minimumQuantity: FormControl;
   public quantity: FormControl;
   public subtractStock: FormControl;
@@ -204,6 +205,7 @@ export class ProductAddComponent implements OnInit, OnDestroy {
     this.metaTagTitle = new FormControl('');
     this.productDescription = new FormControl('');
     this.upc = new FormControl('');
+    this.regular = new FormControl('');
     this.sku = new FormControl('', [Validators.required]);
     this.model = new FormControl('', [Validators.required]);
     this.location = new FormControl('');
@@ -236,6 +238,7 @@ export class ProductAddComponent implements OnInit, OnDestroy {
       model: this.model,
       location: this.location,
       price: this.price,
+      regular: this.regular,
       outOfStockStatus: this.outOfStockStatus,
       requiredShipping: this.requiredShipping,
       dateAvailable: this.dateAvailable,
@@ -390,6 +393,7 @@ export class ProductAddComponent implements OnInit, OnDestroy {
     this.param.model = user.model;
     this.param.location = user.location;
     this.param.price = user.price;
+    this.param.regular = user.regular;
     this.param.outOfStockStatus = user.outOfStockStatus;
     this.param.requiredShipping = user.requiredShipping;
     this.param.dateAvailable = user.dateAvailable;
@@ -484,6 +488,7 @@ export class ProductAddComponent implements OnInit, OnDestroy {
     this.sku.setValue(productDetail.sku);
     this.upc.setValue(productDetail.upc);
     this.price.setValue(productDetail.price);
+    this.regular.setValue(productDetail.regular);
     this.location.setValue(productDetail.location);
     this.outOfStockStatus.setValue(productDetail.stockStatusId);
     this.status.setValue(productDetail.isActive);

@@ -225,7 +225,7 @@ var LoginResponseModel = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card class=\"loginPage\">\n    <div class=\"containerWrap\">\n        <div class=\"formSignInUp\" fxLayout=\"row wrap\">\n            <div fxFlex=\"100\" fxFlex.gt-sm=\"47\" class=\"p-2\">\n                <router-outlet></router-outlet>\n            </div>\n            <div class=\"signUpForm\" fxFlex=\"100\" fxFlex.gt-sm=\"47\" class=\"p-2\" ngClass.sm=\"mt-2\" ngClass.xs=\"mt-2\">\n                <h4><span>or continue with</span></h4>\n\n                <div class=\"text-center mt-3 formIcons\">\n                    <mat-icon>facebook</mat-icon>\n                    <mat-icon><img src=\"../../../../assets/images/google.png\" alt=\"\"></mat-icon>\n                    <mat-icon>apple</mat-icon>\n                </div>\n                <!-- <h2 class=\"text-muted text-center\">Sign up</h2> -->\n                <h6>Become a Beaver Member</h6>\n                <form [formGroup]=\"registerForm\" (ngSubmit)=\"onRegisterFormSubmit(registerForm.value)\" novalidate>\n                        <mat-form-field class=\"w-100 mt-2\" [ngClass]=\"{validationcolor:registerForm.controls.name.hasError('required') && submitted }\">\n                            <input matInput placeholder=\"Full Name\" formControlName=\"name\" required>\n                            <mat-error *ngIf=\"registerForm.controls['name'].hasError('required') && submitted\">Full Name is required</mat-error>\n                            <mat-error *ngIf=\"registerForm.controls['name'].hasError('minlength') && submitted\">Full Name isn't long enough, minimum of 3 characters</mat-error>\n                            <mat-error *ngIf=\"registerForm.controls['name'].hasError('pattern') && submitted\">Name must be string</mat-error>\n                        </mat-form-field>\n                    <div class=\"formField fieldWithIcon emailIcon\">\n                        <mat-form-field class=\"w-100 mt-1\" [ngClass]=\"{validationcolor:registerForm.controls.email.hasError('required') && submitted }\">\n                            <input matInput placeholder=\"Email\" formControlName=\"email\" required>\n                            <mat-error *ngIf=\"registerForm.controls['email'].hasError('required') && submitted\">Email is required</mat-error>\n                            <mat-error *ngIf=\"registerForm.controls['email'].hasError('invalidEmail') && submitted\">Invalid email address</mat-error>\n                        </mat-form-field>\n                    </div>\n                    <div class=\"formField fieldWithIcon lockIcon\">\n                        <mat-form-field class=\"w-100 mt-1\" [ngClass]=\"{validationcolor:registerForm.controls.password.hasError('required') && submitted }\">\n                            <input matInput placeholder=\"Password\" formControlName=\"password\" type=\"password\" minlength=\"5\" required>\n                            <mat-error *ngIf=\"registerForm.controls['password'].hasError('required') && submitted\">Password is required</mat-error>\n                            <mat-error *ngIf=\"registerForm.controls['password'].hasError('minlength') && submitted\">Password isn't long enough, minimum of 5 characters</mat-error>\n                        </mat-form-field>\n                    </div>\n                    <mat-form-field class=\"w-100 mt-1\" [ngClass]=\"{validationcolor:registerForm.controls.confirmPassword.hasError('required') && submitted }\">\n                        <input matInput placeholder=\"Confirm Password\" formControlName=\"confirmPassword\" type=\"password\" required>\n                        <mat-error *ngIf=\"registerForm.controls['confirmPassword'].hasError('required') && submitted\">Confirm Password is required</mat-error>\n                        <mat-error *ngIf=\"registerForm.controls['confirmPassword'].hasError('mismatchedPasswords') && submitted\">Passwords do not match</mat-error>\n                    </mat-form-field>\n                    <div class=\"text-center mt-2\">\n                        <mat-checkbox class=\"example-margin\">Remember me!</mat-checkbox>\n                    </div>\n\n                    <div class=\"mt-2\">\n                        <h3>By continueing. I agree to the terms of use & pivacy polices</h3>\n                    </div>\n                    <!-- <mat-form-field class=\"w-100 mt-1\">\n                        <input matInput type=\"text\" maxlength=15 appOnlyNumber placeholder=\"Phone Number\" formControlName=\"phoneNumber\">\n\n                    </mat-form-field> -->\n\n                    <div class=\"text-center mt-2\">\n                        <button type=\"submit\" mat-button color=\"primary\" class=\"signUpBtn actionBtn\">\n                            <!-- <mat-icon>person_add</mat-icon> -->\n                            Sign up\n                        </button>\n                    </div>\n\n                    <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"mt-2\">\n                        <h5 class=\"text-center text-red auth forgot w-100\">\n                            Already have an account? </h5>\n                    </div>\n\n                    <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"mt-1\">\n                        <h5 class=\"text-center text-red auth forgot w-100\">\n                            Become a seller</h5>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</mat-card>"
+module.exports = "<mat-card class=\"loginPage\">\n    <div class=\"containerWrap\">\n        <div class=\"formSignInUp\" fxLayout=\"row wrap\">\n            <div fxFlex=\"100\" fxFlex.gt-sm=\"47\" class=\"p-2\">\n                <router-outlet></router-outlet>\n            </div>\n            <div class=\"signUpForm\" fxFlex=\"100\" fxFlex.gt-sm=\"47\" class=\"p-2\" ngClass.sm=\"mt-2\" ngClass.xs=\"mt-2\">\n                <h4><span>or continue with</span></h4>\n\n                <div class=\"text-center mt-3 formIcons\">\n                    <button class=\"loginBtn loginBtn--facebook\" (click)=\"login()\"><mat-icon>facebook</mat-icon></button>      \n                    <mat-icon><img src=\"../../../../assets/images/google.png\" alt=\"\"></mat-icon>\n                </div>\n                <!-- <h2 class=\"text-muted text-center\">Sign up</h2> -->\n                <h6>Become a Beaver Member</h6>\n                <form [formGroup]=\"registerForm\" (ngSubmit)=\"onRegisterFormSubmit(registerForm.value)\" novalidate>\n                        <mat-form-field class=\"w-100 mt-2\" [ngClass]=\"{validationcolor:registerForm.controls.name.hasError('required') && submitted }\">\n                            <input matInput placeholder=\"Full Name\" formControlName=\"name\" required>\n                            <mat-error *ngIf=\"registerForm.controls['name'].hasError('required') && submitted\">Full Name is required</mat-error>\n                            <mat-error *ngIf=\"registerForm.controls['name'].hasError('minlength') && submitted\">Full Name isn't long enough, minimum of 3 characters</mat-error>\n                            <mat-error *ngIf=\"registerForm.controls['name'].hasError('pattern') && submitted\">Name must be string</mat-error>\n                        </mat-form-field>\n                    <div class=\"formField fieldWithIcon emailIcon\">\n                        <mat-form-field class=\"w-100 mt-1\" [ngClass]=\"{validationcolor:registerForm.controls.email.hasError('required') && submitted }\">\n                            <input matInput placeholder=\"Email\" formControlName=\"email\" required>\n                            <mat-error *ngIf=\"registerForm.controls['email'].hasError('required') && submitted\">Email is required</mat-error>\n                            <mat-error *ngIf=\"registerForm.controls['email'].hasError('invalidEmail') && submitted\">Invalid email address</mat-error>\n                        </mat-form-field>\n                    </div>\n                    <div class=\"formField fieldWithIcon lockIcon\">\n                        <mat-form-field class=\"w-100 mt-1\" [ngClass]=\"{validationcolor:registerForm.controls.password.hasError('required') && submitted }\">\n                            <input matInput placeholder=\"Password\" formControlName=\"password\" type=\"password\" minlength=\"5\" required>\n                            <mat-error *ngIf=\"registerForm.controls['password'].hasError('required') && submitted\">Password is required</mat-error>\n                            <mat-error *ngIf=\"registerForm.controls['password'].hasError('minlength') && submitted\">Password isn't long enough, minimum of 5 characters</mat-error>\n                        </mat-form-field>\n                    </div>\n                    <mat-form-field class=\"w-100 mt-1\" [ngClass]=\"{validationcolor:registerForm.controls.confirmPassword.hasError('required') && submitted }\">\n                        <input matInput placeholder=\"Confirm Password\" formControlName=\"confirmPassword\" type=\"password\" required>\n                        <mat-error *ngIf=\"registerForm.controls['confirmPassword'].hasError('required') && submitted\">Confirm Password is required</mat-error>\n                        <mat-error *ngIf=\"registerForm.controls['confirmPassword'].hasError('mismatchedPasswords') && submitted\">Passwords do not match</mat-error>\n                    </mat-form-field>\n                    <div class=\"text-center mt-2\">\n                        <mat-checkbox class=\"example-margin\">Remember me!</mat-checkbox>\n                    </div>\n\n                    <div class=\"mt-2\">\n                        <h3>By continueing. I agree to the terms of use & pivacy polices</h3>\n                    </div>\n                    <!-- <mat-form-field class=\"w-100 mt-1\">\n                        <input matInput type=\"text\" maxlength=15 appOnlyNumber placeholder=\"Phone Number\" formControlName=\"phoneNumber\">\n\n                    </mat-form-field> -->\n\n                    <div class=\"text-center mt-2\">\n                        <button type=\"submit\" mat-button color=\"primary\" class=\"signUpBtn actionBtn\">\n                            <!-- <mat-icon>person_add</mat-icon> -->\n                            Sign up\n                        </button>\n                    </div>\n\n                    <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"mt-2\">\n                        <h5 class=\"text-center text-red auth forgot w-100\">\n                            Already have an account? </h5>\n                    </div>\n\n                    <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"mt-1\">\n                        <h5 class=\"text-center text-red auth forgot w-100\">\n                            Become a seller</h5>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</mat-card>"
 
 /***/ }),
 
@@ -290,6 +290,7 @@ var AuthComponent = /** @class */ (function () {
     }
     // Initially initialize reactive form
     AuthComponent.prototype.ngOnInit = function () {
+        this.fbLibrary();
         var mobileValidationPattern = '^-?[0-9]\\d*(\\.\\d{1,2})?$';
         var nameValidationPattern = '[a-zA-Z \'-,;.]*';
         this.registerForm = this.formBuilder.group({
@@ -299,11 +300,49 @@ var AuthComponent = /** @class */ (function () {
             'confirmPassword': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
         }, { validator: Object(_theme_utils_app_validators__WEBPACK_IMPORTED_MODULE_4__["matchingPasswords"])('password', 'confirmPassword') });
     };
+    AuthComponent.prototype.login = function () {
+        window['FB'].login(function (response) {
+            console.log('login response', response);
+            if (response.authResponse) {
+                window['FB'].api('/me', {
+                    fields: 'last_name, first_name, email'
+                }, function (userInfo) {
+                    console.log("user information");
+                    console.log(userInfo);
+                });
+            }
+            else {
+                console.log('User login failed');
+            }
+        }, { scope: 'email' });
+    };
+    AuthComponent.prototype.fbLibrary = function () {
+        window.fbAsyncInit = function () {
+            window['FB'].init({
+                appId: '1815259135478978',
+                cookie: true,
+                xfbml: true,
+                version: 'v3.1'
+            });
+            window['FB'].AppEvents.logPageView();
+        };
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    };
     /** calls authSandbox doRegister if tthe from is valid.
      Then calls resetAllFormFields for reset **/
     AuthComponent.prototype.onRegisterFormSubmit = function (values) {
         if (this.registerForm.valid) {
-            this.authSandbox.doRegister(this.registerForm.value);
+            console.log(this.registerForm.value);
+            this.authSandbox.doRegister(console.log(this.registerForm.value));
             this.submitted = false;
             this.registerForm.reset();
             // this.resetAllFormFields(this.registerForm);
@@ -601,7 +640,7 @@ var ForgotComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div fxFlex=\"100\" class=\"signInForm\">\r\n    <!-- <span style=\"padding: 2px; font-weight: 500;\">or continue with</span> -->\r\n\r\n    <h4><span>or continue with</span></h4>\r\n    <div class=\"text-center mt-3 formIcons\">\r\n        <mat-icon>facebook</mat-icon>\r\n        <mat-icon><img src=\"../../../../assets/images/google.png\" alt=\"\"></mat-icon>\r\n        <mat-icon>apple</mat-icon>\r\n    </div>\r\n\r\n    <h2 class=\"signInTitle\">Sign In</h2>\r\n    <span>Become a Beaver Member and recieve exclusive offers customized for you</span>\r\n    <form [formGroup]=\"loginForm\" novalidate class=\"mt-2\">\r\n        <div class=\"formField fieldWithIcon emailIcon\">\r\n            <mat-form-field class=\"w-100 mt-1\" [ngClass]=\"{'validationcolor':\r\n        (loginForm.controls.email.hasError('required') && submitted)}\">\r\n                <input matInput placeholder=\"Email\" formControlName=\"email\">\r\n                <mat-error *ngIf=\"loginForm.controls['email'].hasError('required') && submitted\">\r\n                    Email is required\r\n                </mat-error>\r\n                <mat-error *ngIf=\"loginForm.controls['email'].hasError('invalidEmail') && submitted\">\r\n                    Invalid email address\r\n                </mat-error>\r\n            </mat-form-field>\r\n        </div>\r\n        <div class=\"formField fieldWithIcon emailIcon\">\r\n        <mat-form-field class=\"w-100 mt-1\" [ngClass]=\"{'validationcolor':\r\n    (loginForm.controls.password.hasError('required') && submitted)}\">\r\n            <input matInput placeholder=\"Password\" formControlName=\"password\" type=\"password\">\r\n            <mat-error *ngIf=\"loginForm.controls['password'].hasError('required') && submitted\">\r\n                Password is required\r\n            </mat-error>\r\n            <mat-error *ngIf=\"loginForm.controls['password'].hasError('minlength') && submitted\">\r\n                Password isn't long enough, minimum of 5 characters\r\n            </mat-error>\r\n        </mat-form-field>\r\n    </div>\r\n\r\n        <div class=\"text-center mt-2\">\r\n            <mat-checkbox class=\"example-margin\">Remember me!</mat-checkbox>\r\n        </div>\r\n\r\n        <div class=\"mt-2\">\r\n            <h3>By continueing. I agree to the terms of use & pivacy polices</h3>\r\n        </div>\r\n\r\n        <div class=\"text-center mt-2\">\r\n            <!-- <button mat-fab color=\"primary\" class=\"mat-elevation-z6\" (click)=\"onLoginFormSubmit(loginForm.value)\">\r\n                <i *ngIf=\"(authSandbox.loginLoading$ | async)\" class=\"fa fa-spinner fa-spin\" style=\"font-size:24px\"></i>\r\n\r\n                <mat-icon *ngIf=\"!(authSandbox.loginLoading$ | async)\">exit_to_app</mat-icon>\r\n            </button> -->\r\n            <button mat-button color=\"primary\" class=\"signInBtn actionBtn\" (click)=\"onLoginFormSubmit(loginForm.value)\">\r\n                <i *ngIf=\"(authSandbox.loginLoading$ | async)\" class=\"fa fa-spinner fa-spin\"\r\n                    style=\"font-size:24px\"></i>Sign In</button>\r\n        </div>\r\n\r\n        <div class=\"text-center mt-2\">\r\n            <button mat-button color=\"primary\" class=\"createAccountBtn actionBtn\">Create A New Accout</button>\r\n        </div>\r\n\r\n\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"mt-2\">\r\n            <h5 class=\"text-center text-red auth w-100\">\r\n                Become a seller</h5>\r\n        </div>\r\n\r\n\r\n        <!-- <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"mt-2\">\r\n            <h5 class=\"text-muted auth forgot\" routerLink=\"/auth/forgot\">\r\n                Forgot Password?</h5>\r\n        </div> -->\r\n\r\n    </form>\r\n</div>"
+module.exports = "<div fxFlex=\"100\" class=\"signInForm\">\r\n    <!-- <span style=\"padding: 2px; font-weight: 500;\">or continue with</span> -->\r\n\r\n    <h4><span>or continue with</span></h4>\r\n    <div class=\"text-center mt-3 formIcons\">\r\n        <mat-icon>facebook</mat-icon>\r\n        <mat-icon><img src=\"../../../../assets/images/google.png\" alt=\"\"></mat-icon> \r\n    </div>\r\n\r\n    <h2 class=\"signInTitle\">Sign In</h2>\r\n    <span>Become a Beaver Member and recieve exclusive offers customized for you</span>\r\n    <form [formGroup]=\"loginForm\" novalidate class=\"mt-2\">\r\n        <div class=\"formField fieldWithIcon emailIcon\">\r\n            <mat-form-field class=\"w-100 mt-1\" [ngClass]=\"{'validationcolor':\r\n        (loginForm.controls.email.hasError('required') && submitted)}\">\r\n                <input matInput placeholder=\"Email\" formControlName=\"email\">\r\n                <mat-error *ngIf=\"loginForm.controls['email'].hasError('required') && submitted\">\r\n                    Email is required\r\n                </mat-error>\r\n                <mat-error *ngIf=\"loginForm.controls['email'].hasError('invalidEmail') && submitted\">\r\n                    Invalid email address\r\n                </mat-error>\r\n            </mat-form-field>\r\n        </div>\r\n        <div class=\"formField fieldWithIcon emailIcon\">\r\n        <mat-form-field class=\"w-100 mt-1\" [ngClass]=\"{'validationcolor':\r\n    (loginForm.controls.password.hasError('required') && submitted)}\">\r\n            <input matInput placeholder=\"Password\" formControlName=\"password\" type=\"password\">\r\n            <mat-error *ngIf=\"loginForm.controls['password'].hasError('required') && submitted\">\r\n                Password is required\r\n            </mat-error>\r\n            <mat-error *ngIf=\"loginForm.controls['password'].hasError('minlength') && submitted\">\r\n                Password isn't long enough, minimum of 5 characters\r\n            </mat-error>\r\n        </mat-form-field>\r\n    </div>\r\n\r\n        <div class=\"text-center mt-2\">\r\n            <mat-checkbox class=\"example-margin\">Remember me!</mat-checkbox>\r\n        </div>\r\n\r\n        <div class=\"mt-2\">\r\n            <h3>By continueing. I agree to the terms of use & pivacy polices</h3>\r\n        </div>\r\n\r\n        <div class=\"text-center mt-2\">\r\n            <!-- <button mat-fab color=\"primary\" class=\"mat-elevation-z6\" (click)=\"onLoginFormSubmit(loginForm.value)\">\r\n                <i *ngIf=\"(authSandbox.loginLoading$ | async)\" class=\"fa fa-spinner fa-spin\" style=\"font-size:24px\"></i>\r\n\r\n                <mat-icon *ngIf=\"!(authSandbox.loginLoading$ | async)\">exit_to_app</mat-icon>\r\n            </button> -->\r\n            <button mat-button color=\"primary\" class=\"signInBtn actionBtn\" (click)=\"onLoginFormSubmit(loginForm.value)\">\r\n                <i *ngIf=\"(authSandbox.loginLoading$ | async)\" class=\"fa fa-spinner fa-spin\"\r\n                    style=\"font-size:24px\"></i>Sign In</button>\r\n        </div>\r\n\r\n        <div class=\"text-center mt-2\">\r\n            <button mat-button color=\"primary\" class=\"createAccountBtn actionBtn\">Create A New Accout</button>\r\n        </div>\r\n\r\n\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"mt-2\">\r\n            <h5 class=\"text-center text-red auth w-100\">\r\n                Become a seller</h5>\r\n        </div>\r\n\r\n\r\n        <!-- <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"mt-2\">\r\n            <h5 class=\"text-muted auth forgot\" routerLink=\"/auth/forgot\">\r\n                Forgot Password?</h5>\r\n        </div> -->\r\n\r\n    </form>\r\n</div>"
 
 /***/ }),
 
@@ -666,6 +705,7 @@ var SignInComponent = /** @class */ (function () {
     }
     // Initially initialize the reactive form
     SignInComponent.prototype.ngOnInit = function () {
+        this.fbLibrary();
         this.loginForm = this.formBuilder.group({
             email: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _theme_utils_app_validators__WEBPACK_IMPORTED_MODULE_4__["emailValidator"]])],
             password: [
@@ -683,9 +723,48 @@ var SignInComponent = /** @class */ (function () {
         if (this.loginForm.valid) {
             var params = this.loginForm.value;
             params.type = 'normal';
+            console.log(params, "");
+            // return false;
             this.authSandbox.doLogin(params);
             this.submitted = false;
         }
+    };
+    SignInComponent.prototype.fbLibrary = function () {
+        window.fbAsyncInit = function () {
+            window['FB'].init({
+                appId: '1815259135478978',
+                cookie: true,
+                xfbml: true,
+                version: 'v3.1'
+            });
+            window['FB'].AppEvents.logPageView();
+        };
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    };
+    SignInComponent.prototype.login = function () {
+        window['FB'].login(function (response) {
+            console.log('login response', response);
+            if (response.authResponse) {
+                window['FB'].api('/me', {
+                    fields: 'last_name, first_name, email'
+                }, function (userInfo) {
+                    console.log("user information");
+                    console.log(userInfo);
+                });
+            }
+            else {
+                console.log('User login failed');
+            }
+        }, { scope: 'email' });
     };
     // reset the form fields
     SignInComponent.prototype.resetAllFormFields = function (formGroup) {

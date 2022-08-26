@@ -35,6 +35,8 @@ export class AddProductRequest {
     @IsNotEmpty()
     public price: string;
 
+    public regular: string;
+
     public location: string;
 
      @IsNotEmpty()

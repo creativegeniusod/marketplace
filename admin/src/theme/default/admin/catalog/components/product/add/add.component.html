@@ -184,7 +184,7 @@
                                     </div>
                                 </div>
                                 <!--Col-->
-                                <div class="data-col">
+                                <div class="data-col" style="width:20%">
                                     <div class="form-group">
                                         <label>Price <sup>*</sup></label>
                                         <input type="text" class="form-control" appOnlyNumber [isDot]="true" placeholder="Price" formControlName="price" [ngClass]="{'validationcolor':user.get('price').hasError('required') && user.get('price').touched&&submittedValues==true}">
@@ -196,9 +196,18 @@
 
                                     </div>
                                 </div>
+                                <div class="data-col" style="width:20%">
+                                    <div class="form-group">
+                                        <label>Regular <del>Price</del>
 
+                                        </label>
+                                        <input type="text" class="form-control" placeholder="Regular" formControlName="regular">
+
+
+                                    </div>
+                                </div>
                                 <!--Col-->
-                                <div class="data-col">
+                                <div class="data-col" style="width:20%">
                                     <div class="form-group">
                                         <label>Out of Stock Status
                                             <sup>*</sup>

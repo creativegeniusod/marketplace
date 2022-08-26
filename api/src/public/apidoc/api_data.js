@@ -5201,7 +5201,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Input",
-          "content": "{\n     \"productName\" : \"\",\n     \"userid\" : \"\",\n     \"productDesacription\" : \"\",\n     \"sku\" : \"\",\n     \"image\" : \"\",\n     \"metaTagTitle\" : \"\",\n     \"categoryId\" : \"\",\n     \"upc\" : \"\",\n     \"model\" : \"\",\n     \"price\" : \"\",\n     \"location\" : \"\",\n     \"outOfStockStatus\" : \"\",\n     \"requiredShipping\" : \"\",\n     \"dateAvailable\" : \"\",\n     \"status\" : \"\",\n     \"outOfStockStatus\" : \"\",\n     \"sortOrder\" : \"\",\n     \"condition\" : \"\",\n     \"image\":[\n     {\n     \"image\":\"\"\n     \"containerName\":\"\"\n     \"defaultImage\":\"\"\n     }\n     ]",
+          "content": "{\n     \"productName\" : \"\",\n     \"userid\" : \"\",\n     \"productDesacription\" : \"\",\n     \"sku\" : \"\",\n     \"image\" : \"\",\n     \"metaTagTitle\" : \"\",\n     \"categoryId\" : \"\",\n     \"upc\" : \"\",\n     \"model\" : \"\",\n     \"price\" : \"\",\n     \"regular\" : \"\",\n     \"location\" : \"\",\n     \"outOfStockStatus\" : \"\",\n     \"requiredShipping\" : \"\",\n     \"dateAvailable\" : \"\",\n     \"status\" : \"\",\n     \"outOfStockStatus\" : \"\",\n     \"sortOrder\" : \"\",\n     \"condition\" : \"\",\n     \"image\":[\n     {\n     \"image\":\"\"\n     \"containerName\":\"\"\n     \"defaultImage\":\"\"\n     }\n     ]",
           "type": "json"
         }
       ]
@@ -5445,7 +5445,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Input",
-          "content": "{\n     \"productName\" : \"\",\n     \"userid\" : \"\",\n     \"productDescription\" : \"\",\n     \"sku\" : \"\",\n     \"image\" : \"\",\n     \"metaTagTitle\" : \"\",\n     \"categoryId\" : \"\",\n     \"upc\" : \"\",\n     \"model\" : \"\",\n     \"price\" : \"\",\n     \"location\" : \"\",\n     \"outOfStockStatus\" : \"\",\n     \"requiredShipping\" : \"\",\n     \"dateAvailable\" : \"\",\n     \"status\" : \"\",\n     \"outOfStockStatus\" : \"\",\n     \"condition\" : \"\",\n     \"sortOrder\" : \"\",\n     \"image\":[\n     {\n     \"image\":\"\"\n     \"containerName\":\"\"\n     \"defaultImage\":\"\"\n     }\n     ],\n}",
+          "content": "{\n     \"productName\" : \"\",\n     \"userid\" : \"\",\n     \"productDescription\" : \"\",\n     \"sku\" : \"\",\n     \"image\" : \"\",\n     \"metaTagTitle\" : \"\",\n     \"categoryId\" : \"\",\n     \"upc\" : \"\",\n     \"model\" : \"\",\n     \"price\" : \"\",\n     \"regular\" : \"\",\n     \"location\" : \"\",\n     \"outOfStockStatus\" : \"\",\n     \"requiredShipping\" : \"\",\n     \"dateAvailable\" : \"\",\n     \"status\" : \"\",\n     \"outOfStockStatus\" : \"\",\n     \"condition\" : \"\",\n     \"sortOrder\" : \"\",\n     \"image\":[\n     {\n     \"image\":\"\"\n     \"containerName\":\"\"\n     \"defaultImage\":\"\"\n     }\n     ],\n}",
           "type": "json"
         }
       ]

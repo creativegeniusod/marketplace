@@ -62,6 +62,9 @@ export class Product extends BaseModel {
     @Column({name: 'price'})
     public price: number;
 
+    @Column({name: 'regular'})
+    public regular: string;
+
     @Column({name: 'date_available'})
     public dateAvailable: Date;
 

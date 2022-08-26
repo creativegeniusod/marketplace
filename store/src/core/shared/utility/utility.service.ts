@@ -8,12 +8,20 @@
  */
 import { Injectable } from '@angular/core';
 import { ConfigService } from '../../service/config.service';
+import { HttpParams } from '@angular/common/http';
+import { Api } from '../../providers/api/api';
+import { Observable } from 'rxjs';
 
-@Injectable()
-export class UtilService {
-  constructor(
-    private configService: ConfigService
-  ) {}
+@Injectable({
+  providedIn: 'root'
+})
+
+export class UtilService extends Api {
+
+  private base: string;
+
+
+  // constructor() { }
 
   /**
    * Translates given message code and title code and displays corresponding notification
@@ -59,4 +67,20 @@ export class UtilService {
   //     return lookup;
   //   });
   // }
+
+  /* get Advertisement List list api*/
+  public getFAQdata(params: any): Observable<any> {
+    this.base = this.getBaseUrl();
+    const reqOpts: any = {};
+    if (params) {
+      reqOpts.params = new HttpParams();
+      for (const k in params) {
+        if (k) {
+          reqOpts.params = reqOpts.params.set(k, params[k]);
+        }
+      }
+    }
+    return this.http.get(this.base + 'list/getPage', reqOpts);
+  }
+
 }

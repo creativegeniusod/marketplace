@@ -18,9 +18,7 @@ import { UnderDevelopingComponent } from './pages/layout/under-developing/under-
 import { GetDirectionsComponent } from './shared/get-directions/get-directions.component';
 import { HelpComponent } from './shared/components/help/help.component';
 import { FaqComponent } from './shared/components/faq/faq.component';
-import { PrivacyPolicyComponent } from './shared/components/privacy-policy/privacy-policy.component';
 import { ContactusComponent } from './shared/components/contactus/contactus.component';
-import { TAndCComponent } from './shared/components/t-and-c/t-and-c.component';
 
 export const routes: Routes = [
   {
@@ -122,9 +120,9 @@ export const routes: Routes = [
       { path: 'help', component: HelpComponent },
       { path: 'contactus', component: ContactusComponent },
       { path: 'faq', component: FaqComponent, pathMatch: 'full' },
-      { path: 'privacy', component: PrivacyPolicyComponent, pathMatch: 'full' },
-      { path: 'tAndC', component: TAndCComponent, pathMatch: 'full' },
-      { path: 'return', component: PrivacyPolicyComponent, pathMatch: 'full' },
+      { path: 'privacy-policy', component: FaqComponent, pathMatch: 'full' },
+      { path: 'term-and-condition', component: FaqComponent, pathMatch: 'full' },
+      { path: 'Return', component: FaqComponent, pathMatch: 'full' },
 
     ]
   },

@@ -1,17 +1,3 @@
-node -v
-nvm install 
-nvm install 14.15.0
-source .profile 
-nvm install 14.15.0
-source .profile 
-node -v
-cd admin/
-npm install
-npm install
-cd ..
-cd api/
-ls
-npm install
 npm install
 npm install
 ls
@@ -498,3 +484,17 @@ npm run serve
 npm start serve 
 ls
 ng serve
+source ~/.profile
+git status
+git add .
+git commit -m "new chages" --no-verify
+git pull origin master
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+ls
+source ~/.profile
+ls
+exit

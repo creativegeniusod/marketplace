@@ -95,9 +95,9 @@ export class TopMenuComponent implements OnInit, OnDestroy {
       // this.router.navigate(['/products'], {
       //     queryParams: { keyword: this.searchValue }
       // });
-      // this.getProductList(this.searchValue);
+      this.getProductList(this.searchValue);
     }
-    this.getProductList(this.searchValue);
+    // this.getProductList(this.searchValue);
   }
   /**
      * fetch product list from service. calling getProductList function from sandbox

@@ -59,8 +59,9 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(listSandbox, platformId) {
+    function HomeComponent(listSandbox, changeDetectRef, platformId) {
         this.listSandbox = listSandbox;
+        this.changeDetectRef = changeDetectRef;
         this.platformId = platformId;
     }
     // Initially calls getBannerList,getBransList
@@ -99,14 +100,18 @@ var HomeComponent = /** @class */ (function () {
         // params.count = '';
         this.listSandbox.getTodayDealList(params);
     };
+    HomeComponent.prototype.ngAfterContentChecked = function () {
+        this.changeDetectRef.detectChanges();
+    };
     HomeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-home',
             template: __webpack_require__(/*! ./home.component.html */ "./src/default/pages/home/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.scss */ "./src/default/pages/home/home.component.scss")]
         }),
-        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"])),
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"])),
         __metadata("design:paramtypes", [_core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_2__["ListsSandbox"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"],
             Object])
     ], HomeComponent);
     return HomeComponent;

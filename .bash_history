@@ -1,17 +1,3 @@
-ls
-git pull origin master
-cd admin/
-npm install
-node -v
-rm -rf node_modules/
-cd ..
-ls
-cp .profile ../marketplace
-cp install_nvm.sh ../marketplace
-cd
-ls
-pwd
-bash install_nvm.sh 
 node -v
 nvm install 
 nvm install 14.15.0
@@ -486,3 +472,29 @@ cd api
 npm start serve
 npm start serve
 cd ..
+source ~/.profile
+ls
+git status
+git add .
+git commit -m "old changes " --no-verify
+git pull origin master
+ls
+source ~/.profile
+cd store
+npm run build
+ng serve
+kill -9 $(lsof -t -i:4200)
+ng serve
+exit
+source ~/.profile
+cd api
+npm start serve
+source ~/.profile
+s
+ls
+cd admin
+ls
+npm run serve
+npm start serve 
+ls
+ng serve

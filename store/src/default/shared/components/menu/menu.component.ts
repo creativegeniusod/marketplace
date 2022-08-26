@@ -9,7 +9,8 @@
  */
 import {
     Component, Input, OnInit, ViewChild, PLATFORM_ID,
-    Inject
+    Inject,
+    ChangeDetectorRef
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ListsSandbox } from '../../../../core/lists/lists.sandbox';
@@ -50,6 +51,7 @@ export class MenuComponent implements OnInit {
     constructor(public listSandbox: ListsSandbox,
         public appSettings: AppSettings,
         @Inject(PLATFORM_ID) private platformId: Object,
+        private changeDetectRef: ChangeDetectorRef,
         public router: Router) {
         this.settings = this.appSettings.settings;
         if (isPlatformBrowser(this.platformId)) {
@@ -142,4 +144,8 @@ export class MenuComponent implements OnInit {
         }
 
     }
+
+    ngAfterContentChecked(): void {
+        this.changeDetectRef.detectChanges();
+     }
 }

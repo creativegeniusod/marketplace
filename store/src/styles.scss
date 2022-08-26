@@ -845,7 +845,7 @@ top: 25px;left: 20px;}
 
 .loginPage .fieldWithIcon input.mat-input-element {padding-left: 50px;}
 .mat-expansion-panel-header, .categories-dropdown .mat-menu-item{font-family: 'Urbanist', sans-serif;}
-.app.green .new-price{margin: 0 7px;}
+.app.green .new-price{margin: 0 4px;}
 .app .theme-container-full.main {
     padding: 117px 0 0 0;
 }
@@ -924,7 +924,31 @@ html.cdk-global-scrollblock{position: static;}
     padding: 10px 20px;
     font-size: 18px;
 }
+.profileIcon span.blackStyle {
+    margin-top: 8px !important;
+ }
+ .app .footer {
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+    margin-top: 50px;
+}
+.cdk-overlay-pane {
+    position: fixed;
+}
+.text-left{text-align: left;}
 
+.notFonudPage h3 {
+    margin-bottom: 15px;line-height: normal;
+}
+.notFoundImg{margin-bottom: 20px;}
+.priceAndIcons p {font-size: 14px;}
+.priceAndIcons p{font-size: 14px;}
+
+
+@media (max-width: 1480px){
+    .priceAndIcons p, .product-item .prices .new-price {font-size: 14px;}
+    .app.green .mat-toolbar.mat-primary a.logo{margin-right: 20px;}
+}
 
 @media (min-width: 960px){
     .formSignInUp{position: relative;justify-content: space-between;}
@@ -944,6 +968,7 @@ html.cdk-global-scrollblock{position: static;}
     .app.green .top-navbar.mat-toolbar a {padding: 5px;}
     .flex-row-button.headerCartIcon {padding: 5px;min-width: auto;}
     .app .theme-container-full.main {padding: 67px 0 0 0;}
+    .top-menu {align-items: center;justify-content: flex-end;}
 }
 
 @media (max-width: 767px){

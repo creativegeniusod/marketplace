@@ -111,7 +111,7 @@
                 </mat-card>
             </div>
         </div>
-        <app-product-not-found *ngIf="(listSandbox.productLoaded$ | async) && (listSandbox.productlist$ | async)?.length == 0"></app-product-not-found>
+        <app-product-not-found [keyword]="keyword" *ngIf="(listSandbox.productLoaded$ | async) && (listSandbox.productlist$ | async)?.length == 0"></app-product-not-found>
         <!-- <div *ngIf="(listSandbox.productLoaded$ | async) && (listSandbox.productlist$ | async)?.length == 0"
             fxLayout="row wrap">
             <div fxFlex="100" fxFlex.gt-xs="90" class="p-2">
@@ -137,9 +137,9 @@
 </mat-sidenav-container>
 
 <div class="products-tabs featured-tabs">
-    <mat-tab-group mat-stretch-tabs>
-        <mat-tab label="Most Popular and Trending">
+    <!-- <mat-tab-group mat-stretch-tabs>
+        <mat-tab label="Most Popular and Trending"> -->
             <app-trending-product></app-trending-product>
-        </mat-tab>
-    </mat-tab-group>
+        <!-- </mat-tab>
+    </mat-tab-group> -->
 </div>

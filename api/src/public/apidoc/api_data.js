@@ -4443,7 +4443,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Input",
-          "content": "{\n     \"title\" : \"\",\n     \"content\" : \"\",\n     \"metaTagTitle\" : \"\",\n     \"metaTagContent\" : \"\",\n     \"metaTagKeyword\" : \"\",\n     \"active\" : \"\",\n}",
+          "content": "{\n     \"title\" : \"\",\n     \"slug\" : \"\",\n     \"content\" : \"\",\n     \"metaTagTitle\" : \"\",\n     \"metaTagContent\" : \"\",\n     \"metaTagKeyword\" : \"\",\n     \"active\" : \"\",\n}",
           "type": "json"
         }
       ]

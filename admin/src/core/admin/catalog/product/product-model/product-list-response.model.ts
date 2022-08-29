@@ -14,6 +14,7 @@ export class ProductListResponseModel {
   public image: string;
   public imagePath: string;
   public price: number;
+  public regular: number;
   public name: string;
   public isActive: number;
   public productToCategory: any;
@@ -31,6 +32,7 @@ export class ProductListResponseModel {
     this.image = productlistResponse.image || '';
     this.imagePath = productlistResponse.imagePath || '';
     this.price = productlistResponse.price || 0;
+    this.regular = productlistResponse.regular || 0;
     this.name = productlistResponse.name || '';
     this.isActive = productlistResponse.isActive || 0;
     this.productToCategory = productlistResponse.productToCategory || [];

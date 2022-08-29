@@ -1,24 +1,3 @@
-npm install
-npm install
-ls
-nano src/app.ts 
-cd ..
-ng sever
-ng seve
-cd api/
-nano package.json 
-npm start
-nano dist/app.js
-source .profile 
-git pull origin master
-cd api/
-ng serve dev
-npm start
-ng serve 
-npm start serve
-npm install pm2
-pm2  start serve
-pm2  start npm start serve
 pm2  start npm start serve
 pm2  start  start serve
 pm2   start serve
@@ -498,3 +477,24 @@ ls
 source ~/.profile
 ls
 exit
+source ~/.profile
+ls
+cd admin/
+ls
+npm start serve
+source ~/.profile
+cd admin
+ls
+ng serve
+source ~/.profile
+cd api
+ls
+npm start serve
+cd ..
+git status
+git add .
+git commit -m "ds" --no-verify
+git status
+git pull origin master
+git sttaus
+git status

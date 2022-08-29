@@ -13,6 +13,9 @@ export class EditProfileModal {
   public emailId: any;
   public phoneNumber: any;
   public image: any;
+  public bio: string;
+  public iam: string;
+  public interest: string;
 
   constructor(editRequest: any) {
     this.firstName = editRequest.firstName || '';
@@ -21,5 +24,8 @@ export class EditProfileModal {
     this.emailId = editRequest.email || '';
     this.phoneNumber = editRequest.phoneNumber || '';
     this.image = editRequest.image || '';
+    this.bio = editRequest.bio || '';
+    this.iam = editRequest.iam || '';
+    this.interest = editRequest.interest || '';
   }
 }

@@ -51,7 +51,7 @@
           <a [routerLink]="['/products', product.categoryId]" class="title text-truncate">
             <mat-card class="product-item text-center card-hover">
               <img
-                [src]="imagePath + '?path=' + product.imagePath + '&name=' + product.image + '&width=260&height=260'">
+                [src]="imagePath + '?path=' + product.imagePath + '&name=' + product.image + '&width=260&height=260'"  onError="this.src='/assets/images/default_image.png';">
             </mat-card>
           </a>
         </div>

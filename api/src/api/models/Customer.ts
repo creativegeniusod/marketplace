@@ -115,6 +115,27 @@ export class Customer extends BaseModel {
     @Column({name: 'iam'})
     public iam: string;
 
+    @Column({name: 'contact_number'})
+    public contactNumber: string;
+
+    @Column({name: 'order_notification_first'})
+    public orderNotificationFirst: string;
+
+    @Column({name: 'primary_email'})
+    public primaryEmail: string;
+
+    @Column({name: 'order_notificationsecond'})
+    public orderNotificationsecond: string;
+
+    @Column({name: 'recovery_email'})
+    public recoveryEmail: string;
+
+    @Column({name: 'birthday'})
+    public birthday: string;
+    
+    @Column({name: 'gender'})
+    public gender: string;
+
     @BeforeInsert()
     public async createDetails(): Promise<void> {
         this.createdDate = moment().format('YYYY-MM-DD HH:mm:ss');

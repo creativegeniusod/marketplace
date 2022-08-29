@@ -6,13 +6,13 @@
  * Author piccosoft ltd <support@piccosoft.com>
  * Licensed under the MIT license.
  */
-import {Component, OnInit, OnDestroy} from '@angular/core';
-import {MatSnackBar} from '@angular/material';
-import {ProductControlSandbox} from '../../../core/product-control/product-control.sandbox';
-import {WishlistSandbox} from '../../../core/wishlist/wishlist.sandbox';
-import {ConfigService} from '../../../core/service/config.service';
-import {ListsSandbox} from '../../../core/lists/lists.sandbox';
-import {Subscription} from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
+import { ProductControlSandbox } from '../../../core/product-control/product-control.sandbox';
+import { WishlistSandbox } from '../../../core/wishlist/wishlist.sandbox';
+import { ConfigService } from '../../../core/service/config.service';
+import { ListsSandbox } from '../../../core/lists/lists.sandbox';
+import { Subscription } from 'rxjs';
 import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';
 
@@ -34,17 +34,20 @@ export class WishlistComponent implements OnInit, OnDestroy {
     // subscriptions
     private subscriptions: Array<Subscription> = [];
     public currency: any = {};
+    // card view
+    public viewType = 'grid';
+    public viewCol = 14.28;
 
     constructor(public snackBar: MatSnackBar, public wishlistSandbox: WishlistSandbox,
-                public productControl: ProductControlSandbox,
-                public router: Router,
-                public listSandbox: ListsSandbox,
-                private  configService: ConfigService) {
+        public productControl: ProductControlSandbox,
+        public router: Router,
+        public listSandbox: ListsSandbox,
+        private configService: ConfigService) {
     }
 
     // Initially calls wishlistSandbox getWishlist with default param
     ngOnInit() {
-        this.currency  = JSON.parse(localStorage.getItem('currency'));
+        this.currency = JSON.parse(localStorage.getItem('currency'));
         // this.imagePath = this.configService.get('resize').imageUrl;
         this.imagePath = this.configService.getImageUrl();
         const params: any = {};
@@ -52,6 +55,9 @@ export class WishlistComponent implements OnInit, OnDestroy {
         params.offset = '';
         this.wishlistSandbox.getWishlist(params);
         //  this.wishlistSandbox.wishlist$ .subscribe((data) =>)
+        if (window.innerWidth < 1280) {
+            this.viewCol = 33.3;
+        }
     }
 
     // remove product from wishlist
@@ -113,6 +119,13 @@ export class WishlistComponent implements OnInit, OnDestroy {
         // }));
         // params.id = '';
     }
+
+    // changing the view type
+    public changeViewType(viewType, viewCol) {
+        this.viewType = viewType;
+        this.viewCol = viewCol;
+    }
+
 
     // unsubscribe subscribed events while destroy the page
     ngOnDestroy() {

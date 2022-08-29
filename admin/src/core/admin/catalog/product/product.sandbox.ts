@@ -65,6 +65,7 @@ import { DetailModel } from './product-model/detail.model';
 
 @Injectable()
 export class ProductSandbox {
+  // console.log()
   public productList$ = this.appState.select(getProductList);
   public productCount$ = this.appState.select(getProductCount);
   public deletedProduct$ = this.appState.select(getProductDelete);

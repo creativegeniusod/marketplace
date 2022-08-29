@@ -50,13 +50,20 @@
         <div *ngIf="viewType == 'grid'" fxLayout="row wrap" class="products-wrapper">
 
             <div *ngFor="let product of (listSandbox.productlist$ | async)" fxFlex="100" [fxFlex.gt-sm]="viewCol"
-                fxFlex.sm="50" class="col">
-                <mat-card class="product-item text-center card-hover">
+                fxFlex.sm="50" class="col productDiv">
+                <mat-card class="product-item text-center card-hover productCol card-hover">
+                    <div class="product-img">
                     <a [routerLink]="['/products/productdetails', product.productId]" class="image-link">
                         <img *ngIf="product['Images'].defaultImage == 1" style="height:200px"
                             [src]="imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'"
                             onError="this.src='/assets/images/default_image.png';">
                     </a>
+                    <div class="productRating">
+                        <div>
+                          <div class="halfstar1">&#x2605; 4.3 | <span>234</span></div>
+                        </div>
+                      </div>
+                    </div>
                     <!-- <h4 class="category text-muted text-truncate ">{{product.metaTagTitle }}</h4> -->
                     <a [routerLink]="['/products/productdetails', product.productId]" class="title text-truncate">
                         {{product.name}}

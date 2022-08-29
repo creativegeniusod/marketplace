@@ -1,72 +1,58 @@
 <div fxLayout="row wrap">
     <div fxFlex="100" fxFlex.gt-sm="50" class="p-2">
-        <h2 class="text-muted text-center">Account Details</h2>
-        <div class="editImage">
+        <!-- <h2 class="text-muted text-center">Account Details</h2> -->
 
-            <img class="img" *ngIf="!ifImageAvailable" (click)="uploadButtonClick()" src="./assets/images/others/user.jpg" onError="this.src='/assets/images/default_image.png';">
-            <img class="img" *ngIf="ifImageAvailable" (click)="uploadButtonClick()" [src]="imageUrl">
-
-
-            <input type="file" name="userImg" (change)="uploadChange($event)" accept="image/*" #filePath style="display: none">
-            <span class="editProfile" *ngIf="(ifImageAvailable)" (click)="uploadButtonClick()">Change</span>
-        </div>
         <form [formGroup]="infoForm">
-            <mat-form-field class="w-100 mt-2" [ngClass]="{'validationcolor':((infoForm.controls.firstName.errors?.required)&&(ifSubmitted==true))}">
-                <input matInput placeholder="First Name" formControlName="firstName" required>
-                <mat-error *ngIf="((infoForm['controls'].firstName.errors?.required)&&(ifSubmitted==true))">
-                    First Name is required
-                </mat-error>
-                <mat-error *ngIf="((infoForm['controls'].firstName.hasError('minlength'))&&(ifSubmitted==true))">
-                    First Name isn't long enough, minimum of 3 characters
-                </mat-error>
+            <mat-form-field class="w-100 mt-2">
+                <input matInput placeholder="Contact Number" formControlName="phoneNumber">
             </mat-form-field>
-            <mat-form-field class="w-100 mt-1" [ngClass]="{'validationcolor':((infoForm.controls.lastName.errors?.required)&&(ifSubmitted==true))}">
-                <input matInput placeholder="Last Name" formControlName="lastName" required>
-                <mat-error *ngIf="((infoForm['controls'].lastName.errors?.required)&&(ifSubmitted==true))">
-                    Last Name is required
-                </mat-error>
-                <mat-error *ngIf="((infoForm['controls'].lastName.hasError('minlength'))&&(ifSubmitted==true))">
-                    Last Name isn't long enough, minimum of 1 characters </mat-error>
+
+            <mat-radio-group aria-label="Select an option" formControlName="checkPhoneNumber">
+                <mat-radio-button value="1">Check this to recieve order notification and deals via SMS
+                </mat-radio-button>
+            </mat-radio-group>
+
+            <mat-form-field class="w-100 mt-2">
+                <input matInput placeholder="Primary Email Address" formControlName="primaryAddess">
             </mat-form-field>
-            <mat-form-field class="w-100 mt-1" [ngClass]="{'validationcolor':((infoForm.controls.email.errors?.required)&&(ifSubmitted==true))}">
-                <input matInput placeholder="Email" formControlName="email" required>
-                <mat-error *ngIf="((infoForm['controls'].email.errors?.required)&&(ifSubmitted==true))">
-                    Email is required </mat-error>
-                <mat-error *ngIf="((infoForm['controls'].email.hasError('invalidEmail'))&&(ifSubmitted==true))">
-                    Invalid email address
-                </mat-error>
+
+            <mat-radio-group aria-label="Select an option" formControlName="checkPrimaryAddess">
+                <mat-radio-button value="1">Check this to recieve order notification and deals via SMS
+                </mat-radio-button>
+            </mat-radio-group>
+
+            <mat-form-field class="w-100 mt-2">
+                <input matInput placeholder="Recovery Email Address" formControlName="recoveryEmail">
             </mat-form-field>
-            <mat-form-field class="w-100 mt-1">
-                <input matInput type="text" maxlength="15" appOnlyNumber placeholder="Phone Number" formControlName="phoneNumber">
+
+            <mat-form-field class="w-100 mt-2">
+                <input matInput placeholder="Bio" formControlName="bio">
+            </mat-form-field>
+
+            <mat-form-field class="w-100 mt-2">
+                <mat-label>Birthday</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dob">
+                <mat-datepicker-toggle matSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="w-100 mt-2">
+                <mat-label>Gender</mat-label>
+                <select matNativeControl formControlName="gender">
+                    <option value="male">male</option>
+                    <option value="female">Female</option>
+                </select>
             </mat-form-field>
 
             <div class="text-center mt-2">
-                <button mat-raised-button color="primary" (click)="onInfoFormSubmit()">Save
+                <button mat-raised-button color="primary" (click)="onInfoFormSubmit()">Submit
                 </button>
             </div>
         </form>
     </div>
-    <div fxFlex="100" fxFlex.gt-sm="50" class="p-2" ngClass.sm="mt-2" ngClass.xs="mt-2">
-        <h2 class="text-muted text-center">Change Password</h2>
-        <form [formGroup]="passwordForm" (ngSubmit)="onPasswordFormSubmit()">
-            <mat-form-field class="w-100 mt-2" [ngClass]="{'validationcolor':
-            ((passwordForm.controls.currentPassword.errors?.required)&&(ifPasswordForm==true))}">
-                <input matInput placeholder="Current Password" formControlName="currentPassword" type="password">
-                <mat-error *ngIf="((passwordForm.controls['currentPassword'].errors?.required)&&(ifPasswordForm==true))">
-                    Current Password is required </mat-error>
-            </mat-form-field>
-            <mat-form-field class="w-100 mt-1" [ngClass]="{'validationcolor':
-            ((passwordForm.controls.newPassword.errors?.required)&&(ifPasswordForm==true))}">
-                <input matInput placeholder="New Password" formControlName="newPassword" type="password">
-                <mat-error *ngIf="((passwordForm.controls['newPassword'].errors?.required)&&(ifPasswordForm==true))">
-                    New Password is required </mat-error>
-                <mat-error *ngIf="((passwordForm.controls['newPassword'].hasError('minlength'))&&(ifPasswordForm==true))">
-                    New Password isn't long enough, minimum of 5 characters
-                </mat-error>
-            </mat-form-field>
-            <div class="text-center mt-2">
-                <button mat-raised-button color="primary" type="submit">Change</button>
-            </div>
-        </form>
-    </div>
 </div>
+
+
+<app-account-buttons></app-account-buttons>

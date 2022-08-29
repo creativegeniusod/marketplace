@@ -1,0 +1,25 @@
+<div fxLayout="row wrap">
+  <div fxFlex="100" fxFlex.gt-sm="50" class="p-2">
+    <div class="text-center mt-2">
+      <div class="text-center mt-1">
+        <button mat-button color="primary" class="createAccountBtn actionBtn" routerLink="/account/profile">Public
+          profile
+          setting</button>
+      </div>
+      <div class="text-center mt-1">
+        <button mat-button color="primary" class="createAccountBtn actionBtn" routerLink="/account/information">Personal
+          information
+          setting</button>
+      </div>
+      <div class="text-center mt-1">
+        <button mat-button color="primary" class="createAccountBtn actionBtn" routerLink="/account/address">Address
+          setting</button>
+      </div>
+      <div class="text-center mt-1">
+        <button mat-button color="primary" class="createAccountBtn actionBtn" (click)="navigateOnHelp()">Need help with
+          my
+          profile</button>
+      </div>
+    </div>
+  </div>
+</div>

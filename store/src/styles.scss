@@ -544,28 +544,15 @@ body,
     object-fit: contain;
 }
 
-.trending-products .all-products .product-item .image-link img {
-    height: 200px;
-    width: auto;
-    object-fit: cover;
-}
+.trending-products .all-products .product-item .image-link img {height: 200px;width: auto;object-fit: cover;}
+.trending-products .product-item .product-img {border: 1px solid #d9d9d9;padding: 20px 20px 5px;margin-bottom: 10px;box-shadow: 0 3px 4px 0px #ddd;}
+.trending-products .product-item {padding: 0 10px 0 0;}
+.app.green .trending-products .product-item .title {color: #000 !important;font-size: 16px;font-weight: bold;}
 
-.trending-products .product-item .product-img {
-    border: 1px solid #d9d9d9;
-    padding: 20px 20px 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 3px 4px 0px #ddd;
-}
-
-.trending-products .product-item {
-    padding: 0 10px 0 0;
-}
-
-.app.green .trending-products .product-item .title {
-    color: #000 !important;
-    font-size: 16px;
-    font-weight: bold;
-}
+.cat-products .all-products .product-item .image-link img {height: 200px;width: auto;object-fit: cover;}
+.cat-products .product-item .product-img {border: 1px solid #d9d9d9;padding: 20px 20px 5px;margin-bottom: 10px;box-shadow: 0 3px 4px 0px #ddd;}
+.cat-products .product-item {padding: 0 10px 0 0;}
+.app.green .cat-products .product-item .title {color: #000 !important;font-size: 16px;font-weight: bold;}
 
 .all-products {
     margin-top: 10px;
@@ -817,13 +804,11 @@ body {
         font-size: 13px;
     }
 
-    .trending-products .all-products .product-item .image-link img {
-        height: 150px;
-    }
+    .trending-products .all-products .product-item .image-link img {height: 150px;}
+    .app.green .trending-products .product-item .title {font-size: 14px;}
 
-    .app.green .trending-products .product-item .title {
-        font-size: 14px;
-    }
+    .cat-products .all-products .product-item .image-link img {height: 150px;}
+    .app.green .cat-products .product-item .title {font-size: 14px;}
 }
 
 @media (max-width: 1400px) {
@@ -954,6 +939,7 @@ html.cdk-global-scrollblock{position: static;}
 .titleWithIcon img {
     margin: 0 10px 0 0;
 }
+.wishListCol{margin-bottom: 20px;}
 
 @media (max-width: 1480px){
     .priceAndIcons p, .product-item .prices .new-price {font-size: 14px;}

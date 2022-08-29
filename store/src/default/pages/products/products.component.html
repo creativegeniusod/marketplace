@@ -47,14 +47,14 @@
                 </div>
             </div>
         </div>
-        <div *ngIf="viewType == 'grid'" fxLayout="row wrap" class="products-wrapper">
+        <div *ngIf="viewType == 'grid'" fxLayout="row wrap" class="products-wrapper cat-products">
 
             <div *ngFor="let product of (listSandbox.productlist$ | async)" fxFlex="100" [fxFlex.gt-sm]="viewCol"
                 fxFlex.sm="50" class="col productDiv">
                 <mat-card class="product-item text-center card-hover productCol card-hover">
                     <div class="product-img">
                     <a [routerLink]="['/products/productdetails', product.productId]" class="image-link">
-                        <img *ngIf="product['Images'].defaultImage == 1" style="height:200px"
+                        <img *ngIf="product['Images'].defaultImage == 1"
                             [src]="imagePath+ '?path=' + product['Images'].containerName + '&name=' + product['Images'].image + '&width=260&height=260'"
                             onError="this.src='/assets/images/default_image.png';">
                     </a>
@@ -75,11 +75,11 @@
                             </p>
                         </div>
                     </div>
-                    <div class="divider mt-2"></div>
+                    <!-- <div class="divider mt-2"></div>
                     <div class="icons">
                         <app-controls [product]="product" [type]="'all'"
                             (OpenProductDialog)="openProductDialog(product)"></app-controls>
-                    </div>
+                    </div> -->
                 </mat-card>
             </div>
         </div>

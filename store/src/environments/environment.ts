@@ -18,8 +18,6 @@ export const environment = {
     imageUrl: 'http://stagingwebsites.info:9000/api/media/image-resize/' // <Your API url for image resize>
     // storeUrl: 'http://localhost:9000/api/', // <Your API base url>
     // imageUrl: 'http://localhost:9000/api/media/image-resize/' // <Your API url for image resize>
-
-
 };
 
 /*

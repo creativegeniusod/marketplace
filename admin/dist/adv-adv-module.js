@@ -131,7 +131,7 @@ var ADVRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"subtoolbar cmstoolbar\">\r\n    <div class=\"sub-nav-menu\">\r\n        <a href=\"javascript:void(0)\" [routerLink]=\"['/adv/banners']\" [routerLinkActive]=\"'active'\">\r\n            <img src=\"assets/img/banner-ico.png\"> Banners\r\n        </a>\r\n        <a href=\"javascript:void(0)\" [routerLink]=\"['/adv/coupens']\" [routerLinkActive]=\"'active'\">\r\n            <img src=\"assets/img/banner-ico.png\"> Coupens\r\n        </a>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"subtoolbar cmstoolbar\">\n    <div class=\"sub-nav-menu\">\n        <a href=\"javascript:void(0)\" [routerLink]=\"['/adv/banners']\" [routerLinkActive]=\"'active'\">\n            <img src=\"assets/img/banner-ico.png\"> Banners\n        </a>\n        <a href=\"javascript:void(0)\" [routerLink]=\"['/adv/coupens']\" [routerLinkActive]=\"'active'\">\n            <img src=\"assets/img/banner-ico.png\"> Coupens\n        </a>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -200,7 +200,7 @@ var ADVHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-cms-header></app-cms-header>\r\n\r\n<router-outlet></router-outlet>"
+module.exports = "<app-cms-header></app-cms-header>\n\n<router-outlet></router-outlet>"
 
 /***/ }),
 

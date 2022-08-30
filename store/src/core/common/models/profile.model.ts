@@ -24,12 +24,11 @@ export class ProfileModel {
   public bio: string;
   public iam: string;
   public interest: string;
-  public phoneNumber: string;
-  public checkPhoneNumber: number;
+  public orderNotificationFirst: boolean;
   public primaryAddess: String;
-  public checkPrimaryAddess: Number;
+  public orderNotificationsecond: boolean;
   public recoveryEmail: String;
-  public dob: String;
+  public birthday: String;
   public gender: String;
 
   constructor(bannerRequest: any) {
@@ -50,11 +49,11 @@ export class ProfileModel {
     this.bio = bannerRequest.bio || '';
     this.iam = bannerRequest.iam || '';
     this.interest = bannerRequest.interest || '';
-    this.checkPhoneNumber = bannerRequest.interest || '';
+    this.orderNotificationFirst = bannerRequest.orderNotificationFirst == 1 ? true : false;
     this.primaryAddess = bannerRequest.primaryAddess || '';
-    this.checkPrimaryAddess = bannerRequest.checkPrimaryAddess || '';
+    this.orderNotificationsecond = bannerRequest.orderNotificationsecond == 1 ? true : false;
     this.recoveryEmail = bannerRequest.recoveryEmail || '';
-    this.dob = bannerRequest.dob || '';
+    this.birthday = bannerRequest.birthday || '';
     this.gender = bannerRequest.gender || '';
   }
 }

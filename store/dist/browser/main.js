@@ -1215,6 +1215,12 @@ var ProfileModel = /** @class */ (function () {
         this.bio = bannerRequest.bio || '';
         this.iam = bannerRequest.iam || '';
         this.interest = bannerRequest.interest || '';
+        this.checkPhoneNumber = bannerRequest.interest || '';
+        this.primaryAddess = bannerRequest.primaryAddess || '';
+        this.checkPrimaryAddess = bannerRequest.checkPrimaryAddess || '';
+        this.recoveryEmail = bannerRequest.recoveryEmail || '';
+        this.birthday = bannerRequest.birthday || '';
+        this.gender = bannerRequest.gender || '';
     }
     return ProfileModel;
 }());
@@ -12309,10 +12315,12 @@ __webpack_require__.r(__webpack_exports__);
 var environment = {
     production: false,
     facebookAppId: '314930319788683',
-    storeUrl: 'http://stagingwebsites.info:9000/api/',
-    imageUrl: 'http://stagingwebsites.info:9000/api/media/image-resize/' // <Your API url for image resize>
-    // storeUrl: 'http://localhost:9000/api/', // <Your API base url>
-    // imageUrl: 'http://localhost:9000/api/media/image-resize/' // <Your API url for image resize>
+    storeUrl: 'http://stagingwebsites.info:9016/api/',
+    imageUrl: 'http://stagingwebsites.info:9016/api/media/image-resize/' // <Your API url for image resize>
+    // storeUrl: 'http://stagingwebsites.info:9000/api/', // <Your API base url>
+    // imageUrl: 'http://stagingwebsites.info:9000/api/media/image-resize/' // <Your API url for image resize>
+    // storeUrl: 'http://localhost:9016/api/', // <Your API base url>
+    // imageUrl: 'http://localhost:9016/api/media/image-resize/' // <Your API url for image resize>
 };
 /*
  * For easier debugging in development mode, you can import the following file

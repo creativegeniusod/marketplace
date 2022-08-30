@@ -60,7 +60,7 @@ export class MyProfileComponent implements OnInit {
       'interest': [''],
       'bio': [''],
       'iam': [''],
-      'phoneNumber': ['00000000']
+      'mobileNumber': ['00000000']
     });
   }
 

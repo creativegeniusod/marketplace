@@ -51,13 +51,15 @@ export class InformationComponent implements OnInit, OnDestroy {
     // build a form for info  by gouping the form control
     initInfoForm() {
         this.infoForm = this.formBuilder.group({
-            'phoneNumber': [''],
-            'checkPhoneNumber': [''],
+            'firstName': [''],
+            'email': ['', Validators.compose([Validators.required, emailValidator])],
+            'mobileNumber': [''],
+            'orderNotificationFirst': [''],
             'primaryAddess': [''],
-            'checkPrimaryAddess': [''],
+            'orderNotificationsecond': [''],
             'recoveryEmail': [''],
             'bio': [''],
-            'dob': [''],
+            'birthday': [''],
             'gender': [''],
         });
     }
@@ -77,16 +79,15 @@ export class InformationComponent implements OnInit, OnDestroy {
     setProfile() {
         this.subscriptions.push(this.commonSandbox.getProfile$.subscribe(profile => {
             if (profile) {
-                console.log('profile', profile);
                 this.infoForm.controls['firstName'].setValue(profile.firstName);
                 this.infoForm.controls['email'].setValue(profile.email);
-                this.infoForm.controls['phoneNumber'].setValue(profile.phoneNumber);
-                this.infoForm.controls['checkPhoneNumber'].setValue(profile.checkPhoneNumber);
+                this.infoForm.controls['mobileNumber'].setValue(profile.mobileNumber);
+                this.infoForm.controls['orderNotificationFirst'].setValue(profile.orderNotificationFirst);
                 this.infoForm.controls['primaryAddess'].setValue(profile.primaryAddess);
-                this.infoForm.controls['checkPrimaryAddess'].setValue(profile.checkPrimaryAddess);
+                this.infoForm.controls['orderNotificationsecond'].setValue(profile.orderNotificationsecond);
                 this.infoForm.controls['recoveryEmail'].setValue(profile.recoveryEmail);
                 this.infoForm.controls['bio'].setValue(profile.bio);
-                this.infoForm.controls['dob'].setValue(profile.dob);
+                this.infoForm.controls['birthday'].setValue(profile.birthday);
                 this.infoForm.controls['gender'].setValue(profile.gender);
             }
         }));
@@ -95,9 +96,11 @@ export class InformationComponent implements OnInit, OnDestroy {
     public onInfoFormSubmit(): void {
         if (this.infoForm.valid) {
             const params: any = this.infoForm.value;
+            params.orderNotificationFirst = this.infoForm.value.orderNotificationFirst ? 1 : 0;
+            params.orderNotificationsecond = this.infoForm.value.orderNotificationsecond ? 1 : 0;
             this.accountSandbox.doEditProfile(params);
             this.ifSubmitted = false;
-            this.infoForm.reset();
+            // this.infoForm.reset();
             this.infoForm.clearValidators();
         } else {
             this.ifSubmitted = true;

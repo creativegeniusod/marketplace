@@ -78196,7 +78196,7 @@ var InfluencerManagementComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row wrap\">\r\n    <div fxFlex=\"100\" fxFlex.gt-sm=\"50\" class=\"p-2\">\r\n        <!-- <h2 class=\"text-muted text-center\">Account Details</h2> -->\r\n\r\n        <form [formGroup]=\"infoForm\">\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Contact Number\" formControlName=\"phoneNumber\">\r\n            </mat-form-field>\r\n\r\n            <mat-radio-group aria-label=\"Select an option\" formControlName=\"checkPhoneNumber\">\r\n                <mat-radio-button value=\"1\">Check this to recieve order notification and deals via SMS\r\n                </mat-radio-button>\r\n            </mat-radio-group>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Primary Email Address\" formControlName=\"primaryAddess\">\r\n            </mat-form-field>\r\n\r\n            <mat-radio-group aria-label=\"Select an option\" formControlName=\"checkPrimaryAddess\">\r\n                <mat-radio-button value=\"1\">Check this to recieve order notification and deals via SMS\r\n                </mat-radio-button>\r\n            </mat-radio-group>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Recovery Email Address\" formControlName=\"recoveryEmail\">\r\n            </mat-form-field>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Bio\" formControlName=\"bio\">\r\n            </mat-form-field>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <mat-label>Birthday</mat-label>\r\n                <input matInput [matDatepicker]=\"picker\" formControlName=\"dob\">\r\n                <mat-datepicker-toggle matSuffix [for]=\"picker\">\r\n                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>\r\n                </mat-datepicker-toggle>\r\n                <mat-datepicker #picker></mat-datepicker>\r\n            </mat-form-field>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <mat-label>Gender</mat-label>\r\n                <select matNativeControl formControlName=\"gender\">\r\n                    <option value=\"male\">male</option>\r\n                    <option value=\"female\">Female</option>\r\n                </select>\r\n            </mat-form-field>\r\n\r\n            <div class=\"text-center mt-2\">\r\n                <button mat-raised-button color=\"primary\" (click)=\"onInfoFormSubmit()\">Submit\r\n                </button>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n\r\n\r\n<app-account-buttons></app-account-buttons>"
+module.exports = "<div fxLayout=\"row wrap\">\r\n    <div fxFlex=\"100\" fxFlex.gt-sm=\"50\" class=\"p-2\">\r\n\r\n        <form [formGroup]=\"infoForm\">\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Contact Number\" formControlName=\"mobileNumber\">\r\n            </mat-form-field>\r\n            <mat-checkbox class=\"example-margin\" formControlName=\"checkPhoneNumber\">Check this to recieve order\r\n                notification and deals via SMS</mat-checkbox>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Primary Email Address\" formControlName=\"primaryAddess\">\r\n            </mat-form-field>\r\n\r\n            <mat-checkbox class=\"example-margin\" formControlName=\"checkPrimaryAddess\">Check this to recieve order\r\n                notification and deals via SMS</mat-checkbox>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Recovery Email Address\" formControlName=\"recoveryEmail\">\r\n            </mat-form-field>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Bio\" formControlName=\"bio\">\r\n            </mat-form-field>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <mat-label>Birthday</mat-label>\r\n                <input matInput [matDatepicker]=\"picker\" formControlName=\"dob\">\r\n                <mat-datepicker-toggle matSuffix [for]=\"picker\">\r\n                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>\r\n                </mat-datepicker-toggle>\r\n                <mat-datepicker #picker></mat-datepicker>\r\n            </mat-form-field>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <mat-label>Gender</mat-label>\r\n                <select matNativeControl formControlName=\"gender\">\r\n                    <option value=\"male\">male</option>\r\n                    <option value=\"female\">Female</option>\r\n                </select>\r\n            </mat-form-field>\r\n\r\n            <div class=\"text-center mt-2\">\r\n                <button mat-raised-button color=\"primary\" (click)=\"onInfoFormSubmit()\">Submit\r\n                </button>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n\r\n\r\n<app-account-buttons></app-account-buttons>"
 
 /***/ }),
 
@@ -78224,10 +78224,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _core_service_config_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../core/service/config.service */ "./src/core/service/config.service.ts");
-/* harmony import */ var _core_common_common_sandbox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../core/common/common.sandbox */ "./src/core/common/common.sandbox.ts");
-/* harmony import */ var _core_account_account_sandbox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../core/account/account.sandbox */ "./src/core/account/account.sandbox.ts");
-/* harmony import */ var _core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../core/lists/lists.sandbox */ "./src/core/lists/lists.sandbox.ts");
+/* harmony import */ var _theme_utils_app_validators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../theme/utils/app-validators */ "./src/default/theme/utils/app-validators.ts");
+/* harmony import */ var _core_service_config_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../core/service/config.service */ "./src/core/service/config.service.ts");
+/* harmony import */ var _core_common_common_sandbox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../core/common/common.sandbox */ "./src/core/common/common.sandbox.ts");
+/* harmony import */ var _core_account_account_sandbox__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../core/account/account.sandbox */ "./src/core/account/account.sandbox.ts");
+/* harmony import */ var _core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../core/lists/lists.sandbox */ "./src/core/lists/lists.sandbox.ts");
 /*
  * spurtcommerce
  * http://www.spurtcommerce.com
@@ -78245,6 +78246,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -78276,14 +78278,16 @@ var InformationComponent = /** @class */ (function () {
     // build a form for info  by gouping the form control
     InformationComponent.prototype.initInfoForm = function () {
         this.infoForm = this.formBuilder.group({
-            'phoneNumber': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
+            'firstName': [''],
+            'email': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _theme_utils_app_validators__WEBPACK_IMPORTED_MODULE_3__["emailValidator"]])],
+            'mobileNumber': [''],
             'checkPhoneNumber': [''],
-            'primaryAddess': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
+            'primaryAddess': [''],
             'checkPrimaryAddess': [''],
-            'recoveryEmail': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
-            'bio': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
-            'dob': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
-            'gender': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
+            'recoveryEmail': [''],
+            'bio': [''],
+            'birthday': [''],
+            'gender': [''],
         });
     };
     // build a form for change password  by gouping the form control
@@ -78296,24 +78300,29 @@ var InformationComponent = /** @class */ (function () {
     // }
     // set the user details to the form by fetching the profile details from sandbox
     InformationComponent.prototype.setProfile = function () {
-        // this.subscriptions.push(this.commonSandbox.getProfile$.subscribe(profile => {
-        //     if (profile) {
-        //         this.infoForm.controls['firstName'].setValue(profile.firstName);
-        //         this.infoForm.controls['lastName'].setValue(profile.lastName);
-        //         this.infoForm.controls['email'].setValue(profile.email);
-        //         this.infoForm.controls['phoneNumber'].setValue(profile.mobileNumber);
-        //         this.imageUrl = this.imagePath + '?path=' + profile.avatarPath + '&name=' + profile.avatar + '&width=60&height=60';
-        //         this.ifImageAvailable = profile.avatarPath;
-        //     }
-        // }));
+        var _this = this;
+        this.subscriptions.push(this.commonSandbox.getProfile$.subscribe(function (profile) {
+            if (profile) {
+                console.log('profile', profile);
+                _this.infoForm.controls['firstName'].setValue(profile.firstName);
+                _this.infoForm.controls['email'].setValue(profile.email);
+                _this.infoForm.controls['mobileNumber'].setValue(profile.mobileNumber);
+                _this.infoForm.controls['checkPhoneNumber'].setValue(profile.checkPhoneNumber);
+                _this.infoForm.controls['primaryAddess'].setValue(profile.primaryAddess);
+                _this.infoForm.controls['checkPrimaryAddess'].setValue(profile.checkPrimaryAddess);
+                _this.infoForm.controls['recoveryEmail'].setValue(profile.recoveryEmail);
+                _this.infoForm.controls['bio'].setValue(profile.bio);
+                _this.infoForm.controls['birthday'].setValue(profile.birthday);
+                _this.infoForm.controls['gender'].setValue(profile.gender);
+            }
+        }));
     };
     InformationComponent.prototype.onInfoFormSubmit = function () {
         if (this.infoForm.valid) {
-            console.log('this.infoForm.', this.infoForm.value);
             var params = this.infoForm.value;
             this.accountSandbox.doEditProfile(params);
             this.ifSubmitted = false;
-            this.infoForm.reset();
+            // this.infoForm.reset();
             this.infoForm.clearValidators();
         }
         else {
@@ -78348,11 +78357,11 @@ var InformationComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./information.component.scss */ "./src/default/pages/account/information/information.component.scss")]
         }),
         __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
-            _core_service_config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"],
+            _core_service_config_service__WEBPACK_IMPORTED_MODULE_4__["ConfigService"],
             _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"],
-            _core_common_common_sandbox__WEBPACK_IMPORTED_MODULE_4__["CommonSandbox"],
-            _core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_6__["ListsSandbox"],
-            _core_account_account_sandbox__WEBPACK_IMPORTED_MODULE_5__["AccountSandbox"]])
+            _core_common_common_sandbox__WEBPACK_IMPORTED_MODULE_5__["CommonSandbox"],
+            _core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_7__["ListsSandbox"],
+            _core_account_account_sandbox__WEBPACK_IMPORTED_MODULE_6__["AccountSandbox"]])
     ], InformationComponent);
     return InformationComponent;
 }());
@@ -78513,7 +78522,7 @@ var MyProfileComponent = /** @class */ (function () {
             'interest': [''],
             'bio': [''],
             'iam': [''],
-            'phoneNumber': ['00000000']
+            'mobileNumber': ['00000000']
         });
     };
     // build a form for change password  by gouping the form control

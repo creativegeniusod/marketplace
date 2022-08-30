@@ -18,7 +18,8 @@
             <button *ngIf="!sidenavOpen" mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>more_vert</mat-icon>
             </button>
-            <h2><img src="/assets/images/back-arrow.png">{{pageInfo}}</h2>
+            <!-- <img src="/assets/images/back-arrow.png"> -->
+            <h2>{{pageInfo}}</h2>
         </div>
         <div class="account-wrapper mat-elevation-z1">
             <router-outlet></router-outlet>

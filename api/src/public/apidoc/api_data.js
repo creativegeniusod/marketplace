@@ -2562,6 +2562,34 @@ define({ "api": [
     "name": "PutApiCustomerUpdateCustomerId"
   },
   {
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "varname1",
+            "description": "<p>No type.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "varname2",
+            "description": "<p>With type.</p>"
+          }
+        ]
+      }
+    },
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "src/public/apidoc/main.js",
+    "group": "D__odz_working_marketplace_api_src_public_apidoc_main_js",
+    "groupTitle": "D__odz_working_marketplace_api_src_public_apidoc_main_js",
+    "name": ""
+  },
+  {
     "type": "delete",
     "url": "/api/email-template/delete-email-template/:id",
     "title": "Delete EmailTemplate API",
@@ -8877,6 +8905,8 @@ define({ "api": [
     "name": "PutApiZoneUpdateZoneId"
   },
   {
+<<<<<<< HEAD
+=======
     "success": {
       "fields": {
         "Success 200": [
@@ -8900,11 +8930,17 @@ define({ "api": [
     "url": "",
     "version": "0.0.0",
     "filename": "src/public/apidoc/main.js",
+<<<<<<< HEAD
     "group": "_webroot_public_html_websites_odz_marketplace_api_src_public_apidoc_main_js",
     "groupTitle": "_webroot_public_html_websites_odz_marketplace_api_src_public_apidoc_main_js",
+=======
+    "group": "_var_www_html_test04_marketplace_api_src_public_apidoc_main_js",
+    "groupTitle": "_var_www_html_test04_marketplace_api_src_public_apidoc_main_js",
+>>>>>>> 57ed29bc45aa338488d3c7690a5be7b639c8be68
     "name": ""
   },
   {
+>>>>>>> d011525afa42619d30603264f424433244756bee
     "type": "get",
     "url": "/api/media/bucket-object-list",
     "title": "bucket-object-list",

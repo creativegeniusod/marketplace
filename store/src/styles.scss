@@ -544,28 +544,15 @@ body,
     object-fit: contain;
 }
 
-.trending-products .all-products .product-item .image-link img {
-    height: 200px;
-    width: auto;
-    object-fit: cover;
-}
+.trending-products .all-products .product-item .image-link img {height: 200px;width: auto;object-fit: cover;}
+.trending-products .product-item .product-img {border: 1px solid #d9d9d9;padding: 20px 20px 5px;margin-bottom: 10px;box-shadow: 0 3px 4px 0px #ddd;}
+.trending-products .product-item {padding: 0 10px 0 0;}
+.app.green .trending-products .product-item .title {color: #000 !important;font-size: 16px;font-weight: bold;}
 
-.trending-products .product-item .product-img {
-    border: 1px solid #d9d9d9;
-    padding: 20px 20px 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 3px 4px 0px #ddd;
-}
-
-.trending-products .product-item {
-    padding: 0 10px 0 0;
-}
-
-.app.green .trending-products .product-item .title {
-    color: #000 !important;
-    font-size: 16px;
-    font-weight: bold;
-}
+.cat-products .all-products .product-item .image-link img {height: 200px;width: auto;object-fit: cover;}
+.cat-products .product-item .product-img {border: 1px solid #d9d9d9;padding: 20px 20px 5px;margin-bottom: 10px;box-shadow: 0 3px 4px 0px #ddd;}
+.cat-products .product-item {padding: 0 10px 0 0;}
+.app.green .cat-products .product-item .title {color: #000 !important;font-size: 16px;font-weight: bold;}
 
 .all-products {
     margin-top: 10px;
@@ -575,7 +562,7 @@ body,
     font-size: 14px;
 }
 
-.loginPage h4 span {
+.loginPage h4 span, .account-page h4 span {
     background: #fff7ee !important;
     font-size: 16px;
     font-weight: 500;
@@ -609,7 +596,7 @@ body,
     font-weight: bold;
 }
 
-.loginPage h6 {
+.loginPage h6, .account-page  h6 {
     font-size: 18px;
 }
 
@@ -617,15 +604,15 @@ body,
     color: #FF5354;
 }
 
-.loginPage h5 {
+.loginPage h5, .account-page  h5 {
     font-size: 16px;
 }
 
-.loginPage h3 {
+.loginPage h3, .account-page  h3 {
     font-size: 16px;
 }
 
-.loginPage .mat-form-field-label-wrapper {
+.loginPage .mat-form-field-label-wrapper, .account-page .mat-form-field-label-wrapper {
     font-size: 14px;
     font-family: 'Urbanist', sans-serif;
     color: #000;
@@ -634,14 +621,14 @@ body,
     left: 15px;
 }
 
-.loginPage .fieldWithIcon .mat-form-field-label-wrapper{left: 50px;}
+.loginPage .fieldWithIcon .mat-form-field-label-wrapper, .account-page .fieldWithIcon .mat-form-field-label-wrapper{left: 50px;}
 
 .app.green .loginPage .mat-checkbox-frame {
     border-color: rgba(0, 0, 0, 1);
     border-radius: 5px;
 }
 
-.loginPage .mat-checkbox-label {
+.loginPage .mat-checkbox-label, .account-page .mat-checkbox-label {
     color: #000000;
 }
 
@@ -653,12 +640,12 @@ body {
     font-size: 16px;
 }
 
-.loginPage .mat-form-field-infix {
+.loginPage .mat-form-field-infix, .account-page .mat-form-field-infix {
     padding: 0;
     border: none;
 }
 
-.loginPage input.mat-input-element {
+.loginPage input.mat-input-element, .account-page input.mat-input-element, .account-page select.mat-input-element {
     background: #fff;
     border: none !important;
     margin: 0;
@@ -667,7 +654,7 @@ body {
     border-radius: 12px;
 }
 
-.loginPage .mat-form-field-underline {
+.loginPage .mat-form-field-underline, .account-page .mat-form-field-underline {
     display: none;
 }
 
@@ -817,13 +804,11 @@ body {
         font-size: 13px;
     }
 
-    .trending-products .all-products .product-item .image-link img {
-        height: 150px;
-    }
+    .trending-products .all-products .product-item .image-link img {height: 150px;}
+    .app.green .trending-products .product-item .title {font-size: 14px;}
 
-    .app.green .trending-products .product-item .title {
-        font-size: 14px;
-    }
+    .cat-products .all-products .product-item .image-link img {height: 150px;}
+    .app.green .cat-products .product-item .title {font-size: 14px;}
 }
 
 @media (max-width: 1400px) {
@@ -844,7 +829,7 @@ top: 25px;left: 20px;}
 top: 25px;left: 20px;}
 
 
-.loginPage .fieldWithIcon input.mat-input-element {padding-left: 50px;}
+.loginPage .fieldWithIcon input.mat-input-element, .account-page .fieldWithIcon input.mat-input-element {padding-left: 50px;}
 .mat-expansion-panel-header, .categories-dropdown .mat-menu-item{font-family: 'Urbanist', sans-serif;}
 .app.green .new-price{margin: 0 4px;}
 .app .theme-container-full.main {
@@ -954,6 +939,80 @@ html.cdk-global-scrollblock{position: static;}
 .titleWithIcon img {
     margin: 0 10px 0 0;
 }
+.wishListCol{margin-bottom: 20px;}
+.loginBtn {
+    background: transparent !important;
+    border: none !important;
+}
+.app.green .account-page {
+    background: #fff7ee;
+    padding-bottom: 50px;
+}
+
+.account-page .account-wrapper{background: transparent !important;padding: 0 15px;box-shadow: none !important;}
+.account-page .accountWrap {
+    margin: 0 auto;
+    float: none;
+    max-width: 420px;
+}
+.account-page select.mat-input-element.ng-dirty ~ .mat-form-field-label-wrapper {
+    display: none;
+}
+.account-page select ~ .mat-form-field-label-wrapper {
+    font-size: 18px;
+}
+.account-page .mat-form-field-type-mat-native-select .mat-form-field-infix:after {
+    font-size: 0;
+    border: none;
+    height: 25px;
+    width: 25px;
+    top: 0;
+    right: 10px;
+    background: url(/assets/images/down-arrow.png);
+    content: "";
+    pointer-events: none;
+}
+.account-page .mat-form-field.mat-focused .mat-form-field-infix:after{transform: rotate(-180deg);}
+.account-page .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding: 0;
+}
+.editImage {
+    display: flex;
+    justify-content: center;
+}
+.formActions {
+    max-width: 250px !important;
+    margin: 0 auto;
+}
+.header-row {
+    padding: 30px 0 20px;
+    max-width: 420px;
+    margin: 0 auto;
+}
+.header-row img {
+    margin-right: 15px;
+}
+.account-page .mat-radio-label-content {font-size: 12px;}
+.account-page .mat-radio-outer-circle{border-radius: 5px;border-color: #000000 !important;}
+.address-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.addressName {
+    margin-right: auto;
+    padding: 0 10px 0 15px;
+}
+.addressActions {
+    display: flex;
+}
+.addressActions .mat-button {
+    padding: 0;
+    min-width: 0;
+    margin: 0 30px 0 0;
+}
+.addressActions select.mat-input-element{top: 0;}
+
 
 @media (max-width: 1480px){
     .priceAndIcons p, .product-item .prices .new-price {font-size: 14px;}

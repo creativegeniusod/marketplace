@@ -14,12 +14,10 @@
 export const environment = {
     production: false,
     facebookAppId: '314930319788683',
-    storeUrl: 'http://stagingwebsites.info:9000/api/', // <Your API base url>
-    imageUrl: 'http://stagingwebsites.info:9000/api/media/image-resize/' // <Your API url for image resize>
-    // storeUrl: 'http://localhost:9000/api/', // <Your API base url>
-    // imageUrl: 'http://localhost:9000/api/media/image-resize/' // <Your API url for image resize>
-
-
+    storeUrl: 'http://stagingwebsites.info:9016/api/', // <Your API base url>
+    imageUrl: 'http://stagingwebsites.info:9016/api/media/image-resize/' // <Your API url for image resize>
+    // storeUrl: 'http://localhost:9016/api/', // <Your API base url>
+    // imageUrl: 'http://localhost:9016/api/media/image-resize/' // <Your API url for image resize>
 };
 
 /*

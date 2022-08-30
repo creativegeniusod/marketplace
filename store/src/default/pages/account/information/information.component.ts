@@ -51,14 +51,16 @@ export class InformationComponent implements OnInit, OnDestroy {
     // build a form for info  by gouping the form control
     initInfoForm() {
         this.infoForm = this.formBuilder.group({
-            'phoneNumber': ['', Validators.compose([Validators.required])],
-            'checkPhoneNumber': [''],
-            'primaryAddess': ['', Validators.compose([Validators.required])],
-            'checkPrimaryAddess': [''],
-            'recoveryEmail': ['', Validators.compose([Validators.required])],
-            'bio': ['', Validators.compose([Validators.required])],
-            'dob': ['', Validators.compose([Validators.required])],
-            'gender': ['', Validators.compose([Validators.required])],
+            'firstName': [''],
+            'email': ['', Validators.compose([Validators.required, emailValidator])],
+            'mobileNumber': [''],
+            'orderNotificationFirst': [''],
+            'primaryAddess': [''],
+            'orderNotificationsecond': [''],
+            'recoveryEmail': [''],
+            'bio': [''],
+            'birthday': [''],
+            'gender': [''],
         });
     }
 
@@ -75,25 +77,31 @@ export class InformationComponent implements OnInit, OnDestroy {
 
     // set the user details to the form by fetching the profile details from sandbox
     setProfile() {
-        // this.subscriptions.push(this.commonSandbox.getProfile$.subscribe(profile => {
-        //     if (profile) {
-        //         this.infoForm.controls['firstName'].setValue(profile.firstName);
-        //         this.infoForm.controls['lastName'].setValue(profile.lastName);
-        //         this.infoForm.controls['email'].setValue(profile.email);
-        //         this.infoForm.controls['phoneNumber'].setValue(profile.mobileNumber);
-        //         this.imageUrl = this.imagePath + '?path=' + profile.avatarPath + '&name=' + profile.avatar + '&width=60&height=60';
-        //         this.ifImageAvailable = profile.avatarPath;
-        //     }
-        // }));
+        this.subscriptions.push(this.commonSandbox.getProfile$.subscribe(profile => {
+            if (profile) {
+                console.log('profile', profile);
+                this.infoForm.controls['firstName'].setValue(profile.firstName);
+                this.infoForm.controls['email'].setValue(profile.email);
+                this.infoForm.controls['mobileNumber'].setValue(profile.mobileNumber);
+                this.infoForm.controls['orderNotificationFirst'].setValue(profile.orderNotificationFirst);
+                this.infoForm.controls['primaryAddess'].setValue(profile.primaryAddess);
+                this.infoForm.controls['orderNotificationsecond'].setValue(profile.orderNotificationsecond);
+                this.infoForm.controls['recoveryEmail'].setValue(profile.recoveryEmail);
+                this.infoForm.controls['bio'].setValue(profile.bio);
+                this.infoForm.controls['birthday'].setValue(profile.birthday);
+                this.infoForm.controls['gender'].setValue(profile.gender);
+            }
+        }));
     }
 
     public onInfoFormSubmit(): void {
         if (this.infoForm.valid) {
-            console.log('this.infoForm.', this.infoForm.value);
             const params: any = this.infoForm.value;
+            params.orderNotificationFirst = this.infoForm.value.orderNotificationFirst ? 1 : 0;
+            params.orderNotificationsecond = this.infoForm.value.orderNotificationsecond ? 1 : 0;
             this.accountSandbox.doEditProfile(params);
             this.ifSubmitted = false;
-            this.infoForm.reset();
+            // this.infoForm.reset();
             this.infoForm.clearValidators();
         } else {
             this.ifSubmitted = true;

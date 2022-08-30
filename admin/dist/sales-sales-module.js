@@ -385,7 +385,7 @@ var getTodayOrderCountFailed = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["cre
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"subtoolbar salestoolbar\">\n    <div class=\"sub-nav-menu\">\n        <a href=\"javascript:void(0)\" [routerLink]=\"['/sales/orders']\" [routerLinkActive]=\"'active'\">\n            <img src=\"assets/img/orders-ico.png\"> Orders\n        </a>\n    </div>\n</div>"
+module.exports = "<div class=\"subtoolbar salestoolbar\">\r\n    <div class=\"sub-nav-menu\">\r\n        <a href=\"javascript:void(0)\" [routerLink]=\"['/sales/orders']\" [routerLinkActive]=\"'active'\">\r\n            <img src=\"assets/img/orders-ico.png\"> Orders\r\n        </a>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -454,7 +454,7 @@ var SalesHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-sales-header></app-sales-header>\n<div class=\"row products-section\">\n    <div class=\"col-12 layout-mar\">\n        <div class=\"card\">\n            <div class=\"product-ts-left\">\n                <ul>\n                    <li>\n                        <p>Total Orders</p>\n                        <h3>{{layoutSandbox.totalOrderCount$ | async}}</h3>\n                    </li>\n                    <li>\n                        <p>Today's Orders</p>\n                        <h3>{{layoutSandbox.todayOrderCount$ | async}}</h3>\n                    </li>\n                    <li>\n                        <p>Total Orders Amount</p>\n                        <h3>$ {{(layoutSandbox.totalOrderAmount$ | async).toFixed(2)}}</h3>\n                    </li>\n                    <li>\n                        <p>Today's Orders Amount</p>\n                        <h3>$ {{(layoutSandbox.todayOrderAmount$ | async).toFixed(2)}}</h3>\n                    </li>\n                </ul>\n            </div>\n\n            <!--Left-->\n\n        </div>\n    </div>\n</div>\n\n<router-outlet></router-outlet>"
+module.exports = "<app-sales-header></app-sales-header>\r\n<div class=\"row products-section\">\r\n    <div class=\"col-12 layout-mar\">\r\n        <div class=\"card\">\r\n            <div class=\"product-ts-left\">\r\n                <ul>\r\n                    <li>\r\n                        <p>Total Orders</p>\r\n                        <h3>{{layoutSandbox.totalOrderCount$ | async}}</h3>\r\n                    </li>\r\n                    <li>\r\n                        <p>Today's Orders</p>\r\n                        <h3>{{layoutSandbox.todayOrderCount$ | async}}</h3>\r\n                    </li>\r\n                    <li>\r\n                        <p>Total Orders Amount</p>\r\n                        <h3>$ {{(layoutSandbox.totalOrderAmount$ | async).toFixed(2)}}</h3>\r\n                    </li>\r\n                    <li>\r\n                        <p>Today's Orders Amount</p>\r\n                        <h3>$ {{(layoutSandbox.todayOrderAmount$ | async).toFixed(2)}}</h3>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n\r\n            <!--Left-->\r\n\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 

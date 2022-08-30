@@ -79,6 +79,7 @@ export class InformationComponent implements OnInit, OnDestroy {
     setProfile() {
         this.subscriptions.push(this.commonSandbox.getProfile$.subscribe(profile => {
             if (profile) {
+                console.log('profile', profile);
                 this.infoForm.controls['firstName'].setValue(profile.firstName);
                 this.infoForm.controls['email'].setValue(profile.email);
                 this.infoForm.controls['mobileNumber'].setValue(profile.mobileNumber);

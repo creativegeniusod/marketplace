@@ -8905,6 +8905,37 @@
     "name": "PutApiZoneUpdateZoneId"
   },
   {
+<<<<<<< HEAD
+=======
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "varname1",
+            "description": "<p>No type.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "varname2",
+            "description": "<p>With type.</p>"
+          }
+        ]
+      }
+    },
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "src/public/apidoc/main.js",
+    "group": "_var_www_html_test04_marketplace_api_src_public_apidoc_main_js",
+    "groupTitle": "_var_www_html_test04_marketplace_api_src_public_apidoc_main_js",
+    "name": ""
+  },
+  {
+>>>>>>> d011525afa42619d30603264f424433244756bee
     "type": "get",
     "url": "/api/media/bucket-object-list",
     "title": "bucket-object-list",

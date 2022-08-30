@@ -22,6 +22,7 @@ export class UserService {
 
     // find user
     public findOne(findCondition: any): Promise<any> {
+        console.log("dsds")
         this.log.info('Find all users 321',findCondition);
         return this.userLoginRepository.findOne(findCondition);
     }

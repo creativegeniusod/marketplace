@@ -5,7 +5,7 @@ export class CreateEmailTemplate implements Seed {
 
     public async seed(factory: Factory, connection: Connection): Promise<EmailTemplate> {
         const em = connection.createEntityManager();
-        const registerData = "Dear {name},<br/><br/> <p style='margin-bottom:.5em; margin: 0 0 10px 0;text-indent: 50px'> Thank you for expressing your interest and registering with Spurtcommerce, the faster roadway for a smarter eCommerce drive.   </p>";
+        const registerData = "Dear {name},<br/><br/> <p style='margin-bottom:.5em; margin: 0 0 10px 0;text-indent: 50px'> Thank you for expressing your interest and registering with Beaver, the faster roadway for a smarter eCommerce drive.   </p>";
         const fogotPasswordData = "Dear {name},<br/><br/>        <p style='margin-bottom:.5em; margin: 0 0 10px 0;text-indent: 50px'> Your new Password is :  {xxxxxx}  </p>";
         const contactUsData = "Dear Admin,<br/><br/>        <p style='margin-bottom:.5em; margin: 0 0 10px 0;text-indent: 50px'> You just received an enquiry from {name} and the details are here: <br> Details: <br> Email: {email}, <br> Phone Number : {phoneNumber}, <br> Message : {message}.  </p>";
         const createCustomerData = 'Dear {name},<br/><br/>   ' +

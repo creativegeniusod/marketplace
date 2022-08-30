@@ -30,6 +30,7 @@ var ProductAddModel = /** @class */ (function () {
         this.model = fromProductAdd.model || '';
         this.location = fromProductAdd.location || '';
         this.price = fromProductAdd.price || '';
+        this.regular = fromProductAdd.regular || '';
         this.outOfStockStatus = fromProductAdd.outOfStockStatus || '';
         this.requiredShipping = fromProductAdd.requiredShipping || '';
         this.dateAvailable = fromProductAdd.dateAvailable || '';
@@ -70,6 +71,7 @@ var ProductListModel = /** @class */ (function () {
         this.sku = fromProductList.sku || '';
         this.status = fromProductList.status || '';
         this.price = fromProductList.price || '';
+        this.regular = fromProductList.price || '';
         this.count = fromProductList.count || false;
     }
     return ProductListModel;
@@ -334,6 +336,7 @@ var ProductSandbox = /** @class */ (function () {
         this.appState = appState;
         this.router = router;
         this.toastr = toastr;
+        // console.log()
         this.productList$ = this.appState.select(_product_reducer_product_selector__WEBPACK_IMPORTED_MODULE_6__["getProductList"]);
         this.productCount$ = this.appState.select(_product_reducer_product_selector__WEBPACK_IMPORTED_MODULE_6__["getProductCount"]);
         this.deletedProduct$ = this.appState.select(_product_reducer_product_selector__WEBPACK_IMPORTED_MODULE_6__["getProductDelete"]);

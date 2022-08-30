@@ -127,7 +127,7 @@ var CMSRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"subtoolbar cmstoolbar\">\n    <div class=\"sub-nav-menu\">\n        <a href=\"javascript:void(0)\" [routerLink]=\"['/cms/pages']\" [routerLinkActive]=\"'active'\">\n            <img src=\"assets/img/page-ico.png\"> Pages\n        </a>\n    </div>\n</div>\n"
+module.exports = "<div class=\"subtoolbar cmstoolbar\">\r\n    <div class=\"sub-nav-menu\">\r\n        <a href=\"javascript:void(0)\" [routerLink]=\"['/cms/pages']\" [routerLinkActive]=\"'active'\">\r\n            <img src=\"assets/img/page-ico.png\"> Pages\r\n        </a>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -196,7 +196,7 @@ var CMSHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-cms-header></app-cms-header>\n\n<router-outlet></router-outlet>"
+module.exports = "<app-cms-header></app-cms-header>\r\n\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 

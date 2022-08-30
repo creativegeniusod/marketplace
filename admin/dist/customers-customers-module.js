@@ -145,7 +145,7 @@ var LayoutService = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"subtoolbar customertoolbar\">\n    <div class=\"sub-nav-menu\">\n        <a href=\"javascript:void(0)\" [routerLink]=\"['/customers/customer']\" [routerLinkActive]=\"'active'\">\n            <img src=\"assets/img/customers-nav-ico.png\"> Customers\n        </a>\n    </div>\n</div>"
+module.exports = "<div class=\"subtoolbar customertoolbar\">\r\n    <div class=\"sub-nav-menu\">\r\n        <a href=\"javascript:void(0)\" [routerLink]=\"['/customers/customer']\" [routerLinkActive]=\"'active'\">\r\n            <img src=\"assets/img/customers-nav-ico.png\"> Customers\r\n        </a>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -214,7 +214,7 @@ var CustomerHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-cms-header></app-cms-header>\n<div class=\"row products-section\">\n    <div class=\"col-12 layout-mar\">\n        <div class=\"card\">\n            <div class=\"product-ts-left\">\n                <ul>\n                    <li>\n                        <p>Total Customers </p>\n                        <h3>{{layoutSandbox.totalCustomerCount$ | async}}\n                        </h3>\n                    </li>\n                    <li>\n                        <p>Active Customers</p>\n                        <h3>{{layoutSandbox.activeCustomerCount$ | async}}\n                        </h3>\n                    </li>\n                    <li>\n                        <p>In-Active Customers</p>\n                        <h3>{{layoutSandbox.inActiveCustomerCount$ | async}}\n                        </h3>\n                    </li>\n                </ul>\n            </div>\n            <!--Left-->\n        </div>\n    </div>\n</div>\n\n<router-outlet></router-outlet>"
+module.exports = "<app-cms-header></app-cms-header>\r\n<div class=\"row products-section\">\r\n    <div class=\"col-12 layout-mar\">\r\n        <div class=\"card\">\r\n            <div class=\"product-ts-left\">\r\n                <ul>\r\n                    <li>\r\n                        <p>Total Customers </p>\r\n                        <h3>{{layoutSandbox.totalCustomerCount$ | async}}\r\n                        </h3>\r\n                    </li>\r\n                    <li>\r\n                        <p>Active Customers</p>\r\n                        <h3>{{layoutSandbox.activeCustomerCount$ | async}}\r\n                        </h3>\r\n                    </li>\r\n                    <li>\r\n                        <p>In-Active Customers</p>\r\n                        <h3>{{layoutSandbox.inActiveCustomerCount$ | async}}\r\n                        </h3>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n            <!--Left-->\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 

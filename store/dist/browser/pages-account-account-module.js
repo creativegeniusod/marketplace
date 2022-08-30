@@ -77765,8 +77765,12 @@ var AccountComponent = /** @class */ (function () {
         this.subscription = [];
         this.links = [
             { name: 'Account Dashboard', href: 'dashboard', icon: 'dashboard' },
-            { name: 'Account Information', href: 'information', icon: 'info' },
+            { name: 'Public Profile Settings', href: 'profile', icon: '' },
+            { name: 'Personal Information Settings', href: 'information', icon: 'info' },
+            { name: 'Address Settings', href: 'address', icon: '' },
+            { name: 'Influencer Management', href: 'influencer', icon: '' },
             { name: 'Order History', href: 'orders', icon: 'add_shopping_cart' },
+            { name: 'Become a Seller', href: 'become-seller', icon: '' },
             { name: 'Logout', href: '/logout', icon: 'power_settings_new' }
         ];
         this.router.events
@@ -78196,7 +78200,7 @@ var InfluencerManagementComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row wrap\">\r\n    <div fxFlex=\"100\" fxFlex.gt-sm=\"50\" class=\"p-2\">\r\n\r\n        <form [formGroup]=\"infoForm\">\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Contact Number\" formControlName=\"mobileNumber\">\r\n            </mat-form-field>\r\n            <mat-checkbox class=\"example-margin\" formControlName=\"checkPhoneNumber\">Check this to recieve order\r\n                notification and deals via SMS</mat-checkbox>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Primary Email Address\" formControlName=\"primaryAddess\">\r\n            </mat-form-field>\r\n\r\n            <mat-checkbox class=\"example-margin\" formControlName=\"checkPrimaryAddess\">Check this to recieve order\r\n                notification and deals via SMS</mat-checkbox>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Recovery Email Address\" formControlName=\"recoveryEmail\">\r\n            </mat-form-field>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Bio\" formControlName=\"bio\">\r\n            </mat-form-field>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <mat-label>Birthday</mat-label>\r\n                <input matInput [matDatepicker]=\"picker\" formControlName=\"dob\">\r\n                <mat-datepicker-toggle matSuffix [for]=\"picker\">\r\n                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>\r\n                </mat-datepicker-toggle>\r\n                <mat-datepicker #picker></mat-datepicker>\r\n            </mat-form-field>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <mat-label>Gender</mat-label>\r\n                <select matNativeControl formControlName=\"gender\">\r\n                    <option value=\"male\">male</option>\r\n                    <option value=\"female\">Female</option>\r\n                </select>\r\n            </mat-form-field>\r\n\r\n            <div class=\"text-center mt-2\">\r\n                <button mat-raised-button color=\"primary\" (click)=\"onInfoFormSubmit()\">Submit\r\n                </button>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n\r\n\r\n<app-account-buttons></app-account-buttons>"
+module.exports = "<div fxLayout=\"row wrap\">\r\n    <div fxFlex=\"100\" fxFlex.gt-sm=\"50\" class=\"p-2\">\r\n\r\n        <form [formGroup]=\"infoForm\">\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Contact Number\" formControlName=\"mobileNumber\">\r\n            </mat-form-field>\r\n            \r\n            <mat-checkbox class=\"example-margin\" formControlName=\"orderNotificationFirst\">Check this to recieve order\r\n                notification and deals via SMS</mat-checkbox>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Primary Email Address\" formControlName=\"primaryAddess\">\r\n            </mat-form-field>\r\n\r\n            <mat-checkbox class=\"example-margin\" formControlName=\"orderNotificationsecond\">Check this to recieve order\r\n                notification and deals via SMS</mat-checkbox>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Recovery Email Address\" formControlName=\"recoveryEmail\">\r\n            </mat-form-field>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Bio\" formControlName=\"bio\">\r\n            </mat-form-field>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <mat-label>Birthday</mat-label>\r\n                <input matInput [matDatepicker]=\"picker\" formControlName=\"birthday\">\r\n                <mat-datepicker-toggle matSuffix [for]=\"picker\">\r\n                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>\r\n                </mat-datepicker-toggle>\r\n                <mat-datepicker #picker></mat-datepicker>\r\n            </mat-form-field>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <mat-label>Gender</mat-label>\r\n                <select matNativeControl formControlName=\"gender\">\r\n                    <option value=\"male\">male</option>\r\n                    <option value=\"female\">Female</option>\r\n                </select>\r\n            </mat-form-field>\r\n\r\n            <div class=\"text-center mt-2\">\r\n                <button mat-raised-button color=\"primary\" (click)=\"onInfoFormSubmit()\">Submit\r\n                </button>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n\r\n\r\n<app-account-buttons></app-account-buttons>"
 
 /***/ }),
 
@@ -78281,9 +78285,9 @@ var InformationComponent = /** @class */ (function () {
             'firstName': [''],
             'email': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _theme_utils_app_validators__WEBPACK_IMPORTED_MODULE_3__["emailValidator"]])],
             'mobileNumber': [''],
-            'checkPhoneNumber': [''],
+            'orderNotificationFirst': [''],
             'primaryAddess': [''],
-            'checkPrimaryAddess': [''],
+            'orderNotificationsecond': [''],
             'recoveryEmail': [''],
             'bio': [''],
             'birthday': [''],
@@ -78303,13 +78307,12 @@ var InformationComponent = /** @class */ (function () {
         var _this = this;
         this.subscriptions.push(this.commonSandbox.getProfile$.subscribe(function (profile) {
             if (profile) {
-                console.log('profile', profile);
                 _this.infoForm.controls['firstName'].setValue(profile.firstName);
                 _this.infoForm.controls['email'].setValue(profile.email);
                 _this.infoForm.controls['mobileNumber'].setValue(profile.mobileNumber);
-                _this.infoForm.controls['checkPhoneNumber'].setValue(profile.checkPhoneNumber);
+                _this.infoForm.controls['orderNotificationFirst'].setValue(profile.orderNotificationFirst);
                 _this.infoForm.controls['primaryAddess'].setValue(profile.primaryAddess);
-                _this.infoForm.controls['checkPrimaryAddess'].setValue(profile.checkPrimaryAddess);
+                _this.infoForm.controls['orderNotificationsecond'].setValue(profile.orderNotificationsecond);
                 _this.infoForm.controls['recoveryEmail'].setValue(profile.recoveryEmail);
                 _this.infoForm.controls['bio'].setValue(profile.bio);
                 _this.infoForm.controls['birthday'].setValue(profile.birthday);
@@ -78320,6 +78323,8 @@ var InformationComponent = /** @class */ (function () {
     InformationComponent.prototype.onInfoFormSubmit = function () {
         if (this.infoForm.valid) {
             var params = this.infoForm.value;
+            params.orderNotificationFirst = this.infoForm.value.orderNotificationFirst ? 1 : 0;
+            params.orderNotificationsecond = this.infoForm.value.orderNotificationsecond ? 1 : 0;
             this.accountSandbox.doEditProfile(params);
             this.ifSubmitted = false;
             // this.infoForm.reset();

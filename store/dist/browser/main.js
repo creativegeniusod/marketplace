@@ -1215,6 +1215,12 @@ var ProfileModel = /** @class */ (function () {
         this.bio = bannerRequest.bio || '';
         this.iam = bannerRequest.iam || '';
         this.interest = bannerRequest.interest || '';
+        this.orderNotificationFirst = bannerRequest.orderNotificationFirst == 1 ? true : false;
+        this.primaryAddess = bannerRequest.primaryAddess || '';
+        this.orderNotificationsecond = bannerRequest.orderNotificationsecond == 1 ? true : false;
+        this.recoveryEmail = bannerRequest.recoveryEmail || '';
+        this.birthday = bannerRequest.birthday || '';
+        this.gender = bannerRequest.gender || '';
     }
     return ProfileModel;
 }());
@@ -7598,7 +7604,7 @@ var NotFoundComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row wrap\">\r\n  <div fxFlex=\"100\" fxFlex.gt-sm=\"50\" class=\"p-2\">\r\n    <div class=\"text-center mt-2\">\r\n      <div class=\"text-center mt-1\">\r\n        <button mat-button color=\"primary\" class=\"createAccountBtn actionBtn\" routerLink=\"/account/profile\">Public\r\n          profile\r\n          setting</button>\r\n      </div>\r\n      <div class=\"text-center mt-1\">\r\n        <button mat-button color=\"primary\" class=\"createAccountBtn actionBtn\" routerLink=\"/account/information\">Personal\r\n          information\r\n          setting</button>\r\n      </div>\r\n      <div class=\"text-center mt-1\">\r\n        <button mat-button color=\"primary\" class=\"createAccountBtn actionBtn\" routerLink=\"/account/address\">Address\r\n          setting</button>\r\n      </div>\r\n      <div class=\"text-center mt-1\">\r\n        <button mat-button color=\"primary\" class=\"createAccountBtn actionBtn\" (click)=\"navigateOnHelp()\">Need help with\r\n          my\r\n          profile</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div fxLayout=\"row wrap\">\r\n  <div fxFlex=\"100\" fxFlex.gt-sm=\"100\" class=\"formActions\">\r\n    <div class=\"text-center mt-2\">\r\n      <div class=\"text-center mt-1\">\r\n        <button mat-button color=\"primary\" class=\"createAccountBtn actionBtn\" routerLink=\"/account/profile\">Public\r\n          profile\r\n          setting</button>\r\n      </div>\r\n      <div class=\"text-center mt-1\">\r\n        <button mat-button color=\"primary\" class=\"createAccountBtn actionBtn\" routerLink=\"/account/information\">Personal\r\n          information\r\n          setting</button>\r\n      </div>\r\n      <div class=\"text-center mt-1\">\r\n        <button mat-button color=\"primary\" class=\"createAccountBtn actionBtn\" routerLink=\"/account/address\">Address\r\n          setting</button>\r\n      </div>\r\n      <div class=\"text-center mt-1\">\r\n        <button mat-button color=\"primary\" class=\"createAccountBtn actionBtn\" (click)=\"navigateOnHelp()\">Need help with\r\n          my\r\n          profile</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -12309,10 +12315,10 @@ __webpack_require__.r(__webpack_exports__);
 var environment = {
     production: false,
     facebookAppId: '314930319788683',
-    storeUrl: 'http://stagingwebsites.info:9000/api/',
-    imageUrl: 'http://stagingwebsites.info:9000/api/media/image-resize/' // <Your API url for image resize>
-    // storeUrl: 'http://localhost:9000/api/', // <Your API base url>
-    // imageUrl: 'http://localhost:9000/api/media/image-resize/' // <Your API url for image resize>
+    storeUrl: 'http://stagingwebsites.info:9016/api/',
+    imageUrl: 'http://stagingwebsites.info:9016/api/media/image-resize/' // <Your API url for image resize>
+    // storeUrl: 'http://localhost:9016/api/', // <Your API base url>
+    // imageUrl: 'http://localhost:9016/api/media/image-resize/' // <Your API url for image resize>
 };
 /*
  * For easier debugging in development mode, you can import the following file

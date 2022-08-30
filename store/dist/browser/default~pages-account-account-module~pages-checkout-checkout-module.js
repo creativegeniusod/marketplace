@@ -376,11 +376,17 @@ var EditProfileModal = /** @class */ (function () {
         this.lastName = editRequest.lastName || '';
         this.password = editRequest.password || '';
         this.emailId = editRequest.email || '';
-        this.phoneNumber = editRequest.phoneNumber || '';
+        this.mobileNumber = editRequest.mobileNumber || '';
         this.image = editRequest.image || '';
         this.bio = editRequest.bio || '';
         this.iam = editRequest.iam || '';
         this.interest = editRequest.interest || '';
+        this.orderNotificationFirst = editRequest.orderNotificationFirst ? 1 : 0;
+        this.primaryAddess = editRequest.primaryAddess || '';
+        this.orderNotificationsecond = editRequest.orderNotificationsecond ? 1 : 0;
+        this.recoveryEmail = editRequest.recoveryEmail || '';
+        this.birthday = editRequest.birthday || '';
+        this.gender = editRequest.gender || '';
     }
     return EditProfileModal;
 }());

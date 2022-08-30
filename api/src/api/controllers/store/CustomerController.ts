@@ -374,21 +374,22 @@ export class CustomerController {
         }
         // console.log("Hello")
         // return false;
+        
         resultData.firstName = customerEditProfileRequest.firstName;
         resultData.lastName = customerEditProfileRequest.lastName;
         resultData.email = customerEditProfileRequest.emailId;
         resultData.mobileNumber = customerEditProfileRequest.phoneNumber;
         resultData.username = customerEditProfileRequest.emailId;
-        resultData.interest = 'interest';
-        resultData.bio = 'bio';
-        resultData.iam = 'iam';
-        resultData.contactNumber = '9898989898';
-        resultData.orderNotificationFirst = 1;
-        resultData.primaryEmail = "primary@gmail.com";
-        resultData.orderNotificationsecond = 1;
-        resultData.recoveryEmail = "recovery@gmail.com";
-        resultData.birthday = "15/11/1991";
-        resultData.gender = "male";
+        resultData.interest = customerEditProfileRequest.interest;
+        resultData.bio = customerEditProfileRequest.bio;
+        resultData.iam = customerEditProfileRequest.iam;
+        resultData.contactNumber = customerEditProfileRequest.contactNumber;
+        resultData.orderNotificationFirst = customerEditProfileRequest.orderNotificationFirst;
+        resultData.primaryEmail = customerEditProfileRequest.primaryEmail;
+        resultData.orderNotificationsecond = customerEditProfileRequest.orderNotificationsecond;
+        resultData.recoveryEmail = customerEditProfileRequest.recoveryEmail;
+        resultData.birthday = customerEditProfileRequest.birthday;
+        resultData.gender = customerEditProfileRequest.gender;
         console.log(resultData,"Hello");
         if (customerEditProfileRequest.password) {
             // if (await Customer.comparePassword(resultData, customerEditProfileRequest.oldPassword)) {

@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-main-carousel></app-main-carousel>\r\n\r\n<div class=\"products-tabs featured-tabs\">\r\n    <app-product-not-found\r\n        *ngIf=\"(listSandbox.productLoaded$ | async) && (listSandbox.productlist$ | async)?.length == 0\">\r\n    </app-product-not-found>\r\n</div>\r\n\r\n<div class=\"products-tabs featured-tabs\">\r\n    <app-trending-product></app-trending-product>\r\n</div>\r\n<div class=\"products-tabs featured-tabs\">\r\n    <app-advertisment-product></app-advertisment-product>\r\n</div>\r\n\r\n\r\n\r\n<!-- <div class=\"products-tabs featured-tabs\">\r\n    <mat-tab-group mat-stretch-tabs>\r\n        <mat-tab label=\"Today Deals\">\r\n            <app-products-carousel [products]=\"listSandbox.todayDealList$ | async\"></app-products-carousel>\r\n        </mat-tab>\r\n    </mat-tab-group>\r\n</div> -->\r\n\r\n<!-- <app-brands-carousel [brands]=\"listSandbox.manufacturer$ | async\"></app-brands-carousel> -->"
+module.exports = "<app-main-carousel></app-main-carousel>\n\n<div class=\"products-tabs featured-tabs\">\n    <app-product-not-found\n        *ngIf=\"(listSandbox.productLoaded$ | async) && (listSandbox.productlist$ | async)?.length == 0\">\n    </app-product-not-found>\n</div>\n\n<div class=\"products-tabs featured-tabs\">\n    <app-trending-product></app-trending-product>\n</div>\n<div class=\"products-tabs featured-tabs\">\n    <app-advertisment-product></app-advertisment-product>\n</div>\n\n\n\n<!-- <div class=\"products-tabs featured-tabs\">\n    <mat-tab-group mat-stretch-tabs>\n        <mat-tab label=\"Today Deals\">\n            <app-products-carousel [products]=\"listSandbox.todayDealList$ | async\"></app-products-carousel>\n        </mat-tab>\n    </mat-tab-group>\n</div> -->\n\n<!-- <app-brands-carousel [brands]=\"listSandbox.manufacturer$ | async\"></app-brands-carousel> -->"
 
 /***/ }),
 
@@ -18,7 +18,7 @@ module.exports = "<app-main-carousel></app-main-carousel>\r\n\r\n<div class=\"pr
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".products-tabs {\n  margin-top: 30px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9kZWZhdWx0L3BhZ2VzL2hvbWUtbWVudS9EOlxcb2R6XFx3b3JraW5nXFxtYXJrZXRwbGFjZVxcc3RvcmUvc3JjXFxkZWZhdWx0XFxwYWdlc1xcaG9tZS1tZW51XFxob21lLW1lbnUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxpQkFBZ0IsRUFDbkIiLCJmaWxlIjoic3JjL2RlZmF1bHQvcGFnZXMvaG9tZS1tZW51L2hvbWUtbWVudS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wcm9kdWN0cy10YWJze1xyXG4gICAgbWFyZ2luLXRvcDogMzBweDsgICBcclxufSJdfQ== */"
+module.exports = ".products-tabs {\n  margin-top: 30px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvdGVzdDA0L21hcmtldHBsYWNlL3N0b3JlL3NyYy9kZWZhdWx0L3BhZ2VzL2hvbWUtbWVudS9ob21lLW1lbnUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxpQkFBZ0IsRUFDbkIiLCJmaWxlIjoic3JjL2RlZmF1bHQvcGFnZXMvaG9tZS1tZW51L2hvbWUtbWVudS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wcm9kdWN0cy10YWJze1xuICAgIG1hcmdpbi10b3A6IDMwcHg7ICAgXG59Il19 */"
 
 /***/ }),
 

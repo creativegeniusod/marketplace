@@ -14,6 +14,7 @@ export class ProductListModel {
   public sku: string;
   public status: string;
   public price: number;
+  public regular: number;
   public count: boolean;
 
   constructor(fromProductList: any) {
@@ -23,6 +24,7 @@ export class ProductListModel {
     this.sku = fromProductList.sku || '';
     this.status = fromProductList.status || '';
     this.price = fromProductList.price || '';
+    this.regular = fromProductList.price || '';
     this.count = fromProductList.count || false;
   }
 }

@@ -11,6 +11,7 @@ export class PageslistResponseModel {
   public metaTagContent: string;
   public isActive: number;
   public title: string;
+  public slug: string;
   public pageId: number;
   public metaTagTitle: string;
   public metaTagKeyword: string;
@@ -23,5 +24,6 @@ export class PageslistResponseModel {
     this.isActive = listResponse.isActive || 0;
     this.pageId = listResponse.pageId || 0;
     this.title = listResponse.title || '';
+    this.slug = listResponse.slug || '';
   }
 }

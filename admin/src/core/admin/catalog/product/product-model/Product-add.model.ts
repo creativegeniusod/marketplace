@@ -18,6 +18,7 @@ export class ProductAddModel {
   public model: any;
   public location: string;
   public price: string;
+  public regular: string;
   public outOfStockStatus: number;
   public requiredShipping: number;
   public dateAvailable: string;
@@ -36,6 +37,7 @@ export class ProductAddModel {
     this.model = fromProductAdd.model || '';
     this.location = fromProductAdd.location || '';
     this.price = fromProductAdd.price || '';
+    this.regular = fromProductAdd.regular || '';
     this.outOfStockStatus = fromProductAdd.outOfStockStatus || '';
     this.requiredShipping = fromProductAdd.requiredShipping || '';
     this.dateAvailable = fromProductAdd.dateAvailable || '';

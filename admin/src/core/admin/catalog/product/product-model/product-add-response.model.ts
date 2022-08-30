@@ -15,6 +15,7 @@ export class ProductAddResponseModel {
   public location: string;
   public quantity: string;
   public price: string;
+  public regular: string;
   public minimumQuantity: string;
   public subtractStock: string;
   public stockStatusId: string;
@@ -36,6 +37,7 @@ export class ProductAddResponseModel {
     this.location = productaddResponse.location || '';
     this.quantity = productaddResponse.quantity || '';
     this.price = productaddResponse.price || '';
+    this.regular = productaddResponse.price || '';
     this.minimumQuantity = productaddResponse.minimumQuantity || '';
     this.subtractStock = productaddResponse.subtractStock || '';
     this.stockStatusId = productaddResponse.stockStatusId || '';

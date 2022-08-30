@@ -43,6 +43,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="ap-body-col">
+                    <div class="form-group">
+                        <label>Page slug <sup>*</sup></label>
+                        <input type="text" class="form-control" formControlName="slug" placeholder="Page slug" [ngClass]="{ 'is-invalid': submitted && f.slug.errors }" />
+                        <div *ngIf="submitted && f.slug.errors" class="invalid-feedback">
+                            <div *ngIf="f.slug.errors.required">Page Slug is required
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!--Col-->
                 <div class="ap-body-col width100">

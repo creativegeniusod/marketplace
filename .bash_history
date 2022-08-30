@@ -1,31 +1,3 @@
-pm2  start npm start serve
-pm2  start  start serve
-pm2   start serve
-npm start serve
-npm start serve &
-cd ..
-ls
-cd store/
-ls
-cd ..
-ls
-cd spi
-cd api/
-ls
-npm start serve 
-cp .htaccess ../marketplace
-ls
-cp .htaccess admin/dist/
-cp .htaccess store/dist/browser/
-cd store/
-npm run build
-cd ..
-source .profile 
-cd store/
-npm run build
-npm install
-npm install
-npm run build
 ls
 ls
 cd admin/
@@ -498,3 +470,31 @@ git status
 git pull origin master
 git sttaus
 git status
+source ~/.profile
+cd api
+npm start serve
+kill -9 $(lsof -t -i:9000)
+npm start serve
+kill -9 $(lsof -t -i:9000)
+npm start serve
+kill $(lsof -t -i:9000)
+npm start serve
+source ~/.profilesource ~/.profile
+ls
+git status
+git status
+git add .
+git commit -m "new changes Aug 29 17:00"
+git commit -m "new changes Aug 29 17:00" --no-verify
+git pull origin master
+git status
+cd api
+npm start serve
+cd ..
+cd admin
+ls
+ng serve
+source ~/.profile
+npm run build
+npm start serev
+npm start serve

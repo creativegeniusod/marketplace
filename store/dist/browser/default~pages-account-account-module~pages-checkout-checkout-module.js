@@ -129,7 +129,7 @@ var AccountSandbox = /** @class */ (function () {
         this.subscriptions.push(this.getEdittedStatus$.subscribe(function (edit) {
             if (edit && edit.status === 1) {
                 _this.commonSandbox.doGetProfile();
-                _this.router.navigate(['/']);
+                // this.router.navigate(['/']);
             }
         }));
     };
@@ -378,6 +378,9 @@ var EditProfileModal = /** @class */ (function () {
         this.emailId = editRequest.email || '';
         this.phoneNumber = editRequest.phoneNumber || '';
         this.image = editRequest.image || '';
+        this.bio = editRequest.bio || '';
+        this.iam = editRequest.iam || '';
+        this.interest = editRequest.interest || '';
     }
     return EditProfileModal;
 }());

@@ -693,6 +693,7 @@ body {
 
 .site-container {
     padding: 0 16px;
+    width: 100%;
 }
 
 /*.app.green .featured-tabs .mat-tab-label {
@@ -869,6 +870,8 @@ html.cdk-global-scrollblock{position: static;}
     left: 5%;
     padding: 20px 30px;
     box-sizing: border-box;
+    max-height: 500px;
+    overflow: auto;
 }
 
 .search-algin {
@@ -943,7 +946,14 @@ html.cdk-global-scrollblock{position: static;}
 .notFoundImg{margin-bottom: 20px;}
 .priceAndIcons p {font-size: 14px;}
 .priceAndIcons p{font-size: 14px;}
-
+.titleWithIcon {
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.titleWithIcon img {
+    margin: 0 10px 0 0;
+}
 
 @media (max-width: 1480px){
     .priceAndIcons p, .product-item .prices .new-price {font-size: 14px;}

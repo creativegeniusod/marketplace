@@ -53,6 +53,7 @@ import { MainSubmenuCarouselComponent } from './main-submenu-carousel/main-subme
 import { TrendingProductComponent } from './trending-product/trending-product.component';
 import { AdvertismentProductComponent } from './advertisment-product/advertisment-product.component';
 import { ProductNotFoundComponent } from './product-not-found/product-not-found.component';
+import { AccountButtonsComponent } from './account-buttons/account-buttons.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     wheelPropagation: true,
@@ -81,7 +82,8 @@ export const COMPONENTS = [
     CartNavComponent,
     TrendingProductComponent,
     AdvertismentProductComponent,
-    ProductNotFoundComponent
+    ProductNotFoundComponent,
+    AccountButtonsComponent
 ];
 
 @NgModule({

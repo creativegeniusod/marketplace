@@ -10,6 +10,7 @@ import {Get, JsonController, Res, Req, QueryParam, Body , Post} from 'routing-co
 import {BannerService} from '../../services/BannerService';
 import {MAILService} from '../../../auth/mail.services';
 import {classToPlain} from 'class-transformer';
+import {PageService} from '../../services/PageService';
 import {CategoryService} from '../../services/CategoryService';
 import {ProductService} from '../../services/ProductService';
 import arrayToTree from 'array-to-tree';
@@ -29,6 +30,7 @@ import jwt from 'jsonwebtoken';
 @JsonController('/list')
 export class CommonListController {
     constructor(private bannerService: BannerService, private categoryService: CategoryService,
+            private pageService: PageService,
                 private productService: ProductService, private productImageService: ProductImageService,
                 private countryService: CountryService, private contactService: ContactService,
                 private emailTemplateService: EmailTemplateService,
@@ -384,6 +386,25 @@ export class CommonListController {
         };
         return response.status(200).send(successResponse);
     }
+
+
+    @Get('/getPage')
+    public async getPage(@QueryParam('slug') slug: string, @Res() response: any): Promise<any> {
+        /*const select = ['pageId', 'title', 'content', 'isActive', 'metaTagTitle', 'metaTagContent', 'metaTagKeyword'];*/
+        const page = await this.pageService.findOne({
+            where: {
+                slug: slug,
+            },
+        });
+            if (page) {
+                const successRes: any = {
+                    status: 1,
+                    message: 'Successfully got pages count',
+                    data: page,
+                };
+                return response.status(200).send(successRes);
+            }
+        }
 
     // Custom Product List API
     /**

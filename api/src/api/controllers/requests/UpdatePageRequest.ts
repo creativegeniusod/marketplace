@@ -19,6 +19,11 @@ export class UpdatePage {
     public title: string;
 
     @IsNotEmpty({
+        message: 'slug is required',
+    })
+    public slug: string;
+
+    @IsNotEmpty({
         message: 'content is required',
     })
     public content: string;

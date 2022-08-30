@@ -4216,6 +4216,93 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/api/page/getPage",
+    "title": "Page List API",
+    "group": "Page",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Request body": [
+          {
+            "group": "Request body",
+            "type": "Number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>limit</p>"
+          },
+          {
+            "group": "Request body",
+            "type": "Number",
+            "optional": false,
+            "field": "offset",
+            "description": "<p>offset</p>"
+          },
+          {
+            "group": "Request body",
+            "type": "String",
+            "optional": false,
+            "field": "keyword",
+            "description": "<p>keyword</p>"
+          },
+          {
+            "group": "Request body",
+            "type": "Number",
+            "optional": false,
+            "field": "status",
+            "description": "<p>status</p>"
+          },
+          {
+            "group": "Request body",
+            "type": "Number",
+            "optional": false,
+            "field": "count",
+            "description": "<p>count should be number or boolean</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success",
+          "content": "HTTP/1.1 200 OK\n{\n     \"message\": \"Successfully get page list\",\n     \"data\":{\n     \"pageId\" : \"\",\n     \"title\" : \"\",\n     \"content\" : \"\",\n     \"active\" : \"\",\n     \"metaTagTitle\" : \"\",\n     \"metaTagContent\" : \"\",\n     \"metaTagKeyword\" : \"\",\n     }\n     \"status\": \"1\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "/api/page/getPage"
+      }
+    ],
+    "error": {
+      "examples": [
+        {
+          "title": "Page error",
+          "content": "HTTP/1.1 500 Internal Server Error",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/api/controllers/PageController.ts",
+    "groupTitle": "Page",
+    "name": "GetApiPageGetpage"
+  },
+  {
+    "type": "get",
     "url": "/api/page/pagelist",
     "title": "Page List API",
     "group": "Page",
@@ -4356,7 +4443,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Input",
-          "content": "{\n     \"title\" : \"\",\n     \"content\" : \"\",\n     \"metaTagTitle\" : \"\",\n     \"metaTagContent\" : \"\",\n     \"metaTagKeyword\" : \"\",\n     \"active\" : \"\",\n}",
+          "content": "{\n     \"title\" : \"\",\n     \"slug\" : \"\",\n     \"content\" : \"\",\n     \"metaTagTitle\" : \"\",\n     \"metaTagContent\" : \"\",\n     \"metaTagKeyword\" : \"\",\n     \"active\" : \"\",\n}",
           "type": "json"
         }
       ]

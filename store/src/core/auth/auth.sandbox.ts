@@ -64,6 +64,7 @@ export class AuthSandbox {
     this.appState$.dispatch(new authAction.DoLogin(new LoginModel(params)));
   }
   public doRegister(params): void {
+    console.log('params', params);
     this.appState$.dispatch(
       new authAction.DoRegister(new RegisterModel(params))
     );

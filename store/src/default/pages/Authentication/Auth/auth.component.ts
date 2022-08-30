@@ -6,12 +6,12 @@
  * Author piccosoft ltd <support@piccosoft.com>
  * Licensed under the MIT license.
  */
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {MatSnackBar} from '@angular/material';
-import {emailValidator, matchingPasswords} from '../../../theme/utils/app-validators';
-import {AuthSandbox} from '../../../../core/auth/auth.sandbox';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
+import { emailValidator, matchingPasswords } from '../../../theme/utils/app-validators';
+import { AuthSandbox } from '../../../../core/auth/auth.sandbox';
 
 
 @Component({
@@ -26,9 +26,9 @@ export class AuthComponent implements OnInit {
     public submitted = false;
 
     constructor(public formBuilder: FormBuilder,
-                public router: Router,
-                public snackBar: MatSnackBar,
-                public authSandbox: AuthSandbox) {
+        public router: Router,
+        public snackBar: MatSnackBar,
+        public authSandbox: AuthSandbox) {
     }
 
     // Initially initialize reactive form
@@ -42,48 +42,48 @@ export class AuthComponent implements OnInit {
             'password': ['', Validators.compose([Validators.required, Validators.minLength(5)])],
             'confirmPassword': ['', Validators.compose([Validators.required])],
             // 'phoneNumber': ['', Validators.compose([Validators.required, Validators.pattern(mobileValidationPattern)])]
-        }, {validator: matchingPasswords('password', 'confirmPassword')});
+        }, { validator: matchingPasswords('password', 'confirmPassword') });
 
     }
 
     public login() {
 
         window['FB'].login((response) => {
-        console.log('login response',response);
-        if (response.authResponse) {
+            console.log('login response', response);
+            if (response.authResponse) {
 
-        window['FB'].api('/me', {
-        fields: 'last_name, first_name, email'
-        }, (userInfo) => {
+                window['FB'].api('/me', {
+                    fields: 'last_name, first_name, email'
+                }, (userInfo) => {
 
-        console.log("user information");
-        console.log(userInfo);
-        });
+                    console.log("user information");
+                    console.log(userInfo);
+                });
 
-        } else {
-        console.log('User login failed');
-        }
-        }, {scope: 'email'});
+            } else {
+                console.log('User login failed');
+            }
+        }, { scope: 'email' });
     }
 
-    fbLibrary() { 
-        (window as any).fbAsyncInit = function() {
-          window['FB'].init({
-            appId      : '1815259135478978',
-            cookie     : true,
-            xfbml      : true,
-            version    : 'v3.1'
-          });
-          window['FB'].AppEvents.logPageView();
+    fbLibrary() {
+        (window as any).fbAsyncInit = function () {
+            window['FB'].init({
+                appId: '1815259135478978',
+                cookie: true,
+                xfbml: true,
+                version: 'v3.1'
+            });
+            window['FB'].AppEvents.logPageView();
         };
-     
-        (function(d, s, id){
-           var js, fjs = d.getElementsByTagName(s)[0];
-           if (d.getElementById(id)) {return;}
-           js = d.createElement(s); js.id = id;
-           js.src = "https://connect.facebook.net/en_US/sdk.js";
-           fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk')); 
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
     }
 
     /** calls authSandbox doRegister if tthe from is valid.
@@ -91,9 +91,7 @@ export class AuthComponent implements OnInit {
     public onRegisterFormSubmit(values: Object): void {
         if (this.registerForm.valid) {
             console.log(this.registerForm.value)
-            
-            this.authSandbox.doRegister(
-                console.log(this.registerForm.value));
+            this.authSandbox.doRegister(this.registerForm.value)
             this.submitted = false;
             this.registerForm.reset();
             // this.resetAllFormFields(this.registerForm);
@@ -121,7 +119,7 @@ export class AuthComponent implements OnInit {
         Object.keys(formGroup.controls).forEach(field => {
             const control = formGroup.get(field);
             if (control instanceof FormControl) {
-                control.markAsTouched({onlySelf: true});
+                control.markAsTouched({ onlySelf: true });
             } else if (control instanceof FormGroup) {
                 this.validateAllFormFields(control);
             }

@@ -128,6 +128,7 @@ export class PageListComponent implements OnInit {
     params.limit = this.pageSize;
     params.offset = offset;
     params.keyword = this.keyword;
+    // console.log(params,"****")
     this.appSandbox.getPagesList(params);
   }
 
@@ -152,6 +153,7 @@ export class PageListComponent implements OnInit {
 
   // # edit
   editpagessList(pagesList) {
+    // console.log(pagesList)
     this.service.pagesSetData(pagesList);
     this.router.navigate(['/cms/pages/edit', pagesList.pageId]);
   }

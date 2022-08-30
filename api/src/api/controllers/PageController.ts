@@ -12,6 +12,7 @@ import {CreatePage} from './requests/CreatePageRequest';
 import {PageService} from '../services/PageService';
 import {UpdatePage} from './requests/UpdatePageRequest';
 import {DeletePageRequest} from './requests/DeletePageRequest';
+var slugify = require('slugify')
 
 @JsonController('/page')
 export class PageController {
@@ -32,6 +33,7 @@ export class PageController {
      * @apiParamExample {json} Input
      * {
      *      "title" : "",
+     *      "slug" : "",
      *      "content" : "",
      *      "metaTagTitle" : "",
      *      "metaTagContent" : "",
@@ -54,6 +56,7 @@ export class PageController {
 
         const page = new Page();
         page.title = pageParam.title;
+        page.slug = slugify(pageParam.slug);
         page.content = pageParam.content;
         page.isActive = pageParam.active;
         page.metaTagTitle = pageParam.metaTagTitle;
@@ -109,7 +112,7 @@ export class PageController {
     @Get('/pagelist')
     @Authorized()
     public async pageList(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number, @QueryParam('keyword') keyword: string, @QueryParam('status')status: number, @QueryParam('count')count: number|boolean, @Res() response: any): Promise<any> {
-        const select = ['pageId', 'title', 'content', 'isActive', 'metaTagTitle', 'metaTagContent', 'metaTagKeyword'];
+        const select = ['pageId', 'title','slug' ,'content', 'isActive', 'metaTagTitle', 'metaTagContent', 'metaTagKeyword'];
         const search = [
             {
                 name    : 'title',
@@ -138,6 +141,55 @@ export class PageController {
             };
             return response.status(200).send(successResponse);
         }
+
+    // Page List API
+    /**
+     * @api {get} /api/page/getPage Page List API
+     * @apiGroup Page
+     * @apiHeader {String} Authorization
+     * @apiParam (Request body) {Number} limit limit
+     * @apiParam (Request body) {Number} offset offset
+     * @apiParam (Request body) {String} keyword keyword
+     * @apiParam (Request body) {Number} status status
+     * @apiParam (Request body) {Number} count count should be number or boolean
+     * @apiSuccessExample {json} Success
+     * HTTP/1.1 200 OK
+     * {
+     *      "message": "Successfully get page list",
+     *      "data":{
+     *      "pageId" : "",
+     *      "title" : "",
+     *      "content" : "",
+     *      "active" : "",
+     *      "metaTagTitle" : "",
+     *      "metaTagContent" : "",
+     *      "metaTagKeyword" : "",
+     *      }
+     *      "status": "1"
+     * }
+     * @apiSampleRequest /api/page/getPage
+     * @apiErrorExample {json} Page error
+     * HTTP/1.1 500 Internal Server Error
+     */
+
+    @Get('/getPage')
+    @Authorized()
+    public async getPage(@QueryParam('id') id: number, @Res() response: any): Promise<any> {
+        /*const select = ['pageId', 'title', 'content', 'isActive', 'metaTagTitle', 'metaTagContent', 'metaTagKeyword'];*/
+        const page = await this.pageService.findOne({
+            where: {
+                pageId: id,
+            },
+        });
+            if (page) {
+                const successRes: any = {
+                    status: 1,
+                    message: 'Successfully got pages count',
+                    data: page,
+                };
+                return response.status(200).send(successRes);
+            }
+        }    
 
     // Update Page API
     /**
@@ -189,6 +241,7 @@ export class PageController {
         }
 
         page.title = pageParam.title;
+        page.slug = slugify(pageParam.slug);
         page.content = pageParam.content;
         page.isActive = pageParam.active;
         page.metaTagTitle = pageParam.metaTagTitle;

@@ -8,6 +8,7 @@
  */
 export class PagesupdateModel {
   public title: string;
+  public slug: string;
   public content: string;
   public active: number;
   public count: number;
@@ -18,6 +19,7 @@ export class PagesupdateModel {
 
   constructor(PagesUpdateForm: any) {
     this.title = PagesUpdateForm.title || '';
+    this.slug = PagesUpdateForm.slug || '';
     this.content = PagesUpdateForm.content || '';
     this.active = PagesUpdateForm.active || 0;
     this.pageId = PagesUpdateForm.pageId || 0;

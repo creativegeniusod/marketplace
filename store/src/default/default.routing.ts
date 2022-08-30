@@ -17,10 +17,8 @@ import { LayoutAuthGuard } from '../core/service/layout_auth.guard';
 import { UnderDevelopingComponent } from './pages/layout/under-developing/under-developing.component';
 import { GetDirectionsComponent } from './shared/get-directions/get-directions.component';
 import { HelpComponent } from './shared/components/help/help.component';
-import { FaqComponent } from './shared/components/faq/faq.component';
-import { PrivacyPolicyComponent } from './shared/components/privacy-policy/privacy-policy.component';
 import { ContactusComponent } from './shared/components/contactus/contactus.component';
-import { TAndCComponent } from './shared/components/t-and-c/t-and-c.component';
+import { FooterPagesComponent } from './shared/components/footer-pages/footer-pages.component';
 
 export const routes: Routes = [
   {
@@ -121,10 +119,10 @@ export const routes: Routes = [
       },
       { path: 'help', component: HelpComponent },
       { path: 'contactus', component: ContactusComponent },
-      { path: 'faq', component: FaqComponent, pathMatch: 'full' },
-      { path: 'privacy', component: PrivacyPolicyComponent, pathMatch: 'full' },
-      { path: 'tAndC', component: TAndCComponent, pathMatch: 'full' },
-      { path: 'return', component: PrivacyPolicyComponent, pathMatch: 'full' },
+      { path: 'faq', component: FooterPagesComponent, pathMatch: 'full' },
+      { path: 'privacy-policy', component: FooterPagesComponent, pathMatch: 'full' },
+      { path: 'term-and-condition', component: FooterPagesComponent, pathMatch: 'full' },
+      { path: 'Return', component: FooterPagesComponent, pathMatch: 'full' },
 
     ]
   },

@@ -31,14 +31,14 @@
     </div>
 
     <div fxShow="true" fxHide.lt-md class="search-algin" fxFlex fxFlexOffset.gt-sm="1" fxShow="true" fxShow.gt-sm>
-        <form method="get" class="search-form" fxLayout="row"  (click) =" outsideClick($event)">
+        <form method="get" class="search-form" fxLayout="row" (click)=" outsideClick($event)">
             <mat-menu #categoriesMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="categories-dropdown">
             </mat-menu>
             <input type="text" placeholder="What are you looking for ?" fxFlex (keyup)="searchData($event.target.value)"
                 [(ngModel)]="searchValue" name="searchValue" (keyup.enter)="
                 search()" autocomplete="off">
         </form>
-        <div mat-dialog-content  *ngIf="!show && searchLists.length > 0">
+        <div mat-dialog-content *ngIf="!show && searchLists.length > 0">
             <div>
                 <h5>Recent</h5>
                 <h5>Clear All</h5>
@@ -116,16 +116,16 @@
             <a mat-menu-item routerLink="/auth" *ngIf="!(commonSandbox.getProfile$ | async)?.email">
                 <span>SignIn/SignUp</span>
             </a>
-            <a mat-menu-item>
+            <a mat-menu-item routerLink="/account/profile">
                 <span>Public Profile Settings</span>
             </a>
-            <a mat-menu-item>
+            <a mat-menu-item routerLink="/account/information">
                 <span>Personal Information Settings</span>
             </a>
-            <a mat-menu-item>
+            <a mat-menu-item routerLink="/account/address">
                 <span>Address Settings</span>
             </a>
-            <a mat-menu-item>
+            <a mat-menu-item routerLink="/account/influencer">
                 <span>Influencer Management</span>
             </a>
             <a mat-menu-item routerLink="/account/orders">
@@ -134,10 +134,10 @@
             <a mat-menu-item routerLink="/contactus">
                 <span>Contact Us</span>
             </a>
-            <a mat-menu-item  routerLink="/help">
+            <a mat-menu-item routerLink="/help">
                 <span>Need Help</span>
             </a>
-            <a mat-menu-item>
+            <a mat-menu-item routerLink="/account/become-seller">
                 <span>Become a Seller</span>
             </a>
 
@@ -159,32 +159,33 @@
     <mat-menu #notificationMenu="matMenu" [overlapTrigger]="false" xPosition="before"
         class="app-dropdown account-pane account menu-drop">
         <span>
-        <h3>Notifications</h3>
-        <div class="divider"></div>
-        <a mat-menu-item>
-            <span>Your order number: 293823 has been shipped and we will notify you when its ready for delievery</span>
-        </a>
-        <a mat-menu-item>
-            <span>Your order number: 293823 has been packeed and we will notify you when its shipped</span>
-        </a>
-        <a mat-menu-item>
-            <span>Thank you for placing order</span>
-        </a>
-        <a mat-menu-item>
-            <span>Notifications</span>
-        </a>
-        <a mat-menu-item>
-            <span>Notifications</span>
-        </a>
-        <a mat-menu-item>
-            <span>Notifications</span>
-        </a>
-        <a mat-menu-item>
-            <span>Notifications</span>
-        </a>
-        <a mat-menu-item>
-            <span>Notifications</span>
-        </a>
+            <h3>Notifications</h3>
+            <div class="divider"></div>
+            <a mat-menu-item>
+                <span>Your order number: 293823 has been shipped and we will notify you when its ready for
+                    delievery</span>
+            </a>
+            <a mat-menu-item>
+                <span>Your order number: 293823 has been packeed and we will notify you when its shipped</span>
+            </a>
+            <a mat-menu-item>
+                <span>Thank you for placing order</span>
+            </a>
+            <a mat-menu-item>
+                <span>Notifications</span>
+            </a>
+            <a mat-menu-item>
+                <span>Notifications</span>
+            </a>
+            <a mat-menu-item>
+                <span>Notifications</span>
+            </a>
+            <a mat-menu-item>
+                <span>Notifications</span>
+            </a>
+            <a mat-menu-item>
+                <span>Notifications</span>
+            </a>
 
         </span>
     </mat-menu>

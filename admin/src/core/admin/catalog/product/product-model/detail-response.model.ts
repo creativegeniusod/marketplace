@@ -21,6 +21,7 @@ export class DetailResponseModel {
   public dateAvailable: string;
   public sortOrder: string;
   public price: number;
+  public regular: number;
   public name: string;
   public description: string;
   public metaTagTitle: string;
@@ -49,6 +50,7 @@ export class DetailResponseModel {
     this.stockStatusId = detailResponse.stockStatusId || 0;
     this.manufacturerId = detailResponse.manufacturerId || 0;
     this.price = detailResponse.price || 0;
+    this.regular = detailResponse.regular || 0;
     this.name = detailResponse.name || '';
     this.description = detailResponse.description || '';
     this.metaTagTitle = detailResponse.metaTagTitle || '';

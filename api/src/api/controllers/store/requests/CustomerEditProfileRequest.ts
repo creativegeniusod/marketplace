@@ -38,6 +38,20 @@ export class CustomerEditProfileRequest {
     
     public iam: string;
 
+    public contactNumber: string;
+
+    public orderNotificationFirst: string;
+
+    public primaryEmail: string;
+
+    public orderNotificationsecond: string;
+
+    public recoveryEmail: string;
+
+    public birthday: string;
+    
+    public gender: string;
+
     @IsOptional()
     @IsNotEmpty()
     public phoneNumber: number;

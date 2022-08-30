@@ -77690,7 +77690,7 @@ this.pdfMake = this.pdfMake || {}; this.pdfMake.vfs = {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container>\r\n    <mat-sidenav #sidenav [opened]=\"sidenavOpen\" [mode]=\"sidenavOpen ? 'side' : 'over'\" class=\"account-sidenav\" perfectScrollbar>\r\n        <mat-nav-list class=\"mat-elevation-z1 h-100\">\r\n            <mat-list-item *ngFor=\"let link of links\" (click)=\"doLogOut(link.name)\">\r\n                <mat-icon matListIcon class=\"mat-icon-sm\">{{link.icon}}</mat-icon>\r\n                <a matLine *ngIf=\"link['name'] != 'Logout'\" [routerLink]=\"link.href\" routerLinkActive=\"horizontal-active-link_account\" [routerLinkActiveOptions]=\"{exact:true}\">{{ link.name }}</a>\r\n\r\n                <a matLine *ngIf=\"link['name'] == 'Logout'\" routerLinkActive=\"horizontal-active-link_account\" [routerLinkActiveOptions]=\"{exact:true}\">{{ link.name }}</a>\r\n            </mat-list-item>\r\n        </mat-nav-list>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content class=\"account-content\" ngClass.gt-sm=\"p-left\">\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"header-row mat-elevation-z1 text-muted\">\r\n            <button *ngIf=\"!sidenavOpen\" mat-icon-button (click)=\"sidenav.toggle()\">\r\n                <mat-icon>more_vert</mat-icon>\r\n            </button>\r\n            <h3>{{pageInfo}}</h3>\r\n        </div>\r\n        <div class=\"account-wrapper mat-elevation-z1\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </mat-sidenav-content>\r\n</mat-sidenav-container>"
+module.exports = "<mat-sidenav-container>\r\n    <mat-sidenav #sidenav [opened]=\"sidenavOpen\" [mode]=\"sidenavOpen ? 'side' : 'over'\" class=\"account-sidenav\"\r\n        perfectScrollbar>\r\n        <mat-nav-list class=\"mat-elevation-z1 h-100\">\r\n            <mat-list-item *ngFor=\"let link of links\" (click)=\"doLogOut(link.name)\">\r\n                <mat-icon matListIcon class=\"mat-icon-sm\">{{link.icon}}</mat-icon>\r\n                <a matLine *ngIf=\"link['name'] != 'Logout'\" [routerLink]=\"link.href\"\r\n                    routerLinkActive=\"horizontal-active-link_account\" [routerLinkActiveOptions]=\"{exact:true}\">{{\r\n                    link.name }}</a>\r\n\r\n                <a matLine *ngIf=\"link['name'] == 'Logout'\" routerLinkActive=\"horizontal-active-link_account\"\r\n                    [routerLinkActiveOptions]=\"{exact:true}\">{{ link.name }}</a>\r\n            </mat-list-item>\r\n        </mat-nav-list>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content class=\"account-content\" ngClass.gt-sm=\"p-left\">\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"header-row mat-elevation-z1 text-muted\">\r\n            <button *ngIf=\"!sidenavOpen\" mat-icon-button (click)=\"sidenav.toggle()\">\r\n                <mat-icon>more_vert</mat-icon>\r\n            </button>\r\n            <h3>{{pageInfo}}</h3>\r\n        </div>\r\n        <div class=\"account-wrapper mat-elevation-z1\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </mat-sidenav-content>\r\n</mat-sidenav-container>"
 
 /***/ }),
 
@@ -77884,6 +77884,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_common_common_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../../core/common/common.service */ "./src/core/common/common.service.ts");
 /* harmony import */ var _core_account_account_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../../core/account/account.service */ "./src/core/account/account.service.ts");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var _influencer_management_influencer_management_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./influencer-management/influencer-management.component */ "./src/default/pages/account/influencer-management/influencer-management.component.ts");
+/* harmony import */ var _become_seller_become_seller_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./become-seller/become-seller.component */ "./src/default/pages/account/become-seller/become-seller.component.ts");
+/* harmony import */ var _my_profile_my_profile_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./my-profile/my-profile.component */ "./src/default/pages/account/my-profile/my-profile.component.ts");
+/* harmony import */ var _my_address_my_address_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./my-address/my-address.component */ "./src/default/pages/account/my-address/my-address.component.ts");
+/* harmony import */ var _new_address_new_address_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./new-address/new-address.component */ "./src/default/pages/account/new-address/new-address.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -77921,15 +77926,25 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
+
+
 var routes = [
     {
         path: '',
         component: _account_component__WEBPACK_IMPORTED_MODULE_7__["AccountComponent"], children: [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_8__["DashboardComponent"], data: { breadcrumb: 'Dashboard' } },
-            { path: 'information', component: _information_information_component__WEBPACK_IMPORTED_MODULE_9__["InformationComponent"], data: { breadcrumb: 'Information' } },
+            { path: 'information', component: _information_information_component__WEBPACK_IMPORTED_MODULE_9__["InformationComponent"], data: { breadcrumb: 'Personal Information Setting' } },
             { path: 'orders', component: _orders_orders_component__WEBPACK_IMPORTED_MODULE_10__["OrdersComponent"], data: { breadcrumb: 'Orders' } },
             { path: 'order-detail/:id', component: _orderdetail_orderdetail_component__WEBPACK_IMPORTED_MODULE_11__["OrderDetailComponent"], data: { breadcrumb: 'Order Detail' } },
+            { path: 'profile', component: _my_profile_my_profile_component__WEBPACK_IMPORTED_MODULE_22__["MyProfileComponent"], data: { breadcrumb: 'Create / Edit My Public Profile' } },
+            { path: 'address', component: _my_address_my_address_component__WEBPACK_IMPORTED_MODULE_23__["MyAddressComponent"], data: { breadcrumb: 'My Addresses' } },
+            { path: 'influencer', component: _influencer_management_influencer_management_component__WEBPACK_IMPORTED_MODULE_20__["InfluencerManagementComponent"], data: { breadcrumb: 'Influencer Detail' } },
+            { path: 'become-seller', component: _become_seller_become_seller_component__WEBPACK_IMPORTED_MODULE_21__["BecomeSellerComponent"], data: { breadcrumb: 'Become seller' } },
+            { path: 'new-address', component: _new_address_new_address_component__WEBPACK_IMPORTED_MODULE_24__["NewAddressComponent"], data: { breadcrumb: 'My Addresses / New Address' } },
         ],
     },
 ];
@@ -77954,7 +77969,12 @@ var AccountModule = /** @class */ (function () {
                 _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_8__["DashboardComponent"],
                 _information_information_component__WEBPACK_IMPORTED_MODULE_9__["InformationComponent"],
                 _orders_orders_component__WEBPACK_IMPORTED_MODULE_10__["OrdersComponent"],
-                _orderdetail_orderdetail_component__WEBPACK_IMPORTED_MODULE_11__["OrderDetailComponent"]
+                _orderdetail_orderdetail_component__WEBPACK_IMPORTED_MODULE_11__["OrderDetailComponent"],
+                _influencer_management_influencer_management_component__WEBPACK_IMPORTED_MODULE_20__["InfluencerManagementComponent"],
+                _become_seller_become_seller_component__WEBPACK_IMPORTED_MODULE_21__["BecomeSellerComponent"],
+                _my_profile_my_profile_component__WEBPACK_IMPORTED_MODULE_22__["MyProfileComponent"],
+                _my_address_my_address_component__WEBPACK_IMPORTED_MODULE_23__["MyAddressComponent"],
+                _new_address_new_address_component__WEBPACK_IMPORTED_MODULE_24__["NewAddressComponent"]
             ],
             providers: [_core_common_common_sandbox__WEBPACK_IMPORTED_MODULE_15__["CommonSandbox"],
                 _core_account_account_sandbox__WEBPACK_IMPORTED_MODULE_16__["AccountSandbox"],
@@ -77963,6 +77983,69 @@ var AccountModule = /** @class */ (function () {
         })
     ], AccountModule);
     return AccountModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/default/pages/account/become-seller/become-seller.component.html":
+/*!******************************************************************************!*\
+  !*** ./src/default/pages/account/become-seller/become-seller.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>"
+
+/***/ }),
+
+/***/ "./src/default/pages/account/become-seller/become-seller.component.scss":
+/*!******************************************************************************!*\
+  !*** ./src/default/pages/account/become-seller/become-seller.component.scss ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvZGVmYXVsdC9wYWdlcy9hY2NvdW50L2JlY29tZS1zZWxsZXIvYmVjb21lLXNlbGxlci5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/default/pages/account/become-seller/become-seller.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/default/pages/account/become-seller/become-seller.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: BecomeSellerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BecomeSellerComponent", function() { return BecomeSellerComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var BecomeSellerComponent = /** @class */ (function () {
+    function BecomeSellerComponent() {
+    }
+    BecomeSellerComponent.prototype.ngOnInit = function () {
+    };
+    BecomeSellerComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-become-seller',
+            template: __webpack_require__(/*! ./become-seller.component.html */ "./src/default/pages/account/become-seller/become-seller.component.html"),
+            styles: [__webpack_require__(/*! ./become-seller.component.scss */ "./src/default/pages/account/become-seller/become-seller.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], BecomeSellerComponent);
+    return BecomeSellerComponent;
 }());
 
 
@@ -78043,6 +78126,69 @@ var DashboardComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/default/pages/account/influencer-management/influencer-management.component.html":
+/*!**********************************************************************************************!*\
+  !*** ./src/default/pages/account/influencer-management/influencer-management.component.html ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>"
+
+/***/ }),
+
+/***/ "./src/default/pages/account/influencer-management/influencer-management.component.scss":
+/*!**********************************************************************************************!*\
+  !*** ./src/default/pages/account/influencer-management/influencer-management.component.scss ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvZGVmYXVsdC9wYWdlcy9hY2NvdW50L2luZmx1ZW5jZXItbWFuYWdlbWVudC9pbmZsdWVuY2VyLW1hbmFnZW1lbnQuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/default/pages/account/influencer-management/influencer-management.component.ts":
+/*!********************************************************************************************!*\
+  !*** ./src/default/pages/account/influencer-management/influencer-management.component.ts ***!
+  \********************************************************************************************/
+/*! exports provided: InfluencerManagementComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InfluencerManagementComponent", function() { return InfluencerManagementComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var InfluencerManagementComponent = /** @class */ (function () {
+    function InfluencerManagementComponent() {
+    }
+    InfluencerManagementComponent.prototype.ngOnInit = function () {
+    };
+    InfluencerManagementComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-influencer-management',
+            template: __webpack_require__(/*! ./influencer-management.component.html */ "./src/default/pages/account/influencer-management/influencer-management.component.html"),
+            styles: [__webpack_require__(/*! ./influencer-management.component.scss */ "./src/default/pages/account/influencer-management/influencer-management.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], InfluencerManagementComponent);
+    return InfluencerManagementComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/default/pages/account/information/information.component.html":
 /*!**************************************************************************!*\
   !*** ./src/default/pages/account/information/information.component.html ***!
@@ -78050,7 +78196,7 @@ var DashboardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row wrap\">\r\n    <div fxFlex=\"100\" fxFlex.gt-sm=\"50\" class=\"p-2\">\r\n        <h2 class=\"text-muted text-center\">Account Details</h2>\r\n        <div class=\"editImage\">\r\n\r\n            <img class=\"img\" *ngIf=\"!ifImageAvailable\" (click)=\"uploadButtonClick()\" src=\"./assets/images/others/user.jpg\" onError=\"this.src='/assets/images/default_image.png';\">\r\n            <img class=\"img\" *ngIf=\"ifImageAvailable\" (click)=\"uploadButtonClick()\" [src]=\"imageUrl\">\r\n\r\n\r\n            <input type=\"file\" name=\"userImg\" (change)=\"uploadChange($event)\" accept=\"image/*\" #filePath style=\"display: none\">\r\n            <span class=\"editProfile\" *ngIf=\"(ifImageAvailable)\" (click)=\"uploadButtonClick()\">Change</span>\r\n        </div>\r\n        <form [formGroup]=\"infoForm\">\r\n            <mat-form-field class=\"w-100 mt-2\" [ngClass]=\"{'validationcolor':((infoForm.controls.firstName.errors?.required)&&(ifSubmitted==true))}\">\r\n                <input matInput placeholder=\"First Name\" formControlName=\"firstName\" required>\r\n                <mat-error *ngIf=\"((infoForm['controls'].firstName.errors?.required)&&(ifSubmitted==true))\">\r\n                    First Name is required\r\n                </mat-error>\r\n                <mat-error *ngIf=\"((infoForm['controls'].firstName.hasError('minlength'))&&(ifSubmitted==true))\">\r\n                    First Name isn't long enough, minimum of 3 characters\r\n                </mat-error>\r\n            </mat-form-field>\r\n            <mat-form-field class=\"w-100 mt-1\" [ngClass]=\"{'validationcolor':((infoForm.controls.lastName.errors?.required)&&(ifSubmitted==true))}\">\r\n                <input matInput placeholder=\"Last Name\" formControlName=\"lastName\" required>\r\n                <mat-error *ngIf=\"((infoForm['controls'].lastName.errors?.required)&&(ifSubmitted==true))\">\r\n                    Last Name is required\r\n                </mat-error>\r\n                <mat-error *ngIf=\"((infoForm['controls'].lastName.hasError('minlength'))&&(ifSubmitted==true))\">\r\n                    Last Name isn't long enough, minimum of 1 characters </mat-error>\r\n            </mat-form-field>\r\n            <mat-form-field class=\"w-100 mt-1\" [ngClass]=\"{'validationcolor':((infoForm.controls.email.errors?.required)&&(ifSubmitted==true))}\">\r\n                <input matInput placeholder=\"Email\" formControlName=\"email\" required>\r\n                <mat-error *ngIf=\"((infoForm['controls'].email.errors?.required)&&(ifSubmitted==true))\">\r\n                    Email is required </mat-error>\r\n                <mat-error *ngIf=\"((infoForm['controls'].email.hasError('invalidEmail'))&&(ifSubmitted==true))\">\r\n                    Invalid email address\r\n                </mat-error>\r\n            </mat-form-field>\r\n            <mat-form-field class=\"w-100 mt-1\">\r\n                <input matInput type=\"text\" maxlength=\"15\" appOnlyNumber placeholder=\"Phone Number\" formControlName=\"phoneNumber\">\r\n            </mat-form-field>\r\n\r\n            <div class=\"text-center mt-2\">\r\n                <button mat-raised-button color=\"primary\" (click)=\"onInfoFormSubmit()\">Save\r\n                </button>\r\n            </div>\r\n        </form>\r\n    </div>\r\n    <div fxFlex=\"100\" fxFlex.gt-sm=\"50\" class=\"p-2\" ngClass.sm=\"mt-2\" ngClass.xs=\"mt-2\">\r\n        <h2 class=\"text-muted text-center\">Change Password</h2>\r\n        <form [formGroup]=\"passwordForm\" (ngSubmit)=\"onPasswordFormSubmit()\">\r\n            <mat-form-field class=\"w-100 mt-2\" [ngClass]=\"{'validationcolor':\r\n            ((passwordForm.controls.currentPassword.errors?.required)&&(ifPasswordForm==true))}\">\r\n                <input matInput placeholder=\"Current Password\" formControlName=\"currentPassword\" type=\"password\">\r\n                <mat-error *ngIf=\"((passwordForm.controls['currentPassword'].errors?.required)&&(ifPasswordForm==true))\">\r\n                    Current Password is required </mat-error>\r\n            </mat-form-field>\r\n            <mat-form-field class=\"w-100 mt-1\" [ngClass]=\"{'validationcolor':\r\n            ((passwordForm.controls.newPassword.errors?.required)&&(ifPasswordForm==true))}\">\r\n                <input matInput placeholder=\"New Password\" formControlName=\"newPassword\" type=\"password\">\r\n                <mat-error *ngIf=\"((passwordForm.controls['newPassword'].errors?.required)&&(ifPasswordForm==true))\">\r\n                    New Password is required </mat-error>\r\n                <mat-error *ngIf=\"((passwordForm.controls['newPassword'].hasError('minlength'))&&(ifPasswordForm==true))\">\r\n                    New Password isn't long enough, minimum of 5 characters\r\n                </mat-error>\r\n            </mat-form-field>\r\n            <div class=\"text-center mt-2\">\r\n                <button mat-raised-button color=\"primary\" type=\"submit\">Change</button>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>"
+module.exports = "<div fxLayout=\"row wrap\">\r\n    <div fxFlex=\"100\" fxFlex.gt-sm=\"50\" class=\"p-2\">\r\n        <!-- <h2 class=\"text-muted text-center\">Account Details</h2> -->\r\n\r\n        <form [formGroup]=\"infoForm\">\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Contact Number\" formControlName=\"phoneNumber\">\r\n            </mat-form-field>\r\n\r\n            <mat-radio-group aria-label=\"Select an option\" formControlName=\"checkPhoneNumber\">\r\n                <mat-radio-button value=\"1\">Check this to recieve order notification and deals via SMS\r\n                </mat-radio-button>\r\n            </mat-radio-group>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Primary Email Address\" formControlName=\"primaryAddess\">\r\n            </mat-form-field>\r\n\r\n            <mat-radio-group aria-label=\"Select an option\" formControlName=\"checkPrimaryAddess\">\r\n                <mat-radio-button value=\"1\">Check this to recieve order notification and deals via SMS\r\n                </mat-radio-button>\r\n            </mat-radio-group>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Recovery Email Address\" formControlName=\"recoveryEmail\">\r\n            </mat-form-field>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <input matInput placeholder=\"Bio\" formControlName=\"bio\">\r\n            </mat-form-field>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <mat-label>Birthday</mat-label>\r\n                <input matInput [matDatepicker]=\"picker\" formControlName=\"dob\">\r\n                <mat-datepicker-toggle matSuffix [for]=\"picker\">\r\n                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>\r\n                </mat-datepicker-toggle>\r\n                <mat-datepicker #picker></mat-datepicker>\r\n            </mat-form-field>\r\n\r\n            <mat-form-field class=\"w-100 mt-2\">\r\n                <mat-label>Gender</mat-label>\r\n                <select matNativeControl formControlName=\"gender\">\r\n                    <option value=\"male\">male</option>\r\n                    <option value=\"female\">Female</option>\r\n                </select>\r\n            </mat-form-field>\r\n\r\n            <div class=\"text-center mt-2\">\r\n                <button mat-raised-button color=\"primary\" (click)=\"onInfoFormSubmit()\">Submit\r\n                </button>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n\r\n\r\n<app-account-buttons></app-account-buttons>"
 
 /***/ }),
 
@@ -78078,11 +78224,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _theme_utils_app_validators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../theme/utils/app-validators */ "./src/default/theme/utils/app-validators.ts");
-/* harmony import */ var _core_service_config_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../core/service/config.service */ "./src/core/service/config.service.ts");
-/* harmony import */ var _core_common_common_sandbox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../core/common/common.sandbox */ "./src/core/common/common.sandbox.ts");
-/* harmony import */ var _core_account_account_sandbox__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../core/account/account.sandbox */ "./src/core/account/account.sandbox.ts");
-/* harmony import */ var _core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../core/lists/lists.sandbox */ "./src/core/lists/lists.sandbox.ts");
+/* harmony import */ var _core_service_config_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../core/service/config.service */ "./src/core/service/config.service.ts");
+/* harmony import */ var _core_common_common_sandbox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../core/common/common.sandbox */ "./src/core/common/common.sandbox.ts");
+/* harmony import */ var _core_account_account_sandbox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../core/account/account.sandbox */ "./src/core/account/account.sandbox.ts");
+/* harmony import */ var _core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../core/lists/lists.sandbox */ "./src/core/lists/lists.sandbox.ts");
 /*
  * spurtcommerce
  * http://www.spurtcommerce.com
@@ -78107,7 +78252,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var InformationComponent = /** @class */ (function () {
     function InformationComponent(formBuilder, configService, snackBar, commonSandbox, listsSandbox, accountSandbox) {
         this.formBuilder = formBuilder;
@@ -78116,105 +78260,64 @@ var InformationComponent = /** @class */ (function () {
         this.commonSandbox = commonSandbox;
         this.listsSandbox = listsSandbox;
         this.accountSandbox = accountSandbox;
+        // public passwordForm: FormGroup;
         // validation
         this.ifSubmitted = false;
-        this.ifPasswordForm = false;
+        // public ifPasswordForm = false;
         // subscription
         this.subscriptions = [];
     }
     // Initially calls initInfoForm,initPasswordForm,setProfile
     InformationComponent.prototype.ngOnInit = function () {
-        this.imagePath = this.configService.getImageUrl();
         this.initInfoForm();
-        this.initPasswordForm();
+        // this.initPasswordForm();
         this.setProfile();
     };
     // build a form for info  by gouping the form control
     InformationComponent.prototype.initInfoForm = function () {
         this.infoForm = this.formBuilder.group({
-            'firstName': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(3)])],
-            'lastName': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(1)])],
-            'email': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _theme_utils_app_validators__WEBPACK_IMPORTED_MODULE_3__["emailValidator"]])],
-            'phoneNumber': [''],
+            'phoneNumber': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
+            'checkPhoneNumber': [''],
+            'primaryAddess': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
+            'checkPrimaryAddess': [''],
+            'recoveryEmail': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
+            'bio': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
+            'dob': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
+            'gender': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
         });
     };
     // build a form for change password  by gouping the form control
-    InformationComponent.prototype.initPasswordForm = function () {
-        this.passwordForm = this.formBuilder.group({
-            'currentPassword': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])],
-            'newPassword': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(5)])],
-        });
-    };
+    // initPasswordForm() {
+    //     this.passwordForm = this.formBuilder.group({
+    //         'currentPassword': ['', Validators.compose([Validators.required])],
+    //         'newPassword': ['', Validators.compose([Validators.required, Validators.minLength(5)])],
+    //     }
+    //     );
+    // }
     // set the user details to the form by fetching the profile details from sandbox
     InformationComponent.prototype.setProfile = function () {
-        var _this = this;
-        this.subscriptions.push(this.commonSandbox.getProfile$.subscribe(function (profile) {
-            if (profile) {
-                _this.infoForm.controls['firstName'].setValue(profile.firstName);
-                _this.infoForm.controls['lastName'].setValue(profile.lastName);
-                _this.infoForm.controls['email'].setValue(profile.email);
-                _this.infoForm.controls['phoneNumber'].setValue(profile.mobileNumber);
-                _this.imageUrl = _this.imagePath + '?path=' + profile.avatarPath + '&name=' + profile.avatar + '&width=60&height=60';
-                _this.ifImageAvailable = profile.avatarPath;
-            }
-        }));
+        // this.subscriptions.push(this.commonSandbox.getProfile$.subscribe(profile => {
+        //     if (profile) {
+        //         this.infoForm.controls['firstName'].setValue(profile.firstName);
+        //         this.infoForm.controls['lastName'].setValue(profile.lastName);
+        //         this.infoForm.controls['email'].setValue(profile.email);
+        //         this.infoForm.controls['phoneNumber'].setValue(profile.mobileNumber);
+        //         this.imageUrl = this.imagePath + '?path=' + profile.avatarPath + '&name=' + profile.avatar + '&width=60&height=60';
+        //         this.ifImageAvailable = profile.avatarPath;
+        //     }
+        // }));
     };
-    InformationComponent.prototype.onSelectCountry = function (countryid) {
-    };
-    InformationComponent.prototype.onSelectZone = function (zoneid) {
-    };
-    /**
-     * upload new user image
-     *
-     * @param el refer the HTMLElement filePath
-     * it will activate the click function of el
-     */
-    InformationComponent.prototype.uploadButtonClick = function () {
-        var el = this.filePath.nativeElement;
-        el.click();
-    };
-    // calls convertBase64 to convert data into base64 formt
-    InformationComponent.prototype.uploadChange = function ($event) {
-        this.ifImageAvailable = 'avatar';
-        this.convertBase64($event.target);
-    };
-    // convert image file into Base64 format
-    InformationComponent.prototype.convertBase64 = function (inputValue) {
-        var _this = this;
-        var file = inputValue.files[0];
-        var myReader = new FileReader();
-        myReader.onloadend = function (e) {
-            _this.imageUrl = myReader.result;
-            _this.userImage = myReader.result;
-        };
-        myReader.readAsDataURL(file);
-    };
-    // call edit user info functionality if the form is valid
     InformationComponent.prototype.onInfoFormSubmit = function () {
         if (this.infoForm.valid) {
+            console.log('this.infoForm.', this.infoForm.value);
             var params = this.infoForm.value;
-            params.image = this.userImage;
             this.accountSandbox.doEditProfile(params);
             this.ifSubmitted = false;
-            this.imageUrl = '';
             this.infoForm.reset();
             this.infoForm.clearValidators();
         }
         else {
             this.ifSubmitted = true;
-        }
-    };
-    // call change password functionality if the password form is valid
-    InformationComponent.prototype.onPasswordFormSubmit = function () {
-        if (this.passwordForm.valid) {
-            this.accountSandbox.doChangepassword(this.passwordForm.value);
-            this.ifPasswordForm = false;
-            this.passwordForm.reset();
-            this.passwordForm.clearValidators();
-            // this.resetAllFormFields(this.passwordForm);
-        }
-        else {
-            this.ifPasswordForm = true;
         }
     };
     // reset form fields and clear validation
@@ -78238,10 +78341,6 @@ var InformationComponent = /** @class */ (function () {
             each.unsubscribe();
         });
     };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('filePath'),
-        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
-    ], InformationComponent.prototype, "filePath", void 0);
     InformationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-information',
@@ -78249,13 +78348,359 @@ var InformationComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./information.component.scss */ "./src/default/pages/account/information/information.component.scss")]
         }),
         __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
-            _core_service_config_service__WEBPACK_IMPORTED_MODULE_4__["ConfigService"],
+            _core_service_config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"],
             _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"],
-            _core_common_common_sandbox__WEBPACK_IMPORTED_MODULE_5__["CommonSandbox"],
-            _core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_7__["ListsSandbox"],
-            _core_account_account_sandbox__WEBPACK_IMPORTED_MODULE_6__["AccountSandbox"]])
+            _core_common_common_sandbox__WEBPACK_IMPORTED_MODULE_4__["CommonSandbox"],
+            _core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_6__["ListsSandbox"],
+            _core_account_account_sandbox__WEBPACK_IMPORTED_MODULE_5__["AccountSandbox"]])
     ], InformationComponent);
     return InformationComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/default/pages/account/my-address/my-address.component.html":
+/*!************************************************************************!*\
+  !*** ./src/default/pages/account/my-address/my-address.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div fxLayout=\"row wrap\">\r\n  <div fxFlex=\"100\" fxFlex.gt-sm=\"50\" class=\"p-2\">\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"mt-2\">\r\n      <h6>\r\n        <mat-icon> location_on</mat-icon>Home\r\n        <button mat-button>Edit</button>\r\n        <button mat-button>Delete</button>\r\n      </h6>\r\n      <select matNativeControl>\r\n        <option value=\"\">Select</option>\r\n      </select>\r\n    </div>\r\n\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"mt-2\">\r\n      <h6>\r\n        <mat-icon> location_on</mat-icon>Parkway House\r\n        <button mat-button>Edit</button>\r\n        <button mat-button>Delete</button>\r\n      </h6>\r\n      <select matNativeControl>\r\n        <option value=\"\">Select</option>\r\n      </select>\r\n\r\n    </div>\r\n\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"mt-2\">\r\n      <button mat-button color=\"warn\" routerLink=\"/account/new-address\">Add New address</button>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n<app-account-buttons></app-account-buttons>"
+
+/***/ }),
+
+/***/ "./src/default/pages/account/my-address/my-address.component.scss":
+/*!************************************************************************!*\
+  !*** ./src/default/pages/account/my-address/my-address.component.scss ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvZGVmYXVsdC9wYWdlcy9hY2NvdW50L215LWFkZHJlc3MvbXktYWRkcmVzcy5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/default/pages/account/my-address/my-address.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/default/pages/account/my-address/my-address.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: MyAddressComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyAddressComponent", function() { return MyAddressComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MyAddressComponent = /** @class */ (function () {
+    function MyAddressComponent() {
+    }
+    MyAddressComponent.prototype.ngOnInit = function () {
+    };
+    MyAddressComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-my-address',
+            template: __webpack_require__(/*! ./my-address.component.html */ "./src/default/pages/account/my-address/my-address.component.html"),
+            styles: [__webpack_require__(/*! ./my-address.component.scss */ "./src/default/pages/account/my-address/my-address.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MyAddressComponent);
+    return MyAddressComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/default/pages/account/my-profile/my-profile.component.html":
+/*!************************************************************************!*\
+  !*** ./src/default/pages/account/my-profile/my-profile.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div fxLayout=\"row wrap\">\r\n  <div fxFlex=\"100\" fxFlex.gt-sm=\"50\" class=\"p-2\">\r\n    <div class=\"editImage\">\r\n      <img class=\"img\" *ngIf=\"!ifImageAvailable\" (click)=\"uploadButtonClick()\" src=\"./assets/images/others/user.jpg\"\r\n        onError=\"this.src='/assets/images/default_image.png';\">\r\n      <img class=\"img\" *ngIf=\"ifImageAvailable\" (click)=\"uploadButtonClick()\" [src]=\"imageUrl\">\r\n      <input type=\"file\" name=\"userImg\" (change)=\"uploadChange($event)\" accept=\"image/*\" #filePath\r\n        style=\"display: none\">\r\n      <span class=\"editProfile\" *ngIf=\"(ifImageAvailable)\" (click)=\"uploadButtonClick()\">Change</span>\r\n    </div>\r\n\r\n    <form [formGroup]=\"profileForm\">\r\n      <mat-form-field class=\"w-100 mt-2\"\r\n        [ngClass]=\"{'validationcolor':((profileForm.controls.firstName.errors?.required)&&(ifSubmitted==true))}\">\r\n        <input matInput placeholder=\"Username\" formControlName=\"email\" required readonly>\r\n        <mat-error *ngIf=\"((profileForm['controls'].firstName.errors?.required)&&(ifSubmitted==true))\">\r\n          First Name is required\r\n        </mat-error>\r\n        <mat-error *ngIf=\"((profileForm['controls'].firstName.hasError('minlength'))&&(ifSubmitted==true))\">\r\n          First Name isn't long enough, minimum of 3 characters\r\n        </mat-error>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"w-100 mt-2\">\r\n        <mat-label>Interest</mat-label>\r\n        <select matNativeControl formControlName=\"interest\">\r\n          <option value=\"men\">Men</option>\r\n          <option value=\"women\">Women</option>\r\n          <option value=\"kids\">Kids</option>\r\n        </select>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"w-100 mt-2\">\r\n        <input matInput placeholder=\"Bio\" formControlName=\"bio\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"w-100 mt-2\">\r\n        <mat-label>I am</mat-label>\r\n        <select matNativeControl formControlName=\"iam\">\r\n          <option value=\"customer\">Customer</option>\r\n          <option value=\"vender\">Vender</option>\r\n        </select>\r\n      </mat-form-field>\r\n\r\n      <div class=\"text-center mt-2\">\r\n        <button mat-raised-button color=\"primary\" (click)=\"onProfileFormSubmit()\">Submit\r\n        </button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n\r\n<app-account-buttons></app-account-buttons>"
+
+/***/ }),
+
+/***/ "./src/default/pages/account/my-profile/my-profile.component.scss":
+/*!************************************************************************!*\
+  !*** ./src/default/pages/account/my-profile/my-profile.component.scss ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".img {\n  display: block;\n  width: 85px;\n  height: 85px;\n  border-radius: 50%;\n  cursor: pointer; }\n\n.editProfile {\n  color: #ffffff;\n  font-size: 11px;\n  left: 66px;\n  line-height: 9px;\n  position: absolute;\n  padding: 7px 0px 6px 7px;\n  text-align: center;\n  width: 49px;\n  top: 196px;\n  background: rgba(0, 0, 0, 0.54);\n  border-radius: 53px;\n  cursor: pointer; }\n\n.validationcolor ::ng-deep .mat-form-field-underline, .validationcolor ::ng-deep .mat-form-field-ripple {\n  background-color: red !important;\n  color: red !important; }\n\n.validationcolor ::ng-deep .mat-form-field-empty.mat-form-field-label {\n  color: red !important; }\n\n.validationcolor ::ng-deep .mat-form-field-label > .mat-form-field-required-marker {\n  color: red  !important; }\n\n::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple {\n  background-color: gray !important;\n  color: gray !important; }\n\n::ng-deep .mat-form-field-empty.mat-form-field-label {\n  color: gray !important; }\n\n::ng-deep .mat-form-field-label > .mat-form-field-required-marker {\n  color: gray  !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9kZWZhdWx0L3BhZ2VzL2FjY291bnQvbXktcHJvZmlsZS9EOlxcb2R6XFx3b3JraW5nXFxtYXJrZXRwbGFjZVxcc3RvcmUvc3JjXFxkZWZhdWx0XFxwYWdlc1xcYWNjb3VudFxcbXktcHJvZmlsZVxcbXktcHJvZmlsZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUFPLGVBQWM7RUFBRSxZQUFXO0VBQUUsYUFBWTtFQUFFLG1CQUFrQjtFQUFDLGdCQUFlLEVBQUk7O0FBQ3hGO0VBQWMsZUFBYztFQUMxQixnQkFBZTtFQUNmLFdBQVU7RUFDVixpQkFBZ0I7RUFDaEIsbUJBQWtCO0VBQ2xCLHlCQUF3QjtFQUN4QixtQkFBa0I7RUFDbEIsWUFBVztFQUNYLFdBQVU7RUFDVixnQ0FBMkI7RUFDM0Isb0JBQW1CO0VBQ25CLGdCQUFlLEVBQ2hCOztBQUNEO0VBR0ksaUNBQWdDO0VBQ2hDLHNCQUFxQixFQUN0Qjs7QUFMSDtFQU9JLHNCQUFxQixFQUN0Qjs7QUFSSDtFQVVJLHVCQUFzQixFQUN2Qjs7QUFFSDtFQUNFLGtDQUFpQztFQUNqQyx1QkFBc0IsRUFDdkI7O0FBQ0Q7RUFDRSx1QkFBc0IsRUFDdkI7O0FBQ0Q7RUFDRSx3QkFBdUIsRUFDeEIiLCJmaWxlIjoic3JjL2RlZmF1bHQvcGFnZXMvYWNjb3VudC9teS1wcm9maWxlL215LXByb2ZpbGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaW1nIHsgZGlzcGxheTogYmxvY2s7IHdpZHRoOiA4NXB4OyBoZWlnaHQ6IDg1cHg7IGJvcmRlci1yYWRpdXM6IDUwJTtjdXJzb3I6IHBvaW50ZXI7IH1cclxuLmVkaXRQcm9maWxleyBjb2xvcjogI2ZmZmZmZjtcclxuICBmb250LXNpemU6IDExcHg7XHJcbiAgbGVmdDogNjZweDtcclxuICBsaW5lLWhlaWdodDogOXB4O1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBwYWRkaW5nOiA3cHggMHB4IDZweCA3cHg7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIHdpZHRoOiA0OXB4O1xyXG4gIHRvcDogMTk2cHg7XHJcbiAgYmFja2dyb3VuZDogcmdiYSgwLDAsMCwuNTQpO1xyXG4gIGJvcmRlci1yYWRpdXM6IDUzcHg7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi52YWxpZGF0aW9uY29sb3J7XHJcblxyXG4gIDo6bmctZGVlcCAubWF0LWZvcm0tZmllbGQtdW5kZXJsaW5lLCA6Om5nLWRlZXAgLm1hdC1mb3JtLWZpZWxkLXJpcHBsZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZWQgIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiByZWQgIWltcG9ydGFudDtcclxuICB9XHJcbiAgOjpuZy1kZWVwIC5tYXQtZm9ybS1maWVsZC1lbXB0eS5tYXQtZm9ybS1maWVsZC1sYWJlbCB7XHJcbiAgICBjb2xvcjogcmVkICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIDo6bmctZGVlcCAubWF0LWZvcm0tZmllbGQtbGFiZWwgPiAgLm1hdC1mb3JtLWZpZWxkLXJlcXVpcmVkLW1hcmtlciB7XHJcbiAgICBjb2xvcjogcmVkICAhaW1wb3J0YW50O1xyXG4gIH1cclxufVxyXG46Om5nLWRlZXAgLm1hdC1mb3JtLWZpZWxkLXVuZGVybGluZSwgOjpuZy1kZWVwIC5tYXQtZm9ybS1maWVsZC1yaXBwbGUge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IGdyYXkgIWltcG9ydGFudDtcclxuICBjb2xvcjogZ3JheSAhaW1wb3J0YW50O1xyXG59XHJcbjo6bmctZGVlcCAubWF0LWZvcm0tZmllbGQtZW1wdHkubWF0LWZvcm0tZmllbGQtbGFiZWwge1xyXG4gIGNvbG9yOiBncmF5ICFpbXBvcnRhbnQ7XHJcbn1cclxuOjpuZy1kZWVwIC5tYXQtZm9ybS1maWVsZC1sYWJlbCA+ICAubWF0LWZvcm0tZmllbGQtcmVxdWlyZWQtbWFya2VyIHtcclxuICBjb2xvcjogZ3JheSAgIWltcG9ydGFudDtcclxufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/default/pages/account/my-profile/my-profile.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/default/pages/account/my-profile/my-profile.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: MyProfileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyProfileComponent", function() { return MyProfileComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var src_core_account_account_sandbox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/core/account/account.sandbox */ "./src/core/account/account.sandbox.ts");
+/* harmony import */ var src_core_common_common_sandbox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/core/common/common.sandbox */ "./src/core/common/common.sandbox.ts");
+/* harmony import */ var src_core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/core/lists/lists.sandbox */ "./src/core/lists/lists.sandbox.ts");
+/* harmony import */ var src_core_service_config_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/core/service/config.service */ "./src/core/service/config.service.ts");
+/* harmony import */ var src_default_theme_utils_app_validators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/default/theme/utils/app-validators */ "./src/default/theme/utils/app-validators.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var MyProfileComponent = /** @class */ (function () {
+    // public formName = 'profile'
+    // public formTitle: String = 'Create / Edit My Public Profile'
+    function MyProfileComponent(formBuilder, configService, snackBar, commonSandbox, listsSandbox, accountSandbox) {
+        this.formBuilder = formBuilder;
+        this.configService = configService;
+        this.snackBar = snackBar;
+        this.commonSandbox = commonSandbox;
+        this.listsSandbox = listsSandbox;
+        this.accountSandbox = accountSandbox;
+        // validation
+        this.ifSubmitted = false;
+        this.ifPasswordForm = false;
+        // subscription
+        this.subscriptions = [];
+    }
+    // Initially calls initprofileForm,initPasswordForm,setProfile
+    MyProfileComponent.prototype.ngOnInit = function () {
+        this.imagePath = this.configService.getImageUrl();
+        this.initprofileForm();
+        // this.initPasswordForm();
+        this.setProfile();
+    };
+    // build a form for info  by gouping the form control
+    MyProfileComponent.prototype.initprofileForm = function () {
+        this.profileForm = this.formBuilder.group({
+            'firstName': ['test'],
+            'lastName': [''],
+            'email': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, src_default_theme_utils_app_validators__WEBPACK_IMPORTED_MODULE_7__["emailValidator"]])],
+            'interest': [''],
+            'bio': [''],
+            'iam': [''],
+            'phoneNumber': ['00000000']
+        });
+    };
+    // build a form for change password  by gouping the form control
+    // initPasswordForm() {
+    //   this.passwordForm = this.formBuilder.group({
+    //     'currentPassword': ['', Validators.compose([Validators.required])],
+    //     'newPassword': ['', Validators.compose([Validators.required, Validators.minLength(5)])],
+    //   }
+    //   );
+    // }
+    // set the user details to the form by fetching the profile details from sandbox
+    MyProfileComponent.prototype.setProfile = function () {
+        var _this = this;
+        this.subscriptions.push(this.commonSandbox.getProfile$.subscribe(function (profile) {
+            if (profile) {
+                _this.profileForm.controls['firstName'].setValue(profile.firstName);
+                _this.profileForm.controls['lastName'].setValue(profile.lastName);
+                _this.profileForm.controls['email'].setValue(profile.email);
+                _this.profileForm.controls['interest'].setValue(profile.interest);
+                _this.profileForm.controls['bio'].setValue(profile.bio);
+                _this.profileForm.controls['iam'].setValue(profile.iam);
+                // this.profileForm.controls['phoneNumber'].setValue(profile.mobileNumber);
+                _this.imageUrl = _this.imagePath + '?path=' + profile.avatarPath + '&name=' + profile.avatar + '&width=60&height=60';
+                _this.ifImageAvailable = profile.avatarPath;
+            }
+        }));
+    };
+    MyProfileComponent.prototype.onSelectCountry = function (countryid) {
+    };
+    MyProfileComponent.prototype.onSelectZone = function (zoneid) {
+    };
+    /**
+     * upload new user image
+     *
+     * @param el refer the HTMLElement filePath
+     * it will activate the click function of el
+     */
+    MyProfileComponent.prototype.uploadButtonClick = function () {
+        var el = this.filePath.nativeElement;
+        el.click();
+    };
+    // calls convertBase64 to convert data into base64 formt
+    MyProfileComponent.prototype.uploadChange = function ($event) {
+        this.ifImageAvailable = 'avatar';
+        this.convertBase64($event.target);
+    };
+    // convert image file into Base64 format
+    MyProfileComponent.prototype.convertBase64 = function (inputValue) {
+        var _this = this;
+        var file = inputValue.files[0];
+        var myReader = new FileReader();
+        myReader.onloadend = function (e) {
+            _this.imageUrl = myReader.result;
+            _this.userImage = myReader.result;
+        };
+        myReader.readAsDataURL(file);
+    };
+    // call edit user info functionality if the form is valid
+    MyProfileComponent.prototype.onProfileFormSubmit = function () {
+        if (this.profileForm.valid) {
+            var params = this.profileForm.value;
+            params.image = this.userImage;
+            this.accountSandbox.doEditProfile(params);
+            this.ifSubmitted = false;
+            this.imageUrl = '';
+            // this.profileForm.reset();
+            this.setProfile();
+            this.profileForm.clearValidators();
+        }
+        else {
+            this.ifSubmitted = true;
+        }
+    };
+    // call change password functionality if the password form is valid
+    // public onPasswordFormSubmit(): void {
+    //   if (this.passwordForm.valid) {
+    //     this.accountSandbox.doChangepassword(this.passwordForm.value);
+    //     this.ifPasswordForm = false;
+    //     this.passwordForm.reset();
+    //     this.passwordForm.clearValidators();
+    //     // this.resetAllFormFields(this.passwordForm);
+    //   } else {
+    //     this.ifPasswordForm = true;
+    //   }
+    // }
+    // reset form fields and clear validation
+    MyProfileComponent.prototype.resetAllFormFields = function (formGroup) {
+        var _this = this;
+        Object.keys(formGroup.controls).forEach(function (field) {
+            var control = formGroup.get(field);
+            if (control instanceof _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]) {
+                control.reset();
+                control.clearValidators();
+                control.updateValueAndValidity();
+            }
+            else if (control instanceof _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]) {
+                _this.resetAllFormFields(control);
+            }
+        });
+    };
+    // destroy the subscribed events while page destroy
+    MyProfileComponent.prototype.ngOnDestroy = function () {
+        this.subscriptions.forEach(function (each) {
+            each.unsubscribe();
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('filePath'),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
+    ], MyProfileComponent.prototype, "filePath", void 0);
+    MyProfileComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-my-profile',
+            template: __webpack_require__(/*! ./my-profile.component.html */ "./src/default/pages/account/my-profile/my-profile.component.html"),
+            styles: [__webpack_require__(/*! ./my-profile.component.scss */ "./src/default/pages/account/my-profile/my-profile.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
+            src_core_service_config_service__WEBPACK_IMPORTED_MODULE_6__["ConfigService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"],
+            src_core_common_common_sandbox__WEBPACK_IMPORTED_MODULE_4__["CommonSandbox"],
+            src_core_lists_lists_sandbox__WEBPACK_IMPORTED_MODULE_5__["ListsSandbox"],
+            src_core_account_account_sandbox__WEBPACK_IMPORTED_MODULE_3__["AccountSandbox"]])
+    ], MyProfileComponent);
+    return MyProfileComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/default/pages/account/new-address/new-address.component.html":
+/*!**************************************************************************!*\
+  !*** ./src/default/pages/account/new-address/new-address.component.html ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div fxLayout=\"row wrap\">\r\n  <div fxFlex=\"100\" fxFlex.gt-sm=\"50\" class=\"p-2\">\r\n    <form>\r\n\r\n      <mat-form-field class=\"w-100 mt-2\">\r\n        <input matInput placeholder=\"What do you want to call this address\">\r\n      </mat-form-field>\r\n      <mat-form-field class=\"w-100 mt-2\">\r\n        <input matInput placeholder=\"Address Line 1\">\r\n      </mat-form-field>\r\n      <mat-form-field class=\"w-100 mt-2\">\r\n        <input matInput placeholder=\"Address Line 2\">\r\n      </mat-form-field>\r\n      <mat-form-field class=\"w-100 mt-2\">\r\n        <input matInput placeholder=\"City\">\r\n      </mat-form-field>\r\n      <mat-form-field class=\"w-100 mt-2\">\r\n        <input matInput placeholder=\"Province\">\r\n      </mat-form-field>\r\n      <mat-form-field class=\"w-100 mt-2\">\r\n        <input matInput placeholder=\"Zip Code\">\r\n      </mat-form-field>\r\n      <mat-form-field class=\"w-100 mt-2\">\r\n        <input matInput placeholder=\"Country\">\r\n      </mat-form-field>\r\n\r\n      <mat-radio-group aria-label=\"Select an option\">\r\n        <mat-radio-button value=\"1\">Save new shipping address\r\n        </mat-radio-button>\r\n      </mat-radio-group>\r\n    </form>\r\n  </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/default/pages/account/new-address/new-address.component.scss":
+/*!**************************************************************************!*\
+  !*** ./src/default/pages/account/new-address/new-address.component.scss ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvZGVmYXVsdC9wYWdlcy9hY2NvdW50L25ldy1hZGRyZXNzL25ldy1hZGRyZXNzLmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/default/pages/account/new-address/new-address.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/default/pages/account/new-address/new-address.component.ts ***!
+  \************************************************************************/
+/*! exports provided: NewAddressComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewAddressComponent", function() { return NewAddressComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var NewAddressComponent = /** @class */ (function () {
+    function NewAddressComponent() {
+    }
+    NewAddressComponent.prototype.ngOnInit = function () {
+    };
+    NewAddressComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-new-address',
+            template: __webpack_require__(/*! ./new-address.component.html */ "./src/default/pages/account/new-address/new-address.component.html"),
+            styles: [__webpack_require__(/*! ./new-address.component.scss */ "./src/default/pages/account/new-address/new-address.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], NewAddressComponent);
+    return NewAddressComponent;
 }());
 
 

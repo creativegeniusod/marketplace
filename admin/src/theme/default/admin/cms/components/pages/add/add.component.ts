@@ -50,6 +50,7 @@ export class PagesAddComponent implements OnInit {
   public submitted = false;
   public pagesForm: FormGroup;
   public pageTitle: FormControl;
+  public slug: FormControl;
   public pageContent: FormControl;
   public active: FormControl;
   public metaTitle: FormControl;
@@ -123,6 +124,7 @@ export class PagesAddComponent implements OnInit {
   // Form  Initialization
   initForm() {
     this.pageTitle = new FormControl('', [Validators.required]);
+    this.slug = new FormControl('', [Validators.required]);
     this.pageContent = new FormControl('', [Validators.required]);
     this.active = new FormControl('', [Validators.required]);
     this.metaTitle = new FormControl('');
@@ -130,6 +132,7 @@ export class PagesAddComponent implements OnInit {
     this.metaContent = new FormControl('');
     this.pagesForm = this.fb.group({
       pageTitle: this.pageTitle,
+      slug: this.slug,
       pageContent: this.pageContent,
       active: this.active,
       metaTitle: this.metaTitle,
@@ -156,6 +159,7 @@ export class PagesAddComponent implements OnInit {
     ) {
       const params: any = {};
       params.title = this.pagesForm.value.pageTitle;
+      params.slug = this.pagesForm.value.slug;
       params.content = this.pagesForm.value.pageContent;
       params.active = this.pagesForm.value.active;
       params.metaTagTitle = this.pagesForm.value.metaTitle;
@@ -177,7 +181,9 @@ export class PagesAddComponent implements OnInit {
     this.pagesInfo.push(this.service.pagesGetData());
     if (this.pagesInfo[0] !== null) {
       if (this.pagesInfo[0] && this.pagesInfo[0].title) {
+        // console.log(this.pagesInfo[0].slug,"********")
         this.pageTitle = this.pagesInfo[0].title;
+        this.slug = this.pagesInfo[0].slug;
         this.pageContent = this.pagesInfo[0].content;
         this.active = this.pagesInfo[0].isActive;
         this.metaTitle = this.pagesInfo[0].metaTagTitle;
@@ -185,6 +191,7 @@ export class PagesAddComponent implements OnInit {
         this.metaKeyword = this.pagesInfo[0].metaTagKeyword;
 
         this.pagesForm.controls['pageTitle'].setValue(this.pagesInfo[0].title);
+        this.pagesForm.controls['slug'].setValue(this.pagesInfo[0].slug);
         this.pagesForm.controls['pageContent'].setValue(
           this.pagesInfo[0].content
         );

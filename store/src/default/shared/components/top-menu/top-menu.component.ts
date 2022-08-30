@@ -95,9 +95,9 @@ export class TopMenuComponent implements OnInit, OnDestroy {
       // this.router.navigate(['/products'], {
       //     queryParams: { keyword: this.searchValue }
       // });
-      // this.getProductList(this.searchValue);
+      this.getProductList(this.searchValue);
     }
-    this.getProductList(this.searchValue);
+    // this.getProductList(this.searchValue);
   }
   /**
      * fetch product list from service. calling getProductList function from sandbox
@@ -113,12 +113,12 @@ export class TopMenuComponent implements OnInit, OnDestroy {
     params.price = 'ASC';
     params.priceFrom = 0;
     params.priceTo = '';
-    // if (keyword) {
-    this.listSandbox.getProductList(params)
-    this.listSandbox.productlist$.subscribe(data => {
-      this.searchLists = [...data];
-    })
-    // }
+    if (keyword) {
+      this.listSandbox.getProductList(params)
+      this.listSandbox.productlist$.subscribe(data => {
+        this.searchLists = [...data];
+      })
+    }
   }
 
   search() {
@@ -144,7 +144,15 @@ export class TopMenuComponent implements OnInit, OnDestroy {
     const clickedInside = this._elementRef.nativeElement.contains(targetElement);
     if (!clickedInside) {
       this.show = true;
-    } else {
+      this.searchValue = ''
+    }
+  }
+
+
+  @HostListener('input', ['$event.target'])
+  public onInputClick(targetElement) {
+    const clickedInside = this._elementRef.nativeElement.contains(targetElement);
+    if (clickedInside) {
       this.show = false;
     }
   }

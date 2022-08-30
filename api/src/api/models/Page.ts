@@ -18,6 +18,9 @@ export class Page extends BaseModel {
     @Column({name: 'title'})
     public title: string;
 
+    @Column({name: 'slug'})
+    public slug: string;
+
     @Column({name: 'intro'})
     public intro: string;
 

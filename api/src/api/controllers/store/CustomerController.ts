@@ -65,11 +65,22 @@ export class CustomerController {
         newUser.email = registerParam.emailId;
         newUser.username = registerParam.emailId;
         newUser.mobileNumber = registerParam.phoneNumber;
+        newUser.interest = "";
+        newUser.bio = "";
+        newUser.contactNumber = "";
+        newUser.orderNotificationFirst = "0";
+        newUser.iam = "";
+        newUser.primaryEmail = "";
+        newUser.orderNotificationsecond = "0";
+        newUser.recoveryEmail = "";
+        newUser.birthday = "";
+        newUser.gender = "";
         newUser.isActive = 1;
         newUser.ip = (request.headers['x-forwarded-for'] ||
             request.connection.remoteAddress ||
             request.socket.remoteAddress ||
             request.connection.socket.remoteAddress).split(',')[0];
+        console.log(newUser,"*********&&&&&&**********")
         const resultUser = await this.customerService.findOne({where: {email: registerParam.emailId, deleteFlag: 0}});
         if (resultUser) {
             const successResponse: any = {

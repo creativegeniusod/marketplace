@@ -118,7 +118,7 @@ export class AccountSandbox {
         this.subscriptions.push(this.getEdittedStatus$.subscribe(edit => {
             if (edit && edit.status === 1) {
                 this.commonSandbox.doGetProfile();
-                this.router.navigate(['/']);
+                // this.router.navigate(['/']);
             }
         }));
 

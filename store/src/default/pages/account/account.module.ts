@@ -36,6 +36,7 @@ import { InfluencerManagementComponent } from './influencer-management/influence
 import { BecomeSellerComponent } from './become-seller/become-seller.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { MyAddressComponent } from './my-address/my-address.component';
+import { NewAddressComponent } from './new-address/new-address.component';
 
 
 
@@ -53,6 +54,7 @@ export const routes = [
             { path: 'address', component: MyAddressComponent, data: { breadcrumb: 'My Addresses' } },
             { path: 'influencer', component: InfluencerManagementComponent, data: { breadcrumb: 'Influencer Detail' } },
             { path: 'become-seller', component: BecomeSellerComponent, data: { breadcrumb: 'Become seller' } },
+            { path: 'new-address', component: NewAddressComponent, data: { breadcrumb: 'My Addresses / New Address' } },
 
         ],
     },
@@ -80,7 +82,8 @@ export const routes = [
         InfluencerManagementComponent,
         BecomeSellerComponent,
         MyProfileComponent,
-        MyAddressComponent
+        MyAddressComponent,
+        NewAddressComponent
     ],
     providers: [CommonSandbox,
         AccountSandbox,

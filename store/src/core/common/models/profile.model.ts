@@ -21,6 +21,9 @@ export class ProfileModel {
   public id: string;
   public lastLogin: string;
   public username: string;
+  public bio: string;
+  public iam: string;
+  public interest: string
 
   constructor(bannerRequest: any) {
     this.address = bannerRequest.address || '';
@@ -37,5 +40,8 @@ export class ProfileModel {
     this.id = bannerRequest.id || '';
     this.lastLogin = bannerRequest.lastLogin || '';
     this.username = bannerRequest.username || '';
+    this.bio = bannerRequest.bio || '';
+    this.iam = bannerRequest.iam || '';
+    this.interest = bannerRequest.interest || '';
   }
 }

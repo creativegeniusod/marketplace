@@ -382,14 +382,14 @@ export class CustomerController {
         resultData.interest = 'interest';
         resultData.bio = 'bio';
         resultData.iam = 'iam';
-       /* resultData.contactNumber = '9898989898';
+        resultData.contactNumber = '9898989898';
         resultData.orderNotificationFirst = 1;
         resultData.primaryEmail = "primary@gmail.com";
         resultData.orderNotificationsecond = 1;
         resultData.recoveryEmail = "recovery@gmail.com";
         resultData.birthday = "15/11/1991";
         resultData.gender = "male";
-        resultData.gender = "male";*/
+        console.log(resultData,"Hello");
         if (customerEditProfileRequest.password) {
             // if (await Customer.comparePassword(resultData, customerEditProfileRequest.oldPassword)) {
             resultData.password = await Customer.hashPassword(customerEditProfileRequest.password);

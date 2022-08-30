@@ -940,6 +940,10 @@ html.cdk-global-scrollblock{position: static;}
     margin: 0 10px 0 0;
 }
 .wishListCol{margin-bottom: 20px;}
+.loginBtn {
+    background: transparent !important;
+    border: none !important;
+}
 
 @media (max-width: 1480px){
     .priceAndIcons p, .product-item .prices .new-price {font-size: 14px;}

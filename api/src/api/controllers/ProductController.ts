@@ -75,7 +75,7 @@ export class ProductController {
     @Get('/productlist')
     @Authorized()
     public async productList(@QueryParam('limit') limit: number, @QueryParam('offset') offset: number, @QueryParam('keyword') keyword: string, @QueryParam('sku') sku: string, @QueryParam('status') status: string, @QueryParam('price') price: number, @QueryParam('count') count: number | boolean, @Res() response: any): Promise<Product> {
-        const select = ['productId', 'sku', 'name', 'quantity', 'price', 'image', 'imagePath', 'todayDeals', 'isActive'];
+        const select = ['productId', 'sku', 'name', 'quantity', 'price','regular', 'image', 'imagePath', 'todayDeals', 'isActive'];
 
         const relation = [];
 

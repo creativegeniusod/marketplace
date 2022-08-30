@@ -7417,6 +7417,7 @@ var PagesaddResponseModel = /** @class */ (function () {
         this.isActive = addResponse.isActive || 0;
         this.pageId = addResponse.pageId || 0;
         this.title = addResponse.title || '';
+        this.slug = addResponse.slug || '';
     }
     return PagesaddResponseModel;
 }());
@@ -7452,6 +7453,7 @@ var PageslistResponseModel = /** @class */ (function () {
         this.isActive = listResponse.isActive || 0;
         this.pageId = listResponse.pageId || 0;
         this.title = listResponse.title || '';
+        this.slug = listResponse.slug || '';
     }
     return PageslistResponseModel;
 }());

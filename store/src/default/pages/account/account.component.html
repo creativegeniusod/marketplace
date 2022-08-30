@@ -1,4 +1,4 @@
-<mat-sidenav-container>
+<mat-sidenav-container class="account-page">
     <mat-sidenav #sidenav [opened]="sidenavOpen" [mode]="sidenavOpen ? 'side' : 'over'" class="account-sidenav"
         perfectScrollbar>
         <mat-nav-list class="mat-elevation-z1 h-100">
@@ -13,12 +13,12 @@
             </mat-list-item>
         </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content class="account-content" ngClass.gt-sm="p-left">
-        <div fxLayout="row" fxLayoutAlign="space-between center" class="header-row mat-elevation-z1 text-muted">
+    <mat-sidenav-content class="account-page-header" ngClass.gt-sm="p-left">
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="header-row">
             <button *ngIf="!sidenavOpen" mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>more_vert</mat-icon>
             </button>
-            <h3>{{pageInfo}}</h3>
+            <h2><img src="/assets/images/back-arrow.png">{{pageInfo}}</h2>
         </div>
         <div class="account-wrapper mat-elevation-z1">
             <router-outlet></router-outlet>

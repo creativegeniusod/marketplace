@@ -1,53 +1,55 @@
-<div fxLayout="row wrap">
-  <div fxFlex="100" fxFlex.gt-sm="50" class="p-2">
-    <div class="editImage">
-      <img class="img" *ngIf="!ifImageAvailable" (click)="uploadButtonClick()" src="./assets/images/others/user.jpg"
-        onError="this.src='/assets/images/default_image.png';">
-      <img class="img" *ngIf="ifImageAvailable" (click)="uploadButtonClick()" [src]="imageUrl">
-      <input type="file" name="userImg" (change)="uploadChange($event)" accept="image/*" #filePath
-        style="display: none">
-      <span class="editProfile" *ngIf="(ifImageAvailable)" (click)="uploadButtonClick()">Change</span>
-    </div>
-
-    <form [formGroup]="profileForm">
-      <mat-form-field class="w-100 mt-2"
-        [ngClass]="{'validationcolor':((profileForm.controls.firstName.errors?.required)&&(ifSubmitted==true))}">
-        <input matInput placeholder="Username" formControlName="email" required readonly>
-        <mat-error *ngIf="((profileForm['controls'].firstName.errors?.required)&&(ifSubmitted==true))">
-          First Name is required
-        </mat-error>
-        <mat-error *ngIf="((profileForm['controls'].firstName.hasError('minlength'))&&(ifSubmitted==true))">
-          First Name isn't long enough, minimum of 3 characters
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="w-100 mt-2">
-        <mat-label>Interest</mat-label>
-        <select matNativeControl formControlName="interest">
-          <option value="men">Men</option>
-          <option value="women">Women</option>
-          <option value="kids">Kids</option>
-        </select>
-      </mat-form-field>
-
-      <mat-form-field class="w-100 mt-2">
-        <input matInput placeholder="Bio" formControlName="bio">
-      </mat-form-field>
-
-      <mat-form-field class="w-100 mt-2">
-        <mat-label>I am</mat-label>
-        <select matNativeControl formControlName="iam">
-          <option value="customer">Customer</option>
-          <option value="vender">Vender</option>
-        </select>
-      </mat-form-field>
-
-      <div class="text-center mt-2">
-        <button mat-raised-button color="primary" (click)="onProfileFormSubmit()">Submit
-        </button>
+<div class="accountWrap">
+  <div fxLayout="row wrap">
+    <div fxFlex="100" fxFlex.gt-sm="100" class="">
+      <div class="editImage">
+        <img class="img" *ngIf="!ifImageAvailable" (click)="uploadButtonClick()" src="./assets/images/others/user.jpg"
+          onError="this.src='/assets/images/default_image.png';">
+        <img class="img" *ngIf="ifImageAvailable" (click)="uploadButtonClick()" [src]="imageUrl">
+        <input type="file" name="userImg" (change)="uploadChange($event)" accept="image/*" #filePath
+          style="display: none">
+        <span class="editProfile" *ngIf="(ifImageAvailable)" (click)="uploadButtonClick()">Change</span>
       </div>
-    </form>
-  </div>
-</div>
 
-<app-account-buttons></app-account-buttons>
+      <form [formGroup]="profileForm">
+        <mat-form-field class="w-100 mt-2"
+          [ngClass]="{'validationcolor':((profileForm.controls.firstName.errors?.required)&&(ifSubmitted==true))}">
+          <input matInput placeholder="Username" formControlName="email" required readonly>
+          <mat-error *ngIf="((profileForm['controls'].firstName.errors?.required)&&(ifSubmitted==true))">
+            First Name is required
+          </mat-error>
+          <mat-error *ngIf="((profileForm['controls'].firstName.hasError('minlength'))&&(ifSubmitted==true))">
+            First Name isn't long enough, minimum of 3 characters
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100 mt-2">
+          <mat-label>Interest</mat-label>
+          <select matNativeControl formControlName="interest">
+            <option value="men">Men</option>
+            <option value="women">Women</option>
+            <option value="kids">Kids</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field class="w-100 mt-2">
+          <input matInput placeholder="Bio" formControlName="bio">
+        </mat-form-field>
+
+        <mat-form-field class="w-100 mt-2">
+          <mat-label>I am</mat-label>
+          <select matNativeControl formControlName="iam">
+            <option value="customer">Customer</option>
+            <option value="vender">Vender</option>
+          </select>
+        </mat-form-field>
+
+        <div class="text-center mt-2">
+          <button mat-raised-button color="primary" (click)="onProfileFormSubmit()">Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <app-account-buttons></app-account-buttons>
+</div>

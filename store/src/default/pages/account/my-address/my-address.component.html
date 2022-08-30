@@ -1,35 +1,54 @@
-<div fxLayout="row wrap">
-  <div fxFlex="100" fxFlex.gt-sm="50" class="p-2">
-    <div fxLayout="row" fxLayoutAlign="space-between center" class="mt-2">
-      <h6>
-        <mat-icon> location_on</mat-icon>Home
-        <button mat-button>Edit</button>
-        <button mat-button>Delete</button>
-      </h6>
-      <select matNativeControl>
-        <option value="">Select</option>
-      </select>
-    </div>
+<div class="accountWrap">  
+  <div fxLayout="row wrap">
+    <div fxFlex="100" fxFlex.gt-sm="100" class="">
+      <div fxLayout="column" fxLayoutAlign="space-between center" class="mt-2">
+        <div class="address-row">
+          <div class="addressIcon">
+            <img src="/assets/images/map.png">
+          </div>
+          <div class="addressName">
+            <p><b>Home</b></p>
+            <div class="addressActions">
+              <button mat-button>Edit</button>
+              <button mat-button>Delete</button>
+            </div>
+          </div>
+          <div class="addressSelect">
+            <select matNativeControl>
+              <option value="">Select</option>
+            </select>
+          </div>
+        </div>
+        <div class="divider w-100 mt-2"></div>
+        <div class="address-row mt-2">
+          <div class="addressIcon">
+            <img src="/assets/images/map.png">
+          </div>
+          <div class="addressName">
+            <p><b>Parkway House</b></p>
+            <div class="addressActions">
+              <button mat-button>Edit</button>
+              <button mat-button>Delete</button>
+            </div>
+          </div>
+          <div class="addressSelect">
+            <select matNativeControl>
+              <option value="">Select</option>
+            </select>
+          </div>
+        </div>
+        <div class="divider w-100 mt-2"></div>
+      </div>
 
-    <div fxLayout="row" fxLayoutAlign="space-between center" class="mt-2">
-      <h6>
-        <mat-icon> location_on</mat-icon>Parkway House
-        <button mat-button>Edit</button>
-        <button mat-button>Delete</button>
-      </h6>
-      <select matNativeControl>
-        <option value="">Select</option>
-      </select>
 
-    </div>
-
-    <div fxLayout="row" fxLayoutAlign="space-between center" class="mt-2">
-      <button mat-button color="warn" routerLink="/account/new-address">Add New address</button>
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="mt-2">
+        <button class="p-0" mat-button color="warn" routerLink="/account/new-address">Add New address</button>
+      </div>
     </div>
   </div>
+
+
+
+
+  <app-account-buttons></app-account-buttons>
 </div>
-
-
-
-
-<app-account-buttons></app-account-buttons>

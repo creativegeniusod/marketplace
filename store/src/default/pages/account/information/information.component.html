@@ -1,53 +1,56 @@
-<div fxLayout="row wrap">
-    <div fxFlex="100" fxFlex.gt-sm="50" class="p-2">
+<div class="accountWrap">
+    <div fxLayout="row wrap">
+        <div fxFlex="100" fxFlex.gt-sm="100" class="">
+            <form [formGroup]="infoForm">
+                <mat-form-field class="w-100 mt-2">
+                    <input matInput placeholder="Contact Number" formControlName="mobileNumber">
+                </mat-form-field>
 
-        <form [formGroup]="infoForm">
-            <mat-form-field class="w-100 mt-2">
-                <input matInput placeholder="Contact Number" formControlName="mobileNumber">
-            </mat-form-field>
-            
-            <mat-checkbox class="example-margin" formControlName="orderNotificationFirst">Check this to recieve order
-                notification and deals via SMS</mat-checkbox>
+                <mat-checkbox class="example-margin" formControlName="orderNotificationFirst">Check this to recieve
+                    order
+                    notification and deals via SMS</mat-checkbox>
 
-            <mat-form-field class="w-100 mt-2">
-                <input matInput placeholder="Primary Email Address" formControlName="primaryAddess">
-            </mat-form-field>
+                <mat-form-field class="w-100 mt-2">
+                    <input matInput placeholder="Primary Email Address" formControlName="primaryAddess">
+                </mat-form-field>
 
-            <mat-checkbox class="example-margin" formControlName="orderNotificationsecond">Check this to recieve order
-                notification and deals via SMS</mat-checkbox>
+                <mat-checkbox class="example-margin" formControlName="orderNotificationsecond">Check this to recieve
+                    order
+                    notification and deals via SMS</mat-checkbox>
 
-            <mat-form-field class="w-100 mt-2">
-                <input matInput placeholder="Recovery Email Address" formControlName="recoveryEmail">
-            </mat-form-field>
+                <mat-form-field class="w-100 mt-2">
+                    <input matInput placeholder="Recovery Email Address" formControlName="recoveryEmail">
+                </mat-form-field>
 
-            <mat-form-field class="w-100 mt-2">
-                <input matInput placeholder="Bio" formControlName="bio">
-            </mat-form-field>
+                <mat-form-field class="w-100 mt-2">
+                    <input matInput placeholder="Bio" formControlName="bio">
+                </mat-form-field>
 
-            <mat-form-field class="w-100 mt-2">
-                <mat-label>Birthday</mat-label>
-                <input matInput [matDatepicker]="picker" formControlName="birthday">
-                <mat-datepicker-toggle matSuffix [for]="picker">
-                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-                </mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
+                <mat-form-field class="w-100 mt-2">
+                    <mat-label>Birthday</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="birthday">
+                    <mat-datepicker-toggle matSuffix [for]="picker">
+                        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
 
-            <mat-form-field class="w-100 mt-2">
-                <mat-label>Gender</mat-label>
-                <select matNativeControl formControlName="gender">
-                    <option value="male">male</option>
-                    <option value="female">Female</option>
-                </select>
-            </mat-form-field>
+                <mat-form-field class="w-100 mt-2">
+                    <mat-label>Gender</mat-label>
+                    <select matNativeControl formControlName="gender">
+                        <option value="male">male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </mat-form-field>
 
-            <div class="text-center mt-2">
-                <button mat-raised-button color="primary" (click)="onInfoFormSubmit()">Submit
-                </button>
-            </div>
-        </form>
+                <div class="text-center mt-2">
+                    <button mat-raised-button color="primary" (click)="onInfoFormSubmit()">Submit
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
+
+
+    <app-account-buttons></app-account-buttons>
 </div>
-
-
-<app-account-buttons></app-account-buttons>

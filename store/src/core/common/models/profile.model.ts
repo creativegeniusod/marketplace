@@ -23,7 +23,14 @@ export class ProfileModel {
   public username: string;
   public bio: string;
   public iam: string;
-  public interest: string
+  public interest: string;
+  public phoneNumber: string;
+  public checkPhoneNumber: number;
+  public primaryAddess: String;
+  public checkPrimaryAddess: Number;
+  public recoveryEmail: String;
+  public dob: String;
+  public gender: String;
 
   constructor(bannerRequest: any) {
     this.address = bannerRequest.address || '';
@@ -43,5 +50,11 @@ export class ProfileModel {
     this.bio = bannerRequest.bio || '';
     this.iam = bannerRequest.iam || '';
     this.interest = bannerRequest.interest || '';
+    this.checkPhoneNumber = bannerRequest.interest || '';
+    this.primaryAddess = bannerRequest.primaryAddess || '';
+    this.checkPrimaryAddess = bannerRequest.checkPrimaryAddess || '';
+    this.recoveryEmail = bannerRequest.recoveryEmail || '';
+    this.dob = bannerRequest.dob || '';
+    this.gender = bannerRequest.gender || '';
   }
 }

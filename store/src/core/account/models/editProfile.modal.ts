@@ -16,6 +16,13 @@ export class EditProfileModal {
   public bio: string;
   public iam: string;
   public interest: string;
+  public checkPhoneNumber: number;
+  public primaryAddess: String;
+  public checkPrimaryAddess: Number;
+  public recoveryEmail: String;
+  public dob: String;
+  public gender: String;
+
 
   constructor(editRequest: any) {
     this.firstName = editRequest.firstName || '';
@@ -27,5 +34,11 @@ export class EditProfileModal {
     this.bio = editRequest.bio || '';
     this.iam = editRequest.iam || '';
     this.interest = editRequest.interest || '';
+    this.checkPhoneNumber = editRequest.interest || '';
+    this.primaryAddess = editRequest.primaryAddess || '';
+    this.checkPrimaryAddess = editRequest.checkPrimaryAddess || '';
+    this.recoveryEmail = editRequest.recoveryEmail || '';
+    this.dob = editRequest.dob || '';
+    this.gender = editRequest.gender || '';
   }
 }

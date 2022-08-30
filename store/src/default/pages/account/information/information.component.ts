@@ -51,7 +51,7 @@ export class InformationComponent implements OnInit, OnDestroy {
     // build a form for info  by gouping the form control
     initInfoForm() {
         this.infoForm = this.formBuilder.group({
-            'phoneNumber': ['', Validators.compose([Validators.required])],
+            'phoneNumber': [''],
             'checkPhoneNumber': [''],
             'primaryAddess': ['', Validators.compose([Validators.required])],
             'checkPrimaryAddess': [''],
@@ -75,21 +75,26 @@ export class InformationComponent implements OnInit, OnDestroy {
 
     // set the user details to the form by fetching the profile details from sandbox
     setProfile() {
-        // this.subscriptions.push(this.commonSandbox.getProfile$.subscribe(profile => {
-        //     if (profile) {
-        //         this.infoForm.controls['firstName'].setValue(profile.firstName);
-        //         this.infoForm.controls['lastName'].setValue(profile.lastName);
-        //         this.infoForm.controls['email'].setValue(profile.email);
-        //         this.infoForm.controls['phoneNumber'].setValue(profile.mobileNumber);
-        //         this.imageUrl = this.imagePath + '?path=' + profile.avatarPath + '&name=' + profile.avatar + '&width=60&height=60';
-        //         this.ifImageAvailable = profile.avatarPath;
-        //     }
-        // }));
+        this.subscriptions.push(this.commonSandbox.getProfile$.subscribe(profile => {
+            if (profile) {
+                console.log('profile', profile);
+                this.infoForm.controls['firstName'].setValue(profile.firstName);
+                this.infoForm.controls['email'].setValue(profile.email);
+                this.infoForm.controls['phoneNumber'].setValue(profile.phoneNumber);
+                this.infoForm.controls['checkPhoneNumber'].setValue(profile.checkPhoneNumber);
+                this.infoForm.controls['primaryAddess'].setValue(profile.primaryAddess);
+                this.infoForm.controls['checkPrimaryAddess'].setValue(profile.checkPrimaryAddess);
+                this.infoForm.controls['recoveryEmail'].setValue(profile.recoveryEmail);
+                this.infoForm.controls['bio'].setValue(profile.bio);
+                this.infoForm.controls['dob'].setValue(profile.dob);
+                this.infoForm.controls['gender'].setValue(profile.gender);
+            }
+        }));
     }
 
     public onInfoFormSubmit(): void {
-        if (this.infoForm.valid) {
-            console.log('this.infoForm.', this.infoForm.value);
+        console.log('this.infoForm.', this.infoForm.value);
+        if (this.infoForm.valid) {           
             const params: any = this.infoForm.value;
             this.accountSandbox.doEditProfile(params);
             this.ifSubmitted = false;

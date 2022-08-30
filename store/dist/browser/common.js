@@ -75,6 +75,7 @@ var AuthSandbox = /** @class */ (function () {
         this.appState$.dispatch(new _action_auth_action__WEBPACK_IMPORTED_MODULE_4__["DoLogin"](new _models_login_model__WEBPACK_IMPORTED_MODULE_6__["LoginModel"](params)));
     };
     AuthSandbox.prototype.doRegister = function (params) {
+        console.log('params', params);
         this.appState$.dispatch(new _action_auth_action__WEBPACK_IMPORTED_MODULE_4__["DoRegister"](new _models_register_model__WEBPACK_IMPORTED_MODULE_7__["RegisterModel"](params)));
     };
     AuthSandbox.prototype.doRecover = function (params) {

@@ -1,25 +1,19 @@
 <div fxLayout="row wrap">
     <div fxFlex="100" fxFlex.gt-sm="50" class="p-2">
-        <!-- <h2 class="text-muted text-center">Account Details</h2> -->
 
         <form [formGroup]="infoForm">
             <mat-form-field class="w-100 mt-2">
                 <input matInput placeholder="Contact Number" formControlName="phoneNumber">
             </mat-form-field>
-
-            <mat-radio-group aria-label="Select an option" formControlName="checkPhoneNumber">
-                <mat-radio-button value="1">Check this to recieve order notification and deals via SMS
-                </mat-radio-button>
-            </mat-radio-group>
+            <mat-checkbox class="example-margin" formControlName="checkPhoneNumber">Check this to recieve order
+                notification and deals via SMS</mat-checkbox>
 
             <mat-form-field class="w-100 mt-2">
                 <input matInput placeholder="Primary Email Address" formControlName="primaryAddess">
             </mat-form-field>
 
-            <mat-radio-group aria-label="Select an option" formControlName="checkPrimaryAddess">
-                <mat-radio-button value="1">Check this to recieve order notification and deals via SMS
-                </mat-radio-button>
-            </mat-radio-group>
+            <mat-checkbox class="example-margin" formControlName="checkPrimaryAddess">Check this to recieve order
+                notification and deals via SMS</mat-checkbox>
 
             <mat-form-field class="w-100 mt-2">
                 <input matInput placeholder="Recovery Email Address" formControlName="recoveryEmail">

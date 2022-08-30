@@ -53,12 +53,12 @@ export class InformationComponent implements OnInit, OnDestroy {
         this.infoForm = this.formBuilder.group({
             'phoneNumber': [''],
             'checkPhoneNumber': [''],
-            'primaryAddess': ['', Validators.compose([Validators.required])],
+            'primaryAddess': [''],
             'checkPrimaryAddess': [''],
-            'recoveryEmail': ['', Validators.compose([Validators.required])],
-            'bio': ['', Validators.compose([Validators.required])],
-            'dob': ['', Validators.compose([Validators.required])],
-            'gender': ['', Validators.compose([Validators.required])],
+            'recoveryEmail': [''],
+            'bio': [''],
+            'dob': [''],
+            'gender': [''],
         });
     }
 
@@ -93,8 +93,7 @@ export class InformationComponent implements OnInit, OnDestroy {
     }
 
     public onInfoFormSubmit(): void {
-        console.log('this.infoForm.', this.infoForm.value);
-        if (this.infoForm.valid) {           
+        if (this.infoForm.valid) {
             const params: any = this.infoForm.value;
             this.accountSandbox.doEditProfile(params);
             this.ifSubmitted = false;

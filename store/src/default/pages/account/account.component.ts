@@ -30,12 +30,12 @@ export class AccountComponent implements OnInit, AfterViewInit, OnDestroy {
   private subscription: Array<Subscription> = [];
   public links = [
     { name: 'Account Dashboard', href: 'dashboard', icon: 'dashboard' },
-    { name: 'Public Profile Settings', href: 'profile', icon: '' },
+    { name: 'Public Profile Settings', href: 'profile', icon: 'person_pin' },
     { name: 'Personal Information Settings', href: 'information', icon: 'info' },
-    { name: 'Address Settings', href: 'address', icon: '' },
-    { name: 'Influencer Management', href: 'influencer', icon: '' },
+    { name: 'Address Settings', href: 'address', icon: 'place' },
+    { name: 'Influencer Management', href: 'influencer', icon: 'Influencer' },
     { name: 'Order History', href: 'orders', icon: 'add_shopping_cart' },
-    { name: 'Become a Seller', href: 'become-seller', icon: '' },
+    { name: 'Change Password', href: 'change-pass', icon: 'lock' },
     { name: 'Logout', href: '/logout', icon: 'power_settings_new' }
   ];
 

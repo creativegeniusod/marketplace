@@ -54,6 +54,8 @@ import { TrendingProductComponent } from './trending-product/trending-product.co
 import { AdvertismentProductComponent } from './advertisment-product/advertisment-product.component';
 import { ProductNotFoundComponent } from './product-not-found/product-not-found.component';
 import { AccountButtonsComponent } from './account-buttons/account-buttons.component';
+import { BecomeSellerComponent } from './become-seller/become-seller.component';
+import { ContactComponent } from 'src/default/pages/contact/contact.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     wheelPropagation: true,
@@ -83,7 +85,9 @@ export const COMPONENTS = [
     TrendingProductComponent,
     AdvertismentProductComponent,
     ProductNotFoundComponent,
-    AccountButtonsComponent
+    AccountButtonsComponent,
+    BecomeSellerComponent,
+    ContactComponent
 ];
 
 @NgModule({

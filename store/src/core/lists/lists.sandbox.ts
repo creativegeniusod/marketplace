@@ -77,7 +77,11 @@ import {
   advertisementProductList,
   advertisementProductListLoading,
   advertisementProductListLoadedStatus,
-  advertisementProductListFailedStatus
+  advertisementProductListFailedStatus,
+  trendingProductList,
+  trendingProductListLoading,
+  trendingProductListLoadedStatus,
+  trendingProductListFailedStatus
 
 } from './reducer/lists.selector';
 import { ContactUsRequestModel } from './models/contact-us-request.model';
@@ -196,6 +200,12 @@ export class ListsSandbox {
   public advertisementProductListLoaded$ = this.appState$.select(advertisementProductListLoadedStatus);
   public advertisementProductListFailed$ = this.appState$.select(advertisementProductListFailedStatus);
 
+  /* get trendinglist */
+  public trendingProductList$ = this.appState$.select(trendingProductList);
+  public trendingProductListLoading$ = this.appState$.select(trendingProductListLoading);
+  public trendingProductListLoaded$ = this.appState$.select(trendingProductListLoadedStatus);
+  public trendingProductListFailed$ = this.appState$.select(trendingProductListFailedStatus);
+
 
 
   private subscriptions: Array<Subscription> = [];
@@ -296,9 +306,11 @@ export class ListsSandbox {
     this.appState$.dispatch(new authAction.GetAdvertisementProductList(params));
   }
 
-  // end get advertisement list
+  // end get trending list
 
-
+  public getTrendingProductList(params): void {
+    this.appState$.dispatch(new authAction.GetTrendingProductList(params));
+  }
   /** subscribe   value **/
   public registerEvents() {
     this.subscriptions.push(

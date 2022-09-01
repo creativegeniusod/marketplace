@@ -16,7 +16,8 @@
                 <!-- <h2 class="text-muted text-center">Sign up</h2> -->
                 <h6>Become a Beaver Member</h6>
                 <form [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit(registerForm.value)" novalidate>
-                    <mat-form-field class="w-100 mt-2"
+                    <div class="formField fieldWithIcon emailIcon">
+                    <mat-form-field class="w-100 mt-1"
                         [ngClass]="{validationcolor:registerForm.controls.name.hasError('required') && submitted }">
                         <input matInput placeholder="Full Name" formControlName="name" required>
                         <mat-error *ngIf="registerForm.controls['name'].hasError('required') && submitted">Full Name is
@@ -26,6 +27,7 @@
                         <mat-error *ngIf="registerForm.controls['name'].hasError('pattern') && submitted">Name must be
                             string</mat-error>
                     </mat-form-field>
+                    </div>
                     <div class="formField fieldWithIcon emailIcon">
                         <mat-form-field class="w-100 mt-1"
                             [ngClass]="{validationcolor:registerForm.controls.email.hasError('required') && submitted }">
@@ -47,6 +49,7 @@
                                 Password isn't long enough, minimum of 5 characters</mat-error>
                         </mat-form-field>
                     </div>
+                    <div class="formField fieldWithIcon lockIcon">
                     <mat-form-field class="w-100 mt-1"
                         [ngClass]="{validationcolor:registerForm.controls.confirmPassword.hasError('required') && submitted }">
                         <input matInput placeholder="Confirm Password" formControlName="confirmPassword" type="password"
@@ -57,6 +60,7 @@
                             *ngIf="registerForm.controls['confirmPassword'].hasError('mismatchedPasswords') && submitted">
                             Passwords do not match</mat-error>
                     </mat-form-field>
+                    </div>
                     <div class="text-center mt-2">
                         <mat-checkbox class="example-margin">Remember me!</mat-checkbox>
                     </div>
@@ -82,7 +86,7 @@
                     </div>
 
                     <div fxLayout="row" fxLayoutAlign="space-between center" class="mt-1">
-                        <h5 class="text-center text-red auth forgot w-100">
+                        <h5 class="text-center text-red auth forgot w-100" routerLink="/become-seller">
                             Become a seller</h5>
                     </div>
                 </form>

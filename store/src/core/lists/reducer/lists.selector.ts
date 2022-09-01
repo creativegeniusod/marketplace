@@ -126,6 +126,28 @@ export const advertisementProductListFailedStatus = createSelector(
 // end
 
 
+// start get advertisement product list
+export const trendingProductList = createSelector(
+  getState,
+  fromList.getTrendingProductList
+);
+
+export const trendingProductListLoading = createSelector(
+  getState,
+  fromList.getTrendingProductListLoading
+);
+
+export const trendingProductListLoadedStatus = createSelector(
+  getState,
+  fromList.getTrendingProductListLoaded
+);
+export const trendingProductListFailedStatus = createSelector(
+  getState,
+  fromList.getTrendingProductListFailed
+);
+// end
+
+
 
 export const countLoadingStatus = createSelector(
   getState,
@@ -295,3 +317,4 @@ export const symbolSetting = createSelector(
   getState,
   fromList.getSymbolSetting
 );
+

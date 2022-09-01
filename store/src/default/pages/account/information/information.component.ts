@@ -75,6 +75,21 @@ export class InformationComponent implements OnInit, OnDestroy {
     // }
 
 
+    // call change password functionality if the password form is valid
+    // public onPasswordFormSubmit(): void {
+
+    //     if (this.passwordForm.valid) {
+    //         this.accountSandbox.doChangepassword(this.passwordForm.value);
+    //         this.ifPasswordForm = false;
+    //         this.passwordForm.reset();
+    //         this.passwordForm.clearValidators();
+    //         // this.resetAllFormFields(this.passwordForm);
+    //     } else {
+    //         this.ifPasswordForm = true;
+    //     }
+    // }
+
+
     // set the user details to the form by fetching the profile details from sandbox
     setProfile() {
         this.subscriptions.push(this.commonSandbox.getProfile$.subscribe(profile => {

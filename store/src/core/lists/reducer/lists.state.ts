@@ -112,6 +112,11 @@ export interface ListsState extends Map<string, any> {
   advertisementProductListLoaded: boolean;
   advertisementProductListFailed: boolean;
 
+  trendingProductList: Array<ProductsResponseModel>;
+  trendingProductListLoading: boolean;
+  trendingProductListLoaded: boolean;
+  trendingProductListFailed: boolean;
+
 }
 
 export const listsRecord = Record({
@@ -204,4 +209,9 @@ export const listsRecord = Record({
   advertisementProductListLoading: false,
   advertisementProductListLoaded: false,
   advertisementProductListFailed: false,
+
+  trendingProductList: [],
+  trendingProductListLoading: false,
+  trendingProductListLoaded: false,
+  trendingProductListFailed: false
 });

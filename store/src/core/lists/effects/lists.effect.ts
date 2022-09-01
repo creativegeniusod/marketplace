@@ -293,4 +293,16 @@ export class ListsEffect {
       );
     })
   );
+
+  @Effect()
+  trendingProductList$: Observable<Action> = this.actions$.pipe(
+    ofType(actions.ActionTypes.GET_TRENDING_PRODUCT_LIST),
+    map((action: actions.GetTrendingProductList) => action.payload),
+    switchMap(state => {
+      return this.authApi.getAdvertisementList(state).pipe(
+        map(banner => new actions.GetTrendingProductSuccess(banner)),
+        catchError(error => of(new actions.GetTrendingProductFail(error)))
+      );
+    })
+  );
 }

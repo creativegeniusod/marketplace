@@ -1,12 +1,16 @@
 <h2 class="text-muted text-center">
     Forgot Password</h2>
 <form [formGroup]="forgotForm" novalidate>
-    <mat-form-field class="w-100 mt-2" [ngClass]="{'validationcolor':
+    <div class="formField fieldWithIcon emailIcon">
+        <mat-form-field class="w-100 mt-1" [ngClass]="{'validationcolor':
     (forgotForm.controls.emailId.hasError('required') && submitted)}">
-        <input matInput placeholder="Email" formControlName="emailId" required>
-        <mat-error *ngIf="forgotForm.controls['emailId'].hasError('required') && submitted">Email is required</mat-error>
-        <mat-error *ngIf="forgotForm.controls['emailId'].hasError('invalidEmail') && submitted">Invalid email address</mat-error>
-    </mat-form-field>
+            <input matInput placeholder="Email" formControlName="emailId" required>
+            <mat-error *ngIf="forgotForm.controls['emailId'].hasError('required') && submitted">Email is required
+            </mat-error>
+            <mat-error *ngIf="forgotForm.controls['emailId'].hasError('invalidEmail') && submitted">Invalid email
+                address</mat-error>
+        </mat-form-field>
+    </div>
     <div class="text-center mt-2">
         <button mat-fab color="primary" class="mat-elevation-z6" (click)="onForgotFormSubmit(forgotForm.value)">
             <mat-icon>exit_to_app</mat-icon>

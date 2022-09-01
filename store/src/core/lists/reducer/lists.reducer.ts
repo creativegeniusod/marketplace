@@ -580,6 +580,38 @@ export function reducer(
         advertisementProductListFailed: true
       });
     }
+
+
+
+
+
+    case actions.ActionTypes.GET_TRENDING_PRODUCT_LIST: {
+      return Object.assign({}, state, {
+        trendingProductList: state,
+        trendingProductListLoading: false,
+        trendingProductListLoaded: true,
+        trendingProductListFailed: false
+      });
+    }
+    case actions.ActionTypes.GET_TRENDING_PRODUCT_LIST_SUCCESS: {
+      const bannerModel = payload.data.map(_list => {
+        const tempModel = new ProductsResponseModel(_list);
+        return tempModel;
+      });
+      return Object.assign({}, state, {
+        trendingProductList: bannerModel,
+        trendingProductListLoading: false,
+        trendingProductListLoaded: true,
+        trendingProductListFailed: false
+      });
+    }
+    case actions.ActionTypes.GET_TRENDING_PRODUCT_LIST_FAIL: {
+      return Object.assign({}, state, {
+        trendingProductListLoading: false,
+        trendingProductListLoaded: true,
+        trendingProductListFailed: true
+      });
+    }
     default: {
       return state;
     }
@@ -681,3 +713,8 @@ export const getAdvertisementProductList = (state: ListsState) => state.advertis
 export const getAdvertisementProductListLoading = (state: ListsState) => state.advertisementProductListLoading;
 export const getAdvertisementProductListLoaded = (state: ListsState) => state.advertisementProductListLoaded;
 export const getAdvertisementProductListFailed = (state: ListsState) => state.advertisementProductListFailed
+
+export const getTrendingProductList = (state: ListsState) => state.trendingProductList;
+export const getTrendingProductListLoading = (state: ListsState) => state.trendingProductListLoading;
+export const getTrendingProductListLoaded = (state: ListsState) => state.trendingProductListLoaded;
+export const getTrendingProductListFailed = (state: ListsState) => state.trendingProductListFailed

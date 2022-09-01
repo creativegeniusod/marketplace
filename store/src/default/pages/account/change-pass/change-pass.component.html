@@ -1,0 +1,30 @@
+<div class="accountWrap">
+  <div fxLayout="row wrap">
+    <div fxFlex="100" fxFlex.gt-sm="100" class="">
+      <form [formGroup]="passwordForm" (ngSubmit)="onPasswordFormSubmit()">
+        <div class="formField fieldWithIcon lockIcon">
+          <mat-form-field class="w-100 mt-1" [ngClass]="{'validationcolor':
+          ((passwordForm.controls.currentPassword.errors?.required)&&(ifPasswordForm==true))}">
+            <input matInput placeholder="Current Password" formControlName="currentPassword" type="password">
+            <mat-error *ngIf="((passwordForm.controls['currentPassword'].errors?.required)&&(ifPasswordForm==true))">
+              Current Password is required </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="formField fieldWithIcon lockIcon">
+          <mat-form-field class="w-100 mt-1" [ngClass]="{'validationcolor':
+          ((passwordForm.controls.newPassword.errors?.required)&&(ifPasswordForm==true))}">
+            <input matInput placeholder="New Password" formControlName="newPassword" type="password">
+            <mat-error *ngIf="((passwordForm.controls['newPassword'].errors?.required)&&(ifPasswordForm==true))">
+              New Password is required </mat-error>
+            <mat-error *ngIf="((passwordForm.controls['newPassword'].hasError('minlength'))&&(ifPasswordForm==true))">
+              New Password isn't long enough, minimum of 5 characters
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="text-center mt-2">
+          <button mat-raised-button color="primary" type="submit">Change</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

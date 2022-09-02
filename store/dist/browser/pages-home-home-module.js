@@ -18,7 +18,7 @@ module.exports = "<div class=\"siteWrap\">\r\n    <app-main-carousel class=\"hom
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".products-tabs {\n  margin-top: 30px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9kZWZhdWx0L3BhZ2VzL2hvbWUvRDpcXG9kelxcd29ya2luZ1xcbWFya2V0cGxhY2VcXHN0b3JlL3NyY1xcZGVmYXVsdFxccGFnZXNcXGhvbWVcXGhvbWUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxpQkFBZ0IsRUFDbkIiLCJmaWxlIjoic3JjL2RlZmF1bHQvcGFnZXMvaG9tZS9ob21lLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByb2R1Y3RzLXRhYnN7XHJcbiAgICBtYXJnaW4tdG9wOiAzMHB4OyAgIFxyXG59Il19 */"
+module.exports = ".products-tabs {\n  margin-top: 30px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvdGVzdDA0L21hcmtldHBsYWNlL3N0b3JlL3NyYy9kZWZhdWx0L3BhZ2VzL2hvbWUvaG9tZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGlCQUFnQixFQUNuQiIsImZpbGUiOiJzcmMvZGVmYXVsdC9wYWdlcy9ob21lL2hvbWUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJvZHVjdHMtdGFic3tcclxuICAgIG1hcmdpbi10b3A6IDMwcHg7ICAgXHJcbn0iXX0= */"
 
 /***/ }),
 

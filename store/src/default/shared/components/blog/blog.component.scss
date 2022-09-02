@@ -1,0 +1,102 @@
+.blog-wrapper:before {
+    content: "";
+    position: absolute;
+    height: 432px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-image: url(https://www.spurtcart.com/blog-banner.59336589f25ba30af773.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+
+.blog-wrapper {
+    padding: 20px 0;
+    position: relative;
+}
+
+.blog-wrapper .blog-wrap {
+    position: relative;
+    z-index: 2;
+    max-width: 816px;
+    padding-top: 280px;
+    margin: auto;
+}
+
+
+.blog-wrapper .blog-card {
+    justify-content: space-between;
+    border-radius: 0;
+    background: white;
+    min-height: 200px;
+    margin-bottom: 28.5px;
+    box-shadow: 0 3px 10px #0000001a;
+    padding: 16px;
+}
+
+
+.blog-wrapper .blog-card .blog-content {
+    width: calc(100% - 224px);
+    padding: 0 20px;
+    position: relative;
+}
+
+
+// .blog-row2 {
+//     justify-content: space-between;
+//     align-items: flex-start;
+// }
+
+// .blog-row2 .blog-col-rht .blog-card2 {
+//     width: calc(33% - 24px);
+//     margin: 12px;
+//     min-height: 226px;
+//     position: relative;
+// }
+
+// .blog-row2 .blog-col-rht .blog-card2 .blog-img {
+//     height: 136px;
+// }
+
+// .blog-row2 .blog-col-rht .blog-card2 .blog-content {
+//     width: 100%;
+//     padding: 10px 10px 0;
+//     position: relative;
+// }
+
+.blog-row2 .blog-col-rht .blog-card2 .blog-content {
+    width: 100%;
+    padding: 10px 10px 0;
+    position: relative;
+}
+
+.blog-row2 .blog-col-rht .blog-card2 {
+    width: calc(33% - 24px);
+    margin: 12px;
+    min-height: 226px;
+    position: relative;
+}
+
+.blog-row2 .blog-col-rht .blog-card2 .blog-img[_ngcontent-spurtStore-c195] {
+    height: 136px;
+}
+
+.blog-wrapper .blog-card {
+    justify-content: space-between;
+    border-radius: 0;
+    background: white;
+    min-height: 200px;
+    margin-bottom: 28.5px;
+    box-shadow: 0 3px 10px #0000001a;
+    padding: 16px;
+}
+
+
+.grid-flow {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}

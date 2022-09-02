@@ -21,6 +21,7 @@ import { ContactusComponent } from './shared/components/contactus/contactus.comp
 import { FooterPagesComponent } from './shared/components/footer-pages/footer-pages.component';
 import { BecomeSellerComponent } from './shared/components/become-seller/become-seller.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { BlogComponent } from './shared/components/blog/blog.component';
 
 export const routes: Routes = [
   {
@@ -126,6 +127,7 @@ export const routes: Routes = [
       { path: 'term-and-condition', component: FooterPagesComponent, pathMatch: 'full' },
       { path: 'Return', component: FooterPagesComponent, pathMatch: 'full' },
       { path: 'become-seller', component: BecomeSellerComponent, pathMatch: 'full' },
+      { path: 'blog', component: BlogComponent, pathMatch: 'full' }
 
     ]
   },

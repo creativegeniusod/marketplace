@@ -56,6 +56,7 @@ import { ContactusComponent } from './components/contactus/contactus.component';
 import { HelpComponent } from './components/help/help.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterPagesComponent } from './components/footer-pages/footer-pages.component';
+import { BlogComponent } from './components/blog/blog.component';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   wheelPropagation: true,
   suppressScrollX: true
@@ -138,7 +139,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatTooltipModule,
     MatStepperModule,
     BannersComponent],
-  declarations: [SpinnerComponent, BannersComponent, FooterPagesComponent, ContactusComponent, HelpComponent],
+  declarations: [SpinnerComponent, BannersComponent, FooterPagesComponent, ContactusComponent, HelpComponent, BlogComponent],
   entryComponents: [],
   providers: [
     {
